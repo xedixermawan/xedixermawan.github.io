@@ -1,1 +1,118 @@
-hey , world !
+<!DOCTYPE HTML>  <!-- HTML to define a web page -->
+
+
+<html> 
+
+
+<head>
+
+
+<script>  <!-- JavaScript to display canvas -->
+
+
+
+
+// SUMMARY: Displays text in the center of a canvas.
+
+
+
+
+// A. WINDOW LOAD function.                      
+
+window.onload = function()
+
+{ 
+
+   // A1. CANVAS definition standard variables.            
+
+   canvas  = document.getElementById("canvasArea"); 
+
+   context = canvas.getContext("2d");
+
+
+
+   // A2. MESSAGE details. Center on Canvas.
+
+   var mText = "xedi is here"
+
+   var xPos  = canvas.width/2;
+
+   var yPos  = canvas.height/2;
+
+
+
+   // A3. TEXT format details.
+
+   context.font         = "90pt Comic Sans MS"; 
+
+   context.fillStyle    = "lime";
+
+   context.textAlign    = "center"; 
+
+   context.textBaseline = "middle";
+
+
+
+   // A4. FILL text.
+
+   context.fillText(mText, xPos, yPos);                  
+
+}
+
+
+
+
+</script>   <!-- End of JavaScript code -->
+
+
+</head>     <!-- End of header -->
+
+
+
+
+<body> <!-- HTML to define canvas area -->
+
+
+
+<!-- POSITION canvas on screen -->
+
+<div style="width:200px; height:200px; 
+
+            margin:0 auto; padding:5px;">
+
+
+
+
+<!-- CANVAS area definition -->
+
+
+<canvas   id     ="canvasArea" 
+
+          width  ="200" height ="200" 
+
+          style  ="border:2px solid black">
+
+
+
+<!-- MESSAGE if browser doesn't support canvas -->
+
+You're browser doesn't currently support HTML5 Canvas.
+
+Please check http://caniuse.com/#feat=canvas for
+
+information on browser support for canvas.
+
+
+
+
+
+
+</canvas>   <!-- End of canvas and web page -->
+
+</div> 
+
+
+</body> 
+
+
+</html>
