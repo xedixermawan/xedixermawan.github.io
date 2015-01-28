@@ -90,7 +90,7 @@
         }
 
         #title_content { 
-            font: bold 18px/12px Helvetica, Arial, Sans-serif; text-align: left; color: #000; margin:15px; 
+            font: bold 18px/12px Helvetica, Arial, Sans-serif; text-align: left; color: #000; margin:10px; margin-left:0px;
         }
         
         #main_side {
@@ -98,6 +98,8 @@
             position: relative; 
             width:100%;
             float:right; 
+			font-family: 'Belleza', sans-serif;
+            font-size: 16px;
         }
  
         #main_side hr {
@@ -160,178 +162,27 @@
 		<div id="main_side">
 			<hr>
 			<h1 id="title_content" > Apps </h1>
-			<!--//===== -->
-			<div style="width:800px; height:200px; margin:0 auto; padding:5px;" id="container">
-
-			<script src="threejslibs/build/three.min.js"></script>
-			<script src="threejslibs/js/geometries/hilbert3D.js"></script>
-			<script src="threejslibs/js/Detector.js"></script>
-			<script src="threejslibs/js/libs/stats.min.js"></script>
-			<script>
-
-					if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
-
-					var renderer, scene, camera, stats;
-					var objects = [];
-
-
-					var WIDTH = 750,
-						HEIGHT = 400;
-
-					init();
-					animate();
-
-					function init() {
-
-						camera = new THREE.PerspectiveCamera( 60, WIDTH / HEIGHT, 1, 200 );
-						camera.position.z = 150;
-
-						scene = new THREE.Scene();
-
-						scene.fog = new THREE.Fog( 0x111111, 150, 200 );
-
-						root = new THREE.Object3D();
-
-						var subdivisions = 6;
-						var recursion = 1;
-
-						var points = hilbert3D( new THREE.Vector3( 0,0,0 ), 25.0, recursion, 0, 1, 2, 3, 4, 5, 6, 7 );
-
-						var spline = new THREE.Spline( points );
-						var geometrySpline = new THREE.Geometry();
-
-						for ( var i = 0; i < points.length * subdivisions; i ++ ) {
-
-							var index = i / ( points.length * subdivisions );
-							var position = spline.getPoint( index );
-
-							geometrySpline.vertices[ i ] = new THREE.Vector3( position.x, position.y, position.z );
-
-						}
-
-						var geometryCube = cube( 50 );
-
-						geometryCube.computeLineDistances();
-						geometrySpline.computeLineDistances();
-
-						var object = new THREE.Line( geometrySpline, new THREE.LineDashedMaterial( { color: 0x111111, dashSize: 1, gapSize: 0.5 } ), THREE.LineStrip );
-
-						objects.push( object );
-						scene.add( object );
-
-						var object = new THREE.Line( geometryCube, new THREE.LineDashedMaterial( { color: 0xffaa00, dashSize: 3, gapSize: 1, linewidth: 2 } ), THREE.LinePieces );
-
-						objects.push( object );
-						scene.add( object );
-
-						renderer = new THREE.WebGLRenderer( { antialias: true } );
-						renderer.setClearColor( 0xf2f2f2 );
-						renderer.setPixelRatio( window.devicePixelRatio );
-						renderer.setSize( WIDTH, HEIGHT );
-
-						var container = document.getElementById( 'container' );
-						container.appendChild( renderer.domElement );
-
-						stats = new Stats();
-						stats.domElement.style.position = 'bottom';
-						stats.domElement.style.top = '0px';
-						container.appendChild( stats.domElement );
-
-						//
-
-						window.addEventListener( 'resize', onWindowResize, false );
-
-					}
-
-					function cube( size ) {
-
-						var h = size * 0.5;
-
-						var geometry = new THREE.Geometry();
-
-						geometry.vertices.push(
-							new THREE.Vector3( -h, -h, -h ),
-							new THREE.Vector3( -h, h, -h ),
-
-							new THREE.Vector3( -h, h, -h ),
-							new THREE.Vector3( h, h, -h ),
-
-							new THREE.Vector3( h, h, -h ),
-							new THREE.Vector3( h, -h, -h ),
-
-							new THREE.Vector3( h, -h, -h ),
-							new THREE.Vector3( -h, -h, -h ),
-
-
-							new THREE.Vector3( -h, -h, h ),
-							new THREE.Vector3( -h, h, h ),
-
-							new THREE.Vector3( -h, h, h ),
-							new THREE.Vector3( h, h, h ),
-
-							new THREE.Vector3( h, h, h ),
-							new THREE.Vector3( h, -h, h ),
-
-							new THREE.Vector3( h, -h, h ),
-							new THREE.Vector3( -h, -h, h ),
-
-							new THREE.Vector3( -h, -h, -h ),
-							new THREE.Vector3( -h, -h, h ),
-
-							new THREE.Vector3( -h, h, -h ),
-							new THREE.Vector3( -h, h, h ),
-
-							new THREE.Vector3( h, h, -h ),
-							new THREE.Vector3( h, h, h ),
-
-							new THREE.Vector3( h, -h, -h ),
-							new THREE.Vector3( h, -h, h )
-						 );
-
-						return geometry;
-
-					}
-
-					function onWindowResize() {
-
-						camera.aspect = WIDTH  / HEIGHT;
-						camera.updateProjectionMatrix();
-
-						renderer.setSize( WIDTH , HEIGHT );
-
-					}
-
-					function animate() {
-
-						requestAnimationFrame( animate );
-
-						render();
-						stats.update();
-
-					}
-
-					function render() {
-
-						var time = Date.now() * 0.001;
-
-						for ( var i = 0; i < objects.length; i ++ ) {
-
-							var object = objects[ i ];
-
-							//object.rotation.x = 0.25 * time * ( i%2 == 1 ? 1 : -1);
-							object.rotation.x = 0.25 * time;
-							object.rotation.y = 0.25 * time;
-
-						}
-
-						renderer.render( scene, camera );
-
-					}
-
-			</script>
-			<!--//===== -->
-			</div>
-
+			Unless it specified, program below will run on win 2000/xp/win7/win8 <BR><BR>
+
+			<a href="https://www.dropbox.com/s/pphm94lt6svxkot/console_calendar_maker.zip?dl=0"> 
+			[5] command line calendar maker</a> with this program you can create a calendar, whatever the year is, through command line and specify when & what holidays on certain dates. The output is PNG image.<BR><BR>
+			
+			<a href="https://xedithor.googlecode.com/files/xedithor002_win32.zip"> 
+			[4] xedithor</a> xedithor is tool for creating 2D sprite for game. The output are XML file that contain sprite description. You can use that XML directly or export to binary format so you can read it in any game engine. <BR><BR>
+			
+			<a href="https://www.dropbox.com/s/57o1tglh7ydnvs0/proximity_clone.zip?dl=0"> 
+			[3] proximity game</a> This game is quite fun. There will be some hexagonal cell you must fill with numbers. You and your opponent ( computer in this app ) will get random numbers and in the end of the game ( when hexagonal cell is full filled ) , who has more points wins. Actually this game will more fun if it played with real person, but unfortunately playing with other person is not ever implemented :p.<BR><BR>
+			
+			<a href="https://www.dropbox.com/s/8qnlaju65yh41qq/TetrisSonyx.zip?dl=0"> 
+			[2] tetris game</a> my version popular game tetris .<BR><BR>
+			
+			<a href="https://www.dropbox.com/s/dxb7qhsgdluiwzq/Zword.zip?dl=0"> 
+			[1] dictionary program</a> this is dictionary program that translate word from one languange to other<BR><BR>
+			
+			<a href="https://www.dropbox.com/s/g9ebv25zkcvrw3x/SpecialCase.jar?dl=0"> 
+			[0] unresolved fiveteen puzzle</a> a special case combination of fiveteen puzzle. Do you dare to try it ?. this puzzle is unresolved for centuries.<BR><BR>
+			
+			
 		</div>
     </div>
 </body>
