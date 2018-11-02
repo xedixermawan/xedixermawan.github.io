@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="XN4YmHgE76jTp2kNQ9qnsVSApl6yIQBzdyLe0BnbFks" />
+
+  <title>
+    
+    
+    Menengok kembali: C&#43;&#43; virtual function - XediXermawan
+    
+  </title>
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/holder.min.js" type='text/javascript'></script>
+  <link rel="stylesheet" href="/highlight/styles/github-gist.css">  
+  <link rel="stylesheet" href="/css/style.css">
+
+  <link rel="canonical" href="https://xedixermawan.github.io/2010/05/15/menengok-kembali-c-virtual-function/">
+  
+  <script src="/highlight/highlight.pack.js" type='text/javascript'></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.3.0/highlightjs-line-numbers.min.js"></script>
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+    
+    hljs.initHighlightingOnLoad();
+    $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+    hljs.lineNumbersBlock(block);
+    });
+});
+  </script>
+   </head>
+   <body data-spy="scroll" data-target="#toc">
+     <header class="navbar navbar-default navbar-fixed-top" id="top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://xedixermawan.github.io/">XediXermawan</a>
+    </div>
+
+    
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+	
+	
+	<li  ><a href="/">Home</a></li>
+	
+	
+	
+	<li > <a href="https://xedixermawan.github.io/about/" >About</a></li>
+	
+
+	
+	
+	<li > <a href="https://xedixermawan.github.io/projects/" >Projects</a></li>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+      </ul>
+</nav>
+</header>
+
+     <div class="jumbotron masthead" role="main">
+       <div class="container">
+	 <div class="row">
+
+ 	   <div class="col-md-8 col-md-offset-2 ">
+	   
+<div class="panel panel-default">
+  <div class="panel-body">
+      <article id='post' >
+	<h1> Menengok kembali: C&#43;&#43; virtual function </h1>
+	  
+	  <p>edi ermawan, <a href="http://offground.wordpress.com">http://offground.wordpress.com</a></p>
+
+<p><strong>Fungsi Virtual</strong>. Alasan kenapa sebuah fungsi perlu dibuat virtual adalah agar fungsi tersebut bisa di-deklarasikan ulang di kelas turunannya ( meng-override fungsi ) **dan **jika kamu ingin me-resolve pemanggilan <em>body function</em> saat runtime ( late binding/ dynamic binding ). perhatikan kata dihubungkan dengan &ldquo;dan&rdquo; bold mode : ) . Karena member fungsi tanpa virtual pun juga bisa di-override. Bedanya jika sebuah fungsi itu <strong>tidak</strong> virtual dan dideklarasikan ulang di kelas turunan, ketika fungsi itu dijalankan , maka &ldquo;<em>body function</em>&rdquo; yang akan dijalankan adalah sesuai yang didefinikan. ( body function yang akan dipanggil sudah ditentukan / di-resolve saat compile time , atau yang disebut static binding ).</p>
+
+<p>fungsi virtual :</p>
+
+<pre><code>  1. 
+</code></pre>
+
+<p>Anggota dari sebuah kelas</p>
+
+<pre><code>  2. 
+</code></pre>
+
+<p>Dideklarasikan dengan awalan virtual</p>
+
+<pre><code>  3. 
+</code></pre>
+
+<p>Fungsi virtual yang di-override dikelas turunannya, pada umumnya berbeda implementasinya dengan virtual fungsi di kelas induk. ( masih memiliki nama fungsi dan jumlah argument yang sama tentunya )</p>
+
+<pre><code>  4. 
+</code></pre>
+
+<p>Fungsi bisa dibedakan type kelas mana yang memanggil saat runtime</p>
+
+<p>Untuk memahami secara jelas, sepertinya sangat perlu untuk dicoba :). Misalnya terdapat sebuah kelas dasar bernama DrawableObject, yang merupakan kelas dasar untuk semua objek bangun 2D (persegi, lingkaran, segitiga).</p>
+
+<p><a href="https://offground.files.wordpress.com/2010/05/vfgbr1.png"><img src="https://offground.files.wordpress.com/2010/05/vfgbr1.png" alt="vfgbr1" />
+</a></p>
+
+<p>Output dari main program Gbr E :</p>
+
+<p>draw bangun persegi</p>
+
+<p>draw bangun lingkaran</p>
+
+<p>draw bangun persegi</p>
+
+<p>Dari output, dapat dilihat bahwa pemanggilan -&gt;Draw() di instance bangun1 dan bangun2 ( yang awalnya dideklarasikan sebagai DrawableObject class ), secara otomatis memanggil implementasi dari data yang ditunjuk oleh bangun1 dan bangun2 saat runtime. Misalnya kita menghapus &ldquo;virtual&rdquo; di class DrawableObject ( Gbr A ), Output program dari main program (Gbr E) menjadi sebagai berikut :</p>
+
+<p>draw dari base class</p>
+
+<p>draw dari base class</p>
+
+<p>draw bangun persegi</p>
+
+<p>dapat dilihat bangun1,bangun2,bangun3 akan memanggil &ldquo;body function&rdquo; sesuai apa yang dideklarasikan, dalam hal ini bangun1 dan bangun2 adalah DrawableObject, sedangkan bangun3 adalah persegi.</p>
+
+<p>Dengan karakteristik ini, Fungsi virtual sangat berguna untuk mendesain sebuah code yang bermaksud &ldquo;menyembunyikan&rdquo; implementasi fungsi yang memiliki nama yang sama. Contoh penggunaan yang lain ada di Gbr F.</p>
+
+<p>Output dari main program Gbr F :</p>
+
+<p>draw bangun persegi</p>
+
+<p>draw bangun lingkaran</p>
+
+<p>draw bangun Segitiga</p>
+
+<p>draw bangun Segitiga</p>
+
+<p>draw bangun persegi</p>
+
+<p>Di Java, fitur semacam fungsi virtual ini dinamakan Interface. ( saya jarang menulis code di Java, tapi dulu pernah coba ). Namun Interface di Java, body function dari base class-nya harus kosong ( cmiiw ). Kita bisa membuat semacam itu di C++ dengan mengosongkan body dari virtual function di base class . Class semacam ini dinamakan abstract base class (ABC) atau pure virtual function . ABC tidak bisa di-instance-kan secara langsung, hanya bisa sebagai pointer ke turunannya. Contoh ABC :</p>
+
+<p><a href="https://offground.files.wordpress.com/2010/05/vfgbr2.png"><img src="https://offground.files.wordpress.com/2010/05/vfgbr2.png" alt="vfgbr2" />
+</a></p>
+
+<p>meng-<em>instance</em>-kan class ABC secara langsung, akan compile-error :</p>
+
+<p><a href="https://offground.files.wordpress.com/2010/05/vfgbr3.png"><img src="https://offground.files.wordpress.com/2010/05/vfgbr3.png" alt="vfgbr3" />
+</a></p>
+
+<p>Di non-ABC, kalau kita ingin memanggil implementasi fungsi di base class dari kelas turunannya bisa dilakukan dengan :</p>
+
+<p><a href="https://offground.files.wordpress.com/2010/05/vfgbr4.png"><img src="https://offground.files.wordpress.com/2010/05/vfgbr4.png" alt="vfgbr4" />
+</a></p>
+
+<p>Output dari main program gbr pertama ( Gbr E ) dengan class Persergi diatas :</p>
+
+<p>draw dari base class</p>
+
+<p>draw bangun persegi</p>
+
+<p>draw bangun lingkaran</p>
+
+<p>draw dari base class</p>
+
+<p>draw bangun persegi</p>
+
+<p>*<strong><em>Virtual Destructor</em></strong>*</p>
+
+<p>untuk mencegah memory leak, destructor harus virtual jika memenuhi keadaan sebagai berikut : sebuah kelas X diturunkan dari kelas induk Y dimana kelas X memiliki sesuatu yang penting yang harus dieksekusi di destructor ( misalnya anggota kelas berupa pointer yang harus di delete di destructor ). Dengan menambahkan keyword &ldquo;virtual&rdquo; di destructor Y, destructor Y dan destructor X dipanggil. Lebih jelas dicontoh berikut ini</p>
+
+<p>[sourcecode language=&ldquo;cpp&rdquo;]
+#include <iostream></p>
+
+<p>class A {
+public:
+    A() {
+        std::cout &lt;&lt; &ldquo;A&rdquo;;
+    }
+    ~A() {
+        std::cout &lt;&lt; &ldquo;~A&rdquo;;
+    }
+};</p>
+
+<p>class B :public A {
+private:
+    int* memberPtr;
+public:
+    B() {
+        memberPtr = new int();
+    }
+    ~B() {
+        std::cout &lt;&lt; &ldquo;~B&rdquo;;
+        delete memberPtr;
+    }
+};</p>
+
+<p>void testCase1() {
+    B* inst;
+    inst = new B();
+    delete inst;
+}</p>
+
+<p>void testCase2() {
+    A* inst;
+    inst = new B();
+    delete inst;
+}
+int main() {
+    testCase1();
+    testCase2();
+}
+[/sourcecode]</p>
+
+<p>tanpa keyword “virtual” di kelas induk A :</p>
+
+<p>testCase1()   <strong>OK</strong> , destructor B dipanggil,kemudian destructor A dipanggil</p>
+
+<p>testCase2()   <strong>NOT OK</strong>, karena destructor B tidak dipanggil .hanya destructor A yang dipanggil</p>
+
+<p><strong>Performance Cost dari virtual function</strong></p>
+
+<p>karena virtual function sebenarnya adalah penambahan <em>indirection</em> ( memanggil fungsi dari vtable ) maka tentu ada cost nya, walaupun mungkin sangat kecil ( belum pernah memprofile sendiri ) </p>
+
+<p>05/15/10-07:44:34 PM-eof-</p>
+
+<p>updated : 11/27/2014  11:53 PM</p>
+
+<p><a href="https://www.dropbox.com/s/jfcrorogi76vgha/menengok_kembali_virtual_function_cplusplus.pdf?dl=0">Download PDF version</a></p>
+
+
+	  
+
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "xedixermawan" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+      </div></article>
+
+
+	 </div>
+
+	 </div>
+       </div>
+     </div>
+
+ <div class="container footer">
+  <div class="row">
+    <div class="col-md-10">
+      <small class="text-muted">Copyright 2007-2018 XediXermawan</small>
+    </div>
+    <div class="col-md-2">
+      <small class="text-muted">   Hugo + Theme : <a href="https://github.com/leonhe/hugo_eiio">Eiio</a></small>
+      </div>
+   </div>
+ </div>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'google analytics code', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body></html>

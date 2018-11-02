@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on XediXermawan</title>
+    <link>https://xedixermawan.github.io/categories/</link>
+    <description>Recent content in Categories on XediXermawan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <copyright>Copyright 2007-2018 XediXermawan</copyright>
+    <lastBuildDate>Sat, 15 May 2010 15:17:07 +0000</lastBuildDate>
+    
+	<atom:link href="https://xedixermawan.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>C/C&#43;&#43; Diary</title>
+      <link>https://xedixermawan.github.io/categories/c-c&#43;&#43;-diary/</link>
+      <pubDate>Sat, 15 May 2010 15:17:07 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/categories/c-c&#43;&#43;-diary/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

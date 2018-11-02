@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>XediXermawan</title>
+    <link>https://xedixermawan.github.io/</link>
+    <description>Recent content on XediXermawan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <copyright>Copyright 2007-2018 XediXermawan</copyright>
+    <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://xedixermawan.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Testing Post  Creating a New Theme</title>
+      <link>https://xedixermawan.github.io/posts/creating-a-new-theme/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/posts/creating-a-new-theme/</guid>
+      <description>&lt;h3 id=&#34;introduction&#34;&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;This tutorial will show you how to create a simple theme in Hugo.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Migrate to Hugo from Jekyll</title>
+      <link>https://xedixermawan.github.io/posts/migrate-from-jekyll/</link>
+      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/posts/migrate-from-jekyll/</guid>
+      <description>&lt;h2 id=&#34;move-static-content-to-static&#34;&gt;Move static content to &lt;code&gt;static&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;Jekyll has a rule that any directory not starting with &lt;code&gt;_&lt;/code&gt; will be copied as-is to the &lt;code&gt;_site&lt;/code&gt; output.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Menengok kembali: C&#43;&#43; virtual function</title>
+      <link>https://xedixermawan.github.io/2010/05/15/menengok-kembali-c-virtual-function/</link>
+      <pubDate>Sat, 15 May 2010 15:17:07 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2010/05/15/menengok-kembali-c-virtual-function/</guid>
+      <description>edi ermawan, http://offground.wordpress.com
+Fungsi Virtual. Alasan kenapa sebuah fungsi perlu dibuat virtual adalah agar fungsi tersebut bisa di-deklarasikan ulang di kelas turunannya ( meng-override fungsi ) **dan **jika kamu ingin me-resolve pemanggilan body function saat runtime ( late binding/ dynamic binding ). perhatikan kata dihubungkan dengan &amp;ldquo;dan&amp;rdquo; bold mode : ) . Karena member fungsi tanpa virtual pun juga bisa di-override. Bedanya jika sebuah fungsi itu tidak virtual dan dideklarasikan ulang di kelas turunan, ketika fungsi itu dijalankan , maka &amp;ldquo;body function&amp;rdquo; yang akan dijalankan adalah sesuai yang didefinikan.</description>
+    </item>
+    
+  </channel>
+</rss>
