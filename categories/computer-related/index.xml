@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Computer Related on XediXermawan</title>
+    <link>https://xedixermawan.github.io/categories/computer-related/</link>
+    <description>Recent content in Computer Related on XediXermawan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <copyright>Copyright 2007-2019 XediXermawan</copyright>
+    <lastBuildDate>Sat, 14 Feb 2015 17:12:27 +0000</lastBuildDate>
+    
+	<atom:link href="https://xedixermawan.github.io/categories/computer-related/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mengganti CPU Fan</title>
+      <link>https://xedixermawan.github.io/2015/02/14/mengganti-cpu-fan/</link>
+      <pubDate>Sat, 14 Feb 2015 17:12:27 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2015/02/14/mengganti-cpu-fan/</guid>
+      <description>Motivasi saya mengganti cpu fan bukan karena cpu nya kepanasan &amp;ndash;seperti alasan yg lain&amp;ndash;, namun karena cpu fan saya super berisik, dan sudah nggak bisa ditolerir oleh human being . Saya nggak peduli pada CPU panas pada dasarnya, selama cpu nggak mati berarti Oke :d .
+Awalnya saya pakai cpu fan bawaan processor, fannya berlabel AMD, ( tapi anehnya dibawah kipas berlabel Cooler Master ) . Sekarang saya ganti dengan Deepcool GAMMAX 400.</description>
+    </item>
+    
+    <item>
+      <title>Mencoba Cmake ( a Cmake intro )</title>
+      <link>https://xedixermawan.github.io/2015/02/13/mencobacmake/</link>
+      <pubDate>Fri, 13 Feb 2015 16:30:09 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2015/02/13/mencobacmake/</guid>
+      <description>Visual Studio adalah favorite ide pemrograman saya. Sudah sejak lama saya pakai, kira-kira sejak 4 tahun yang lalu. Mungkin menjadi favorite karena kebiasaan :) dan juga visual studio mudah dipakai. Walaupun kadang ada juga bugs &amp;lsquo;aneh&amp;rsquo; yang terjadi selama nge-build project dengan VS. Sayangnya, &amp;lsquo;build file&amp;rsquo; dari VS tidak bisa dipakai di environment lain, misalnya mau build pakai gcc di Linux. Oleh karena itulah harus ada cara lain yang harus dipakai.</description>
+    </item>
+    
+    <item>
+      <title>Website sebagai standalone desktop apps</title>
+      <link>https://xedixermawan.github.io/2015/02/12/website-sebagai-standalone-desktop-apps/</link>
+      <pubDate>Thu, 12 Feb 2015 04:23:54 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2015/02/12/website-sebagai-standalone-desktop-apps/</guid>
+      <description>suatu saat punya pertanyaan, kalau misalnya saya bisa web programming*, bisa ndak web yang saya buat dijalankan di desktop sebagai stand alone native application ? jawaban : bisa . dengan https://github.com/nwjs/nw.js , sebuah halaman web bisa dijadikan standalone app di desktop. nw.js pada dasarnya adalah &amp;ldquo;internet browser&amp;rdquo; , jadi nantinya bisa multipaltform ( windows, linux, macOS ) contohnya : https://github.com/LightTable/LightTable ( sebuah code editor apps ) *( kenyataannya , saya enggak bisa :p )</description>
+    </item>
+    
+    <item>
+      <title>My calendar maker</title>
+      <link>https://xedixermawan.github.io/2014/11/16/my-calendar-maker/</link>
+      <pubDate>Sun, 16 Nov 2014 16:13:14 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2014/11/16/my-calendar-maker/</guid>
+      <description>walaupun tahun baru masih 1 1&amp;frasl;2 bulan lagi, entah dapat dari mana ide-nya, saya tertarik untuk membuat kalender. Mungkin pikiran saya secara spontan kembali ke masa lalu ketika di tahun pertama kuliah dapat tugas membuat program kalender abadi he he. Yang saya buat disini tidak jauh beda : program untuk membuat kalender, dengan input tahun dan bulan , output nya berupa image kalender. Jadi image nya bisa dipakai, atau mungkin di print :) .</description>
+    </item>
+    
+    <item>
+      <title>Mengganti power supply</title>
+      <link>https://xedixermawan.github.io/2014/10/05/mengganti-power-supply/</link>
+      <pubDate>Sun, 05 Oct 2014 15:18:50 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2014/10/05/mengganti-power-supply/</guid>
+      <description>Beberapa malam hari yang lalu, saat lagi menggunakan komputer, secara tidak sengaja, kaki saya menyentuh kabel power dari power supply, dan tiba tiba komputer saya mati, dibarengi dengan percikan api. Cukup membuat kaget. Kecelakaan kecil yang mengkawatirkan . Saya coba lagi nyalakan 2-3 kali, tidak ada reaksi. Benar benar mati. Tidak ada yang saya lakukan setelah itu, karena saya langsung tidur.
+Saat akhir pekan, saya coba tes lagi kondisi PC, siapa tau ada keajaiban, haha.</description>
+    </item>
+    
+    <item>
+      <title>solved: Conversion to Dalvik format failed with error 1</title>
+      <link>https://xedixermawan.github.io/2012/05/26/solved-conversion-to-dalvik-format-failed-with-error-1/</link>
+      <pubDate>Sat, 26 May 2012 19:40:52 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2012/05/26/solved-conversion-to-dalvik-format-failed-with-error-1/</guid>
+      <description>UNEXPECTED TOP-LEVEL EXCEPTION:
+java.lang.IllegalArgumentException: already added: Lcom/badlogic/gdx/Application$ApplicationType;
+..
+..
+[2012-05-27 02:20:03 - skeletonAppAndroid] Conversion to Dalvik format failed with error 1
+This error already made me frustated for some hours. I just wanna share the solution : There are double external .jar library in your directory project but in eclipse file view, that doesn&amp;rsquo;t displayed. so you must inspect that via windows file explorer. If there are double external .jar library, delete one of them.</description>
+    </item>
+    
+    <item>
+      <title>Unresolved fiveteen puzzle.</title>
+      <link>https://xedixermawan.github.io/2012/02/23/unresolved-fiveteen-puzzle/</link>
+      <pubDate>Thu, 23 Feb 2012 19:18:24 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2012/02/23/unresolved-fiveteen-puzzle/</guid>
+      <description>I found it when playing my old fiveteen puzzle ( I created in 2009). Or maybe I&amp;rsquo;m not smart enought to solve this? . I modified the puzzle so it will always produce the unresolved position like this:
+
+wanna give a try ? . download puzzle HERE.</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; bahasa pemrograman masa depan ?</title>
+      <link>https://xedixermawan.github.io/2011/07/31/c-bahasa-pemrograman-masa-depan/</link>
+      <pubDate>Sun, 31 Jul 2011 23:06:24 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2011/07/31/c-bahasa-pemrograman-masa-depan/</guid>
+      <description>Kita pasti tahu bahwa yang tren para developer tergantung dari pembuat compiler. Contoh yang sederhana misalnya .NET. .Net menjadi tren saat ini karena Microsoft mempromosikan dan memberi dukungan sebelumnya , Java juga begitu. Nah, akhir-akhir ini sepertinya ada yang berubah, – dan saya berharap ini benar – . Microsoft mulai melirik lagi C++ (baca: C++ Modern ):
+Dari artikel-artikel yang saya temukan.
+ :: Why your next language better be C++</description>
+    </item>
+    
+    <item>
+      <title>my projects</title>
+      <link>https://xedixermawan.github.io/2011/03/05/xedixermawan-projects/</link>
+      <pubDate>Sat, 05 Mar 2011 18:51:16 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2011/03/05/xedixermawan-projects/</guid>
+      <description>some of my ( spare time ) projects is here ( start from Newest )
+Puzzle Game : Windows Phone 8, Desktop Application ( C/C++, DirectX 11 )
+home project : https://code.google.com/p/my-fifteen-puzzle-dx/
+svn link : https://my-fifteen-puzzle-dx.googlecode.com/svn/trunk
+Puzzle Game : Windows Phone 8, Desktop Application ( C/C++, DirectX 11 )
+home project : https://code.google.com/p/proximity-game-clone2-dx/
+svn link : https://proximity-game-clone2-dx.googlecode.com/svn/trunk
+Xedithor : 2D Sprite Editor . use C++, Qt
+http://code.google.com/p/xedithor/
+Tetris Game : C++, SDL</description>
+    </item>
+    
+    <item>
+      <title>switching</title>
+      <link>https://xedixermawan.github.io/2011/03/05/switching/</link>
+      <pubDate>Sat, 05 Mar 2011 17:03:21 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2011/03/05/switching/</guid>
+      <description>Starting this month, I switch from desktop programming to mobile programming. Even though lately, mobile hardware has an amazing ability, is the fact that it has limited resources and limited power source (of cource from battery). So, all things must be efficient. Do I need to learn assembly? :-)
+It should be interesting !!</description>
+    </item>
+    
+    <item>
+      <title>Shifting Puzzle</title>
+      <link>https://xedixermawan.github.io/2009/09/02/shifting-puzzle/</link>
+      <pubDate>Wed, 02 Sep 2009 05:57:45 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2009/09/02/shifting-puzzle/</guid>
+      <description>Dengan melakukan sedikit modifikasi pada game sederhana berbasis java ini, tercipta game baru yang juga melibatkan objek yang sama yaitu : kotak. Kodenya hampir sama dan juga menggunakan pattern yang sama : MVC. Satu tambahan class adalah kotak puzzle yang merupakanclass turunan dari class kotak. OOP ternyata memberi banyak kemudahan dalam mengembangkan aplikasi -seperti yang digembor2kan- :-) . Game ini adalah puzzle menyusun angka-angka menjadi terurut. Penyusunannya dengan cara mengeser-geser kotak yang ada dengan memanfaatkan 1 posisi kotak kosong untuk menggerakkan kotak.</description>
+    </item>
+    
+    <item>
+      <title>Java based-simple game</title>
+      <link>https://xedixermawan.github.io/2009/07/30/java-based-simple-game/</link>
+      <pubDate>Thu, 30 Jul 2009 07:48:56 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2009/07/30/java-based-simple-game/</guid>
+      <description>edie/surabaya/July,30,2009 .
+Since two month ago, I had learned Java periodically from several e-book from internet (thank for all guys for providing those book free). My motivation learns java is because it’s multi platform capability. Learning Java one time, you can code on several environment : desktop, server, embedded system ( smard card is the smallest embedded system that can be programmed by Java ) , and mobile phone. This like Java’s motto : “One coding , run everywhere”.</description>
+    </item>
+    
+    <item>
+      <title>ber-windows,ber-linux.</title>
+      <link>https://xedixermawan.github.io/2008/03/07/ber-windowsber-linux/</link>
+      <pubDate>Fri, 07 Mar 2008 04:27:03 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2008/03/07/ber-windowsber-linux/</guid>
+      <description>minggu minggu terakhir ini sangat bermasalah dengan komputerku. pertama mendapaty serangan virus yang sangtserius,ngrusak program-program windows ku,ngrusak installer program, fuffff,sangat menyebalkan,tapi iku sebener E kesalahn diri sendiri kenapa sejak dulu tidak mneggunakan anti virusss.windowsku tak coba ta recovery,pake cd installer,keliatannya agak membaik,tapi ternyata tetap saja.bermasalah untuk program2 tertentu.wis install ulang ae. (solusi kuno).karena kejadian ini berfikir ulang tentang penggunaan antivirus dan linux(walaupun ada virus kan dikit,apa begitu ya,mungkin saja).install lagi,sekalian install linux ubuntu (dual boot&amp;ndash;ubuntu ku sing ndisik lali password E-kebodohan tertinggi :-P).</description>
+    </item>
+    
+    <item>
+      <title>lingkungan baru</title>
+      <link>https://xedixermawan.github.io/2007/11/23/lingkungan-baru/</link>
+      <pubDate>Fri, 23 Nov 2007 15:24:11 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2007/11/23/lingkungan-baru/</guid>
+      <description>sejak tgl 30 okt lalu,mulai idup di lingkungan baru,pertama datang &amp;hellip;..,,kesan pertama biasa2 aja,tp hari pertama msk krja sangat tak nyaman,krena kena flu berat(duhhhhhhhhhhhhhhh).tp syukurlah skrang sudah agak menikmati,krna di sini asik juga(baca:bnyak CE) :-). ada lagi yang menyebalkan yaitu masalah komputer.masa&amp;rsquo; komputer isinya cuma pengolah kata thok..kalo mo install hars izin IT+lama(komp.nya di password kabeh,login guest).krn OSnya tbilang lawas (win2000) &amp;ndash;&amp;gt; ini lisensi semua,kan prsahaan .(kalo pindah k xp atau vista mahal kali yac).</description>
+    </item>
+    
+    <item>
+      <title>Memulai OpenGL</title>
+      <link>https://xedixermawan.github.io/2007/08/13/memulai-open-gl/</link>
+      <pubDate>Mon, 13 Aug 2007 12:59:19 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2007/08/13/memulai-open-gl/</guid>
+      <description>c:\program files\microsoft visual studio\vc98\include\gl\gl.h(1573) : error C2144: syntax error : missing &amp;lsquo;;&amp;rsquo; before type &amp;lsquo;void&amp;rsquo; c:\program files\microsoft visual studio\vc98\include\gl\gl.h(1573) : error C2501: &amp;lsquo;WINGDIAPI&amp;rsquo; : missing storage-class or type specifiers c:\program files\microsoft visual studio\vc98\include\gl\gl.h(1573) : fatal error C1004: unexpected end of file found Error executing cl.exe.
+GL_2.exe - 3 error(s), 0 warning(s)
+Sebuah permulaan yang buruk.</description>
+    </item>
+    
+    <item>
+      <title>Menginstall Ubuntu</title>
+      <link>https://xedixermawan.github.io/2007/06/06/nginstall-ubuntu/</link>
+      <pubDate>Wed, 06 Jun 2007 06:28:10 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2007/06/06/nginstall-ubuntu/</guid>
+      <description>Akhirnya berhasil juga install Ubuntu. Sebenarnya ingin install Fedora Core tapi daripada nyari2 CD isntaller lagi, langsung saja pakai ubuntu, kan sudah punya. Dulu CD installer-nya pesen gratis dari https://shipit.ubuntu.com, pesen 10 CD sekaligus (untuk 3 jenis komputer berbeda).
+Selain itu sebelumnya saya mencari alasan lain-kenapa harus pakai Ubuntu. Ternyata dapat banyak alasan. Ubuntu sudah berkembang sekarang (versi terakhir ubuntu 7.07 Feisty Fawn, aku memakai versi 6.06), Dan juga Ubuntu ternyata turunan debian.</description>
+    </item>
+    
+    <item>
+      <title>Mempercantik tampilan windows</title>
+      <link>https://xedixermawan.github.io/2007/06/01/mempercantik-tampilan-windows/</link>
+      <pubDate>Fri, 01 Jun 2007 09:20:59 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2007/06/01/mempercantik-tampilan-windows/</guid>
+      <description>Memperindah tampilan windows sebenarnya sudah tak asing lagi : mengganti desktop, theme, appearance. Jika menggunakan winxp mau pindah tampilan(tampak seperti) vista dapat mendownload vista service pack.(saya belum mencobanya)
+Sekarang ini saya menggunaka Brico Pack(crystal XP)
+ * Pertama yang perlu dilakukan adalah mendownload  Bricopack-nya dulu(cek di www.crystalxp.net. * Lalu install. space yang diperlukan sebesar 300MB. ini akan mengganti icon-icon windows,theme,appearance dan tampilan menu dan toolbar windows. * Jika perlu menambah theme dan appearance tambahan yang didukung bricopack tadi juga bisa di download theme dan appearance tambahan di crystalxp.</description>
+    </item>
+    
+  </channel>
+</rss>

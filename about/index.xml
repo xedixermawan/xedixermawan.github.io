@@ -6,11 +6,29 @@
     <description>Recent content in About on XediXermawan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
-    <copyright>Copyright 2007-2018 XediXermawan</copyright>
+    <copyright>Copyright 2007-2019 XediXermawan</copyright>
     <lastBuildDate>Sat, 20 Jun 2015 14:02:37 +0200</lastBuildDate>
     
 	<atom:link href="https://xedixermawan.github.io/about/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Author</title>
+      <link>https://xedixermawan.github.io/about/2019-01-09-aboutthis/</link>
+      <pubDate>Sat, 14 May 2016 00:31:56 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/about/2019-01-09-aboutthis/</guid>
+      <description>my name is edi, an electrical engineer / computer programmer / indie app developer</description>
+    </item>
+    
+    <item>
+      <title>This Web</title>
+      <link>https://xedixermawan.github.io/about/2019-01-09-aboutweb/</link>
+      <pubDate>Fri, 13 May 2016 00:31:56 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/about/2019-01-09-aboutweb/</guid>
+      <description>This webpage was generated with awesome thing calls HUGO</description>
+    </item>
     
   </channel>
 </rss>

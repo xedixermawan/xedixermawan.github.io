@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="XN4YmHgE76jTp2kNQ9qnsVSApl6yIQBzdyLe0BnbFks" />
+
+  <title>
+    
+    
+    Integrasi Qt ke Ms Visual C&#43;&#43; 2008 Express - XediXermawan
+    
+  </title>
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/holder.min.js" type='text/javascript'></script>
+  <link rel="stylesheet" href="/highlight/styles/github-gist.css">  
+  <link rel="stylesheet" href="/css/style.css">
+
+  <link rel="canonical" href="https://xedixermawan.github.io/2010/05/15/215/">
+  
+  <script src="/highlight/highlight.pack.js" type='text/javascript'></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.3.0/highlightjs-line-numbers.min.js"></script>
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+    
+    hljs.initHighlightingOnLoad();
+    $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+    hljs.lineNumbersBlock(block);
+    });
+});
+  </script>
+   </head>
+   <body data-spy="scroll" data-target="#toc">
+     <header class="navbar navbar-default navbar-fixed-top" id="top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://xedixermawan.github.io/">XediXermawan</a>
+    </div>
+
+    
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+	
+	
+	<li  ><a href="/">Home</a></li>
+	
+	
+
+	
+
+	
+	
+	<li > <a href="https://xedixermawan.github.io/about/" >About</a></li>
+	
+
+	
+	
+	<li > <a href="https://xedixermawan.github.io/projects/" >Projects</a></li>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+      </ul>
+</nav>
+</header>
+
+     <div class="jumbotron masthead" role="main">
+       <div class="container">
+	 <div class="row">
+
+ 	   <div class="col-md-8 col-md-offset-2 ">
+	   
+<div class="panel panel-default">
+  <div class="panel-body">
+      <article id='post' >
+	<h1> Integrasi Qt ke Ms Visual C&#43;&#43; 2008 Express </h1>
+	  
+	  <p>edi ermawan, <a href="../../../../../">http://offground.wordpress.com</a></p>
+
+<p>Apa itu Qt?, Qt: sebuah C++ library yang cukup lengkap untuk mengembangkan aplikasi mulai dari library GUI, grafik, networking, multimedia, multithreading, sql interface, openGL interface , web, dll.</p>
+
+<p>Motivasi:</p>
+
+<p>1.Aplikasi bisa berjalan multiplatform tanpa virtual machine seperti .NET atau Java
+2.C/C++ :)
+3.Gratis, lisensi: Lesser GPL.
+4.Library cukup lengkap.
+5.Dokumentasi dari Qt lengkap.</p>
+
+<p>Qt bisa di download di <a href="http://www.qtsoftware.com/">www.qtsoftware.com</a> . Qt sebenarnya sudah mempunyai IDE sendiri yang dinamakan Qt Creator, sebuah IDE yang mudah digunakan, menggunakan gcc compiler dan gdb debugger. Namun jika kita terbiasa bekerja atau ingin mengintegrasikannya dengan IDE Miscrosoft visual C++(msvc) hal tersebut bisa dilakukan dengan mudah, karena Qt software dengan sangat baik hati sudah mengantisipasinya. :). Ada dua cara untuk melakukannya, download library Qt khusus untuk msvc atau melakukan build sendiri dari source dari Qt. Postingan ini akan mencoba cara ke-2. Kenapa? saya download Qt dengan IDE creator, library yang di-bundle disitu khusus untuk gcc tidak bisa untuk msvc. Untuk men-buildnya tidak perlu effort yang keras, pertama buat solution untuk semua project di Qt. Di direktori bin Qt:</p>
+
+<p>configure -platform -win32-msvc2008 -no-qmake</p>
+
+<p>perintah diatas memerlukan kira-kira 5-10 menit yang akan menghasilkan solution yang berisi project untuk semua yang ada di Qt!, mulai dari example, tool, library, pokoknya semua, secara total terdapat 276 project. Setelah itu buka solution di Ms Visual C++ 2008 (saya menggunakan yang express), pilih release mode, dan Build All, build segalanya :-) . Saatnya menunggu karena build-nya lama, sekitar 1 jam 15 menit (tergantung spec komputer yang digunakan). Setelah build selesai,DLL dan Lib siap untuk dipakai.</p>
+
+<p><strong>Membuat project pertama Qt di msvc</strong></p>
+
+<p>Project baru, console application , empty project. Pada source file, buat file cpp baru : main.cpp. copy paste code berikut ini</p>
+
+<p>[sourcecode language=&ldquo;cpp&rdquo;]</p>
+
+<p>/* hello world project */
+#include <QtGui/QApplication.h>
+#include <QtGui/QLabel.h>
+#include <QtGui/QPushButton.h>
+#include <QtGui/QHBoxLayout></p>
+
+<p>int main(int argc, char *argv[ ])
+ {
+ QApplication app(argc, argv);</p>
+
+<p>QWidget *window=new QWidget;
+ window-&gt;setWindowTitle(&ldquo;test application&rdquo;);
+ QLabel *label = new QLabel(&rdquo;<h1>Qt on Ms C++ 2008 Express<h1>&rdquo;);
+ QPushButton *tom=new QPushButton(&ldquo;Exit&rdquo;);</p>
+
+<p>QHBoxLayout *layout=new QHBoxLayout;</p>
+
+<p>layout-&gt;addWidget(label);
+ layout-&gt;addWidget(tom);</p>
+
+<p>QObject::connect(tom,SIGNAL(clicked()),window,SLOT(close()));</p>
+
+<p>window-&gt;setLayout(layout);
+ window-&gt;show();
+ return app.exec();
+}</p>
+
+<p>[/sourcecode]</p>
+
+<p>Setting project:</p>
+
+<p>Additional Include Library : C:\Qt\2009.03\qt\include</p>
+
+<p>Additional Library Directory : C:\Qt\2009.03\qt\lib</p>
+
+<p>Additional Dependencies: QtGui4.lib QtCore4.lib</p>
+
+<p>Lalu coba build/run:</p>
+
+<p><a href="http://offground.files.wordpress.com/2010/05/helloqt_on_msvc_offgnd1.png"><img src="http://offground.files.wordpress.com/2010/05/helloqt_on_msvc_offgnd1.png?w=300" alt="" />
+</a></p>
+
+<p>Project pertama di Ms-Visual Studio 2008 express berhasil !. Text label bisa di format dengan HTML?, ya sepertinya fitur yang cool(dingin), hehe. Di IDE Qt Creator sebenarnya ada GUI Desainer-nya dan bisa diintegrasikan dengan msvc, namun bukan yang Express Edition :p.</p>
+
+<p>05/07/10-10:47:16 PM -eof-</p>
+
+
+	  
+
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "xedixermawan" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+      </div></article>
+
+
+	 </div>
+
+	 </div>
+       </div>
+     </div>
+
+ <div class="container footer">
+  <div class="row">
+    <div class="col-md-10">
+      <small class="text-muted">Copyright 2007-2019 XediXermawan</small>
+    </div>
+    <div class="col-md-2">
+      <small class="text-muted">   Hugo + Theme : <a href="https://github.com/leonhe/hugo_eiio">Eiio</a></small>
+      </div>
+   </div>
+ </div>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'google analytics code', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body></html>

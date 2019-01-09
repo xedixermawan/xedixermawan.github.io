@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="XN4YmHgE76jTp2kNQ9qnsVSApl6yIQBzdyLe0BnbFks" />
+
+  <title>
+    
+    
+    [3] on directx 11 : load 3D model from file - XediXermawan
+    
+  </title>
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/holder.min.js" type='text/javascript'></script>
+  <link rel="stylesheet" href="/highlight/styles/github-gist.css">  
+  <link rel="stylesheet" href="/css/style.css">
+
+  <link rel="canonical" href="https://xedixermawan.github.io/2013/12/30/3-on-directx-11-load-3d-model-from-file/">
+  
+  <script src="/highlight/highlight.pack.js" type='text/javascript'></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.3.0/highlightjs-line-numbers.min.js"></script>
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+    
+    hljs.initHighlightingOnLoad();
+    $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+    hljs.lineNumbersBlock(block);
+    });
+});
+  </script>
+   </head>
+   <body data-spy="scroll" data-target="#toc">
+     <header class="navbar navbar-default navbar-fixed-top" id="top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://xedixermawan.github.io/">XediXermawan</a>
+    </div>
+
+    
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+	
+	
+	<li  ><a href="/">Home</a></li>
+	
+	
+
+	
+
+	
+	
+	<li > <a href="https://xedixermawan.github.io/about/" >About</a></li>
+	
+
+	
+	
+	<li > <a href="https://xedixermawan.github.io/projects/" >Projects</a></li>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+      </ul>
+</nav>
+</header>
+
+     <div class="jumbotron masthead" role="main">
+       <div class="container">
+	 <div class="row">
+
+ 	   <div class="col-md-8 col-md-offset-2 ">
+	   
+<div class="panel panel-default">
+  <div class="panel-body">
+      <article id='post' >
+	<h1> [3] on directx 11 : load 3D model from file </h1>
+	  
+	  <p>di project sebelumnya saya hanya menggambar 3d kubus. sangat menarik jika program bisa me-load model 3D yang dibuat oleh 3D editor. format paling populer untuk coba-coba tentu adalah wavefront obj :) . File .obj ini hanya bisa untuk static 3d model, tidak mendukung animasi. Dan biasanya ada 1 file pasangan tambahan untuk setiap .obj yaitu .mtl.  File .mtl dimaksudkan untuk menyimpan material ( konstanta pencahayaan , seperti diffuse, spekular ) . namun .mtl file ini optional. File .obj sebenarnya adalah text file. terdapat 2 kata disini &ldquo;3D model&rdquo; &amp; &ldquo;text file&rdquo;, dan pasti yang terbayang adalah parsing yang lamaaaa . dan memang iya. parsingnya lama. untuk mengakali ini , .obj diubah ke .vbo ( ada orang yang sudah buat tool converter .obj to .vbo . .vbo apa itu?, .vbo sebenarnya adalah versi binary dari .obj, sehingga tidak perlu ada proses parsing waktu load object. 1 fungsi tambahan LoadModel_VBO, dan saya mengubah informasi vertex menjadi :
+DirectX::XMFLOAT3 position;
+DirectX::XMFLOAT3 normal;
+DirectX::XMFLOAT2 texcoord;</p>
+
+<p>fungsi load VBO :</p>
+
+<p>[sourcecode language=&ldquo;cpp&rdquo;]
+    void LoadModel_VBO( unsigned char* meshData, ID3D11Buffer** vertexBuffer,ID3D11Buffer** indexBuffer,int&amp; vertexCount,int&amp; indexCount)  {
+        // The first 4 bytes of the BasicMesh format define the number of vertices in the mesh.
+        int numVertices = <em>reinterpret_cast&lt;int</em>&gt;(meshData);</p>
+
+<pre><code>    // The following 4 bytes define the number of indices in the mesh.
+    int numIndices = *reinterpret_cast&lt;int*&gt;(meshData + sizeof(int));
+
+    // The next segment of the BasicMesh format contains the vertices of the mesh.
+    vertex_type* vertices = reinterpret_cast&lt;vertex_type*&gt;(meshData + sizeof(int) * 2);
+
+    // The last segment of the BasicMesh format contains the indices of the mesh.
+    unsigned short* indices = reinterpret_cast&lt;unsigned short*&gt;(meshData + sizeof(int) * 2 + sizeof(vertex_type) * numVertices);
+
+    // Create the vertex and index buffers with the mesh data.
+
+    D3D11_SUBRESOURCE_DATA vertexBufferData = {0};
+    vertexBufferData.pSysMem = vertices;
+    vertexBufferData.SysMemPitch = 0;
+    vertexBufferData.SysMemSlicePitch = 0;
+    CD3D11_BUFFER_DESC vertexBufferDesc(numVertices * sizeof(vertex_type), D3D11_BIND_VERTEX_BUFFER);
+    HRESULT hr = m_Device-&gt;CreateBuffer(
+            &amp;vertexBufferDesc,
+            &amp;vertexBufferData,
+            vertexBuffer
+            );
+    assert( hr==S_OK );
+
+    D3D11_SUBRESOURCE_DATA indexBufferData = {0};
+    indexBufferData.pSysMem = indices;
+    indexBufferData.SysMemPitch = 0;
+    indexBufferData.SysMemSlicePitch = 0;
+    CD3D11_BUFFER_DESC indexBufferDesc(numIndices * sizeof(unsigned short), D3D11_BIND_INDEX_BUFFER);
+        m_Device-&gt;CreateBuffer(
+            &amp;indexBufferDesc,
+            &amp;indexBufferData,
+            indexBuffer
+            );
+    assert( hr==S_OK );
+    vertexCount = numVertices;
+    indexCount = numIndices;
+}
+</code></pre>
+
+<p>[/sourcecode]</p>
+
+<p>output program ( saya me-load utah teapot &ndash;yang terkenal itu  ) :</p>
+
+<p><a href="http://offground.files.wordpress.com/2013/12/teapot.jpg"><img src="http://offground.files.wordpress.com/2013/12/teapot.jpg?w=300" alt="teapot" />
+</a></p>
+
+<p>full source code &amp; project ( vs 2012 desktop ) . ( <strong>xedi_on_directx11<strong><em>3</em></strong>from___N.vcxproj</strong> )</p>
+
+<p>svn checkout : <a href="https://xedi-on-directx-11.googlecode.com/svn/trunk">https://xedi-on-directx-11.googlecode.com/svn/trunk</a></p>
+
+<p>project home : <a href="http://code.google.com/p/xedi-on-directx-11/">http://code.google.com/p/xedi-on-directx-11/</a></p>
+
+<p>// edi ermawan// yogyakarta , 30122013</p>
+
+
+	  
+
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "xedixermawan" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+      </div></article>
+
+
+	 </div>
+
+	 </div>
+       </div>
+     </div>
+
+ <div class="container footer">
+  <div class="row">
+    <div class="col-md-10">
+      <small class="text-muted">Copyright 2007-2019 XediXermawan</small>
+    </div>
+    <div class="col-md-2">
+      <small class="text-muted">   Hugo + Theme : <a href="https://github.com/leonhe/hugo_eiio">Eiio</a></small>
+      </div>
+   </div>
+ </div>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'google analytics code', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body></html>

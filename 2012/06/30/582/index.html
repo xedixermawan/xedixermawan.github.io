@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="XN4YmHgE76jTp2kNQ9qnsVSApl6yIQBzdyLe0BnbFks" />
+
+  <title>
+    
+    
+    mencoba smart pointer : pinter pointer dari boost - XediXermawan
+    
+  </title>
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/holder.min.js" type='text/javascript'></script>
+  <link rel="stylesheet" href="/highlight/styles/github-gist.css">  
+  <link rel="stylesheet" href="/css/style.css">
+
+  <link rel="canonical" href="https://xedixermawan.github.io/2012/06/30/582/">
+  
+  <script src="/highlight/highlight.pack.js" type='text/javascript'></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.3.0/highlightjs-line-numbers.min.js"></script>
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+    
+    hljs.initHighlightingOnLoad();
+    $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+    hljs.lineNumbersBlock(block);
+    });
+});
+  </script>
+   </head>
+   <body data-spy="scroll" data-target="#toc">
+     <header class="navbar navbar-default navbar-fixed-top" id="top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://xedixermawan.github.io/">XediXermawan</a>
+    </div>
+
+    
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+	
+	
+	<li  ><a href="/">Home</a></li>
+	
+	
+
+	
+
+	
+	
+	<li > <a href="https://xedixermawan.github.io/about/" >About</a></li>
+	
+
+	
+	
+	<li > <a href="https://xedixermawan.github.io/projects/" >Projects</a></li>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+      </ul>
+</nav>
+</header>
+
+     <div class="jumbotron masthead" role="main">
+       <div class="container">
+	 <div class="row">
+
+ 	   <div class="col-md-8 col-md-offset-2 ">
+	   
+<div class="panel panel-default">
+  <div class="panel-body">
+      <article id='post' >
+	<h1> mencoba smart pointer : pinter pointer dari boost </h1>
+	  
+	  <p>Smart pointer adalah pointer yang smart. :d. ya memang begitu tujuannya. Seperti diketahui tidak ada management object secara otomatis [garbage collecor] di c/c++, jadi setiap dynamic-object yang di alokasi di heap dan sudah waktunya dihapus harus di-delete secara eksplisit. (dynamic-object == setiap object yang di-create dengan keyword new). Apa akibatnya jika delete tidak dilakukan?, kemungkinan terjadi memory leak ( : keadaan dimana pembuat program tidak bahagia). kemungkinan memory leak ini semakin besar seiring semakin kompleknya project, dan juga memory leak akan susah dicari :| . untuk itu dibuat smart pointer: pointer yang mengurusi kepemilikan object (secara singkatnya begitu) . Smart pointer sudah lama digunakan, namun tetap saja masih banyak project yang menggunakan raw pointer , (dengan alasan kemudahan dan malas. haha.) . Kelemahan dari smart pointer , tentu akan lebih lambat dari raw pointer, karena smart pointer sebenarnya adalah wrapper class untuk pointer. Walaupun ada, saya yakin, keuntungannya lebih tinggi karena kecepatan processor yang semakin tinggi dan project yang rumit. {riil project == pasti rumit }. Okey, itulah motivasinya :), saatnya mencoba smart pointer. Saya pilih smart pointer dari Boost library yang banyak digunakan. Di Boost terdapat beberapa smart pointer, saya akan mencoba 3 diantaranya: scoped pointer, shared pointer, dan weak pointer.</p>
+
+<p><strong>1. scoped pointer.</strong></p>
+
+<p>Di dalam fungsi (atau apapun yang ada di scope “{“ sampai “}” ) , object yang ada di stack otomatis di free kalau out of scope tapi kalau pointer tidak. Tujuan scoped_pointer adalah membuat pointer otomatis di free kalau out of scope , apapun yang terjadi. Misalnya saya punya sebuah kelas:</p>
+
+<p>[sourcecode language=&ldquo;cpp&rdquo;]
+class bigObject
+{
+  private:
+     int m_obj_id;
+  public:
+     bigObject(int id)
+     {
+        m_obj_id = id;
+        std::cout&lt;&lt;&rdquo; constructor call .object id: &ldquo;&lt;&lt;m_obj_id&lt;&lt;std::endl;
+     };
+     ~bigObject()
+     {
+        std::cout&lt;&lt;&rdquo; destructor call .object id: &ldquo;&lt;&lt;m_obj_id&lt;&lt;std::endl;
+     };
+     void doSomething()
+     {
+        std::cout&lt;&lt;&rdquo; bigObject is doing something .object id: &ldquo;&lt;&lt;m_obj_id&lt;&lt;std::endl;
+     };
+};
+[/sourcecode]</p>
+
+<p>lalu ada fungsi yang menggunakan seperti dibawah ini:</p>
+
+<p>[sourcecode language=&ldquo;cpp&rdquo;]
+void complexFunc()
+{
+   bigObject* object01 = new bigObject(1);
+   bigObject* object02 = new bigObject(2);
+   bigObject* object03;
+   boost::scoped_ptr<bigObject> object04 ( new bigObject(4) ) ;</p>
+
+<p>// function do complex stuff here
+   // ..
+   // ..
+   bool complex_condition =false;
+   if(complex_condition)
+   {
+      std::cout&lt;&lt;&rdquo; return early &ldquo;&lt;&lt;std::endl;
+      return; // #possibility 1
+   }
+   try
+   {
+      bigObject* object03 = new bigObject(2);
+      // doing other complex-advanced-algotithm here
+      // ..
+      // ..
+      throw 13; // but an exception is trown here // #possibility 2
+      //..</p>
+
+<pre><code>  delete object03;
+</code></pre>
+
+<p>}
+   catch (int e)
+   {
+      std::cout&lt;&lt;&rdquo; exception happen! your lucky number is: &ldquo;&lt;&lt;e&lt;&lt;std::endl;
+   }
+   // delete object01; forget to call #possibility 3
+   delete object02;
+}
+[/sourcecode]</p>
+
+<p>Di fungsi void complexFunc() diatas, terdapat instansiasi class bigObject, masing-masing : object01, object02, object03 dan object04. Object04 adalah scoped_tr dan yang lain adalah raw pointer. Terdapat 3 kemungkinan object tidak di delete di fungsi di atas.</p>
+
+<p>#possibility 1 : dalam kondisi tertentu, variable boolean complex_condition menjadi true sehingga fungsi return. Akibatnya delete object02; tidak dipanggil. object04 ? .aman, di delete otomatis.</p>
+
+<p>#possibility 2 : terjadi exception , misalnya saja exception 13 , sehingga delete object03; tidak dipanggil. object04 ? .aman, di delete otomatis.</p>
+
+<p>#possibility 3 : object01 lupa tidak di delete (tukang ketik juga manusia) . object04 ? .aman, di delete otomatis.</p>
+
+<p> Jadi, penggunaan scoped_ptr sangat menguntungkan. Hehehe. #devil_laugh</p>
+
+<p><strong>2. shared pointer.</strong></p>
+
+<p>Seperti namanya , pointer ini digunakan untuk object yang ditunjuk oleh beberapa pointer. Tujuan penggunaan nya adalah men-track jumlah pointer yang menunjuk sebuah object di heap. Jika jumlah penunjuk object =0, object akan di delete otomatis. Salah satu contoh riil penggunaan nya adalah saat menyimpan pointer ke dalam vector.</p>
+
+<p>[sourcecode language=&ldquo;cpp&rdquo;]
+ std::vector<bigObject*> vec;
+ std::vector&lt; boost::shared_ptr<bigObject> &gt; vec2;</p>
+
+<p>for(int i=0;i<10;i++) {
+     // fill vector vec
+     bigObject* temp =new bigObject(i);
+     vec.push_back(temp);
+     // fill vector vec2
+     boost::shared_ptr<bigObject> temp2 (new bigObject(i+10));
+     vec2.push_back(temp2);
+ }
+ vec.erase(vec.begin() + 0);
+ vec2.erase(vec2.begin() + 0);</p>
+
+<p>vec.clear();
+ vec2.clear();
+[/sourcecode]</p>
+
+<p>Code diatas vec dan vec2 adalah vector dari pointer ke bigObject, bedanya vec menggunakan raw pointer sedangkan vec2 menggunakan shared pointer. Setelah kode keluar for {.. } vec dan vec2 terisi, dan yang memiliki pointer ke bigObject adalah vector itu sendiri. Jadi jumlah pointer ke bigObject masing-masing =1 untuk setiap object didalam vector.</p>
+
+<p>vec.erase(vec.begin() + 0); : ref counted menjadi 0 untuk object index 0 di vector, object ke 0 masih ada di heap dan tidak pointer yang menunjuk. ( kandidat memory leak )</p>
+
+<p>vec2.erase(vec2.begin() + 0); : ref counted menjadi 0 untuk object index 0 di vector, object ke 0 otomastis di di delete . sama halnya terjadi saat pemanggilan clear(). Jadi saat men-<em>delete</em> anggota vec , delete harus dilakukan manual. Clear yang benar untuk vec :</p>
+
+<p>for(std::vector<bigObject*>::iterator it=vec.begin(); it!=vec.end(); it++) {</p>
+
+<p>      delete (*it);
+}
+vec.clear();</p>
+
+<p>erase dan clear vector memanggil destructor object, karena yang di hold disini adalah pointer ke object , maka destructor tidak dipanggil.</p>
+
+<p> <strong>3. weak pointer.</strong></p>
+
+<p>Akan ada masalah saat penggunaan shared_ptr jika terdapat keadaan dimana terdapat 2 atau lebih pointer yang saling menunjuk, yang mengakibatkan jumlah counter objek di shared_ptr tidak akan pernah 0, yang artinya objek tidak akan pernah di delete== tujuan shared_ptr gagal. Contoh simple situasi ini, sbb:</p>
+
+<p>[sourcecode language=&ldquo;cpp&rdquo;]
+class kelasB;</p>
+
+<p>class kelasA
+{
+public:
+   kelasA()
+   {
+      std::cout&lt;&lt;&rdquo; kelasA constructor call &ldquo;&lt;<std::endl;
+   }
+   void setB(boost::shared_ptr<kelasB> _pB)
+   {
+      m_B=_pB;
+   }
+   ~kelasA()
+   {
+      std::cout&lt;&lt;&rdquo; kelasA destructor call &ldquo;&lt;<std::endl;
+   }
+   void doSomething()
+   {
+      std::cout<<" kelasA is doSomething "<<std::endl;
+   }
+private:
+   boost::weak_ptr<kelasB> m_B;
+};</p>
+
+<p>class kelasB
+{
+public:
+   kelasB()
+   {
+      std::cout&lt;&lt;&rdquo; kelasB constructor call &ldquo;&lt;<std::endl;
+   }
+   void setA(boost::shared_ptr<kelasA> _pA)
+   {
+      m_A=_pA;
+      m_A. -&gt;doing();
+   }
+   ~kelasB()
+   {
+     std::cout&lt;&lt;&rdquo; kelasB destructor call &ldquo;&lt;<std::endl;
+   }
+   void doSomething()
+   {
+     std::cout<<" kelasB is doSomething "<<std::endl;
+   }
+private:
+    boost::weak_ptr<kelasA> m_A;
+};</p>
+
+<p>void testFunc()
+{
+   boost::shared_ptr<kelasA> aaa(new kelasA());
+   boost::shared_ptr<kelasB> bbb(new kelasB());</p>
+
+<p>aaa-&gt;setB(bbb);
+   bbb-&gt;setA(aaa);
+}
+[/sourcecode]</p>
+
+<p>Di testFunc() , seharusnya aaa dan bbb di delete otomatis , tetapi itu tidak terjadi karena aaa dan bbb saling menunjuk yang menyebabkan jumlah objek di shared_ptr tidak pernah 0. untuk mengatasi ini, digunakan weak_ptr. Dalam kasus diatas dengan mengganti m_A di kelas A dan m_B dikelas B, menjadi boost::weak_ptr<kelasA> m_A; dan boost::weak_ptr<kelasB> m_B; . weak_ptr tidak memiliki overload operator →, jadi aaa-&gt;doSomething(); akan compile error. Jadi bagaimana ?. Untuk mengakses m_A atau m_B harus digunakan lock() .</p>
+
+<p>       m_A.lock() -&gt;doSomething();</p>
+
+<p>       m_B.lock() -&gt;doSomething();</p>
+
+<p> .lock() akan membuat local copy dari object yang ditunjuk oleh pointer. Jadi misalnya object yang ditunjuk sudah di delete tidak akan masalah. Misalnya:</p>
+
+<p> if(kelasB* temp= m_B.lock())
+{
+           //doing other thing here
+          //..
+          //..
+           temp-&gt;DoSomething();
+}</p>
+
+<p>Dimungkinkan sebelum temp-&gt;DoSomething() dipanggil, m_B sudah di delete atau m_B.reset() dipanggil. Namun disini, temp-&gt;DoSomething() tidak akan crash.</p>
+
+<p>Posting ini adalah tutorial awal pengenalan smart pointer. untuk memahaminya lebih dalam tentu harus menggunakanya secara intensif di setiap project. semua code diatas dites di visual c++ 2008. Jika ada kesalahan, silahkan komen. </p>
+
+<p>? : saat copy paste source code dari open office / notepad++ ke worpress editor identation nya jadi hilang. :|</p>
+
+<p>&lt; edi dot ermawan at gmail dot com &gt; . yogyakarta, 01/07/2012 .</p>
+
+
+	  
+
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "xedixermawan" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+      </div></article>
+
+
+	 </div>
+
+	 </div>
+       </div>
+     </div>
+
+ <div class="container footer">
+  <div class="row">
+    <div class="col-md-10">
+      <small class="text-muted">Copyright 2007-2019 XediXermawan</small>
+    </div>
+    <div class="col-md-2">
+      <small class="text-muted">   Hugo + Theme : <a href="https://github.com/leonhe/hugo_eiio">Eiio</a></small>
+      </div>
+   </div>
+ </div>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'google analytics code', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body></html>

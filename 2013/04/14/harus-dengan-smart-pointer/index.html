@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="XN4YmHgE76jTp2kNQ9qnsVSApl6yIQBzdyLe0BnbFks" />
+
+  <title>
+    
+    
+    Harus dengan smart pointer. - XediXermawan
+    
+  </title>
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/holder.min.js" type='text/javascript'></script>
+  <link rel="stylesheet" href="/highlight/styles/github-gist.css">  
+  <link rel="stylesheet" href="/css/style.css">
+
+  <link rel="canonical" href="https://xedixermawan.github.io/2013/04/14/harus-dengan-smart-pointer/">
+  
+  <script src="/highlight/highlight.pack.js" type='text/javascript'></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.3.0/highlightjs-line-numbers.min.js"></script>
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+    
+    hljs.initHighlightingOnLoad();
+    $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+    hljs.lineNumbersBlock(block);
+    });
+});
+  </script>
+   </head>
+   <body data-spy="scroll" data-target="#toc">
+     <header class="navbar navbar-default navbar-fixed-top" id="top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://xedixermawan.github.io/">XediXermawan</a>
+    </div>
+
+    
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+	
+	
+	<li  ><a href="/">Home</a></li>
+	
+	
+
+	
+
+	
+	
+	<li > <a href="https://xedixermawan.github.io/about/" >About</a></li>
+	
+
+	
+	
+	<li > <a href="https://xedixermawan.github.io/projects/" >Projects</a></li>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+      </ul>
+</nav>
+</header>
+
+     <div class="jumbotron masthead" role="main">
+       <div class="container">
+	 <div class="row">
+
+ 	   <div class="col-md-8 col-md-offset-2 ">
+	   
+<div class="panel panel-default">
+  <div class="panel-body">
+      <article id='post' >
+	<h1> Harus dengan smart pointer. </h1>
+	  
+	  <p>Simple tips, tetapi sangat  critical : Ada suatu keadaan dimana kita harus memakai smart pointer ! , Kapan?, salah satunya jika berurusan dengan DirectX API 11 .  lihat salah satu contoh dibawah ini :</p>
+
+<p>HRESULT CreateInputLayout(
+                                                             [in] const D3D11_INPUT_ELEMENT_DESC *pInputElementDescs,
+                                                             [in] vUINT NumElements,
+                                                             [in] const void *pShaderBytecodeWithInputSignature,
+                                                             [in] SIZE_T BytecodeLength,
+                                                             [out] ID3D11InputLayout **ppInputLayout
+                                                             );</p>
+
+<p>parameter ke-5 fungsi diatas mengharapkan variabel pointer to pointer. Kalau kita memakai raw pointer, bisa juga, seperti dibawah ini :
+       ID3D11InputLayout* my_input_layout ;
+       HRESULT hr = m_Device-&gt;CreateInputLayout( VertexPositionColorTexture::InputElements,
+              VertexPositionColorTexture::InputElementCount,
+              shaderByteCode, byteCodeLength,
+              &amp; my_input_layout
+              );
+m_DeviceContext-&gt;IASetInputLayout( my_input_layout );</p>
+
+<p>Tetapi ada masalah dengan kode diatas: terjadi memory leak, karena tidak ada yang men-delete variabel  my_input_layout. Bagaimana jika di delete manual setelah m_DeviceContext-&gt;IASetInputLayout( my_input_layout ); ?, program akan crash, karena data masih digunakan dan kita belum tau kapan itu selsai dipakai. Untuk mengatasi ini , kita bisa memakai ComPtr. Cara yang benar tanpa memory leak :
+ComPtr<ID3D11InputLayout>  my_input_layout;
+ HRESULT hr = m_Device-&gt;CreateInputLayout(   VertexPositionColorTexture::InputElements,
+       VertexPositionColorTexture::InputElementCount,
+       shaderByteCode, byteCodeLength,
+       &amp;my_input_layout
+       );
+m_DevContext-&gt;IASetInputLayout( my_input_layout.Get() );</p>
+
+<p>ComPtr adalah smart pointer dari namespace : Microsoft::WRL::ComPtr (header : #include <wrl\client.h> ) , ya ini adalah smart pointer dari Microsoft. saya mencoba mengganti dengan std::shared_ptr (STD smart pointer) , sayangnya tidak ada overload operator &ldquo;&amp;&rdquo; disana. atau dengan kata lain, kita harus memakai Comptr jika berurusan dengan manajemen DirectX resource. #BasedOnReal headache mencari memory leak</p>
+
+
+	  
+
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "xedixermawan" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+      </div></article>
+
+
+	 </div>
+
+	 </div>
+       </div>
+     </div>
+
+ <div class="container footer">
+  <div class="row">
+    <div class="col-md-10">
+      <small class="text-muted">Copyright 2007-2019 XediXermawan</small>
+    </div>
+    <div class="col-md-2">
+      <small class="text-muted">   Hugo + Theme : <a href="https://github.com/leonhe/hugo_eiio">Eiio</a></small>
+      </div>
+   </div>
+ </div>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'google analytics code', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body></html>

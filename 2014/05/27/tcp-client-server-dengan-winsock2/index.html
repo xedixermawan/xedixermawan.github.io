@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="XN4YmHgE76jTp2kNQ9qnsVSApl6yIQBzdyLe0BnbFks" />
+
+  <title>
+    
+    
+    TCP client server dengan winsock2 - XediXermawan
+    
+  </title>
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/holder.min.js" type='text/javascript'></script>
+  <link rel="stylesheet" href="/highlight/styles/github-gist.css">  
+  <link rel="stylesheet" href="/css/style.css">
+
+  <link rel="canonical" href="https://xedixermawan.github.io/2014/05/27/tcp-client-server-dengan-winsock2/">
+  
+  <script src="/highlight/highlight.pack.js" type='text/javascript'></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.3.0/highlightjs-line-numbers.min.js"></script>
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+    
+    hljs.initHighlightingOnLoad();
+    $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+    hljs.lineNumbersBlock(block);
+    });
+});
+  </script>
+   </head>
+   <body data-spy="scroll" data-target="#toc">
+     <header class="navbar navbar-default navbar-fixed-top" id="top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://xedixermawan.github.io/">XediXermawan</a>
+    </div>
+
+    
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+	
+	
+	<li  ><a href="/">Home</a></li>
+	
+	
+
+	
+
+	
+	
+	<li > <a href="https://xedixermawan.github.io/about/" >About</a></li>
+	
+
+	
+	
+	<li > <a href="https://xedixermawan.github.io/projects/" >Projects</a></li>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+      </ul>
+</nav>
+</header>
+
+     <div class="jumbotron masthead" role="main">
+       <div class="container">
+	 <div class="row">
+
+ 	   <div class="col-md-8 col-md-offset-2 ">
+	   
+<div class="panel panel-default">
+  <div class="panel-body">
+      <article id='post' >
+	<h1> TCP client server dengan winsock2 </h1>
+	  
+	  <p>Untuk keperluan selanjutnya di pengembangan game yang sedang saya buat ( :-o ), saya memerlukan program yang bisa di tweak lewat program lain. Dengan kata lain 2 program yang saling bisa berkomunikasi. Cara yang bisa dicapai , pakai file sharing atau dengan cara yang pas : pakai networking tcp / udp . Kalau mau buat program dengan kemampuan networking, cara yang bijaksana mungkin pakai 3rd party library yang sudah cukup populer dan reliable. Di antaranya, yang saya ketahui dan sepertinya sudah terbukti bagus :<a href="http://www.boost.org/doc/libs/1_55_0/doc/html/boost_asio.html"> boost-asio</a> ( free ), <a href="http://www.jenkinssoftware.com/download.html">raknet </a>( free untuk hobyist ), <a href="http://libevent.org/">libevent </a>( free ), etc. ada yang lain ?. Tapi saya pinginnya ndak usah pakai 3rd party lib, lagipula program yang akan saya buat cukup sederhana. winsock2 &amp; c/c++ . itu pilihannya. dan rasanya akan fun juga buat program nya hehe. Sebagai pemanasan awal dengan winsock2 ( saya pemula ) , saya perlu membuat program seperti ini : ada client dan server. client bisa kirim data ke server. server bisa kirim data ke client. jika client nya lebih dari satu, client bisa kirim data ke client yang lain. representasi dari program ini adalah program &ldquo;chatting&rdquo; :d .
+kemampuan server dalam keadaan running :
+- stand by &amp; listening kalau ada client mau membuat koneksi.
+- setiap ada client tersambung, server akan membuat handler yang menangani koneksi ke client tersebut berdasarkan socket id. ( dalam test program dipost ini, setiap ada client, server membuat thread baru, untuk menanganinya ).
+- server bisa kirim data ke client lewat console
+- ada &gt; 3 thread . 1 main thread: untuk menangkap command line dari user, 1 thread untuk &ldquo;stand by&rdquo; / connection acceptor, dan n thread , untuk n client yang tersambung. ya sebenarnya ndak benar ( bisa di optimize pakai thread pool mungkin nantinya ).</p>
+
+<p>kemampuan client dalam keadaan running :
+- connect ke server
+- kirim data ke server
+- ada 2 thread, 1 main thread, 1 client handler thread ( data receiver &amp; sender )
+- port hardcoded : 22536</p>
+
+<p>catatan :
+[1] saya membuat socket mode ke non-blocking , artinya pemanggilan fungsi2 winsock seperti connect, recv, send tidak akan mem-blok jalannya program loop. jadi non-blocking &amp; di thread lain selain main thread.
+u_long iMode = 1;  // iMode=0, blocking mode, default value
+ioctlsocket(ConnectSocket, FIONBIO, &amp;iMode);
+[2] untuk sharing data antar thread, saya menggunakan concurrent queue dari blog Anthony William <a href="http://www.justsoftwaresolutions.co.uk/threading/implementing-a-thread-safe-queue-using-condition-variables.html">http://www.justsoftwaresolutions.co.uk/threading/implementing-a-thread-safe-queue-using-condition-variables.html</a> yang saya modifikasi menggunakan std library ( awalnya pakai boost )
+[3] data yang dikirim berupa string.</p>
+
+<p>Beberapa pertanyaan :
+- apa cara di catatan no <a href="non-blocking &amp; di thread lain">1</a> efektif ?
+- saat memakai non-blocking mode, kalau mengirim data byte yang sangat besaarr , apakah semuanya terkirim langsung ATAU setelah beberapa call sent?</p>
+
+<p>Reference :
+-<a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms738545(v=vs.85).aspx">MSDN winsock2</a> ( belum semuanya saya baca :| )</p>
+
+<p>berikut code program chat client &amp; server yang saya buat :</p>
+
+<p><strong>(server code) : ~288 baris</strong></p>
+
+<p>[sourcecode language=&ldquo;cpp&rdquo;]
+// xedi xermawan &lt; edi.ermawan@gmail.com &gt;
+// May 27, 2014
+// tcp client server networking test using winsock2
+// server code</p>
+
+<p>#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+#include <winsock2.h>
+#include <ws2tcpip.h>
+#include <iostream>
+#include <thread>
+#include <mutex>
+#include <condition_variable>
+#include <vector>
+#include <queue></p>
+
+<p>#include &ldquo;concurrent_queue.hpp&rdquo;</p>
+
+<p>#pragma comment (lib, &ldquo;ws2_32.lib&rdquo;)</p>
+
+<p>#define DEFAULT_BUFLEN 512
+#define DEFAULT_PORT &ldquo;22536&rdquo;</p>
+
+<p>struct XDclient_info
+{
+    int socket_id;
+    struct sockaddr_in address;
+};</p>
+
+<p>class XDclient
+{
+public:
+    XDclient(XDclient_info&amp; clientinfo)
+    {
+        m_clientinfo = clientinfo;
+        m_recvbuflen = DEFAULT_BUFLEN;
+        m_islive = true;
+        m_thread = new std::thread(&amp;XDclient::run, this);
+    }
+    bool isLive()
+    {
+        return m_islive;
+    }
+    XDclient_info getinfo() const
+    {
+        return m_clientinfo;
+    }
+    ~XDclient()
+    {
+        m_thread-&gt;join();
+        delete m_thread;
+    }
+    std::string get_data()
+    {
+        std::string ret_str = &ldquo;&rdquo;;
+        if (!m_queue.empty())
+        {
+            m_queue.try_pop(ret_str);
+        }
+        return ret_str;
+    }
+private:
+    XDclient_info m_clientinfo;
+    std::thread* m_thread;
+    char m_recvbuf[DEFAULT_BUFLEN];
+    int m_recvbuflen;
+    bool m_islive;
+    concurrent_queue <a href="std::string">std::string</a> m_queue;</p>
+
+<pre><code>void run()
+{
+    while (m_islive)
+    {
+        unsigned int result_recv = recv( m_clientinfo.socket_id, m_recvbuf, m_recvbuflen, 0);
+        int nError = WSAGetLastError();
+        if (nError != WSAEWOULDBLOCK&amp;&amp;nError != 0)
+        {
+            printf(&quot;Client Error: %d\n&quot;, nError);
+            printf(&quot;Client disconnected: %d\n&quot;, nError);
+            m_islive = false;
+        }
+        else if (result_recv != INVALID_SOCKET &amp;&amp; result_recv!= 0)
+        {
+            m_recvbuf[result_recv] = '\0';
+            std::string str_send(m_recvbuf);
+            m_queue.push(str_send);
+        }
+        else if (result_recv == 0)
+        {
+            printf(&quot;Client disconnected: %d\n&quot;, nError);
+            m_islive = false;
+        }
+        // give a sleep, avoid high percentage cpu usage
+        Sleep(50);
+    }
+}
+</code></pre>
+
+<p>};</p>
+
+<p>class XDserver
+{
+public:
+    XDserver()
+    {
+        m_recvbuflen = DEFAULT_BUFLEN;
+        m_isrun = true;
+        m_thread = new std::thread(&amp;XDserver::run, this);
+    }
+    ~XDserver()
+    {
+        m_isrun = false;
+        m_thread-&gt;join();
+        delete m<em>thread;
+    }
+    void run()
+    {
+        WSADATA wsaData;
+        int result</em> ;</p>
+
+<pre><code>    SOCKET listen_socket = INVALID_SOCKET;
+    SOCKET client_socket = INVALID_SOCKET;
+
+    struct addrinfo *result = NULL;
+    struct addrinfo hints;
+
+    char recvbuf[DEFAULT_BUFLEN];
+    int recvbuflen = DEFAULT_BUFLEN;
+
+    // init
+    result_ = WSAStartup(MAKEWORD(2, 2), &amp;wsaData);
+    if (result_ != 0) {
+        printf(&quot;WSAStartup failed with error: %d\n&quot;, result_);
+    }
+
+    ZeroMemory(&amp;hints, sizeof(hints));
+    hints.ai_family = AF_INET;
+    hints.ai_socktype = SOCK_STREAM;
+    hints.ai_protocol = IPPROTO_TCP;
+    hints.ai_flags = AI_PASSIVE;
+
+    // get info address for host
+    result_ = getaddrinfo(NULL, DEFAULT_PORT, &amp;hints, &amp;result);
+    if (result_ != 0) {
+        printf(&quot;getaddrinfo failed with error: %d\n&quot;, result_);
+        WSACleanup();
+    }
+    // create socket
+    listen_socket = socket(result-&gt;ai_family, result-&gt;ai_socktype, result-&gt;ai_protocol);
+    if (listen_socket == INVALID_SOCKET) {
+        printf(&quot;socket failed. error code : %ld\n&quot;, WSAGetLastError());
+        freeaddrinfo(result);
+        WSACleanup();
+    }
+    // set-up socket listening
+    result_ = bind(listen_socket, result-&gt;ai_addr, (int)result-&gt;ai_addrlen);
+    if (result_ == SOCKET_ERROR) {
+        printf(&quot;bind failed. error code: %d\n&quot;, WSAGetLastError());
+        freeaddrinfo(result);
+        closesocket(listen_socket);
+        WSACleanup();
+        m_isrun = false;
+    }
+    if (!m_isrun)
+        return;
+    freeaddrinfo(result);
+
+    result_ = listen(listen_socket, SOMAXCONN);
+    if (result_ == SOCKET_ERROR) {
+        printf(&quot;listen failed. error code: %d\n&quot;, WSAGetLastError());
+        closesocket(listen_socket);
+        WSACleanup();
+    }
+    // set to non-blocking mode
+    u_long iMode = 1;
+    ioctlsocket(listen_socket, FIONBIO, &amp;iMode);
+    int t_clientAddressLen = sizeof(struct sockaddr_in);
+    struct sockaddr_in t_clientAddress;
+    // server loop
+    while (m_isrun)
+    {
+        // check new client connected
+        client_socket = accept(listen_socket, (struct sockaddr *)&amp;t_clientAddress, &amp;t_clientAddressLen);
+        int nError = WSAGetLastError();
+        if (nError != WSAEWOULDBLOCK&amp;&amp;nError != 0)
+        {
+            // todo :
+        }
+        else if (client_socket != INVALID_SOCKET)
+        {
+            XDclient_info clientinfo;
+            clientinfo.address = t_clientAddress;
+            clientinfo.socket_id = client_socket;
+
+            XDclient* clientnew = new XDclient(clientinfo);
+            m_clients.push_back(clientnew);
+            if (client_socket == INVALID_SOCKET) {
+                printf(&quot;accept failed. error code: %d\n&quot;, WSAGetLastError());
+            }
+        }
+        // check client live
+        for (std::vector&lt; XDclient* &gt;::iterator it = m_clients.begin(); it != m_clients.end(); it++)
+        {
+            if (!(*it)-&gt;isLive())
+            {
+                delete *it;
+                m_clients.erase(it);
+                break;
+            }
+        }
+        // check if there are data need to be sent
+        if (!m_queue.empty())
+        {
+            std::string str = &quot;&quot;;
+            m_queue.try_pop(str );
+            std::cout &lt;&lt; &quot; send data: &quot; &lt;&lt; str.c_str() &lt;&lt;std::endl;
+            for (std::vector&lt; XDclient* &gt;::iterator it = m_clients.begin(); it != m_clients.end(); it++)
+            {
+                int m_recvbuflen;
+                int sendresult = send((*it)-&gt;getinfo().socket_id, str.c_str(), str.length(), 0);
+                if (sendresult == SOCKET_ERROR)
+                {
+                    std::cout &lt;&lt; &quot; send failed. error code &quot; &lt;&lt; sendresult &lt;&lt; std::endl;
+                }
+            }
+        }
+        for (std::vector&lt; XDclient* &gt;::iterator it = m_clients.begin(); it != m_clients.end(); it++)
+        {
+            std::string str_data = (*it)-&gt;get_data();
+            if (str_data != &quot;&quot;)
+            {
+                for (std::vector&lt; XDclient* &gt;::iterator it2 = m_clients.begin(); it2 != m_clients.end(); it2++)
+                {
+                    if (*it != *it2)
+                    {
+                        int sendresult = send((*it2)-&gt;getinfo().socket_id, str_data.c_str(), str_data.length(), 0);
+                        if (sendresult == SOCKET_ERROR)
+                        {
+                            std::cout &lt;&lt; &quot; send failed. error code &quot; &lt;&lt; sendresult &lt;&lt; std::endl;
+                        }
+                    }
+                }
+            }
+        }
+        // give a sleep, avoid high percentage cpu usage
+        Sleep(50);
+    }
+}
+void senddata(std::string&amp; str)
+{
+    m_queue.push(str);
+}
+bool isLive()
+{
+    return m_isrun;
+}
+</code></pre>
+
+<p>private:
+    char m_recvbuf[DEFAULT_BUFLEN];
+    int m_recvbuflen;
+    bool m_isrun;
+    std::thread* m_thread;
+    std::vector&lt; XDclient* &gt; m_clients;
+    concurrent_queue <a href="std::string">std::string</a> m_queue;
+};</p>
+
+<p>class Games
+{
+};</p>
+
+<p>int __cdecl main(int argc, char** argv)
+{
+    XDserver* server = new XDserver();
+    std::cout &lt;&lt; &ldquo;welcome to the server&rdquo;&lt;<std::endl;
+    std::cout << "type an input to broadcast to all client. ""exit"" to close program " << std::endl;
+    while (server->isLive())
+    {
+        char str_in[512]=&ldquo;&rdquo;;
+        std::cin &gt;&gt; str_in;
+        std::string str_input(str_in);
+        server-&gt;senddata(&ldquo;server|&rdquo;+str_input);
+        if (!str_input.compare(&ldquo;exit&rdquo;))
+        {
+            break;
+        }
+    }
+    delete server;
+    std::cout &lt;&lt; &ldquo;server shutdown&rdquo; &lt;&lt; std::endl;
+    system(&ldquo;pause&rdquo;);
+    return 0;
+}
+[/sourcecode]</p>
+
+<p><strong>(client  code) :  ~181 baris</strong></p>
+
+<p>[sourcecode language=&ldquo;cpp&rdquo;]
+// xedi xermawan &lt; edi.ermawan@gmail.com &gt;
+// May 27, 2014
+// tcp client server networking test using winsock2
+// client code</p>
+
+<p>#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+#include <winsock2.h>
+#include <ws2tcpip.h>
+#include <iostream>
+#include <thread>
+#include <mutex>
+#include <condition_variable>
+#include <vector>
+#include <queue>
+#include <sstream></p>
+
+<p>#include &ldquo;concurrent_queue.hpp&rdquo;</p>
+
+<p>// link to winsock2 static lib
+#pragma comment (lib, &ldquo;ws2_32.lib&rdquo;)</p>
+
+<p>#define DEFAULT_BUFLEN 512
+#define DEFAULT_PORT &ldquo;22536&rdquo;</p>
+
+<p>class XDclientapp
+{
+public:
+    XDclientapp(std::string&amp; clientname, std::string&amp; serveraddresss)
+    {
+        m_server_address = serveraddresss;
+        m_client_name    = clientname;
+        m_recvbuflen = DEFAULT_BUFLEN;
+        m_isrun = true;
+        m_thread = new std::thread(&amp;XDclientapp::run, this);
+    }
+    ~XDclientapp()
+    {
+        m_isrun = false;
+        m_thread-&gt;join();
+        delete m_thread;
+    }
+    void run()
+    {
+        WSADATA wsaData;
+        SOCKET ConnectSocket = INVALID_SOCKET;
+        struct addrinfo *result = NULL,
+            *ptr = NULL,
+            hints;
+        char *sendbuf = &ldquo;this is a test&rdquo;;
+        char recvbuf[DEFAULT_BUFLEN];
+        int iResult;
+        int recvbuflen = DEFAULT_BUFLEN;</p>
+
+<pre><code>    // Initialize Winsock
+    iResult = WSAStartup(MAKEWORD(2, 2), &amp;wsaData);
+    if (iResult != 0) {
+        printf(&quot;WSAStartup failed with error: %d\n&quot;, iResult);
+    }
+
+    ZeroMemory(&amp;hints, sizeof(hints));
+    hints.ai_family = AF_UNSPEC;
+    hints.ai_socktype = SOCK_STREAM;
+    hints.ai_protocol = IPPROTO_TCP;
+
+    // Resolve the server address and port
+    iResult = getaddrinfo( m_server_address.c_str(), DEFAULT_PORT, &amp;hints, &amp;result);
+    if (iResult != 0) {
+        printf(&quot;getaddrinfo failed with error: %d\n&quot;, iResult);
+        WSACleanup();
+    }
+
+    // Attempt to connect to an address until one succeeds
+    for (ptr = result; ptr != NULL; ptr = ptr-&gt;ai_next) {
+
+        // Create a SOCKET for connecting to server
+        ConnectSocket = socket(ptr-&gt;ai_family, ptr-&gt;ai_socktype,
+            ptr-&gt;ai_protocol);
+        if (ConnectSocket == INVALID_SOCKET) {
+            printf(&quot;socket failed with error: %ld\n&quot;, WSAGetLastError());
+            WSACleanup();
+        }
+
+        // Connect to server.
+        iResult = connect(ConnectSocket, ptr-&gt;ai_addr, (int)ptr-&gt;ai_addrlen);
+        if (iResult == SOCKET_ERROR) {
+            closesocket(ConnectSocket);
+            ConnectSocket = INVALID_SOCKET;
+            continue;
+        }
+        break;
+    }
+    // set to non-blocking mode
+    u_long iMode = 1;
+    ioctlsocket(ConnectSocket, FIONBIO, &amp;iMode);
+    freeaddrinfo(result);
+    int errorid;
+    while (1)
+    {
+        unsigned int result_recv = recv(ConnectSocket, recvbuf, recvbuflen, 0);
+
+        errorid = WSAGetLastError();
+        if (errorid != WSAEWOULDBLOCK &amp;&amp; errorid != 0)
+        {
+            printf(&quot;Client disconnected: %d\n&quot;, errorid);
+            break;
+        }
+        else if (result_recv != INVALID_SOCKET &amp;&amp; result_recv != 0)
+        {
+            // printf(&quot;Bytes received: %d\n&quot;, result_recv);
+            recvbuf[result_recv] = '\0';
+            printf(&quot;\n%s\n&quot;, recvbuf);
+            std::cout &lt;&lt; m_client_name.c_str() &lt;&lt; &quot;(You) : &quot;;
+        }
+        else if (result_recv == 0)
+        {
+            printf(&quot;Client disconnected: %d\n&quot;, errorid);
+            break;
+        }
+
+        // check if there are data need to be sent
+        if (!m_queue.empty())
+        {
+            std::string str = &quot;&quot;;
+            m_queue.try_pop(str);
+            int m_recvbuflen;
+            int sendresult = send( ConnectSocket , str.c_str(), str.length(), 0);
+            if (sendresult == SOCKET_ERROR)
+            {
+                std::cout &lt;&lt; &quot; send failed. error code &quot; &lt;&lt; sendresult &lt;&lt; std::endl;
+            }
+        }
+        // give a sleep, avoid high percentage cpu usage
+        Sleep(50);
+    }
+}
+void senddata(std::string&amp; str)
+{
+    std::string pstr = m_client_name + &quot; : &quot; + str;
+    m_queue.push(pstr);
+}
+</code></pre>
+
+<p>private:
+    char m_recvbuf[DEFAULT_BUFLEN];
+    int m_recvbuflen;
+    bool m_isrun;
+    std::thread* m_thread;
+    concurrent_queue <a href="std::string">std::string</a> m_queue;
+    std::string m_client_name;
+    std::string m_server_address;
+};
+//&ndash;
+int __cdecl main(int argc,char** argv)
+{
+    std::string clientname = &ldquo;&rdquo;;
+    std::string serveraddress = &ldquo;localhost&rdquo;;
+    std::cout &lt;&lt; &ldquo;Please enter your name: &ldquo;;
+    std::getline(std::cin, clientname);</p>
+
+<pre><code>if (argc &gt; 1)
+{
+    serveraddress = argv[1];
+}
+XDclientapp* client = new XDclientapp(clientname, serveraddress);
+std::cout &lt;&lt; &quot;welcome to the chat client&quot; &lt;&lt; std::endl;
+std::cout &lt;&lt; &quot;type an input to broadcast to all client. &quot;&quot;exit&quot;&quot; to close program &quot; &lt;&lt; std::endl;
+std::cout &lt;&lt; &quot;---&quot; &lt;&lt; std::endl;
+while (1)
+{
+    std::string str_input = &quot;&quot;;
+    std::cout &lt;&lt; clientname.c_str() &lt;&lt; &quot;(You) : &quot;;
+    std::getline(std::cin, str_input);
+
+    client-&gt;senddata(str_input);
+    if (!str_input.compare(&quot;exit&quot;))
+    {
+        break;
+    }
+}
+delete client;
+return 0;
+</code></pre>
+
+<p>}
+[/sourcecode]</p>
+
+<p>Screenshoot :
+<a href="http://offground.files.wordpress.com/2014/05/chatprogram.jpg"><img src="http://offground.files.wordpress.com/2014/05/chatprogram.jpg?w=300" alt="chatprogram" />
+</a>
+<a href="https://drive.google.com/file/d/0B-RboHdiMWB1dEtQZzUzNTMwdUU/edit?usp=sharing">Download </a>: source + vs project + binary ( hanya 39 kb ! ) .</p>
+
+
+	  
+
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "xedixermawan" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+      </div></article>
+
+
+	 </div>
+
+	 </div>
+       </div>
+     </div>
+
+ <div class="container footer">
+  <div class="row">
+    <div class="col-md-10">
+      <small class="text-muted">Copyright 2007-2019 XediXermawan</small>
+    </div>
+    <div class="col-md-2">
+      <small class="text-muted">   Hugo + Theme : <a href="https://github.com/leonhe/hugo_eiio">Eiio</a></small>
+      </div>
+   </div>
+ </div>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'google analytics code', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body></html>

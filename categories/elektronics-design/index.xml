@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Elektronics Design on XediXermawan</title>
+    <link>https://xedixermawan.github.io/categories/elektronics-design/</link>
+    <description>Recent content in Elektronics Design on XediXermawan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <copyright>Copyright 2007-2019 XediXermawan</copyright>
+    <lastBuildDate>Sun, 28 Dec 2008 12:54:43 +0000</lastBuildDate>
+    
+	<atom:link href="https://xedixermawan.github.io/categories/elektronics-design/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hello World dengan WinAVR</title>
+      <link>https://xedixermawan.github.io/2008/12/28/hello-world-dengan-winavr/</link>
+      <pubDate>Sun, 28 Dec 2008 12:54:43 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2008/12/28/hello-world-dengan-winavr/</guid>
+      <description>Just a documentation.
+Minggu Desember 14 2008/Surabaya
+&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- start of doc &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-
+WinAVR dengan IDE pemrograman Code Block Beberapa software open source yang dibutuhkan:
+ 1. GNU AVR GCC Compiler, disini digunakan WinAVR20080610 (versi sesuai tanggal update terakhir)   Download http://winavr.sourceforge.net/ (sekitar 22 MB) Install. (selalu ingatlah tombol Next, Accept, Agree, dan OK :-) ) .Pilih saja direktori instalasi default agar mudah diingat, biasanya di dir utama= C:\WinAVR-20080610 Code::Block, sebuah IDE pemrograman untuk berbagai macam keperluan pemrograman , salah satunya bisa untuk IDE pemrograman mikrokontroler keluarga AVR.</description>
+    </item>
+    
+    <item>
+      <title>Embedded Web Server untuk Monitoring dan Data Logging.</title>
+      <link>https://xedixermawan.github.io/2008/11/21/embedded-web-server-untuk-monitoring-dan-data-logging/</link>
+      <pubDate>Fri, 21 Nov 2008 12:15:54 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2008/11/21/embedded-web-server-untuk-monitoring-dan-data-logging/</guid>
+      <description>Sekarang ini banyak sekali macam Ethernet modul yang ada di pasaran yang sudah jadi dan pemakaiannya relatif mudah, seperti varian produk dari Wiznet. Tentu yang sudah jadi itu, harganya relatif lebih mahal dibanding kalau kita merakit sendiri !! . ENC28J60 dari Microchip bisa sebagai pilihan. IC ini adalah sebuah ethernet controller yang didalamnya terdapat Physical layer dan MAC
+Berikut spesifikasi ringkas:
+- IEEE 802.3 compatible Ethernet controller
+- SPI Interface with clock speeds up to 20 MHz</description>
+    </item>
+    
+    <item>
+      <title>Interface barcode ke mikrokontroler AVR atmega.</title>
+      <link>https://xedixermawan.github.io/2008/11/21/interface-barcode-ke-mikrokontroler-avr-atmega/</link>
+      <pubDate>Fri, 21 Nov 2008 12:00:26 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2008/11/21/interface-barcode-ke-mikrokontroler-avr-atmega/</guid>
+      <description>Barcode Scanner banyak digunakan di toko-toko retail untuk men-scan barang barang yang akan dibayar pembeli di kasir atau digunakan di perpustakaan untuk mempercepat petugas mendaftar buku-buku yang akan dipinjam. Dengan adanya alat ini semuanya menjadi cepat dan mudah, karena setiap jenis barang memiliki kode barcode sendiri yang unik sehingga bisa dikelompokkan dengan mudah. Seperti halnya keyboard dan mouse , terdapat banyak macam tipe barcode scanner berdasarkan jenis komunikasinya, misalnya barcode scanner serial, PS/2, dan USB.</description>
+    </item>
+    
+    <item>
+      <title>migrasi ke avr-gcc</title>
+      <link>https://xedixermawan.github.io/2008/06/24/migrasi-ke-avr-gcc/</link>
+      <pubDate>Tue, 24 Jun 2008 04:15:13 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2008/06/24/migrasi-ke-avr-gcc/</guid>
+      <description>selama ini menggunakan code vision untuk mrogram mikro,dan kebnyakan orang-orang disini juga memakainya,walaupun ada juga yang msih pakai assembly murni (so rarely),namun codevision adalah yang mayoritas.code vision itu mudah,ada code wizard,dan tentu saja ini bukan freeware.lalu apakah semua orang disini membayar untuk itu?, tidak tahu lah.. . :-P .di sisi lain ada yang freeware, yaitu win-avr (avr-gcc). rasa-rasanya sejak dulu memang ingin mencoba yang satu ini.dan sekarang aku telah mnggunakanya penuh.</description>
+    </item>
+    
+    <item>
+      <title>rute menuju mana</title>
+      <link>https://xedixermawan.github.io/2008/04/12/rute-menuju-mana/</link>
+      <pubDate>Sat, 12 Apr 2008 03:58:13 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2008/04/12/rute-menuju-mana/</guid>
+      <description>masih merasa ada yang hilang</description>
+    </item>
+    
+    <item>
+      <title>ADC pada uC AVR ATMEGA16(dan untuk type yang lain),</title>
+      <link>https://xedixermawan.github.io/2007/12/30/adc-pada-uc-avr-atmega16dan-untuk-type-yang-lain/</link>
+      <pubDate>Sun, 30 Dec 2007 09:39:10 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2007/12/30/adc-pada-uc-avr-atmega16dan-untuk-type-yang-lain/</guid>
+      <description>26/12/07, tft-LGoffice Bekasi Atmega16 (dan sejenisnya) memiliki fitur ADC sebanyak 8 channel dengan resolusi 10-bit Register yang digunakan untuk setting ADC ini adalah: +&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-+ ADCSR | ADEN | ADSC | ADATE | ADIF | ADIE | ADPS2 | ADPS1 | ADPS0 | +&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;+ 7 6 5 4 3 2 1 0 ADEN : 1=adc enable, 0=adc turn off ADSC : 1:mulai konversi,0:konversi belum terjadi ADATE:1:auto trigger di aktifkan ,trigger berasal; dari sinyal yang dipilih(set pada register SFIOR bit ADTS).</description>
+    </item>
+    
+    <item>
+      <title>Timer di AVR</title>
+      <link>https://xedixermawan.github.io/2007/09/28/timer-di-avr/</link>
+      <pubDate>Fri, 28 Sep 2007 01:52:00 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2007/09/28/timer-di-avr/</guid>
+      <description>Timer dalam embendded system sangat banyak kegunaannya.Itulah karenanya setiap mikrokontroler terdapat fitur timer. Mikrokontroller AVR keluaran Atmel memiliki beberapa timer(ATmega16 dalam hal ini,tipe lain yang lebih tinggi sama ,kecuali penambahan jumlah timernya),diantaranya timer0(8 bit),timer1(16 bit),dan timer2(8 bit).
+Timer0 dan timer2(8 bit).
+timer ini menghitung maksimal 255 hitungan.dimana periode setiap hitungan(detaknya) tergantung dari setting prescaler-nya. Untuk mengatur timer mode operasi apa yang digunakan dan mengatur prescaler digunakan register TCCRx(x=0,2).TCCRx adalah register 8 bit sebagai berikut:</description>
+    </item>
+    
+    <item>
+      <title>AVR development board, memulai AVR dengan otodidak</title>
+      <link>https://xedixermawan.github.io/2007/08/31/avr-development-boardmemulai-avr-dengan-otodidak/</link>
+      <pubDate>Fri, 31 Aug 2007 02:46:28 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2007/08/31/avr-development-boardmemulai-avr-dengan-otodidak/</guid>
+      <description>Memulai belajar mikrocontroller, langkah pertama adalah membuat dulu board-development nya. Dapat juga dengan mencoba-coba fitur nya dulu dengan software simulasi mikrokontroler seperti Proteus. Saya sendiri belum pernah memakai. Menurutku kalau belajar ya langsung saja secara real , pengalaman nyata memprogram dan melihat hasil itu sangat berbeda dengan hanya simulasi, setidaknya mendapat tingkat semangat yang beda.
+Board Avrku:
+
+fitur board:
+-Avr Atmega 16 atau 32 -8 led simulator
+-16x2 LCD -Serial Com</description>
+    </item>
+    
+    <item>
+      <title>Ilmu Teknik</title>
+      <link>https://xedixermawan.github.io/2007/06/15/ilmu-teknik/</link>
+      <pubDate>Fri, 15 Jun 2007 12:40:24 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2007/06/15/ilmu-teknik/</guid>
+      <description>Ternyata semua ilmu teknik itu dapat diringkas hanya dalam beberapa kata saja: -logika -imanjinasi untuk mengembangkan logika yang kaku
+Dan sebagian besar Teknik Elektro itu melibatkan logika untuk pemrograman. Tapi ada sedikit pengecualian, yaitu elektronika analog. Walaupun logika sudah benar, dengan pengecekan beberapa kali, belum tentu bisa!! . (tentu saja tidak mistis disini, :D )
+Tapi elka analog itu bukan ilmu mistis, tetep saja ilmu logis yang dapat dijelaskan
+berbeda dengan ilmu:</description>
+    </item>
+    
+    <item>
+      <title>Op Amp</title>
+      <link>https://xedixermawan.github.io/2007/05/31/op-amp/</link>
+      <pubDate>Thu, 31 May 2007 08:43:13 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2007/05/31/op-amp/</guid>
+      <description>Beberapa hari ini saya mencoba membuat amplifier, dengan penguatan 1000 kali. Agar mudah diselesaikan, saya menggunakan Op Amp. Bagaimana hasilnya? Amplifiernya jalan, tapi tidak menunjukkan penguatan yang diinginkan.
+Penguatannya tidak seribu kali. Saya menggunakan input sinyal kotak frekuensi 40 khz, sekitar 500mV (sebenarnya ini terlalu besar), output-nya cuma sekitar 2 volt. Ketika frekuensi input saya turunkan penguatannya semakin besar. Dan diturunkan dalam orde pengali 100k, 10k, 1k, hz. Apa frekuensi 40khz sudah dianggap -frekuensi tinggi- oleh opamp ?</description>
+    </item>
+    
+  </channel>
+</rss>

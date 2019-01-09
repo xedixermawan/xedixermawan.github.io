@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mobile Apps on XediXermawan</title>
+    <link>https://xedixermawan.github.io/categories/mobile-apps/</link>
+    <description>Recent content in Mobile Apps on XediXermawan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <copyright>Copyright 2007-2019 XediXermawan</copyright>
+    <lastBuildDate>Sat, 08 Jul 2017 04:34:22 +0000</lastBuildDate>
+    
+	<atom:link href="https://xedixermawan.github.io/categories/mobile-apps/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Aplikasi Android pencatat keuangan</title>
+      <link>https://xedixermawan.github.io/2017/07/08/aplikasi-android-pencatat-keuangan/</link>
+      <pubDate>Sat, 08 Jul 2017 04:34:22 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2017/07/08/aplikasi-android-pencatat-keuangan/</guid>
+      <description>Aplikasi yang cukup membosankan secara teknis untuk dibuat, namun saya cukup tertarik untuk membuatnya, karena saya juga ingin mencatat pengeluaran ( waktu tertentu saja, tidak bisa kalau rajin ) . Aplikasi untuk mencatat pengeluaran dan pemasukan, dengan filosofi desain yang sama : simple dan mudah digunakan .
+ Aplikasi Catatan Keuangan Harian
+release 13 Juni 2017
+saya release 13 Juni 2017, belum sampai 1 bulan ( hari ini 8 juli 2017 ), sudah terdownload &amp;gt;1000 pengguna.</description>
+    </item>
+    
+    <item>
+      <title>New Design Calendar App</title>
+      <link>https://xedixermawan.github.io/2017/03/07/new-design-calendar-app/</link>
+      <pubDate>Tue, 07 Mar 2017 07:57:33 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2017/03/07/new-design-calendar-app/</guid>
+      <description>Selamat tahun baru 2017 !
+ </description>
+    </item>
+    
+    <item>
+      <title>Game &amp; App Januari 2016 - April 2016</title>
+      <link>https://xedixermawan.github.io/2016/04/15/game-app-januari-2016-april-2016/</link>
+      <pubDate>Fri, 15 Apr 2016 13:12:33 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2016/04/15/game-app-januari-2016-april-2016/</guid>
+      <description>Brain Rush : Math and Memory . game simple ( baik game nya sendiri maupun secara technical ) yang melibatkan matematik aritmetik &amp;amp; gambar. di game ini pertama kalinya saya mencoba Google Play Game Services untuk meranking player yang login pakai account G+ mereka (Leaderboard). sebenarnya ada juga, Achievement, namun nggak saya pakai.
+ Photo Place , ini adalah sebuah aplikasi demo saja dan tidak berguna. di aplikasi ini, saya mencoba menggunakan Google Place API dan Google Map.</description>
+    </item>
+    
+    <item>
+      <title>App Android saya 5 bulan terakhir ( Agust 2015 - Des 2015 )</title>
+      <link>https://xedixermawan.github.io/2015/12/04/aplikasi-android-saya/</link>
+      <pubDate>Fri, 04 Dec 2015 06:15:03 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2015/12/04/aplikasi-android-saya/</guid>
+      <description>Setelah tertunda beberapa lama , akhirnya saya memiliki google developer account di bulan agustus 2015. Bulan juli saya mulai membuat aplikasi pertama saya yang akan saya upload ke store. dan saat saya mempunyai account-nya, saya bisa langsung upload apk nya. aplikasi pertama saya adalah Transjakarta Busway navigator, android app untuk mencari rute-rute transjakarta. ide app ini muncul karena ketika saya datang ke Jakarta, dan sama sekali blank tentang jakarta, saya memerlukan app semacam ini.</description>
+    </item>
+    
+    <item>
+      <title>Galeri kalender 2015 2016 ( Indonesia )</title>
+      <link>https://xedixermawan.github.io/2014/11/16/galeri-kalender-2015-indonesia/</link>
+      <pubDate>Sun, 16 Nov 2014 17:56:12 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2014/11/16/galeri-kalender-2015-indonesia/</guid>
+      <description>Jakarta, November 16, 2014
+Beberapa galeri kalender 2015 Indonesia ( dengan pasaran jawa : pon , pahing , kliwon , legi , wage )
+download : LINK
+ Kalender 2015 Indonesia
+kalender 2015 Indonesia yang lain : LINK
+dibuat dengan program
+Update Oktober 2015 :
+saya membuat banyak sekali kalender 2016 dengan berbagai macam type font. bisa didownload disini : https://www.flickr.com/photos/xediview/21978475394/
+Update Desember 2015 :
+Beberapa minggu lalu saya membuat kalender Indonesia versi Android.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="XN4YmHgE76jTp2kNQ9qnsVSApl6yIQBzdyLe0BnbFks" />
+
+  <title>
+    
+    
+    Belajar : Heap dan Stack - XediXermawan
+    
+  </title>
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/holder.min.js" type='text/javascript'></script>
+  <link rel="stylesheet" href="/highlight/styles/github-gist.css">  
+  <link rel="stylesheet" href="/css/style.css">
+
+  <link rel="canonical" href="https://xedixermawan.github.io/2010/05/15/heap-and-stack/">
+  
+  <script src="/highlight/highlight.pack.js" type='text/javascript'></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.3.0/highlightjs-line-numbers.min.js"></script>
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+    
+    hljs.initHighlightingOnLoad();
+    $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+    hljs.lineNumbersBlock(block);
+    });
+});
+  </script>
+   </head>
+   <body data-spy="scroll" data-target="#toc">
+     <header class="navbar navbar-default navbar-fixed-top" id="top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://xedixermawan.github.io/">XediXermawan</a>
+    </div>
+
+    
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+	
+	
+	<li  ><a href="/">Home</a></li>
+	
+	
+
+	
+
+	
+	
+	<li > <a href="https://xedixermawan.github.io/about/" >About</a></li>
+	
+
+	
+	
+	<li > <a href="https://xedixermawan.github.io/projects/" >Projects</a></li>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+      </ul>
+</nav>
+</header>
+
+     <div class="jumbotron masthead" role="main">
+       <div class="container">
+	 <div class="row">
+
+ 	   <div class="col-md-8 col-md-offset-2 ">
+	   
+<div class="panel panel-default">
+  <div class="panel-body">
+      <article id='post' >
+	<h1> Belajar : Heap dan Stack </h1>
+	  
+	  
+
+<p>edi ermawan, <a href="http://offground.wordpress.com">http://offground.wordpress.com</a></p>
+
+<p>&mdash;&mdash;&mdash; May 15, 2010 &mdash;&mdash;&ndash;
+Ketika suatu program berjalan, processor (– atau lebih tepatnya 80x86 ? &ndash;) mengalokasikan memory untuk program tersebut di RAM, yang terbagi menjadi empat bagian yaitu Code Segment (CS), Stack Segment (SS), Data Segment (DS), dan Extra Segment (ES).</p>
+
+<p><a href="http://offground.files.wordpress.com/2010/05/stack_head_offgnd.png"><img src="http://offground.files.wordpress.com/2010/05/stack_head_offgnd.png?w=300" alt="" />
+</a></p>
+
+<p>Code Segment menyimpan semua kode dan instruksi-instruksi processor yang digunakan oleh program tersebut. Semua data di memori ini bersifat read-only.</p>
+
+<p>Stack Segment teralokasi untuk berbagai keperluan, seperti menyimpan return address dari pemanggilan fungsi, menyimpan parameter-parameter yang dilewatkan ke fungsi, menyimpan variabel lokal di dalam fungsi, dll. Penambahan dan pengurangan memory stack menggunakan metode last in first out (LIFO). Misalnya, saat suatu fungsi dipanggil, seketika itu variabel lokal di dalam fungsi tersebut dialokasikan di stack (push), dan ketika fungsi sudah berakhir, variabel lokal di-dealokasikan (pop).  Walaupun proses LIFO di stack terjadi otomatis, di stack bisa terjadi overflow, atau yang disebut stack overflow. Stack overflow terjadi misalnya ketika terjadi pemanggilan recursive tak berujung (infinite recursive). Contoh:</p>
+
+<p>[sourcecode language=&ldquo;cpp&rdquo;]
+void functionA
+{
+ int A[1000];
+ funtionA;
+}
+[/sourcecode]</p>
+
+<p>Data Segment terbagi menjadi 3 bagian yaitu Data, BSS dan Heap. Namun di beberapa literatur, data segment disebut juga heap, ini perlu diketahui agar tidak membingungkan.</p>
+
+<h1 id="data-berisi-variabel-variabel-program-yang-langsung-diisi-saat-deklarasi-misalnya">Data berisi variabel-variabel program yang langsung diisi saat deklarasi, misalnya:</h1>
+
+<p>[sourcecode language=&ldquo;cpp&rdquo;]
+ int i=10;
+ char *str=&lsquo;isi string&rsquo;;
+[/sourcecode]</p>
+
+<h1 id="bss-berisi-variabel-global-dan-variabel-static-yang-tidak-terinisialisasi-misal">BSS berisi variabel global dan variabel static yang tidak terinisialisasi. Misal:</h1>
+
+<p>[sourcecode language=&ldquo;cpp&rdquo;]
+ int I;
+ char *str;
+[/sourcecode]</p>
+
+<h1 id="heap-adalah-bagian-memori-yang-dapat-dialokasikan-secara-dinamis-misalnya-di-c-c-menggunakan-malloc-new-dan-juga-dapat-di-dealokasikan-namun-seandainya-suatu-memori-yang-teralokasi-dan-tidak-di-dealokasi-secara-manual-melalui-baris-program-maka-memori-yang-teralokasi-tersebut-akan-tetap-terjaga-sampai-program-tersebut-ditutup-kesimpulannya-pembuat-program-lah-yang-bertanggung-jawab-dengan-apa-yang-terjadi-di-heap-kesimpulan-lainnya-jika-di-stack-saja-bisa-terjadi-overflow-maka-di-heap-lebih-mungkin-lagi-terutama-untuk-bahasa-pemrograman-yang-tidak-memiliki-garbage-collector-seperti-c-c-delphi-dll">Heap adalah bagian memori yang dapat dialokasikan secara dinamis, misalnya di C/C++  menggunakan malloc, new, dan juga dapat di-dealokasikan. Namun seandainya, suatu memori yang teralokasi dan tidak di-dealokasi secara manual  (melalui baris program), maka memori yang teralokasi tersebut akan tetap terjaga sampai program tersebut ditutup. Kesimpulannya, pembuat program-lah yang bertanggung jawab dengan apa yang terjadi di heap. Kesimpulan lainnya, jika di stack saja bisa terjadi overflow, maka di heap lebih mungkin lagi. Terutama untuk  bahasa pemrograman yang tidak memiliki garbage collector seperti C/C++, Delphi dll.</h1>
+
+<p>Dalam sebuah aplikasi, buffer overflow (stack atau heap overflow) atau aplikasi yang dapat di buffer overflow , bisa membuat aplikasi tersebut crash dan tidak aman. (will be continued). :)</p>
+
+<p>&mdash;&mdash;&mdash; Nov 11, 2012 Updated&mdash;&mdash;&ndash; </p>
+
+<p>Di setiap program komputer yang berjalan, stack dialokasi di setiap thread. Jadi suatu aplikasi men-sharing heap yang sama, dan setiap thread memiliki stack-nya sendiri-sendiri. Kapan stack di-alokasikan? : saat setiap kali thread dibuat dan besarnya terbatas tergantung OS yang digunakan. di Ms-Windows ,<a href="http://msdn.microsoft.com/en-us/library/8cxs58a6.aspx"> nilai default 1MB</a> , Linux  mungkin berbeda. Jadi bisa di gambarkan sebagai bagian memory yang besarnya 1 MB dan kontinyu. Namun, walaupun besar total 1 MB, lokal variabel di setiap fungsi dibatasi sampai <a href="http://msdn.microsoft.com/en-us/library/ms648426(VS.85).aspx">4KB saja (untuk x86) , 8KB untuk (x64)</a>. jika lebih, programmu akan crash di _chkstk() jika pakai Microsoft compiler [saya pernah mengalami]  .</p>
+
+<p>heap dan stack dialokasikan di RAM, tapi kenapa penggunaan stack lebih cepat dibanding heap? . karena stack pre-allocated dan untuk mengaksesnya tidak perlu menggunakan sebuah list atau variable pointer, tapi menggunakan register CPU : EBP dan ESP  . Register EBP dan ESP berperan saat pemanggilan fungsi (<a href="http://www.tenouk.com/Bufferoverflowc/Bufferoverflow3.html">baca disini</a>) .</p>
+
+
+	  
+
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "xedixermawan" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+      </div></article>
+
+
+	 </div>
+
+	 </div>
+       </div>
+     </div>
+
+ <div class="container footer">
+  <div class="row">
+    <div class="col-md-10">
+      <small class="text-muted">Copyright 2007-2019 XediXermawan</small>
+    </div>
+    <div class="col-md-2">
+      <small class="text-muted">   Hugo + Theme : <a href="https://github.com/leonhe/hugo_eiio">Eiio</a></small>
+      </div>
+   </div>
+ </div>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'google analytics code', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body></html>

@@ -6,11 +6,345 @@
     <description>Recent content in C/C&#43;&#43; Diary on XediXermawan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
-    <copyright>Copyright 2007-2018 XediXermawan</copyright>
-    <lastBuildDate>Sat, 15 May 2010 15:17:07 +0000</lastBuildDate>
+    <copyright>Copyright 2007-2019 XediXermawan</copyright>
+    <lastBuildDate>Fri, 13 Feb 2015 16:30:09 +0000</lastBuildDate>
     
 	<atom:link href="https://xedixermawan.github.io/categories/c-c++-diary/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mencoba Cmake ( a Cmake intro )</title>
+      <link>https://xedixermawan.github.io/2015/02/13/mencobacmake/</link>
+      <pubDate>Fri, 13 Feb 2015 16:30:09 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2015/02/13/mencobacmake/</guid>
+      <description>Visual Studio adalah favorite ide pemrograman saya. Sudah sejak lama saya pakai, kira-kira sejak 4 tahun yang lalu. Mungkin menjadi favorite karena kebiasaan :) dan juga visual studio mudah dipakai. Walaupun kadang ada juga bugs &amp;lsquo;aneh&amp;rsquo; yang terjadi selama nge-build project dengan VS. Sayangnya, &amp;lsquo;build file&amp;rsquo; dari VS tidak bisa dipakai di environment lain, misalnya mau build pakai gcc di Linux. Oleh karena itulah harus ada cara lain yang harus dipakai.</description>
+    </item>
+    
+    <item>
+      <title>My calendar maker</title>
+      <link>https://xedixermawan.github.io/2014/11/16/my-calendar-maker/</link>
+      <pubDate>Sun, 16 Nov 2014 16:13:14 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2014/11/16/my-calendar-maker/</guid>
+      <description>walaupun tahun baru masih 1 1&amp;frasl;2 bulan lagi, entah dapat dari mana ide-nya, saya tertarik untuk membuat kalender. Mungkin pikiran saya secara spontan kembali ke masa lalu ketika di tahun pertama kuliah dapat tugas membuat program kalender abadi he he. Yang saya buat disini tidak jauh beda : program untuk membuat kalender, dengan input tahun dan bulan , output nya berupa image kalender. Jadi image nya bisa dipakai, atau mungkin di print :) .</description>
+    </item>
+    
+    <item>
+      <title>Rendering animated GIF file</title>
+      <link>https://xedixermawan.github.io/2014/05/30/rendering-animated-gif-file/</link>
+      <pubDate>Fri, 30 May 2014 00:31:56 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2014/05/30/rendering-animated-gif-file/</guid>
+      <description>gif file ( http://en.wikipedia.org/wiki/Graphics_Interchange_Format ) is very popular format , you can share funny animation, emotion, a splash for ads, etc. All web browser support this format. do you interested in how game or application (non-web) render animated gif ? . here my experiment result :
+http://www.youtube.com/watch?v=iw8mquG93JA
+info : rendering : DirectX 11 language : c/c++ GIF decoder : libnsgif</description>
+    </item>
+    
+    <item>
+      <title>TCP client server dengan winsock2</title>
+      <link>https://xedixermawan.github.io/2014/05/27/tcp-client-server-dengan-winsock2/</link>
+      <pubDate>Tue, 27 May 2014 18:43:03 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2014/05/27/tcp-client-server-dengan-winsock2/</guid>
+      <description>Untuk keperluan selanjutnya di pengembangan game yang sedang saya buat ( :-o ), saya memerlukan program yang bisa di tweak lewat program lain. Dengan kata lain 2 program yang saling bisa berkomunikasi. Cara yang bisa dicapai , pakai file sharing atau dengan cara yang pas : pakai networking tcp / udp . Kalau mau buat program dengan kemampuan networking, cara yang bijaksana mungkin pakai 3rd party library yang sudah cukup populer dan reliable.</description>
+    </item>
+    
+    <item>
+      <title>#define problem</title>
+      <link>https://xedixermawan.github.io/2014/05/21/define-problem/</link>
+      <pubDate>Wed, 21 May 2014 17:22:18 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2014/05/21/define-problem/</guid>
+      <description>Masalah kecil tapi fatal di projects C/C++ yang saya temui ( dan parahnya terulang-ulang ), adalah penggunaan define. #define secara salah digunakan karena dicampur aduk antara definisi &amp;amp; pengecekannya. sebagai contoh ada 2 define :
+#define USE_FEATURE_A #define USE_FEATURE_B (1)
+Dalam penggunaanya ada beberapa kemungkinan :
+#ifdef USE_FEATURE_A // code_inside_a.1 #endif &amp;ndash;&amp;gt;penggunaan yang benar. code &amp;ldquo;code_inside_a.1&amp;rdquo; akan ter-compile jika USE_FEATURE_A ter-define. kalau ingin menghilangkan code &amp;ldquo;code_inside_a.1&amp;rdquo;, USE_FEATURE_A harus un-define dengan komen : // #define USE_FEATURE_A</description>
+    </item>
+    
+    <item>
+      <title>my recent spare time projects</title>
+      <link>https://xedixermawan.github.io/2014/05/13/my-recent-spare-time-projects/</link>
+      <pubDate>Tue, 13 May 2014 11:55:30 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2014/05/13/my-recent-spare-time-projects/</guid>
+      <description>I have been working on these projects in my spare time quite while ( like I work on it when I want work on it :p )., but recently I&amp;rsquo;m disappointed with my progress ( apparently I&amp;rsquo;m busy and have difficulty when creating graphics assets by myself ). so I decided to upload source code to google code in case I&amp;rsquo;m interested again next time .There are 2 projects :</description>
+    </item>
+    
+    <item>
+      <title>[3] on directx 11 : load 3D model from file</title>
+      <link>https://xedixermawan.github.io/2013/12/30/3-on-directx-11-load-3d-model-from-file/</link>
+      <pubDate>Mon, 30 Dec 2013 19:01:38 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2013/12/30/3-on-directx-11-load-3d-model-from-file/</guid>
+      <description>di project sebelumnya saya hanya menggambar 3d kubus. sangat menarik jika program bisa me-load model 3D yang dibuat oleh 3D editor. format paling populer untuk coba-coba tentu adalah wavefront obj :) . File .obj ini hanya bisa untuk static 3d model, tidak mendukung animasi. Dan biasanya ada 1 file pasangan tambahan untuk setiap .obj yaitu .mtl. File .mtl dimaksudkan untuk menyimpan material ( konstanta pencahayaan , seperti diffuse, spekular ) .</description>
+    </item>
+    
+    <item>
+      <title>[2] on directx 11 : sending data to shader</title>
+      <link>https://xedixermawan.github.io/2013/12/27/2-on-directx-11-sending-data-to-shader/</link>
+      <pubDate>Fri, 27 Dec 2013 16:50:35 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2013/12/27/2-on-directx-11-sending-data-to-shader/</guid>
+      <description>Bagaimana mengirim data dari code CPU ( c++ code ) ke code GPU ( hlsl ) ?. Di program sebelumnya, beberapa data yang di kirim ke shader :
+ * vertex dan index , direpresentasikan dengan D3D11Buffer , di set ke shader dengan IASetVertexBuffers, dan IASetIndexBuffers. prefix IA : buffer ini di set ke input assembler stage dan dapat diakses di VS . * model, view, projection matrix, direpresentasikan dengan D3D11Buffer, di set ke shader dengan VSSetConstantBuffers.</description>
+    </item>
+    
+    <item>
+      <title>[1] on directx 11 : texturing </title>
+      <link>https://xedixermawan.github.io/2013/12/26/1-on-directx-11-texturing/</link>
+      <pubDate>Thu, 26 Dec 2013 16:44:48 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2013/12/26/1-on-directx-11-texturing/</guid>
+      <description>Di program sebelumnya informasi gambar/ vertex data di-representasikan dengan data struct dibawah ini : (vertex_type.hpp)
+struct vertex_type { DirectX::XMFLOAT3 position; DirectX::XMFLOAT3 color; };
+struct ini ber-asosiasi dengan shader code : ( Simple_VS.hlsl )
+struct VertexShaderInput { float3 pos : POSITION; float3 color : COLOR0; };
+dengan sedikit modifikasi, kita bisa menambahkan texture ke vertex data untuk kubus : vertex_type.hpp
+
+Simple_VS.hlsl
+
+Simple_PS.hlsl
+  structvertex_type{DirectX::XMFLOAT3 position;DirectX::XMFLOAT3 color;DirectX::XMFLOAT2 texcoord; // ← added</description>
+    </item>
+    
+    <item>
+      <title>Auto beautifying C&#43;&#43; code</title>
+      <link>https://xedixermawan.github.io/2013/12/23/auto-beautifying-c-code/</link>
+      <pubDate>Mon, 23 Dec 2013 09:40:50 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2013/12/23/auto-beautifying-c-code/</guid>
+      <description>Disini saya ingin share simple script untuk &amp;ldquo;mempercantik&amp;rdquo; c++ code disuatu folder project dan melakukan svn commit setelah itu. jadi semacam selalu ada auto corrector jika kamu menulis code yang tidak sesuai aturan ( bahkan mungkin aturan yang kamu buat sendiri) .
+code yang rapih diharapkan memiliki sedikit bugs dan juga ingat programmer menulis code tidak hanya untuk mesin, tetapi juga untuk dibaca manusia yang lain. untung nya untuk masalah indentation &amp;amp; formating ada software keren &amp;amp; free untuk melakukan ini, yaitu AStyle ( http://astyle.</description>
+    </item>
+    
+    <item>
+      <title>[0] on directx 11 : hello cube</title>
+      <link>https://xedixermawan.github.io/2013/12/22/0-on-directx-11-hello-cube/</link>
+      <pubDate>Sun, 22 Dec 2013 17:01:00 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2013/12/22/0-on-directx-11-hello-cube/</guid>
+      <description>](http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png)   ](http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png)   ](http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png)   ](http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png)   ](http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png)   ](http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png)   ](http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png)   ](http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png)   ](http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png)   ](http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png)   ](http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png)   ](http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png)   ](http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png)   ](http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png)   ](http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png)   ](http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png)   testi1.png)  :-d . walaupun begitu, belajar tentang graphics itu sangat menarik dan fun. Kita menulis codes dan kita bisa melihat hasilnya dilayar .</description>
+    </item>
+    
+    <item>
+      <title>File mana yang termodifikasi ?</title>
+      <link>https://xedixermawan.github.io/2013/04/26/file-mana-yang-termodifikasi/</link>
+      <pubDate>Fri, 26 Apr 2013 18:07:04 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2013/04/26/file-mana-yang-termodifikasi/</guid>
+      <description>Misalnya saya memiliki 1000 file yang akan saya prosess oleh suatu program, dengan script saya bisa melakukannya seperti ini :
+for i=0 to i=1000 { process file ke-i } jadi dengan klik sebuat script pekerjaan selesai. Namun, ada beberapa file dari 1000 file tersebut yang berubah / saya modifikasi lagi, sehingga saya perlu mengulang eksekusi script diatas lagi :
+for i=0 to i=1000 { process file ke-i } Ini tentu tidak efisien dan lama, karena saya mengubah beberapa file, namun 1000 file masih diprocess lagi.</description>
+    </item>
+    
+    <item>
+      <title>Memperbanyak Assert</title>
+      <link>https://xedixermawan.github.io/2013/04/14/memperbanyak-assert/</link>
+      <pubDate>Sun, 14 Apr 2013 18:54:40 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2013/04/14/memperbanyak-assert/</guid>
+      <description>Dalam pembuatan program, programmer sering kehilangan detail apa yang terjadi di bagian kode tertentu. Terutama kalau program yang dibuat terdiri dari ribuan baris kode.Lebih parah lagi, jika kode tersebut sudah lama tidak disentuh. Dan ketika bug ditemukan , programmer akan mencari cara untuk memperbaiki bug tersebut dengan melakukan debugging ke kode yang diduga sebagai penyebab. Waktu penyelesaian tentu tergantung seberapa sulit bug tersebut. Usaha &amp;ldquo;mencari&amp;rdquo; solusi dengan debugging ini bisa di minimalkan jika kita memasang banyak ASSERT di kode.</description>
+    </item>
+    
+    <item>
+      <title>Harus dengan smart pointer.</title>
+      <link>https://xedixermawan.github.io/2013/04/14/harus-dengan-smart-pointer/</link>
+      <pubDate>Sun, 14 Apr 2013 18:53:27 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2013/04/14/harus-dengan-smart-pointer/</guid>
+      <description>Simple tips, tetapi sangat critical : Ada suatu keadaan dimana kita harus memakai smart pointer ! , Kapan?, salah satunya jika berurusan dengan DirectX API 11 . lihat salah satu contoh dibawah ini :
+HRESULT CreateInputLayout( [in] const D3D11_INPUT_ELEMENT_DESC *pInputElementDescs, [in] vUINT NumElements, [in] const void *pShaderBytecodeWithInputSignature, [in] SIZE_T BytecodeLength, [out] ID3D11InputLayout **ppInputLayout );
+parameter ke-5 fungsi diatas mengharapkan variabel pointer to pointer. Kalau kita memakai raw pointer, bisa juga, seperti dibawah ini : ID3D11InputLayout* my_input_layout ; HRESULT hr = m_Device-&amp;gt;CreateInputLayout( VertexPositionColorTexture::InputElements, VertexPositionColorTexture::InputElementCount, shaderByteCode, byteCodeLength, &amp;amp; my_input_layout ); m_DeviceContext-&amp;gt;IASetInputLayout( my_input_layout );</description>
+    </item>
+    
+    <item>
+      <title>Berhati-hati dengan C/C&#43;&#43; array</title>
+      <link>https://xedixermawan.github.io/2013/01/01/berhati-hati-dengan-cc-array/</link>
+      <pubDate>Tue, 01 Jan 2013 15:24:03 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2013/01/01/berhati-hati-dengan-cc-array/</guid>
+      <description>Array ?, sepertinya mudah, dan mungkin memang mudah. Sekelompok/himpunan type data disimpan dalam area memory sequential , untuk mempermudah pengaturan dan pengaksesan, itulah array. Di C/C++ contoh penggunaannya sebagai berikut :
+initialisasi :
+int arrayA[3] = {4,5,6};  int arrayB[3]; arrayB[0]=8; arrayB[1]=9; arrayB[2] =10;  int* arrayC = new int[3]; arrayC[0] = 11; arrayC[1] = 12; arrayC[2] = 13;     arrayA dan arrayB , arrayC adalah array dari data bertipe integer dan (dimaksudkan) memiliki ukuran maksimum 3.</description>
+    </item>
+    
+    <item>
+      <title>simple thread pool test</title>
+      <link>https://xedixermawan.github.io/2012/10/21/simple-thread-pool-test/</link>
+      <pubDate>Sun, 21 Oct 2012 17:05:52 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2012/10/21/simple-thread-pool-test/</guid>
+      <description>saya mencoba simple thread pool menggunakan std::thread C++ 11 dan sepertinya bekerja sesuai keinginan dari test yang saya lakukan (warning : code dibawah ini trivial). jumlah thread saya harcode berjumlah 2 :p. untuk mengetest thread pool, saya beri task meng-copy files berjumlah 100 (nama file : 1- 100) . compiler: vs studio express 2012 . header :
+#include  #include  #include  #include 
+[sourcecode language=&amp;ldquo;cpp&amp;rdquo;] //kelas worker thread class worker { private: std::vector&amp;lt; std::function &amp;gt; vecFunc; std::mutex m_mutex; public: void addtask(std::function task) { std::lock_guardstd::mutex lockg(m_mutex); vecFunc.</description>
+    </item>
+    
+    <item>
+      <title>mencoba smart pointer : pinter pointer dari boost</title>
+      <link>https://xedixermawan.github.io/2012/06/30/582/</link>
+      <pubDate>Sat, 30 Jun 2012 13:40:25 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2012/06/30/582/</guid>
+      <description>Smart pointer adalah pointer yang smart. :d. ya memang begitu tujuannya. Seperti diketahui tidak ada management object secara otomatis [garbage collecor] di c/c++, jadi setiap dynamic-object yang di alokasi di heap dan sudah waktunya dihapus harus di-delete secara eksplisit. (dynamic-object == setiap object yang di-create dengan keyword new). Apa akibatnya jika delete tidak dilakukan?, kemungkinan terjadi memory leak ( : keadaan dimana pembuat program tidak bahagia). kemungkinan memory leak ini semakin besar seiring semakin kompleknya project, dan juga memory leak akan susah dicari :| .</description>
+    </item>
+    
+    <item>
+      <title>Xedithor: 2D Sprite Editor</title>
+      <link>https://xedixermawan.github.io/2012/01/04/xedithor-2d-sprite-editor/</link>
+      <pubDate>Wed, 04 Jan 2012 19:49:48 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2012/01/04/xedithor-2d-sprite-editor/</guid>
+      <description>I created 2D sprite editor. version 1.00 is released. :) . At beginning, actually I wanna create a game, but I think I need a tool to make my job is easier in term of anything when handling 2D sprite (yes, it&amp;rsquo;s 2D game) . Furthermore, game tool in a game development is make possible to divide a jobs, between artist , game designer, and programmer. so, in non-trivial game dev, tool is must !</description>
+    </item>
+    
+    <item>
+      <title>packing resources</title>
+      <link>https://xedixermawan.github.io/2011/09/20/packing-resources/</link>
+      <pubDate>Tue, 20 Sep 2011 02:05:46 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2011/09/20/packing-resources/</guid>
+      <description>Jika kita memperhatikan secara seksama semua program-program atau game yang tidak trivial (yang serius) selalu memproteksi resources/sumber daya yang digunakan. Resources disini maksudnya file-file yang berguna untuk game/program, misalnya library, gambar, sound, config file, text file, dan lainnya. Tujuannya jelas, agar tidak mudah diubah/dimodifikasi oleh user, atau setidaknya kalau pun user bisa mengubah , itu tidak dilakukan secara mudah. (ya, tidak ada yang 100 % aman di dunia komputer ). Dari apa yang saya lihat di folder data dari program dan games yang ter-install di komputer, ada macam-macam teknik untuk memproteksinya, ada yang hanya mengubah ekstensi file, (misalnya file : gambar.</description>
+    </item>
+    
+    <item>
+      <title>Pointer to function, pointer to function member of class.</title>
+      <link>https://xedixermawan.github.io/2011/09/14/467/</link>
+      <pubDate>Wed, 14 Sep 2011 07:41:16 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2011/09/14/467/</guid>
+      <description>Pointer to function, pointer to function member of class.
+#Cara 1 : Secara tradisional
+Function pointer (pointer ke fungsi/penunjuk ke fungsi), dapat didefinisikan sebagai berikut:
+(typeReturn*) functPointer(typeArgument,typeArgument2,..,typeArgumentN)
+sebagai contoh, terdapat 2 fungsi dibawah ini:
+[sourcecode language=&amp;ldquo;cpp&amp;rdquo;] void Function1() { cout&amp;lt;&amp;lt;&amp;rdquo; call Function1 Function1&amp;rdquo;&amp;lt;&amp;lt;endl; } int Function2(int a,int b) { return (a*b); }
+[/sourcecode]
+Contoh pemakaian function pointer dari 2 fungsi diatas, sebagai berikut:
+[sourcecode language=&amp;ldquo;cpp&amp;rdquo;] void (*pf)(); // deklarasi pf=Function1; // assignment pf(); // pemanggilan</description>
+    </item>
+    
+    <item>
+      <title>Membuat Tetris</title>
+      <link>https://xedixermawan.github.io/2011/08/14/membuat-tetris/</link>
+      <pubDate>Sun, 14 Aug 2011 20:56:00 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2011/08/14/membuat-tetris/</guid>
+      <description>Tetris mungkin salah satu game puzzle yang sangat populer dan hampir dimainkan setiap orang. Game ini tersedia di berbagai device, mulai dari game boy yang dedicated untuk tetris, hand phone, komputer, Nitendo, dll. Dulu saat saya masih kecil, saya main tetris pertama kali di game boy milik teman saya. Perlu diketahui dulu tidak ada orang yang punya handphone di tempat tinggal saya. :) .Mungkin terakhir kali saya aktif main tetris saat saya punya handphone modem Smart merk Huawey.</description>
+    </item>
+    
+    <item>
+      <title>post code: proximity game</title>
+      <link>https://xedixermawan.github.io/2011/07/18/post-code-proximity-game/</link>
+      <pubDate>Mon, 18 Jul 2011 15:14:17 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2011/07/18/post-code-proximity-game/</guid>
+      <description>Berawal dari (May 17, 2011 : from this post ) saya upload hasilnya disini . Untuk sekarang hanya bisa play dengan komputer. Play dengan teman di LAN belum saya implementasikan.
+Screenshoot Main Menu:
+[caption id=&amp;ldquo;attachment_461&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;300&amp;rdquo; caption=&amp;ldquo;Click untuk memperbesar&amp;rdquo;][/caption]
+Screenshoot Gameplay:
+[caption id=&amp;ldquo;attachment_462&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;300&amp;rdquo; caption=&amp;ldquo;Click untuk memperbesar&amp;rdquo;][/caption]
+Source code (SVN check out) :
+https://proximity-game-clone.googlecode.com/svn/trunk
+Untuk binary and source code download :
+http://code.google.com/p/proximity-game-clone/
+ # Keyword: simple SDL game, game C/C++, game sederhana SDL, C/C++, puzzle.</description>
+    </item>
+    
+    <item>
+      <title>Proximity Game Clone</title>
+      <link>https://xedixermawan.github.io/2011/05/17/proximity-game-clone/</link>
+      <pubDate>Tue, 17 May 2011 18:39:13 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2011/05/17/proximity-game-clone/</guid>
+      <description>Pengin membuat _clone_ versi PC dari &amp;ldquo;proximity game&amp;rdquo;, saya main game ini awalnya di ponsel. Belum selesai, baru dimulai :) . Semoga ada waktu luang dan ada semangat untuk melanjutkannya :p .Hand Cursor:
+[caption id=&amp;ldquo;attachment_388&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;126&amp;rdquo; caption=&amp;ldquo;click image, to see animated gif&amp;rdquo;][/caption]
+Ingat &amp;ldquo;Hand Cursor&amp;rdquo; itu ? . it&amp;rsquo;s from An*** B*** . :D.</description>
+    </item>
+    
+    <item>
+      <title>Mencoba Visitor Pattern. </title>
+      <link>https://xedixermawan.github.io/2011/04/16/visitor-pattern-mencoba/</link>
+      <pubDate>Sat, 16 Apr 2011 14:46:07 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2011/04/16/visitor-pattern-mencoba/</guid>
+      <description>Visitor, pengunjung. Visitor pattern menggunakan prisip open/close dalam desain sebuah program. Pattern ini memisahkan &amp;ldquo;sebuah operasi -tindakan/algoritma&amp;rdquo; dari objek. Terdapat dua objek: Visitor dan Objek yang bisa dikunjungi (visitable objek). Kelihatannya Pattern ini mirip dengan strategi pattern: memisahkan algoritma dari kelas menjadi kelas yang lain. Namun Visitor Pattern dan strategi pattern berbeda.
+Strategy pattern
+AlgoritmaX adalah abstract class. punya method Count()
+AlgoritmaX1 turunan AlgoritmaX. AlgoritmaX1 mengimplementasikan method Count() dengan algoritma tertentu</description>
+    </item>
+    
+    <item>
+      <title>my projects</title>
+      <link>https://xedixermawan.github.io/2011/03/05/xedixermawan-projects/</link>
+      <pubDate>Sat, 05 Mar 2011 18:51:16 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2011/03/05/xedixermawan-projects/</guid>
+      <description>some of my ( spare time ) projects is here ( start from Newest )
+Puzzle Game : Windows Phone 8, Desktop Application ( C/C++, DirectX 11 )
+home project : https://code.google.com/p/my-fifteen-puzzle-dx/
+svn link : https://my-fifteen-puzzle-dx.googlecode.com/svn/trunk
+Puzzle Game : Windows Phone 8, Desktop Application ( C/C++, DirectX 11 )
+home project : https://code.google.com/p/proximity-game-clone2-dx/
+svn link : https://proximity-game-clone2-dx.googlecode.com/svn/trunk
+Xedithor : 2D Sprite Editor . use C++, Qt
+http://code.google.com/p/xedithor/
+Tetris Game : C++, SDL</description>
+    </item>
+    
+    <item>
+      <title>Zword Project :yet another dictionary</title>
+      <link>https://xedixermawan.github.io/2011/02/23/zword-project-yet-another-dictionary/</link>
+      <pubDate>Wed, 23 Feb 2011 19:12:30 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2011/02/23/zword-project-yet-another-dictionary/</guid>
+      <description>Sebuah project simple dan sederhana pakai Qt dan SQLite3 Zword: Multi Languanges dictionary . O yeah , Reinvent the wheel!!! sudah banyak program kamus di luar sana. &amp;ndash;ini sebenarnya adalah best practices dengan Qt saja&amp;ndash; .Tetapi selain itu, saya ingin pengguna juga bisa menambahkan pasangan bahasa sendiri. Misalnya, saya ingin kamus Jawa-Belanda, saya tidak perlu memrogram lagi tinggal menambah kamus di program,dan tentu menambah kan kata.
+fitur sekarang:
+ Tentu sebagai kamus :p</description>
+    </item>
+    
+    <item>
+      <title>Mencoba SQLite3</title>
+      <link>https://xedixermawan.github.io/2011/01/12/mencoba-sqlite3/</link>
+      <pubDate>Wed, 12 Jan 2011 10:52:35 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2011/01/12/mencoba-sqlite3/</guid>
+      <description>Dulu saya sempat mencari-cari, ada nggak ya sebuah database engine yang bisa diakses secara lokal layaknya file?. Waktu itu saya cari-cari di Google ternyata saya nggak nemu. -mungkin belum beruntung atau kata kunci belum tepat -. :) . Kira2 sebulan yang lalu secara tidak sengaja saya nemu SQLite.DLL disebuah folder suatu game, saya langsung berfikir ini yang saya cari2 dulu!!!. Karena ada kata &amp;ldquo;SQL&amp;rdquo; dan &amp;ldquo;Lite&amp;rdquo; . Dan ternyata benar!, langsung ta download di official-webnya .</description>
+    </item>
+    
+    <item>
+      <title>avira update caused debug error</title>
+      <link>https://xedixermawan.github.io/2010/12/20/avira-update-caused-debug-error/</link>
+      <pubDate>Mon, 20 Dec 2010 05:53:37 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2010/12/20/avira-update-caused-debug-error/</guid>
+      <description>The error message is like that:
+NtClose was called on a handle that was protected from close via NtSetInformationObject.﻿
+it happen when you debug application from visual c++, but when you run it outside ide, it&amp;rsquo;s fine. after looking around, then this problem is solved. look at avira forum . the fast solution: uninstalled avira, reboot the computer, then install avira again and disabled auto update. hope this useful for others.</description>
+    </item>
+    
+    <item>
+      <title>yet another memory game&#39;s project</title>
+      <link>https://xedixermawan.github.io/2010/11/21/yet-another-memory-games-project/</link>
+      <pubDate>Sun, 21 Nov 2010 17:52:39 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2010/11/21/yet-another-memory-games-project/</guid>
+      <description>Iseng membuat game yang lengkap. ada menu game, sound, score, level, dll. tapi belum selesai, setidaknya sudah bisa dimainkan :) . project-nya saya post di Google Code SVN.
+SVN Checkout: (read only check out)
+https://frogmemory.googlecode.com/svn/trunk/frogmem
+sementara, isinya cuma file project dan source code. file asset dan dependencies tidak ada. project ini menggunakan SDL sebagai &amp;ldquo;system&amp;rdquo;-nya dan CEGUI (Crazy Eddie&amp;rsquo;s GUI System), dan tentu pakai bahasa C++.
+update:
+Januari 29, 2010 : Add binary file dan data file</description>
+    </item>
+    
+    <item>
+      <title>Mencoba Observer Pattern dan Strategy Pattern di C&#43;&#43;</title>
+      <link>https://xedixermawan.github.io/2010/08/10/mencoba-observer-pattern-dan-strategy-pattern-di-c/</link>
+      <pubDate>Tue, 10 Aug 2010 04:32:58 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2010/08/10/mencoba-observer-pattern-dan-strategy-pattern-di-c/</guid>
+      <description>Saya tidak mempelajari ilmu komputer sebagai background pendidikan saya, dan ketika saya “nemu” design pattern dalam pengembangan software, hal itu menurut saya adalah keberuntungan :). Kenapa? walaupun waktu kuliah isinya juga coding, ( kebanyakan untuk hardware seperti : microcontroller, PLC, microprocessor, atau program-program kecil untuk interfacing), namun tidak menggunakan teknik pengembangan software apapun. Cuma prosedural dan efisiensi penggunaan memori – dan itu memang sudah cukup - . Hal itu sangat berbeda jika kita ingin mengembangkan software yang komplek dan besar.</description>
+    </item>
     
     <item>
       <title>Menengok kembali: C&#43;&#43; virtual function</title>
@@ -20,6 +354,42 @@
       <guid>https://xedixermawan.github.io/2010/05/15/menengok-kembali-c-virtual-function/</guid>
       <description>edi ermawan, http://offground.wordpress.com
 Fungsi Virtual. Alasan kenapa sebuah fungsi perlu dibuat virtual adalah agar fungsi tersebut bisa di-deklarasikan ulang di kelas turunannya ( meng-override fungsi ) **dan **jika kamu ingin me-resolve pemanggilan body function saat runtime ( late binding/ dynamic binding ). perhatikan kata dihubungkan dengan &amp;ldquo;dan&amp;rdquo; bold mode : ) . Karena member fungsi tanpa virtual pun juga bisa di-override. Bedanya jika sebuah fungsi itu tidak virtual dan dideklarasikan ulang di kelas turunan, ketika fungsi itu dijalankan , maka &amp;ldquo;body function&amp;rdquo; yang akan dijalankan adalah sesuai yang didefinikan.</description>
+    </item>
+    
+    <item>
+      <title>Menengok kembali: C&#43;&#43; virtual function</title>
+      <link>https://xedixermawan.github.io/2010/05/15/menengok-kembali-c-virtual-function/</link>
+      <pubDate>Sat, 15 May 2010 15:17:07 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2010/05/15/menengok-kembali-c-virtual-function/</guid>
+      <description>edi ermawan, http://offground.wordpress.com
+Fungsi Virtual. Alasan kenapa sebuah fungsi perlu dibuat virtual adalah agar fungsi tersebut bisa di-deklarasikan ulang di kelas turunannya ( meng-override fungsi ) **dan **jika kamu ingin me-resolve pemanggilan body function saat runtime ( late binding/ dynamic binding ). perhatikan kata dihubungkan dengan &amp;ldquo;dan&amp;rdquo; bold mode : ) . Karena member fungsi tanpa virtual pun juga bisa di-override. Bedanya jika sebuah fungsi itu tidak virtual dan dideklarasikan ulang di kelas turunan, ketika fungsi itu dijalankan , maka &amp;ldquo;body function&amp;rdquo; yang akan dijalankan adalah sesuai yang didefinikan.</description>
+    </item>
+    
+    <item>
+      <title>Integrasi Qt ke Ms Visual C&#43;&#43; 2008 Express</title>
+      <link>https://xedixermawan.github.io/2010/05/15/215/</link>
+      <pubDate>Sat, 15 May 2010 14:37:37 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2010/05/15/215/</guid>
+      <description>edi ermawan, http://offground.wordpress.com
+Apa itu Qt?, Qt: sebuah C++ library yang cukup lengkap untuk mengembangkan aplikasi mulai dari library GUI, grafik, networking, multimedia, multithreading, sql interface, openGL interface , web, dll.
+Motivasi:
+1.Aplikasi bisa berjalan multiplatform tanpa virtual machine seperti .NET atau Java 2.C/C++ :) 3.Gratis, lisensi: Lesser GPL. 4.Library cukup lengkap. 5.Dokumentasi dari Qt lengkap.
+Qt bisa di download di www.qtsoftware.com . Qt sebenarnya sudah mempunyai IDE sendiri yang dinamakan Qt Creator, sebuah IDE yang mudah digunakan, menggunakan gcc compiler dan gdb debugger.</description>
+    </item>
+    
+    <item>
+      <title>Belajar : Heap dan Stack</title>
+      <link>https://xedixermawan.github.io/2010/05/15/heap-and-stack/</link>
+      <pubDate>Sat, 15 May 2010 13:56:48 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/2010/05/15/heap-and-stack/</guid>
+      <description>edi ermawan, http://offground.wordpress.com
+&amp;mdash;&amp;mdash;&amp;mdash; May 15, 2010 &amp;mdash;&amp;mdash;&amp;ndash; Ketika suatu program berjalan, processor (– atau lebih tepatnya 80x86 ? &amp;ndash;) mengalokasikan memory untuk program tersebut di RAM, yang terbagi menjadi empat bagian yaitu Code Segment (CS), Stack Segment (SS), Data Segment (DS), dan Extra Segment (ES).
+
+Code Segment menyimpan semua kode dan instruksi-instruksi processor yang digunakan oleh program tersebut. Semua data di memori ini bersifat read-only.
+Stack Segment teralokasi untuk berbagai keperluan, seperti menyimpan return address dari pemanggilan fungsi, menyimpan parameter-parameter yang dilewatkan ke fungsi, menyimpan variabel lokal di dalam fungsi, dll.</description>
     </item>
     
   </channel>

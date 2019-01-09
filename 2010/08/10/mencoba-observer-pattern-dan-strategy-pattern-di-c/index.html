@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="XN4YmHgE76jTp2kNQ9qnsVSApl6yIQBzdyLe0BnbFks" />
+
+  <title>
+    
+    
+    Mencoba Observer Pattern dan Strategy Pattern di C&#43;&#43; - XediXermawan
+    
+  </title>
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/holder.min.js" type='text/javascript'></script>
+  <link rel="stylesheet" href="/highlight/styles/github-gist.css">  
+  <link rel="stylesheet" href="/css/style.css">
+
+  <link rel="canonical" href="https://xedixermawan.github.io/2010/08/10/mencoba-observer-pattern-dan-strategy-pattern-di-c/">
+  
+  <script src="/highlight/highlight.pack.js" type='text/javascript'></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.3.0/highlightjs-line-numbers.min.js"></script>
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+    
+    hljs.initHighlightingOnLoad();
+    $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+    hljs.lineNumbersBlock(block);
+    });
+});
+  </script>
+   </head>
+   <body data-spy="scroll" data-target="#toc">
+     <header class="navbar navbar-default navbar-fixed-top" id="top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://xedixermawan.github.io/">XediXermawan</a>
+    </div>
+
+    
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+	
+	
+	<li  ><a href="/">Home</a></li>
+	
+	
+
+	
+
+	
+	
+	<li > <a href="https://xedixermawan.github.io/about/" >About</a></li>
+	
+
+	
+	
+	<li > <a href="https://xedixermawan.github.io/projects/" >Projects</a></li>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+      </ul>
+</nav>
+</header>
+
+     <div class="jumbotron masthead" role="main">
+       <div class="container">
+	 <div class="row">
+
+ 	   <div class="col-md-8 col-md-offset-2 ">
+	   
+<div class="panel panel-default">
+  <div class="panel-body">
+      <article id='post' >
+	<h1> Mencoba Observer Pattern dan Strategy Pattern di C&#43;&#43; </h1>
+	  
+	  <p>Saya tidak mempelajari ilmu komputer sebagai <em>background</em> pendidikan saya, dan ketika saya “nemu” <em>design pattern</em> dalam pengembangan <em>software</em>, hal itu menurut saya adalah keberuntungan :). Kenapa? walaupun waktu kuliah isinya juga <em>coding</em>, ( kebanyakan untuk <em>hardware</em> seperti : <em>microcontroller</em>, PLC, <em>microprocessor</em>, atau program-program kecil untuk <em>interfacing</em>), namun tidak menggunakan teknik pengembangan <em>software</em> apapun. Cuma prosedural dan efisiensi penggunaan memori – dan itu memang sudah cukup -  . Hal itu sangat berbeda jika kita ingin mengembangkan <em>software</em> yang komplek dan besar. Sebuah teknik/pola harus ada, dan jawabannya adalah <em>design pattern.</em></p>
+
+<p>_ Design Pattern _bisa diartikan cara/pola/pattern pemrograman yang dipakai saat menghadapi masalah-masalah tertentu. Masalah tertentu dengan pattern tertentu. “Pattern” disini bisa jadi sudah ada atau belum ada. <em>Pattern</em> yang sudah ada sudah banyak dan digunakan untuk masalah yang sering muncul dalam pemrograman. Lihat <a href="http://en.wikipedia.org/wiki/Design_pattern_%28computer_science%29"><em><strong>wiki design pattern</strong></em></a> untuk daftar pattern – pattern tersebut.</p>
+
+<p>Kali ini saya ingin mencoba <em>observer</em> dan <em>strategy pattern</em> menggunakan C++. Tidak seperti di Java, C++ tidak ada dukungan untuk implementasi <em>observer pattern</em> (lihat <a href="http://offground.wordpress.com/2009/09/02/shifting-puzzle/">blog post</a> saya ttg implementasi observer di Java). Namun, untungnya di C++ ada pointer :). <em>Observer Pattern</em> dipakai saat masalah seperti ini muncul:</p>
+
+<p>“_terdapat sebuah object/beberapa object yang perlu diketahui keadaan/state-nya oleh sebuah object/beberapa object lain_”</p>
+
+<p>Contoh riil-nya sebagai berikut :</p>
+
+<p>“Sebuah program mendapat data objek bergerak  dari komputer lain melalui jaringan dan objek tersebut akan ditampilkan di tampilan peta 2D dan tampilan 3D. Setiap perubahan data objek akan di update di tampilan 2D dan 3D”</p>
+
+<p>[caption id=&ldquo;attachment_263&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;300&rdquo; caption=&ldquo;offgnd_observer_uml&rdquo;]<a href="http://offground.files.wordpress.com/2010/08/offgnd_observer_uml.png"><img src="http://offground.files.wordpress.com/2010/08/offgnd_observer_uml.png?w=300" alt="" />
+</a>[/caption]</p>
+
+<p>Subject adalah object yang di-observe (diamati) dan memiliki daftar observer yang terdaftar, bisa menambah dan mengurangi observer-nya. Sedangkan observer adalah object yang meng-observe (pengamat). Concrete subject adalah object turunan dari subject, dan memiliki object yang bisa di observe. Concrete Observer adalah object turunan Observer untuk me-re-implementasi fungsi update dari observer. Setelah semunya tampak jelas, waktunya kita coding :</p>
+
+<p>[sourcecode language=&ldquo;cpp&rdquo;]
+#include <vector>
+#include <list></p>
+
+<p>class subject;</p>
+
+<p>class observer{
+public:
+ observer(){};
+ ~observer(){};
+ virtual void update(subject* updated_subject)=0;
+};</p>
+
+<p>class subject{
+public:
+ subject();
+ ~subject(){};
+ virtual void add(observer* ob);
+ virtual void remove(observer* ob);
+ virtual void notify();
+private:
+ std::list<observer*> list_observer;
+};
+[/sourcecode]</p>
+
+<hr />
+
+<p><strong>Source : Observer.cpp</strong></p>
+
+<p>[sourcecode language=&ldquo;cpp&rdquo;]</pre>
+#include &ldquo;observer.h&rdquo;</p>
+
+<p>subject::subject()
+{
+ //
+}</p>
+
+<p>void subject::add(observer *ob)
+{
+  list_observer.push_back(ob);
+}</p>
+
+<p>void subject::remove(observer *ob)
+{
+ list_observer.remove(ob);
+}</p>
+
+<p>void subject::notify()
+{
+  std::list<observer*>::iterator i;</p>
+
+<p>for(i=list_observer.begin();i!=list_observer.end();i++)
+  {
+    (*i)-&gt;update(this);
+  }
+}
+[/sourcecode]</p>
+
+<p>mari kita pakai disini : main.cpp</p>
+
+<p>[sourcecode language=&ldquo;cpp&rdquo;]</p>
+
+<p>#include <iostream>
+#include &ldquo;observer.h&rdquo;
+#include <list></p>
+
+<p>using namespace std;</p>
+
+<p>/* Kelas objek bergerak , memiliki koordinat x,y,z yg menunjukkan data posisi
+*/
+class SimObject
+{
+public:
+ SimObject(float fx,float fy,float fz)
+ {
+   SetTranslation(fx,fy,fz);
+ };
+ ~SimObject(){};
+ void SetTranslation(float fx,float fy,float fz)
+ {
+   x=fx;
+   y=fy;
+   z=fz;
+ };
+ void GetTranslation(float&amp; fx,float&amp; fy,float&amp; fz)
+ {
+   fx=x;
+   fy=y;
+   fz=z;
+ };
+private:
+  float x,y,z;
+};</p>
+
+<p>/* Updater: concrete subject
+* memiliki daftar objek bergerak (instan SimObject)
+<em>/
+class Updater:public subject
+{
+public:
+ Updater(){    mStateUpdate=UPD_OBJ; };
+ ~Updater(){};
+ void AddObject(SimObject</em> newobj)
+ {
+   mObjects.push_back(newobj);
+   mStateUpdate=NEW_OBJ;
+   notify();
+   mStateUpdate=UPD_OBJ;
+ }
+ void DelObject(SimObject* delobj)
+ {
+   mObjects.remove(delobj);
+   mStateUpdate=DEL_OBJ;
+   notify();
+   mStateUpdate=UPD_OBJ;
+ }
+ void GetListObject(list<SimObject*>&amp; listobj)
+ {
+   listobj=mObjects;
+ };
+ short int GetStateUpdate()
+ {
+   return mStateUpdate;
+ };
+private:
+   enum{ NEW_OBJ,DEL_OBJ,UPD_OBJ } mStateUpdate;
+   list<SimObject*>mObjects;
+};
+//strategy pattern: implementasi algoritma dipisah
+//MoveAlgorithm: abstract class untuk algorithm, digunakan spt halnya interface di Java/Delphi
+class MoveAlgorithm
+{
+public:
+ MoveAlgorithm(){};
+ ~MoveAlgorithm(){};
+ virtual void DoMove(float x,float y,float z)=0;
+};
+//turunan MoveAlgorithm
+class MoveAlgorithm2D:public MoveAlgorithm
+{
+public:
+ MoveAlgorithm2D(){};
+ ~MoveAlgorithm2D(){};
+ virtual void DoMove(float x,float y,float z)
+ {
+   cout&lt;&lt;&ldquo;Move2D x: &ldquo;&lt;<x<<endl;
+   cout<<"Move2D y: "<<y<<endl;
+ };
+};
+//turunan MoveAlgorithm
+class MoveAlgorithm3D:public MoveAlgorithm
+{
+public:
+   MoveAlgorithm3D(){};
+  ~MoveAlgorithm3D(){};
+  virtual void DoMove(float x,float y,float z)
+ {
+ cout<<"Move3D x: "<<x<<endl;
+ cout<<"Move3D y: "<<y<<endl;
+ cout<<"Move3D z: "<<z<<endl;
+ };
+};
+//Viewer : concrete Observer
+//Viewer bisa memiliki “cara” menggambar object yaitu dengan menset type MoveAlgorithm (2D atau 3D)
+class Viewer:public observer
+{
+public:
+ Viewer(Updater* updater)
+ {
+   mSubject=updater;
+   mSubject->add(this);
+   mMoveAlgo=NULL;
+ };
+ ~Viewer()
+ {
+   mSubject-&gt;remove(this);
+ };
+ void SetMoveAlgorithm(MoveAlgorithm* ma)
+ {
+   mMoveAlgo=ma;
+ };
+ void update(subject *updated_subject)
+ {
+   if(updated_subject==mSubject)
+   {
+   short int s= mSubject-&gt;GetStateUpdate();
+   if(s==0){
+     cout&lt;&lt;&ldquo;new object added&rdquo;&lt;&lt;endl;
+   }
+   else if(s==1){
+     cout&lt;&lt;&ldquo;object deleted&rdquo;&lt;&lt;endl;
+   }
+   else if(s==2){
+    Move();
+   }
+   };
+ };</p>
+
+<p>void Move()
+ {
+   list<SimObject*> listobject<em>;
+   mSubject-&gt;GetListObject(listobject</em>);
+   for(list<SimObject*>::iterator it=listobject<em>.begin();it!=listobject</em>.end();it++)
+   {
+     float x,y,z;
+     (<em>it)-&gt;GetTranslation(x,y,z);
+     if(mMoveAlgo!=NULL)
+     {
+        mMoveAlgo-&gt;DoMove(x,y,z);
+     }else
+        cout&lt;&lt;&ldquo;Exception: Move Algorithm is NULL&rdquo;&lt;&lt;endl;
+   };
+ };
+private:
+  Updater</em> mSubject;
+  MoveAlgorithm* mMoveAlgo;
+};</p>
+
+<p>//Main</p>
+
+<p>int main()
+{
+ cout&lt;<endl;
+ Updater* updater=new Updater();
+ Viewer* viewer1=new Viewer(updater);
+ viewer1->SetMoveAlgorithm(new MoveAlgorithm2D());</p>
+
+<p>Viewer* viewer2=new Viewer(updater);
+ viewer2-&gt;SetMoveAlgorithm(new MoveAlgorithm3D());</p>
+
+<p>SimObject* object1=new SimObject(10.0,5.0,2.0);
+ SimObject* object2=new SimObject(2.0,6.5,2.0);
+ SimObject* object3=new SimObject(11.0,2.0,2.0);</p>
+
+<p>updater-&gt;AddObject(object1);
+ updater-&gt;AddObject(object2);
+ updater-&gt;AddObject(object3);</p>
+
+<p>updater-&gt;notify();</p>
+
+<p>updater-&gt;DelObject(object1);</p>
+
+<p>updater-&gt;notify();
+ system(&ldquo;pause&rdquo;);
+}</p>
+
+<p>[/sourcecode]</p>
+
+<p>//re-edit again later :)</p>
+
+
+	  
+
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "xedixermawan" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+      </div></article>
+
+
+	 </div>
+
+	 </div>
+       </div>
+     </div>
+
+ <div class="container footer">
+  <div class="row">
+    <div class="col-md-10">
+      <small class="text-muted">Copyright 2007-2019 XediXermawan</small>
+    </div>
+    <div class="col-md-2">
+      <small class="text-muted">   Hugo + Theme : <a href="https://github.com/leonhe/hugo_eiio">Eiio</a></small>
+      </div>
+   </div>
+ </div>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'google analytics code', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body></html>
