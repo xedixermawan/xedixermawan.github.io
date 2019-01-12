@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
     <copyright>Copyright 2007-2019 XediXermawan</copyright>
-    <lastBuildDate>Sat, 08 Jul 2017 04:34:22 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://xedixermawan.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android vector drawable</title>
+      <link>https://xedixermawan.github.io/posts/2019-01-09__membuat_vector_drawable/</link>
+      <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/posts/2019-01-09__membuat_vector_drawable/</guid>
+      <description>Asset berformat vector drawable memiliki beberapa keunggulan ketika dipakai di aplikasi Android. Vector drawable pada dasarnya adalah file text yang berisi deskripsi gambar. Karena format text maka ukurannya sangat kecil. Terlebih kita tidak perlu membuat assets untuk bermacam macam resolusi, karena vector drawable bisa di scale ukuran gambarnya tanpa mengurangi kualitas. Hal ini memperkuat keuntungan dari segi ukuran gambar, karena tidak perlu menyediakan gambar dalam beberapa versi resolusi layar. Efek lainnya adalah tidak perlu ribet, cukup mengurusi 1 gambar saja.</description>
+    </item>
     
     <item>
       <title>Aplikasi Android pencatat keuangan</title>

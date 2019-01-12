@@ -9,7 +9,7 @@
   <title>
     
     
-    membaca_menulis - XediXermawan
+    Android vector drawable - XediXermawan
     
   </title>
   <link rel="shortcut icon" href="/favicon.ico" />
@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="/highlight/styles/github-gist.css">  
   <link rel="stylesheet" href="/css/style.css">
 
-  <link rel="canonical" href="https://xedixermawan.github.io/2008/10/17/membaca_menulis/">
+  <link rel="canonical" href="https://xedixermawan.github.io/posts/2019-01-09__membuat_vector_drawable/">
   
   <script src="/highlight/highlight.pack.js" type='text/javascript'></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.3.0/highlightjs-line-numbers.min.js"></script>
@@ -116,9 +116,35 @@
 <div class="panel panel-default">
   <div class="panel-body">
       <article id='post' >
-	<h1> membaca_menulis </h1>
+	<h1> Android vector drawable </h1>
 	  
-	  <p>mulai 2 minggu ini sepertinya saya sangat banyak membaca dan juga banyak menulis(baca mengetik). yang dibaca tentu bukan novel atau &ldquo;cerita mesum&rdquo; :-D . Walaupun kadang juga baca novel dirumah( novel musashi qu blom ta selesain ). menu bacaannya adalah datasheet, dan source code. dan source codenya itu tidak ditulis dalam satu bahasa pemrograman,-ada beberapa- setidaknya berbasis C,Basic, Pascal. sehingga selain datasheet dan source code menu lainnya adalah &lsquo;help&rdquo; dan manual. Sebenarnya membaca bacaan seperti itu bukan hal asing, tapi intensitasnya sangat meningkat pesat saat ini.  Ada efek yang saya kira bagus, yaitu penegtahuan saya saya harap meningkat pesat juga&hellip;tapi ada efek buruknya, yaitu harus mampu bertahannnnnnnnnnnnnnn&hellip;&hellip;&hellip;&hellip; . Begitu jga dengan menulis. memilih kata kata yang dapat dipahami banyak orang itu kadang susah.apalagi  yang dibahas adalah maslah teknis. padahal saya tidak terlalu baik dalam &ldquo;bahasa&rdquo;. Tapi secara garis besar ini akan dinikmati.</p>
+	  <p>Asset berformat vector drawable memiliki beberapa keunggulan ketika dipakai di aplikasi Android. Vector drawable pada dasarnya adalah file text yang berisi deskripsi gambar. Karena format text maka ukurannya sangat kecil. Terlebih kita tidak perlu membuat assets untuk bermacam macam resolusi, karena vector drawable bisa di <em>scale</em> ukuran gambarnya tanpa mengurangi kualitas. Hal ini memperkuat keuntungan dari segi ukuran gambar, karena tidak perlu menyediakan gambar dalam beberapa versi resolusi layar. Efek lainnya adalah tidak perlu ribet, cukup mengurusi 1 gambar saja.</p>
+
+<p>Hal yang perlu diperhatikan dari vector drawable, karena file ini isinya deskripsi gambar, saat <em>runtime</em> app perlu menggambar untuk menampilkan assets. Atau dengan kata lain ada tambahan tugas untuk CPU. Namun saya yakin dalam banyak kasus, terutama penampilan icon2, app <em>performance</em> tidak akan banyak bermasalah.</p>
+
+<p>Setau saya istilah &ldquo;vector drawable&rdquo; adalah istilah Android. Format ini adalah bentuk lain dari format SVG. Formatnya mirip, namun ada perbedaan antara SVG dan vector drawable nya Android. Untungnya di Android Studio sudah disediakan <strong><em>tools</em></strong> untuk mengkonversi file SVG menjadi vector drawable.</p>
+
+<p>Di menu utama Android Studio, <strong>File -&gt; New -&gt; Vector Assets</strong>:</p>
+
+<p><img src="/images/1-vector_asset_studio.jpg" alt="Example image" /></p>
+
+<p>Hasil vector drawable sebagai berikut :</p>
+
+<pre><code>&lt;vector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+        android:width=&quot;24dp&quot;
+        android:height=&quot;24dp&quot;
+        android:viewportWidth=&quot;24.0&quot;
+        android:viewportHeight=&quot;24.0&quot;&gt;
+    &lt;path
+        android:fillColor=&quot;#FF000000&quot;
+        android:pathData=&quot;M19.5,3.5L18,2l-1.5,1.5L15,2l-1.5,1.5L12,2l-1.5,1.5L9,2 7.5,3.5 6,2 4.5,3.5 3,2v20l1.5,-1.5L6,22l1.5,-1.5L9,22l1.5,-1.5L12,22l1.5,-1.5L15,22l1.5,-1.5L18,22l1.5,-1.5L21,22L21,2l-1.5,1.5zM19,19.09L5,19.09L5,4.91h14v14.18zM6,15h12v2L6,17zM6,11h12v2L6,13zM6,7h12v2L6,9z&quot;/&gt;
+&lt;/vector&gt;
+
+</code></pre>
+
+<p>Kalau diperhatikan bagian <strong>path</strong>, sebenarnya adalah format SVG.</p>
+
+<p>Untuk icon icon yang umum, file SVG bisa didapat secara gratis dari :  <a href="https://material.io/tools/icons/">https://material.io/tools/icons/</a> (lisensi  Apache license version 2.0 , : bebas untuk dipakai di komersial app ) . Kalau seandainya ingin membuat SVG sendiri, ada banyak juga online tools untuk membuatnya.</p>
 
 
 	  

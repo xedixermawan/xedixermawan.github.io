@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
     <copyright>Copyright 2007-2019 XediXermawan</copyright>
-    <lastBuildDate>Fri, 13 Feb 2015 16:30:09 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://xedixermawan.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android</title>
+      <link>https://xedixermawan.github.io/categories/android/</link>
+      <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://xedixermawan.github.io/categories/android/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>C/C&#43;&#43; Diary</title>
