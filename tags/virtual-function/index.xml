@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Virtual Function on Home</title>
+    <link>http://localhost:1313/tags/virtual-function/</link>
+    <description>Recent content in Virtual Function on Home</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>© 2007-2024 XediXermawan</copyright>
+    <lastBuildDate>Sat, 15 May 2010 15:17:07 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/virtual-function/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Menengok kembali: C&#43;&#43; virtual function</title>
+      <link>http://localhost:1313/2010/05/15/menengok-kembali-c-virtual-function/</link>
+      <pubDate>Sat, 15 May 2010 15:17:07 +0000</pubDate>
+      <guid>http://localhost:1313/2010/05/15/menengok-kembali-c-virtual-function/</guid>
+      <description>&lt;p&gt;edi ermawan, &lt;a href=&#34;http://offground.wordpress.com&#34;&gt;http://offground.wordpress.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Fungsi Virtual&lt;/strong&gt;. Alasan kenapa sebuah fungsi perlu dibuat virtual adalah agar fungsi tersebut bisa di-deklarasikan ulang di kelas turunannya ( meng-override fungsi ) **dan **jika kamu ingin me-resolve pemanggilan &lt;em&gt;body function&lt;/em&gt; saat runtime ( late binding/ dynamic binding ). perhatikan kata dihubungkan dengan &amp;ldquo;dan&amp;rdquo; bold mode : ) . Karena member fungsi tanpa virtual pun juga bisa di-override. Bedanya jika sebuah fungsi itu &lt;strong&gt;tidak&lt;/strong&gt; virtual dan dideklarasikan ulang di kelas turunan, ketika fungsi itu dijalankan , maka &amp;ldquo;&lt;em&gt;body function&lt;/em&gt;&amp;rdquo; yang akan dijalankan adalah sesuai yang didefinikan. ( body function yang akan dipanggil sudah ditentukan / di-resolve saat compile time , atau yang disebut static binding ).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

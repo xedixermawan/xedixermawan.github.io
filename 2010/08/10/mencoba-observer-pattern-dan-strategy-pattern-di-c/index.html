@@ -1,445 +1,584 @@
-<!DOCTYPE html>
-<html>
-   <head>
-   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="google-site-verification" content="XN4YmHgE76jTp2kNQ9qnsVSApl6yIQBzdyLe0BnbFks" />
+<!doctype html>
 
-  <title>
-    
-    
-    Mencoba Observer Pattern dan Strategy Pattern di C&#43;&#43; - XediXermawan
-    
-  </title>
-  <link rel="shortcut icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
   
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+  <title>Mencoba Observer Pattern dan Strategy Pattern di C&#43;&#43; - Home</title>
 
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/holder.min.js" type='text/javascript'></script>
-  <link rel="stylesheet" href="/highlight/styles/github-gist.css">  
-  <link rel="stylesheet" href="/css/style.css">
-
-  <link rel="canonical" href="https://xedixermawan.github.io/2010/08/10/mencoba-observer-pattern-dan-strategy-pattern-di-c/">
   
-  <script src="/highlight/highlight.pack.js" type='text/javascript'></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.3.0/highlightjs-line-numbers.min.js"></script>
-  <script type="text/javascript">
+  <meta name="theme-color" />
 
-    $(document).ready(function() {
+  
+  
+  
+  
+  <meta name="description" content="Saya tidak mempelajari ilmu komputer sebagai background pendidikan saya, dan ketika saya “nemu” design pattern dalam pengembangan software, hal itu menurut saya adalah keberuntungan :). Kenapa? walaupun waktu kuliah isinya juga coding, ( kebanyakan untuk hardware seperti : microcontroller, PLC, microprocessor, atau program-program kecil untuk interfacing), namun tidak menggunakan teknik pengembangan software apapun. Cuma prosedural dan efisiensi penggunaan memori – dan itu memang sudah cukup -  . Hal itu sangat berbeda jika kita ingin mengembangkan software yang komplek dan besar. Sebuah teknik/pola harus ada, dan jawabannya adalah design pattern." />
+  <meta name="author" content="oth3rside" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/874371989962b8461ad94e8119d82bc7?s=160&amp;d=identicon" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/github.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/instagram.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.136.5">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+      >Home</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
     
-    hljs.initHighlightingOnLoad();
-    $('pre code').each(function(i, block) {
-    hljs.highlightBlock(block);
-    hljs.lineNumbersBlock(block);
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
     });
-});
-  </script>
-   </head>
-   <body data-spy="scroll" data-target="#toc">
-     <header class="navbar navbar-default navbar-fixed-top" id="top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="https://xedixermawan.github.io/">XediXermawan</a>
-    </div>
 
     
-    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav">
-	
-	
-	<li  ><a href="/">Home</a></li>
-	
-	
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
 
-	
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
 
-	
-	
-	<li > <a href="https://xedixermawan.github.io/about/" >About</a></li>
-	
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
 
-	
-	
-	<li > <a href="https://xedixermawan.github.io/projects/" >Projects</a></li>
-	
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
 
-	
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse">
+      
+      <a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+      <a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/contact/"
+        >Contact</a
+      >
+      
+    </nav>
+    
 
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-      </ul>
-</nav>
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 rtl:space-x-reverse dark:invert ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center"
+    >
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/XediXermawan"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/XediXermawan"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/XediXermawan"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
 </header>
 
-     <div class="jumbotron masthead" role="main">
-       <div class="container">
-	 <div class="row">
 
- 	   <div class="col-md-8 col-md-offset-2 ">
-	   
-<div class="panel panel-default">
-  <div class="panel-body">
-      <article id='post' >
-	<h1> Mencoba Observer Pattern dan Strategy Pattern di C&#43;&#43; </h1>
-	  
-	  <p>Saya tidak mempelajari ilmu komputer sebagai <em>background</em> pendidikan saya, dan ketika saya “nemu” <em>design pattern</em> dalam pengembangan <em>software</em>, hal itu menurut saya adalah keberuntungan :). Kenapa? walaupun waktu kuliah isinya juga <em>coding</em>, ( kebanyakan untuk <em>hardware</em> seperti : <em>microcontroller</em>, PLC, <em>microprocessor</em>, atau program-program kecil untuk <em>interfacing</em>), namun tidak menggunakan teknik pengembangan <em>software</em> apapun. Cuma prosedural dan efisiensi penggunaan memori – dan itu memang sudah cukup -  . Hal itu sangat berbeda jika kita ingin mengembangkan <em>software</em> yang komplek dan besar. Sebuah teknik/pola harus ada, dan jawabannya adalah <em>design pattern.</em></p>
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
 
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">Mencoba Observer Pattern dan Strategy Pattern di C&#43;&#43;</h1>
+
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>Aug 10, 2010</time>
+      
+      
+      
+      
+      <span class="mx-1">&middot;</span>
+      <span>oth3rside</span>
+      
+    </div>
+    
+  </header>
+
+  <section><p>Saya tidak mempelajari ilmu komputer sebagai <em>background</em> pendidikan saya, dan ketika saya “nemu” <em>design pattern</em> dalam pengembangan <em>software</em>, hal itu menurut saya adalah keberuntungan :). Kenapa? walaupun waktu kuliah isinya juga <em>coding</em>, ( kebanyakan untuk <em>hardware</em> seperti : <em>microcontroller</em>, PLC, <em>microprocessor</em>, atau program-program kecil untuk <em>interfacing</em>), namun tidak menggunakan teknik pengembangan <em>software</em> apapun. Cuma prosedural dan efisiensi penggunaan memori – dan itu memang sudah cukup -  . Hal itu sangat berbeda jika kita ingin mengembangkan <em>software</em> yang komplek dan besar. Sebuah teknik/pola harus ada, dan jawabannya adalah <em>design pattern.</em></p>
 <p>_ Design Pattern _bisa diartikan cara/pola/pattern pemrograman yang dipakai saat menghadapi masalah-masalah tertentu. Masalah tertentu dengan pattern tertentu. “Pattern” disini bisa jadi sudah ada atau belum ada. <em>Pattern</em> yang sudah ada sudah banyak dan digunakan untuk masalah yang sering muncul dalam pemrograman. Lihat <a href="http://en.wikipedia.org/wiki/Design_pattern_%28computer_science%29"><em><strong>wiki design pattern</strong></em></a> untuk daftar pattern – pattern tersebut.</p>
-
 <p>Kali ini saya ingin mencoba <em>observer</em> dan <em>strategy pattern</em> menggunakan C++. Tidak seperti di Java, C++ tidak ada dukungan untuk implementasi <em>observer pattern</em> (lihat <a href="http://offground.wordpress.com/2009/09/02/shifting-puzzle/">blog post</a> saya ttg implementasi observer di Java). Namun, untungnya di C++ ada pointer :). <em>Observer Pattern</em> dipakai saat masalah seperti ini muncul:</p>
-
-<p>“_terdapat sebuah object/beberapa object yang perlu diketahui keadaan/state-nya oleh sebuah object/beberapa object lain_”</p>
-
+<p>“<em>terdapat sebuah object/beberapa object yang perlu diketahui keadaan/state-nya oleh sebuah object/beberapa object lain</em>”</p>
 <p>Contoh riil-nya sebagai berikut :</p>
-
 <p>“Sebuah program mendapat data objek bergerak  dari komputer lain melalui jaringan dan objek tersebut akan ditampilkan di tampilan peta 2D dan tampilan 3D. Setiap perubahan data objek akan di update di tampilan 2D dan 3D”</p>
-
-<p>[caption id=&ldquo;attachment_263&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;300&rdquo; caption=&ldquo;offgnd_observer_uml&rdquo;]<a href="http://offground.files.wordpress.com/2010/08/offgnd_observer_uml.png"><img src="http://offground.files.wordpress.com/2010/08/offgnd_observer_uml.png?w=300" alt="" />
+<p>[caption id=&ldquo;attachment_263&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;300&rdquo; caption=&ldquo;offgnd_observer_uml&rdquo;]<a href="http://offground.files.wordpress.com/2010/08/offgnd_observer_uml.png"><img src="http://offground.files.wordpress.com/2010/08/offgnd_observer_uml.png?w=300" alt="">
 </a>[/caption]</p>
-
 <p>Subject adalah object yang di-observe (diamati) dan memiliki daftar observer yang terdaftar, bisa menambah dan mengurangi observer-nya. Sedangkan observer adalah object yang meng-observe (pengamat). Concrete subject adalah object turunan dari subject, dan memiliki object yang bisa di observe. Concrete Observer adalah object turunan Observer untuk me-re-implementasi fungsi update dari observer. Setelah semunya tampak jelas, waktunya kita coding :</p>
-
 <p>[sourcecode language=&ldquo;cpp&rdquo;]
 #include <vector>
 #include <list></p>
-
 <p>class subject;</p>
-
 <p>class observer{
 public:
- observer(){};
- ~observer(){};
- virtual void update(subject* updated_subject)=0;
+observer(){};
+~observer(){};
+virtual void update(subject* updated_subject)=0;
 };</p>
-
 <p>class subject{
 public:
- subject();
- ~subject(){};
- virtual void add(observer* ob);
- virtual void remove(observer* ob);
- virtual void notify();
+subject();
+~subject(){};
+virtual void add(observer* ob);
+virtual void remove(observer* ob);
+virtual void notify();
 private:
- std::list<observer*> list_observer;
+std::list&lt;observer*&gt; list_observer;
 };
 [/sourcecode]</p>
-
-<hr />
-
+<hr>
 <p><strong>Source : Observer.cpp</strong></p>
-
 <p>[sourcecode language=&ldquo;cpp&rdquo;]</pre>
 #include &ldquo;observer.h&rdquo;</p>
-
 <p>subject::subject()
 {
- //
+//
 }</p>
-
 <p>void subject::add(observer *ob)
 {
-  list_observer.push_back(ob);
+list_observer.push_back(ob);
 }</p>
-
 <p>void subject::remove(observer *ob)
 {
- list_observer.remove(ob);
+list_observer.remove(ob);
 }</p>
-
 <p>void subject::notify()
 {
-  std::list<observer*>::iterator i;</p>
-
+std::list&lt;observer*&gt;::iterator i;</p>
 <p>for(i=list_observer.begin();i!=list_observer.end();i++)
-  {
-    (*i)-&gt;update(this);
-  }
+{
+(*i)-&gt;update(this);
+}
 }
 [/sourcecode]</p>
-
 <p>mari kita pakai disini : main.cpp</p>
-
 <p>[sourcecode language=&ldquo;cpp&rdquo;]</p>
-
 <p>#include <iostream>
 #include &ldquo;observer.h&rdquo;
 #include <list></p>
-
 <p>using namespace std;</p>
-
 <p>/* Kelas objek bergerak , memiliki koordinat x,y,z yg menunjukkan data posisi
 */
 class SimObject
 {
 public:
- SimObject(float fx,float fy,float fz)
- {
-   SetTranslation(fx,fy,fz);
- };
- ~SimObject(){};
- void SetTranslation(float fx,float fy,float fz)
- {
-   x=fx;
-   y=fy;
-   z=fz;
- };
- void GetTranslation(float&amp; fx,float&amp; fy,float&amp; fz)
- {
-   fx=x;
-   fy=y;
-   fz=z;
- };
+SimObject(float fx,float fy,float fz)
+{
+SetTranslation(fx,fy,fz);
+};
+~SimObject(){};
+void SetTranslation(float fx,float fy,float fz)
+{
+x=fx;
+y=fy;
+z=fz;
+};
+void GetTranslation(float&amp; fx,float&amp; fy,float&amp; fz)
+{
+fx=x;
+fy=y;
+fz=z;
+};
 private:
-  float x,y,z;
+float x,y,z;
 };</p>
-
-<p>/* Updater: concrete subject
-* memiliki daftar objek bergerak (instan SimObject)
+<p>/* Updater: concrete subject</p>
+<ul>
+<li>memiliki daftar objek bergerak (instan SimObject)
 <em>/
 class Updater:public subject
 {
 public:
- Updater(){    mStateUpdate=UPD_OBJ; };
- ~Updater(){};
- void AddObject(SimObject</em> newobj)
- {
-   mObjects.push_back(newobj);
-   mStateUpdate=NEW_OBJ;
-   notify();
-   mStateUpdate=UPD_OBJ;
- }
- void DelObject(SimObject* delobj)
- {
-   mObjects.remove(delobj);
-   mStateUpdate=DEL_OBJ;
-   notify();
-   mStateUpdate=UPD_OBJ;
- }
- void GetListObject(list<SimObject*>&amp; listobj)
- {
-   listobj=mObjects;
- };
- short int GetStateUpdate()
- {
-   return mStateUpdate;
- };
+Updater(){    mStateUpdate=UPD_OBJ; };
+~Updater(){};
+void AddObject(SimObject</em> newobj)
+{
+mObjects.push_back(newobj);
+mStateUpdate=NEW_OBJ;
+notify();
+mStateUpdate=UPD_OBJ;
+}
+void DelObject(SimObject* delobj)
+{
+mObjects.remove(delobj);
+mStateUpdate=DEL_OBJ;
+notify();
+mStateUpdate=UPD_OBJ;
+}
+void GetListObject(list&lt;SimObject*&gt;&amp; listobj)
+{
+listobj=mObjects;
+};
+short int GetStateUpdate()
+{
+return mStateUpdate;
+};
 private:
-   enum{ NEW_OBJ,DEL_OBJ,UPD_OBJ } mStateUpdate;
-   list<SimObject*>mObjects;
+enum{ NEW_OBJ,DEL_OBJ,UPD_OBJ } mStateUpdate;
+list&lt;SimObject*&gt;mObjects;
 };
 //strategy pattern: implementasi algoritma dipisah
 //MoveAlgorithm: abstract class untuk algorithm, digunakan spt halnya interface di Java/Delphi
 class MoveAlgorithm
 {
 public:
- MoveAlgorithm(){};
- ~MoveAlgorithm(){};
- virtual void DoMove(float x,float y,float z)=0;
+MoveAlgorithm(){};
+~MoveAlgorithm(){};
+virtual void DoMove(float x,float y,float z)=0;
 };
 //turunan MoveAlgorithm
 class MoveAlgorithm2D:public MoveAlgorithm
 {
 public:
- MoveAlgorithm2D(){};
- ~MoveAlgorithm2D(){};
- virtual void DoMove(float x,float y,float z)
- {
-   cout&lt;&lt;&ldquo;Move2D x: &ldquo;&lt;<x<<endl;
-   cout<<"Move2D y: "<<y<<endl;
- };
+MoveAlgorithm2D(){};
+~MoveAlgorithm2D(){};
+virtual void DoMove(float x,float y,float z)
+{
+cout&laquo;&ldquo;Move2D x: &ldquo;&laquo;x&laquo;endl;
+cout&laquo;&ldquo;Move2D y: &ldquo;&laquo;y&laquo;endl;
+};
 };
 //turunan MoveAlgorithm
 class MoveAlgorithm3D:public MoveAlgorithm
 {
 public:
-   MoveAlgorithm3D(){};
-  ~MoveAlgorithm3D(){};
-  virtual void DoMove(float x,float y,float z)
- {
- cout<<"Move3D x: "<<x<<endl;
- cout<<"Move3D y: "<<y<<endl;
- cout<<"Move3D z: "<<z<<endl;
- };
+MoveAlgorithm3D(){};
+~MoveAlgorithm3D(){};
+virtual void DoMove(float x,float y,float z)
+{
+cout&laquo;&ldquo;Move3D x: &ldquo;&laquo;x&laquo;endl;
+cout&laquo;&ldquo;Move3D y: &ldquo;&laquo;y&laquo;endl;
+cout&laquo;&ldquo;Move3D z: &ldquo;&laquo;z&laquo;endl;
+};
 };
 //Viewer : concrete Observer
 //Viewer bisa memiliki “cara” menggambar object yaitu dengan menset type MoveAlgorithm (2D atau 3D)
 class Viewer:public observer
 {
 public:
- Viewer(Updater* updater)
- {
-   mSubject=updater;
-   mSubject->add(this);
-   mMoveAlgo=NULL;
- };
- ~Viewer()
- {
-   mSubject-&gt;remove(this);
- };
- void SetMoveAlgorithm(MoveAlgorithm* ma)
- {
-   mMoveAlgo=ma;
- };
- void update(subject *updated_subject)
- {
-   if(updated_subject==mSubject)
-   {
-   short int s= mSubject-&gt;GetStateUpdate();
-   if(s==0){
-     cout&lt;&lt;&ldquo;new object added&rdquo;&lt;&lt;endl;
-   }
-   else if(s==1){
-     cout&lt;&lt;&ldquo;object deleted&rdquo;&lt;&lt;endl;
-   }
-   else if(s==2){
-    Move();
-   }
-   };
- };</p>
-
+Viewer(Updater* updater)
+{
+mSubject=updater;
+mSubject-&gt;add(this);
+mMoveAlgo=NULL;
+};
+~Viewer()
+{
+mSubject-&gt;remove(this);
+};
+void SetMoveAlgorithm(MoveAlgorithm* ma)
+{
+mMoveAlgo=ma;
+};
+void update(subject *updated_subject)
+{
+if(updated_subject==mSubject)
+{
+short int s= mSubject-&gt;GetStateUpdate();
+if(s==0){
+cout&laquo;&ldquo;new object added&rdquo;&laquo;endl;
+}
+else if(s==1){
+cout&laquo;&ldquo;object deleted&rdquo;&laquo;endl;
+}
+else if(s==2){
+Move();
+}
+};
+};</li>
+</ul>
 <p>void Move()
- {
-   list<SimObject*> listobject<em>;
-   mSubject-&gt;GetListObject(listobject</em>);
-   for(list<SimObject*>::iterator it=listobject<em>.begin();it!=listobject</em>.end();it++)
-   {
-     float x,y,z;
-     (<em>it)-&gt;GetTranslation(x,y,z);
-     if(mMoveAlgo!=NULL)
-     {
-        mMoveAlgo-&gt;DoMove(x,y,z);
-     }else
-        cout&lt;&lt;&ldquo;Exception: Move Algorithm is NULL&rdquo;&lt;&lt;endl;
-   };
- };
+{
+list&lt;SimObject*&gt; listobject_;
+mSubject-&gt;GetListObject(listobject_);
+for(list&lt;SimObject*&gt;::iterator it=listobject_.begin();it!=listobject_.end();it++)
+{
+float x,y,z;
+(<em>it)-&gt;GetTranslation(x,y,z);
+if(mMoveAlgo!=NULL)
+{
+mMoveAlgo-&gt;DoMove(x,y,z);
+}else
+cout&laquo;&ldquo;Exception: Move Algorithm is NULL&rdquo;&laquo;endl;
+};
+};
 private:
-  Updater</em> mSubject;
-  MoveAlgorithm* mMoveAlgo;
+Updater</em> mSubject;
+MoveAlgorithm* mMoveAlgo;
 };</p>
-
 <p>//Main</p>
-
 <p>int main()
 {
- cout&lt;<endl;
- Updater* updater=new Updater();
- Viewer* viewer1=new Viewer(updater);
- viewer1->SetMoveAlgorithm(new MoveAlgorithm2D());</p>
-
+cout&laquo;endl;
+Updater* updater=new Updater();
+Viewer* viewer1=new Viewer(updater);
+viewer1-&gt;SetMoveAlgorithm(new MoveAlgorithm2D());</p>
 <p>Viewer* viewer2=new Viewer(updater);
- viewer2-&gt;SetMoveAlgorithm(new MoveAlgorithm3D());</p>
-
+viewer2-&gt;SetMoveAlgorithm(new MoveAlgorithm3D());</p>
 <p>SimObject* object1=new SimObject(10.0,5.0,2.0);
- SimObject* object2=new SimObject(2.0,6.5,2.0);
- SimObject* object3=new SimObject(11.0,2.0,2.0);</p>
-
+SimObject* object2=new SimObject(2.0,6.5,2.0);
+SimObject* object3=new SimObject(11.0,2.0,2.0);</p>
 <p>updater-&gt;AddObject(object1);
- updater-&gt;AddObject(object2);
- updater-&gt;AddObject(object3);</p>
-
+updater-&gt;AddObject(object2);
+updater-&gt;AddObject(object3);</p>
 <p>updater-&gt;notify();</p>
-
 <p>updater-&gt;DelObject(object1);</p>
-
 <p>updater-&gt;notify();
- system(&ldquo;pause&rdquo;);
+system(&ldquo;pause&rdquo;);
 }</p>
-
 <p>[/sourcecode]</p>
-
 <p>//re-edit again later :)</p>
+</section>
 
+  
+  
 
-	  
-
-<div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
+  
+  
+  
+  
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  >
+    
+    <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/2010/10/11/just-do-it/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>just-do-it!</span></a
+    >
     
     
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/2010/05/15/menengok-kembali-c-virtual-function/"
+      ><span>Menengok kembali: C&#43;&#43; virtual function</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    >
     
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "xedixermawan" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-      </div>
-      </div></article>
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
 
 
-	 </div>
+  
+</article>
 
-	 </div>
-       </div>
-     </div>
 
- <div class="container footer">
-  <div class="row">
-    <div class="col-md-10">
-      <small class="text-muted">Copyright 2007-2019 XediXermawan</small>
-    </div>
-    <div class="col-md-2">
-      <small class="text-muted">   Hugo + Theme : <a href="https://github.com/leonhe/hugo_eiio">Eiio</a></small>
-      </div>
-   </div>
- </div>
+    </main>
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'google analytics code', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
+  
+    © 2007-2024 XediXermawan
+  
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
 
-</body></html>
+  </body>
+</html>

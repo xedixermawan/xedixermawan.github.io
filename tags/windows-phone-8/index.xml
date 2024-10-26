@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows Phone 8 on Home</title>
+    <link>http://localhost:1313/tags/windows-phone-8/</link>
+    <description>Recent content in Windows Phone 8 on Home</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>© 2007-2024 XediXermawan</copyright>
+    <lastBuildDate>Tue, 13 May 2014 11:55:30 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/windows-phone-8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Recent spare time projects</title>
+      <link>http://localhost:1313/2014/05/13/my-recent-spare-time-projects/</link>
+      <pubDate>Tue, 13 May 2014 11:55:30 +0000</pubDate>
+      <guid>http://localhost:1313/2014/05/13/my-recent-spare-time-projects/</guid>
+      <description>&lt;p&gt;I have been working on these projects in my spare time quite while ( like I work on it when I want work on it  :p )., but recently I&amp;rsquo;m disappointed with my progress ( apparently I&amp;rsquo;m busy and have difficulty when creating graphics assets by myself ). so I decided to upload source code to google code in case I&amp;rsquo;m interested again next time .There are 2 projects :&lt;/p&gt;&#xA;&lt;p&gt;[1] unknown project 1. very simple game, almost done. keyword : C/C++,DirectX, Desktop App,Windows Phone 8&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

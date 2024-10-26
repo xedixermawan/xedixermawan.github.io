@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Png Calendar on Home</title>
+    <link>http://localhost:1313/tags/png-calendar/</link>
+    <description>Recent content in Png Calendar on Home</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>© 2007-2024 XediXermawan</copyright>
+    <lastBuildDate>Sun, 16 Nov 2014 16:13:14 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/png-calendar/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Calendar Maker</title>
+      <link>http://localhost:1313/2014/11/16/my-calendar-maker/</link>
+      <pubDate>Sun, 16 Nov 2014 16:13:14 +0000</pubDate>
+      <guid>http://localhost:1313/2014/11/16/my-calendar-maker/</guid>
+      <description>&lt;p&gt;walaupun tahun baru masih 1 1/2 bulan lagi, entah dapat dari mana ide-nya, saya tertarik untuk membuat kalender. Mungkin pikiran saya secara spontan kembali ke masa lalu ketika di tahun pertama kuliah dapat tugas membuat program kalender abadi he he.  Yang saya buat disini tidak jauh beda : program untuk membuat kalender, dengan input tahun dan bulan , output nya berupa image kalender. Jadi image nya bisa dipakai, atau mungkin di print :) . Dan program ini dimaksudkan bisa membuat kalender tahun berapa pun, termasuk tahun 1, bulan 1. Walaupun doeloe pernah buat, saya sudah lupa gimana buatnya. sudah lama sekali. Setelah search tentang kalender di wiki , berikut beberapa hal yang perlu diketahui, untuk menghitung hari dari tahun 1 :&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

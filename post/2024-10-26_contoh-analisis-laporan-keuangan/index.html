@@ -1,0 +1,712 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Analisis laporan keuangan - Home</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="Untuk memberikan contoh analisis laporan keuangan suatu perusahaan, saya akan menggunakan data yang disederhanakan dari laporan keuangan hipotetis. Berikut adalah contoh data dari sebuah perusahaan fiktif:
+Laporan Laba Rugi (Income Statement)
+
+  
+      
+          Komponen
+          Jumlah (dalam juta USD)
+      
+  
+  
+      
+          Pendapatan (Revenue)
+          100
+      
+      
+          Harga Pokok Penjualan (COGS)
+          60
+      
+      
+          Laba Kotor (Gross Profit)
+          40
+      
+      
+          Biaya Operasional (Operating Expenses)
+          20
+      
+      
+          Laba Operasional (Operating Income)
+          20
+      
+      
+          Beban Bunga (Interest Expense)
+          5
+      
+      
+          Pajak (Taxes)
+          3
+      
+      
+          Laba Bersih (Net Income)
+          12
+      
+  
+
+Laporan Neraca (Balance Sheet)
+
+  
+      
+          Komponen
+          Jumlah (dalam juta USD)
+      
+  
+  
+      
+          Aset
+          
+      
+      
+          Aset Lancar (Current Assets)
+          50
+      
+      
+          Aset Tetap (Fixed Assets)
+          100
+      
+      
+          Total Aset (Total Assets)
+          150
+      
+      
+          Liabilitas
+          
+      
+      
+          Liabilitas Lancar (Current Liabilities)
+          30
+      
+      
+          Utang Jangka Panjang (Long-term Debt)
+          40
+      
+      
+          Total Liabilitas (Total Liabilities)
+          70
+      
+      
+          Ekuitas Pemegang Saham
+          
+      
+      
+          Ekuitas (Equity)
+          80
+      
+      
+          Total Liabilitas dan Ekuitas
+          150
+      
+  
+
+Laporan Arus Kas (Cash Flow Statement)
+
+  
+      
+          Komponen
+          Jumlah (dalam juta USD)
+      
+  
+  
+      
+          Arus Kas dari Operasi (Operating Cash Flow)
+          25
+      
+      
+          Arus Kas dari Investasi (Investing Cash Flow)
+          (15)
+      
+      
+          Arus Kas dari Pendanaan (Financing Cash Flow)
+          (5)
+      
+      
+          Perubahan Bersih Kas (Net Cash Flow)
+          5
+      
+  
+
+Rasio Keuangan (Financial Ratios)
+
+
+Gross Profit Margin (Laba Kotor/Pendapatan)
+$$
+\frac{Laba Kotor}{Pendapatan} = \frac{40}{100} = 40%
+$$" />
+  <meta name="author" content="xedi" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/874371989962b8461ad94e8119d82bc7?s=160&amp;d=identicon" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/github.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/instagram.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+  
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () =>
+    renderMathInElement(document.body, {
+      
+      
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      
+      throwOnError: false,
+    }),
+  );
+</script>
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.136.5">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+      >Home</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse">
+      
+      <a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+      <a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/contact/"
+        >Contact</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 rtl:space-x-reverse dark:invert ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center"
+    >
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/XediXermawan"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/XediXermawan"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/XediXermawan"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">Analisis laporan keuangan</h1>
+
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>Oct 26, 2024</time>
+      
+      
+      
+      
+      <span class="mx-1">&middot;</span>
+      <span>xedi</span>
+      
+    </div>
+    
+  </header>
+
+  <section><p>Untuk memberikan contoh analisis laporan keuangan suatu perusahaan, saya akan menggunakan data yang disederhanakan dari laporan keuangan hipotetis. Berikut adalah contoh data dari sebuah perusahaan fiktif:</p>
+<h3 id="laporan-laba-rugi-income-statement">Laporan Laba Rugi (Income Statement)</h3>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Komponen</strong></th>
+          <th><strong>Jumlah (dalam juta USD)</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Pendapatan (Revenue)</td>
+          <td>100</td>
+      </tr>
+      <tr>
+          <td>Harga Pokok Penjualan (COGS)</td>
+          <td>60</td>
+      </tr>
+      <tr>
+          <td>Laba Kotor (Gross Profit)</td>
+          <td>40</td>
+      </tr>
+      <tr>
+          <td>Biaya Operasional (Operating Expenses)</td>
+          <td>20</td>
+      </tr>
+      <tr>
+          <td>Laba Operasional (Operating Income)</td>
+          <td>20</td>
+      </tr>
+      <tr>
+          <td>Beban Bunga (Interest Expense)</td>
+          <td>5</td>
+      </tr>
+      <tr>
+          <td>Pajak (Taxes)</td>
+          <td>3</td>
+      </tr>
+      <tr>
+          <td>Laba Bersih (Net Income)</td>
+          <td>12</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="laporan-neraca-balance-sheet">Laporan Neraca (Balance Sheet)</h3>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Komponen</strong></th>
+          <th><strong>Jumlah (dalam juta USD)</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Aset</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Aset Lancar (Current Assets)</td>
+          <td>50</td>
+      </tr>
+      <tr>
+          <td>Aset Tetap (Fixed Assets)</td>
+          <td>100</td>
+      </tr>
+      <tr>
+          <td>Total Aset (Total Assets)</td>
+          <td>150</td>
+      </tr>
+      <tr>
+          <td><strong>Liabilitas</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Liabilitas Lancar (Current Liabilities)</td>
+          <td>30</td>
+      </tr>
+      <tr>
+          <td>Utang Jangka Panjang (Long-term Debt)</td>
+          <td>40</td>
+      </tr>
+      <tr>
+          <td>Total Liabilitas (Total Liabilities)</td>
+          <td>70</td>
+      </tr>
+      <tr>
+          <td><strong>Ekuitas Pemegang Saham</strong></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Ekuitas (Equity)</td>
+          <td>80</td>
+      </tr>
+      <tr>
+          <td>Total Liabilitas dan Ekuitas</td>
+          <td>150</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="laporan-arus-kas-cash-flow-statement">Laporan Arus Kas (Cash Flow Statement)</h3>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Komponen</strong></th>
+          <th><strong>Jumlah (dalam juta USD)</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Arus Kas dari Operasi (Operating Cash Flow)</td>
+          <td>25</td>
+      </tr>
+      <tr>
+          <td>Arus Kas dari Investasi (Investing Cash Flow)</td>
+          <td>(15)</td>
+      </tr>
+      <tr>
+          <td>Arus Kas dari Pendanaan (Financing Cash Flow)</td>
+          <td>(5)</td>
+      </tr>
+      <tr>
+          <td>Perubahan Bersih Kas (Net Cash Flow)</td>
+          <td>5</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="rasio-keuangan-financial-ratios">Rasio Keuangan (Financial Ratios)</h3>
+<ol>
+<li>
+<p><strong>Gross Profit Margin (Laba Kotor/Pendapatan)</strong><br>
+$$
+\frac{Laba Kotor}{Pendapatan} = \frac{40}{100} = 40%
+$$</p>
+</li>
+<li>
+<p><strong>Net Profit Margin (Laba Bersih/Pendapatan)</strong><br>
+$$
+\frac{Laba Bersih}{Pendapatan} = \frac{12}{100} = 12%
+$$</p>
+</li>
+<li>
+<p><strong>Debt-to-Equity Ratio (Liabilitas/Equity)</strong><br>
+$$
+\frac{Total Liabilitas}{Ekuitas} = \frac{70}{80} = 0.875 \text{ atau } 87.5%
+$$</p>
+</li>
+<li>
+<p><strong>Return on Equity (ROE) (Laba Bersih/Ekuitas)</strong><br>
+$$
+\frac{Laba Bersih}{Ekuitas} = \frac{12}{80} = 15%
+$$</p>
+</li>
+<li>
+<p><strong>Price-to-Earnings (P/E) Ratio</strong><br>
+Jika harga saham perusahaan adalah USD 20, dan laba per saham (Earnings per Share atau EPS) adalah USD 2, maka:
+$$
+P/E = \frac{Harga Saham}{EPS} = \frac{20}{2} = 10
+$$</p>
+</li>
+</ol>
+<h3 id="interpretasi">Interpretasi:</h3>
+<ol>
+<li>
+<p><strong>Laba Bersih:</strong> Perusahaan menghasilkan laba bersih sebesar USD 12 juta dengan margin laba bersih 12%. Ini menunjukkan bahwa perusahaan cukup efisien dalam menghasilkan laba dari pendapatannya.</p>
+</li>
+<li>
+<p><strong>Debt-to-Equity Ratio:</strong> Rasio utang terhadap ekuitas adalah 87.5%. Rasio ini menunjukkan bahwa perusahaan memiliki keseimbangan antara utang dan ekuitas, meskipun utang tidak terlalu tinggi, hal ini patut diperhatikan untuk memastikan risiko keuangan tetap terkendali.</p>
+</li>
+<li>
+<p><strong>Return on Equity (ROE):</strong> ROE sebesar 15% menunjukkan bahwa perusahaan cukup efektif dalam menggunakan ekuitas untuk menghasilkan laba.</p>
+</li>
+<li>
+<p><strong>Price-to-Earnings Ratio:</strong> P/E sebesar 10 menunjukkan bahwa investor membayar USD 10 untuk setiap USD 1 dari laba perusahaan. Ini bisa dianggap relatif rendah atau wajar tergantung pada industri dan pertumbuhan di masa depan.</p>
+</li>
+</ol>
+<p>Dari data ini, seorang investor bisa menilai apakah perusahaan ini memiliki potensi yang baik untuk dijadikan investasi, dengan melihat rasio laba yang solid, ROE yang baik, serta manajemen utang yang tidak terlalu berisiko.</p>
+<p>This is an inline (a^<em>=x-b^</em>) equation.</p>
+<p>These are block equations:</p>
+<p>$$a^<em>=x-b^</em>$$</p>
+<p>$$ a^<em>=x-b^</em> $$</p>
+<p>$$
+a^<em>=x-b^</em>
+$$</p>
+<p>These are block equations using alternate delimiters:</p>
+<p>$$a^<em>=x-b^</em>$$</p>
+<p>$$ a^<em>=x-b^</em> $$</p>
+<p>$$
+a^<em>=x-b^</em>
+$$</p>
+</section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  >
+    
+    <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/post/placeholder-text/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Placeholder Text</span></a
+    >
+    
+    
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/post/markdown-syntax/"
+      ><span>Markdown Syntax Guide</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
+  
+    © 2007-2024 XediXermawan
+  
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+
+  </body>
+</html>

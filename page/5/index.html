@@ -1,349 +1,449 @@
-<!DOCTYPE html>
-<html>
-   <head>
-	<meta name="generator" content="Hugo 0.49" />
-   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="google-site-verification" content="XN4YmHgE76jTp2kNQ9qnsVSApl6yIQBzdyLe0BnbFks" />
+<!doctype html>
 
-  <title>
-    
-    XediXermawan | personal-technical blog
-    
-    
-  </title>
-  <link rel="shortcut icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
   
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+  <title>Home</title>
 
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/holder.min.js" type='text/javascript'></script>
-  <link rel="stylesheet" href="/highlight/styles/github-gist.css">  
-  <link rel="stylesheet" href="/css/style.css">
+  
+  <meta name="theme-color" />
 
-  <link rel="canonical" href="https://xedixermawan.github.io/">
-  <link href="https://xedixermawan.github.io/index.xml" rel="alternate" type="application/rss+xml" title="XediXermawan" />
-  <script src="/highlight/highlight.pack.js" type='text/javascript'></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.3.0/highlightjs-line-numbers.min.js"></script>
-  <script type="text/javascript">
+  
+  
+  
+  
+  
+  <meta
+    name="description"
+    content="A personal blog"
+  />
+  <meta name="author" content="XediXermawan" />
+  
 
-    $(document).ready(function() {
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/874371989962b8461ad94e8119d82bc7?s=160&amp;d=identicon" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/github.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/instagram.svg" />
+  
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.136.5">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+      >Home</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
     
-    hljs.initHighlightingOnLoad();
-    $('pre code').each(function(i, block) {
-    hljs.highlightBlock(block);
-    hljs.lineNumbersBlock(block);
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
     });
-});
-  </script>
-   </head>
-   <body data-spy="scroll" data-target="#toc">
-     <header class="navbar navbar-default navbar-fixed-top" id="top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="https://xedixermawan.github.io/">XediXermawan</a>
-    </div>
 
     
-    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav">
-	
-	
-	<li  class="active"   ><a href="/">Home</a></li>
-	
-	
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
 
-	
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
 
-	
-	
-	<li > <a href="https://xedixermawan.github.io/about/" >About</a></li>
-	
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
 
-	
-	
-	<li > <a href="https://xedixermawan.github.io/projects/" >Projects</a></li>
-	
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
 
-	
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse">
+      
+      <a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+      <a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/contact/"
+        >Contact</a
+      >
+      
+    </nav>
+    
 
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-      </ul>
-</nav>
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 rtl:space-x-reverse dark:invert ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center"
+    >
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/XediXermawan"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/XediXermawan"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/XediXermawan"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
 </header>
 
-     <div class="jumbotron masthead" role="main">
-       <div class="container">
-	 <div class="row">
 
- 	   <div class="col-md-8 col-md-offset-2 ">
-	   
-	            
-    <div class="panel panel-default">
-      <div class="panel-body">
-	<div>
-	 <span class="text-primary">personal-technical blog</span>
-	 <div class="pull-right">
-
-	   <a target="_blank" class="rss"  href="https://xedixermawan.github.io/index.xml"><img src="/images/rss-feed-logo-symbol-icon-10.png" width="25px" height="25px">&nbsp;RSS</a>
-	 </div>
-	</div>
-	
-      </div>
-    </div>    
-
-    <div class="panel panel-default">
-    <div class="panel-heading">
-      <span class="glyphicon glyphicon-list-alt"></span>&nbsp;<b>Posts</b>
-    </div>
-    <div class="panel-body" itemtype="http://schema.org/ItemList" itemListElement>
-      <div class="list-group">
-	
-	
-	
-	<a itemListElement  itemtype="http://schema.org/ListItem" itemscope   href="https://xedixermawan.github.io/2009/09/02/shifting-puzzle/" class="list-group-item"><span class="badge"  content="Sep 02, 2009" >Sep 02, 2009</span><span itemprop="name">Shifting Puzzle</span>
-	  <meta itemprop="url" content="https://xedixermawan.github.io/2009/09/02/shifting-puzzle/"/>
-</a>
-
-	
-	<a itemListElement  itemtype="http://schema.org/ListItem" itemscope   href="https://xedixermawan.github.io/2009/08/28/cerito-awal-poso-romadhon/" class="list-group-item"><span class="badge"  content="Aug 28, 2009" >Aug 28, 2009</span><span itemprop="name">cerito awal poso romadhon</span>
-	  <meta itemprop="url" content="https://xedixermawan.github.io/2009/08/28/cerito-awal-poso-romadhon/"/>
-</a>
-
-	
-	<a itemListElement  itemtype="http://schema.org/ListItem" itemscope   href="https://xedixermawan.github.io/2009/07/30/java-based-simple-game/" class="list-group-item"><span class="badge"  content="Jul 30, 2009" >Jul 30, 2009</span><span itemprop="name">Java based-simple game</span>
-	  <meta itemprop="url" content="https://xedixermawan.github.io/2009/07/30/java-based-simple-game/"/>
-</a>
-
-	
-	<a itemListElement  itemtype="http://schema.org/ListItem" itemscope   href="https://xedixermawan.github.io/2009/05/11/kecanduan-su-doku/" class="list-group-item"><span class="badge"  content="May 11, 2009" >May 11, 2009</span><span itemprop="name">Kecanduan Su Doku</span>
-	  <meta itemprop="url" content="https://xedixermawan.github.io/2009/05/11/kecanduan-su-doku/"/>
-</a>
-
-	
-	<a itemListElement  itemtype="http://schema.org/ListItem" itemscope   href="https://xedixermawan.github.io/2009/04/13/org-24y/" class="list-group-item"><span class="badge"  content="Apr 13, 2009" >Apr 13, 2009</span><span itemprop="name">Org 24Y</span>
-	  <meta itemprop="url" content="https://xedixermawan.github.io/2009/04/13/org-24y/"/>
-</a>
-
-	
-	<a itemListElement  itemtype="http://schema.org/ListItem" itemscope   href="https://xedixermawan.github.io/2009/03/17/golput-orang-orang-yang-tidak-belajar-ilmu-hitam/" class="list-group-item"><span class="badge"  content="Mar 17, 2009" >Mar 17, 2009</span><span itemprop="name">Golput : orang-orang yang tidak belajar ilmu hitam</span>
-	  <meta itemprop="url" content="https://xedixermawan.github.io/2009/03/17/golput-orang-orang-yang-tidak-belajar-ilmu-hitam/"/>
-</a>
-
-	
-	<a itemListElement  itemtype="http://schema.org/ListItem" itemscope   href="https://xedixermawan.github.io/2009/03/04/decision-effect/" class="list-group-item"><span class="badge"  content="Mar 04, 2009" >Mar 04, 2009</span><span itemprop="name">decision effect</span>
-	  <meta itemprop="url" content="https://xedixermawan.github.io/2009/03/04/decision-effect/"/>
-</a>
-
-	
-	<a itemListElement  itemtype="http://schema.org/ListItem" itemscope   href="https://xedixermawan.github.io/2009/01/10/troublefinder-not-trouble-maker/" class="list-group-item"><span class="badge"  content="Jan 10, 2009" >Jan 10, 2009</span><span itemprop="name">troublefinder, not trouble maker</span>
-	  <meta itemprop="url" content="https://xedixermawan.github.io/2009/01/10/troublefinder-not-trouble-maker/"/>
-</a>
-
-	
-	<a itemListElement  itemtype="http://schema.org/ListItem" itemscope   href="https://xedixermawan.github.io/2008/12/28/hello-world-dengan-winavr/" class="list-group-item"><span class="badge"  content="Dec 28, 2008" >Dec 28, 2008</span><span itemprop="name">Hello World dengan WinAVR</span>
-	  <meta itemprop="url" content="https://xedixermawan.github.io/2008/12/28/hello-world-dengan-winavr/"/>
-</a>
-
-	
-	<a itemListElement  itemtype="http://schema.org/ListItem" itemscope   href="https://xedixermawan.github.io/2008/11/28/bahasa/" class="list-group-item"><span class="badge"  content="Nov 28, 2008" >Nov 28, 2008</span><span itemprop="name">bahasa</span>
-	  <meta itemprop="url" content="https://xedixermawan.github.io/2008/11/28/bahasa/"/>
-</a>
-
-	
-	<a itemListElement  itemtype="http://schema.org/ListItem" itemscope   href="https://xedixermawan.github.io/2008/11/21/embedded-web-server-untuk-monitoring-dan-data-logging/" class="list-group-item"><span class="badge"  content="Nov 21, 2008" >Nov 21, 2008</span><span itemprop="name">Embedded Web Server untuk Monitoring dan Data Logging.</span>
-	  <meta itemprop="url" content="https://xedixermawan.github.io/2008/11/21/embedded-web-server-untuk-monitoring-dan-data-logging/"/>
-</a>
-
-	
-	<a itemListElement  itemtype="http://schema.org/ListItem" itemscope   href="https://xedixermawan.github.io/2008/11/21/interface-barcode-ke-mikrokontroler-avr-atmega/" class="list-group-item"><span class="badge"  content="Nov 21, 2008" >Nov 21, 2008</span><span itemprop="name">Interface barcode ke mikrokontroler AVR atmega.</span>
-	  <meta itemprop="url" content="https://xedixermawan.github.io/2008/11/21/interface-barcode-ke-mikrokontroler-avr-atmega/"/>
-</a>
-
-	
-	<a itemListElement  itemtype="http://schema.org/ListItem" itemscope   href="https://xedixermawan.github.io/2008/10/17/membaca_menulis/" class="list-group-item"><span class="badge"  content="Oct 17, 2008" >Oct 17, 2008</span><span itemprop="name">membaca_menulis</span>
-	  <meta itemprop="url" content="https://xedixermawan.github.io/2008/10/17/membaca_menulis/"/>
-</a>
-
-	
-	<a itemListElement  itemtype="http://schema.org/ListItem" itemscope   href="https://xedixermawan.github.io/2008/08/13/taste-of-life/" class="list-group-item"><span class="badge"  content="Aug 13, 2008" >Aug 13, 2008</span><span itemprop="name">taste of life</span>
-	  <meta itemprop="url" content="https://xedixermawan.github.io/2008/08/13/taste-of-life/"/>
-</a>
-
-	
-	<a itemListElement  itemtype="http://schema.org/ListItem" itemscope   href="https://xedixermawan.github.io/2008/08/04/nightmare/" class="list-group-item"><span class="badge"  content="Aug 04, 2008" >Aug 04, 2008</span><span itemprop="name">nightmare</span>
-	  <meta itemprop="url" content="https://xedixermawan.github.io/2008/08/04/nightmare/"/>
-</a>
-
-      </div>
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
       
 
-<ul class="pagination">
-    
-    <li class="page-item">
-        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-    <a href="/page/4/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-    </li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/">1</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/4/">4</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item active"><a class="page-link" href="/page/5/">5</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/6/">6</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/7/">7</a></li>
-    
-    
-    <li class="page-item">
-    <a href="/page/6/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-        <a href="/page/7/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-    </li>
-    
-</ul>
 
-    </div>
-    </div>
-    
 
-	 </div>
 
-	 </div>
-       </div>
-     </div>
 
- <div class="container footer">
-  <div class="row">
-    <div class="col-md-10">
-      <small class="text-muted">Copyright 2007-2019 XediXermawan</small>
-    </div>
-    <div class="col-md-2">
-      <small class="text-muted">   Hugo + Theme : <a href="https://github.com/leonhe/hugo_eiio">Eiio</a></small>
-      </div>
-   </div>
- </div>
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'google analytics code', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
 
-</body></html>
+
+
+
+
+ 
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Membuat Tetris</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Aug 14, 2011</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2011/08/14/membuat-tetris/">Membuat Tetris</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">C&#43;&#43; bahasa pemrograman masa depan ?</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Jul 31, 2011</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2011/07/31/c-bahasa-pemrograman-masa-depan/">C&#43;&#43; bahasa pemrograman masa depan ?</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">post code: proximity game</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Jul 18, 2011</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2011/07/18/post-code-proximity-game/">post code: proximity game</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Proximity Game Clone</h2>
+  <time class="text-xs antialiased opacity-60"
+    >May 17, 2011</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2011/05/17/proximity-game-clone/">Proximity Game Clone</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Mencoba Visitor Pattern. </h2>
+  <time class="text-xs antialiased opacity-60"
+    >Apr 16, 2011</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2011/04/16/visitor-pattern-mencoba/">Mencoba Visitor Pattern. </a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">switching</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Mar 5, 2011</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2011/03/05/switching/">switching</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Zword Project :yet another dictionary</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Feb 23, 2011</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2011/02/23/zword-project-yet-another-dictionary/">Zword Project :yet another dictionary</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Mencoba SQLite3</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Jan 12, 2011</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2011/01/12/mencoba-sqlite3/">Mencoba SQLite3</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">avira update caused debug error</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Dec 20, 2010</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2010/12/20/avira-update-caused-debug-error/">avira update caused debug error</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0">Android issues on Xperia X8</h2>
+  <time class="text-xs antialiased opacity-60"
+    >Dec 19, 2010</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/2010/12/19/android-1-6-is-alpha-version/">Android issues on Xperia X8</a>
+</section>
+
+
+
+
+<nav class="mt-14 flex">
+  
+  <a class="btn" href="/page/4/">← Prev Page</a>
+  
+  
+  <a class="btn ml-auto" href="/page/6/"
+    >Next Page →</a
+  >
+  
+</nav>
+
+
+
+    </main>
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
+  
+    © 2007-2024 XediXermawan
+  
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+
+  </body>
+</html>

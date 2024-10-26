@@ -1,153 +1,307 @@
-<!DOCTYPE html>
-<html>
-   <head>
-   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="google-site-verification" content="XN4YmHgE76jTp2kNQ9qnsVSApl6yIQBzdyLe0BnbFks" />
+<!doctype html>
 
-  <title>
-    
-    
-    Otomatisasi dengan script : windows powershell - XediXermawan
-    
-  </title>
-  <link rel="shortcut icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
   
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+  <title>Otomatisasi dengan script : windows powershell - Home</title>
 
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/holder.min.js" type='text/javascript'></script>
-  <link rel="stylesheet" href="/highlight/styles/github-gist.css">  
-  <link rel="stylesheet" href="/css/style.css">
-
-  <link rel="canonical" href="https://xedixermawan.github.io/2013/01/06/otomatisasi-dengan-script-windows-powershell/">
   
-  <script src="/highlight/highlight.pack.js" type='text/javascript'></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.3.0/highlightjs-line-numbers.min.js"></script>
-  <script type="text/javascript">
+  <meta name="theme-color" />
 
-    $(document).ready(function() {
+  
+  
+  
+  
+  <meta name="description" content="Kita mungkin pernah menjumpai orang-orang yang bekerja sangat cepat atau menyelesaikan banyak pekerjaan dengan waktu yang singkat, dan ada yang biasa saja dan bahkan mungkin lambat. Kenapa? Jawabannya mungkin : &ldquo;orang kan beda-beda&rdquo;, maksudnya? : &ldquo;ada orang pintar dan ada orang bodoh&rdquo;. :d, just kiddin&rsquo; . Yah, itu tentu tidak benar . Mungkin ada orang yang diberi kemampuan mengatur waktunya dengan baik &amp; memiliki fokus yang tinggi dalam bekerja ( say NO to distraction ). Dan mungkin dia menggunakan &ldquo;alat&rdquo; yang benar dan cocok dalam menyelesaikan pekerjaan. Dan mungkin juga mereka menggunakan &ldquo;magic&rdquo; :-p, maksudku mereka mengotomatisasi pekerjaan. Kalau kita bekerja dengan komputer, banyak hal yang bisa di-otomatisasi." />
+  <meta name="author" content="oth3rside" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/874371989962b8461ad94e8119d82bc7?s=160&amp;d=identicon" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/github.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/instagram.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.136.5">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+      >Home</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
     
-    hljs.initHighlightingOnLoad();
-    $('pre code').each(function(i, block) {
-    hljs.highlightBlock(block);
-    hljs.lineNumbersBlock(block);
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
     });
-});
-  </script>
-   </head>
-   <body data-spy="scroll" data-target="#toc">
-     <header class="navbar navbar-default navbar-fixed-top" id="top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="https://xedixermawan.github.io/">XediXermawan</a>
-    </div>
 
     
-    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav">
-	
-	
-	<li  ><a href="/">Home</a></li>
-	
-	
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
 
-	
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
 
-	
-	
-	<li > <a href="https://xedixermawan.github.io/about/" >About</a></li>
-	
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
 
-	
-	
-	<li > <a href="https://xedixermawan.github.io/projects/" >Projects</a></li>
-	
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
 
-	
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse">
+      
+      <a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+      <a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/contact/"
+        >Contact</a
+      >
+      
+    </nav>
+    
 
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-      </ul>
-</nav>
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 rtl:space-x-reverse dark:invert ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center"
+    >
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/XediXermawan"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/XediXermawan"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/XediXermawan"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
 </header>
 
-     <div class="jumbotron masthead" role="main">
-       <div class="container">
-	 <div class="row">
 
- 	   <div class="col-md-8 col-md-offset-2 ">
-	   
-<div class="panel panel-default">
-  <div class="panel-body">
-      <article id='post' >
-	<h1> Otomatisasi dengan script : windows powershell </h1>
-	  
-	  <p>Kita mungkin pernah menjumpai orang-orang yang bekerja sangat cepat atau menyelesaikan banyak pekerjaan dengan waktu yang singkat, dan ada yang biasa saja dan bahkan mungkin lambat. Kenapa? Jawabannya mungkin : &ldquo;orang kan beda-beda&rdquo;, maksudnya? : &ldquo;ada orang pintar dan ada orang bodoh&rdquo;. :d, just kiddin&rsquo; . Yah, itu tentu tidak benar . Mungkin ada orang yang diberi kemampuan mengatur waktunya dengan baik &amp; memiliki fokus yang tinggi dalam bekerja ( <em>say NO to distraction</em> ). Dan mungkin dia menggunakan &ldquo;alat&rdquo; yang benar dan cocok dalam menyelesaikan pekerjaan. Dan mungkin juga mereka menggunakan &ldquo;<em>magic</em>&rdquo; :-p, maksudku mereka mengotomatisasi pekerjaan. Kalau kita bekerja dengan komputer, banyak hal yang bisa di-otomatisasi.</p>
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
 
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">Otomatisasi dengan script : windows powershell</h1>
+
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>Jan 6, 2013</time>
+      
+      
+      
+      
+      <span class="mx-1">&middot;</span>
+      <span>oth3rside</span>
+      
+    </div>
+    
+  </header>
+
+  <section><p>Kita mungkin pernah menjumpai orang-orang yang bekerja sangat cepat atau menyelesaikan banyak pekerjaan dengan waktu yang singkat, dan ada yang biasa saja dan bahkan mungkin lambat. Kenapa? Jawabannya mungkin : &ldquo;orang kan beda-beda&rdquo;, maksudnya? : &ldquo;ada orang pintar dan ada orang bodoh&rdquo;. :d, just kiddin&rsquo; . Yah, itu tentu tidak benar . Mungkin ada orang yang diberi kemampuan mengatur waktunya dengan baik &amp; memiliki fokus yang tinggi dalam bekerja ( <em>say NO to distraction</em> ). Dan mungkin dia menggunakan &ldquo;alat&rdquo; yang benar dan cocok dalam menyelesaikan pekerjaan. Dan mungkin juga mereka menggunakan &ldquo;<em>magic</em>&rdquo; :-p, maksudku mereka mengotomatisasi pekerjaan. Kalau kita bekerja dengan komputer, banyak hal yang bisa di-otomatisasi.</p>
 <p>Kita harus ingat, komputer dibuat dengan kelebihan antara lain: komputer bekerja sangat cepat dan dapat menyelesesaikan pekerjaan yang sama yang berulang-ulang. Dan tentu, tanpa rasa bosan :D . Jadi jika kita mengerjakan pekerjaan yang sama dan berulang-ulang DI komputer, maka kemungkinan, kita masih belum bisa memaksimalkan fungsi komputer. Pekerjaan sebanyak mungkin harus bisa diotomatisasi. Bagaimana caranya? Banyak cara, namun saya lebih spesifik di blog post ini: menggunakan <a href="http://www.ntchosting.com/script.html"><em>computer shell script/computer script/script</em></a>. <em>Script</em>, sebuah source code yang bisa dijalankan tanpa harus dikompilasi dan di-<em>linking</em>, salah satu tools yang sangat membantu untuk mengotomatisasi pekerjaan. Terdapat banyak script yang bisa dipilih : python, lua, VBScript, DOS Batch, Bash, windows powershell , dll .</p>
-
 <p>DOS Batch merupakan scripting pertama yang saya pelajari waktu belajar komputer di SMU dulu, dan juga belajar lagi waktu bekerja, karena Batch digunakan untuk membuat <a href="http://en.wikipedia.org/wiki/Make_(software)">MAKE file</a>. Batch bisa menyelesaikan banyak hal , namun Batch sangat prone-error . Selain Batch tidak ada lagi scripting yang saya pelajari . Python sempat menarik perhatian, namun belum mencobanya. Minggu lalu, saya menemukan kata &ldquo;<a href="http://en.wikipedia.org/wiki/Windows_PowerShell">Windows Powershell</a>&rdquo; di sebuah buku, dan saya langsung tertarik untuk mempelajarinya. Mungkin karena &ldquo;Power&rdquo; disitu, sepertinya cool :-D . kalau kita membaca di Wiki, sepertinya memang benar-benar cool. Ok, saya mulai belajar, dengan motivasi &ldquo;sepertinya cool&rdquo; dan berharap bisa mengotomatisasi banyak pekerjaan dengan tool ini. Hehe . Windows Powershell di komputerku versi 3.0, dan ini versi terbaru. Untuk mendapat Windows Powershell prompt, cukup run Powershell.exe, misalnya saya run di directory N:\wpshell , command prompt sebagai berikut :</p>
-
 <p>**PS N:\wpshell&gt; **</p>
-
-<p>seperti hal-nya scripting yang lain, kita bisa mengetik command langsung di command prompt atau menulis script di file lalu menjalankannya. Untuk menjalankan script , ada dua hal yang harus dilakukan , pertama men-_setting_<em>execution policy</em>, karena nilai <em>default</em>-nya <em>restricted</em>, perlu di ubah sebagai berikut :</p>
-
+<p>seperti hal-nya scripting yang lain, kita bisa mengetik command langsung di command prompt atau menulis script di file lalu menjalankannya. Untuk menjalankan script , ada dua hal yang harus dilakukan , pertama men-<em>setting__execution policy</em>, karena nilai <em>default</em>-nya <em>restricted</em>, perlu di ubah sebagai berikut :</p>
 <p><strong>set-executionpolicy unrestricted</strong></p>
-
 <p>kedua, menjalankan script (misalnya script file diberi nama : testScript.ps1 ) sebagai berikut :</p>
-
 <p><strong>powershell -noexit &ldquo;&amp; &ldquo;N:\wpshell\testScript.ps1&rdquo;</strong></p>
-
 <p>Windows Powershell cukup mudah dipelajari, dan terdapat banyak resource di internet untuk mempelajarinya , seperti</p>
-
 <p><a href="http://technet.microsoft.com/en-us/library/hh848793.aspx">http://technet.microsoft.com/en-us/library/hh848793.aspx</a></p>
-
 <p><a href="http://get-powershell.com/?page=2">http://get-powershell.com/?page=2</a></p>
-
 <p><a href="http://www.powershellmagazine.com">http://www.powershellmagazine.com</a></p>
-
 <p>Sebagai latihan, saya mencoba mencari beberapa masalah untuk saya selesaikan. Berikut masalah dan solusi yang saya coba ( ya , ini memang simple, tapi saya senang men-share disini )</p>
-
 <p><strong>#Case 1 : Mengganti banyak nama file</strong></p>
-
 <p>saya memiliki banyak foto dari camera, nama filenya tidak terlalu informatif DSCN0001.JPG, DSCN0002.JPG, dst. Saya ingin menggantinya dengan misalnya: LiburanTahunBaru_001, LiburanTahunBaru_002, dst. yaitu dengan format LiburanTahunBaru_NNN.JPG, dimana NNN adalah nomor index. Berikut script yang saya buat :</p>
-
 <pre><code>&lt;span style=&quot;color:#0000ff;&quot;&gt;#source folder
 $sourceFolder =&quot;N:\Foto_Nikon_camera\Tita&quot;
 #header
@@ -157,16 +311,13 @@ $a = $(Get-Item $sourceFolder\*.*)
 $index=0
 foreach ($i in $a)
 {
-    $newName =$newNameHeader + $index.ToString(&quot;000&quot;) + $i.Extension
-    Rename-Item $i $newName
-    $index += 1
+	$newName =$newNameHeader + $index.ToString(&quot;000&quot;) + $i.Extension
+	Rename-Item $i $newName
+	$index += 1
 }&lt;/span&gt;
 </code></pre>
-
 <p><strong>#Case 2 : Mengelompokan file berdasarkan ekstensi</strong></p>
-
 <p>Internet browser ku adalah Google Chrome dan ketika saya mengunduh file, hasilnya ada di C:\Users\usenameku\Downloads, apapun jenis filenya semua masuk situ. Dan ketika folder tersebut mulai terisi banyak file dan daftar semakin memanjang, saya mulai memindah file berdasar file extension (.zip, .exe, .msi, etc. ) untuk mempermudah pencarian &amp; kerapian. Saya lakukan secara manual. <em>Poor habit</em>. Dan yeah, ini bisa dilakukan secara otomatis dengan script :</p>
-
 <pre><code>&lt;span style=&quot;color:#0000ff;&quot;&gt;#source folder
 $sourceFolder =&quot;C:\Users\usenameku\Downloads&quot;
 #header
@@ -177,77 +328,60 @@ $index=0
 #create folder if not exist
 foreach ($i in $extlist)
 {
-    $newName =$sourceFolder + $FolderHeader + &quot;_&quot; + $i
-    #check path existence
-    if(Test-Path $newName)
-    {
-        #folder is already exist, do nothing
-    }
-    else
-    {
-        New-Item $newName -Type directory
-    }
-    $index += 1 
+	$newName =$sourceFolder + $FolderHeader + &quot;_&quot; + $i
+	#check path existence
+	if(Test-Path $newName)
+	{
+		#folder is already exist, do nothing
+	}
+	else
+	{
+		New-Item $newName -Type directory
+	}
+	$index += 1	
 }
 #get all items
 $allitems = $(Get-Item $sourceFolder\*.*)
 #move file to folder based on extension
 foreach ($j in $extlist)
 {
-    $newName =$sourceFolder + $FolderHeader + &quot;_&quot; + $j
-    foreach($k in $allitems)
-    {
-        if($k.Extension -eq (&quot;.&quot;+$j))
-        {
-            if(Test-Path $k)
-            {
-                Move-Item $k $newName
-            }
-        }
-    }
+	$newName =$sourceFolder + $FolderHeader + &quot;_&quot; + $j
+	foreach($k in $allitems)
+	{
+		if($k.Extension -eq (&quot;.&quot;+$j))
+		{
+			if(Test-Path $k)
+			{
+				Move-Item $k $newName
+			}
+		}
+	}
 }&lt;/span&gt;
 </code></pre>
-
 <p><strong>#Case 3 : Mengunduh RSS</strong></p>
-
 <p>Banyak website yang menyediakan fitur <a href="http://en.wikipedia.org/wiki/Really_Simple_Syndication">RSS</a>, salah satunya Yahoo. Beberapa link RSS Yahoo :</p>
-
-<p>         <a href="http://news.yahoo.com/rss/science">http://news.yahoo.com/rss/science</a></p>
-
-<p>         <a href="http://news.yahoo.com/rss/entertainment">http://news.yahoo.com/rss/entertainment</a></p>
-
-<p>         <a href="http://news.yahoo.com/rss/health">http://news.yahoo.com/rss/health</a></p>
-
-<p>         <a href="http://news.yahoo.com/rss/sports">http://news.yahoo.com/rss/sports</a></p>
-
-<p>         <a href="http://news.yahoo.com/rss/tech">http://news.yahoo.com/rss/tech</a></p>
-
-<p>         <a href="http://news.yahoo.com/rss/bussiness">http://news.yahoo.com/rss/bussiness</a></p>
-
-<p>         <a href="http://news.yahoo.com/rss/world">http://news.yahoo.com/rss/world</a></p>
-
+<p>         http://news.yahoo.com/rss/science</p>
+<p>         http://news.yahoo.com/rss/entertainment</p>
+<p>         http://news.yahoo.com/rss/health</p>
+<p>         http://news.yahoo.com/rss/sports</p>
+<p>         http://news.yahoo.com/rss/tech</p>
+<p>         http://news.yahoo.com/rss/bussiness</p>
+<p>         http://news.yahoo.com/rss/world</p>
 <p>Dengan menggunakan link diatas kita bisa mendapatkan judul berita, link berita, dan isi berita, untuk pemrosesan lebih lanjut. Berikut script sederhana untuk mendapatkan judul dan link  dari RSS :</p>
-
 <pre><code>&lt;span style=&quot;color:#0000ff;&quot;&gt;$docxml = [xml] (New-Object System.Net.WebClient).Downloadstring($url)
 $stitle = $docxml.rss.channel.item.title
 $slink = $docxml.rss.channel.item.link
 $sitems = $docxml.rss.channel.item
 foreach($sitem in $sitems)
 {
-    $sitem.title + &quot;  -  &quot; + $sitem.link &gt;&gt; link.txt
+	$sitem.title + &quot;  -  &quot; + $sitem.link &gt;&gt; link.txt
 }&lt;/span&gt;
 </code></pre>
-
 <p>contoh hasil run :</p>
-
 <p>Atom smasher hiatus sets stage for more discovery - <a href="http://news.yahoo.com/atom-smasher-hiatus-sets-stage-more-discovery-134311023.html">http://news.yahoo.com/atom-smasher-hiatus-sets-stage-more-discovery-134311023.html</a></p>
-
 <p>Spaceport wants protections from tourist lawsuits - <a href="http://news.yahoo.com/spaceport-wants-protections-tourist-lawsuits-213926570.html">http://news.yahoo.com/spaceport-wants-protections-tourist-lawsuits-213926570.html</a></p>
-
 <p><strong>#Case 4 : Mem-<em>profil</em> sebuah folder</strong></p>
-
 <p>Kadang saya ingin mengetahui apa yang membuat drive hardisk saya (misal drive [D:](/) ) penuh. Untuk mengeceknya saya perlu mengetahui folder dan file mana yang ukurannya besar ( memakan space ) . Jika info tersebut sudah didapat , maka bisa diambil keputusan:  folder atau file apa yang bisa di pindah/ di hapus.</p>
-
 <pre><code>&lt;span style=&quot;color:#0000ff;&quot;&gt;$startFolder = &quot;G:\testScriptCopy&quot;
 
 $colItems = (Get-ChildItem $startFolder | Measure-Object -property length -sum)
@@ -255,7 +389,7 @@ $colItems = (Get-ChildItem $startFolder | Measure-Object -property length -sum)
 $fItems = $(Get-ChildItem $startFolder\*.* | Sort-Object -Property length -Descending)
 foreach ($f in $fItems)
 {
-    &quot;   &quot;  + $f.Length + &quot;   &quot; + $f.Fullname &gt;&gt; report.txt
+	&quot;	&quot;  + $f.Length + &quot;   &quot; + $f.Fullname &gt;&gt; report.txt
 }
 
 $colItems = (Get-ChildItem $startFolder -recurse | Where-Object {$_.PSIsContainer -eq $True} | Sort-Object)
@@ -263,81 +397,79 @@ foreach ($i in $colItems)
     {
         $subFolderItems = (Get-ChildItem $i.FullName | Measure-Object -property length -sum)
         $i.FullName + &quot; -- &quot; + &quot;{0:N2}&quot; -f ($subFolderItems.sum / 1MB) + &quot; MB&quot; &gt;&gt; report.txt
-        $fsubItems = $(Get-ChildItem $startFolder\$i\*.* | Sort-Object -Property length -Descending)
-        foreach ($fsub in $fsubItems)
-        {
-            &quot;   &quot;  + $fsub.Length + &quot;   &quot; + $fsub.Fullname &gt;&gt; report.txt
-        }
+		$fsubItems = $(Get-ChildItem $startFolder\$i\*.* | Sort-Object -Property length -Descending)
+		foreach ($fsub in $fsubItems)
+		{
+			&quot;	&quot;  + $fsub.Length + &quot;   &quot; + $fsub.Fullname &gt;&gt; report.txt
+		}
     }&lt;/span&gt;
 </code></pre>
-
 <p> </p>
-
-<p>&rdquo;&gt;&gt; report.txt&rdquo; menandakan kalau output disimpan ke file bernama report.txt. Jika &ldquo;&gt;&gt; report.txt&rdquo; dihilangkan ouput akan ditampilkan di command prompt.</p>
-
+<p>&ldquo;&raquo; report.txt&rdquo; menandakan kalau output disimpan ke file bernama report.txt. Jika &ldquo;&raquo; report.txt&rdquo; dihilangkan ouput akan ditampilkan di command prompt.</p>
 <p><strong>#Case 5 : Akan diketemukan</strong></p>
-
 <p>Solution : akan diselesaikan</p>
-
 <p>Saya menambah satu category di blog ini yaitu : Scripting&amp;Automation , akan di update disana. that&rsquo;s plan :-D .</p>
-
 <p>#yogyakarta , Jan 06  2013</p>
+</section>
 
+  
+  
 
-	  
-
-<div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
+  
+  
+  
+  
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  >
+    
+    <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/2013/04/14/harus-dengan-smart-pointer/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Smart pointer.</span></a
+    >
     
     
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/2013/01/01/berhati-hati-dengan-cc-array/"
+      ><span>Berhati-hati dengan C/C&#43;&#43; array</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    >
     
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "xedixermawan" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-      </div>
-      </div></article>
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
 
 
-	 </div>
+  
+</article>
 
-	 </div>
-       </div>
-     </div>
 
- <div class="container footer">
-  <div class="row">
-    <div class="col-md-10">
-      <small class="text-muted">Copyright 2007-2019 XediXermawan</small>
-    </div>
-    <div class="col-md-2">
-      <small class="text-muted">   Hugo + Theme : <a href="https://github.com/leonhe/hugo_eiio">Eiio</a></small>
-      </div>
-   </div>
- </div>
+    </main>
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'google analytics code', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
+  
+    © 2007-2024 XediXermawan
+  
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
 
-</body></html>
+  </body>
+</html>

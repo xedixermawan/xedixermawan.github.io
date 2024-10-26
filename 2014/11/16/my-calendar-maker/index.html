@@ -1,162 +1,315 @@
-<!DOCTYPE html>
-<html>
-   <head>
-   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="google-site-verification" content="XN4YmHgE76jTp2kNQ9qnsVSApl6yIQBzdyLe0BnbFks" />
+<!doctype html>
 
-  <title>
-    
-    
-    My calendar maker - XediXermawan
-    
-  </title>
-  <link rel="shortcut icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
   
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+  <title>Calendar Maker - Home</title>
 
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/holder.min.js" type='text/javascript'></script>
-  <link rel="stylesheet" href="/highlight/styles/github-gist.css">  
-  <link rel="stylesheet" href="/css/style.css">
-
-  <link rel="canonical" href="https://xedixermawan.github.io/2014/11/16/my-calendar-maker/">
   
-  <script src="/highlight/highlight.pack.js" type='text/javascript'></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.3.0/highlightjs-line-numbers.min.js"></script>
-  <script type="text/javascript">
+  <meta name="theme-color" />
 
-    $(document).ready(function() {
+  
+  
+  
+  
+  <meta name="description" content="walaupun tahun baru masih 1 1/2 bulan lagi, entah dapat dari mana ide-nya, saya tertarik untuk membuat kalender. Mungkin pikiran saya secara spontan kembali ke masa lalu ketika di tahun pertama kuliah dapat tugas membuat program kalender abadi he he.  Yang saya buat disini tidak jauh beda : program untuk membuat kalender, dengan input tahun dan bulan , output nya berupa image kalender. Jadi image nya bisa dipakai, atau mungkin di print :) . Dan program ini dimaksudkan bisa membuat kalender tahun berapa pun, termasuk tahun 1, bulan 1. Walaupun doeloe pernah buat, saya sudah lupa gimana buatnya. sudah lama sekali. Setelah search tentang kalender di wiki , berikut beberapa hal yang perlu diketahui, untuk menghitung hari dari tahun 1 :" />
+  <meta name="author" content="oth3rside" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/874371989962b8461ad94e8119d82bc7?s=160&amp;d=identicon" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/github.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/instagram.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.136.5">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+      >Home</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
     
-    hljs.initHighlightingOnLoad();
-    $('pre code').each(function(i, block) {
-    hljs.highlightBlock(block);
-    hljs.lineNumbersBlock(block);
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
     });
-});
-  </script>
-   </head>
-   <body data-spy="scroll" data-target="#toc">
-     <header class="navbar navbar-default navbar-fixed-top" id="top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="https://xedixermawan.github.io/">XediXermawan</a>
-    </div>
 
     
-    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav">
-	
-	
-	<li  ><a href="/">Home</a></li>
-	
-	
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
 
-	
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
 
-	
-	
-	<li > <a href="https://xedixermawan.github.io/about/" >About</a></li>
-	
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
 
-	
-	
-	<li > <a href="https://xedixermawan.github.io/projects/" >Projects</a></li>
-	
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
 
-	
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse">
+      
+      <a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+      <a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/contact/"
+        >Contact</a
+      >
+      
+    </nav>
+    
 
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-      </ul>
-</nav>
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 rtl:space-x-reverse dark:invert ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center"
+    >
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/XediXermawan"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/XediXermawan"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/XediXermawan"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
 </header>
 
-     <div class="jumbotron masthead" role="main">
-       <div class="container">
-	 <div class="row">
 
- 	   <div class="col-md-8 col-md-offset-2 ">
-	   
-<div class="panel panel-default">
-  <div class="panel-body">
-      <article id='post' >
-	<h1> My calendar maker </h1>
-	  
-	  <p>walaupun tahun baru masih 1 <sup>1</sup>&frasl;<sub>2</sub> bulan lagi, entah dapat dari mana ide-nya, saya tertarik untuk membuat kalender. Mungkin pikiran saya secara spontan kembali ke masa lalu ketika di tahun pertama kuliah dapat tugas membuat program kalender abadi he he.  Yang saya buat disini tidak jauh beda : program untuk membuat kalender, dengan input tahun dan bulan , output nya berupa image kalender. Jadi image nya bisa dipakai, atau mungkin di print :) . Dan program ini dimaksudkan bisa membuat kalender tahun berapa pun, termasuk tahun 1, bulan 1. Walaupun doeloe pernah buat, saya sudah lupa gimana buatnya. sudah lama sekali. Setelah search tentang kalender di wiki , berikut beberapa hal yang perlu diketahui, untuk menghitung hari dari tahun 1 :</p>
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
 
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">Calendar Maker</h1>
+
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>Nov 16, 2014</time>
+      
+      
+      
+      
+      <span class="mx-1">&middot;</span>
+      <span>oth3rside</span>
+      
+    </div>
+    
+  </header>
+
+  <section><p>walaupun tahun baru masih 1 1/2 bulan lagi, entah dapat dari mana ide-nya, saya tertarik untuk membuat kalender. Mungkin pikiran saya secara spontan kembali ke masa lalu ketika di tahun pertama kuliah dapat tugas membuat program kalender abadi he he.  Yang saya buat disini tidak jauh beda : program untuk membuat kalender, dengan input tahun dan bulan , output nya berupa image kalender. Jadi image nya bisa dipakai, atau mungkin di print :) . Dan program ini dimaksudkan bisa membuat kalender tahun berapa pun, termasuk tahun 1, bulan 1. Walaupun doeloe pernah buat, saya sudah lupa gimana buatnya. sudah lama sekali. Setelah search tentang kalender di wiki , berikut beberapa hal yang perlu diketahui, untuk menghitung hari dari tahun 1 :</p>
 <p><strong>[1]</strong> tahun 1, bulan 1, tanggal 1 adalah hari Sabtu.</p>
-
 <p><strong>[2]</strong> dari tahun 1 sampai sekarang, ada dua 2 sistem perhitungan kalender yang pernah dipakai : <a href="http://en.wikipedia.org/wiki/Julian_calendar">Julian kalender</a> &amp; <a href="http://en.wikipedia.org/wiki/Gregorian_calendar">Gregorian kalender</a>. Sistem Julian kalender dipakai tahun 1 sampai dengan tahun 1581 . tahun 1582 sampai sekarang pakai sistem Gregorian kalender.</p>
-
-<p><strong>[3]</strong> jumlah bulan di Julian &amp; Gregorian kalender tidak berbeda (mulai januari :31, <sup>28</sup>&frasl;<sub>29</sub>, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 )  . Bulan Februari 29 hari jika tahun tersebut kabisat (leap year) . jadi 1 tahun bisa 365 hari atau 366 hari .</p>
-
+<p><strong>[3]</strong> jumlah bulan di Julian &amp; Gregorian kalender tidak berbeda (mulai januari :31, 28/29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 )  . Bulan Februari 29 hari jika tahun tersebut kabisat (leap year) . jadi 1 tahun bisa 365 hari atau 366 hari .</p>
 <p><strong>[4]</strong> di Julian kalender, sebuah tahun dikatakan kabisat, jika tahun tersebut habis dibagi 4. artinya tahun kabisat selalu berulang setiap 4 tahun.</p>
-
 <p><strong>[5]</strong> di Gregorian kalender, tahun dikatakan kabisat jika tahun tersebut habis dibagi 4, tapi jika tahun tersebut habis di bagi 100, untuk disebut tahun kabisat, tahun tersebut harus habis juga di bagi 400. jadi tahun 8 adalah kabisat, tahun 1900 bukan kabisat. pseudo-code untuk menentukan ini :  ( <a href="http://en.wikipedia.org/wiki/Leap_year">source here</a> ) :</p>
-
 <p><strong>if</strong> (<em>year</em> is not divisible by 4) <strong>then</strong> (it is a common year)
 <strong>else</strong>
 <strong>if</strong> (<em>year</em> is not divisible by 100) <strong>then</strong> (it is a leap year)
 <strong>else</strong>
 <strong>if</strong> (<em>year</em> is not divisible by 400) <strong>then</strong> (it is a common year)
 <strong>else</strong> (it is a leap year)</p>
-
 <p>ternyata perhitungan tahun-kabisat yang <em>tricky</em> ini, sudah menimbulkan banyak <a href="https://www.google.com/?gws_rd=ssl#q=leap+year+bug">bug di berbagai software</a>  :)</p>
-
 <p><strong>[6]</strong> di tahun 1582, saat pergantian dari sistem Julian ke Gregorian, ada pemotongan 10 hari !! di bulan Desember. Bulan Desember 1582 , berakhir tanggal 21, keesokan harinya tahun baru tanggal 1 1583 .</p>
-
-<p>dengan info diatas, hari bisa dihitung dengan benar. Di program pembuat kalender ini, saya masukkan juga pasaran jawa ( Pon, Pahing, Wage, Kliwon, Legi ) :d . ini penting soalnya digunakan mbah/ibu saya untuk pergi ke pasar :-p . Hasil kalendar saya cetak di gambar berformat png. Bisa juga menggunakan png image yang sudah ada untuk dijadikan _background . _Bagaimana dengan hari libur ? . pengaturan hari libur juga dimasukkan dan bisa diatur di <em>config file </em>. program beroperasi dengan 2 type, mencetak 1 tahun penuh atau 1 bulan saja. contoh hasil program untuk mencetak 1 bulan ( tahun 1945, bulan 8 ) :</p>
-
-<p><a href="https://offground.files.wordpress.com/2014/11/calendar_out2.jpg"><img src="https://offground.files.wordpress.com/2014/11/calendar_out2.jpg?w=700" alt="http://pngwriter.sourceforge.net/" />
+<p>dengan info diatas, hari bisa dihitung dengan benar. Di program pembuat kalender ini, saya masukkan juga pasaran jawa ( Pon, Pahing, Wage, Kliwon, Legi ) :d . ini penting soalnya digunakan mbah/ibu saya untuk pergi ke pasar :-p . Hasil kalendar saya cetak di gambar berformat png. Bisa juga menggunakan png image yang sudah ada untuk dijadikan _background . _Bagaimana dengan hari libur ? . pengaturan hari libur juga dimasukkan dan bisa diatur di _config file _. program beroperasi dengan 2 type, mencetak 1 tahun penuh atau 1 bulan saja. contoh hasil program untuk mencetak 1 bulan ( tahun 1945, bulan 8 ) :</p>
+<p><a href="https://offground.files.wordpress.com/2014/11/calendar_out2.jpg"><img src="https://offground.files.wordpress.com/2014/11/calendar_out2.jpg?w=700" alt="http://pngwriter.sourceforge.net/">
 </a></p>
-
 <p>hari Minggu otomatis berwarna merah dan Jum&rsquo;at berwarna hijau. sedangkan hari-hari libur yang di-setting akan berwarna merah. default warna font dan jenis font bisa di atur di config file . penggunaan program di console sebagai berikut :</p>
-
 <p>E:\test&gt;ccm config2.ini</p>
-
 <p>kalau tertarik mencoba , binary bisa didownload  di: <a href="https://www.dropbox.com/s/pphm94lt6svxkot/console_calendar_maker.zip?dl=0">LINK DOWNLOAD 1</a></p>
-
 <p>dependencies code : pngwrite &ndash;&gt; libpng&ndash;&gt;zlib ( untuk berurusan dengan png ), dan <a href="http://code.google.com/p/inih/">inih</a> (untuk parsing ini file )</p>
-
 <p>main program sebagai berikut :</p>
-
-<pre><code>/*
+<pre tabindex="0"><code>/*
 *  console calendar maker ( ccm )
 *  console app to generate calendar from year-month input, the output is png image
 *  (c) 2014  edi ermawan &lt; edi.ermawan@gmail.com &gt;
@@ -164,26 +317,26 @@
 
 #include &lt;iostream&gt;
 #include &lt;stdio.h&gt;
-#include &quot;png.hpp&quot;
+#include &#34;png.hpp&#34;
 #include &lt;pngwriter.h&gt;
 #include &lt;sstream&gt;
 #include &lt;string&gt;
-#include &quot;color.h&quot;
-#include &quot;ini.h&quot;
+#include &#34;color.h&#34;
+#include &#34;ini.h&#34;
 
 using namespace std;
 
 #define MOONINYEAR 12
 #define DAYSINWEEK 7
-#define DAY_SPACING &quot;   &quot;
-#define DAY_COUNTED_SPACING &quot;  &quot;
-#define CALOUT &quot;calendar_out.png&quot;
+#define DAY_SPACING &#34;   &#34;
+#define DAY_COUNTED_SPACING &#34;  &#34;
+#define CALOUT &#34;calendar_out.png&#34;
 
-static char* day_name[DAYSINWEEK] = { &quot;Su&quot;, &quot;Mo&quot;, &quot;Tu&quot;, &quot;We&quot;, &quot;Th&quot;, &quot;Fr&quot;, &quot;Sa&quot; };
-static char* month_name[MOONINYEAR] = { &quot;January&quot;, &quot;February&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;,
-							        &quot;June&quot;, &quot;July&quot;,&quot;August&quot;,&quot;September&quot;,&quot;October&quot;,
-							        &quot;November&quot;,&quot;December&quot;};
-static char* pasaran_name[5] = { &quot; Wage &quot;,&quot;Kliwon &quot;,&quot; Legi &quot;, &quot;Pahing&quot;, &quot; Pon  &quot; };
+static char* day_name[DAYSINWEEK] = { &#34;Su&#34;, &#34;Mo&#34;, &#34;Tu&#34;, &#34;We&#34;, &#34;Th&#34;, &#34;Fr&#34;, &#34;Sa&#34; };
+static char* month_name[MOONINYEAR] = { &#34;January&#34;, &#34;February&#34;, &#34;March&#34;, &#34;April&#34;, &#34;May&#34;,
+							        &#34;June&#34;, &#34;July&#34;,&#34;August&#34;,&#34;September&#34;,&#34;October&#34;,
+							        &#34;November&#34;,&#34;December&#34;};
+static char* pasaran_name[5] = { &#34; Wage &#34;,&#34;Kliwon &#34;,&#34; Legi &#34;, &#34;Pahing&#34;, &#34; Pon  &#34; };
 
 static const int day_in_month[MOONINYEAR] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
@@ -313,7 +466,7 @@ s_color define_day_color(int week_index,int day_index, int total_day) {
 void print_aday(pngwriter&amp; pw, char* text, int pos_x, int pos_y, s_color color,int p_index) {
 	int _nday = atoi(text);
 	if (_nday &lt; 10) {
-		char ntext[3]; ntext[0] = '0'; ntext[1] = text[0]; ntext[2] = '\0';
+		char ntext[3]; ntext[0] = &#39;0&#39;; ntext[1] = text[0]; ntext[2] = &#39;\0&#39;;
 		print_text(pw, ntext, pos_x, pos_y, color);
 	}
 	else {
@@ -330,7 +483,7 @@ void print_days(char** days, int week_index, int day_total, pngwriter&amp; pw, i
 	if (week_index == 0) {
 		int _space_day = DAYSINWEEK - day_total;
 		for (int i = 0; i &lt; _space_day; i++) {
-			print_text(pw, &quot;  &quot;, px, pos_y + (week_index * printer.row_space) );
+			print_text(pw, &#34;  &#34;, px, pos_y + (week_index * printer.row_space) );
 			px += (printer.col_space * 2);
 			print_text(pw, DAY_SPACING, px, pos_y + (week_index * printer.row_space) );
 			px += (printer.col_space * 2);
@@ -353,11 +506,11 @@ void process_text(pngwriter&amp; pw, int week_index, char* text, int pos_x, int 
 	int _day_digit = 0;
 	char _day_text[3];
 	char* _days_text[DAYSINWEEK];
-	while ( *text!='\0' ) {
-		if ( *text != ' ' ) {
+	while ( *text!=&#39;\0&#39; ) {
+		if ( *text != &#39; &#39; ) {
 			_day_text[0] = *text++;
 			_day_text[1] = *text++;
-			_day_text[2] = '\0';
+			_day_text[2] = &#39;\0&#39;;
 			_days_text[_day_index] = new char[3];
 			memcpy(_days_text[_day_index++], _day_text, 3);
 		}
@@ -375,7 +528,7 @@ void process_text(pngwriter&amp; pw, int week_index, char* text, int pos_x, int 
 int print_month_header(pngwriter&amp; pw, int year, int month, int px, int py) {
 	stringstream _ssmy;
 	_ssmy &lt;&lt; month_name[month - 1];
-	_ssmy &lt;&lt; &quot; &quot;;
+	_ssmy &lt;&lt; &#34; &#34;;
 	_ssmy &lt;&lt; year;
 	print_text(pw, const_cast&lt;char*&gt;( _ssmy.str().c_str() ), px, py);
 	py = py + (printer.row_space);
@@ -394,15 +547,15 @@ void print_month_footer(pngwriter&amp; pw, int month, int px, int py) {
 	for (int i = 0; i &lt; holiday_index; i++) {
 		if (holidays[i].month == month) {
 			_ssfooter &lt;&lt; holidays[i].day;
-			_ssfooter &lt;&lt; &quot; : &quot;;
+			_ssfooter &lt;&lt; &#34; : &#34;;
 			_ssfooter &lt;&lt; holidays[i].info;
-			_ssfooter &lt;&lt; &quot;  &quot;;
+			_ssfooter &lt;&lt; &#34;  &#34;;
 			_n++;
 			if (_n == 2) {
 				_n = 0;
 				pw.plot_text(printer.font_name, printer.pasaran_font_size, px, (printer.img_h - py), 0,
 					const_cast&lt;char*&gt;(_ssfooter.str().c_str()), c_color::Blue.r, c_color::Blue.g, c_color::Blue.b);
-				_ssfooter.str(&quot;&quot;);
+				_ssfooter.str(&#34;&#34;);
 				_ssfooter.clear();
 				py += printer.month_footer_space;
 			}
@@ -435,12 +588,12 @@ void print_month(pngwriter&amp; pw, int year, int month, int total_days_prev_yea
 		int n = i - _prev_day;
 		int mod = (i % 7);
 		_pasaran[_pasaran_index++] = (i % 5);
-		_stream &lt;&lt; n &lt;&lt; &quot; &quot;;
+		_stream &lt;&lt; n &lt;&lt; &#34; &#34;;
 		if (mod == 1) {
 			std::string s;
 			s = _stream.str();
 			process_text(pw, _week_index, const_cast&lt;char*&gt;(s.c_str()), px, py, _pasaran, _moon_target);
-			_stream.str(&quot;&quot;);
+			_stream.str(&#34;&#34;);
 			_stream.clear();
 			_week_index++;
 			_pasaran_index = 0;
@@ -448,7 +601,7 @@ void print_month(pngwriter&amp; pw, int year, int month, int total_days_prev_yea
 	}
 	std::string s = _stream.str();
 	process_text(pw, _week_index, const_cast&lt;char*&gt;(s.c_str()), px, py, _pasaran, _moon_target);
-	if ( strcmp(s.c_str(), &quot;&quot;) == 0 )
+	if ( strcmp(s.c_str(), &#34;&#34;) == 0 )
 		_week_index -= 1;
 	print_month_footer(pw, _moon_target, px, py+((_week_index )*printer.row_space)+printer.pasaran_adjust_y*3 );
 	delete[] _pasaran;
@@ -493,107 +646,107 @@ static int config_handler(void* user, const char* section, const char* name,
 
 	s_printer* _pprinter = (s_printer*)(user);
 
-	if (MATCH(&quot;setting&quot;, &quot;print_type&quot;)) {
+	if (MATCH(&#34;setting&#34;, &#34;print_type&#34;)) {
 		_pprinter-&gt;print_type = atoi(value);
 	}
-	else if (MATCH(&quot;setting&quot;, &quot;year_target&quot;)) {
+	else if (MATCH(&#34;setting&#34;, &#34;year_target&#34;)) {
 		_pprinter-&gt;year_target = atoi(value);
 	}
-	else if (MATCH(&quot;setting&quot;, &quot;month_target&quot;)) {
+	else if (MATCH(&#34;setting&#34;, &#34;month_target&#34;)) {
 		_pprinter-&gt;month_target = atoi(value);
 	}
-	else if (MATCH(&quot;setting&quot;, &quot;background_img&quot;)) {
+	else if (MATCH(&#34;setting&#34;, &#34;background_img&#34;)) {
 		_pprinter-&gt;background_img = strdup(value);
 	}
-	else if ( MATCH(&quot;setting&quot;, &quot;font_size&quot;) ) {
+	else if ( MATCH(&#34;setting&#34;, &#34;font_size&#34;) ) {
 		_pprinter-&gt;font_size = atoi(value);
 	}
-	else if (MATCH(&quot;setting&quot;, &quot;pasaran_font_size&quot;)) {
+	else if (MATCH(&#34;setting&#34;, &#34;pasaran_font_size&#34;)) {
 		_pprinter-&gt;pasaran_font_size = atoi(value);
 	}
-	else if (MATCH(&quot;setting&quot;, &quot;moon_title_font_size&quot;)) {
+	else if (MATCH(&#34;setting&#34;, &#34;moon_title_font_size&#34;)) {
 		_pprinter-&gt;moon_title_font_size = atoi(value);
 	}
-	else if (MATCH(&quot;setting&quot;, &quot;font_name&quot;)) {
+	else if (MATCH(&#34;setting&#34;, &#34;font_name&#34;)) {
 		_pprinter-&gt;font_name = strdup(value);
 	}
-	else if (MATCH(&quot;setting&quot;, &quot;start_x&quot;)) {
+	else if (MATCH(&#34;setting&#34;, &#34;start_x&#34;)) {
 		_pprinter-&gt;start_x = atoi(value);
 	}
-	else if (MATCH(&quot;setting&quot;, &quot;start_y&quot;)) {
+	else if (MATCH(&#34;setting&#34;, &#34;start_y&#34;)) {
 		_pprinter-&gt;start_y = atoi(value);
 	}
-	else if (MATCH(&quot;setting&quot;, &quot;pasaran_adjust_x&quot;)) {
+	else if (MATCH(&#34;setting&#34;, &#34;pasaran_adjust_x&#34;)) {
 		_pprinter-&gt;pasaran_adjust_x = atoi(value);
 	}
-	else if (MATCH(&quot;setting&quot;, &quot;pasaran_adjust_y&quot;)) {
+	else if (MATCH(&#34;setting&#34;, &#34;pasaran_adjust_y&#34;)) {
 		_pprinter-&gt;pasaran_adjust_y = atoi(value);
 	}
-	else if (MATCH(&quot;setting&quot;, &quot;row_space&quot;)) {
+	else if (MATCH(&#34;setting&#34;, &#34;row_space&#34;)) {
 		_pprinter-&gt;row_space = atoi(value);
 	}
-	else if (MATCH(&quot;setting&quot;, &quot;col_space&quot;)) {
+	else if (MATCH(&#34;setting&#34;, &#34;col_space&#34;)) {
 		_pprinter-&gt;col_space = atoi(value);
 	}
-	else if (MATCH(&quot;setting&quot;, &quot;month_horizontal_space&quot;)) {
+	else if (MATCH(&#34;setting&#34;, &#34;month_horizontal_space&#34;)) {
 		_pprinter-&gt;month_horizontal_space = atoi(value);
 	}
-	else if (MATCH(&quot;setting&quot;, &quot;month_vertical_space&quot;)) {
+	else if (MATCH(&#34;setting&#34;, &#34;month_vertical_space&#34;)) {
 		_pprinter-&gt;month_vertical_space = atoi(value);
 	}
-	else if (MATCH(&quot;setting&quot;, &quot;month_footer_space&quot;)) {
+	else if (MATCH(&#34;setting&#34;, &#34;month_footer_space&#34;)) {
 		_pprinter-&gt;month_footer_space = atoi(value);
 	}
-	else if (MATCH(&quot;setting&quot;, &quot;default_r&quot;)) {
+	else if (MATCH(&#34;setting&#34;, &#34;default_r&#34;)) {
 		_pprinter-&gt;default_r = atoi(value);
 	}
-	else if (MATCH(&quot;setting&quot;, &quot;default_g&quot;)) {
+	else if (MATCH(&#34;setting&#34;, &#34;default_g&#34;)) {
 		_pprinter-&gt;default_g = atoi(value);
 	}
-	else if (MATCH(&quot;setting&quot;, &quot;default_b&quot;)) {
+	else if (MATCH(&#34;setting&#34;, &#34;default_b&#34;)) {
 		_pprinter-&gt;default_b = atoi(value);
 	}
-	else if (MATCH(&quot;setting&quot;, &quot;img_w&quot;)) {
+	else if (MATCH(&#34;setting&#34;, &#34;img_w&#34;)) {
 		_pprinter-&gt;img_w = atoi(value);
 	}
-	else if (MATCH(&quot;setting&quot;, &quot;img_h&quot;)) {
+	else if (MATCH(&#34;setting&#34;, &#34;img_h&#34;)) {
 		_pprinter-&gt;img_h = atoi(value);
 	}
 	// holidays parsing
-	else if (MATCH2(&quot;January&quot;)) {
+	else if (MATCH2(&#34;January&#34;)) {
 		add_holiday(1, atoi(name), strdup(value));
 	}
-	else if (MATCH2(&quot;February&quot;)) {
+	else if (MATCH2(&#34;February&#34;)) {
 		add_holiday(2, atoi(name), strdup(value));
 	}
-	else if (MATCH2(&quot;March&quot;)) {
+	else if (MATCH2(&#34;March&#34;)) {
 		add_holiday(3, atoi(name), strdup(value));
 	}
-	else if (MATCH2(&quot;April&quot;)) {
+	else if (MATCH2(&#34;April&#34;)) {
 		add_holiday(4, atoi(name), strdup(value));
 	}
-	else if (MATCH2(&quot;May&quot;)) {
+	else if (MATCH2(&#34;May&#34;)) {
 		add_holiday(5, atoi(name), strdup(value));
 	}
-	else if (MATCH2(&quot;June&quot;)) {
+	else if (MATCH2(&#34;June&#34;)) {
 		add_holiday(6, atoi(name), strdup(value));
 	}
-	else if (MATCH2(&quot;July&quot;)) {
+	else if (MATCH2(&#34;July&#34;)) {
 		add_holiday(7, atoi(name), strdup(value));
 	}
-	else if (MATCH2(&quot;August&quot;)) {
+	else if (MATCH2(&#34;August&#34;)) {
 		add_holiday(8, atoi(name), strdup(value));
 	}
-	else if (MATCH2(&quot;September&quot;)) {
+	else if (MATCH2(&#34;September&#34;)) {
 		add_holiday(9, atoi(name), strdup(value));
 	}
-	else if (MATCH2(&quot;October&quot;)) {
+	else if (MATCH2(&#34;October&#34;)) {
 		add_holiday(10, atoi(name), strdup(value));
 	}
-	else if (MATCH2(&quot;November&quot;)) {
+	else if (MATCH2(&#34;November&#34;)) {
 		add_holiday(11, atoi(name), strdup(value));
 	}
-	else if (MATCH2(&quot;December&quot;)) {
+	else if (MATCH2(&#34;December&#34;)) {
 		add_holiday(12, atoi(name), strdup(value));
 	}
 	return 0;
@@ -601,30 +754,30 @@ static int config_handler(void* user, const char* section, const char* name,
 
 int get_config(char* conf_name) {
 	if (ini_parse(conf_name, config_handler, &amp;printer) &lt; 0) {
-		printf(&quot;can't load file : %s\n&quot;, conf_name);
+		printf(&#34;can&#39;t load file : %s\n&#34;, conf_name);
 		return 1;
 	}
 	return 0;
 }
 
 int main(int argc, char** argv) {
-	printf(&quot;console app to generate calendar from year - month input\n&quot;);
-	printf(&quot;the output is png image\n&quot;);
-	printf(&quot;(c) 2014 edi ermawan &lt;edi.ermawan@gmail.com&gt;\n&quot;);
-	printf(&quot;use : ccm.exe configfilename.ini\n&quot;);
+	printf(&#34;console app to generate calendar from year - month input\n&#34;);
+	printf(&#34;the output is png image\n&#34;);
+	printf(&#34;(c) 2014 edi ermawan &lt;edi.ermawan@gmail.com&gt;\n&#34;);
+	printf(&#34;use : ccm.exe configfilename.ini\n&#34;);
 	if (argc &gt; 1) {
 		if ( get_config(argv[1]) ) {
-			printf(&quot;error parse config file\n&quot;);
+			printf(&#34;error parse config file\n&#34;);
 			return 1;
 		}
 	}
 	else {
-		printf(&quot;use : ccm.exe configfilename.ini&quot;);
+		printf(&#34;use : ccm.exe configfilename.ini&#34;);
 		return 1;
 	}
 
 	pngwriter* _png;
-	if ( strcmp(printer.background_img,&quot;none&quot;) )  {
+	if ( strcmp(printer.background_img,&#34;none&#34;) )  {
 		_png = new pngwriter();
 		_png-&gt;readfromfile( printer.background_img );
 		_png-&gt;pngwriter_rename(CALOUT);
@@ -636,11 +789,11 @@ int main(int argc, char** argv) {
 	}
 	if (printer.print_type == 1) {
 		print_month(*_png, printer.year_target, printer.month_target, printer.start_x, printer.start_y);
-		printf(&quot;done ..!&quot;);
+		printf(&#34;done ..!&#34;);
 	}
 	else if (printer.print_type == 0) {
 		print_year(*_png, printer.year_target, printer.start_x, printer.start_y);
-		printf(&quot;done ..!&quot;);
+		printf(&#34;done ..!&#34;);
 	}
 	_png-&gt;setcompressionlevel(6);
 	_png-&gt;setgamma(0.7);
@@ -649,67 +802,90 @@ int main(int argc, char** argv) {
 
 	return 0;
 }
-</code></pre>
-
-<p>selanjutnya mungkin saya akan post full project ke svn google code / github .</p>
-
+</code></pre><p>selanjutnya mungkin saya akan post full project ke svn google code / github .</p>
 <p>// edi ermawan , Jkt 16/11/2014</p>
+</section>
 
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/calendar-maker"
+      >calendar maker</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/command-line"
+      >command line</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/png-calendar"
+      >png calendar</a
+    >
+    
+  </footer>
+  
 
-	  
-
-<div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
+  
+  
+  
+  
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  >
+    
+    <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/2014/11/16/galeri-kalender-2015-indonesia/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Galeri kalender 2015 2016 ( Indonesia )</span></a
+    >
     
     
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/2014/10/05/mengganti-power-supply/"
+      ><span>Mengganti power supply</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    >
     
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "xedixermawan" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-      </div>
-      </div></article>
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
 
 
-	 </div>
+  
+</article>
 
-	 </div>
-       </div>
-     </div>
 
- <div class="container footer">
-  <div class="row">
-    <div class="col-md-10">
-      <small class="text-muted">Copyright 2007-2019 XediXermawan</small>
-    </div>
-    <div class="col-md-2">
-      <small class="text-muted">   Hugo + Theme : <a href="https://github.com/leonhe/hugo_eiio">Eiio</a></small>
-      </div>
-   </div>
- </div>
+    </main>
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'google analytics code', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
+  
+    © 2007-2024 XediXermawan
+  
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
 
-</body></html>
+  </body>
+</html>

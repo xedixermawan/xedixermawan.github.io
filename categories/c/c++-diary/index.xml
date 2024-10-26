@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C/C&#43;&#43; Diary on Home</title>
+    <link>http://localhost:1313/categories/c/c&#43;&#43;-diary/</link>
+    <description>Recent content in C/C&#43;&#43; Diary on Home</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>© 2007-2024 XediXermawan</copyright>
+    <lastBuildDate>Fri, 13 Feb 2015 16:30:09 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/c/c++-diary/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mencoba Cmake</title>
+      <link>http://localhost:1313/2015/02/13/mencobacmake/</link>
+      <pubDate>Fri, 13 Feb 2015 16:30:09 +0000</pubDate>
+      <guid>http://localhost:1313/2015/02/13/mencobacmake/</guid>
+      <description>&lt;p&gt;Visual Studio adalah favorite ide pemrograman saya. Sudah sejak lama saya pakai, kira-kira sejak 4 tahun yang lalu. Mungkin menjadi favorite karena kebiasaan :) dan juga visual studio mudah dipakai. Walaupun kadang ada juga bugs &amp;lsquo;aneh&amp;rsquo; yang terjadi selama nge-build project dengan VS. Sayangnya, &amp;lsquo;build file&amp;rsquo; dari VS tidak bisa dipakai di environment lain, misalnya mau &lt;em&gt;build&lt;/em&gt; pakai gcc di Linux. Oleh karena itulah harus ada cara lain yang harus dipakai. Berikut sebagai contoh case saya :&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Calendar Maker</title>
+      <link>http://localhost:1313/2014/11/16/my-calendar-maker/</link>
+      <pubDate>Sun, 16 Nov 2014 16:13:14 +0000</pubDate>
+      <guid>http://localhost:1313/2014/11/16/my-calendar-maker/</guid>
+      <description>&lt;p&gt;walaupun tahun baru masih 1 1/2 bulan lagi, entah dapat dari mana ide-nya, saya tertarik untuk membuat kalender. Mungkin pikiran saya secara spontan kembali ke masa lalu ketika di tahun pertama kuliah dapat tugas membuat program kalender abadi he he.  Yang saya buat disini tidak jauh beda : program untuk membuat kalender, dengan input tahun dan bulan , output nya berupa image kalender. Jadi image nya bisa dipakai, atau mungkin di print :) . Dan program ini dimaksudkan bisa membuat kalender tahun berapa pun, termasuk tahun 1, bulan 1. Walaupun doeloe pernah buat, saya sudah lupa gimana buatnya. sudah lama sekali. Setelah search tentang kalender di wiki , berikut beberapa hal yang perlu diketahui, untuk menghitung hari dari tahun 1 :&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Rendering animated GIF file</title>
+      <link>http://localhost:1313/2014/05/30/rendering-animated-gif-file/</link>
+      <pubDate>Fri, 30 May 2014 00:31:56 +0000</pubDate>
+      <guid>http://localhost:1313/2014/05/30/rendering-animated-gif-file/</guid>
+      <description>&lt;p&gt;gif file ( &lt;a href=&#34;http://en.wikipedia.org/wiki/Graphics_Interchange_Format&#34;&gt;http://en.wikipedia.org/wiki/Graphics_Interchange_Format&lt;/a&gt; ) is very popular format , you can share funny animation, emotion, a splash for ads, etc. All web browser support this format. do you interested in how game or application (non-web) render animated gif ? . here my experiment result :&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://www.youtube.com/watch?v=iw8mquG93JA&#34;&gt;http://www.youtube.com/watch?v=iw8mquG93JA&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;info :&#xA;rendering : DirectX 11&#xA;language : c/c++&#xA;GIF decoder : libnsgif&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>TCP client server dengan winsock2</title>
+      <link>http://localhost:1313/2014/05/27/tcp-client-server-dengan-winsock2/</link>
+      <pubDate>Tue, 27 May 2014 18:43:03 +0000</pubDate>
+      <guid>http://localhost:1313/2014/05/27/tcp-client-server-dengan-winsock2/</guid>
+      <description>&lt;p&gt;Untuk keperluan selanjutnya di pengembangan game yang sedang saya buat ( :-o ), saya memerlukan program yang bisa di tweak lewat program lain. Dengan kata lain 2 program yang saling bisa berkomunikasi. Cara yang bisa dicapai , pakai file sharing atau dengan cara yang pas : pakai networking tcp / udp . Kalau mau buat program dengan kemampuan networking, cara yang bijaksana mungkin pakai 3rd party library yang sudah cukup populer dan reliable. Di antaranya, yang saya ketahui dan sepertinya sudah terbukti bagus :&lt;a href=&#34;http://www.boost.org/doc/libs/1_55_0/doc/html/boost_asio.html&#34;&gt; boost-asio&lt;/a&gt; ( free ), &lt;a href=&#34;http://www.jenkinssoftware.com/download.html&#34;&gt;raknet &lt;/a&gt;( free untuk hobyist ), &lt;a href=&#34;http://libevent.org/&#34;&gt;libevent &lt;/a&gt;( free ), etc. ada yang lain ?. Tapi saya pinginnya ndak usah pakai 3rd party lib, lagipula program yang akan saya buat cukup sederhana. winsock2 &amp;amp; c/c++ . itu pilihannya. dan rasanya akan fun juga buat program nya hehe. Sebagai pemanasan awal dengan winsock2 ( saya pemula ) , saya perlu membuat program seperti ini : ada client dan server. client bisa kirim data ke server. server bisa kirim data ke client. jika client nya lebih dari satu, client bisa kirim data ke client yang lain. representasi dari program ini adalah program &amp;ldquo;chatting&amp;rdquo; :d .&#xA;kemampuan server dalam keadaan running :&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>#define problem</title>
+      <link>http://localhost:1313/2014/05/21/define-problem/</link>
+      <pubDate>Wed, 21 May 2014 17:22:18 +0000</pubDate>
+      <guid>http://localhost:1313/2014/05/21/define-problem/</guid>
+      <description>&lt;p&gt;Masalah kecil tapi fatal di projects C/C++ yang  saya temui ( dan parahnya terulang-ulang ), adalah penggunaan define. #define secara salah digunakan karena dicampur aduk antara definisi &amp;amp; pengecekannya. sebagai contoh ada 2 define :&lt;/p&gt;&#xA;&lt;p&gt;#define USE_FEATURE_A&#xA;#define USE_FEATURE_B (1)&lt;/p&gt;&#xA;&lt;p&gt;Dalam penggunaanya ada beberapa kemungkinan :&lt;/p&gt;&#xA;&lt;p&gt;#ifdef USE_FEATURE_A&#xA;// code_inside_a.1&#xA;#endif&#xA;&amp;ndash;&amp;gt;penggunaan yang benar. code &amp;ldquo;code_inside_a.1&amp;rdquo; akan ter-compile jika USE_FEATURE_A ter-define. kalau ingin menghilangkan code &amp;ldquo;code_inside_a.1&amp;rdquo;, USE_FEATURE_A harus un-define dengan komen : // #define USE_FEATURE_A&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Recent spare time projects</title>
+      <link>http://localhost:1313/2014/05/13/my-recent-spare-time-projects/</link>
+      <pubDate>Tue, 13 May 2014 11:55:30 +0000</pubDate>
+      <guid>http://localhost:1313/2014/05/13/my-recent-spare-time-projects/</guid>
+      <description>&lt;p&gt;I have been working on these projects in my spare time quite while ( like I work on it when I want work on it  :p )., but recently I&amp;rsquo;m disappointed with my progress ( apparently I&amp;rsquo;m busy and have difficulty when creating graphics assets by myself ). so I decided to upload source code to google code in case I&amp;rsquo;m interested again next time .There are 2 projects :&lt;/p&gt;&#xA;&lt;p&gt;[1] unknown project 1. very simple game, almost done. keyword : C/C++,DirectX, Desktop App,Windows Phone 8&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[3] on directx 11 : load 3D model from file</title>
+      <link>http://localhost:1313/2013/12/30/3-on-directx-11-load-3d-model-from-file/</link>
+      <pubDate>Mon, 30 Dec 2013 19:01:38 +0000</pubDate>
+      <guid>http://localhost:1313/2013/12/30/3-on-directx-11-load-3d-model-from-file/</guid>
+      <description>&lt;p&gt;di project sebelumnya saya hanya menggambar 3d kubus. sangat menarik jika program bisa me-load model 3D yang dibuat oleh 3D editor. format paling populer untuk coba-coba tentu adalah wavefront obj :) . File .obj ini hanya bisa untuk static 3d model, tidak mendukung animasi. Dan biasanya ada 1 file pasangan tambahan untuk setiap .obj yaitu .mtl.  File .mtl dimaksudkan untuk menyimpan material ( konstanta pencahayaan , seperti diffuse, spekular ) . namun .mtl file ini optional. File .obj sebenarnya adalah text file. terdapat 2 kata disini &amp;ldquo;3D model&amp;rdquo; &amp;amp; &amp;ldquo;text file&amp;rdquo;, dan pasti yang terbayang adalah parsing yang lamaaaa . dan memang iya. parsingnya lama. untuk mengakali ini , .obj diubah ke .vbo ( ada orang yang sudah buat tool converter .obj to .vbo . .vbo apa itu?, .vbo sebenarnya adalah versi binary dari .obj, sehingga tidak perlu ada proses parsing waktu load object. 1 fungsi tambahan LoadModel_VBO, dan saya mengubah informasi vertex menjadi :&#xA;DirectX::XMFLOAT3 position;&#xA;DirectX::XMFLOAT3 normal;&#xA;DirectX::XMFLOAT2 texcoord;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[2] on directx 11 : sending data to shader</title>
+      <link>http://localhost:1313/2013/12/27/2-on-directx-11-sending-data-to-shader/</link>
+      <pubDate>Fri, 27 Dec 2013 16:50:35 +0000</pubDate>
+      <guid>http://localhost:1313/2013/12/27/2-on-directx-11-sending-data-to-shader/</guid>
+      <description>&lt;p&gt;Bagaimana mengirim data dari code CPU ( c++ code ) ke code GPU ( hlsl ) ?. Di program sebelumnya, beberapa data yang di kirim ke shader :&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;  * vertex dan index , direpresentasikan dengan D3D11Buffer , di set ke shader dengan IASetVertexBuffers, dan IASetIndexBuffers. prefix IA : buffer ini di set ke input assembler stage dan dapat diakses di VS .&#xD;&#xA;  * model, view, projection matrix,  direpresentasikan dengan D3D11Buffer, di set ke shader dengan VSSetConstantBuffers. prefix VS,karena buffer ini akan dipakai sebagai global variable di vertex shader .&#xD;&#xA;  * texture, berupa shader resource view, di set ke shader dengan PSSetShaderResources. prefix PS, texture hanya dipakai di pixel shader stage.&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;model, view projection matrik dibuat dengan bind flag D3D11_BIND_CONSTANT_BUFFER . mvp disini nilainya tidak konstant, tapi berubah-ubah per-frame. lalu kenapa bind flag nya &amp;lsquo;constant buffer&amp;rsquo;?, hal ini yang membuat saya bertanya diawal2. &amp;ldquo;constant buffer&amp;rdquo; disini, dimaksudkan nilainya tetap konstant per 1 proses draw command. namun di draw command selanjutnya bisa berubah. Jika kita ingin memiliki variable yang &amp;ldquo;semacam&amp;rdquo; mvp matrix ( berubah-ubah per-frame, dan dapat diakses di shader &amp;ndash;vs,ps) , maka kita harus membuat constant buffer semacam ini. sebagai percobaan yang bisa dilihat hasilnya langsung, saya ingin mengirim data ke pixel shader untuk mengubah saturation-desaturation dari texture kubus di program sebelumnya. di c++ code saya perlu struct untuk meng-hold data ini :&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[1] on directx 11 : texturing </title>
+      <link>http://localhost:1313/2013/12/26/1-on-directx-11-texturing/</link>
+      <pubDate>Thu, 26 Dec 2013 16:44:48 +0000</pubDate>
+      <guid>http://localhost:1313/2013/12/26/1-on-directx-11-texturing/</guid>
+      <description>&lt;p&gt;Di program sebelumnya informasi gambar/ vertex data di-representasikan dengan data struct dibawah ini :  (vertex_type.hpp)&lt;/p&gt;&#xA;&lt;p&gt;struct vertex_type&#xA;{&#xA;DirectX::XMFLOAT3 position;&#xA;DirectX::XMFLOAT3 color;&#xA;};&lt;/p&gt;&#xA;&lt;p&gt;struct ini ber-asosiasi dengan shader code : ( Simple_VS.hlsl )&lt;/p&gt;&#xA;&lt;p&gt;struct VertexShaderInput&#xA;{&#xA;float3 pos : POSITION;&#xA;float3 color : COLOR0;&#xA;};&lt;/p&gt;&#xA;&lt;p&gt;dengan sedikit modifikasi, kita bisa menambahkan texture ke vertex data untuk kubus :&lt;/p&gt;&#xA;&lt;table cellpadding=&#34;4&#34; width=&#34;100%&#34; cellspacing=&#34;0&#34; border=&#34;1&#34; &gt; &#xD;&#xA;&lt;tbody &gt;&#xD;&#xA;&lt;tr valign=&#34;TOP&#34; &gt;&#xD;&#xA;&lt;td width=&#34;31%&#34; &gt;&#xD;&#xA;&lt;p&gt;vertex_type.hpp&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;td width=&#34;36%&#34; &gt;&#xD;&#xA;&lt;p&gt;Simple_VS.hlsl&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;td width=&#34;33%&#34; &gt;&#xD;&#xA;&lt;p&gt;Simple_PS.hlsl&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;/tr&gt;&#xD;&#xA;&lt;tr valign=&#34;TOP&#34; &gt;&#xD;&#xA;&lt;td width=&#34;31%&#34; &gt;structvertex_type{DirectX::XMFLOAT3 position;DirectX::XMFLOAT3 color;DirectX::XMFLOAT2 texcoord; // ← added&#xD;&#xA;&lt;p&gt;};&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;td width=&#34;36%&#34; &gt;struct VertexShaderInput{float3 pos : POSITION;float3 color : COLOR0;float2 tex : TEXCOORD0;// ← added&#xD;&#xA;&lt;p&gt;};&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Auto beautifying C&#43;&#43; code</title>
+      <link>http://localhost:1313/2013/12/23/auto-beautifying-c-code/</link>
+      <pubDate>Mon, 23 Dec 2013 09:40:50 +0000</pubDate>
+      <guid>http://localhost:1313/2013/12/23/auto-beautifying-c-code/</guid>
+      <description>&lt;p&gt;Disini saya ingin share simple script untuk &amp;ldquo;mempercantik&amp;rdquo; c++ code disuatu folder project dan melakukan svn commit setelah itu. jadi semacam selalu ada auto corrector jika kamu menulis code yang tidak sesuai aturan ( bahkan mungkin aturan yang kamu buat sendiri) .&lt;/p&gt;&#xA;&lt;p&gt;code yang rapih diharapkan memiliki sedikit bugs dan juga ingat programmer menulis code tidak hanya untuk mesin, tetapi juga untuk dibaca manusia yang lain. untung nya untuk masalah indentation &amp;amp; formating ada software keren &amp;amp; free untuk melakukan ini, yaitu AStyle (  &lt;a href=&#34;http://astyle.sourceforge.net/&#34;&gt;http://astyle.sourceforge.net/&lt;/a&gt; )  .  dengan batch script dibawah ini, semuanya terjadi otomatis :&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[0] on directx 11 : hello cube</title>
+      <link>http://localhost:1313/2013/12/22/0-on-directx-11-hello-cube/</link>
+      <pubDate>Sun, 22 Dec 2013 17:01:00 +0000</pubDate>
+      <guid>http://localhost:1313/2013/12/22/0-on-directx-11-hello-cube/</guid>
+      <description>&lt;p&gt;dulu saya mengalami banyak kesulitan ketika memulai belajar directx 11 (mid 2012). saya ga nemu tutorial yang benar-benar directx 11, kebanyakan bercampur dengan directx 9 / 10 dimana beberapa fungsi sudah deprecated(hilang/diganti), tidak build-able dengan compiler VS terbaru yang saya pakai(MSVC 2012). walaupun secara garis besar/filosofi tidak jauh berbeda, tapi itu tentu tidak bagus untuk pemula :) . untuk itu saya tertarik untuk membuat dokumentasi ini . belajar graphics API secara memang bukan hal mudah, karena kita berusaha memahami apa yang orang buat &amp;mdash;yaitu graphics API, yang kalau diartikan :  komplek API untuk mentransfer sesuatu yang ingin kita gambar ke hardware. salah satu cara untuk menghadapi kompleksitas ini adalah menggunakan graphics debugger ( PIX, Nvidia Nsight, dll.) . Namun saya meragukan seorang pemula mengetahui hal ini &amp;amp; mau menggunakannya diawal2 belajar (source : me ) . Untuk menegaskan apa yang saya katakan di 3 baris terakhir, coba lihat tweet dari John Carmack dibawah ini :&lt;a href=&#34;http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png&#34;&gt;&lt;img src=&#34;http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png?w=554&#34; alt=&#34;Image&#34;&gt;&#xA;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>File mana yang termodifikasi ?</title>
+      <link>http://localhost:1313/2013/04/26/file-mana-yang-termodifikasi/</link>
+      <pubDate>Fri, 26 Apr 2013 18:07:04 +0000</pubDate>
+      <guid>http://localhost:1313/2013/04/26/file-mana-yang-termodifikasi/</guid>
+      <description>&lt;p&gt;Misalnya saya memiliki 1000 file yang akan saya prosess oleh suatu program, dengan script saya bisa melakukannya seperti ini :&lt;/p&gt;&#xA;&lt;p&gt;for i=0 to i=1000 { process file ke-i }      &lt;/p&gt;&#xA;&lt;p&gt;jadi dengan klik sebuat script pekerjaan selesai. Namun, ada beberapa file dari 1000 file tersebut yang berubah / saya modifikasi lagi, sehingga saya perlu mengulang eksekusi script diatas lagi :&lt;/p&gt;&#xA;&lt;p&gt;for i=0 to i=1000 { process file ke-i }      &lt;/p&gt;&#xA;&lt;p&gt;Ini tentu tidak efisien dan lama, karena saya mengubah beberapa file, namun 1000 file masih diprocess lagi. Kode yang efisien seharusnya begini :&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Memperbanyak Assert</title>
+      <link>http://localhost:1313/2013/04/14/memperbanyak-assert/</link>
+      <pubDate>Sun, 14 Apr 2013 18:54:40 +0000</pubDate>
+      <guid>http://localhost:1313/2013/04/14/memperbanyak-assert/</guid>
+      <description>&lt;p&gt;Dalam pembuatan program, programmer sering kehilangan detail apa yang terjadi di bagian kode tertentu. Terutama kalau program yang dibuat terdiri dari ribuan baris kode.Lebih parah lagi, jika kode tersebut sudah lama tidak disentuh.  Dan ketika bug ditemukan , programmer akan mencari cara untuk memperbaiki bug tersebut dengan melakukan debugging ke kode yang diduga sebagai penyebab. Waktu penyelesaian tentu tergantung seberapa sulit bug tersebut. Usaha &amp;ldquo;mencari&amp;rdquo; solusi dengan debugging ini bisa di minimalkan jika kita memasang banyak ASSERT di kode. Contoh :&#xA;void DataSender::Init(std::string filename)    {&#xA;      std::ifstream config_file(filename, std::ios::in | std::ios::binary | std::ios::ate);&#xA;      assert( config_file.is_open() ) ;&#xA;      // do something&#xA;      // &amp;hellip;&#xA;      // &amp;hellip;&#xA;}&#xA;jika file config tidak bisa di buka, assertion failed akan terjadi , dan programmer/user akan segera tau. Skenario yang terjadi jika kode diatas tanpa ASSERT : suatu saat path file diubah, dan file tidak bisa dibuka. akibatnya akan ada masalah dengan class DataSender, jika berungtung program akan crash, dan programmer dapat crash/ stack trace, jika tidak kemungkinan DataSender akan tetap berjalan tapi data tidak terkirim. Programmer akan mencari dengan banyak dugaan penyebab: apa jaringan internet lagi down?, apa library networknya bermasalah?, apa pemakai class DataSender? apa terkirim tapi ada delay ?. banyak yang harus dijawab . arghhh.&#xA;dari contoh ini, assert bisa menghemat waktu :). assert akan dihilangkan di-release version , jika assert ingin dipakai di release version lebih baik memakai preprocessor untuk menggantikannya. disini ASSERT diganti dengan std::exception failed :p .&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Smart pointer.</title>
+      <link>http://localhost:1313/2013/04/14/harus-dengan-smart-pointer/</link>
+      <pubDate>Sun, 14 Apr 2013 18:53:27 +0000</pubDate>
+      <guid>http://localhost:1313/2013/04/14/harus-dengan-smart-pointer/</guid>
+      <description>&lt;p&gt;Simple tips, tetapi sangat  critical : Ada suatu keadaan dimana kita harus memakai smart pointer ! , Kapan?, salah satunya jika berurusan dengan DirectX API 11 .  lihat salah satu contoh dibawah ini :&lt;/p&gt;&#xA;&lt;p&gt;HRESULT CreateInputLayout(&#xA;                                                             [in] const D3D11_INPUT_ELEMENT_DESC *pInputElementDescs,&#xA;                                                             [in] vUINT NumElements,&#xA;                                                             [in] const void *pShaderBytecodeWithInputSignature,&#xA;                                                             [in] SIZE_T BytecodeLength,&#xA;                                                             [out] ID3D11InputLayout **ppInputLayout&#xA;                                                             );&lt;/p&gt;&#xA;&lt;p&gt;parameter ke-5 fungsi diatas mengharapkan variabel pointer to pointer. Kalau kita memakai raw pointer, bisa juga, seperti dibawah ini :&#xA;       ID3D11InputLayout* my_input_layout ;&#xA;       HRESULT hr = m_Device-&amp;gt;CreateInputLayout( VertexPositionColorTexture::InputElements,&#xA;              VertexPositionColorTexture::InputElementCount,&#xA;              shaderByteCode, byteCodeLength,&#xA;              &amp;amp; my_input_layout&#xA;              );&#xA;m_DeviceContext-&amp;gt;IASetInputLayout( my_input_layout );&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Berhati-hati dengan C/C&#43;&#43; array</title>
+      <link>http://localhost:1313/2013/01/01/berhati-hati-dengan-cc-array/</link>
+      <pubDate>Tue, 01 Jan 2013 15:24:03 +0000</pubDate>
+      <guid>http://localhost:1313/2013/01/01/berhati-hati-dengan-cc-array/</guid>
+      <description>&lt;p&gt;Array ?, sepertinya mudah, dan mungkin memang mudah. Sekelompok/himpunan type data disimpan dalam area memory sequential , untuk mempermudah pengaturan dan pengaksesan, itulah array. Di C/C++ contoh penggunaannya sebagai berikut :&lt;/p&gt;&#xA;&lt;p&gt;initialisasi :&lt;/p&gt;&#xA;&lt;table cellpadding=&#34;4&#34; width=&#34;100%&#34; cellspacing=&#34;0&#34; border=&#34;1&#34; &gt; &#xD;&#xA;&lt;tbody &gt;&#xD;&#xA;&lt;tr valign=&#34;TOP&#34; &gt;&#xD;&#xA;&lt;td width=&#34;33%&#34; height=&#34;86&#34; &gt;&#xD;&#xA;&lt;p&gt;int arrayA[3] = {4,5,6};&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;td width=&#34;33%&#34; &gt;&#xD;&#xA;&lt;p&gt;int arrayB[3];&lt;/p&gt;&#xA;&lt;p&gt;arrayB[0]=8;&lt;/p&gt;&#xA;&lt;p&gt;arrayB[1]=9;&lt;/p&gt;&#xA;&lt;p&gt;arrayB[2] =10;&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;td width=&#34;33%&#34; &gt;&#xD;&#xA;&lt;p&gt;int* arrayC = new int[3];&lt;/p&gt;&#xA;&lt;p&gt;arrayC[0] = 11;&lt;/p&gt;&#xA;&lt;p&gt;arrayC[1] = 12;&lt;/p&gt;&#xA;&lt;p&gt;arrayC[2] = 13;&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;/tr&gt;&#xD;&#xA;&lt;/tbody&gt;&#xD;&#xA;&lt;/table&gt;&#xD;&#xA;&lt;p&gt;arrayA dan arrayB , arrayC adalah array dari data bertipe integer dan (dimaksudkan) memiliki ukuran maksimum 3. Pengaksesan array dibawah ini sesuai rencana, karena index &amp;lt;=2 .&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>simple thread pool test</title>
+      <link>http://localhost:1313/2012/10/21/simple-thread-pool-test/</link>
+      <pubDate>Sun, 21 Oct 2012 17:05:52 +0000</pubDate>
+      <guid>http://localhost:1313/2012/10/21/simple-thread-pool-test/</guid>
+      <description>&lt;p&gt;saya mencoba simple thread pool menggunakan std::thread C++ 11 dan sepertinya bekerja sesuai keinginan dari test yang saya lakukan (warning : code dibawah ini trivial).  jumlah thread saya harcode berjumlah 2 :p.  untuk mengetest thread pool, saya beri task meng-&lt;em&gt;copy&lt;/em&gt; files berjumlah 100 (nama file : 1- 100) .  compiler: vs studio express 2012 . header :&lt;/p&gt;&#xA;&lt;p&gt;#include &amp;lt;time.h&amp;gt;&#xA;#include &lt;thread&gt;&#xA;#include &lt;future&gt;&#xA;#include &lt;functional&gt;&lt;/p&gt;&#xA;&lt;p&gt;[sourcecode language=&amp;ldquo;cpp&amp;rdquo;]&#xA;//kelas worker thread&#xA;class worker&#xA;{&#xA;private:&#xA;std::vector&amp;lt; std::function&amp;lt;void()&amp;gt; &amp;gt; vecFunc;&#xA;std::mutex m_mutex;&#xA;public:&#xA;void addtask(std::function&amp;lt;void()&amp;gt; task) {&#xA;std::lock_guard&lt;a href=&#34;std::mutex&#34;&gt;std::mutex&lt;/a&gt; lockg(m_mutex);&#xA;vecFunc.push_back(task);&#xA;}&#xA;void executeSave() {&#xA;while(1) {&#xA;if (vecFunc.size() &amp;gt; 0)  {&#xA;std::lock_guard&lt;a href=&#34;std::mutex&#34;&gt;std::mutex&lt;/a&gt; lockg(m_mutex);&#xA;for (int i = 0; i &amp;lt; vecFunc.size(); i++) {&#xA;vecFunc&lt;a href=&#34;&#34;&gt;i&lt;/a&gt;;&#xA;}&#xA;vecFunc.clear();&#xA;}&#xA;}&#xA;}&#xA;};&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mencoba Smart pointer dari Boost</title>
+      <link>http://localhost:1313/2012/06/30/582/</link>
+      <pubDate>Sat, 30 Jun 2012 13:40:25 +0000</pubDate>
+      <guid>http://localhost:1313/2012/06/30/582/</guid>
+      <description>&lt;p&gt;Smart pointer adalah pointer yang smart. :d. ya memang begitu tujuannya. Seperti diketahui tidak ada management object secara otomatis [garbage collecor] di c/c++, jadi setiap dynamic-object yang di alokasi di heap dan sudah waktunya dihapus harus di-delete secara eksplisit. (dynamic-object == setiap object yang di-create dengan keyword new). Apa akibatnya jika delete tidak dilakukan?, kemungkinan terjadi memory leak ( : keadaan dimana pembuat program tidak bahagia). kemungkinan memory leak ini semakin besar seiring semakin kompleknya project, dan juga memory leak akan susah dicari :| . untuk itu dibuat smart pointer: pointer yang mengurusi kepemilikan object (secara singkatnya begitu) . Smart pointer sudah lama digunakan, namun tetap saja masih banyak project yang menggunakan raw pointer , (dengan alasan kemudahan dan malas. haha.) . Kelemahan dari smart pointer , tentu akan lebih lambat dari raw pointer, karena smart pointer sebenarnya adalah wrapper class untuk pointer. Walaupun ada, saya yakin, keuntungannya lebih tinggi karena kecepatan processor yang semakin tinggi dan project yang rumit. {riil project == pasti rumit }. Okey, itulah motivasinya :), saatnya mencoba smart pointer. Saya pilih smart pointer dari Boost library yang banyak digunakan. Di Boost terdapat beberapa smart pointer, saya akan mencoba 3 diantaranya: scoped pointer, shared pointer, dan weak pointer.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Xedithor: 2D Sprite Editor</title>
+      <link>http://localhost:1313/2012/01/04/xedithor-2d-sprite-editor/</link>
+      <pubDate>Wed, 04 Jan 2012 19:49:48 +0000</pubDate>
+      <guid>http://localhost:1313/2012/01/04/xedithor-2d-sprite-editor/</guid>
+      <description>&lt;p&gt;I created 2D sprite  editor. version 1.00 is released.  :) . At beginning, actually I wanna create a game, but I think I need a tool to make my job is easier in term of anything when handling 2D sprite (yes, it&amp;rsquo;s 2D game) .  Furthermore, game tool in a game  development is make possible to divide a jobs, between artist , game designer, and programmer. so, in non-trivial game dev, tool is must !. But why I create this? why didn&amp;rsquo;t use available sprite editor outside there? . Before write the first line of code of this editor, actually I had been search on internet, yeah, there are some of them make me interested (an example Allegro Sprite Editor ),  but i decide to make it (as simple as possible )  from scratch so I can customized the output. (saved and exported sprite file format&amp;quot;) . And now, after about ~ 2,5 month first version is already released . it can create animation , save it to .xml, exported to binary, and I already success read the binary use LibGDX to construct a animation. I plan to read the output in SDL too.  this sprite editor is created using Qt framework , coded in C++. Link of the project:  &lt;a href=&#34;http://code.google.com/p/xedithor/&#34;&gt;http://code.google.com/p/xedithor/&lt;/a&gt; . I can&amp;rsquo;t deny that this work is influenced by sprite editor that used by company out there (I know, because i used it ,hehehe ) . Just like Linus Trovald create GIT inspired by BitKeeper. :D&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>packing resources</title>
+      <link>http://localhost:1313/2011/09/20/packing-resources/</link>
+      <pubDate>Tue, 20 Sep 2011 02:05:46 +0000</pubDate>
+      <guid>http://localhost:1313/2011/09/20/packing-resources/</guid>
+      <description>&lt;p&gt;Jika kita memperhatikan secara seksama semua program-program atau game yang tidak trivial (yang serius) selalu memproteksi resources/sumber daya yang digunakan. Resources disini maksudnya file-file yang berguna untuk game/program, misalnya library, gambar, sound, config file, text file, dan lainnya. Tujuannya jelas, agar tidak mudah diubah/dimodifikasi oleh user, atau setidaknya kalau pun user bisa mengubah , itu tidak dilakukan secara mudah. (ya, tidak ada yang 100 % aman di dunia komputer ). Dari apa yang saya lihat di folder data dari program dan games yang ter-install di komputer, ada macam-macam teknik untuk memproteksinya, ada yang hanya mengubah ekstensi file, (misalnya file : gambar.jpg menjadi blablabla.dll ), melakukan enkripsi dan mengkompress file, dan ada juga yang menjadikan seluruh resources menjadi 1 file besar, misalnya data.pak . Bagaimana kalau ingin membuat proteksi semacam itu? . Saya ingin mencobanya disini, tidak perlu menulis program dari scratch, cukup menggunakan library yang sudah ada. Zlib (library kompres-dekompresi yang popular se-antero internet :-D ) dan C++ Boost adalah pilihan yang menarik. Dengan meng-kompresi data, kita tidak hanya membuat data tersebut tidak mudah di hack tapi juga membuat ukuran menjadi kecil a.k.a menghemat space.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Pointer to function, pointer to function member of class.</title>
+      <link>http://localhost:1313/2011/09/14/467/</link>
+      <pubDate>Wed, 14 Sep 2011 07:41:16 +0000</pubDate>
+      <guid>http://localhost:1313/2011/09/14/467/</guid>
+      <description>&lt;p&gt;Pointer to function, pointer to function member of class.&lt;/p&gt;&#xA;&lt;p&gt;#Cara 1 : Secara tradisional&lt;/p&gt;&#xA;&lt;p&gt;Function pointer (pointer ke fungsi/penunjuk ke fungsi), dapat didefinisikan sebagai berikut:&lt;/p&gt;&#xA;&lt;p&gt;(typeReturn*) functPointer(typeArgument,typeArgument2,..,typeArgumentN)&lt;/p&gt;&#xA;&lt;p&gt;sebagai contoh, terdapat 2 fungsi dibawah ini:&lt;/p&gt;&#xA;&lt;p&gt;[sourcecode language=&amp;ldquo;cpp&amp;rdquo;]&#xA;void Function1()&#xA;{&#xA;cout&amp;laquo;&amp;quot; call  Function1 Function1&amp;quot;&amp;laquo;endl;&#xA;}&#xA;int Function2(int a,int b)&#xA;{&#xA;return (a*b);&#xA;}&lt;/p&gt;&#xA;&lt;p&gt;[/sourcecode]&lt;/p&gt;&#xA;&lt;p&gt;Contoh pemakaian function pointer dari 2 fungsi diatas, sebagai berikut:&lt;/p&gt;&#xA;&lt;p&gt;[sourcecode language=&amp;ldquo;cpp&amp;rdquo;]&#xA;void (*pf)();          // deklarasi&#xA;pf=Function1;         // assignment&#xA;pf();&#x9;&#x9;      // pemanggilan&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Membuat Tetris</title>
+      <link>http://localhost:1313/2011/08/14/membuat-tetris/</link>
+      <pubDate>Sun, 14 Aug 2011 20:56:00 +0000</pubDate>
+      <guid>http://localhost:1313/2011/08/14/membuat-tetris/</guid>
+      <description>&lt;p&gt;Tetris mungkin salah satu game puzzle yang sangat populer dan hampir dimainkan setiap orang. Game ini tersedia di berbagai device, mulai dari game boy yang dedicated untuk tetris, hand phone, komputer, Nitendo, dll. Dulu saat saya masih kecil, saya main tetris pertama kali di game boy milik teman saya. Perlu diketahui dulu tidak ada orang yang punya handphone di tempat tinggal saya. :) .Mungkin terakhir kali saya aktif main tetris saat saya punya handphone modem Smart merk Huawey. Di situ disediakan game tetris. Saya hampir setiap saat memainkannya. Bahkan blok-blok tetris sampai terbawa mimpi. Serius !!. -hahaha-. Dan ternyata tetris memang bisa menyebabkan apa yang disebut &lt;a href=&#34;http://en.wikipedia.org/wiki/Tetris_effect&#34;&gt;Tetris Effect&lt;/a&gt;. &lt;a href=&#34;http://www.google.co.id/search?sourceid=chrome&amp;amp;ie=UTF-8&amp;amp;q=tetris+effect&#34;&gt;Tetris Effect 2&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>post code: proximity game</title>
+      <link>http://localhost:1313/2011/07/18/post-code-proximity-game/</link>
+      <pubDate>Mon, 18 Jul 2011 15:14:17 +0000</pubDate>
+      <guid>http://localhost:1313/2011/07/18/post-code-proximity-game/</guid>
+      <description>&lt;p&gt;Berawal dari (May 17, 2011 : &lt;a href=&#34;http://offground.wordpress.com/2011/05/17/proximity-game-clone/&#34;&gt;from this post&lt;/a&gt; ) saya upload hasilnya disini . Untuk sekarang hanya bisa play dengan komputer. Play dengan teman di LAN belum saya implementasikan.&lt;/p&gt;&#xA;&lt;p&gt;Screenshoot Main Menu:&lt;/p&gt;&#xA;&lt;p&gt;[caption id=&amp;ldquo;attachment_461&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;300&amp;rdquo; caption=&amp;ldquo;Click untuk memperbesar&amp;rdquo;]&lt;a href=&#34;http://offground.files.wordpress.com/2011/07/proximity_mm_offground.png&#34;&gt;&lt;img src=&#34;http://offground.files.wordpress.com/2011/07/proximity_mm_offground.png?w=300&#34; alt=&#34;Click untuk memperbesar&#34;&gt;&#xA;&lt;/a&gt;[/caption]&lt;/p&gt;&#xA;&lt;p&gt;Screenshoot Gameplay:&lt;/p&gt;&#xA;&lt;p&gt;[caption id=&amp;ldquo;attachment_462&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;300&amp;rdquo; caption=&amp;ldquo;Click untuk memperbesar&amp;rdquo;]&lt;a href=&#34;http://offground.files.wordpress.com/2011/07/proximity_gameplay_offground.png&#34;&gt;&lt;img src=&#34;http://offground.files.wordpress.com/2011/07/proximity_gameplay_offground.png?w=300&#34; alt=&#34;Click untuk memperbesar&#34;&gt;&#xA;&lt;/a&gt;[/caption]&lt;/p&gt;&#xA;&lt;p&gt;Source code (SVN check out) :&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://proximity-game-clone.googlecode.com/svn/trunk&#34;&gt;https://proximity-game-clone.googlecode.com/svn/trunk&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Untuk binary and source code download :&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://code.google.com/p/proximity-game-clone/&#34;&gt;http://code.google.com/p/proximity-game-clone/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt; # Keyword: simple SDL game, game  C/C++, game sederhana SDL, C/C++, puzzle.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Proximity Game Clone</title>
+      <link>http://localhost:1313/2011/05/17/proximity-game-clone/</link>
+      <pubDate>Tue, 17 May 2011 18:39:13 +0000</pubDate>
+      <guid>http://localhost:1313/2011/05/17/proximity-game-clone/</guid>
+      <description>&lt;p&gt;Pengin membuat &lt;em&gt;clone&lt;/em&gt; versi PC dari &amp;ldquo;proximity game&amp;rdquo;, saya main game ini awalnya di ponsel. Belum selesai, baru dimulai :) .  Semoga ada waktu luang dan ada semangat untuk melanjutkannya :p .&lt;!-- more --&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://offground.files.wordpress.com/2011/05/proximityclone.png&#34;&gt;&lt;img src=&#34;http://offground.files.wordpress.com/2011/05/proximityclone.png&#34; alt=&#34;&#34;&gt;&#xA;&lt;/a&gt;&lt;em&gt;Hand Cursor:&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;[caption id=&amp;ldquo;attachment_388&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;126&amp;rdquo; caption=&amp;ldquo;click image, to see animated gif&amp;rdquo;]&lt;a href=&#34;http://offground.files.wordpress.com/2011/05/pclone.gif&#34;&gt;&lt;img src=&#34;http://offground.files.wordpress.com/2011/05/pclone.gif&#34; alt=&#34;&#34;&gt;&#xA;&lt;/a&gt;[/caption]&lt;/p&gt;&#xA;&lt;p&gt;Ingat &amp;ldquo;&lt;em&gt;Hand Cursor&lt;/em&gt;&amp;rdquo; itu ? . it&amp;rsquo;s  from An*** B*** . :D.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mencoba Visitor Pattern. </title>
+      <link>http://localhost:1313/2011/04/16/visitor-pattern-mencoba/</link>
+      <pubDate>Sat, 16 Apr 2011 14:46:07 +0000</pubDate>
+      <guid>http://localhost:1313/2011/04/16/visitor-pattern-mencoba/</guid>
+      <description>&lt;p&gt;Visitor, pengunjung. Visitor pattern menggunakan prisip open/close dalam desain sebuah program. Pattern ini memisahkan &amp;ldquo;sebuah operasi -tindakan/algoritma&amp;rdquo; dari objek. Terdapat dua objek: Visitor dan Objek yang bisa dikunjungi (visitable objek). Kelihatannya Pattern ini mirip dengan strategi pattern: memisahkan algoritma dari kelas menjadi kelas yang lain. Namun Visitor Pattern dan strategi pattern berbeda.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Strategy pattern&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;AlgoritmaX adalah abstract class. punya method Count()&lt;/p&gt;&#xA;&lt;p&gt;AlgoritmaX1 turunan AlgoritmaX. AlgoritmaX1 mengimplementasikan method Count() dengan algoritma tertentu&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Zword Project :yet another dictionary</title>
+      <link>http://localhost:1313/2011/02/23/zword-project-yet-another-dictionary/</link>
+      <pubDate>Wed, 23 Feb 2011 19:12:30 +0000</pubDate>
+      <guid>http://localhost:1313/2011/02/23/zword-project-yet-another-dictionary/</guid>
+      <description>&lt;p&gt;Sebuah project simple dan sederhana pakai Qt dan SQLite3 Zword: Multi Languanges dictionary . O yeah , Reinvent the wheel!!! sudah banyak program kamus di luar sana. &amp;ndash;ini sebenarnya adalah best practices dengan Qt saja&amp;ndash; .Tetapi selain itu, saya ingin pengguna juga bisa menambahkan pasangan bahasa sendiri. Misalnya, saya ingin kamus Jawa-Belanda,  saya tidak perlu memrogram lagi tinggal menambah kamus di program,dan tentu menambah kan kata.&lt;/p&gt;&#xA;&lt;p&gt;fitur sekarang:&lt;/p&gt;&#xA;&lt;ol start=&#34;0&#34;&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Tentu sebagai kamus :p&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mencoba SQLite3</title>
+      <link>http://localhost:1313/2011/01/12/mencoba-sqlite3/</link>
+      <pubDate>Wed, 12 Jan 2011 10:52:35 +0000</pubDate>
+      <guid>http://localhost:1313/2011/01/12/mencoba-sqlite3/</guid>
+      <description>&lt;p&gt;Dulu saya sempat mencari-cari, ada nggak ya sebuah database engine yang bisa diakses secara lokal layaknya file?. Waktu itu saya cari-cari di Google ternyata saya nggak nemu. -mungkin belum beruntung atau kata kunci belum tepat -. :) . Kira2 sebulan yang lalu secara tidak sengaja saya nemu SQLite.DLL disebuah folder suatu game,  saya langsung berfikir ini yang saya cari2 dulu!!!.  Karena ada kata &amp;ldquo;SQL&amp;rdquo; dan &amp;ldquo;Lite&amp;rdquo; .  Dan ternyata benar!, langsung ta download di &lt;a href=&#34;http://www.sqlite.org/download.html&#34;&gt;official-webnya&lt;/a&gt; . Disitu bisa download .DLL -nya , source, semuanya.Untuk Sqlite3.lib tidak ada, dan bisa di-generate dengan:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>avira update caused debug error</title>
+      <link>http://localhost:1313/2010/12/20/avira-update-caused-debug-error/</link>
+      <pubDate>Mon, 20 Dec 2010 05:53:37 +0000</pubDate>
+      <guid>http://localhost:1313/2010/12/20/avira-update-caused-debug-error/</guid>
+      <description>&lt;p&gt;The error message is like that:&lt;/p&gt;&#xA;&lt;p&gt;NtClose was called on a handle that was protected from close via NtSetInformationObject.﻿&lt;/p&gt;&#xA;&lt;p&gt;it happen when you debug application from visual c++, but when you run it outside ide, it&amp;rsquo;s fine. after looking around, then this problem is  solved. look at &lt;a href=&#34;https://forum.avira.com/wbb/index.php?page=Thread&amp;amp;postID=1031807&#34;&gt;avira forum &lt;/a&gt;. the fast solution: uninstalled avira, reboot the computer, then install avira again and disabled auto update. hope this useful for others.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>yet another memory game&#39;s project</title>
+      <link>http://localhost:1313/2010/11/21/yet-another-memory-games-project/</link>
+      <pubDate>Sun, 21 Nov 2010 17:52:39 +0000</pubDate>
+      <guid>http://localhost:1313/2010/11/21/yet-another-memory-games-project/</guid>
+      <description>&lt;p&gt;Iseng membuat game yang lengkap. ada menu game, sound, score, level, dll. tapi belum selesai, setidaknya sudah bisa dimainkan :) . project-nya saya post di Google Code SVN.&lt;/p&gt;&#xA;&lt;p&gt;SVN Checkout: (read only check out)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://frogmemory.googlecode.com/svn/trunk/frogmem&#34;&gt;https://frogmemory.googlecode.com/svn/trunk/frogmem&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;sementara, isinya cuma file project dan source code. file asset dan dependencies tidak ada.  project ini menggunakan SDL sebagai &amp;ldquo;system&amp;rdquo;-nya dan &lt;a href=&#34;http://www.cegui.org.uk&#34;&gt;CEGUI (Crazy Eddie&amp;rsquo;s GUI System)&lt;/a&gt;, dan tentu pakai bahasa C++.&lt;/p&gt;&#xA;&lt;p&gt;update:&lt;/p&gt;&#xA;&lt;p&gt;Januari 29, 2010 : Add binary file dan data file&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mencoba Observer Pattern dan Strategy Pattern di C&#43;&#43;</title>
+      <link>http://localhost:1313/2010/08/10/mencoba-observer-pattern-dan-strategy-pattern-di-c/</link>
+      <pubDate>Tue, 10 Aug 2010 04:32:58 +0000</pubDate>
+      <guid>http://localhost:1313/2010/08/10/mencoba-observer-pattern-dan-strategy-pattern-di-c/</guid>
+      <description>&lt;p&gt;Saya tidak mempelajari ilmu komputer sebagai &lt;em&gt;background&lt;/em&gt; pendidikan saya, dan ketika saya “nemu” &lt;em&gt;design pattern&lt;/em&gt; dalam pengembangan &lt;em&gt;software&lt;/em&gt;, hal itu menurut saya adalah keberuntungan :). Kenapa? walaupun waktu kuliah isinya juga &lt;em&gt;coding&lt;/em&gt;, ( kebanyakan untuk &lt;em&gt;hardware&lt;/em&gt; seperti : &lt;em&gt;microcontroller&lt;/em&gt;, PLC, &lt;em&gt;microprocessor&lt;/em&gt;, atau program-program kecil untuk &lt;em&gt;interfacing&lt;/em&gt;), namun tidak menggunakan teknik pengembangan &lt;em&gt;software&lt;/em&gt; apapun. Cuma prosedural dan efisiensi penggunaan memori – dan itu memang sudah cukup -  . Hal itu sangat berbeda jika kita ingin mengembangkan &lt;em&gt;software&lt;/em&gt; yang komplek dan besar. Sebuah teknik/pola harus ada, dan jawabannya adalah &lt;em&gt;design pattern.&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Menengok kembali: C&#43;&#43; virtual function</title>
+      <link>http://localhost:1313/2010/05/15/menengok-kembali-c-virtual-function/</link>
+      <pubDate>Sat, 15 May 2010 15:17:07 +0000</pubDate>
+      <guid>http://localhost:1313/2010/05/15/menengok-kembali-c-virtual-function/</guid>
+      <description>&lt;p&gt;edi ermawan, &lt;a href=&#34;http://offground.wordpress.com&#34;&gt;http://offground.wordpress.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Fungsi Virtual&lt;/strong&gt;. Alasan kenapa sebuah fungsi perlu dibuat virtual adalah agar fungsi tersebut bisa di-deklarasikan ulang di kelas turunannya ( meng-override fungsi ) **dan **jika kamu ingin me-resolve pemanggilan &lt;em&gt;body function&lt;/em&gt; saat runtime ( late binding/ dynamic binding ). perhatikan kata dihubungkan dengan &amp;ldquo;dan&amp;rdquo; bold mode : ) . Karena member fungsi tanpa virtual pun juga bisa di-override. Bedanya jika sebuah fungsi itu &lt;strong&gt;tidak&lt;/strong&gt; virtual dan dideklarasikan ulang di kelas turunan, ketika fungsi itu dijalankan , maka &amp;ldquo;&lt;em&gt;body function&lt;/em&gt;&amp;rdquo; yang akan dijalankan adalah sesuai yang didefinikan. ( body function yang akan dipanggil sudah ditentukan / di-resolve saat compile time , atau yang disebut static binding ).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Integrasi Qt ke Ms Visual C&#43;&#43; 2008 Express</title>
+      <link>http://localhost:1313/2010/05/15/215/</link>
+      <pubDate>Sat, 15 May 2010 14:37:37 +0000</pubDate>
+      <guid>http://localhost:1313/2010/05/15/215/</guid>
+      <description>&lt;p&gt;edi ermawan, &lt;a href=&#34;../../../../../&#34;&gt;http://offground.wordpress.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Apa itu Qt?, Qt: sebuah C++ library yang cukup lengkap untuk mengembangkan aplikasi mulai dari library GUI, grafik, networking, multimedia, multithreading, sql interface, openGL interface , web, dll.&lt;/p&gt;&#xA;&lt;p&gt;Motivasi:&lt;/p&gt;&#xA;&lt;p&gt;1.Aplikasi bisa berjalan multiplatform tanpa virtual machine seperti .NET atau Java&#xA;2.C/C++ :)&#xA;3.Gratis, lisensi: Lesser GPL.&#xA;4.Library cukup lengkap.&#xA;5.Dokumentasi dari Qt lengkap.&lt;/p&gt;&#xA;&lt;p&gt;Qt bisa di download di &lt;a href=&#34;http://www.qtsoftware.com/&#34;&gt;www.qtsoftware.com&lt;/a&gt; . Qt sebenarnya sudah mempunyai IDE sendiri yang dinamakan Qt Creator, sebuah IDE yang mudah digunakan, menggunakan gcc compiler dan gdb debugger. Namun jika kita terbiasa bekerja atau ingin mengintegrasikannya dengan IDE Miscrosoft visual C++(msvc) hal tersebut bisa dilakukan dengan mudah, karena Qt software dengan sangat baik hati sudah mengantisipasinya. :). Ada dua cara untuk melakukannya, download library Qt khusus untuk msvc atau melakukan build sendiri dari source dari Qt. Postingan ini akan mencoba cara ke-2. Kenapa? saya download Qt dengan IDE creator, library yang di-bundle disitu khusus untuk gcc tidak bisa untuk msvc. Untuk men-buildnya tidak perlu effort yang keras, pertama buat solution untuk semua project di Qt. Di direktori bin Qt:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Belajar : Heap dan Stack</title>
+      <link>http://localhost:1313/2010/05/15/heap-and-stack/</link>
+      <pubDate>Sat, 15 May 2010 13:56:48 +0000</pubDate>
+      <guid>http://localhost:1313/2010/05/15/heap-and-stack/</guid>
+      <description>&lt;p&gt;edi ermawan, &lt;a href=&#34;http://offground.wordpress.com&#34;&gt;http://offground.wordpress.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&amp;mdash;&amp;mdash;&amp;mdash; May 15, 2010 &amp;mdash;&amp;mdash;&amp;ndash;&#xA;Ketika suatu program berjalan, processor (– atau lebih tepatnya 80x86 ? &amp;ndash;) mengalokasikan memory untuk program tersebut di RAM, yang terbagi menjadi empat bagian yaitu Code Segment (CS), Stack Segment (SS), Data Segment (DS), dan Extra Segment (ES).&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://offground.files.wordpress.com/2010/05/stack_head_offgnd.png&#34;&gt;&lt;img src=&#34;http://offground.files.wordpress.com/2010/05/stack_head_offgnd.png?w=300&#34; alt=&#34;&#34;&gt;&#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Code Segment menyimpan semua kode dan instruksi-instruksi processor yang digunakan oleh program tersebut. Semua data di memori ini bersifat read-only.&lt;/p&gt;&#xA;&lt;p&gt;Stack Segment teralokasi untuk berbagai keperluan, seperti menyimpan return address dari pemanggilan fungsi, menyimpan parameter-parameter yang dilewatkan ke fungsi, menyimpan variabel lokal di dalam fungsi, dll. Penambahan dan pengurangan memory stack menggunakan metode last in first out (LIFO). Misalnya, saat suatu fungsi dipanggil, seketika itu variabel lokal di dalam fungsi tersebut dialokasikan di stack (push), dan ketika fungsi sudah berakhir, variabel lokal di-dealokasikan (pop).  Walaupun proses LIFO di stack terjadi otomatis, di stack bisa terjadi overflow, atau yang disebut stack overflow. Stack overflow terjadi misalnya ketika terjadi pemanggilan recursive tak berujung (infinite recursive). Contoh:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

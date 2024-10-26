@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>#Wordpress #Tips #Code on Home</title>
+    <link>http://localhost:1313/tags/%23wordpress-%23tips-%23code/</link>
+    <description>Recent content in #Wordpress #Tips #Code on Home</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>© 2007-2024 XediXermawan</copyright>
+    <lastBuildDate>Sun, 22 Dec 2013 17:24:20 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%23wordpress-%23tips-%23code/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>problem solved : wordpress remove code indentation</title>
+      <link>http://localhost:1313/2013/12/22/problem-solved-wordpress-remove-code-indentation/</link>
+      <pubDate>Sun, 22 Dec 2013 17:24:20 +0000</pubDate>
+      <guid>http://localhost:1313/2013/12/22/problem-solved-wordpress-remove-code-indentation/</guid>
+      <description>&lt;p&gt;so you wanna post fancy cool blog post in wordpress and it&amp;rsquo;s time to copy-paste your code to wordpress editor. and &amp;hellip;, all indentation from your code editor lost !!. this is really not good, right ?. I search some soluton to fix this and I have one :&lt;/p&gt;&#xA;&lt;p&gt;-copy &amp;amp; paste your code to &lt;a href=&#34;http://hilite.me/&#34;&gt;http://hilite.me/&lt;/a&gt; on &amp;ldquo;Source Code&amp;rdquo; edit box part.&lt;/p&gt;&#xA;&lt;p&gt;-click &amp;ldquo;Highlight&amp;rdquo; button&lt;/p&gt;&#xA;&lt;p&gt;-a result code will be generated in &amp;ldquo;Preview&amp;rdquo; edit box. copy-paste code from there to Wordpress editor&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Elektronik on Home</title>
+    <link>http://localhost:1313/tags/elektronik/</link>
+    <description>Recent content in Elektronik on Home</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>© 2007-2024 XediXermawan</copyright>
+    <lastBuildDate>Thu, 31 May 2007 08:43:13 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/elektronik/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Op Amp</title>
+      <link>http://localhost:1313/post/2007-05-31-op-amp/</link>
+      <pubDate>Thu, 31 May 2007 08:43:13 +0000</pubDate>
+      <guid>http://localhost:1313/post/2007-05-31-op-amp/</guid>
+      <description>&lt;p&gt;Beberapa hari ini saya mencoba membuat amplifier, dengan penguatan 1000 kali. Agar mudah diselesaikan, saya menggunakan Op Amp. Bagaimana hasilnya? Amplifiernya jalan, tapi tidak menunjukkan penguatan yang diinginkan.&lt;/p&gt;&#xA;&lt;p&gt;Penguatannya tidak seribu kali. Saya menggunakan input sinyal kotak frekuensi 40 khz, sekitar 500mV (sebenarnya ini terlalu besar), &lt;em&gt;output&lt;/em&gt;-nya cuma sekitar 2 volt. Ketika frekuensi input saya turunkan penguatannya semakin besar. Dan diturunkan dalam orde pengali 100k, 10k, 1k, hz. Apa frekuensi 40khz sudah dianggap -frekuensi tinggi- oleh opamp ?&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Opengl on Home</title>
+    <link>http://localhost:1313/tags/opengl/</link>
+    <description>Recent content in Opengl on Home</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>© 2007-2024 XediXermawan</copyright>
+    <lastBuildDate>Sun, 16 Oct 2011 16:36:27 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/opengl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unresolved android.opengl.ETC1</title>
+      <link>http://localhost:1313/2011/10/16/unresolved-android-opengl-etc1/</link>
+      <pubDate>Sun, 16 Oct 2011 16:36:27 +0000</pubDate>
+      <guid>http://localhost:1313/2011/10/16/unresolved-android-opengl-etc1/</guid>
+      <description>&lt;p&gt;unresolved problem ?&lt;/p&gt;&#xA;&lt;p&gt;import android.opengl.ETC1;&#xA;import android.opengl.ETC1Util;&lt;/p&gt;&#xA;&lt;p&gt;only available in android 2.2 above.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

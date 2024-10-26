@@ -1,259 +1,104 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Live on XediXermawan</title>
-    <link>https://xedixermawan.github.io/categories/live/</link>
-    <description>Recent content in Live on XediXermawan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-EN</language>
-    <copyright>Copyright 2007-2019 XediXermawan</copyright>
+    <title>Live on Home</title>
+    <link>http://localhost:1313/categories/live/</link>
+    <description>Recent content in Live on Home</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>© 2007-2024 XediXermawan</copyright>
     <lastBuildDate>Thu, 13 Oct 2011 16:04:51 +0000</lastBuildDate>
-    
-	<atom:link href="https://xedixermawan.github.io/categories/live/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="http://localhost:1313/categories/live/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Karena saya suka cepat !!</title>
-      <link>https://xedixermawan.github.io/2011/10/13/karena-saya-suka-cepat/</link>
+      <link>http://localhost:1313/2011/10/13/karena-saya-suka-cepat/</link>
       <pubDate>Thu, 13 Oct 2011 16:04:51 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2011/10/13/karena-saya-suka-cepat/</guid>
-      <description>hmm, yah mungkin bukan hanya saya, tapi semua orang suka cepat dalam segala hal, tak terkecuali di komputer { apalagi } . Saya sedang membicarakan tampilan komputer. Kita bisa mengatur tampilan komputer kita, baik di Linux maupun Ms-Windows atau OS lain, dengan 2 batas : tampilan terindah dan tampilan tercepat. Beberapa orang memang suka hal-hal yang sangaaat indah, seperti tampilan GUI transparan, animasi button, dan lainnya (coba: win 7 tampilan terbaik, atau GNU/Linux Ubuntu tampilan terbaik).</description>
+      <guid>http://localhost:1313/2011/10/13/karena-saya-suka-cepat/</guid>
+      <description>&lt;p&gt;hmm, yah mungkin bukan hanya saya, tapi semua orang suka cepat dalam segala hal, tak terkecuali di komputer { apalagi } . Saya sedang membicarakan tampilan komputer. Kita bisa mengatur tampilan komputer kita, baik di Linux maupun Ms-Windows atau OS lain, dengan 2 batas : tampilan terindah dan tampilan tercepat. Beberapa orang memang suka hal-hal yang sangaaat indah, seperti tampilan GUI transparan, animasi button, dan lainnya (coba: win 7 tampilan terbaik, atau GNU/Linux Ubuntu tampilan terbaik). Dan ada orang yang suka super cepat!! :D . Super indah mengorbankan kecepatan dan super cepat mengorbankan keindahan. Bukankah komputer sekarang sudah sangat cepat. Hmm.. gimana kalo komputer yang super cepat itu di setting dengan tampilan super cepat, pasti itu yang paling cepat. Di Ms-Windows (XP di komputer ku, dan Win 7 di tempat kerja ) saya setting win classic theme, simple dan cepat. Di GNU/linux Ubuntu saya mencoba melakukan hal yang sama, namun belum nemu, karena walaupun saya setting dengan tanpa visual effect sama sekali, cursor masih menampakan shadow dan transparansi (argh.. pasti CPU ku perlu beberapa clock cycle untuk meng-generate itu).&lt;/p&gt;</description>
     </item>
-    
-    <item>
-      <title> L.O.S.T / Coldplay</title>
-      <link>https://xedixermawan.github.io/2011/06/10/l-o-s-t/</link>
-      <pubDate>Fri, 10 Jun 2011 16:26:00 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2011/06/10/l-o-s-t/</guid>
-      <description>Just because I&amp;rsquo;m losing Doesn&amp;rsquo;t mean I&amp;rsquo;m lost Doesn&amp;rsquo;t mean I&amp;rsquo;ll stop Doesn&amp;rsquo;t mean I would cross
-Just because I&#39;m hurting Doesn&#39;t mean I&#39;m hurt Doesn&#39;t mean I didn&#39;t get What I deserved No better and no worse I just got lost Every river that I tried to cross Every door I ever tried was locked Ohhh and I&#39;m... Just waiting &#39;til the shine wears off You might be a big fish In a little pond Doesn&#39;t mean you&#39;ve won &#39;Cause a long may come A bigger one And you&#39;ll be lost Every river that you tried to cross Every gun you ever held went off Ohhh and I&#39;m.</description>
-    </item>
-    
-    <item>
-      <title>Jog-live</title>
-      <link>https://xedixermawan.github.io/2011/04/16/jog-live/</link>
-      <pubDate>Sat, 16 Apr 2011 15:25:56 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2011/04/16/jog-live/</guid>
-      <description>Since here, I think , I less focus on my programming development skill. Yeah.. I still do some adaptation here and learn new something for my job. What kind of adaptation? . Living here is pretty different. I managed everything my self. Before, my older sister still assist me in some part. This different situation also effected to my psychological view :-? . Now, for fullfil my social necessity, I access social network very often than before (I think I less productive because that).</description>
-    </item>
-    
-    <item>
-      <title>my projects</title>
-      <link>https://xedixermawan.github.io/2011/03/05/xedixermawan-projects/</link>
-      <pubDate>Sat, 05 Mar 2011 18:51:16 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2011/03/05/xedixermawan-projects/</guid>
-      <description>some of my ( spare time ) projects is here ( start from Newest )
-Puzzle Game : Windows Phone 8, Desktop Application ( C/C++, DirectX 11 )
-home project : https://code.google.com/p/my-fifteen-puzzle-dx/
-svn link : https://my-fifteen-puzzle-dx.googlecode.com/svn/trunk
-Puzzle Game : Windows Phone 8, Desktop Application ( C/C++, DirectX 11 )
-home project : https://code.google.com/p/proximity-game-clone2-dx/
-svn link : https://proximity-game-clone2-dx.googlecode.com/svn/trunk
-Xedithor : 2D Sprite Editor . use C++, Qt
-http://code.google.com/p/xedithor/
-Tetris Game : C++, SDL</description>
-    </item>
-    
     <item>
       <title>Android issues on Xperia X8</title>
-      <link>https://xedixermawan.github.io/2010/12/19/android-1-6-is-alpha-version/</link>
+      <link>http://localhost:1313/2010/12/19/android-1-6-is-alpha-version/</link>
       <pubDate>Sun, 19 Dec 2010 18:12:19 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2010/12/19/android-1-6-is-alpha-version/</guid>
-      <description>#1 : Dec 19, 2010
-Sekedar sharing, mungkin ada yang mengalami masalah seperti ini di se X8 (atau sejenis) ber-OS android
-&amp;ldquo;the application home screen(process com.sonyericsson.homescreen) has stopped unexpectedly.please try again.&amp;rdquo;
-solusi:
--download software updater di web se.
--lakukan langkah2 yang diberikan.
-software ini nanti akan mendownload firmware terbaru untuk android yang anda miliki. cukup besar ~130 an MB. setelah download selesai firmware akan diprogramkan di handphone. pada waktu saya dapet masalah ini, sudah org yang banyak bertanya di forum se, namun jawabannya saya pikir kurang jelas.</description>
+      <guid>http://localhost:1313/2010/12/19/android-1-6-is-alpha-version/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;#1 : Dec 19, 2010&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Sekedar sharing, mungkin ada yang mengalami masalah seperti ini di se X8 (atau sejenis) ber-OS android&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&amp;ldquo;the application home screen(process com.sonyericsson.homescreen) has stopped unexpectedly.please try again.&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;solusi:&lt;/p&gt;&#xA;&lt;p&gt;-download software updater di web se.&lt;/p&gt;&#xA;&lt;p&gt;-lakukan langkah2 yang diberikan.&lt;/p&gt;&#xA;&lt;p&gt;software ini nanti akan mendownload firmware terbaru untuk android yang anda miliki. cukup besar ~130 an MB. setelah download selesai firmware akan diprogramkan di handphone. pada waktu saya dapet masalah ini, sudah org yang banyak bertanya di forum se, namun jawabannya saya pikir kurang jelas. kenapa banyak org bertanya?, karena pesan error diatas menyebabkan &lt;strong&gt;hanphone crash&lt;/strong&gt; a.k.a tidak bisa dipakai :p . Itu terjadi (untuk saya) , setelah install software ke handphone.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>just-do-it!</title>
-      <link>https://xedixermawan.github.io/2010/10/11/just-do-it/</link>
+      <link>http://localhost:1313/2010/10/11/just-do-it/</link>
       <pubDate>Mon, 11 Oct 2010 16:45:43 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2010/10/11/just-do-it/</guid>
-      <description>Ada hal yang patut diperjuangkan dan ada pula yang tidak. Untuk membedakannya, kita perlu berfikir. Banyak yang perlu difikirkan huh?, hmm.. setelah saya berfikir &amp;ndash;berfikir lagi!!&amp;ndash;, saat yang tidak perlu menggunakan fikiran adalah saat kita mau bangun tidur, khususnya bangun lebih awal. Jika berfikir, hal yang dilakukan adalah meraih Alarm, lalu mematikannya, lalu tidur lagi :p.</description>
+      <guid>http://localhost:1313/2010/10/11/just-do-it/</guid>
+      <description>&lt;p&gt;Ada hal yang patut diperjuangkan dan ada pula yang tidak. Untuk membedakannya, kita perlu berfikir. Banyak yang perlu difikirkan huh?, hmm.. setelah saya berfikir &amp;ndash;berfikir lagi!!&amp;ndash;, saat yang tidak perlu menggunakan fikiran adalah saat kita mau bangun tidur, khususnya bangun lebih awal.  Jika berfikir, hal yang dilakukan adalah meraih Alarm, lalu mematikannya, lalu tidur lagi :p.&lt;/p&gt;</description>
     </item>
-    
-    <item>
-      <title>it&#39;s a fact , not opinion</title>
-      <link>https://xedixermawan.github.io/2010/08/10/its-a-fact-not-issue/</link>
-      <pubDate>Tue, 10 Aug 2010 17:18:22 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2010/08/10/its-a-fact-not-issue/</guid>
-      <description>Arti Edi
-**Edi** adalah nama untuk anak Laki-Laki di mana nama tersebut berasal dari Jawa dengan pengertian, definisi atau arti nama sangat baik, indah, sedap dipandang.    sumber: http://artinama.organisasi.org/indonesia/jawa/edi
-:-D</description>
-    </item>
-    
-    <item>
-      <title>Stupid Mistake #1</title>
-      <link>https://xedixermawan.github.io/2010/02/17/stupid-mistake-1/</link>
-      <pubDate>Wed, 17 Feb 2010 15:17:43 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2010/02/17/stupid-mistake-1/</guid>
-      <description>Suatu saat saya menyangka bahwa lampu neon di kamar saya mulai rusak. Neon tersebut tampak kedip-kedip, tidak normal. Hal itu berlanjut dalam beberapa hari, dan tebakanku semakin benar, masih kedip-kedip. Biarkan saja, nanti juga saya betulkan. Di hari selanjutnya saya masuk kamar dan &amp;hellip;oh lampu mati. Seketika saya mencari kursi untuk menggapai lampu, saya betulkan, mungkin saja masih bisa, jadi saya gak perlu keluar beli lampu. Setelah beberapa saat saya mencoba membetulkan, ternyata lampu tetap mati.</description>
-    </item>
-    
-    <item>
-      <title>cerito awal poso romadhon</title>
-      <link>https://xedixermawan.github.io/2009/08/28/cerito-awal-poso-romadhon/</link>
-      <pubDate>Fri, 28 Aug 2009 04:13:03 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2009/08/28/cerito-awal-poso-romadhon/</guid>
-      <description>suasana poso memang bedo karo bulan-bulan liane. bedone ki mesti bedo, biasane awan mangan maleh ora, awan ngombe maleh ora, biasane maksiat maleh ora :P lan sateruse. nanging sing tak maksud iku duduiku, tapi : (1) suasana pas arep magrib sampe bengi lan (2) suasana ati gae ngibadah. nek pas arep magrib, dalan-dalan ki mesti rame, nyiapne buka koyotho tuku es, tuku jajan,tuku lawoh lst.pokoe nyenengke-lah, keroso mbendino iki malem minggu.</description>
-    </item>
-    
     <item>
       <title>Kecanduan Su Doku</title>
-      <link>https://xedixermawan.github.io/2009/05/11/kecanduan-su-doku/</link>
+      <link>http://localhost:1313/2009/05/11/kecanduan-su-doku/</link>
       <pubDate>Mon, 11 May 2009 04:33:50 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2009/05/11/kecanduan-su-doku/</guid>
-      <description>Akhir-akhir ini saya nemu mainan baru yang menarik di waktu luang: Su Doku. Su Doku adalah permainan puzzle menempatkan angka di kotak berukuran 9x9 (ini yang umum, namun adajuga 4x4). Walaupun permainan ini melibatkan angka, namun sama sekali tidak ada aturan matematis dan itung2an di sini, yang diperlukan cuma logika biasa. Aturannya cukup sederhana : 1. Dalam 1 baris atau 1 kolom angka 1-9 hanya boleh terulang 1 kali 2. Kotak berukuran 9x9 tadi dibagi menjadi 9 kotak kecil, dan di setiap kotak kecil ini (3x3), angka 1-9 juga hanya boleh berulang 1 kali.</description>
+      <guid>http://localhost:1313/2009/05/11/kecanduan-su-doku/</guid>
+      <description>&lt;p&gt;Akhir-akhir ini saya nemu mainan baru yang menarik di waktu luang: Su Doku. Su Doku adalah permainan puzzle menempatkan angka di kotak berukuran 9x9 (ini yang umum, namun adajuga 4x4).  Walaupun permainan ini melibatkan angka, namun sama sekali tidak ada aturan matematis dan itung2an di sini, yang diperlukan cuma logika biasa. Aturannya cukup sederhana :&lt;!-- more --&gt;&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;  1. Dalam 1 baris atau 1 kolom angka 1-9 hanya boleh terulang 1 kali&#xD;&#xA;  2. Kotak berukuran 9x9 tadi dibagi menjadi 9 kotak kecil, dan di setiap kotak kecil ini (3x3), angka 1-9 juga hanya boleh berulang 1 kali.&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;Su Doku adalah kata yang berasal dari kata Jepang yan mempunyai arti &amp;ldquo;menempatkan angka&amp;rdquo;. Namun diduga Su doku tidak diciptakan bangsa Jepang, tetapi oleh ahli matematik terkenal dari Swiss: Euler (ia membuat versi sederhananya). Kenapa Su Doku berasal dari Jepang? karena permainan ini di populerkan disana. Pada saat pertama kali main, mungkin bosan. Namun jika sudah menyelesaikan beberapa permainan, kita akan kecanduan. Terdapat beberapa tingkatan kesulitan di permaianan ini, mulai dari pemula, menengah, sulit sampai menantang . Contoh permainan:&lt;/p&gt;</description>
     </item>
-    
-    <item>
-      <title>bahasa</title>
-      <link>https://xedixermawan.github.io/2008/11/28/bahasa/</link>
-      <pubDate>Fri, 28 Nov 2008 12:14:02 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2008/11/28/bahasa/</guid>
-      <description>Aturan berbahasa.
-ohwww&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;..
-itu sungguh mengerikan.
-tapi namanya saja belajar, harus mampu menahan rasa sakit.
-yach cuma itu saja.</description>
-    </item>
-    
     <item>
       <title>membaca_menulis</title>
-      <link>https://xedixermawan.github.io/2008/10/17/membaca_menulis/</link>
+      <link>http://localhost:1313/2008/10/17/membaca_menulis/</link>
       <pubDate>Fri, 17 Oct 2008 11:58:24 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2008/10/17/membaca_menulis/</guid>
-      <description>mulai 2 minggu ini sepertinya saya sangat banyak membaca dan juga banyak menulis(baca mengetik). yang dibaca tentu bukan novel atau &amp;ldquo;cerita mesum&amp;rdquo; :-D . Walaupun kadang juga baca novel dirumah( novel musashi qu blom ta selesain ). menu bacaannya adalah datasheet, dan source code. dan source codenya itu tidak ditulis dalam satu bahasa pemrograman,-ada beberapa- setidaknya berbasis C,Basic, Pascal. sehingga selain datasheet dan source code menu lainnya adalah &amp;lsquo;help&amp;rdquo; dan manual.</description>
+      <guid>http://localhost:1313/2008/10/17/membaca_menulis/</guid>
+      <description>&lt;p&gt;mulai 2 minggu ini sepertinya saya sangat banyak membaca dan juga banyak menulis(baca mengetik). yang dibaca tentu bukan novel atau &amp;ldquo;cerita mesum&amp;rdquo; :-D . Walaupun kadang juga baca novel dirumah( novel musashi qu blom ta selesain ). menu bacaannya adalah datasheet, dan source code. dan source codenya itu tidak ditulis dalam satu bahasa pemrograman,-ada beberapa- setidaknya berbasis C,Basic, Pascal. sehingga selain datasheet dan source code menu lainnya adalah &amp;lsquo;help&amp;quot; dan manual. Sebenarnya membaca bacaan seperti itu bukan hal asing, tapi intensitasnya sangat meningkat pesat saat ini.  Ada efek yang saya kira bagus, yaitu penegtahuan saya saya harap meningkat pesat juga&amp;hellip;tapi ada efek buruknya, yaitu harus mampu bertahannnnnnnnnnnnnnn&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip; . Begitu jga dengan menulis. memilih kata kata yang dapat dipahami banyak orang itu kadang susah.apalagi  yang dibahas adalah maslah teknis. padahal saya tidak terlalu baik dalam &amp;ldquo;bahasa&amp;rdquo;. Tapi secara garis besar ini akan dinikmati.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>taste of life</title>
-      <link>https://xedixermawan.github.io/2008/08/13/taste-of-life/</link>
+      <link>http://localhost:1313/2008/08/13/taste-of-life/</link>
       <pubDate>Wed, 13 Aug 2008 09:45:49 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2008/08/13/taste-of-life/</guid>
-      <description>2 minggu yang lalu ,waktu saya pergi ke tempat fotokopian,saya bertemu dengan seseorang. Dia membawa fotokopian, sebuah PCB.tidak ada yang aneh dengan fotokopiannya,pada mulanya.setelah berbicara ngobrol sana-sini,ternyata dia mau membuat oscilator.ini yang aneh&amp;hellip; Bapak ini katanya kuliahnya di jurusan komunikasi, lalu sekarang ini bekerja sebagai kepala proyek bangunan perumahan, tapi hobinya elektronik&amp;hellip;!, rela membuat PCB dengan eagle, lalu memfotokopi, lalu etching, lalu trouble shooting rangkaian kalau belum jalan. Sebuah proses yang panjang dan &amp;ldquo;neraka&amp;rdquo; bagi yang gak suka LK .</description>
+      <guid>http://localhost:1313/2008/08/13/taste-of-life/</guid>
+      <description>&lt;p&gt;2 minggu yang lalu ,waktu saya pergi ke tempat fotokopian,saya bertemu dengan seseorang.  Dia membawa fotokopian, sebuah PCB.tidak ada yang aneh dengan fotokopiannya,pada mulanya.setelah berbicara ngobrol sana-sini,ternyata dia mau membuat oscilator.ini yang aneh&amp;hellip;&#xA;Bapak ini katanya kuliahnya di jurusan komunikasi, lalu sekarang ini bekerja sebagai kepala proyek bangunan perumahan, tapi hobinya elektronik&amp;hellip;!, rela membuat PCB dengan eagle, lalu memfotokopi, lalu etching, lalu trouble shooting rangkaian kalau belum jalan. Sebuah proses yang panjang dan &amp;lsquo;&amp;rsquo;neraka&amp;rsquo;&amp;rsquo; bagi yang gak suka LK .&#xA;Walaupun saya juga menyukai elektronika, tapi saya masih merasa aneh dengan bapak ini. yeah banyak yang aneh memang gak aneh. Hidup memang harus punya rasa. Thinking, Research is taste of life.&#xA;What is taste of ur life?&lt;/p&gt;</description>
     </item>
-    
-    <item>
-      <title>nightmare</title>
-      <link>https://xedixermawan.github.io/2008/08/04/nightmare/</link>
-      <pubDate>Mon, 04 Aug 2008 23:34:01 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2008/08/04/nightmare/</guid>
-      <description>Did I disappoint you or let you down? Should I be feeling guilty or let the judges frown? &amp;lsquo;Cause I saw the end before we&amp;rsquo;d begun, Yes I saw you were blinded and I knew I had won. So I took what&amp;rsquo;s mine by eternal right. Took your soul out into the night. It may be over but it won&amp;rsquo;t stop there, I am here for you if you&amp;rsquo;d only care.</description>
-    </item>
-    
     <item>
       <title>Semangat.....................</title>
-      <link>https://xedixermawan.github.io/2007/11/25/semangat-or-kesepian/</link>
+      <link>http://localhost:1313/2007/11/25/semangat-or-kesepian/</link>
       <pubDate>Sun, 25 Nov 2007 04:36:19 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2007/11/25/semangat-or-kesepian/</guid>
-      <description>ternyata lab adalah lingkungan yang sangat ideal untuk belajar,karena disana ada banyak fasilitas,ketenangan yang asik(walaupun tidak selalu,setidaknya malam hari pasti).kesimpulan ini di dapat jika kita bekerja kita sudah tidak bisa lagi full belajar bebas(kecuali jika kita bekerja sebagai peneliti,ini pasti indah),tidak bisa melakukan banyak percobaan yang mengganggu fikiran. ketika begini,semangat saya sangat besar untuk belajar lebih banyak lagi,hal yang mendasar jika banyak yang diketahui pasti menyenangkanlah,dan tentu saja lebih nyaman.Road to Master.</description>
+      <guid>http://localhost:1313/2007/11/25/semangat-or-kesepian/</guid>
+      <description>&lt;p&gt;ternyata lab adalah lingkungan yang sangat ideal untuk belajar,karena disana ada banyak fasilitas,ketenangan yang asik(walaupun tidak selalu,setidaknya malam hari pasti).kesimpulan ini  di dapat jika kita bekerja kita sudah tidak bisa lagi full belajar bebas(kecuali jika kita bekerja sebagai peneliti,ini pasti indah),tidak bisa melakukan banyak percobaan yang mengganggu fikiran. ketika begini,semangat saya sangat besar untuk belajar lebih banyak lagi,hal yang mendasar jika banyak yang diketahui pasti menyenangkanlah,dan tentu saja lebih nyaman.Road to Master.Hrs bnyk yg diabaikan,walalupun tdk sesuai aliran hidup pada umumnya.&lt;/p&gt;</description>
     </item>
-    
-    <item>
-      <title>lingkungan baru</title>
-      <link>https://xedixermawan.github.io/2007/11/23/lingkungan-baru/</link>
-      <pubDate>Fri, 23 Nov 2007 15:24:11 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2007/11/23/lingkungan-baru/</guid>
-      <description>sejak tgl 30 okt lalu,mulai idup di lingkungan baru,pertama datang &amp;hellip;..,,kesan pertama biasa2 aja,tp hari pertama msk krja sangat tak nyaman,krena kena flu berat(duhhhhhhhhhhhhhhh).tp syukurlah skrang sudah agak menikmati,krna di sini asik juga(baca:bnyak CE) :-). ada lagi yang menyebalkan yaitu masalah komputer.masa&amp;rsquo; komputer isinya cuma pengolah kata thok..kalo mo install hars izin IT+lama(komp.nya di password kabeh,login guest).krn OSnya tbilang lawas (win2000) &amp;ndash;&amp;gt; ini lisensi semua,kan prsahaan .(kalo pindah k xp atau vista mahal kali yac).</description>
-    </item>
-    
     <item>
       <title>Magang atau tidak</title>
-      <link>https://xedixermawan.github.io/2007/10/09/magang-ato-ndak-yach/</link>
+      <link>http://localhost:1313/2007/10/09/magang-ato-ndak-yach/</link>
       <pubDate>Tue, 09 Oct 2007 04:03:30 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2007/10/09/magang-ato-ndak-yach/</guid>
-      <description>Dua pilihan kadang lebih membingungkan daripada banyak. Semakin sedikit (minimal pasti dua,namanya saja memilih) bebannya semakin besar. Dulu ketika mau SPMB atau PMDK juga gitu. PMDK atau SPMB. Sekarang ikut magang atau ngerjain TA(tugas akhir) dulu, lulus dulu (kalo lancar&amp;hellip;&amp;hellip;.,kayaknya masalah sensor beli, adalah solusi terbaik, buat sendiri bisa, tapi tidak stabil). Kalau magang dapat pengalaman tapi kompensasinya lulus lama.(tertunda satu tahun lah) dan jika lulus lama, teman2 saya akan berganti (setidaknya sudah berkurang), kalau jadi, besok beli tiket KA, habis lebaran berangkat&amp;hellip;.</description>
+      <guid>http://localhost:1313/2007/10/09/magang-ato-ndak-yach/</guid>
+      <description>&lt;p&gt;Dua pilihan kadang lebih membingungkan daripada banyak. Semakin sedikit (minimal pasti dua,namanya saja memilih) bebannya semakin besar. Dulu ketika mau SPMB atau PMDK juga gitu. PMDK atau SPMB. Sekarang ikut magang atau ngerjain TA(tugas akhir) dulu, lulus dulu (kalo lancar&amp;hellip;&amp;hellip;.,kayaknya masalah sensor beli, adalah solusi terbaik, buat sendiri bisa, tapi tidak stabil). Kalau magang dapat pengalaman tapi kompensasinya lulus lama.(tertunda satu tahun lah) dan jika lulus lama, teman2 saya akan berganti (setidaknya sudah berkurang), kalau jadi, besok beli tiket KA, habis lebaran berangkat&amp;hellip;..&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Akuisisi data dan Polisi</title>
-      <link>https://xedixermawan.github.io/2007/08/15/akuisisi-data-vs-pulisi/</link>
+      <link>http://localhost:1313/2007/08/15/akuisisi-data-vs-pulisi/</link>
       <pubDate>Wed, 15 Aug 2007 08:06:40 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2007/08/15/akuisisi-data-vs-pulisi/</guid>
-      <description>Hari ini secara tak sengaja mendapat tawaran seminar akuisisi data dari dosenku. pertama kali saya agak males, karena tak pikir pasti mirip kuliah yang membosankan (duduk dan mendengar). Tapi karena bapaknya terlalu berharap, saya iya kan saja. karena boleh 2 orang saya ajak saja temenku, lagipula tempatnya jauh dari kampus (hotel jw mariott ,30 menit perjalanan). Eh ternyata asik seminarnya. karena pesertanya banyak dari orang2 industri (real engineer :-) ). Seminar berjudul PC-based data acquisition with DAQ ,membahas penggunaan kartu akuisisi data produk NI, yang telah banyak digunakan di indutri.</description>
+      <guid>http://localhost:1313/2007/08/15/akuisisi-data-vs-pulisi/</guid>
+      <description>&lt;p&gt;Hari ini secara tak sengaja mendapat tawaran seminar akuisisi data dari dosenku. pertama kali saya agak males, karena tak pikir pasti mirip kuliah yang membosankan (duduk dan mendengar). Tapi karena bapaknya terlalu berharap, saya iya kan saja. karena boleh 2 orang saya ajak saja temenku, lagipula tempatnya jauh dari kampus (hotel jw mariott ,30 menit perjalanan). Eh ternyata asik seminarnya. karena pesertanya banyak dari orang2 industri (real engineer :-) ).  Seminar berjudul PC-based data acquisition with DAQ ,membahas penggunaan kartu akuisisi data produk NI, yang telah banyak digunakan di indutri. Ternyata simple, cepat , dan praktis. Itu berita bagusnya.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Liga Inggris aku merindukanmu</title>
-      <link>https://xedixermawan.github.io/2007/08/13/liga-inggris-aku-merindukanmu/</link>
+      <link>http://localhost:1313/2007/08/13/liga-inggris-aku-merindukanmu/</link>
       <pubDate>Mon, 13 Aug 2007 12:56:29 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2007/08/13/liga-inggris-aku-merindukanmu/</guid>
-      <description>Liga Inggris? bukannya Inggris adalah tempat hidup Tony Blair (baca:orang jahat). Yup. Inggris bukannya negaraku, atau aku punya nenek moyang dari sana. Bahkan saya tak punya hubungan apapun, kecuali aku belajar bahasa Inggris sejak smp. Kenapa liga Inggris dirindukan? karena menurutku adalah liga terbaik, baik dari segi penampilan setiap pertandingan, dari segi penayangan, maupun dari segi jam tayang yang baik bagi orang Indonesia kaya&amp;rsquo; saya. Masalah sebenarnya adalah nonton liga Inggris sekarang nggak gratis.</description>
+      <guid>http://localhost:1313/2007/08/13/liga-inggris-aku-merindukanmu/</guid>
+      <description>&lt;p&gt;Liga Inggris? bukannya Inggris adalah tempat hidup Tony Blair (baca:orang jahat). Yup. Inggris bukannya negaraku, atau aku punya nenek moyang dari sana. Bahkan saya tak punya hubungan apapun, kecuali aku belajar bahasa Inggris sejak smp. Kenapa liga Inggris dirindukan? karena menurutku adalah liga terbaik, baik dari segi penampilan setiap pertandingan, dari segi penayangan, maupun dari segi jam tayang yang baik bagi orang Indonesia kaya&amp;rsquo; saya. Masalah sebenarnya adalah nonton liga Inggris sekarang nggak gratis.padahal sekarang kan belum lulus &lt;em&gt;Suck&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Cerita Juni-Juli 2007</title>
-      <link>https://xedixermawan.github.io/2007/07/25/interface-barcode-ke-uc/</link>
+      <link>http://localhost:1313/2007/07/25/interface-barcode-ke-uc/</link>
       <pubDate>Wed, 25 Jul 2007 17:28:26 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2007/07/25/interface-barcode-ke-uc/</guid>
-      <description>Akhir bulan lalu (Juni 2007) , Ada dua org masuk lab, minta bantuan &amp;ndash;pada temen saya pada mulanya&amp;ndash;. Karena temenku sedng sibuk, aku mencoba membantunya. Tidak yakin sebenarnya, tapi kasian juga. Alatnya sudah ditinggal di Lab tapi tidak ada yang mengerjakan, padahal deadline nya kan semakin mendekat. Tak coba saja. Sebenarnya program untuk itu sudah ada, tapi dalam bentuk assembly. (dia membeli modul yang menyertaan include/header untuk assembly). Dia menginginkan pakai program C, karena akan digabung dengan program milik temennya.</description>
+      <guid>http://localhost:1313/2007/07/25/interface-barcode-ke-uc/</guid>
+      <description>&lt;p&gt;Akhir bulan lalu (Juni 2007) , Ada dua org masuk lab, minta bantuan &amp;ndash;pada temen saya pada mulanya&amp;ndash;. Karena temenku sedng sibuk, aku mencoba membantunya. Tidak yakin sebenarnya, tapi kasian juga. Alatnya sudah ditinggal di Lab tapi tidak ada yang mengerjakan, padahal &lt;em&gt;deadline&lt;/em&gt; nya kan semakin mendekat. Tak coba saja. Sebenarnya program untuk itu sudah ada, tapi dalam bentuk assembly. (dia membeli modul yang menyertaan include/header untuk assembly). Dia menginginkan pakai program C, karena akan digabung dengan program milik temennya. Ini adalah tugas akhir yang dikerjakan 2 orang.&#xA;Masalahnya kalau buat program C, saya harus buat header sendiri (ini yang sulit,dugaanku pertama kali). Setelah beberapa kali gagal memakai modul yang disertakan itu, Aku memutuskan untuk tidak pakai modul. Karena ternyata modulnya uC juga. Modul nya diganti software semua saja. Modul itu berisi pengambil data secara serial sinkronous dari barcode lalu dikirim ke uC dengan komunikasi I2C. &lt;em&gt;too suck&lt;/em&gt;. Langsung saja dari barcode secara serial sinkron ke uC pakai interrupt. Saya coba pakai keyboard, bisa !. Lalu saya coba pakai barcodetidak bisa :(.&#xA;Apa penyebabnya?&#xA;Penyebabnya adalah kebodohan yang berlangsung berhari-hari. Saya keliru menyambungkan konektor barcodenya.payah. Barcode di desain untuk dipakai di komputer, jadi terdapat 2 konektor input pada barcode, yaitu yang ditancap ke kompputer,yang satunya untuk keyboard komputer. saya mengira bahwa 2 konektor itu sama saja. Lalu saya ganti dan bisa!, Syukurlah . Setidaknya bisa bantu orang lain.&#xA;karena ngerjain itu, lab agak banyak pengunjung, jadi menambah temen wanita&#xA;dari jurusan lain yang pada mulanya tak punya sama sekali sejak kuliah di sini. :-)&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Kelelawar, Aku dan Batman</title>
-      <link>https://xedixermawan.github.io/2007/07/25/kelelawaraku-dan-batman/</link>
+      <link>http://localhost:1313/2007/07/25/kelelawaraku-dan-batman/</link>
       <pubDate>Wed, 25 Jul 2007 17:08:59 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2007/07/25/kelelawaraku-dan-batman/</guid>
-      <description>Kelelawar terkenal dengan kehidupan malamnya. Bukan untuk dugem atau kehidupan malam, tapi untuk mencari makan. Kelelawar terbang dalam kegelapan, dengan dipandu oleh gekombang ultrasonik yang dipancarkannya. Itu untuk mengukur jarak benda benda yang ada di sekelilingnya. Makanan mereka buah-buahhan yang akan masak atau sudah masak. .Pada siang hari mereka tidur, dengan menggantungkan tubuh mereka di pohon atau disuatu tempat yang tinggi (gedung,misalnya).
-Ketika tidur inilah yang agak aneh. Mereka tidur dengan menggantung, bagaimana ya?</description>
+      <guid>http://localhost:1313/2007/07/25/kelelawaraku-dan-batman/</guid>
+      <description>&lt;p&gt;Kelelawar terkenal dengan kehidupan malamnya. Bukan untuk dugem atau kehidupan malam, tapi untuk mencari makan. Kelelawar terbang dalam kegelapan, dengan dipandu oleh gekombang ultrasonik yang dipancarkannya. Itu untuk mengukur jarak benda benda yang ada di sekelilingnya. Makanan mereka buah-buahhan yang akan masak atau sudah masak. .Pada siang hari mereka tidur, dengan menggantungkan tubuh mereka di pohon atau disuatu tempat yang tinggi (gedung,misalnya).&lt;/p&gt;&#xA;&lt;p&gt;Ketika tidur inilah yang agak aneh. Mereka tidur dengan menggantung, bagaimana ya? . Bagaimana dengan kesadaran mereka?. Apa mereka mengikat kaki dulu sebelum tidur?. ini saya ketahui karena di dekat laboratoriumku ada kelelawar (tepatnya dekat tangga-dimana setiap hari aku sering lewat situ). Tapi kehidupan kelelawar ini agak aneh, tidak teratur. Kadang siang tidak ada , bahkan kadang ada terus dari siang-malam. (apa tidak cari makan, atau makanan masih ada, atau dia pemalas).&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Indah</title>
-      <link>https://xedixermawan.github.io/2007/07/09/indah/</link>
+      <link>http://localhost:1313/2007/07/09/indah/</link>
       <pubDate>Mon, 09 Jul 2007 17:06:57 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2007/07/09/indah/</guid>
-      <description>Rasanya dunia terasa sangat indah jika baris baris program kita berjalan sesuai harapan. Indah sekali, setidaknya itulah yang dapat dirasakan sekarang :-D.
-Tapi saya juga tak menyangkal bahwa jika program mengandung banyak error tidak hilang-hilang atau tidak error tapi tidak sesuai (logic error) adalah bukan keindahan. :D. fakta hidup yang harus dihadapi. Pefhhh.
-Hidup yang indah.</description>
+      <guid>http://localhost:1313/2007/07/09/indah/</guid>
+      <description>&lt;p&gt;Rasanya dunia terasa sangat indah jika baris baris program kita berjalan sesuai harapan. Indah sekali, setidaknya itulah yang dapat dirasakan sekarang :-D.&lt;/p&gt;&#xA;&lt;p&gt;Tapi saya juga tak menyangkal bahwa jika program mengandung banyak error tidak hilang-hilang atau tidak error tapi tidak sesuai (logic error) adalah bukan keindahan. :D. fakta hidup yang harus dihadapi. Pefhhh.&lt;/p&gt;&#xA;&lt;p&gt;Hidup yang indah.&lt;/p&gt;</description>
     </item>
-    
-    <item>
-      <title>Kecemasan dan ketakutan</title>
-      <link>https://xedixermawan.github.io/2007/06/01/kecemasan-n-ketakutan/</link>
-      <pubDate>Fri, 01 Jun 2007 09:01:30 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2007/06/01/kecemasan-n-ketakutan/</guid>
-      <description>Kamu akan menghadapi ujian semester, test TOEFL, atau mau ujian masuk kerja ? semua hal yang berjudul &amp;ldquo;test&amp;rdquo;, biasanya menimbulkan kecemasan dan kekawatiran. Karena sebuah &amp;ldquo;test&amp;rdquo;, akan menghasilkan 2 hal yang bertolak belakang : sebuah kegembiraan dan kebanggan ATAU sebuah kekecewaan / kesedihan / rasa malu.
-Jadi sangat wajar jika dalam pikiran kita timbul kecemasan, &amp;mdash;atau mungkin plus ketakutan. Hal tersebut semacam sistem kontrol yang ada di dalam tubuh kita dan semua orang memilikinya.</description>
-    </item>
-    
-    <item>
-      <title>Menulis atau mengetik ?</title>
-      <link>https://xedixermawan.github.io/2007/05/31/menulis-atau-mengetik-ya/</link>
-      <pubDate>Thu, 31 May 2007 08:29:48 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2007/05/31/menulis-atau-mengetik-ya/</guid>
-      <description>Menulis memang aktivitas yang bagus. Karena dengan menulis kamu dapat mengikat ide-ide yang ada di angan-angan, mengikat ilmu-ilmu lama yang terpendam, menuangkan banyak masalah, atau mungkin memberikan solusi untuk masalah. Semoga saja blog saya ini bertahan dan selalu ada konten baru.
-Jika seseorang tak punya blog, sebenarnya, juga tak apa apa, tapi dengan adanya blog semoga dapat memberikan yang lebih dari semula, dan bisa untuk menuangkan ide, pemikiran, dan menulis hasil kerja.</description>
-    </item>
-    
   </channel>
 </rss>

@@ -1,550 +1,628 @@
-<!DOCTYPE html>
-<html>
-   <head>
-   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="google-site-verification" content="XN4YmHgE76jTp2kNQ9qnsVSApl6yIQBzdyLe0BnbFks" />
+<!doctype html>
 
-  <title>
-    
-    
-    [0] on directx 11 : hello cube - XediXermawan
-    
-  </title>
-  <link rel="shortcut icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
   
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+  <title>[0] on directx 11 : hello cube - Home</title>
 
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/holder.min.js" type='text/javascript'></script>
-  <link rel="stylesheet" href="/highlight/styles/github-gist.css">  
-  <link rel="stylesheet" href="/css/style.css">
-
-  <link rel="canonical" href="https://xedixermawan.github.io/2013/12/22/0-on-directx-11-hello-cube/">
   
-  <script src="/highlight/highlight.pack.js" type='text/javascript'></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.3.0/highlightjs-line-numbers.min.js"></script>
-  <script type="text/javascript">
+  <meta name="theme-color" />
 
-    $(document).ready(function() {
+  
+  
+  
+  
+  <meta name="description" content="dulu saya mengalami banyak kesulitan ketika memulai belajar directx 11 (mid 2012). saya ga nemu tutorial yang benar-benar directx 11, kebanyakan bercampur dengan directx 9 / 10 dimana beberapa fungsi sudah deprecated(hilang/diganti), tidak build-able dengan compiler VS terbaru yang saya pakai(MSVC 2012). walaupun secara garis besar/filosofi tidak jauh berbeda, tapi itu tentu tidak bagus untuk pemula :) . untuk itu saya tertarik untuk membuat dokumentasi ini . belajar graphics API secara memang bukan hal mudah, karena kita berusaha memahami apa yang orang buat &mdash;yaitu graphics API, yang kalau diartikan :  komplek API untuk mentransfer sesuatu yang ingin kita gambar ke hardware. salah satu cara untuk menghadapi kompleksitas ini adalah menggunakan graphics debugger ( PIX, Nvidia Nsight, dll.) . Namun saya meragukan seorang pemula mengetahui hal ini &amp; mau menggunakannya diawal2 belajar (source : me ) . Untuk menegaskan apa yang saya katakan di 3 baris terakhir, coba lihat tweet dari John Carmack dibawah ini :
+" />
+  <meta name="author" content="oth3rside" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/874371989962b8461ad94e8119d82bc7?s=160&amp;d=identicon" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/github.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/instagram.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.136.5">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+      >Home</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
     
-    hljs.initHighlightingOnLoad();
-    $('pre code').each(function(i, block) {
-    hljs.highlightBlock(block);
-    hljs.lineNumbersBlock(block);
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
     });
-});
-  </script>
-   </head>
-   <body data-spy="scroll" data-target="#toc">
-     <header class="navbar navbar-default navbar-fixed-top" id="top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="https://xedixermawan.github.io/">XediXermawan</a>
-    </div>
 
     
-    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav">
-	
-	
-	<li  ><a href="/">Home</a></li>
-	
-	
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
 
-	
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
 
-	
-	
-	<li > <a href="https://xedixermawan.github.io/about/" >About</a></li>
-	
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
 
-	
-	
-	<li > <a href="https://xedixermawan.github.io/projects/" >Projects</a></li>
-	
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
 
-	
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse">
+      
+      <a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+      <a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/contact/"
+        >Contact</a
+      >
+      
+    </nav>
+    
 
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-      </ul>
-</nav>
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 rtl:space-x-reverse dark:invert ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center"
+    >
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/XediXermawan"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/XediXermawan"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/XediXermawan"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
 </header>
 
-     <div class="jumbotron masthead" role="main">
-       <div class="container">
-	 <div class="row">
 
- 	   <div class="col-md-8 col-md-offset-2 ">
-	   
-<div class="panel panel-default">
-  <div class="panel-body">
-      <article id='post' >
-	<h1> [0] on directx 11 : hello cube </h1>
-	  
-	  <dl>
-<dt>](<a href="http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png">http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png</a>)</dt>
-</dl>
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
 
-<dl>
-<dt>](<a href="http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png">http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png</a>)</dt>
-</dl>
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">[0] on directx 11 : hello cube</h1>
 
-<dl>
-<dt>](<a href="http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png">http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png</a>)</dt>
-</dl>
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>Dec 22, 2013</time>
+      
+      
+      
+      
+      <span class="mx-1">&middot;</span>
+      <span>oth3rside</span>
+      
+    </div>
+    
+  </header>
 
-<dl>
-<dt>](<a href="http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png">http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png</a>)</dt>
-</dl>
-
-<dl>
-<dt>](<a href="http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png">http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png</a>)</dt>
-</dl>
-
-<dl>
-<dt>](<a href="http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png">http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png</a>)</dt>
-</dl>
-
-<dl>
-<dt>](<a href="http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png">http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png</a>)</dt>
-</dl>
-
-<dl>
-<dt>](<a href="http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png">http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png</a>)</dt>
-</dl>
-
-<dl>
-<dt>](<a href="http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png">http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png</a>)</dt>
-</dl>
-
-<dl>
-<dt>](<a href="http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png">http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png</a>)</dt>
-</dl>
-
-<dl>
-<dt>](<a href="http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png">http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png</a>)</dt>
-</dl>
-
-<dl>
-<dt>](<a href="http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png">http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png</a>)</dt>
-</dl>
-
-<dl>
-<dt>](<a href="http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png">http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png</a>)</dt>
-</dl>
-
-<dl>
-<dt>](<a href="http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png">http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png</a>)</dt>
-</dl>
-
-<dl>
-<dt>](<a href="http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png">http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png</a>)</dt>
-</dl>
-
-<dl>
-<dt>](<a href="http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png">http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png</a>)</dt>
-</dl>
-
-<dl>
-<dt>testi1.png)</dt>
-</dl>
-
+  <section><p>dulu saya mengalami banyak kesulitan ketika memulai belajar directx 11 (mid 2012). saya ga nemu tutorial yang benar-benar directx 11, kebanyakan bercampur dengan directx 9 / 10 dimana beberapa fungsi sudah deprecated(hilang/diganti), tidak build-able dengan compiler VS terbaru yang saya pakai(MSVC 2012). walaupun secara garis besar/filosofi tidak jauh berbeda, tapi itu tentu tidak bagus untuk pemula :) . untuk itu saya tertarik untuk membuat dokumentasi ini . belajar graphics API secara memang bukan hal mudah, karena kita berusaha memahami apa yang orang buat &mdash;yaitu graphics API, yang kalau diartikan :  komplek API untuk mentransfer sesuatu yang ingin kita gambar ke hardware. salah satu cara untuk menghadapi kompleksitas ini adalah menggunakan graphics debugger ( PIX, Nvidia Nsight, dll.) . Namun saya meragukan seorang pemula mengetahui hal ini &amp; mau menggunakannya diawal2 belajar (source : me ) . Untuk menegaskan apa yang saya katakan di 3 baris terakhir, coba lihat tweet dari John Carmack dibawah ini :<a href="http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png"><img src="http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png?w=554" alt="Image">
+</a></p>
 <p>:-d . walaupun begitu, belajar tentang graphics itu sangat menarik dan fun. Kita menulis codes dan kita bisa melihat hasilnya dilayar . (sesuatu yang setara dengan ini -&gt; membuat rangkaian elektronik , dan melihat LED berjalan, hehe ) .Di negara kita memang sangat jarang orang membutuhkan skill tentang Directx/OpenGL, kalau orang ingin membuat game, game engine adalah pilihan yang bijak jika orientasinya produktivitas , daripada menulis code graphics dari awal. Namun, pengetahuan dasar tentang bagaimana sesuatu itu digambar dilayar, sangat perlu. Misalnya, game dikembangkan dengan game engine (Unreal (UDK), Unity, dll. ), dan ingin membuat efek khusus, pasti akhirnya perlu menulis custom shader. CMIIW , soalnya belum pernah pakai engine2 ini.  oke, itulah beberapa motivasi :) . Saya ingin memulai dengan beberapa istilah.</p>
-
 <p>Beberapa istilah dalam DirectX yang perlu diketahui :</p>
-
 <p>device : API/interface/class/whatever yang digunakan untuk membuat resource (textures, shaders, etc). dan juga digunakan untuk mendeteksi h/w sekarang support directx versi berapa. instance dari device ini bisa dibuat sendiri ( windows desktop app/ windows store app/ wp8 native app ) atau sudah disediakan (misalnya : wp8 xaml-native type app ) .</p>
-
 <p>device context : API/interface/class/whatever yang digunakan untuk menggambar/ mengirim resources/ draw command ke gpu. device context menyimpan kumpulan setting/keadaan dari gambar yang akan kita gambar. suatu kalimat di sinetron &ldquo;kamu ngomong begitu konteksnya apa&rdquo; mungkin bisa sedikit memiliki arti yang sama dengan &ldquo;device context&rdquo; disini .:p</p>
-
 <p>resources : sumberdaya dari apa yang akan digambar dilayar: shaders, textures, buffers (vertex, index )</p>
-
 <p>rendering pipeline : dalam bahasa indonesia, pipeline : pipa saluran . dimana draw command/resource di proses disini sampai akhirnya muncul dilayar &gt; <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ff476882(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/ff476882(v=vs.85).aspx</a></p>
-
 <p>bind : istilah yang digunakan untuk meng-attach resource ke gpu .</p>
-
 <p>texture : gambar.</p>
-
 <p>shader program : atau cuma disebut shader. program yang mirip C, untuk mengolah vertex &amp; pixel .shader ini di compile menjadi byte code yang akhirnya nanti dikirim ke gpu, sebelum draw command dieksekusi. cara compilenya bisa dengan fxc.exe ( bawaan directx sdk ) dan menggunakan hasil byte code nya di runtime, atau bisa dengan D3DCompileFromFile (input text file, compile dilakukan saat runtime) . namun D3DCompileFromFile hanya bisa dipakai untuk debugging saja.</p>
-
 <p>dan sepertinya masih banyak lagi :d</p>
-
 <p>Hello World Program.</p>
-
 <p>saya  disini membuat program untuk menggambar cube (kubus) , yang cukup untuk mewakili bagaimana sebuah proses menggambar ke gpu terjadi. programnya dibuat sesederhana mungkin , sehingga lebih fokus ke bagian graphics. Main program structure :</p>
-
 <p>[sourcecode language=&ldquo;cpp&rdquo;]
 Game.Init()</p>
-
 <p>while( true )     { // main loop</p>
-
 <p>Game.OnInput() &ndash; event</p>
-
 <p>Game.Update()</p>
-
 <p>Game.Render()</p>
-
 <p>}</p>
-
 <p>Game.ShutDown()
 [/sourcecode]</p>
-
 <p>Game adalah nama class yang saya gunakan untuk men-wrap main program</p>
-
 <p>[sourcecode language=&ldquo;cpp&rdquo;]</p>
-
 <p>#pragma once</p>
-
 <p>#include &ldquo;stdafx.h&rdquo;
 #include &ldquo;vertextypes.hpp&rdquo;</p>
-
 <p>using namespace DirectX;</p>
-
 <p>extern unsigned char* GetByteArrayFromFile(std::string filename,unsigned int&amp; length);</p>
-
 <p>class XGame {
 private:
-    unsigned int m_ScreenWidth;
-    unsigned int m_ScreenHeight;
-    HWND* m_HWindow;
-    // d3d variable
-    ID3D11Device* m_Device;
-    ID3D11DeviceContext* m_DevContext;
-    IDXGISwapChain* m_SwapChain;
-    ID3D11RenderTargetView* m_RenderTarget;
-    // draw variable
-    ID3D11Buffer* m_VertexBuffer;
-    ID3D11Buffer* m_IndexBuffer;
-    ID3D11Buffer* m_ConstantBuffer;
-    ID3D11VertexShader* m_VertexShader;
-    ID3D11PixelShader* m_PixelShader;
-    ID3D11InputLayout* m_InputLayout;
-    unsigned long m_VertexCount;
-    unsigned long m_IndexCount;
-    double m_TotalTime;
-    mvp_constantbuffer m_ConstantBufferData;
+unsigned int m_ScreenWidth;
+unsigned int m_ScreenHeight;
+HWND* m_HWindow;
+// d3d variable
+ID3D11Device* m_Device;
+ID3D11DeviceContext* m_DevContext;
+IDXGISwapChain* m_SwapChain;
+ID3D11RenderTargetView* m_RenderTarget;
+// draw variable
+ID3D11Buffer* m_VertexBuffer;
+ID3D11Buffer* m_IndexBuffer;
+ID3D11Buffer* m_ConstantBuffer;
+ID3D11VertexShader* m_VertexShader;
+ID3D11PixelShader* m_PixelShader;
+ID3D11InputLayout* m_InputLayout;
+unsigned long m_VertexCount;
+unsigned long m_IndexCount;
+double m_TotalTime;
+mvp_constantbuffer m_ConstantBufferData;
 public :
-    XGame() {
-    }
-    ~XGame() {
-    }</p>
-
+XGame() {
+}
+~XGame() {
+}</p>
 <pre><code>void Initialize(HWND&amp; hwindow, unsigned int sheight, unsigned int swidth) {
-    // ----- #step01 ----- create device &amp; swap-chain
-    m_HWindow = &amp;hwindow;
-    m_ScreenWidth  = swidth;
-    m_ScreenHeight = sheight;
+	// ----- #step01 ----- create device &amp; swap-chain
+	m_HWindow = &amp;hwindow;
+	m_ScreenWidth  = swidth;
+	m_ScreenHeight = sheight;
 
-    D3D_FEATURE_LEVEL featureLevels[] = { D3D_FEATURE_LEVEL_10_0 };
-    // create swapchain &amp; device
-    DXGI_SWAP_CHAIN_DESC swapChainDesc;
-    swapChainDesc.BufferDesc.Width  = (UINT) m_ScreenWidth;
-    swapChainDesc.BufferDesc.Height = (UINT) m_ScreenHeight;
-    swapChainDesc.BufferDesc.RefreshRate.Numerator = 0;
-    swapChainDesc.BufferDesc.RefreshRate.Denominator = 1;
-    swapChainDesc.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
-    swapChainDesc.BufferDesc.ScanlineOrdering = DXGI_MODE_SCANLINE_ORDER_UNSPECIFIED;
-    // swapChainDesc.BufferDesc.Scaling = DXGI_MODE_SCALING_CENTERED;
-    swapChainDesc.SampleDesc.Count = 1;
-    swapChainDesc.SampleDesc.Quality = 0;
-    swapChainDesc.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
-    swapChainDesc.BufferCount = 2;
-    swapChainDesc.OutputWindow = (*m_HWindow);
-    swapChainDesc.Windowed = TRUE;
-    swapChainDesc.SwapEffect = DXGI_SWAP_EFFECT_DISCARD;
-    swapChainDesc.Flags = 0;
+	D3D_FEATURE_LEVEL featureLevels[] = { D3D_FEATURE_LEVEL_10_0 };
+	// create swapchain &amp; device
+	DXGI_SWAP_CHAIN_DESC swapChainDesc;
+	swapChainDesc.BufferDesc.Width  = (UINT) m_ScreenWidth;
+	swapChainDesc.BufferDesc.Height = (UINT) m_ScreenHeight;
+	swapChainDesc.BufferDesc.RefreshRate.Numerator = 0;
+	swapChainDesc.BufferDesc.RefreshRate.Denominator = 1;
+	swapChainDesc.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
+	swapChainDesc.BufferDesc.ScanlineOrdering = DXGI_MODE_SCANLINE_ORDER_UNSPECIFIED;
+	// swapChainDesc.BufferDesc.Scaling = DXGI_MODE_SCALING_CENTERED;
+	swapChainDesc.SampleDesc.Count = 1;
+	swapChainDesc.SampleDesc.Quality = 0;
+	swapChainDesc.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
+	swapChainDesc.BufferCount = 2;
+	swapChainDesc.OutputWindow = (*m_HWindow);
+	swapChainDesc.Windowed = TRUE;
+	swapChainDesc.SwapEffect = DXGI_SWAP_EFFECT_DISCARD;
+	swapChainDesc.Flags = 0;
 
-    HRESULT hr = D3D11CreateDeviceAndSwapChain(
-                     NULL,
-                     D3D_DRIVER_TYPE_HARDWARE, // original : D3D_DRIVER_TYPE_HARDWARE, D3D_DRIVER_TYPE_WARP
-                     NULL,
-                     D3D11_CREATE_DEVICE_SINGLETHREADED,
-                     featureLevels,
-                     _countof(featureLevels),
-                     D3D11_SDK_VERSION,
-                     &amp;swapChainDesc,
-                     &amp;m_SwapChain,
-                     &amp;m_Device,
-                     NULL,
-                     &amp;m_DevContext);
-    assert(SUCCEEDED(hr));
+	HRESULT hr = D3D11CreateDeviceAndSwapChain(
+	                 NULL,
+	                 D3D_DRIVER_TYPE_HARDWARE, // original : D3D_DRIVER_TYPE_HARDWARE, D3D_DRIVER_TYPE_WARP
+	                 NULL,
+	                 D3D11_CREATE_DEVICE_SINGLETHREADED,
+	                 featureLevels,
+	                 _countof(featureLevels),
+	                 D3D11_SDK_VERSION,
+	                 &amp;swapChainDesc,
+	                 &amp;m_SwapChain,
+	                 &amp;m_Device,
+	                 NULL,
+	                 &amp;m_DevContext);
+	assert(SUCCEEDED(hr));
 
-    // ----- #step02 ----- setting render target
-    // Get swap chain's back buffer, create its render target view and set that view as render target
-    ID3D11Texture2D* backbuffer;
-    hr = m_SwapChain-&gt;GetBuffer(0, __uuidof(*backbuffer), (void**)&amp;backbuffer);
-    assert(SUCCEEDED(hr));
+	// ----- #step02 ----- setting render target
+	// Get swap chain's back buffer, create its render target view and set that view as render target
+	ID3D11Texture2D* backbuffer;
+	hr = m_SwapChain-&gt;GetBuffer(0, __uuidof(*backbuffer), (void**)&amp;backbuffer);
+	assert(SUCCEEDED(hr));
 
-    hr = m_Device-&gt;CreateRenderTargetView(backbuffer, NULL, &amp;m_RenderTarget);
-    assert(SUCCEEDED(hr));
+	hr = m_Device-&gt;CreateRenderTargetView(backbuffer, NULL, &amp;m_RenderTarget);
+	assert(SUCCEEDED(hr));
 
-    m_DevContext-&gt;OMSetRenderTargets(1, &amp;m_RenderTarget, NULL);
+	m_DevContext-&gt;OMSetRenderTargets(1, &amp;m_RenderTarget, NULL);
 
-    // ----- #step03 ----- setting view port
-    // Set viewport
-    D3D11_VIEWPORT viewport;
-    viewport.TopLeftX = 0;
-    viewport.TopLeftY = 0;
-    viewport.Width  = (FLOAT) m_ScreenWidth;
-    viewport.Height = (FLOAT) m_ScreenHeight;
-    viewport.MinDepth = 0.f;
-    viewport.MaxDepth = 1.f;
-    m_DevContext-&gt;RSSetViewports(1, &amp;viewport);
+	// ----- #step03 ----- setting view port
+	// Set viewport
+	D3D11_VIEWPORT viewport;
+	viewport.TopLeftX = 0;
+	viewport.TopLeftY = 0;
+	viewport.Width  = (FLOAT) m_ScreenWidth;
+	viewport.Height = (FLOAT) m_ScreenHeight;
+	viewport.MinDepth = 0.f;
+	viewport.MaxDepth = 1.f;
+	m_DevContext-&gt;RSSetViewports(1, &amp;viewport);
 
-    // ----- #step04 ----- set raster state
-    D3D11_RASTERIZER_DESC rasterizerState;
-    rasterizerState.CullMode = D3D11_CULL_FRONT;// D3D11_CULL_NONE;D3D11_CULL_FRONT;D3D11_CULL_BACK
-    rasterizerState.FillMode = D3D11_FILL_SOLID; // D3D11_FILL_SOLID ;//D3D11_FILL_WIREFRAME;
-    rasterizerState.FrontCounterClockwise = FALSE;
-    rasterizerState.DepthBias = false;
-    rasterizerState.DepthBiasClamp = 0;
-    rasterizerState.SlopeScaledDepthBias = 0;
-    rasterizerState.DepthClipEnable = true;
-    rasterizerState.ScissorEnable = false;
-    rasterizerState.MultisampleEnable = false;
-    rasterizerState.AntialiasedLineEnable = true;
-    ID3D11RasterizerState* pRS;
-    m_Device-&gt;CreateRasterizerState( &amp;rasterizerState, &amp;pRS );
-    m_DevContext-&gt;RSSetState(pRS);
+	// ----- #step04 ----- set raster state
+	D3D11_RASTERIZER_DESC rasterizerState;
+	rasterizerState.CullMode = D3D11_CULL_FRONT;// D3D11_CULL_NONE;D3D11_CULL_FRONT;D3D11_CULL_BACK
+	rasterizerState.FillMode = D3D11_FILL_SOLID; // D3D11_FILL_SOLID ;//D3D11_FILL_WIREFRAME;
+	rasterizerState.FrontCounterClockwise = FALSE;
+	rasterizerState.DepthBias = false;
+	rasterizerState.DepthBiasClamp = 0;
+	rasterizerState.SlopeScaledDepthBias = 0;
+	rasterizerState.DepthClipEnable = true;
+	rasterizerState.ScissorEnable = false;
+	rasterizerState.MultisampleEnable = false;
+	rasterizerState.AntialiasedLineEnable = true;
+	ID3D11RasterizerState* pRS;
+	m_Device-&gt;CreateRasterizerState( &amp;rasterizerState, &amp;pRS );
+	m_DevContext-&gt;RSSetState(pRS);
 
-    PreparingDraw();
+	PreparingDraw();
 }
 
 void PreparingDraw() {
-    // ----- #step05 ----- preparing vertex data &amp; index to buffers
-    vertex_type cubeVertices[] = {
-        // Front Face
-        {XMFLOAT3(-1.0f, -1.0f, -1.0f),XMFLOAT3(0.0f, 0.0f, 0.0f) },
-        {XMFLOAT3(-1.0f,  1.0f, -1.0f),XMFLOAT3(0.0f, 0.0f, 1.0f) },
-        {XMFLOAT3( 1.0f,  1.0f, -1.0f),XMFLOAT3(1.0f, 0.0f, 0.0f) },
-        {XMFLOAT3( 1.0f, -1.0f, -1.0f),XMFLOAT3(0.0f, 0.0f, 1.0f) },
+	// ----- #step05 ----- preparing vertex data &amp; index to buffers
+	vertex_type cubeVertices[] = {
+	    // Front Face
+		{XMFLOAT3(-1.0f, -1.0f, -1.0f),XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{XMFLOAT3(-1.0f,  1.0f, -1.0f),XMFLOAT3(0.0f, 0.0f, 1.0f) },
+		{XMFLOAT3( 1.0f,  1.0f, -1.0f),XMFLOAT3(1.0f, 0.0f, 0.0f) },
+		{XMFLOAT3( 1.0f, -1.0f, -1.0f),XMFLOAT3(0.0f, 0.0f, 1.0f) },
 
-        // Back Face
-        {XMFLOAT3(-1.0f, -1.0f, 1.0f),XMFLOAT3(1.0f, 0.0f, 1.0f) },
-        {XMFLOAT3( 1.0f, -1.0f, 1.0f),XMFLOAT3(0.0f, 1.0f, 1.0f) },
-        {XMFLOAT3( 1.0f,  1.0f, 1.0f),XMFLOAT3(1.0f, 0.0f, 0.0f) },
-        {XMFLOAT3(-1.0f,  1.0f, 1.0f),XMFLOAT3(1.0f, 1.0f, 1.0f) },
+		// Back Face
+		{XMFLOAT3(-1.0f, -1.0f, 1.0f),XMFLOAT3(1.0f, 0.0f, 1.0f) },
+		{XMFLOAT3( 1.0f, -1.0f, 1.0f),XMFLOAT3(0.0f, 1.0f, 1.0f) },
+		{XMFLOAT3( 1.0f,  1.0f, 1.0f),XMFLOAT3(1.0f, 0.0f, 0.0f) },
+		{XMFLOAT3(-1.0f,  1.0f, 1.0f),XMFLOAT3(1.0f, 1.0f, 1.0f) },
 
-        // Top Face
-        {XMFLOAT3(-1.0f, 1.0f, -1.0f),XMFLOAT3(0.0f, 1.0f, 1.0f) },
-        {XMFLOAT3(-1.0f, 1.0f,  1.0f),XMFLOAT3(1.0f, 0.0f, 0.0f) },
-        {XMFLOAT3( 1.0f, 1.0f,  1.0f),XMFLOAT3(1.0f, 1.0f, 0.0f) },
-        {XMFLOAT3( 1.0f, 1.0f, -1.0f),XMFLOAT3(1.0f, 0.0f, 1.0f) },
+		// Top Face
+		{XMFLOAT3(-1.0f, 1.0f, -1.0f),XMFLOAT3(0.0f, 1.0f, 1.0f) },
+		{XMFLOAT3(-1.0f, 1.0f,  1.0f),XMFLOAT3(1.0f, 0.0f, 0.0f) },
+		{XMFLOAT3( 1.0f, 1.0f,  1.0f),XMFLOAT3(1.0f, 1.0f, 0.0f) },
+		{XMFLOAT3( 1.0f, 1.0f, -1.0f),XMFLOAT3(1.0f, 0.0f, 1.0f) },
 
-        // Bottom Face
-        {XMFLOAT3(-1.0f, -1.0f, -1.0f),XMFLOAT3(1.0f, 0.0f, 0.0f) },
-        {XMFLOAT3( 1.0f, -1.0f, -1.0f),XMFLOAT3(1.0f, 0.0f, 0.0f) },
-        {XMFLOAT3( 1.0f, -1.0f,  1.0f),XMFLOAT3(1.0f, 0.0f, 0.0f) },
-        {XMFLOAT3(-1.0f, -1.0f,  1.0f),XMFLOAT3(1.0f, 0.0f, 0.0f) },
+		// Bottom Face
+		{XMFLOAT3(-1.0f, -1.0f, -1.0f),XMFLOAT3(1.0f, 0.0f, 0.0f) },
+		{XMFLOAT3( 1.0f, -1.0f, -1.0f),XMFLOAT3(1.0f, 0.0f, 0.0f) },
+		{XMFLOAT3( 1.0f, -1.0f,  1.0f),XMFLOAT3(1.0f, 0.0f, 0.0f) },
+		{XMFLOAT3(-1.0f, -1.0f,  1.0f),XMFLOAT3(1.0f, 0.0f, 0.0f) },
 
-        // Left Face
-        {XMFLOAT3(-1.0f, -1.0f,  1.0f),XMFLOAT3(1.0f, 0.0f, 0.0f) },
-        {XMFLOAT3(-1.0f,  1.0f,  1.0f),XMFLOAT3(0.0f, 1.0f, 1.0f) },
-        {XMFLOAT3(-1.0f,  1.0f, -1.0f),XMFLOAT3(1.0f, 0.0f, 0.0f) },
-        {XMFLOAT3(-1.0f, -1.0f, -1.0f),XMFLOAT3(1.0f, 0.0f, 0.0f) },
+		// Left Face
+		{XMFLOAT3(-1.0f, -1.0f,  1.0f),XMFLOAT3(1.0f, 0.0f, 0.0f) },
+		{XMFLOAT3(-1.0f,  1.0f,  1.0f),XMFLOAT3(0.0f, 1.0f, 1.0f) },
+		{XMFLOAT3(-1.0f,  1.0f, -1.0f),XMFLOAT3(1.0f, 0.0f, 0.0f) },
+		{XMFLOAT3(-1.0f, -1.0f, -1.0f),XMFLOAT3(1.0f, 0.0f, 0.0f) },
 
-        // Right Face
-        {XMFLOAT3( 1.0f, -1.0f, -1.0f),XMFLOAT3(1.0f, 0.0f, 1.0f) },
-        {XMFLOAT3( 1.0f,  1.0f, -1.0f),XMFLOAT3(0.0f, 1.0f, 1.0f) },
-        {XMFLOAT3( 1.0f,  1.0f,  1.0f),XMFLOAT3(0.0f, 1.0f, 0.0f) },
-        {XMFLOAT3( 1.0f, -1.0f,  1.0f),XMFLOAT3(1.0f, 0.0f, 1.0f) },
-    };
+		// Right Face
+		{XMFLOAT3( 1.0f, -1.0f, -1.0f),XMFLOAT3(1.0f, 0.0f, 1.0f) },
+		{XMFLOAT3( 1.0f,  1.0f, -1.0f),XMFLOAT3(0.0f, 1.0f, 1.0f) },
+		{XMFLOAT3( 1.0f,  1.0f,  1.0f),XMFLOAT3(0.0f, 1.0f, 0.0f) },
+		{XMFLOAT3( 1.0f, -1.0f,  1.0f),XMFLOAT3(1.0f, 0.0f, 1.0f) },
+	};
 
-    unsigned short cubeIndices[] = {
-        // Front Face
-        0,  1,  2,
-        0,  2,  3,
+	unsigned short cubeIndices[] = {
+		// Front Face
+		0,  1,  2,
+		0,  2,  3,
 
-        // Back Face
-        4,  5,  6,
-        4,  6,  7,
+		// Back Face
+		4,  5,  6,
+		4,  6,  7,
 
-        // Top Face
-        8,  9, 10,
-        8, 10, 11,
+		// Top Face
+		8,  9, 10,
+		8, 10, 11,
 
-        // Bottom Face
-        12, 13, 14,
-        12, 14, 15,
+		// Bottom Face
+		12, 13, 14,
+		12, 14, 15,
 
-        // Left Face
-        16, 17, 18,
-        16, 18, 19,
+		// Left Face
+		16, 17, 18,
+		16, 18, 19,
 
-        // Right Face
-        20, 21, 22,
-        20, 22, 23
-    };
-    m_IndexCount = ARRAYSIZE(cubeIndices);
+		// Right Face
+		20, 21, 22,
+		20, 22, 23
+	};
+	m_IndexCount = ARRAYSIZE(cubeIndices);
 
-    CD3D11_BUFFER_DESC verticesBufferDesc (sizeof(cubeVertices), D3D11_BIND_VERTEX_BUFFER);
-    D3D11_SUBRESOURCE_DATA vertexSubResData;
-    vertexSubResData.pSysMem     = cubeVertices;
-    vertexSubResData.SysMemPitch = 0;
-    vertexSubResData.SysMemSlicePitch = 0;
+	CD3D11_BUFFER_DESC verticesBufferDesc (sizeof(cubeVertices), D3D11_BIND_VERTEX_BUFFER);
+	D3D11_SUBRESOURCE_DATA vertexSubResData;
+	vertexSubResData.pSysMem     = cubeVertices;
+	vertexSubResData.SysMemPitch = 0;
+	vertexSubResData.SysMemSlicePitch = 0;
 
-    HRESULT hr = m_Device-&gt;CreateBuffer( &amp;verticesBufferDesc, &amp;vertexSubResData, &amp;m_VertexBuffer );
-    assert( hr == S_OK );
+	HRESULT hr = m_Device-&gt;CreateBuffer( &amp;verticesBufferDesc, &amp;vertexSubResData, &amp;m_VertexBuffer );
+	assert( hr == S_OK );
 
-    // indices
-    CD3D11_BUFFER_DESC indicesBufferDesc(sizeof(cubeIndices), D3D11_BIND_INDEX_BUFFER);
-    D3D11_SUBRESOURCE_DATA indexSubResData;
-    indexSubResData.pSysMem = cubeIndices;
-    indexSubResData.SysMemPitch = 0;
-    indexSubResData.SysMemSlicePitch = 0;
+	// indices
+	CD3D11_BUFFER_DESC indicesBufferDesc(sizeof(cubeIndices), D3D11_BIND_INDEX_BUFFER);
+	D3D11_SUBRESOURCE_DATA indexSubResData;
+	indexSubResData.pSysMem = cubeIndices;
+	indexSubResData.SysMemPitch = 0;
+	indexSubResData.SysMemSlicePitch = 0;
 
-    hr = m_Device-&gt;CreateBuffer( &amp;indicesBufferDesc, &amp;indexSubResData, &amp;m_IndexBuffer);
-    assert( hr == S_OK );
+	hr = m_Device-&gt;CreateBuffer( &amp;indicesBufferDesc, &amp;indexSubResData, &amp;m_IndexBuffer);
+	assert( hr == S_OK );
 
-    // ----- #step06 ----- create shaders
-    unsigned int vs_ba_len=0;
-    unsigned char* vs_ba = GetByteArrayFromFile(&quot;simple_vs.cso&quot;,vs_ba_len);
-    assert( vs_ba != NULL );
+	// ----- #step06 ----- create shaders
+	unsigned int vs_ba_len=0;
+	unsigned char* vs_ba = GetByteArrayFromFile(&quot;simple_vs.cso&quot;,vs_ba_len);
+	assert( vs_ba != NULL );
 
-    unsigned int ps_ba_len=0;
-    unsigned char* ps_ba = GetByteArrayFromFile(&quot;simple_ps.cso&quot;,ps_ba_len);
-    assert( ps_ba != NULL );
+	unsigned int ps_ba_len=0;
+	unsigned char* ps_ba = GetByteArrayFromFile(&quot;simple_ps.cso&quot;,ps_ba_len);
+	assert( ps_ba != NULL );
 
-    hr = m_Device-&gt;CreateVertexShader( vs_ba, vs_ba_len, NULL, &amp;m_VertexShader );
-    assert( hr == S_OK);
+	hr = m_Device-&gt;CreateVertexShader( vs_ba, vs_ba_len, NULL, &amp;m_VertexShader );
+	assert( hr == S_OK);
 
-    hr = m_Device-&gt;CreatePixelShader( ps_ba, ps_ba_len, NULL, &amp;m_PixelShader );
-    assert( hr == S_OK);
+	hr = m_Device-&gt;CreatePixelShader( ps_ba, ps_ba_len, NULL, &amp;m_PixelShader );
+	assert( hr == S_OK);
 
-    // ----- #step07 ----- create input layout
-    D3D11_INPUT_ELEMENT_DESC inputVertexDesc[2]; // position , color
+	// ----- #step07 ----- create input layout
+	D3D11_INPUT_ELEMENT_DESC inputVertexDesc[2]; // position , color
 
-    inputVertexDesc[0].SemanticName = &quot;POSITION&quot;;
-    inputVertexDesc[0].SemanticIndex = 0;
-    inputVertexDesc[0].Format = DXGI_FORMAT_R32G32B32_FLOAT;
-    inputVertexDesc[0].InputSlot = 0;
-    inputVertexDesc[0].AlignedByteOffset = 0;
-    inputVertexDesc[0].InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;
-    inputVertexDesc[0].InstanceDataStepRate = 0;
+	inputVertexDesc[0].SemanticName = &quot;POSITION&quot;;
+	inputVertexDesc[0].SemanticIndex = 0;
+	inputVertexDesc[0].Format = DXGI_FORMAT_R32G32B32_FLOAT;
+	inputVertexDesc[0].InputSlot = 0;
+	inputVertexDesc[0].AlignedByteOffset = 0;
+	inputVertexDesc[0].InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;
+	inputVertexDesc[0].InstanceDataStepRate = 0;
 
-    inputVertexDesc[1].SemanticName = &quot;COLOR&quot;;
-    inputVertexDesc[1].SemanticIndex = 0;
-    inputVertexDesc[1].Format = DXGI_FORMAT_R32G32B32_FLOAT;
-    inputVertexDesc[1].InputSlot = 0;
-    inputVertexDesc[1].AlignedByteOffset =12;//D3D11_APPEND_ALIGNED_ELEMENT;
-    inputVertexDesc[1].InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;
-    inputVertexDesc[1].InstanceDataStepRate = 0;
+	inputVertexDesc[1].SemanticName = &quot;COLOR&quot;;
+	inputVertexDesc[1].SemanticIndex = 0;
+	inputVertexDesc[1].Format = DXGI_FORMAT_R32G32B32_FLOAT;
+	inputVertexDesc[1].InputSlot = 0;
+	inputVertexDesc[1].AlignedByteOffset =12;//D3D11_APPEND_ALIGNED_ELEMENT;
+	inputVertexDesc[1].InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;
+	inputVertexDesc[1].InstanceDataStepRate = 0;
 
-    int numElement = sizeof( inputVertexDesc ) / sizeof ( inputVertexDesc[0] );
+	int numElement = sizeof( inputVertexDesc ) / sizeof ( inputVertexDesc[0] );
 
-    hr = m_Device-&gt;CreateInputLayout( inputVertexDesc, numElement , vs_ba , vs_ba_len , &amp;m_InputLayout );
-    assert( hr == S_OK );
+	hr = m_Device-&gt;CreateInputLayout( inputVertexDesc, numElement , vs_ba , vs_ba_len , &amp;m_InputLayout );
+	assert( hr == S_OK );
 
-    delete[] vs_ba;
-    delete[] ps_ba;
+	delete[] vs_ba;
+	delete[] ps_ba;
 
-    // ----- #step08 ----- create constant buffer
-    D3D11_BUFFER_DESC constBufferDesc;
+	// ----- #step08 ----- create constant buffer
+	D3D11_BUFFER_DESC constBufferDesc;
 
-    constBufferDesc.Usage     = D3D11_USAGE_DEFAULT;
-    constBufferDesc.ByteWidth = sizeof(mvp_constantbuffer);
-    constBufferDesc.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
-    constBufferDesc.CPUAccessFlags = 0;
-    constBufferDesc.MiscFlags      = 0;
-    constBufferDesc.StructureByteStride = 0;
+	constBufferDesc.Usage     = D3D11_USAGE_DEFAULT;
+	constBufferDesc.ByteWidth = sizeof(mvp_constantbuffer);
+	constBufferDesc.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
+	constBufferDesc.CPUAccessFlags = 0;
+	constBufferDesc.MiscFlags      = 0;
+	constBufferDesc.StructureByteStride = 0;
 
-    hr = m_Device-&gt;CreateBuffer( &amp;constBufferDesc , NULL , &amp;m_ConstantBuffer );
-    assert( hr == S_OK );
+	hr = m_Device-&gt;CreateBuffer( &amp;constBufferDesc , NULL , &amp;m_ConstantBuffer );
+	assert( hr == S_OK );
 
-    // ----- #step09 ----- projection matrix
-    float aspectRatio = 800.0f / 480.0f;
-    float fovAngleY = 100.0f * XM_PI / 180.0f;
-    if (aspectRatio &lt; 1.0f) {
-        fovAngleY /= aspectRatio;
-    }
+	// ----- #step09 ----- projection matrix
+	float aspectRatio = 800.0f / 480.0f;
+	float fovAngleY = 100.0f * XM_PI / 180.0f;
+	if (aspectRatio &lt; 1.0f) {
+		fovAngleY /= aspectRatio;
+	}
 
-    XMStoreFloat4x4(&amp;m_ConstantBufferData.projection,
-                    XMMatrixTranspose(
-                        XMMatrixPerspectiveFovRH(
-                            fovAngleY,
-                            aspectRatio,
-                            0.01f,
-                            100.0f
-                        )
-                    )
-                   );
+	XMStoreFloat4x4(&amp;m_ConstantBufferData.projection,
+	                XMMatrixTranspose(
+	                    XMMatrixPerspectiveFovRH(
+	                        fovAngleY,
+	                        aspectRatio,
+	                        0.01f,
+	                        100.0f
+	                    )
+	                )
+	               );
 }
 void Update(const double delta_time) {
-    // ----- #step10 : game update here
-    XMVECTOR eye = XMVectorSet(0.0f, 0.0f, 3.5f, 0.0f);
-    XMVECTOR at  = XMVectorSet(0.0f, -0.1f, 0.0f, 0.0f);
-    XMVECTOR up  = XMVectorSet(0.0f, 0.1f, 0.0f, 0.0f);
+	// ----- #step10 : game update here
+	XMVECTOR eye = XMVectorSet(0.0f, 0.0f, 3.5f, 0.0f);
+	XMVECTOR at  = XMVectorSet(0.0f, -0.1f, 0.0f, 0.0f);
+	XMVECTOR up  = XMVectorSet(0.0f, 0.1f, 0.0f, 0.0f);
 
-    m_TotalTime = m_TotalTime + delta_time;
-    XMStoreFloat4x4(&amp;m_ConstantBufferData.view, XMMatrixTranspose(XMMatrixLookAtRH(eye, at, up)));
-    XMStoreFloat4x4(&amp;m_ConstantBufferData.model, XMMatrixTranspose(XMMatrixRotationY(m_TotalTime)));
-    if(m_TotalTime &gt; 360)
-        m_TotalTime =0;
+	m_TotalTime = m_TotalTime + delta_time;
+	XMStoreFloat4x4(&amp;m_ConstantBufferData.view, XMMatrixTranspose(XMMatrixLookAtRH(eye, at, up)));
+	XMStoreFloat4x4(&amp;m_ConstantBufferData.model, XMMatrixTranspose(XMMatrixRotationY(m_TotalTime)));
+	if(m_TotalTime &gt; 360)
+		m_TotalTime =0;
 }
 void Render() {
-    // ----- #step11 :  clear screen
-    const float bg_color[] =  {0.1f, 0.1f, 0.1f, 1.0f};
-    m_DevContext-&gt;ClearRenderTargetView(m_RenderTarget,bg_color);
+	// ----- #step11 :  clear screen
+	const float bg_color[] =  {0.1f, 0.1f, 0.1f, 1.0f};
+	m_DevContext-&gt;ClearRenderTargetView(m_RenderTarget,bg_color);
 
-    // ----- #step12 : set constant buffer
-    m_DevContext-&gt;UpdateSubresource( m_ConstantBuffer,0,NULL,&amp;m_ConstantBufferData,0,0);
+	// ----- #step12 : set constant buffer
+	m_DevContext-&gt;UpdateSubresource( m_ConstantBuffer,0,NULL,&amp;m_ConstantBufferData,0,0);
 
-    // ----- #step13 : set index &amp; vertex buffer
-    unsigned int stride, offset;
-    stride = sizeof ( vertex_type );
-    offset = 0;
+	// ----- #step13 : set index &amp; vertex buffer
+	unsigned int stride, offset;
+	stride = sizeof ( vertex_type );
+	offset = 0;
 
-    m_DevContext-&gt;IASetVertexBuffers( 0, 1 , &amp;m_VertexBuffer , &amp;stride, &amp;offset );
-    m_DevContext-&gt;IASetIndexBuffer( m_IndexBuffer , DXGI_FORMAT_R16_UINT, 0 );
-    // ----- #step14 : set Primitive Topology
-    m_DevContext-&gt;IASetPrimitiveTopology( D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST   ); // D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST
+	m_DevContext-&gt;IASetVertexBuffers( 0, 1 , &amp;m_VertexBuffer , &amp;stride, &amp;offset );
+	m_DevContext-&gt;IASetIndexBuffer( m_IndexBuffer , DXGI_FORMAT_R16_UINT, 0 );
+	// ----- #step14 : set Primitive Topology
+	m_DevContext-&gt;IASetPrimitiveTopology( D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST   ); // D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST
 
-    // ----- #step15 : set shader, input layout, send draw
-    m_DevContext-&gt;IASetInputLayout( m_InputLayout );
-    m_DevContext-&gt;VSSetShader(m_VertexShader, NULL, 0);
-    m_DevContext-&gt;VSSetConstantBuffers( 0,1,&amp;m_ConstantBuffer);
-    m_DevContext-&gt;PSSetShader(m_PixelShader, NULL, 0);
-    m_DevContext-&gt;DrawIndexed(36, 0, 0);
+	// ----- #step15 : set shader, input layout, send draw
+	m_DevContext-&gt;IASetInputLayout( m_InputLayout );
+	m_DevContext-&gt;VSSetShader(m_VertexShader, NULL, 0);
+	m_DevContext-&gt;VSSetConstantBuffers( 0,1,&amp;m_ConstantBuffer);
+	m_DevContext-&gt;PSSetShader(m_PixelShader, NULL, 0);
+	m_DevContext-&gt;DrawIndexed(36, 0, 0);
 
-    // ----- #step16 : swap buffer
-    m_SwapChain-&gt;Present(1, 0);
+	// ----- #step16 : swap buffer
+	m_SwapChain-&gt;Present(1, 0);
 }
 void ShutDown() {
 }
@@ -555,12 +633,9 @@ void OnResuming() {
 void OnHandleInput() {
 }
 </code></pre>
-
 <p>};
 [/sourcecode]</p>
-
 <p>beberapa steps yang saya comment di code diatas :</p>
-
 <p>// &mdash;&ndash; #step01 &mdash;&ndash; create device &amp; swap-chain
 // &mdash;&ndash; #step02 &mdash;&ndash; setting render target
 // &mdash;&ndash; #step03 &mdash;&ndash; setting view port
@@ -577,75 +652,73 @@ void OnHandleInput() {
 // &mdash;&ndash; #step14 &mdash;&ndash; set set Primitive Topology
 // &mdash;&ndash; #step15 &mdash;&ndash; set shader, input layout, send draw
 // &mdash;&ndash; #step16 &mdash;&ndash; swap buffer</p>
-
 <p>Hasil dari program diatas : gambar kubus 3d yang berputar terhadap sumbu-y ( garis atas -bawah kalau kamu melihat layar )</p>
-
-<p><a href="http://offground.files.wordpress.com/2013/12/cube_rot.png"><img src="http://offground.files.wordpress.com/2013/12/cube_rot.png?w=294" alt="cube_rot" />
+<p><a href="http://offground.files.wordpress.com/2013/12/cube_rot.png"><img src="http://offground.files.wordpress.com/2013/12/cube_rot.png?w=294" alt="cube_rot">
 </a>saya post full source code &amp; project ( vs 2012 desktop ) di</p>
-
 <p>svn checkout : <a href="https://xedi-on-directx-11.googlecode.com/svn/trunk">https://xedi-on-directx-11.googlecode.com/svn/trunk</a></p>
-
 <p>project home : <a href="http://code.google.com/p/xedi-on-directx-11/">http://code.google.com/p/xedi-on-directx-11/</a></p>
-
 <p>komentar, correction , pertanyaan , are welcome ! :)</p>
-
 <p>// edi ermawan Surabaya, 22-12-2013</p>
+</section>
 
+  
+  
 
-	  
-
-<div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
+  
+  
+  
+  
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  >
+    
+    <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/2013/12/22/problem-solved-wordpress-remove-code-indentation/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>problem solved : wordpress remove code indentation</span></a
+    >
     
     
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/2013/04/26/file-mana-yang-termodifikasi/"
+      ><span>File mana yang termodifikasi ?</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    >
     
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "xedixermawan" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-      </div>
-      </div></article>
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
 
 
-	 </div>
+  
+</article>
 
-	 </div>
-       </div>
-     </div>
 
- <div class="container footer">
-  <div class="row">
-    <div class="col-md-10">
-      <small class="text-muted">Copyright 2007-2019 XediXermawan</small>
-    </div>
-    <div class="col-md-2">
-      <small class="text-muted">   Hugo + Theme : <a href="https://github.com/leonhe/hugo_eiio">Eiio</a></small>
-      </div>
-   </div>
- </div>
+    </main>
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'google analytics code', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
+  
+    © 2007-2024 XediXermawan
+  
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
 
-</body></html>
+  </body>
+</html>

@@ -1,36 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Piece of Minds on XediXermawan</title>
-    <link>https://xedixermawan.github.io/categories/piece-of-minds/</link>
-    <description>Recent content in Piece of Minds on XediXermawan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-EN</language>
-    <copyright>Copyright 2007-2019 XediXermawan</copyright>
+    <title>Piece of Minds on Home</title>
+    <link>http://localhost:1313/categories/piece-of-minds/</link>
+    <description>Recent content in Piece of Minds on Home</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>© 2007-2024 XediXermawan</copyright>
     <lastBuildDate>Fri, 15 Jun 2007 06:11:43 +0000</lastBuildDate>
-    
-	<atom:link href="https://xedixermawan.github.io/categories/piece-of-minds/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="http://localhost:1313/categories/piece-of-minds/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Yang Inginku</title>
-      <link>https://xedixermawan.github.io/2007/06/15/enemy-unexpected/</link>
+      <link>http://localhost:1313/2007/06/15/enemy-unexpected/</link>
       <pubDate>Fri, 15 Jun 2007 06:11:43 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2007/06/15/enemy-unexpected/</guid>
-      <description>Aku ingin menghancurkanmu
-mengirimimu bubuk antrak, lewat surat-suratmu
-mengirimimu santet pada setiap malam
-meletakkan bom pada sore hari di tong sampahmu
-dan suatu pagi, kau buang sampah dan booooom !!
-kau berkeping-keping
-menerormu secara psikologist, lewat telepon telepon yang berdering
-email-mu akan berisi spam, virus dan sesuatu yang menyakitkan
-Jika aku bertemu kamu, Akan kutikam kau tepat pada jantungmu.
-Jantungmu pun berhenti
-tapi kau tak pernah bisa ditemui
-tapi kau tak punya email</description>
+      <guid>http://localhost:1313/2007/06/15/enemy-unexpected/</guid>
+      <description>&lt;p&gt;Aku ingin menghancurkanmu&lt;/p&gt;&#xA;&lt;p&gt;mengirimimu bubuk antrak, lewat surat-suratmu&lt;/p&gt;&#xA;&lt;p&gt;mengirimimu santet pada setiap malam&lt;/p&gt;&#xA;&lt;p&gt;meletakkan bom pada sore hari di tong sampahmu&lt;/p&gt;&#xA;&lt;p&gt;dan suatu pagi, kau buang sampah dan booooom !!&lt;/p&gt;&#xA;&lt;p&gt;kau berkeping-keping&lt;/p&gt;&#xA;&lt;p&gt;menerormu secara psikologist, lewat telepon telepon yang berdering&lt;/p&gt;&#xA;&lt;p&gt;email-mu akan berisi spam, virus dan sesuatu yang menyakitkan&lt;/p&gt;&#xA;&lt;p&gt;Jika aku bertemu kamu, Akan kutikam kau tepat pada jantungmu.&lt;/p&gt;&#xA;&lt;p&gt;Jantungmu pun berhenti&lt;/p&gt;&#xA;&lt;p&gt;tapi kau tak pernah bisa ditemui&lt;/p&gt;&#xA;&lt;p&gt;tapi kau tak punya email&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

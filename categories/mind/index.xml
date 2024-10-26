@@ -1,108 +1,69 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mind on XediXermawan</title>
-    <link>https://xedixermawan.github.io/categories/mind/</link>
-    <description>Recent content in Mind on XediXermawan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-EN</language>
-    <copyright>Copyright 2007-2019 XediXermawan</copyright>
-    <lastBuildDate>Sun, 21 Oct 2012 10:22:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://xedixermawan.github.io/categories/mind/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>no facebook</title>
-      <link>https://xedixermawan.github.io/2012/10/21/no-facebook/</link>
-      <pubDate>Sun, 21 Oct 2012 10:22:00 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2012/10/21/no-facebook/</guid>
-      <description>long time ago after I had a facebook account I thought about something related to that. and these articles [1] [2] [3] completed my thought. Since July 2012, I deleted my facebook account. this decision came originally from my mind (yes, those articles influenced me but a bit ) and It doesn&amp;rsquo;t mean I hate friendship. I like friendship,- in real world . and I still have social net account (twitter) : at xedixermawan :)</description>
-    </item>
-    
+    <title>Mind on Home</title>
+    <link>http://localhost:1313/categories/mind/</link>
+    <description>Recent content in Mind on Home</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>© 2007-2024 XediXermawan</copyright>
+    <lastBuildDate>Sat, 15 Oct 2011 05:29:17 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/mind/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mencoba untuk Fokus</title>
-      <link>https://xedixermawan.github.io/2011/10/15/mencoba-untuk-fokus/</link>
+      <link>http://localhost:1313/2011/10/15/mencoba-untuk-fokus/</link>
       <pubDate>Sat, 15 Oct 2011 05:29:17 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2011/10/15/mencoba-untuk-fokus/</guid>
-      <description>Fokus dalam bekerja bukan lah yang mudah, dan memerlukan banyak latihan untuk bisa benar-benar fokus. Terutama bagi kita yang bekerja menggunakan komputer dan [apalagi] yang terhubung dengan internet. Sangat banyak gangguan dan pengalih perhatian baik yang kita sadari kalau itu memang gangguan dan yang tidak. Mengakses jejaring sosial [facebook, twitter, google+, friendster ] dalam bekerja, salah satu aktivitas yang merusak fokus .&amp;ndash;Ya kita semua tau itu, tapi tetap saja dilakukan&amp;ndash;. dan ada hal lain yang sepertinya bukan gangguan tapi kenyataannya gangguan, misalnya notifikasi e-mail, notifikasi ada update software, atau antivirus sedang meng-interupsi : &amp;ldquo;hey komputer mu ada virus beberapa menit lagi akan meledak&amp;rdquo; dan lainnya.</description>
+      <guid>http://localhost:1313/2011/10/15/mencoba-untuk-fokus/</guid>
+      <description>&lt;p&gt;Fokus dalam bekerja bukan lah yang mudah, dan memerlukan banyak latihan untuk bisa benar-benar fokus. Terutama bagi kita yang bekerja menggunakan komputer dan [apalagi] yang terhubung dengan internet. Sangat banyak gangguan dan pengalih perhatian baik yang kita sadari kalau itu memang gangguan dan yang tidak. Mengakses jejaring sosial [facebook, twitter, google+, friendster ] dalam bekerja, salah satu aktivitas yang merusak fokus .&amp;ndash;Ya kita semua tau itu, tapi tetap saja dilakukan&amp;ndash;. dan ada hal lain yang sepertinya bukan gangguan tapi kenyataannya gangguan, misalnya notifikasi e-mail, notifikasi ada update software, atau antivirus sedang meng-interupsi : &amp;ldquo;hey komputer mu ada virus beberapa menit lagi akan meledak&amp;rdquo; dan lainnya. Mungkin notifikasi dari e-mail yang memiliki intensitas paling tinggi. Walaupun e-mail ada hubungannya dengan pekerjaan tapi itu juga harus diwaspadai :p . Satu lagi yang pasti adalah gangguan adalah chatting, yah, selain e-mail ini adalah salah satu sarana kita berkomunikasi dengan cepat lewat jaringan, dan dengan mudah pula orang lain dari jarak jauh meng-interupt kita.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>love what you do</title>
-      <link>https://xedixermawan.github.io/2011/10/06/love-what-you-do/</link>
+      <link>http://localhost:1313/2011/10/06/love-what-you-do/</link>
       <pubDate>Thu, 06 Oct 2011 06:04:58 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2011/10/06/love-what-you-do/</guid>
-      <description>learn many thing from Steve Jobs.
-&amp;ldquo;Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven&amp;rsquo;t found it yet, keep looking. Don&amp;rsquo;t settle. As with all matters of the heart, you&amp;rsquo;ll know when you find it.</description>
+      <guid>http://localhost:1313/2011/10/06/love-what-you-do/</guid>
+      <description>&lt;p&gt;learn many thing from Steve Jobs.&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven&amp;rsquo;t found it yet, keep looking. Don&amp;rsquo;t settle. As with all matters of the heart, you&amp;rsquo;ll know when you find it. And, like any great relationship, it just gets better and better as the years roll on. So keep looking until you find it. Don&amp;rsquo;t settle.&amp;rdquo;&#xA;– Stanford commencement speech 2005&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Golput : orang-orang yang tidak belajar ilmu hitam</title>
-      <link>https://xedixermawan.github.io/2009/03/17/golput-orang-orang-yang-tidak-belajar-ilmu-hitam/</link>
+      <link>http://localhost:1313/2009/03/17/golput-orang-orang-yang-tidak-belajar-ilmu-hitam/</link>
       <pubDate>Tue, 17 Mar 2009 03:58:54 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2009/03/17/golput-orang-orang-yang-tidak-belajar-ilmu-hitam/</guid>
-      <description>Sekarang sedang ramai kampanye pemilu. beberapa waktu yang lalu hal-hal seperti ini tidaklah menarik . Lalu saya mencoba mempelajarinya. Namun itu dulu, kalau sekarang saya juga tidak tertarik. :-o . Bukan saya saja yang mengatakan [1] terlalu banyak partai [2]dalam satu partai terdapat banyak caleg [3] sangat sulit untuk mengenal masing masing caleg dsb., yang merupakan semacam kumpulan protes terhadap pemilu yang konon mahal itu. Untuk memilih orang-orang yang mewakili kita tentu kita harus mengenalnya, namun kenyataannya sulit untuk semua orang.</description>
+      <guid>http://localhost:1313/2009/03/17/golput-orang-orang-yang-tidak-belajar-ilmu-hitam/</guid>
+      <description>&lt;p&gt;Sekarang sedang ramai kampanye pemilu. beberapa waktu yang lalu hal-hal seperti ini tidaklah menarik . Lalu saya mencoba mempelajarinya. Namun itu dulu, kalau sekarang saya juga tidak tertarik. :-o . Bukan saya saja yang mengatakan [1] terlalu banyak partai [2]dalam satu partai terdapat banyak caleg [3] sangat sulit untuk mengenal masing masing caleg dsb.,  yang    &lt;!-- more --&gt; merupakan semacam kumpulan protes terhadap pemilu yang konon mahal itu. Untuk memilih orang-orang yang mewakili kita tentu kita harus mengenalnya, namun kenyataannya sulit untuk semua orang. sebenarnya kata yang tepat adalah bukan &amp;ldquo;sulit&amp;rdquo;, namun banyak orang melakukan hal yang lebih penting lainnya daripada mempelajari semua caleg. Bukankah seharusnya penyelenggara lebih menjemput bola?, atau sistemnya yang salah ?.  Bagaimana partai-partai itu menentukan caleg untuk dipilih? kompeten kah? .itu masih gelap. Karena banyak artis dan dukun pun menjadi caleg  (walaupun semua kalangan masyarakat mungkin saja layak). Dan saat ini susah membedakan antara iklan sabun mandi dengan iklan caleg di jalan-jalan. Catatan -catatan buruk (korupsi, skandal, dll) dari anggota parlemen (DPR/DPRD) semakin menyemangati banyak orang untuk tidak peduli dengan ini.  Masyarakat awam spt saya ini seharusnya memilih orang-orang pilihan. dan orang -orang pilihan adalah orang-orang yang dipilih oleh orang - orang yang ahli. (arggghhh apa pula), hanya sekedar pendapat. Kenapa? kita tidak akan ragu jika yang dipilih adalah orang-orang pilihan. Contoh yang bisa dipelajari dari &amp;ldquo;memilih orang-orang pilihan&amp;rdquo; dapat dilihat di negara &lt;a href=&#34;http://id.wikipedia.org/wiki/Iran&#34;&gt;Republik Islam Iran (Islamic Republic of Iran)&lt;/a&gt;. Meniru?, jangan sungkan meniru jika yang ada sekarang memang kurang pas.  Pengertian:  golput itu adalah orang-orang yang tidak belajar ilmu hitam. :-)&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>decision effect</title>
-      <link>https://xedixermawan.github.io/2009/03/04/decision-effect/</link>
+      <link>http://localhost:1313/2009/03/04/decision-effect/</link>
       <pubDate>Wed, 04 Mar 2009 16:41:56 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2009/03/04/decision-effect/</guid>
-      <description>Apapun keputusannyanya, selama itu menyangkut hal penting, kita akan diserang oleh diri sendiri dan mungkin oleh orang lain. Setidaknya pasti dalam gangguan fikiran, gelisah, cemas, atau apalah, . Itu biasa n sangat natural. Tidak perlu sedih akan masa lalu&amp;hellip;..percaya diri di masa kini&amp;hellip;.tidak perlu cemas akan masa depan&amp;hellip;..do it with hard&amp;rsquo;s work and ultimate motivation.pray it. Begitulah seharusnya seorang yang disebut &amp;ldquo;keren&amp;rdquo; itu. whtever&amp;hellip;.</description>
+      <guid>http://localhost:1313/2009/03/04/decision-effect/</guid>
+      <description>&lt;p&gt;Apapun keputusannyanya, selama itu menyangkut hal penting, kita akan diserang oleh diri sendiri dan mungkin oleh orang lain.  Setidaknya  pasti dalam  gangguan fikiran, gelisah, cemas, atau apalah, . Itu biasa n sangat natural. Tidak perlu sedih akan masa lalu&amp;hellip;..percaya diri di masa kini&amp;hellip;.tidak perlu cemas akan masa depan&amp;hellip;..do it with hard&amp;rsquo;s work and ultimate motivation.pray it. Begitulah seharusnya seorang yang disebut &amp;ldquo;keren&amp;rdquo; itu. whtever&amp;hellip;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>troublefinder, not trouble maker</title>
-      <link>https://xedixermawan.github.io/2009/01/10/troublefinder-not-trouble-maker/</link>
+      <link>http://localhost:1313/2009/01/10/troublefinder-not-trouble-maker/</link>
       <pubDate>Sat, 10 Jan 2009 12:40:50 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2009/01/10/troublefinder-not-trouble-maker/</guid>
-      <description>Kesalahan adalah sesuatu yang perlu diperbaiki. tentu saja. Namun ada step lain yang terlebih dahulu dilakukan, yaitu mencari kesalahan itu..!!. kesalahan hidup, kesalahan program, kesalahan berkata-kata, kesalahan cetak, dll. , membuat bidang bidang bersangkutan tidak sempurna. Walaupun tidak ada yang sempurna (jadi selalu ada kesalahan itu). Mencari sebuah kesalahan bukanlah hal mudah. Kesalahan kesalahan disini adalah kesalahan kecil-kecil, yang mengurangi &amp;ldquo;kesempurnaan&amp;rdquo; atau kesalahan kecil yang memang fatal secara akumulatif. Debugging,-istilah lainnya.</description>
+      <guid>http://localhost:1313/2009/01/10/troublefinder-not-trouble-maker/</guid>
+      <description>&lt;p&gt;Kesalahan adalah sesuatu yang perlu diperbaiki. tentu saja. Namun ada step lain yang terlebih dahulu dilakukan, yaitu mencari kesalahan itu..!!. kesalahan hidup, kesalahan program, kesalahan berkata-kata, kesalahan cetak, dll. , membuat bidang bidang bersangkutan tidak sempurna. Walaupun tidak ada yang sempurna (jadi selalu ada kesalahan itu). Mencari sebuah kesalahan bukanlah hal mudah. Kesalahan kesalahan disini adalah kesalahan kecil-kecil, yang mengurangi &amp;ldquo;kesempurnaan&amp;rdquo; atau kesalahan kecil yang memang fatal secara akumulatif. Debugging,-istilah lainnya. seberapa banyak yang akan kau temukan ?, cobalah lihat sekeliling. Mencari kesalahan bukan menyebar kan keburukan, namun dicari untuk diperbaiki. Semacam patch. Pencarian kesalahan akan mengasah ketelitian, menaikkan  standart kesempurnaan.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ketenangan hati itu apa dan bagaimana?</title>
-      <link>https://xedixermawan.github.io/2008/05/20/ketenangan-hati-itu-apa-dan-bagaimana/</link>
+      <link>http://localhost:1313/2008/05/20/ketenangan-hati-itu-apa-dan-bagaimana/</link>
       <pubDate>Tue, 20 May 2008 09:07:54 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2008/05/20/ketenangan-hati-itu-apa-dan-bagaimana/</guid>
-      <description>ketenangan hati itu apa, dan bagaimanakah rasanya?,..apakah terhindar dari kecemasan2 hidup yang datang ke fikiran ini atau mendapat pasangan tepat ? atau mendapatkan pekerjaan yang dapat memenuhi kehidupan kita secara ekonomi,atau berfikir dengan bebas dan hati yang tenang setiap hari karena tidak adanya tekanan dari luar, baik seseorang atau suatu masalah yang muncul&amp;hellip;
-jika penyebabnya ketenangan hati adalah salah satu atau lebih dari yang diatas, bukankah semuannya yang tersebut diatas dapat muncul dan lenyap secara kontinyu dalam hidup ini?</description>
+      <guid>http://localhost:1313/2008/05/20/ketenangan-hati-itu-apa-dan-bagaimana/</guid>
+      <description>&lt;p&gt;ketenangan hati itu apa, dan bagaimanakah rasanya?,..apakah terhindar dari kecemasan2 hidup yang datang ke fikiran ini atau mendapat pasangan tepat ? atau mendapatkan pekerjaan yang dapat memenuhi kehidupan kita secara ekonomi,atau berfikir dengan bebas dan hati yang tenang setiap hari karena tidak adanya tekanan dari luar, baik seseorang atau suatu masalah yang muncul&amp;hellip;&lt;/p&gt;&#xA;&lt;p&gt;jika penyebabnya ketenangan hati adalah salah satu atau lebih dari yang diatas, bukankah semuannya yang tersebut diatas dapat muncul dan lenyap secara kontinyu dalam hidup ini? hidup ini takkanlah indah jika dilalui dengan ketidak tenangan hati.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Kotak Kardus Masa Depan</title>
-      <link>https://xedixermawan.github.io/2008/03/26/kotak-kardus-masa-depan/</link>
+      <link>http://localhost:1313/2008/03/26/kotak-kardus-masa-depan/</link>
       <pubDate>Wed, 26 Mar 2008 00:41:54 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2008/03/26/kotak-kardus-masa-depan/</guid>
-      <description>sekarang adalah march,26 2089. 17 hari lagi umurku sudah 94 tahun,apa yang terjadi saat ini,aku juga belum tahu.semuanya masih kabur seperti dalam kotak kotak kardus didalam almari didalam gedung,di suatu belahan dunia yang saya juga tidak tahu.itupun kalau saya masih hidup,94 tahun adalah usia yang sangat panjang(untuk ukuran saaat ini).yang seandainya masih hidup pastilah sudah lolos dari banyak hal,lolos dari berbagai macam penyakit,lolos dari berbagai macam kecelakaan transportasi,lolos dari gempa,lolos dari luapan banjir.</description>
+      <guid>http://localhost:1313/2008/03/26/kotak-kardus-masa-depan/</guid>
+      <description>&lt;p&gt;sekarang adalah march,26 2089. 17 hari lagi umurku sudah 94 tahun,apa yang terjadi saat ini,aku juga belum tahu.semuanya masih kabur seperti dalam kotak kotak kardus didalam almari didalam gedung,di suatu belahan dunia yang saya juga tidak tahu.itupun kalau saya masih hidup,94 tahun adalah usia yang sangat panjang(untuk ukuran saaat ini).yang seandainya masih hidup pastilah sudah lolos dari banyak hal,lolos dari berbagai macam penyakit,lolos dari berbagai macam kecelakaan transportasi,lolos dari gempa,lolos dari luapan banjir.semuanya masih dalam kardus,Tuhan yang Maha Tahu.saya sudah 94 tahun tapi belum tahu apa yang terjadi.tunggu aku ingin mengingat sesuatu!. apa mimpi2 ku sudah menjadi kenyataan ?,apa yang saya kerjakan ketika saya berumur 22 tahun dulu masih berguna saaat ini? Apa saya menjadi Master? or Looser? bagaimana dengan orangg2 yang saya cintai?bagaimana dengan iman saya?&#xA;saya berumur 94 tahun,tapi belum tahu yang terjadi.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Everytime learning</title>
-      <link>https://xedixermawan.github.io/2007/10/09/everytime-learning/</link>
+      <link>http://localhost:1313/2007/10/09/everytime-learning/</link>
       <pubDate>Tue, 09 Oct 2007 04:07:24 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2007/10/09/everytime-learning/</guid>
-      <description>Setiap hari saya belajar. Belajar yang saya sadari dan secara tidak sadar belajar. Belajar yang disadari, belajar hal-hal yang sudah diinginkan sebelumnya, seperti belajar ilmu teknik sekarang ini. Dan ada juga belajar yang pasti. Setiap hari kan manusia melalui banyak peristiwa yang menyangkut perasaan, fikiran, benar-salah, ataupun yang kabur. Hal paling terasa(menurut saya) adalah belajar bagaimana hidup yang benar. Karena wajar saja setiap hari kita melalui kehidupan, setidaknya sampai pada detik ini.</description>
+      <guid>http://localhost:1313/2007/10/09/everytime-learning/</guid>
+      <description>&lt;p&gt;Setiap hari saya belajar. Belajar yang saya sadari dan secara tidak sadar belajar. Belajar yang disadari, belajar hal-hal yang sudah diinginkan sebelumnya, seperti belajar ilmu teknik sekarang ini. Dan ada juga belajar yang pasti. Setiap hari kan manusia melalui banyak peristiwa yang menyangkut perasaan, fikiran, benar-salah, ataupun yang kabur. Hal paling terasa(menurut saya) adalah belajar bagaimana hidup yang benar.&#xA;Karena wajar saja setiap hari kita melalui kehidupan, setidaknya sampai pada detik ini. Jika disuruh memilih kamu suka kesulitan atau bingung(tak ada pilihan lain), tentu aku memilih dapat kesulitan tapi tidak bingung. Kalau kita belajar ilmu-ilmu pengetahuan atau teknis, parameter nya banyak yang jelas, kalau ada yang tidak jelas,&amp;ndash;bisa dicarikan referensi, atau dilakukan penelitian dulu &amp;ndash;atau dgn kata lain bisa ditunda. Ini yang saya maksud sulit. Beda dengan kehidupan kita sehari-hari. Kadang kita mendapat suatu masalah yang harus diputuskan dengan cepat, atau bahkan langsung dalam sebuah pembicaraan. Inilah yang saya maksud membingungkan. Dan juga rasa nyaman yang ditanggung pun beda, karena menyangkut perasaan orang lain, perasaan kita dan sebuah hubungan. Parameter benar salah juga kabur.&lt;/p&gt;</description>
     </item>
-    
-    <item>
-      <title>Diam</title>
-      <link>https://xedixermawan.github.io/2007/06/01/diam/</link>
-      <pubDate>Fri, 01 Jun 2007 08:50:44 +0000</pubDate>
-      
-      <guid>https://xedixermawan.github.io/2007/06/01/diam/</guid>
-      <description>Diam mungkin adalah sebuah masalah ( atau &amp;ndash;tidak ). Saya sangat dekat dengan diam, setidaknya itu banyak dikatakan banyak beberapa orang, walaupun saya merasa itu hal yang belum pada level terburuk :D . Apa diam itu sebuah kesalahan? sebuah kekurangan?. Tidak tahu juga. Bukankah lebih baik diam daripada terlalu banyak bicara tak perlu. Banyak ibadah keagamaan yang dilakukan dengan diam baik di agama Islam atau di agama lain. Intinya, mengasingkan diri dari manusia dan keramaian.</description>
-    </item>
-    
   </channel>
 </rss>
