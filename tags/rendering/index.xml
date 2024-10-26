@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rendering on Home</title>
-    <link>http://localhost:1313/tags/rendering/</link>
+    <link>https://xedixermawan.github.io/tags/rendering/</link>
     <description>Recent content in Rendering on Home</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© 2007-2024 XediXermawan</copyright>
     <lastBuildDate>Fri, 30 May 2014 00:31:56 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/rendering/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://xedixermawan.github.io/tags/rendering/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rendering animated GIF file</title>
-      <link>http://localhost:1313/2014/05/30/rendering-animated-gif-file/</link>
+      <link>https://xedixermawan.github.io/2014/05/30/rendering-animated-gif-file/</link>
       <pubDate>Fri, 30 May 2014 00:31:56 +0000</pubDate>
-      <guid>http://localhost:1313/2014/05/30/rendering-animated-gif-file/</guid>
+      <guid>https://xedixermawan.github.io/2014/05/30/rendering-animated-gif-file/</guid>
       <description>&lt;p&gt;gif file ( &lt;a href=&#34;http://en.wikipedia.org/wiki/Graphics_Interchange_Format&#34;&gt;http://en.wikipedia.org/wiki/Graphics_Interchange_Format&lt;/a&gt; ) is very popular format , you can share funny animation, emotion, a splash for ads, etc. All web browser support this format. do you interested in how game or application (non-web) render animated gif ? . here my experiment result :&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://www.youtube.com/watch?v=iw8mquG93JA&#34;&gt;http://www.youtube.com/watch?v=iw8mquG93JA&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;info :&#xA;rendering : DirectX 11&#xA;language : c/c++&#xA;GIF decoder : libnsgif&lt;/p&gt;</description>
     </item>
   </channel>

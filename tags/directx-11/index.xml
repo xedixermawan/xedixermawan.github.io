@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Directx 11 on Home</title>
-    <link>http://localhost:1313/tags/directx-11/</link>
+    <link>https://xedixermawan.github.io/tags/directx-11/</link>
     <description>Recent content in Directx 11 on Home</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© 2007-2024 XediXermawan</copyright>
     <lastBuildDate>Fri, 27 Dec 2013 16:50:35 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/directx-11/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://xedixermawan.github.io/tags/directx-11/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[2] on directx 11 : sending data to shader</title>
-      <link>http://localhost:1313/2013/12/27/2-on-directx-11-sending-data-to-shader/</link>
+      <link>https://xedixermawan.github.io/2013/12/27/2-on-directx-11-sending-data-to-shader/</link>
       <pubDate>Fri, 27 Dec 2013 16:50:35 +0000</pubDate>
-      <guid>http://localhost:1313/2013/12/27/2-on-directx-11-sending-data-to-shader/</guid>
+      <guid>https://xedixermawan.github.io/2013/12/27/2-on-directx-11-sending-data-to-shader/</guid>
       <description>&lt;p&gt;Bagaimana mengirim data dari code CPU ( c++ code ) ke code GPU ( hlsl ) ?. Di program sebelumnya, beberapa data yang di kirim ke shader :&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;  * vertex dan index , direpresentasikan dengan D3D11Buffer , di set ke shader dengan IASetVertexBuffers, dan IASetIndexBuffers. prefix IA : buffer ini di set ke input assembler stage dan dapat diakses di VS .&#xD;&#xA;  * model, view, projection matrix,  direpresentasikan dengan D3D11Buffer, di set ke shader dengan VSSetConstantBuffers. prefix VS,karena buffer ini akan dipakai sebagai global variable di vertex shader .&#xD;&#xA;  * texture, berupa shader resource view, di set ke shader dengan PSSetShaderResources. prefix PS, texture hanya dipakai di pixel shader stage.&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;model, view projection matrik dibuat dengan bind flag D3D11_BIND_CONSTANT_BUFFER . mvp disini nilainya tidak konstant, tapi berubah-ubah per-frame. lalu kenapa bind flag nya &amp;lsquo;constant buffer&amp;rsquo;?, hal ini yang membuat saya bertanya diawal2. &amp;ldquo;constant buffer&amp;rdquo; disini, dimaksudkan nilainya tetap konstant per 1 proses draw command. namun di draw command selanjutnya bisa berubah. Jika kita ingin memiliki variable yang &amp;ldquo;semacam&amp;rdquo; mvp matrix ( berubah-ubah per-frame, dan dapat diakses di shader &amp;ndash;vs,ps) , maka kita harus membuat constant buffer semacam ini. sebagai percobaan yang bisa dilihat hasilnya langsung, saya ingin mengirim data ke pixel shader untuk mengubah saturation-desaturation dari texture kubus di program sebelumnya. di c++ code saya perlu struct untuk meng-hold data ini :&lt;/p&gt;</description>
     </item>
   </channel>

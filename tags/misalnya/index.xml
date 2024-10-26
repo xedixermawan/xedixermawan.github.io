@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Misalnya on Home</title>
-    <link>http://localhost:1313/tags/misalnya/</link>
+    <link>https://xedixermawan.github.io/tags/misalnya/</link>
     <description>Recent content in Misalnya on Home</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© 2007-2024 XediXermawan</copyright>
     <lastBuildDate>Fri, 13 Feb 2015 16:30:09 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/misalnya/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://xedixermawan.github.io/tags/misalnya/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mencoba Cmake</title>
-      <link>http://localhost:1313/2015/02/13/mencobacmake/</link>
+      <link>https://xedixermawan.github.io/2015/02/13/mencobacmake/</link>
       <pubDate>Fri, 13 Feb 2015 16:30:09 +0000</pubDate>
-      <guid>http://localhost:1313/2015/02/13/mencobacmake/</guid>
+      <guid>https://xedixermawan.github.io/2015/02/13/mencobacmake/</guid>
       <description>&lt;p&gt;Visual Studio adalah favorite ide pemrograman saya. Sudah sejak lama saya pakai, kira-kira sejak 4 tahun yang lalu. Mungkin menjadi favorite karena kebiasaan :) dan juga visual studio mudah dipakai. Walaupun kadang ada juga bugs &amp;lsquo;aneh&amp;rsquo; yang terjadi selama nge-build project dengan VS. Sayangnya, &amp;lsquo;build file&amp;rsquo; dari VS tidak bisa dipakai di environment lain, misalnya mau &lt;em&gt;build&lt;/em&gt; pakai gcc di Linux. Oleh karena itulah harus ada cara lain yang harus dipakai. Berikut sebagai contoh case saya :&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Random on Home</title>
-    <link>http://localhost:1313/tags/random/</link>
+    <link>https://xedixermawan.github.io/tags/random/</link>
     <description>Recent content in Random on Home</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© 2007-2024 XediXermawan</copyright>
     <lastBuildDate>Fri, 01 Jun 2007 09:01:30 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/random/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://xedixermawan.github.io/tags/random/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kecemasan dan Ketakutan</title>
-      <link>http://localhost:1313/post/2007-06-01-kecemasan-n-ketakutan/</link>
+      <link>https://xedixermawan.github.io/post/2007-06-01-kecemasan-n-ketakutan/</link>
       <pubDate>Fri, 01 Jun 2007 09:01:30 +0000</pubDate>
-      <guid>http://localhost:1313/post/2007-06-01-kecemasan-n-ketakutan/</guid>
+      <guid>https://xedixermawan.github.io/post/2007-06-01-kecemasan-n-ketakutan/</guid>
       <description>&lt;p&gt;Kamu akan menghadapi ujian semester, test TOEFL, atau mau ujian masuk kerja ? semua hal yang berjudul &amp;ldquo;test&amp;rdquo;, biasanya menimbulkan kecemasan dan kekawatiran. Karena sebuah &amp;ldquo;test&amp;rdquo;, akan menghasilkan 2 hal yang bertolak belakang : sebuah kegembiraan dan kebanggan ATAU sebuah kekecewaan / kesedihan / rasa malu.&lt;/p&gt;&#xA;&lt;p&gt;Jadi sangat wajar jika dalam pikiran kita timbul kecemasan, &amp;mdash;atau mungkin plus ketakutan. Hal tersebut semacam sistem kontrol yang ada di dalam tubuh kita dan semua orang memilikinya. Kontrol semacam ini bahkan berguna untuk pengambilan tindakan selanjutnya untuk menghadapi &amp;ldquo;test -test&amp;rdquo; tersebut. Lazimnya, dengan mengambil langkah : mempersiapkan diri sebaik-baiknya.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Diam</title>
-      <link>http://localhost:1313/post/2007-06-01-diam/</link>
+      <link>https://xedixermawan.github.io/post/2007-06-01-diam/</link>
       <pubDate>Fri, 01 Jun 2007 08:50:44 +0000</pubDate>
-      <guid>http://localhost:1313/post/2007-06-01-diam/</guid>
+      <guid>https://xedixermawan.github.io/post/2007-06-01-diam/</guid>
       <description>&lt;p&gt;Diam mungkin adalah sebuah masalah ( atau &amp;ndash;tidak ). Saya sangat dekat dengan diam, setidaknya itu banyak dikatakan &lt;del&gt;banyak&lt;/del&gt; beberapa orang, walaupun saya merasa itu hal yang belum pada level terburuk :D . Apa diam itu sebuah kesalahan? sebuah kekurangan?. Tidak tahu juga. Bukankah lebih baik diam daripada terlalu banyak bicara tak perlu. Banyak ibadah keagamaan yang dilakukan dengan diam baik di agama Islam atau di agama lain. Intinya, mengasingkan diri dari manusia dan keramaian.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Op Amp</title>
-      <link>http://localhost:1313/post/2007-05-31-op-amp/</link>
+      <link>https://xedixermawan.github.io/post/2007-05-31-op-amp/</link>
       <pubDate>Thu, 31 May 2007 08:43:13 +0000</pubDate>
-      <guid>http://localhost:1313/post/2007-05-31-op-amp/</guid>
+      <guid>https://xedixermawan.github.io/post/2007-05-31-op-amp/</guid>
       <description>&lt;p&gt;Beberapa hari ini saya mencoba membuat amplifier, dengan penguatan 1000 kali. Agar mudah diselesaikan, saya menggunakan Op Amp. Bagaimana hasilnya? Amplifiernya jalan, tapi tidak menunjukkan penguatan yang diinginkan.&lt;/p&gt;&#xA;&lt;p&gt;Penguatannya tidak seribu kali. Saya menggunakan input sinyal kotak frekuensi 40 khz, sekitar 500mV (sebenarnya ini terlalu besar), &lt;em&gt;output&lt;/em&gt;-nya cuma sekitar 2 volt. Ketika frekuensi input saya turunkan penguatannya semakin besar. Dan diturunkan dalam orde pengali 100k, 10k, 1k, hz. Apa frekuensi 40khz sudah dianggap -frekuensi tinggi- oleh opamp ?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Menulis atau Mengetik ?</title>
-      <link>http://localhost:1313/post/2007-05-31-menulis-atau-mengetik-ya/</link>
+      <link>https://xedixermawan.github.io/post/2007-05-31-menulis-atau-mengetik-ya/</link>
       <pubDate>Thu, 31 May 2007 08:29:48 +0000</pubDate>
-      <guid>http://localhost:1313/post/2007-05-31-menulis-atau-mengetik-ya/</guid>
+      <guid>https://xedixermawan.github.io/post/2007-05-31-menulis-atau-mengetik-ya/</guid>
       <description>&lt;p&gt;Menulis memang aktivitas yang bagus. Karena dengan menulis kamu dapat mengikat ide-ide yang ada di angan-angan, mengikat ilmu-ilmu lama yang terpendam, menuangkan banyak masalah, atau mungkin memberikan solusi untuk masalah. Semoga saja blog saya ini bertahan dan selalu ada konten baru.&lt;/p&gt;&#xA;&lt;p&gt;Jika seseorang tak punya blog, sebenarnya, juga tak apa apa, tapi dengan adanya blog semoga dapat memberikan yang lebih dari semula, dan bisa untuk menuangkan ide, pemikiran, dan menulis hasil kerja.&lt;/p&gt;</description>
     </item>
   </channel>

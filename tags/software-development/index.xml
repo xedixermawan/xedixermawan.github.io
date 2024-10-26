@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Software-Development on Home</title>
-    <link>http://localhost:1313/tags/software-development/</link>
+    <link>https://xedixermawan.github.io/tags/software-development/</link>
     <description>Recent content in Software-Development on Home</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© 2007-2024 XediXermawan</copyright>
     <lastBuildDate>Sat, 26 May 2012 19:40:52 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/software-development/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://xedixermawan.github.io/tags/software-development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>solved: Conversion to Dalvik format failed with error 1</title>
-      <link>http://localhost:1313/2012/05/26/solved-conversion-to-dalvik-format-failed-with-error-1/</link>
+      <link>https://xedixermawan.github.io/2012/05/26/solved-conversion-to-dalvik-format-failed-with-error-1/</link>
       <pubDate>Sat, 26 May 2012 19:40:52 +0000</pubDate>
-      <guid>http://localhost:1313/2012/05/26/solved-conversion-to-dalvik-format-failed-with-error-1/</guid>
+      <guid>https://xedixermawan.github.io/2012/05/26/solved-conversion-to-dalvik-format-failed-with-error-1/</guid>
       <description>&lt;p&gt;UNEXPECTED TOP-LEVEL EXCEPTION:&lt;/p&gt;&#xA;&lt;p&gt;java.lang.IllegalArgumentException: already added: Lcom/badlogic/gdx/Application$ApplicationType;&lt;/p&gt;&#xA;&lt;p&gt;..&lt;/p&gt;&#xA;&lt;p&gt;..&lt;/p&gt;&#xA;&lt;p&gt;[2012-05-27 02:20:03 - skeletonAppAndroid] Conversion to Dalvik format failed with error 1&lt;/p&gt;&#xA;&lt;p&gt;This error already made me frustated for some hours. I  just wanna share the solution : There are double external .jar library in your directory project but in eclipse file view, that doesn&amp;rsquo;t displayed. so you must inspect that via windows file explorer.  If there are double  external .jar library, delete one of  them. The problem : somehow, when project clean command is executed, external .jar library is copied to “bin\classes” (in my case) that cause double external .jar file. I don’t know , it was eclipse – adt bug, or there are wrong  project&amp;rsquo;s setting. Other suggestion : update your adt plugin, because so many bug is fixed in latest version. it is adt20 now.&lt;/p&gt;</description>
     </item>
   </channel>

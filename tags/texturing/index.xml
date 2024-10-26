@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Texturing on Home</title>
-    <link>http://localhost:1313/tags/texturing/</link>
+    <link>https://xedixermawan.github.io/tags/texturing/</link>
     <description>Recent content in Texturing on Home</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© 2007-2024 XediXermawan</copyright>
     <lastBuildDate>Thu, 26 Dec 2013 16:44:48 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/texturing/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://xedixermawan.github.io/tags/texturing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[1] on directx 11 : texturing </title>
-      <link>http://localhost:1313/2013/12/26/1-on-directx-11-texturing/</link>
+      <link>https://xedixermawan.github.io/2013/12/26/1-on-directx-11-texturing/</link>
       <pubDate>Thu, 26 Dec 2013 16:44:48 +0000</pubDate>
-      <guid>http://localhost:1313/2013/12/26/1-on-directx-11-texturing/</guid>
+      <guid>https://xedixermawan.github.io/2013/12/26/1-on-directx-11-texturing/</guid>
       <description>&lt;p&gt;Di program sebelumnya informasi gambar/ vertex data di-representasikan dengan data struct dibawah ini :  (vertex_type.hpp)&lt;/p&gt;&#xA;&lt;p&gt;struct vertex_type&#xA;{&#xA;DirectX::XMFLOAT3 position;&#xA;DirectX::XMFLOAT3 color;&#xA;};&lt;/p&gt;&#xA;&lt;p&gt;struct ini ber-asosiasi dengan shader code : ( Simple_VS.hlsl )&lt;/p&gt;&#xA;&lt;p&gt;struct VertexShaderInput&#xA;{&#xA;float3 pos : POSITION;&#xA;float3 color : COLOR0;&#xA;};&lt;/p&gt;&#xA;&lt;p&gt;dengan sedikit modifikasi, kita bisa menambahkan texture ke vertex data untuk kubus :&lt;/p&gt;&#xA;&lt;table cellpadding=&#34;4&#34; width=&#34;100%&#34; cellspacing=&#34;0&#34; border=&#34;1&#34; &gt; &#xD;&#xA;&lt;tbody &gt;&#xD;&#xA;&lt;tr valign=&#34;TOP&#34; &gt;&#xD;&#xA;&lt;td width=&#34;31%&#34; &gt;&#xD;&#xA;&lt;p&gt;vertex_type.hpp&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;td width=&#34;36%&#34; &gt;&#xD;&#xA;&lt;p&gt;Simple_VS.hlsl&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;td width=&#34;33%&#34; &gt;&#xD;&#xA;&lt;p&gt;Simple_PS.hlsl&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;/tr&gt;&#xD;&#xA;&lt;tr valign=&#34;TOP&#34; &gt;&#xD;&#xA;&lt;td width=&#34;31%&#34; &gt;structvertex_type{DirectX::XMFLOAT3 position;DirectX::XMFLOAT3 color;DirectX::XMFLOAT2 texcoord; // ← added&#xD;&#xA;&lt;p&gt;};&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;td width=&#34;36%&#34; &gt;struct VertexShaderInput{float3 pos : POSITION;float3 color : COLOR0;float2 tex : TEXCOORD0;// ← added&#xD;&#xA;&lt;p&gt;};&lt;/p&gt;</description>
     </item>
   </channel>

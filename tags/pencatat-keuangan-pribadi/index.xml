@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pencatat Keuangan Pribadi on Home</title>
-    <link>http://localhost:1313/tags/pencatat-keuangan-pribadi/</link>
+    <link>https://xedixermawan.github.io/tags/pencatat-keuangan-pribadi/</link>
     <description>Recent content in Pencatat Keuangan Pribadi on Home</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© 2007-2024 XediXermawan</copyright>
     <lastBuildDate>Sat, 08 Jul 2017 04:34:22 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/pencatat-keuangan-pribadi/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://xedixermawan.github.io/tags/pencatat-keuangan-pribadi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Aplikasi Android Pencatat Keuangan</title>
-      <link>http://localhost:1313/2017/07/08/aplikasi-android-pencatat-keuangan/</link>
+      <link>https://xedixermawan.github.io/2017/07/08/aplikasi-android-pencatat-keuangan/</link>
       <pubDate>Sat, 08 Jul 2017 04:34:22 +0000</pubDate>
-      <guid>http://localhost:1313/2017/07/08/aplikasi-android-pencatat-keuangan/</guid>
+      <guid>https://xedixermawan.github.io/2017/07/08/aplikasi-android-pencatat-keuangan/</guid>
       <description>&lt;p&gt;Aplikasi yang cukup membosankan secara teknis untuk dibuat, namun saya cukup tertarik untuk membuatnya, karena saya juga ingin mencatat pengeluaran ( waktu tertentu saja, tidak bisa kalau rajin ) . Aplikasi untuk mencatat pengeluaran dan pemasukan, dengan filosofi desain yang sama : simple dan mudah digunakan .&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://play.google.com/store/apps/details?id=com.asyncbyte.moneytracker&#34;&gt;&lt;img src=&#34;https://offground.files.wordpress.com/2017/07/screen-shoot_promo.png?w=600&#34; alt=&#34;screen-shoot_promo&#34;&gt;&#xA;&lt;/a&gt; Aplikasi Catatan Keuangan Harian&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;release 13 Juni 2017&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;saya release 13 Juni 2017, belum sampai 1 bulan ( hari ini 8 juli 2017 ), sudah terdownload &amp;gt;1000 pengguna. Permulaan stats yang bagus :)  .&lt;/p&gt;</description>
     </item>
   </channel>

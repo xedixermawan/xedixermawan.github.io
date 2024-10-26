@@ -2,109 +2,109 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Computer Related on Home</title>
-    <link>http://localhost:1313/categories/computer-related/</link>
+    <link>https://xedixermawan.github.io/categories/computer-related/</link>
     <description>Recent content in Computer Related on Home</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© 2007-2024 XediXermawan</copyright>
     <lastBuildDate>Sat, 14 Feb 2015 17:12:27 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/computer-related/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://xedixermawan.github.io/categories/computer-related/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mengganti CPU Fan</title>
-      <link>http://localhost:1313/2015/02/14/mengganti-cpu-fan/</link>
+      <link>https://xedixermawan.github.io/2015/02/14/mengganti-cpu-fan/</link>
       <pubDate>Sat, 14 Feb 2015 17:12:27 +0000</pubDate>
-      <guid>http://localhost:1313/2015/02/14/mengganti-cpu-fan/</guid>
+      <guid>https://xedixermawan.github.io/2015/02/14/mengganti-cpu-fan/</guid>
       <description>&lt;p&gt;Motivasi saya mengganti cpu fan bukan karena cpu nya kepanasan &amp;ndash;seperti alasan yg lain&amp;ndash;, namun karena cpu fan saya super berisik, dan sudah nggak bisa ditolerir oleh &lt;em&gt;human being&lt;/em&gt; . Saya nggak peduli pada CPU panas pada dasarnya, selama cpu nggak mati berarti Oke :d .&lt;/p&gt;&#xA;&lt;p&gt;Awalnya saya pakai cpu fan bawaan processor, fannya berlabel AMD, ( tapi anehnya dibawah kipas berlabel Cooler Master ) . Sekarang saya ganti dengan Deepcool GAMMAX 400. Sempat bingung nyari merk fan yang cocok dengan motherboard &amp;amp; processor saya, AM3+ socket, dan juga pertimbangan harga. Antara cooler master, noctua, zalman, etc, etc. ( ternyata banyak juga merk cpu fan :d ) .&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mencoba Cmake</title>
-      <link>http://localhost:1313/2015/02/13/mencobacmake/</link>
+      <link>https://xedixermawan.github.io/2015/02/13/mencobacmake/</link>
       <pubDate>Fri, 13 Feb 2015 16:30:09 +0000</pubDate>
-      <guid>http://localhost:1313/2015/02/13/mencobacmake/</guid>
+      <guid>https://xedixermawan.github.io/2015/02/13/mencobacmake/</guid>
       <description>&lt;p&gt;Visual Studio adalah favorite ide pemrograman saya. Sudah sejak lama saya pakai, kira-kira sejak 4 tahun yang lalu. Mungkin menjadi favorite karena kebiasaan :) dan juga visual studio mudah dipakai. Walaupun kadang ada juga bugs &amp;lsquo;aneh&amp;rsquo; yang terjadi selama nge-build project dengan VS. Sayangnya, &amp;lsquo;build file&amp;rsquo; dari VS tidak bisa dipakai di environment lain, misalnya mau &lt;em&gt;build&lt;/em&gt; pakai gcc di Linux. Oleh karena itulah harus ada cara lain yang harus dipakai. Berikut sebagai contoh case saya :&lt;/p&gt;</description>
     </item>
     <item>
       <title>Calendar Maker</title>
-      <link>http://localhost:1313/2014/11/16/my-calendar-maker/</link>
+      <link>https://xedixermawan.github.io/2014/11/16/my-calendar-maker/</link>
       <pubDate>Sun, 16 Nov 2014 16:13:14 +0000</pubDate>
-      <guid>http://localhost:1313/2014/11/16/my-calendar-maker/</guid>
+      <guid>https://xedixermawan.github.io/2014/11/16/my-calendar-maker/</guid>
       <description>&lt;p&gt;walaupun tahun baru masih 1 1/2 bulan lagi, entah dapat dari mana ide-nya, saya tertarik untuk membuat kalender. Mungkin pikiran saya secara spontan kembali ke masa lalu ketika di tahun pertama kuliah dapat tugas membuat program kalender abadi he he.  Yang saya buat disini tidak jauh beda : program untuk membuat kalender, dengan input tahun dan bulan , output nya berupa image kalender. Jadi image nya bisa dipakai, atau mungkin di print :) . Dan program ini dimaksudkan bisa membuat kalender tahun berapa pun, termasuk tahun 1, bulan 1. Walaupun doeloe pernah buat, saya sudah lupa gimana buatnya. sudah lama sekali. Setelah search tentang kalender di wiki , berikut beberapa hal yang perlu diketahui, untuk menghitung hari dari tahun 1 :&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mengganti power supply</title>
-      <link>http://localhost:1313/2014/10/05/mengganti-power-supply/</link>
+      <link>https://xedixermawan.github.io/2014/10/05/mengganti-power-supply/</link>
       <pubDate>Sun, 05 Oct 2014 15:18:50 +0000</pubDate>
-      <guid>http://localhost:1313/2014/10/05/mengganti-power-supply/</guid>
+      <guid>https://xedixermawan.github.io/2014/10/05/mengganti-power-supply/</guid>
       <description>&lt;p&gt;Beberapa malam hari yang lalu, saat lagi menggunakan komputer, secara tidak sengaja, kaki saya menyentuh kabel power dari power supply, dan tiba tiba komputer saya mati, dibarengi dengan percikan api. Cukup membuat kaget. Kecelakaan kecil yang mengkawatirkan . Saya coba lagi nyalakan 2-3 kali, tidak ada reaksi. Benar benar mati. Tidak ada yang saya lakukan setelah itu, karena saya langsung tidur.&lt;/p&gt;&#xA;&lt;p&gt;Saat akhir pekan, saya coba tes lagi kondisi PC, siapa tau ada keajaiban, haha. Ya, tentu saja, masih sama, tidak mau menyala. Mulai kawatir, semoga bukan motherboard/cpu yang rusak. Dugaan pertama saya adalah : power supply. Rencananya, PC nya akan saya bawa ke toko komputer di mall dekat sini ( perkiraan 2-3 km ), namun karena CPU nya lumayan berat , saya batalkan. Sebenarnya yang bikin berat casing nya. Ok, saya mencoba lepas power supplynya . Saya cari obeng, hmm untungnya nemu obeng di dalam tasku. (selain itu saya tidak punya peralatan, karena saya baru datang di kota baru ini ). Saya tidak ingat secara pasti , kenapa ada obeng ditasku 😁 .&lt;/p&gt;</description>
     </item>
     <item>
       <title>solved: Conversion to Dalvik format failed with error 1</title>
-      <link>http://localhost:1313/2012/05/26/solved-conversion-to-dalvik-format-failed-with-error-1/</link>
+      <link>https://xedixermawan.github.io/2012/05/26/solved-conversion-to-dalvik-format-failed-with-error-1/</link>
       <pubDate>Sat, 26 May 2012 19:40:52 +0000</pubDate>
-      <guid>http://localhost:1313/2012/05/26/solved-conversion-to-dalvik-format-failed-with-error-1/</guid>
+      <guid>https://xedixermawan.github.io/2012/05/26/solved-conversion-to-dalvik-format-failed-with-error-1/</guid>
       <description>&lt;p&gt;UNEXPECTED TOP-LEVEL EXCEPTION:&lt;/p&gt;&#xA;&lt;p&gt;java.lang.IllegalArgumentException: already added: Lcom/badlogic/gdx/Application$ApplicationType;&lt;/p&gt;&#xA;&lt;p&gt;..&lt;/p&gt;&#xA;&lt;p&gt;..&lt;/p&gt;&#xA;&lt;p&gt;[2012-05-27 02:20:03 - skeletonAppAndroid] Conversion to Dalvik format failed with error 1&lt;/p&gt;&#xA;&lt;p&gt;This error already made me frustated for some hours. I  just wanna share the solution : There are double external .jar library in your directory project but in eclipse file view, that doesn&amp;rsquo;t displayed. so you must inspect that via windows file explorer.  If there are double  external .jar library, delete one of  them. The problem : somehow, when project clean command is executed, external .jar library is copied to “bin\classes” (in my case) that cause double external .jar file. I don’t know , it was eclipse – adt bug, or there are wrong  project&amp;rsquo;s setting. Other suggestion : update your adt plugin, because so many bug is fixed in latest version. it is adt20 now.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Unresolved fiveteen puzzle.</title>
-      <link>http://localhost:1313/2012/02/23/unresolved-fiveteen-puzzle/</link>
+      <link>https://xedixermawan.github.io/2012/02/23/unresolved-fiveteen-puzzle/</link>
       <pubDate>Thu, 23 Feb 2012 19:18:24 +0000</pubDate>
-      <guid>http://localhost:1313/2012/02/23/unresolved-fiveteen-puzzle/</guid>
+      <guid>https://xedixermawan.github.io/2012/02/23/unresolved-fiveteen-puzzle/</guid>
       <description>&lt;p&gt;I found it when playing my old fiveteen puzzle ( I created in 2009). Or maybe I&amp;rsquo;m not smart enought to solve this? . &lt;!-- more --&gt;I modified the puzzle so it will always produce the unresolved position like this:&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://offground.files.wordpress.com/2012/02/unresolvedpuzzle.png&#34;&gt;&lt;img src=&#34;http://offground.files.wordpress.com/2012/02/unresolvedpuzzle.png?w=284&#34; alt=&#34;&#34;&gt;&#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;wanna give a try ?  . &lt;a href=&#34;http://www.4shared.com/file/qYJjRa15/SpecialCase.html&#34;&gt;download puzzle HERE&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>C&#43;&#43; bahasa pemrograman masa depan ?</title>
-      <link>http://localhost:1313/2011/07/31/c-bahasa-pemrograman-masa-depan/</link>
+      <link>https://xedixermawan.github.io/2011/07/31/c-bahasa-pemrograman-masa-depan/</link>
       <pubDate>Sun, 31 Jul 2011 23:06:24 +0000</pubDate>
-      <guid>http://localhost:1313/2011/07/31/c-bahasa-pemrograman-masa-depan/</guid>
+      <guid>https://xedixermawan.github.io/2011/07/31/c-bahasa-pemrograman-masa-depan/</guid>
       <description>&lt;p&gt;Kita pasti tahu bahwa yang tren para developer tergantung dari pembuat compiler. Contoh yang sederhana misalnya .NET. .Net menjadi tren saat ini karena Microsoft mempromosikan dan memberi dukungan sebelumnya , Java juga begitu. Nah, akhir-akhir ini sepertinya ada yang berubah, – dan saya berharap ini benar – . Microsoft mulai melirik lagi C++ (baca: C++ Modern ):&lt;/p&gt;&#xA;&lt;p&gt;Dari artikel-artikel yang saya temukan.&lt;/p&gt;&#xA;&lt;p&gt; :: Why your next language better be C++&lt;/p&gt;</description>
     </item>
     <item>
       <title>switching</title>
-      <link>http://localhost:1313/2011/03/05/switching/</link>
+      <link>https://xedixermawan.github.io/2011/03/05/switching/</link>
       <pubDate>Sat, 05 Mar 2011 17:03:21 +0000</pubDate>
-      <guid>http://localhost:1313/2011/03/05/switching/</guid>
+      <guid>https://xedixermawan.github.io/2011/03/05/switching/</guid>
       <description>&lt;p&gt;Starting this month, I switch from desktop programming to mobile programming. Even though lately, mobile hardware has an amazing ability, is the fact that it has limited resources and limited power source (of cource from battery). So, all things must be efficient. Do I need to learn assembly? :-)&lt;/p&gt;&#xA;&lt;p&gt;It should be interesting !!&lt;/p&gt;</description>
     </item>
     <item>
       <title>Shifting Puzzle</title>
-      <link>http://localhost:1313/2009/09/02/shifting-puzzle/</link>
+      <link>https://xedixermawan.github.io/2009/09/02/shifting-puzzle/</link>
       <pubDate>Wed, 02 Sep 2009 05:57:45 +0000</pubDate>
-      <guid>http://localhost:1313/2009/09/02/shifting-puzzle/</guid>
+      <guid>https://xedixermawan.github.io/2009/09/02/shifting-puzzle/</guid>
       <description>&lt;p&gt;Dengan melakukan sedikit modifikasi pada &lt;a href=&#34;http://offground.wordpress.com/2009/07/30/java-based-simple-game/&#34;&gt;game sederhana berbasis java ini&lt;/a&gt;, tercipta game baru yang juga melibatkan objek yang sama yaitu : kotak. Kodenya hampir sama dan juga menggunakan pattern yang sama : MVC. Satu tambahan class adalah kotak puzzle yang merupakan&lt;!-- more --&gt; class turunan dari class kotak. OOP ternyata memberi banyak kemudahan dalam mengembangkan aplikasi -seperti yang digembor2kan- :-) . Game ini adalah puzzle menyusun angka-angka menjadi terurut. Penyusunannya dengan cara mengeser-geser kotak yang ada dengan memanfaatkan 1 posisi kotak kosong untuk menggerakkan kotak. Puzzle ini sebenarnya sudah ada di dunia riil berupa kotak tipis berisi 15 kotak-kotak kecil yang bisa digeser-geser. Seingat saya dulu pernah memainkannya saat masih SD. cukup menyenangkan: membuatnya-&amp;gt;lalu memainkannya :-)&lt;/p&gt;</description>
     </item>
     <item>
       <title>Java based-simple game</title>
-      <link>http://localhost:1313/2009/07/30/java-based-simple-game/</link>
+      <link>https://xedixermawan.github.io/2009/07/30/java-based-simple-game/</link>
       <pubDate>Thu, 30 Jul 2009 07:48:56 +0000</pubDate>
-      <guid>http://localhost:1313/2009/07/30/java-based-simple-game/</guid>
+      <guid>https://xedixermawan.github.io/2009/07/30/java-based-simple-game/</guid>
       <description>&lt;p&gt;edie/surabaya/July,30,2009 &lt;a href=&#34;mailto:sosinester@gmail.com&#34;&gt;.&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Since two month ago, I had learned Java periodically from several e-book from internet (thank for all guys for providing those book free). My motivation learns java is because it’s multi platform capability. Learning Java one time, you can code on several environment : desktop, server, embedded system ( smard card is the smallest embedded system that can be programmed by Java ) , and mobile phone. This like Java’s motto : “One coding , run everywhere”. Remember that C/C++ have motto “one coding, compile everywhere” .it nice too.  Ok, let we discuss about the game. This game is my first useful program (in my opinion  ) that I programmed by &lt;!-- more --&gt;java . it’s a memory game like common memory game as you ever played. There are some rectangles which you should search where it’s couple. In this game I used number (for simplicity) not symbol to sign a rectangle. Suppose you choose 4x4 rectangles, so there will be 8 couples rectangles that you should eliminated. The game is simple but not easy especially if you choose more than 4x4 . The list menu on the GUI make you easier to determine how many rectangles which you want to play. I build the game using Model-View-Controller (MVC) design pattern. It’s not good code may be. Design pattern is new material for me and this is my design pattern’s exercises. Below is explanation for each class :&lt;/p&gt;</description>
     </item>
     <item>
       <title>ber-windows,ber-linux.</title>
-      <link>http://localhost:1313/2008/03/07/ber-windowsber-linux/</link>
+      <link>https://xedixermawan.github.io/2008/03/07/ber-windowsber-linux/</link>
       <pubDate>Fri, 07 Mar 2008 04:27:03 +0000</pubDate>
-      <guid>http://localhost:1313/2008/03/07/ber-windowsber-linux/</guid>
+      <guid>https://xedixermawan.github.io/2008/03/07/ber-windowsber-linux/</guid>
       <description>&lt;p&gt;minggu minggu terakhir ini sangat bermasalah dengan komputerku. pertama mendapaty serangan virus yang sangtserius,ngrusak program-program windows ku,ngrusak installer program, fuffff,sangat menyebalkan,tapi iku sebener E kesalahn diri sendiri kenapa sejak dulu tidak mneggunakan anti virusss.windowsku tak coba ta recovery,pake cd installer,keliatannya agak membaik,tapi ternyata tetap saja.bermasalah untuk program2 tertentu.wis install ulang ae. (solusi kuno).karena kejadian ini berfikir ulang tentang penggunaan antivirus dan  linux(walaupun ada virus kan dikit,apa begitu ya,mungkin saja).install lagi,sekalian install linux ubuntu (dual boot&amp;ndash;ubuntu ku sing ndisik lali password E-kebodohan tertinggi :-P).Install windows sih lancar 2 saja.&#xA;di hardiskku sudah ada ISO image alternate cd ubuntu 7.10 gutsy gibbon,daripada burning ke cd(oga ono cd/dvd rw ne :-( ),tak coba install lewat ISO image ini aja. eh ternyata ada tutorialnya di  ubuntu id.cukup singkat:&#xA;1.buat direktory hd-media di c:&lt;br&gt;&#xA;2.Donlod &lt;a href=&#34;http://archive.ubuntu.com/ubuntu/dists/gutsy/main/installer-i386/current/images/hd-media/&#34;&gt;vmlinuz dan initrd.gz&lt;/a&gt; simpan di c:\hd-media&#xA;3.siap kan alternate cd(live cd ga bisa),simpan di c:.aku dunlud &lt;a href=&#34;http://mirror.its.ac.id/&#34;&gt;dari sini&lt;/a&gt;&#xA;4.Donlod &lt;a href=&#34;http://sarovar.org/download.php/1138/grub_for_dos-0.4.2.zip&#34;&gt;Grub For Dos&lt;/a&gt; .lalu buka dengan zip-nya ekstak file grldr(ini saja yg dipakai).lalu taruh grldr di c:&lt;br&gt;&#xA;5.buka c:\boot.ini.lalu tambahkan baris** c:\grldr=&amp;ldquo;InstallUbuntu&amp;rdquo;** . save&#xA;6.buka notepad,lalu copy pastekan:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Memulai OpenGL</title>
-      <link>http://localhost:1313/2007/08/13/memulai-open-gl/</link>
+      <link>https://xedixermawan.github.io/2007/08/13/memulai-open-gl/</link>
       <pubDate>Mon, 13 Aug 2007 12:59:19 +0000</pubDate>
-      <guid>http://localhost:1313/2007/08/13/memulai-open-gl/</guid>
+      <guid>https://xedixermawan.github.io/2007/08/13/memulai-open-gl/</guid>
       <description>&lt;p&gt;c:\program files\microsoft visual studio\vc98\include\gl\gl.h(1573) : error C2144: syntax error : missing &amp;lsquo;;&amp;rsquo; before type &amp;lsquo;void&amp;rsquo;&#xA;c:\program files\microsoft visual studio\vc98\include\gl\gl.h(1573) : error C2501: &amp;lsquo;WINGDIAPI&amp;rsquo; : missing storage-class or type specifiers&#xA;c:\program files\microsoft visual studio\vc98\include\gl\gl.h(1573) : fatal error C1004: unexpected end of file found&#xA;Error executing cl.exe.&lt;/p&gt;&#xA;&lt;p&gt;GL_2.exe - 3 error(s), 0 warning(s)&lt;/p&gt;&#xA;&lt;p&gt;Sebuah permulaan yang buruk.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Menginstall Ubuntu</title>
-      <link>http://localhost:1313/2007/06/06/nginstall-ubuntu/</link>
+      <link>https://xedixermawan.github.io/2007/06/06/nginstall-ubuntu/</link>
       <pubDate>Wed, 06 Jun 2007 06:28:10 +0000</pubDate>
-      <guid>http://localhost:1313/2007/06/06/nginstall-ubuntu/</guid>
+      <guid>https://xedixermawan.github.io/2007/06/06/nginstall-ubuntu/</guid>
       <description>&lt;p&gt;Akhirnya berhasil juga install Ubuntu. Sebenarnya ingin install Fedora Core tapi daripada nyari2 CD isntaller lagi, langsung saja pakai ubuntu, kan sudah punya. Dulu CD installer-nya pesen gratis dari &lt;a href=&#34;https://shipit.ubuntu.com&#34;&gt;https://shipit.ubuntu.com&lt;/a&gt;, pesen 10 CD sekaligus (untuk 3 jenis komputer berbeda).&lt;/p&gt;&#xA;&lt;p&gt;Selain itu sebelumnya saya mencari alasan lain-kenapa harus pakai Ubuntu. Ternyata dapat banyak alasan. Ubuntu sudah berkembang sekarang (versi terakhir ubuntu 7.07 Feisty Fawn, aku memakai versi 6.06), Dan juga Ubuntu ternyata turunan debian. Komunitas Ubuntu di Indonesia juga sedang berkembang. Ada juga &lt;em&gt;free&lt;/em&gt; &lt;em&gt;magazine&lt;/em&gt; nya (baru dirilis beberapa hari dari sekarang,dalam 6 bahasa, bahasa Indonesia termasuk didalamnya man !).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mempercantik tampilan windows</title>
-      <link>http://localhost:1313/2007/06/01/mempercantik-tampilan-windows/</link>
+      <link>https://xedixermawan.github.io/2007/06/01/mempercantik-tampilan-windows/</link>
       <pubDate>Fri, 01 Jun 2007 09:20:59 +0000</pubDate>
-      <guid>http://localhost:1313/2007/06/01/mempercantik-tampilan-windows/</guid>
+      <guid>https://xedixermawan.github.io/2007/06/01/mempercantik-tampilan-windows/</guid>
       <description>&lt;p&gt;Memperindah tampilan windows sebenarnya sudah tak asing lagi : mengganti desktop, &lt;em&gt;theme&lt;/em&gt;, &lt;em&gt;appearance&lt;/em&gt;. Jika menggunakan winxp mau pindah tampilan(tampak seperti)&#xA;vista dapat mendownload vista service pack.(saya belum mencobanya)&lt;/p&gt;&#xA;&lt;p&gt;Sekarang ini saya menggunaka Brico Pack(crystal XP)&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;  * Pertama yang perlu dilakukan adalah mendownload&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;Bricopack-nya dulu(cek di &lt;a href=&#34;https://www.crystalxp.net&#34;&gt;www.crystalxp.net&lt;/a&gt;.&#xA;* Lalu install. space yang diperlukan sebesar 300MB.&#xA;ini akan mengganti icon-icon windows,theme,appearance&#xA;dan tampilan menu dan toolbar windows.&#xA;* Jika perlu menambah theme dan appearance tambahan yang didukung bricopack tadi juga bisa di download theme dan appearance tambahan di crystalxp.net.&#xA;seperti: crystal db,crystal black,crystal milk,royal noir,vista CG,vsta inspirat.dll.&#xA;caranya tinggal unzip file nya lalu letakkan di folder:&#xA;C:\WINDOWS\Resources\Themes&#xA;untuk menggantinya tinggal klik dua kali&lt;/p&gt;</description>
     </item>
   </channel>

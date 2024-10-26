@@ -2,46 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DirectX on Home</title>
-    <link>http://localhost:1313/categories/directx/</link>
+    <link>https://xedixermawan.github.io/categories/directx/</link>
     <description>Recent content in DirectX on Home</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© 2007-2024 XediXermawan</copyright>
     <lastBuildDate>Tue, 13 May 2014 11:55:30 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/directx/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://xedixermawan.github.io/categories/directx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Recent spare time projects</title>
-      <link>http://localhost:1313/2014/05/13/my-recent-spare-time-projects/</link>
+      <link>https://xedixermawan.github.io/2014/05/13/my-recent-spare-time-projects/</link>
       <pubDate>Tue, 13 May 2014 11:55:30 +0000</pubDate>
-      <guid>http://localhost:1313/2014/05/13/my-recent-spare-time-projects/</guid>
+      <guid>https://xedixermawan.github.io/2014/05/13/my-recent-spare-time-projects/</guid>
       <description>&lt;p&gt;I have been working on these projects in my spare time quite while ( like I work on it when I want work on it  :p )., but recently I&amp;rsquo;m disappointed with my progress ( apparently I&amp;rsquo;m busy and have difficulty when creating graphics assets by myself ). so I decided to upload source code to google code in case I&amp;rsquo;m interested again next time .There are 2 projects :&lt;/p&gt;&#xA;&lt;p&gt;[1] unknown project 1. very simple game, almost done. keyword : C/C++,DirectX, Desktop App,Windows Phone 8&lt;/p&gt;</description>
     </item>
     <item>
       <title>[3] on directx 11 : load 3D model from file</title>
-      <link>http://localhost:1313/2013/12/30/3-on-directx-11-load-3d-model-from-file/</link>
+      <link>https://xedixermawan.github.io/2013/12/30/3-on-directx-11-load-3d-model-from-file/</link>
       <pubDate>Mon, 30 Dec 2013 19:01:38 +0000</pubDate>
-      <guid>http://localhost:1313/2013/12/30/3-on-directx-11-load-3d-model-from-file/</guid>
+      <guid>https://xedixermawan.github.io/2013/12/30/3-on-directx-11-load-3d-model-from-file/</guid>
       <description>&lt;p&gt;di project sebelumnya saya hanya menggambar 3d kubus. sangat menarik jika program bisa me-load model 3D yang dibuat oleh 3D editor. format paling populer untuk coba-coba tentu adalah wavefront obj :) . File .obj ini hanya bisa untuk static 3d model, tidak mendukung animasi. Dan biasanya ada 1 file pasangan tambahan untuk setiap .obj yaitu .mtl.  File .mtl dimaksudkan untuk menyimpan material ( konstanta pencahayaan , seperti diffuse, spekular ) . namun .mtl file ini optional. File .obj sebenarnya adalah text file. terdapat 2 kata disini &amp;ldquo;3D model&amp;rdquo; &amp;amp; &amp;ldquo;text file&amp;rdquo;, dan pasti yang terbayang adalah parsing yang lamaaaa . dan memang iya. parsingnya lama. untuk mengakali ini , .obj diubah ke .vbo ( ada orang yang sudah buat tool converter .obj to .vbo . .vbo apa itu?, .vbo sebenarnya adalah versi binary dari .obj, sehingga tidak perlu ada proses parsing waktu load object. 1 fungsi tambahan LoadModel_VBO, dan saya mengubah informasi vertex menjadi :&#xA;DirectX::XMFLOAT3 position;&#xA;DirectX::XMFLOAT3 normal;&#xA;DirectX::XMFLOAT2 texcoord;&lt;/p&gt;</description>
     </item>
     <item>
       <title>[2] on directx 11 : sending data to shader</title>
-      <link>http://localhost:1313/2013/12/27/2-on-directx-11-sending-data-to-shader/</link>
+      <link>https://xedixermawan.github.io/2013/12/27/2-on-directx-11-sending-data-to-shader/</link>
       <pubDate>Fri, 27 Dec 2013 16:50:35 +0000</pubDate>
-      <guid>http://localhost:1313/2013/12/27/2-on-directx-11-sending-data-to-shader/</guid>
+      <guid>https://xedixermawan.github.io/2013/12/27/2-on-directx-11-sending-data-to-shader/</guid>
       <description>&lt;p&gt;Bagaimana mengirim data dari code CPU ( c++ code ) ke code GPU ( hlsl ) ?. Di program sebelumnya, beberapa data yang di kirim ke shader :&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;  * vertex dan index , direpresentasikan dengan D3D11Buffer , di set ke shader dengan IASetVertexBuffers, dan IASetIndexBuffers. prefix IA : buffer ini di set ke input assembler stage dan dapat diakses di VS .&#xD;&#xA;  * model, view, projection matrix,  direpresentasikan dengan D3D11Buffer, di set ke shader dengan VSSetConstantBuffers. prefix VS,karena buffer ini akan dipakai sebagai global variable di vertex shader .&#xD;&#xA;  * texture, berupa shader resource view, di set ke shader dengan PSSetShaderResources. prefix PS, texture hanya dipakai di pixel shader stage.&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;model, view projection matrik dibuat dengan bind flag D3D11_BIND_CONSTANT_BUFFER . mvp disini nilainya tidak konstant, tapi berubah-ubah per-frame. lalu kenapa bind flag nya &amp;lsquo;constant buffer&amp;rsquo;?, hal ini yang membuat saya bertanya diawal2. &amp;ldquo;constant buffer&amp;rdquo; disini, dimaksudkan nilainya tetap konstant per 1 proses draw command. namun di draw command selanjutnya bisa berubah. Jika kita ingin memiliki variable yang &amp;ldquo;semacam&amp;rdquo; mvp matrix ( berubah-ubah per-frame, dan dapat diakses di shader &amp;ndash;vs,ps) , maka kita harus membuat constant buffer semacam ini. sebagai percobaan yang bisa dilihat hasilnya langsung, saya ingin mengirim data ke pixel shader untuk mengubah saturation-desaturation dari texture kubus di program sebelumnya. di c++ code saya perlu struct untuk meng-hold data ini :&lt;/p&gt;</description>
     </item>
     <item>
       <title>[1] on directx 11 : texturing </title>
-      <link>http://localhost:1313/2013/12/26/1-on-directx-11-texturing/</link>
+      <link>https://xedixermawan.github.io/2013/12/26/1-on-directx-11-texturing/</link>
       <pubDate>Thu, 26 Dec 2013 16:44:48 +0000</pubDate>
-      <guid>http://localhost:1313/2013/12/26/1-on-directx-11-texturing/</guid>
+      <guid>https://xedixermawan.github.io/2013/12/26/1-on-directx-11-texturing/</guid>
       <description>&lt;p&gt;Di program sebelumnya informasi gambar/ vertex data di-representasikan dengan data struct dibawah ini :  (vertex_type.hpp)&lt;/p&gt;&#xA;&lt;p&gt;struct vertex_type&#xA;{&#xA;DirectX::XMFLOAT3 position;&#xA;DirectX::XMFLOAT3 color;&#xA;};&lt;/p&gt;&#xA;&lt;p&gt;struct ini ber-asosiasi dengan shader code : ( Simple_VS.hlsl )&lt;/p&gt;&#xA;&lt;p&gt;struct VertexShaderInput&#xA;{&#xA;float3 pos : POSITION;&#xA;float3 color : COLOR0;&#xA;};&lt;/p&gt;&#xA;&lt;p&gt;dengan sedikit modifikasi, kita bisa menambahkan texture ke vertex data untuk kubus :&lt;/p&gt;&#xA;&lt;table cellpadding=&#34;4&#34; width=&#34;100%&#34; cellspacing=&#34;0&#34; border=&#34;1&#34; &gt; &#xD;&#xA;&lt;tbody &gt;&#xD;&#xA;&lt;tr valign=&#34;TOP&#34; &gt;&#xD;&#xA;&lt;td width=&#34;31%&#34; &gt;&#xD;&#xA;&lt;p&gt;vertex_type.hpp&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;td width=&#34;36%&#34; &gt;&#xD;&#xA;&lt;p&gt;Simple_VS.hlsl&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;td width=&#34;33%&#34; &gt;&#xD;&#xA;&lt;p&gt;Simple_PS.hlsl&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;/tr&gt;&#xD;&#xA;&lt;tr valign=&#34;TOP&#34; &gt;&#xD;&#xA;&lt;td width=&#34;31%&#34; &gt;structvertex_type{DirectX::XMFLOAT3 position;DirectX::XMFLOAT3 color;DirectX::XMFLOAT2 texcoord; // ← added&#xD;&#xA;&lt;p&gt;};&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;td width=&#34;36%&#34; &gt;struct VertexShaderInput{float3 pos : POSITION;float3 color : COLOR0;float2 tex : TEXCOORD0;// ← added&#xD;&#xA;&lt;p&gt;};&lt;/p&gt;</description>
     </item>
     <item>
       <title>[0] on directx 11 : hello cube</title>
-      <link>http://localhost:1313/2013/12/22/0-on-directx-11-hello-cube/</link>
+      <link>https://xedixermawan.github.io/2013/12/22/0-on-directx-11-hello-cube/</link>
       <pubDate>Sun, 22 Dec 2013 17:01:00 +0000</pubDate>
-      <guid>http://localhost:1313/2013/12/22/0-on-directx-11-hello-cube/</guid>
+      <guid>https://xedixermawan.github.io/2013/12/22/0-on-directx-11-hello-cube/</guid>
       <description>&lt;p&gt;dulu saya mengalami banyak kesulitan ketika memulai belajar directx 11 (mid 2012). saya ga nemu tutorial yang benar-benar directx 11, kebanyakan bercampur dengan directx 9 / 10 dimana beberapa fungsi sudah deprecated(hilang/diganti), tidak build-able dengan compiler VS terbaru yang saya pakai(MSVC 2012). walaupun secara garis besar/filosofi tidak jauh berbeda, tapi itu tentu tidak bagus untuk pemula :) . untuk itu saya tertarik untuk membuat dokumentasi ini . belajar graphics API secara memang bukan hal mudah, karena kita berusaha memahami apa yang orang buat &amp;mdash;yaitu graphics API, yang kalau diartikan :  komplek API untuk mentransfer sesuatu yang ingin kita gambar ke hardware. salah satu cara untuk menghadapi kompleksitas ini adalah menggunakan graphics debugger ( PIX, Nvidia Nsight, dll.) . Namun saya meragukan seorang pemula mengetahui hal ini &amp;amp; mau menggunakannya diawal2 belajar (source : me ) . Untuk menegaskan apa yang saya katakan di 3 baris terakhir, coba lihat tweet dari John Carmack dibawah ini :&lt;a href=&#34;http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png&#34;&gt;&lt;img src=&#34;http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png?w=554&#34; alt=&#34;Image&#34;&gt;&#xA;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>

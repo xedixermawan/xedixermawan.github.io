@@ -2,683 +2,683 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home</title>
-    <link>http://localhost:1313/</link>
+    <link>https://xedixermawan.github.io/</link>
     <description>Recent content on Home</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© 2007-2024 XediXermawan</copyright>
     <lastBuildDate>Sat, 26 Oct 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://xedixermawan.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Placeholder Text</title>
-      <link>http://localhost:1313/post/placeholder-text/</link>
+      <link>https://xedixermawan.github.io/post/placeholder-text/</link>
       <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/placeholder-text/</guid>
+      <guid>https://xedixermawan.github.io/post/placeholder-text/</guid>
       <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Analisis laporan keuangan</title>
-      <link>http://localhost:1313/post/2024-10-26_contoh-analisis-laporan-keuangan/</link>
+      <link>https://xedixermawan.github.io/post/2024-10-26_contoh-analisis-laporan-keuangan/</link>
       <pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2024-10-26_contoh-analisis-laporan-keuangan/</guid>
+      <guid>https://xedixermawan.github.io/post/2024-10-26_contoh-analisis-laporan-keuangan/</guid>
       <description>&lt;p&gt;Untuk memberikan contoh analisis laporan keuangan suatu perusahaan, saya akan menggunakan data yang disederhanakan dari laporan keuangan hipotetis. Berikut adalah contoh data dari sebuah perusahaan fiktif:&lt;/p&gt;&#xA;&lt;h3 id=&#34;laporan-laba-rugi-income-statement&#34;&gt;Laporan Laba Rugi (Income Statement)&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;&lt;strong&gt;Komponen&lt;/strong&gt;&lt;/th&gt;&#xA;          &lt;th&gt;&lt;strong&gt;Jumlah (dalam juta USD)&lt;/strong&gt;&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Pendapatan (Revenue)&lt;/td&gt;&#xA;          &lt;td&gt;100&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Harga Pokok Penjualan (COGS)&lt;/td&gt;&#xA;          &lt;td&gt;60&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Laba Kotor (Gross Profit)&lt;/td&gt;&#xA;          &lt;td&gt;40&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Biaya Operasional (Operating Expenses)&lt;/td&gt;&#xA;          &lt;td&gt;20&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Laba Operasional (Operating Income)&lt;/td&gt;&#xA;          &lt;td&gt;20&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Beban Bunga (Interest Expense)&lt;/td&gt;&#xA;          &lt;td&gt;5&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Pajak (Taxes)&lt;/td&gt;&#xA;          &lt;td&gt;3&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Laba Bersih (Net Income)&lt;/td&gt;&#xA;          &lt;td&gt;12&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h3 id=&#34;laporan-neraca-balance-sheet&#34;&gt;Laporan Neraca (Balance Sheet)&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;&lt;strong&gt;Komponen&lt;/strong&gt;&lt;/th&gt;&#xA;          &lt;th&gt;&lt;strong&gt;Jumlah (dalam juta USD)&lt;/strong&gt;&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Aset&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Aset Lancar (Current Assets)&lt;/td&gt;&#xA;          &lt;td&gt;50&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Aset Tetap (Fixed Assets)&lt;/td&gt;&#xA;          &lt;td&gt;100&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Total Aset (Total Assets)&lt;/td&gt;&#xA;          &lt;td&gt;150&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Liabilitas&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Liabilitas Lancar (Current Liabilities)&lt;/td&gt;&#xA;          &lt;td&gt;30&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Utang Jangka Panjang (Long-term Debt)&lt;/td&gt;&#xA;          &lt;td&gt;40&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Total Liabilitas (Total Liabilities)&lt;/td&gt;&#xA;          &lt;td&gt;70&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Ekuitas Pemegang Saham&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Ekuitas (Equity)&lt;/td&gt;&#xA;          &lt;td&gt;80&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Total Liabilitas dan Ekuitas&lt;/td&gt;&#xA;          &lt;td&gt;150&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h3 id=&#34;laporan-arus-kas-cash-flow-statement&#34;&gt;Laporan Arus Kas (Cash Flow Statement)&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;&lt;strong&gt;Komponen&lt;/strong&gt;&lt;/th&gt;&#xA;          &lt;th&gt;&lt;strong&gt;Jumlah (dalam juta USD)&lt;/strong&gt;&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Arus Kas dari Operasi (Operating Cash Flow)&lt;/td&gt;&#xA;          &lt;td&gt;25&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Arus Kas dari Investasi (Investing Cash Flow)&lt;/td&gt;&#xA;          &lt;td&gt;(15)&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Arus Kas dari Pendanaan (Financing Cash Flow)&lt;/td&gt;&#xA;          &lt;td&gt;(5)&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Perubahan Bersih Kas (Net Cash Flow)&lt;/td&gt;&#xA;          &lt;td&gt;5&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h3 id=&#34;rasio-keuangan-financial-ratios&#34;&gt;Rasio Keuangan (Financial Ratios)&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Gross Profit Margin (Laba Kotor/Pendapatan)&lt;/strong&gt;&lt;br&gt;&#xA;$$&#xA;\frac{Laba Kotor}{Pendapatan} = \frac{40}{100} = 40%&#xA;$$&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/archives/</link>
+      <link>https://xedixermawan.github.io/archives/</link>
       <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/archives/</guid>
+      <guid>https://xedixermawan.github.io/archives/</guid>
       <description></description>
     </item>
     <item>
       <title>Markdown Syntax Guide</title>
-      <link>http://localhost:1313/post/markdown-syntax/</link>
+      <link>https://xedixermawan.github.io/post/markdown-syntax/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/markdown-syntax/</guid>
+      <guid>https://xedixermawan.github.io/post/markdown-syntax/</guid>
       <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rich Content</title>
-      <link>http://localhost:1313/post/rich-content/</link>
+      <link>https://xedixermawan.github.io/post/rich-content/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/rich-content/</guid>
+      <guid>https://xedixermawan.github.io/post/rich-content/</guid>
       <description>&lt;p&gt;Hugo ships with several &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes&#34;&gt;Built-in Shortcodes&lt;/a&gt; for rich content, along with a &lt;a href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;&gt;Privacy Config&lt;/a&gt; and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p&gt;&#xA;&lt;h2 id=&#34;heading&#34;&gt;&lt;/h2&gt;</description>
     </item>
     <item>
       <title>Math Typesetting</title>
-      <link>http://localhost:1313/post/math-typesetting/</link>
+      <link>https://xedixermawan.github.io/post/math-typesetting/</link>
       <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/math-typesetting/</guid>
+      <guid>https://xedixermawan.github.io/post/math-typesetting/</guid>
       <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Emoji Support</title>
-      <link>http://localhost:1313/post/emoji-support/</link>
+      <link>https://xedixermawan.github.io/post/emoji-support/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/emoji-support/</guid>
+      <guid>https://xedixermawan.github.io/post/emoji-support/</guid>
       <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
     </item>
     <item>
       <title>About</title>
-      <link>http://localhost:1313/about/</link>
+      <link>https://xedixermawan.github.io/about/</link>
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
+      <guid>https://xedixermawan.github.io/about/</guid>
       <description>&lt;p&gt;Blog pribadi oleh Edi Ermawan. Saya bekerja dalam bidang &lt;em&gt;software development&lt;/em&gt; sejak 2009. Tertarik dalam &lt;em&gt;software development&lt;/em&gt; ( desain, programming, &lt;em&gt;monetization&lt;/em&gt;, ataupun UI/UX ), &lt;em&gt;Indie app development&lt;/em&gt;, elektronika dan juga suka menonton sepakbola, &lt;em&gt;Mixed Martial Art&lt;/em&gt; (MMA), bermain video game, olahraga, investasi (terutama &lt;em&gt;property&lt;/em&gt; dan &lt;em&gt;idx stock&lt;/em&gt;).&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Email : edi [DOT ]ermawan [AT] gmail [DOT] com&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Contact</title>
-      <link>http://localhost:1313/contact/</link>
+      <link>https://xedixermawan.github.io/contact/</link>
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/contact/</guid>
+      <guid>https://xedixermawan.github.io/contact/</guid>
       <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/xedixermawan&#34;&gt;github.com/xedixermawan&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.linkedin.com/in/ediermawan/&#34;&gt;xedixermawan&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Android Vector Drawable</title>
-      <link>http://localhost:1313/post/2019-01-09__membuat_vector_drawable/</link>
+      <link>https://xedixermawan.github.io/post/2019-01-09__membuat_vector_drawable/</link>
       <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2019-01-09__membuat_vector_drawable/</guid>
+      <guid>https://xedixermawan.github.io/post/2019-01-09__membuat_vector_drawable/</guid>
       <description>&lt;p&gt;Asset berformat vector drawable memiliki beberapa keunggulan ketika dipakai di aplikasi Android. Vector drawable pada dasarnya adalah file text yang berisi deskripsi gambar. Karena format text maka ukurannya sangat kecil. Terlebih kita tidak perlu membuat assets untuk bermacam macam resolusi, karena vector drawable bisa di &lt;em&gt;scale&lt;/em&gt; ukuran gambarnya tanpa mengurangi kualitas.&lt;/p&gt;&#xA;&lt;p&gt;Hal ini memperkuat keuntungan dari segi ukuran gambar, karena tidak perlu menyediakan gambar dalam beberapa versi resolusi layar. Efek lainnya adalah tidak perlu ribet, cukup mengurusi 1 gambar saja.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Aplikasi Android Pencatat Keuangan</title>
-      <link>http://localhost:1313/2017/07/08/aplikasi-android-pencatat-keuangan/</link>
+      <link>https://xedixermawan.github.io/2017/07/08/aplikasi-android-pencatat-keuangan/</link>
       <pubDate>Sat, 08 Jul 2017 04:34:22 +0000</pubDate>
-      <guid>http://localhost:1313/2017/07/08/aplikasi-android-pencatat-keuangan/</guid>
+      <guid>https://xedixermawan.github.io/2017/07/08/aplikasi-android-pencatat-keuangan/</guid>
       <description>&lt;p&gt;Aplikasi yang cukup membosankan secara teknis untuk dibuat, namun saya cukup tertarik untuk membuatnya, karena saya juga ingin mencatat pengeluaran ( waktu tertentu saja, tidak bisa kalau rajin ) . Aplikasi untuk mencatat pengeluaran dan pemasukan, dengan filosofi desain yang sama : simple dan mudah digunakan .&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://play.google.com/store/apps/details?id=com.asyncbyte.moneytracker&#34;&gt;&lt;img src=&#34;https://offground.files.wordpress.com/2017/07/screen-shoot_promo.png?w=600&#34; alt=&#34;screen-shoot_promo&#34;&gt;&#xA;&lt;/a&gt; Aplikasi Catatan Keuangan Harian&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;release 13 Juni 2017&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;saya release 13 Juni 2017, belum sampai 1 bulan ( hari ini 8 juli 2017 ), sudah terdownload &amp;gt;1000 pengguna. Permulaan stats yang bagus :)  .&lt;/p&gt;</description>
     </item>
     <item>
       <title>New Design Calendar App</title>
-      <link>http://localhost:1313/2017/03/07/new-design-calendar-app/</link>
+      <link>https://xedixermawan.github.io/2017/03/07/new-design-calendar-app/</link>
       <pubDate>Tue, 07 Mar 2017 07:57:33 +0000</pubDate>
-      <guid>http://localhost:1313/2017/03/07/new-design-calendar-app/</guid>
+      <guid>https://xedixermawan.github.io/2017/03/07/new-design-calendar-app/</guid>
       <description>&lt;p&gt;Selamat tahun baru 2017 !&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://offground.files.wordpress.com/2017/03/new.png&#34; alt=&#34;new&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://offground.files.wordpress.com/2017/03/untitled-1.png&#34; alt=&#34;Untitled-1&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mengganti CPU Fan</title>
-      <link>http://localhost:1313/2015/02/14/mengganti-cpu-fan/</link>
+      <link>https://xedixermawan.github.io/2015/02/14/mengganti-cpu-fan/</link>
       <pubDate>Sat, 14 Feb 2015 17:12:27 +0000</pubDate>
-      <guid>http://localhost:1313/2015/02/14/mengganti-cpu-fan/</guid>
+      <guid>https://xedixermawan.github.io/2015/02/14/mengganti-cpu-fan/</guid>
       <description>&lt;p&gt;Motivasi saya mengganti cpu fan bukan karena cpu nya kepanasan &amp;ndash;seperti alasan yg lain&amp;ndash;, namun karena cpu fan saya super berisik, dan sudah nggak bisa ditolerir oleh &lt;em&gt;human being&lt;/em&gt; . Saya nggak peduli pada CPU panas pada dasarnya, selama cpu nggak mati berarti Oke :d .&lt;/p&gt;&#xA;&lt;p&gt;Awalnya saya pakai cpu fan bawaan processor, fannya berlabel AMD, ( tapi anehnya dibawah kipas berlabel Cooler Master ) . Sekarang saya ganti dengan Deepcool GAMMAX 400. Sempat bingung nyari merk fan yang cocok dengan motherboard &amp;amp; processor saya, AM3+ socket, dan juga pertimbangan harga. Antara cooler master, noctua, zalman, etc, etc. ( ternyata banyak juga merk cpu fan :d ) .&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mencoba Cmake</title>
-      <link>http://localhost:1313/2015/02/13/mencobacmake/</link>
+      <link>https://xedixermawan.github.io/2015/02/13/mencobacmake/</link>
       <pubDate>Fri, 13 Feb 2015 16:30:09 +0000</pubDate>
-      <guid>http://localhost:1313/2015/02/13/mencobacmake/</guid>
+      <guid>https://xedixermawan.github.io/2015/02/13/mencobacmake/</guid>
       <description>&lt;p&gt;Visual Studio adalah favorite ide pemrograman saya. Sudah sejak lama saya pakai, kira-kira sejak 4 tahun yang lalu. Mungkin menjadi favorite karena kebiasaan :) dan juga visual studio mudah dipakai. Walaupun kadang ada juga bugs &amp;lsquo;aneh&amp;rsquo; yang terjadi selama nge-build project dengan VS. Sayangnya, &amp;lsquo;build file&amp;rsquo; dari VS tidak bisa dipakai di environment lain, misalnya mau &lt;em&gt;build&lt;/em&gt; pakai gcc di Linux. Oleh karena itulah harus ada cara lain yang harus dipakai. Berikut sebagai contoh case saya :&lt;/p&gt;</description>
     </item>
     <item>
       <title>Galeri kalender 2015 2016 ( Indonesia )</title>
-      <link>http://localhost:1313/2014/11/16/galeri-kalender-2015-indonesia/</link>
+      <link>https://xedixermawan.github.io/2014/11/16/galeri-kalender-2015-indonesia/</link>
       <pubDate>Sun, 16 Nov 2014 17:56:12 +0000</pubDate>
-      <guid>http://localhost:1313/2014/11/16/galeri-kalender-2015-indonesia/</guid>
+      <guid>https://xedixermawan.github.io/2014/11/16/galeri-kalender-2015-indonesia/</guid>
       <description>&lt;p&gt;Jakarta, November 16, 2014&lt;/p&gt;&#xA;&lt;p&gt;Beberapa galeri kalender 2015 Indonesia ( dengan pasaran jawa : pon , pahing , kliwon , legi , wage )&lt;/p&gt;&#xA;&lt;p&gt;download :  &lt;a href=&#34;https://www.flickr.com/photos/xediview/15805620702/in/photostream/&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://offground.files.wordpress.com/2014/11/kalender_2015_indonesia_7.png&#34;&gt;&lt;img src=&#34;https://offground.files.wordpress.com/2014/11/kalender_2015_indonesia_7.png?w=660&#34; alt=&#34;Kalender 2015 Indonesia&#34;&gt;&#xA;&lt;/a&gt; Kalender 2015 Indonesia&lt;/p&gt;&#xA;&lt;p&gt;kalender 2015 Indonesia yang lain :  &lt;a href=&#34;https://www.flickr.com/photos/xediview/15805620702/in/photostream/&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;dibuat dengan &lt;a href=&#34;http://offground.wordpress.com/2014/11/16/my-calendar-maker/&#34;&gt;program&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Update Oktober 2015 :&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;saya membuat banyak sekali kalender 2016 dengan berbagai macam type font. bisa didownload disini :&#xA;&lt;a href=&#34;https://www.flickr.com/photos/xediview/21978475394/&#34;&gt;https://www.flickr.com/photos/xediview/21978475394/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Update Desember 2015 :&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Beberapa minggu lalu saya membuat kalender Indonesia versi Android. di dalam versi android dimasukkan juga liburan dan cuti bersama 2016. Kalau tertarik &lt;a href=&#34;https://play.google.com/store/apps/details?id=asyncbyte.kalendar.calendar&amp;amp;hl=en&#34;&gt;bisa diinstall disini&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Calendar Maker</title>
-      <link>http://localhost:1313/2014/11/16/my-calendar-maker/</link>
+      <link>https://xedixermawan.github.io/2014/11/16/my-calendar-maker/</link>
       <pubDate>Sun, 16 Nov 2014 16:13:14 +0000</pubDate>
-      <guid>http://localhost:1313/2014/11/16/my-calendar-maker/</guid>
+      <guid>https://xedixermawan.github.io/2014/11/16/my-calendar-maker/</guid>
       <description>&lt;p&gt;walaupun tahun baru masih 1 1/2 bulan lagi, entah dapat dari mana ide-nya, saya tertarik untuk membuat kalender. Mungkin pikiran saya secara spontan kembali ke masa lalu ketika di tahun pertama kuliah dapat tugas membuat program kalender abadi he he.  Yang saya buat disini tidak jauh beda : program untuk membuat kalender, dengan input tahun dan bulan , output nya berupa image kalender. Jadi image nya bisa dipakai, atau mungkin di print :) . Dan program ini dimaksudkan bisa membuat kalender tahun berapa pun, termasuk tahun 1, bulan 1. Walaupun doeloe pernah buat, saya sudah lupa gimana buatnya. sudah lama sekali. Setelah search tentang kalender di wiki , berikut beberapa hal yang perlu diketahui, untuk menghitung hari dari tahun 1 :&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mengganti power supply</title>
-      <link>http://localhost:1313/2014/10/05/mengganti-power-supply/</link>
+      <link>https://xedixermawan.github.io/2014/10/05/mengganti-power-supply/</link>
       <pubDate>Sun, 05 Oct 2014 15:18:50 +0000</pubDate>
-      <guid>http://localhost:1313/2014/10/05/mengganti-power-supply/</guid>
+      <guid>https://xedixermawan.github.io/2014/10/05/mengganti-power-supply/</guid>
       <description>&lt;p&gt;Beberapa malam hari yang lalu, saat lagi menggunakan komputer, secara tidak sengaja, kaki saya menyentuh kabel power dari power supply, dan tiba tiba komputer saya mati, dibarengi dengan percikan api. Cukup membuat kaget. Kecelakaan kecil yang mengkawatirkan . Saya coba lagi nyalakan 2-3 kali, tidak ada reaksi. Benar benar mati. Tidak ada yang saya lakukan setelah itu, karena saya langsung tidur.&lt;/p&gt;&#xA;&lt;p&gt;Saat akhir pekan, saya coba tes lagi kondisi PC, siapa tau ada keajaiban, haha. Ya, tentu saja, masih sama, tidak mau menyala. Mulai kawatir, semoga bukan motherboard/cpu yang rusak. Dugaan pertama saya adalah : power supply. Rencananya, PC nya akan saya bawa ke toko komputer di mall dekat sini ( perkiraan 2-3 km ), namun karena CPU nya lumayan berat , saya batalkan. Sebenarnya yang bikin berat casing nya. Ok, saya mencoba lepas power supplynya . Saya cari obeng, hmm untungnya nemu obeng di dalam tasku. (selain itu saya tidak punya peralatan, karena saya baru datang di kota baru ini ). Saya tidak ingat secara pasti , kenapa ada obeng ditasku 😁 .&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rendering animated GIF file</title>
-      <link>http://localhost:1313/2014/05/30/rendering-animated-gif-file/</link>
+      <link>https://xedixermawan.github.io/2014/05/30/rendering-animated-gif-file/</link>
       <pubDate>Fri, 30 May 2014 00:31:56 +0000</pubDate>
-      <guid>http://localhost:1313/2014/05/30/rendering-animated-gif-file/</guid>
+      <guid>https://xedixermawan.github.io/2014/05/30/rendering-animated-gif-file/</guid>
       <description>&lt;p&gt;gif file ( &lt;a href=&#34;http://en.wikipedia.org/wiki/Graphics_Interchange_Format&#34;&gt;http://en.wikipedia.org/wiki/Graphics_Interchange_Format&lt;/a&gt; ) is very popular format , you can share funny animation, emotion, a splash for ads, etc. All web browser support this format. do you interested in how game or application (non-web) render animated gif ? . here my experiment result :&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://www.youtube.com/watch?v=iw8mquG93JA&#34;&gt;http://www.youtube.com/watch?v=iw8mquG93JA&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;info :&#xA;rendering : DirectX 11&#xA;language : c/c++&#xA;GIF decoder : libnsgif&lt;/p&gt;</description>
     </item>
     <item>
       <title>TCP client server dengan winsock2</title>
-      <link>http://localhost:1313/2014/05/27/tcp-client-server-dengan-winsock2/</link>
+      <link>https://xedixermawan.github.io/2014/05/27/tcp-client-server-dengan-winsock2/</link>
       <pubDate>Tue, 27 May 2014 18:43:03 +0000</pubDate>
-      <guid>http://localhost:1313/2014/05/27/tcp-client-server-dengan-winsock2/</guid>
+      <guid>https://xedixermawan.github.io/2014/05/27/tcp-client-server-dengan-winsock2/</guid>
       <description>&lt;p&gt;Untuk keperluan selanjutnya di pengembangan game yang sedang saya buat ( :-o ), saya memerlukan program yang bisa di tweak lewat program lain. Dengan kata lain 2 program yang saling bisa berkomunikasi. Cara yang bisa dicapai , pakai file sharing atau dengan cara yang pas : pakai networking tcp / udp . Kalau mau buat program dengan kemampuan networking, cara yang bijaksana mungkin pakai 3rd party library yang sudah cukup populer dan reliable. Di antaranya, yang saya ketahui dan sepertinya sudah terbukti bagus :&lt;a href=&#34;http://www.boost.org/doc/libs/1_55_0/doc/html/boost_asio.html&#34;&gt; boost-asio&lt;/a&gt; ( free ), &lt;a href=&#34;http://www.jenkinssoftware.com/download.html&#34;&gt;raknet &lt;/a&gt;( free untuk hobyist ), &lt;a href=&#34;http://libevent.org/&#34;&gt;libevent &lt;/a&gt;( free ), etc. ada yang lain ?. Tapi saya pinginnya ndak usah pakai 3rd party lib, lagipula program yang akan saya buat cukup sederhana. winsock2 &amp;amp; c/c++ . itu pilihannya. dan rasanya akan fun juga buat program nya hehe. Sebagai pemanasan awal dengan winsock2 ( saya pemula ) , saya perlu membuat program seperti ini : ada client dan server. client bisa kirim data ke server. server bisa kirim data ke client. jika client nya lebih dari satu, client bisa kirim data ke client yang lain. representasi dari program ini adalah program &amp;ldquo;chatting&amp;rdquo; :d .&#xA;kemampuan server dalam keadaan running :&lt;/p&gt;</description>
     </item>
     <item>
       <title>#define problem</title>
-      <link>http://localhost:1313/2014/05/21/define-problem/</link>
+      <link>https://xedixermawan.github.io/2014/05/21/define-problem/</link>
       <pubDate>Wed, 21 May 2014 17:22:18 +0000</pubDate>
-      <guid>http://localhost:1313/2014/05/21/define-problem/</guid>
+      <guid>https://xedixermawan.github.io/2014/05/21/define-problem/</guid>
       <description>&lt;p&gt;Masalah kecil tapi fatal di projects C/C++ yang  saya temui ( dan parahnya terulang-ulang ), adalah penggunaan define. #define secara salah digunakan karena dicampur aduk antara definisi &amp;amp; pengecekannya. sebagai contoh ada 2 define :&lt;/p&gt;&#xA;&lt;p&gt;#define USE_FEATURE_A&#xA;#define USE_FEATURE_B (1)&lt;/p&gt;&#xA;&lt;p&gt;Dalam penggunaanya ada beberapa kemungkinan :&lt;/p&gt;&#xA;&lt;p&gt;#ifdef USE_FEATURE_A&#xA;// code_inside_a.1&#xA;#endif&#xA;&amp;ndash;&amp;gt;penggunaan yang benar. code &amp;ldquo;code_inside_a.1&amp;rdquo; akan ter-compile jika USE_FEATURE_A ter-define. kalau ingin menghilangkan code &amp;ldquo;code_inside_a.1&amp;rdquo;, USE_FEATURE_A harus un-define dengan komen : // #define USE_FEATURE_A&lt;/p&gt;</description>
     </item>
     <item>
       <title>Recent spare time projects</title>
-      <link>http://localhost:1313/2014/05/13/my-recent-spare-time-projects/</link>
+      <link>https://xedixermawan.github.io/2014/05/13/my-recent-spare-time-projects/</link>
       <pubDate>Tue, 13 May 2014 11:55:30 +0000</pubDate>
-      <guid>http://localhost:1313/2014/05/13/my-recent-spare-time-projects/</guid>
+      <guid>https://xedixermawan.github.io/2014/05/13/my-recent-spare-time-projects/</guid>
       <description>&lt;p&gt;I have been working on these projects in my spare time quite while ( like I work on it when I want work on it  :p )., but recently I&amp;rsquo;m disappointed with my progress ( apparently I&amp;rsquo;m busy and have difficulty when creating graphics assets by myself ). so I decided to upload source code to google code in case I&amp;rsquo;m interested again next time .There are 2 projects :&lt;/p&gt;&#xA;&lt;p&gt;[1] unknown project 1. very simple game, almost done. keyword : C/C++,DirectX, Desktop App,Windows Phone 8&lt;/p&gt;</description>
     </item>
     <item>
       <title>[3] on directx 11 : load 3D model from file</title>
-      <link>http://localhost:1313/2013/12/30/3-on-directx-11-load-3d-model-from-file/</link>
+      <link>https://xedixermawan.github.io/2013/12/30/3-on-directx-11-load-3d-model-from-file/</link>
       <pubDate>Mon, 30 Dec 2013 19:01:38 +0000</pubDate>
-      <guid>http://localhost:1313/2013/12/30/3-on-directx-11-load-3d-model-from-file/</guid>
+      <guid>https://xedixermawan.github.io/2013/12/30/3-on-directx-11-load-3d-model-from-file/</guid>
       <description>&lt;p&gt;di project sebelumnya saya hanya menggambar 3d kubus. sangat menarik jika program bisa me-load model 3D yang dibuat oleh 3D editor. format paling populer untuk coba-coba tentu adalah wavefront obj :) . File .obj ini hanya bisa untuk static 3d model, tidak mendukung animasi. Dan biasanya ada 1 file pasangan tambahan untuk setiap .obj yaitu .mtl.  File .mtl dimaksudkan untuk menyimpan material ( konstanta pencahayaan , seperti diffuse, spekular ) . namun .mtl file ini optional. File .obj sebenarnya adalah text file. terdapat 2 kata disini &amp;ldquo;3D model&amp;rdquo; &amp;amp; &amp;ldquo;text file&amp;rdquo;, dan pasti yang terbayang adalah parsing yang lamaaaa . dan memang iya. parsingnya lama. untuk mengakali ini , .obj diubah ke .vbo ( ada orang yang sudah buat tool converter .obj to .vbo . .vbo apa itu?, .vbo sebenarnya adalah versi binary dari .obj, sehingga tidak perlu ada proses parsing waktu load object. 1 fungsi tambahan LoadModel_VBO, dan saya mengubah informasi vertex menjadi :&#xA;DirectX::XMFLOAT3 position;&#xA;DirectX::XMFLOAT3 normal;&#xA;DirectX::XMFLOAT2 texcoord;&lt;/p&gt;</description>
     </item>
     <item>
       <title>[2] on directx 11 : sending data to shader</title>
-      <link>http://localhost:1313/2013/12/27/2-on-directx-11-sending-data-to-shader/</link>
+      <link>https://xedixermawan.github.io/2013/12/27/2-on-directx-11-sending-data-to-shader/</link>
       <pubDate>Fri, 27 Dec 2013 16:50:35 +0000</pubDate>
-      <guid>http://localhost:1313/2013/12/27/2-on-directx-11-sending-data-to-shader/</guid>
+      <guid>https://xedixermawan.github.io/2013/12/27/2-on-directx-11-sending-data-to-shader/</guid>
       <description>&lt;p&gt;Bagaimana mengirim data dari code CPU ( c++ code ) ke code GPU ( hlsl ) ?. Di program sebelumnya, beberapa data yang di kirim ke shader :&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;  * vertex dan index , direpresentasikan dengan D3D11Buffer , di set ke shader dengan IASetVertexBuffers, dan IASetIndexBuffers. prefix IA : buffer ini di set ke input assembler stage dan dapat diakses di VS .&#xD;&#xA;  * model, view, projection matrix,  direpresentasikan dengan D3D11Buffer, di set ke shader dengan VSSetConstantBuffers. prefix VS,karena buffer ini akan dipakai sebagai global variable di vertex shader .&#xD;&#xA;  * texture, berupa shader resource view, di set ke shader dengan PSSetShaderResources. prefix PS, texture hanya dipakai di pixel shader stage.&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;model, view projection matrik dibuat dengan bind flag D3D11_BIND_CONSTANT_BUFFER . mvp disini nilainya tidak konstant, tapi berubah-ubah per-frame. lalu kenapa bind flag nya &amp;lsquo;constant buffer&amp;rsquo;?, hal ini yang membuat saya bertanya diawal2. &amp;ldquo;constant buffer&amp;rdquo; disini, dimaksudkan nilainya tetap konstant per 1 proses draw command. namun di draw command selanjutnya bisa berubah. Jika kita ingin memiliki variable yang &amp;ldquo;semacam&amp;rdquo; mvp matrix ( berubah-ubah per-frame, dan dapat diakses di shader &amp;ndash;vs,ps) , maka kita harus membuat constant buffer semacam ini. sebagai percobaan yang bisa dilihat hasilnya langsung, saya ingin mengirim data ke pixel shader untuk mengubah saturation-desaturation dari texture kubus di program sebelumnya. di c++ code saya perlu struct untuk meng-hold data ini :&lt;/p&gt;</description>
     </item>
     <item>
       <title>[1] on directx 11 : texturing </title>
-      <link>http://localhost:1313/2013/12/26/1-on-directx-11-texturing/</link>
+      <link>https://xedixermawan.github.io/2013/12/26/1-on-directx-11-texturing/</link>
       <pubDate>Thu, 26 Dec 2013 16:44:48 +0000</pubDate>
-      <guid>http://localhost:1313/2013/12/26/1-on-directx-11-texturing/</guid>
+      <guid>https://xedixermawan.github.io/2013/12/26/1-on-directx-11-texturing/</guid>
       <description>&lt;p&gt;Di program sebelumnya informasi gambar/ vertex data di-representasikan dengan data struct dibawah ini :  (vertex_type.hpp)&lt;/p&gt;&#xA;&lt;p&gt;struct vertex_type&#xA;{&#xA;DirectX::XMFLOAT3 position;&#xA;DirectX::XMFLOAT3 color;&#xA;};&lt;/p&gt;&#xA;&lt;p&gt;struct ini ber-asosiasi dengan shader code : ( Simple_VS.hlsl )&lt;/p&gt;&#xA;&lt;p&gt;struct VertexShaderInput&#xA;{&#xA;float3 pos : POSITION;&#xA;float3 color : COLOR0;&#xA;};&lt;/p&gt;&#xA;&lt;p&gt;dengan sedikit modifikasi, kita bisa menambahkan texture ke vertex data untuk kubus :&lt;/p&gt;&#xA;&lt;table cellpadding=&#34;4&#34; width=&#34;100%&#34; cellspacing=&#34;0&#34; border=&#34;1&#34; &gt; &#xD;&#xA;&lt;tbody &gt;&#xD;&#xA;&lt;tr valign=&#34;TOP&#34; &gt;&#xD;&#xA;&lt;td width=&#34;31%&#34; &gt;&#xD;&#xA;&lt;p&gt;vertex_type.hpp&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;td width=&#34;36%&#34; &gt;&#xD;&#xA;&lt;p&gt;Simple_VS.hlsl&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;td width=&#34;33%&#34; &gt;&#xD;&#xA;&lt;p&gt;Simple_PS.hlsl&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;/tr&gt;&#xD;&#xA;&lt;tr valign=&#34;TOP&#34; &gt;&#xD;&#xA;&lt;td width=&#34;31%&#34; &gt;structvertex_type{DirectX::XMFLOAT3 position;DirectX::XMFLOAT3 color;DirectX::XMFLOAT2 texcoord; // ← added&#xD;&#xA;&lt;p&gt;};&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;td width=&#34;36%&#34; &gt;struct VertexShaderInput{float3 pos : POSITION;float3 color : COLOR0;float2 tex : TEXCOORD0;// ← added&#xD;&#xA;&lt;p&gt;};&lt;/p&gt;</description>
     </item>
     <item>
       <title>Auto beautifying C&#43;&#43; code</title>
-      <link>http://localhost:1313/2013/12/23/auto-beautifying-c-code/</link>
+      <link>https://xedixermawan.github.io/2013/12/23/auto-beautifying-c-code/</link>
       <pubDate>Mon, 23 Dec 2013 09:40:50 +0000</pubDate>
-      <guid>http://localhost:1313/2013/12/23/auto-beautifying-c-code/</guid>
+      <guid>https://xedixermawan.github.io/2013/12/23/auto-beautifying-c-code/</guid>
       <description>&lt;p&gt;Disini saya ingin share simple script untuk &amp;ldquo;mempercantik&amp;rdquo; c++ code disuatu folder project dan melakukan svn commit setelah itu. jadi semacam selalu ada auto corrector jika kamu menulis code yang tidak sesuai aturan ( bahkan mungkin aturan yang kamu buat sendiri) .&lt;/p&gt;&#xA;&lt;p&gt;code yang rapih diharapkan memiliki sedikit bugs dan juga ingat programmer menulis code tidak hanya untuk mesin, tetapi juga untuk dibaca manusia yang lain. untung nya untuk masalah indentation &amp;amp; formating ada software keren &amp;amp; free untuk melakukan ini, yaitu AStyle (  &lt;a href=&#34;http://astyle.sourceforge.net/&#34;&gt;http://astyle.sourceforge.net/&lt;/a&gt; )  .  dengan batch script dibawah ini, semuanya terjadi otomatis :&lt;/p&gt;</description>
     </item>
     <item>
       <title>problem solved : wordpress remove code indentation</title>
-      <link>http://localhost:1313/2013/12/22/problem-solved-wordpress-remove-code-indentation/</link>
+      <link>https://xedixermawan.github.io/2013/12/22/problem-solved-wordpress-remove-code-indentation/</link>
       <pubDate>Sun, 22 Dec 2013 17:24:20 +0000</pubDate>
-      <guid>http://localhost:1313/2013/12/22/problem-solved-wordpress-remove-code-indentation/</guid>
+      <guid>https://xedixermawan.github.io/2013/12/22/problem-solved-wordpress-remove-code-indentation/</guid>
       <description>&lt;p&gt;so you wanna post fancy cool blog post in wordpress and it&amp;rsquo;s time to copy-paste your code to wordpress editor. and &amp;hellip;, all indentation from your code editor lost !!. this is really not good, right ?. I search some soluton to fix this and I have one :&lt;/p&gt;&#xA;&lt;p&gt;-copy &amp;amp; paste your code to &lt;a href=&#34;http://hilite.me/&#34;&gt;http://hilite.me/&lt;/a&gt; on &amp;ldquo;Source Code&amp;rdquo; edit box part.&lt;/p&gt;&#xA;&lt;p&gt;-click &amp;ldquo;Highlight&amp;rdquo; button&lt;/p&gt;&#xA;&lt;p&gt;-a result code will be generated in &amp;ldquo;Preview&amp;rdquo; edit box. copy-paste code from there to Wordpress editor&lt;/p&gt;</description>
     </item>
     <item>
       <title>[0] on directx 11 : hello cube</title>
-      <link>http://localhost:1313/2013/12/22/0-on-directx-11-hello-cube/</link>
+      <link>https://xedixermawan.github.io/2013/12/22/0-on-directx-11-hello-cube/</link>
       <pubDate>Sun, 22 Dec 2013 17:01:00 +0000</pubDate>
-      <guid>http://localhost:1313/2013/12/22/0-on-directx-11-hello-cube/</guid>
+      <guid>https://xedixermawan.github.io/2013/12/22/0-on-directx-11-hello-cube/</guid>
       <description>&lt;p&gt;dulu saya mengalami banyak kesulitan ketika memulai belajar directx 11 (mid 2012). saya ga nemu tutorial yang benar-benar directx 11, kebanyakan bercampur dengan directx 9 / 10 dimana beberapa fungsi sudah deprecated(hilang/diganti), tidak build-able dengan compiler VS terbaru yang saya pakai(MSVC 2012). walaupun secara garis besar/filosofi tidak jauh berbeda, tapi itu tentu tidak bagus untuk pemula :) . untuk itu saya tertarik untuk membuat dokumentasi ini . belajar graphics API secara memang bukan hal mudah, karena kita berusaha memahami apa yang orang buat &amp;mdash;yaitu graphics API, yang kalau diartikan :  komplek API untuk mentransfer sesuatu yang ingin kita gambar ke hardware. salah satu cara untuk menghadapi kompleksitas ini adalah menggunakan graphics debugger ( PIX, Nvidia Nsight, dll.) . Namun saya meragukan seorang pemula mengetahui hal ini &amp;amp; mau menggunakannya diawal2 belajar (source : me ) . Untuk menegaskan apa yang saya katakan di 3 baris terakhir, coba lihat tweet dari John Carmack dibawah ini :&lt;a href=&#34;http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png&#34;&gt;&lt;img src=&#34;http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png?w=554&#34; alt=&#34;Image&#34;&gt;&#xA;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>File mana yang termodifikasi ?</title>
-      <link>http://localhost:1313/2013/04/26/file-mana-yang-termodifikasi/</link>
+      <link>https://xedixermawan.github.io/2013/04/26/file-mana-yang-termodifikasi/</link>
       <pubDate>Fri, 26 Apr 2013 18:07:04 +0000</pubDate>
-      <guid>http://localhost:1313/2013/04/26/file-mana-yang-termodifikasi/</guid>
+      <guid>https://xedixermawan.github.io/2013/04/26/file-mana-yang-termodifikasi/</guid>
       <description>&lt;p&gt;Misalnya saya memiliki 1000 file yang akan saya prosess oleh suatu program, dengan script saya bisa melakukannya seperti ini :&lt;/p&gt;&#xA;&lt;p&gt;for i=0 to i=1000 { process file ke-i }      &lt;/p&gt;&#xA;&lt;p&gt;jadi dengan klik sebuat script pekerjaan selesai. Namun, ada beberapa file dari 1000 file tersebut yang berubah / saya modifikasi lagi, sehingga saya perlu mengulang eksekusi script diatas lagi :&lt;/p&gt;&#xA;&lt;p&gt;for i=0 to i=1000 { process file ke-i }      &lt;/p&gt;&#xA;&lt;p&gt;Ini tentu tidak efisien dan lama, karena saya mengubah beberapa file, namun 1000 file masih diprocess lagi. Kode yang efisien seharusnya begini :&lt;/p&gt;</description>
     </item>
     <item>
       <title>Memperbanyak Assert</title>
-      <link>http://localhost:1313/2013/04/14/memperbanyak-assert/</link>
+      <link>https://xedixermawan.github.io/2013/04/14/memperbanyak-assert/</link>
       <pubDate>Sun, 14 Apr 2013 18:54:40 +0000</pubDate>
-      <guid>http://localhost:1313/2013/04/14/memperbanyak-assert/</guid>
+      <guid>https://xedixermawan.github.io/2013/04/14/memperbanyak-assert/</guid>
       <description>&lt;p&gt;Dalam pembuatan program, programmer sering kehilangan detail apa yang terjadi di bagian kode tertentu. Terutama kalau program yang dibuat terdiri dari ribuan baris kode.Lebih parah lagi, jika kode tersebut sudah lama tidak disentuh.  Dan ketika bug ditemukan , programmer akan mencari cara untuk memperbaiki bug tersebut dengan melakukan debugging ke kode yang diduga sebagai penyebab. Waktu penyelesaian tentu tergantung seberapa sulit bug tersebut. Usaha &amp;ldquo;mencari&amp;rdquo; solusi dengan debugging ini bisa di minimalkan jika kita memasang banyak ASSERT di kode. Contoh :&#xA;void DataSender::Init(std::string filename)    {&#xA;      std::ifstream config_file(filename, std::ios::in | std::ios::binary | std::ios::ate);&#xA;      assert( config_file.is_open() ) ;&#xA;      // do something&#xA;      // &amp;hellip;&#xA;      // &amp;hellip;&#xA;}&#xA;jika file config tidak bisa di buka, assertion failed akan terjadi , dan programmer/user akan segera tau. Skenario yang terjadi jika kode diatas tanpa ASSERT : suatu saat path file diubah, dan file tidak bisa dibuka. akibatnya akan ada masalah dengan class DataSender, jika berungtung program akan crash, dan programmer dapat crash/ stack trace, jika tidak kemungkinan DataSender akan tetap berjalan tapi data tidak terkirim. Programmer akan mencari dengan banyak dugaan penyebab: apa jaringan internet lagi down?, apa library networknya bermasalah?, apa pemakai class DataSender? apa terkirim tapi ada delay ?. banyak yang harus dijawab . arghhh.&#xA;dari contoh ini, assert bisa menghemat waktu :). assert akan dihilangkan di-release version , jika assert ingin dipakai di release version lebih baik memakai preprocessor untuk menggantikannya. disini ASSERT diganti dengan std::exception failed :p .&lt;/p&gt;</description>
     </item>
     <item>
       <title>Smart pointer.</title>
-      <link>http://localhost:1313/2013/04/14/harus-dengan-smart-pointer/</link>
+      <link>https://xedixermawan.github.io/2013/04/14/harus-dengan-smart-pointer/</link>
       <pubDate>Sun, 14 Apr 2013 18:53:27 +0000</pubDate>
-      <guid>http://localhost:1313/2013/04/14/harus-dengan-smart-pointer/</guid>
+      <guid>https://xedixermawan.github.io/2013/04/14/harus-dengan-smart-pointer/</guid>
       <description>&lt;p&gt;Simple tips, tetapi sangat  critical : Ada suatu keadaan dimana kita harus memakai smart pointer ! , Kapan?, salah satunya jika berurusan dengan DirectX API 11 .  lihat salah satu contoh dibawah ini :&lt;/p&gt;&#xA;&lt;p&gt;HRESULT CreateInputLayout(&#xA;                                                             [in] const D3D11_INPUT_ELEMENT_DESC *pInputElementDescs,&#xA;                                                             [in] vUINT NumElements,&#xA;                                                             [in] const void *pShaderBytecodeWithInputSignature,&#xA;                                                             [in] SIZE_T BytecodeLength,&#xA;                                                             [out] ID3D11InputLayout **ppInputLayout&#xA;                                                             );&lt;/p&gt;&#xA;&lt;p&gt;parameter ke-5 fungsi diatas mengharapkan variabel pointer to pointer. Kalau kita memakai raw pointer, bisa juga, seperti dibawah ini :&#xA;       ID3D11InputLayout* my_input_layout ;&#xA;       HRESULT hr = m_Device-&amp;gt;CreateInputLayout( VertexPositionColorTexture::InputElements,&#xA;              VertexPositionColorTexture::InputElementCount,&#xA;              shaderByteCode, byteCodeLength,&#xA;              &amp;amp; my_input_layout&#xA;              );&#xA;m_DeviceContext-&amp;gt;IASetInputLayout( my_input_layout );&lt;/p&gt;</description>
     </item>
     <item>
       <title>Otomatisasi dengan script : windows powershell</title>
-      <link>http://localhost:1313/2013/01/06/otomatisasi-dengan-script-windows-powershell/</link>
+      <link>https://xedixermawan.github.io/2013/01/06/otomatisasi-dengan-script-windows-powershell/</link>
       <pubDate>Sun, 06 Jan 2013 16:50:18 +0000</pubDate>
-      <guid>http://localhost:1313/2013/01/06/otomatisasi-dengan-script-windows-powershell/</guid>
+      <guid>https://xedixermawan.github.io/2013/01/06/otomatisasi-dengan-script-windows-powershell/</guid>
       <description>&lt;p&gt;Kita mungkin pernah menjumpai orang-orang yang bekerja sangat cepat atau menyelesaikan banyak pekerjaan dengan waktu yang singkat, dan ada yang biasa saja dan bahkan mungkin lambat. Kenapa? Jawabannya mungkin : &amp;ldquo;orang kan beda-beda&amp;rdquo;, maksudnya? : &amp;ldquo;ada orang pintar dan ada orang bodoh&amp;rdquo;. :d, just kiddin&amp;rsquo; . Yah, itu tentu tidak benar . Mungkin ada orang yang diberi kemampuan mengatur waktunya dengan baik &amp;amp; memiliki fokus yang tinggi dalam bekerja ( &lt;em&gt;say NO to distraction&lt;/em&gt; ). Dan mungkin dia menggunakan &amp;ldquo;alat&amp;rdquo; yang benar dan cocok dalam menyelesaikan pekerjaan. Dan mungkin juga mereka menggunakan &amp;ldquo;&lt;em&gt;magic&lt;/em&gt;&amp;rdquo; :-p, maksudku mereka mengotomatisasi pekerjaan. Kalau kita bekerja dengan komputer, banyak hal yang bisa di-otomatisasi.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Berhati-hati dengan C/C&#43;&#43; array</title>
-      <link>http://localhost:1313/2013/01/01/berhati-hati-dengan-cc-array/</link>
+      <link>https://xedixermawan.github.io/2013/01/01/berhati-hati-dengan-cc-array/</link>
       <pubDate>Tue, 01 Jan 2013 15:24:03 +0000</pubDate>
-      <guid>http://localhost:1313/2013/01/01/berhati-hati-dengan-cc-array/</guid>
+      <guid>https://xedixermawan.github.io/2013/01/01/berhati-hati-dengan-cc-array/</guid>
       <description>&lt;p&gt;Array ?, sepertinya mudah, dan mungkin memang mudah. Sekelompok/himpunan type data disimpan dalam area memory sequential , untuk mempermudah pengaturan dan pengaksesan, itulah array. Di C/C++ contoh penggunaannya sebagai berikut :&lt;/p&gt;&#xA;&lt;p&gt;initialisasi :&lt;/p&gt;&#xA;&lt;table cellpadding=&#34;4&#34; width=&#34;100%&#34; cellspacing=&#34;0&#34; border=&#34;1&#34; &gt; &#xD;&#xA;&lt;tbody &gt;&#xD;&#xA;&lt;tr valign=&#34;TOP&#34; &gt;&#xD;&#xA;&lt;td width=&#34;33%&#34; height=&#34;86&#34; &gt;&#xD;&#xA;&lt;p&gt;int arrayA[3] = {4,5,6};&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;td width=&#34;33%&#34; &gt;&#xD;&#xA;&lt;p&gt;int arrayB[3];&lt;/p&gt;&#xA;&lt;p&gt;arrayB[0]=8;&lt;/p&gt;&#xA;&lt;p&gt;arrayB[1]=9;&lt;/p&gt;&#xA;&lt;p&gt;arrayB[2] =10;&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;td width=&#34;33%&#34; &gt;&#xD;&#xA;&lt;p&gt;int* arrayC = new int[3];&lt;/p&gt;&#xA;&lt;p&gt;arrayC[0] = 11;&lt;/p&gt;&#xA;&lt;p&gt;arrayC[1] = 12;&lt;/p&gt;&#xA;&lt;p&gt;arrayC[2] = 13;&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;/tr&gt;&#xD;&#xA;&lt;/tbody&gt;&#xD;&#xA;&lt;/table&gt;&#xD;&#xA;&lt;p&gt;arrayA dan arrayB , arrayC adalah array dari data bertipe integer dan (dimaksudkan) memiliki ukuran maksimum 3. Pengaksesan array dibawah ini sesuai rencana, karena index &amp;lt;=2 .&lt;/p&gt;</description>
     </item>
     <item>
       <title>simple thread pool test</title>
-      <link>http://localhost:1313/2012/10/21/simple-thread-pool-test/</link>
+      <link>https://xedixermawan.github.io/2012/10/21/simple-thread-pool-test/</link>
       <pubDate>Sun, 21 Oct 2012 17:05:52 +0000</pubDate>
-      <guid>http://localhost:1313/2012/10/21/simple-thread-pool-test/</guid>
+      <guid>https://xedixermawan.github.io/2012/10/21/simple-thread-pool-test/</guid>
       <description>&lt;p&gt;saya mencoba simple thread pool menggunakan std::thread C++ 11 dan sepertinya bekerja sesuai keinginan dari test yang saya lakukan (warning : code dibawah ini trivial).  jumlah thread saya harcode berjumlah 2 :p.  untuk mengetest thread pool, saya beri task meng-&lt;em&gt;copy&lt;/em&gt; files berjumlah 100 (nama file : 1- 100) .  compiler: vs studio express 2012 . header :&lt;/p&gt;&#xA;&lt;p&gt;#include &amp;lt;time.h&amp;gt;&#xA;#include &lt;thread&gt;&#xA;#include &lt;future&gt;&#xA;#include &lt;functional&gt;&lt;/p&gt;&#xA;&lt;p&gt;[sourcecode language=&amp;ldquo;cpp&amp;rdquo;]&#xA;//kelas worker thread&#xA;class worker&#xA;{&#xA;private:&#xA;std::vector&amp;lt; std::function&amp;lt;void()&amp;gt; &amp;gt; vecFunc;&#xA;std::mutex m_mutex;&#xA;public:&#xA;void addtask(std::function&amp;lt;void()&amp;gt; task) {&#xA;std::lock_guard&lt;a href=&#34;std::mutex&#34;&gt;std::mutex&lt;/a&gt; lockg(m_mutex);&#xA;vecFunc.push_back(task);&#xA;}&#xA;void executeSave() {&#xA;while(1) {&#xA;if (vecFunc.size() &amp;gt; 0)  {&#xA;std::lock_guard&lt;a href=&#34;std::mutex&#34;&gt;std::mutex&lt;/a&gt; lockg(m_mutex);&#xA;for (int i = 0; i &amp;lt; vecFunc.size(); i++) {&#xA;vecFunc&lt;a href=&#34;&#34;&gt;i&lt;/a&gt;;&#xA;}&#xA;vecFunc.clear();&#xA;}&#xA;}&#xA;}&#xA;};&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mencoba Smart pointer dari Boost</title>
-      <link>http://localhost:1313/2012/06/30/582/</link>
+      <link>https://xedixermawan.github.io/2012/06/30/582/</link>
       <pubDate>Sat, 30 Jun 2012 13:40:25 +0000</pubDate>
-      <guid>http://localhost:1313/2012/06/30/582/</guid>
+      <guid>https://xedixermawan.github.io/2012/06/30/582/</guid>
       <description>&lt;p&gt;Smart pointer adalah pointer yang smart. :d. ya memang begitu tujuannya. Seperti diketahui tidak ada management object secara otomatis [garbage collecor] di c/c++, jadi setiap dynamic-object yang di alokasi di heap dan sudah waktunya dihapus harus di-delete secara eksplisit. (dynamic-object == setiap object yang di-create dengan keyword new). Apa akibatnya jika delete tidak dilakukan?, kemungkinan terjadi memory leak ( : keadaan dimana pembuat program tidak bahagia). kemungkinan memory leak ini semakin besar seiring semakin kompleknya project, dan juga memory leak akan susah dicari :| . untuk itu dibuat smart pointer: pointer yang mengurusi kepemilikan object (secara singkatnya begitu) . Smart pointer sudah lama digunakan, namun tetap saja masih banyak project yang menggunakan raw pointer , (dengan alasan kemudahan dan malas. haha.) . Kelemahan dari smart pointer , tentu akan lebih lambat dari raw pointer, karena smart pointer sebenarnya adalah wrapper class untuk pointer. Walaupun ada, saya yakin, keuntungannya lebih tinggi karena kecepatan processor yang semakin tinggi dan project yang rumit. {riil project == pasti rumit }. Okey, itulah motivasinya :), saatnya mencoba smart pointer. Saya pilih smart pointer dari Boost library yang banyak digunakan. Di Boost terdapat beberapa smart pointer, saya akan mencoba 3 diantaranya: scoped pointer, shared pointer, dan weak pointer.&lt;/p&gt;</description>
     </item>
     <item>
       <title>solved: Conversion to Dalvik format failed with error 1</title>
-      <link>http://localhost:1313/2012/05/26/solved-conversion-to-dalvik-format-failed-with-error-1/</link>
+      <link>https://xedixermawan.github.io/2012/05/26/solved-conversion-to-dalvik-format-failed-with-error-1/</link>
       <pubDate>Sat, 26 May 2012 19:40:52 +0000</pubDate>
-      <guid>http://localhost:1313/2012/05/26/solved-conversion-to-dalvik-format-failed-with-error-1/</guid>
+      <guid>https://xedixermawan.github.io/2012/05/26/solved-conversion-to-dalvik-format-failed-with-error-1/</guid>
       <description>&lt;p&gt;UNEXPECTED TOP-LEVEL EXCEPTION:&lt;/p&gt;&#xA;&lt;p&gt;java.lang.IllegalArgumentException: already added: Lcom/badlogic/gdx/Application$ApplicationType;&lt;/p&gt;&#xA;&lt;p&gt;..&lt;/p&gt;&#xA;&lt;p&gt;..&lt;/p&gt;&#xA;&lt;p&gt;[2012-05-27 02:20:03 - skeletonAppAndroid] Conversion to Dalvik format failed with error 1&lt;/p&gt;&#xA;&lt;p&gt;This error already made me frustated for some hours. I  just wanna share the solution : There are double external .jar library in your directory project but in eclipse file view, that doesn&amp;rsquo;t displayed. so you must inspect that via windows file explorer.  If there are double  external .jar library, delete one of  them. The problem : somehow, when project clean command is executed, external .jar library is copied to “bin\classes” (in my case) that cause double external .jar file. I don’t know , it was eclipse – adt bug, or there are wrong  project&amp;rsquo;s setting. Other suggestion : update your adt plugin, because so many bug is fixed in latest version. it is adt20 now.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Unresolved fiveteen puzzle.</title>
-      <link>http://localhost:1313/2012/02/23/unresolved-fiveteen-puzzle/</link>
+      <link>https://xedixermawan.github.io/2012/02/23/unresolved-fiveteen-puzzle/</link>
       <pubDate>Thu, 23 Feb 2012 19:18:24 +0000</pubDate>
-      <guid>http://localhost:1313/2012/02/23/unresolved-fiveteen-puzzle/</guid>
+      <guid>https://xedixermawan.github.io/2012/02/23/unresolved-fiveteen-puzzle/</guid>
       <description>&lt;p&gt;I found it when playing my old fiveteen puzzle ( I created in 2009). Or maybe I&amp;rsquo;m not smart enought to solve this? . &lt;!-- more --&gt;I modified the puzzle so it will always produce the unresolved position like this:&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://offground.files.wordpress.com/2012/02/unresolvedpuzzle.png&#34;&gt;&lt;img src=&#34;http://offground.files.wordpress.com/2012/02/unresolvedpuzzle.png?w=284&#34; alt=&#34;&#34;&gt;&#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;wanna give a try ?  . &lt;a href=&#34;http://www.4shared.com/file/qYJjRa15/SpecialCase.html&#34;&gt;download puzzle HERE&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Xedithor: 2D Sprite Editor</title>
-      <link>http://localhost:1313/2012/01/04/xedithor-2d-sprite-editor/</link>
+      <link>https://xedixermawan.github.io/2012/01/04/xedithor-2d-sprite-editor/</link>
       <pubDate>Wed, 04 Jan 2012 19:49:48 +0000</pubDate>
-      <guid>http://localhost:1313/2012/01/04/xedithor-2d-sprite-editor/</guid>
+      <guid>https://xedixermawan.github.io/2012/01/04/xedithor-2d-sprite-editor/</guid>
       <description>&lt;p&gt;I created 2D sprite  editor. version 1.00 is released.  :) . At beginning, actually I wanna create a game, but I think I need a tool to make my job is easier in term of anything when handling 2D sprite (yes, it&amp;rsquo;s 2D game) .  Furthermore, game tool in a game  development is make possible to divide a jobs, between artist , game designer, and programmer. so, in non-trivial game dev, tool is must !. But why I create this? why didn&amp;rsquo;t use available sprite editor outside there? . Before write the first line of code of this editor, actually I had been search on internet, yeah, there are some of them make me interested (an example Allegro Sprite Editor ),  but i decide to make it (as simple as possible )  from scratch so I can customized the output. (saved and exported sprite file format&amp;quot;) . And now, after about ~ 2,5 month first version is already released . it can create animation , save it to .xml, exported to binary, and I already success read the binary use LibGDX to construct a animation. I plan to read the output in SDL too.  this sprite editor is created using Qt framework , coded in C++. Link of the project:  &lt;a href=&#34;http://code.google.com/p/xedithor/&#34;&gt;http://code.google.com/p/xedithor/&lt;/a&gt; . I can&amp;rsquo;t deny that this work is influenced by sprite editor that used by company out there (I know, because i used it ,hehehe ) . Just like Linus Trovald create GIT inspired by BitKeeper. :D&lt;/p&gt;</description>
     </item>
     <item>
       <title>Unresolved android.opengl.ETC1</title>
-      <link>http://localhost:1313/2011/10/16/unresolved-android-opengl-etc1/</link>
+      <link>https://xedixermawan.github.io/2011/10/16/unresolved-android-opengl-etc1/</link>
       <pubDate>Sun, 16 Oct 2011 16:36:27 +0000</pubDate>
-      <guid>http://localhost:1313/2011/10/16/unresolved-android-opengl-etc1/</guid>
+      <guid>https://xedixermawan.github.io/2011/10/16/unresolved-android-opengl-etc1/</guid>
       <description>&lt;p&gt;unresolved problem ?&lt;/p&gt;&#xA;&lt;p&gt;import android.opengl.ETC1;&#xA;import android.opengl.ETC1Util;&lt;/p&gt;&#xA;&lt;p&gt;only available in android 2.2 above.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mencoba untuk Fokus</title>
-      <link>http://localhost:1313/2011/10/15/mencoba-untuk-fokus/</link>
+      <link>https://xedixermawan.github.io/2011/10/15/mencoba-untuk-fokus/</link>
       <pubDate>Sat, 15 Oct 2011 05:29:17 +0000</pubDate>
-      <guid>http://localhost:1313/2011/10/15/mencoba-untuk-fokus/</guid>
+      <guid>https://xedixermawan.github.io/2011/10/15/mencoba-untuk-fokus/</guid>
       <description>&lt;p&gt;Fokus dalam bekerja bukan lah yang mudah, dan memerlukan banyak latihan untuk bisa benar-benar fokus. Terutama bagi kita yang bekerja menggunakan komputer dan [apalagi] yang terhubung dengan internet. Sangat banyak gangguan dan pengalih perhatian baik yang kita sadari kalau itu memang gangguan dan yang tidak. Mengakses jejaring sosial [facebook, twitter, google+, friendster ] dalam bekerja, salah satu aktivitas yang merusak fokus .&amp;ndash;Ya kita semua tau itu, tapi tetap saja dilakukan&amp;ndash;. dan ada hal lain yang sepertinya bukan gangguan tapi kenyataannya gangguan, misalnya notifikasi e-mail, notifikasi ada update software, atau antivirus sedang meng-interupsi : &amp;ldquo;hey komputer mu ada virus beberapa menit lagi akan meledak&amp;rdquo; dan lainnya. Mungkin notifikasi dari e-mail yang memiliki intensitas paling tinggi. Walaupun e-mail ada hubungannya dengan pekerjaan tapi itu juga harus diwaspadai :p . Satu lagi yang pasti adalah gangguan adalah chatting, yah, selain e-mail ini adalah salah satu sarana kita berkomunikasi dengan cepat lewat jaringan, dan dengan mudah pula orang lain dari jarak jauh meng-interupt kita.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Karena saya suka cepat !!</title>
-      <link>http://localhost:1313/2011/10/13/karena-saya-suka-cepat/</link>
+      <link>https://xedixermawan.github.io/2011/10/13/karena-saya-suka-cepat/</link>
       <pubDate>Thu, 13 Oct 2011 16:04:51 +0000</pubDate>
-      <guid>http://localhost:1313/2011/10/13/karena-saya-suka-cepat/</guid>
+      <guid>https://xedixermawan.github.io/2011/10/13/karena-saya-suka-cepat/</guid>
       <description>&lt;p&gt;hmm, yah mungkin bukan hanya saya, tapi semua orang suka cepat dalam segala hal, tak terkecuali di komputer { apalagi } . Saya sedang membicarakan tampilan komputer. Kita bisa mengatur tampilan komputer kita, baik di Linux maupun Ms-Windows atau OS lain, dengan 2 batas : tampilan terindah dan tampilan tercepat. Beberapa orang memang suka hal-hal yang sangaaat indah, seperti tampilan GUI transparan, animasi button, dan lainnya (coba: win 7 tampilan terbaik, atau GNU/Linux Ubuntu tampilan terbaik). Dan ada orang yang suka super cepat!! :D . Super indah mengorbankan kecepatan dan super cepat mengorbankan keindahan. Bukankah komputer sekarang sudah sangat cepat. Hmm.. gimana kalo komputer yang super cepat itu di setting dengan tampilan super cepat, pasti itu yang paling cepat. Di Ms-Windows (XP di komputer ku, dan Win 7 di tempat kerja ) saya setting win classic theme, simple dan cepat. Di GNU/linux Ubuntu saya mencoba melakukan hal yang sama, namun belum nemu, karena walaupun saya setting dengan tanpa visual effect sama sekali, cursor masih menampakan shadow dan transparansi (argh.. pasti CPU ku perlu beberapa clock cycle untuk meng-generate itu).&lt;/p&gt;</description>
     </item>
     <item>
       <title>love what you do</title>
-      <link>http://localhost:1313/2011/10/06/love-what-you-do/</link>
+      <link>https://xedixermawan.github.io/2011/10/06/love-what-you-do/</link>
       <pubDate>Thu, 06 Oct 2011 06:04:58 +0000</pubDate>
-      <guid>http://localhost:1313/2011/10/06/love-what-you-do/</guid>
+      <guid>https://xedixermawan.github.io/2011/10/06/love-what-you-do/</guid>
       <description>&lt;p&gt;learn many thing from Steve Jobs.&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven&amp;rsquo;t found it yet, keep looking. Don&amp;rsquo;t settle. As with all matters of the heart, you&amp;rsquo;ll know when you find it. And, like any great relationship, it just gets better and better as the years roll on. So keep looking until you find it. Don&amp;rsquo;t settle.&amp;rdquo;&#xA;– Stanford commencement speech 2005&lt;/p&gt;</description>
     </item>
     <item>
       <title>packing resources</title>
-      <link>http://localhost:1313/2011/09/20/packing-resources/</link>
+      <link>https://xedixermawan.github.io/2011/09/20/packing-resources/</link>
       <pubDate>Tue, 20 Sep 2011 02:05:46 +0000</pubDate>
-      <guid>http://localhost:1313/2011/09/20/packing-resources/</guid>
+      <guid>https://xedixermawan.github.io/2011/09/20/packing-resources/</guid>
       <description>&lt;p&gt;Jika kita memperhatikan secara seksama semua program-program atau game yang tidak trivial (yang serius) selalu memproteksi resources/sumber daya yang digunakan. Resources disini maksudnya file-file yang berguna untuk game/program, misalnya library, gambar, sound, config file, text file, dan lainnya. Tujuannya jelas, agar tidak mudah diubah/dimodifikasi oleh user, atau setidaknya kalau pun user bisa mengubah , itu tidak dilakukan secara mudah. (ya, tidak ada yang 100 % aman di dunia komputer ). Dari apa yang saya lihat di folder data dari program dan games yang ter-install di komputer, ada macam-macam teknik untuk memproteksinya, ada yang hanya mengubah ekstensi file, (misalnya file : gambar.jpg menjadi blablabla.dll ), melakukan enkripsi dan mengkompress file, dan ada juga yang menjadikan seluruh resources menjadi 1 file besar, misalnya data.pak . Bagaimana kalau ingin membuat proteksi semacam itu? . Saya ingin mencobanya disini, tidak perlu menulis program dari scratch, cukup menggunakan library yang sudah ada. Zlib (library kompres-dekompresi yang popular se-antero internet :-D ) dan C++ Boost adalah pilihan yang menarik. Dengan meng-kompresi data, kita tidak hanya membuat data tersebut tidak mudah di hack tapi juga membuat ukuran menjadi kecil a.k.a menghemat space.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Pointer to function, pointer to function member of class.</title>
-      <link>http://localhost:1313/2011/09/14/467/</link>
+      <link>https://xedixermawan.github.io/2011/09/14/467/</link>
       <pubDate>Wed, 14 Sep 2011 07:41:16 +0000</pubDate>
-      <guid>http://localhost:1313/2011/09/14/467/</guid>
+      <guid>https://xedixermawan.github.io/2011/09/14/467/</guid>
       <description>&lt;p&gt;Pointer to function, pointer to function member of class.&lt;/p&gt;&#xA;&lt;p&gt;#Cara 1 : Secara tradisional&lt;/p&gt;&#xA;&lt;p&gt;Function pointer (pointer ke fungsi/penunjuk ke fungsi), dapat didefinisikan sebagai berikut:&lt;/p&gt;&#xA;&lt;p&gt;(typeReturn*) functPointer(typeArgument,typeArgument2,..,typeArgumentN)&lt;/p&gt;&#xA;&lt;p&gt;sebagai contoh, terdapat 2 fungsi dibawah ini:&lt;/p&gt;&#xA;&lt;p&gt;[sourcecode language=&amp;ldquo;cpp&amp;rdquo;]&#xA;void Function1()&#xA;{&#xA;cout&amp;laquo;&amp;quot; call  Function1 Function1&amp;quot;&amp;laquo;endl;&#xA;}&#xA;int Function2(int a,int b)&#xA;{&#xA;return (a*b);&#xA;}&lt;/p&gt;&#xA;&lt;p&gt;[/sourcecode]&lt;/p&gt;&#xA;&lt;p&gt;Contoh pemakaian function pointer dari 2 fungsi diatas, sebagai berikut:&lt;/p&gt;&#xA;&lt;p&gt;[sourcecode language=&amp;ldquo;cpp&amp;rdquo;]&#xA;void (*pf)();          // deklarasi&#xA;pf=Function1;         // assignment&#xA;pf();&#x9;&#x9;      // pemanggilan&lt;/p&gt;</description>
     </item>
     <item>
       <title>Membuat Tetris</title>
-      <link>http://localhost:1313/2011/08/14/membuat-tetris/</link>
+      <link>https://xedixermawan.github.io/2011/08/14/membuat-tetris/</link>
       <pubDate>Sun, 14 Aug 2011 20:56:00 +0000</pubDate>
-      <guid>http://localhost:1313/2011/08/14/membuat-tetris/</guid>
+      <guid>https://xedixermawan.github.io/2011/08/14/membuat-tetris/</guid>
       <description>&lt;p&gt;Tetris mungkin salah satu game puzzle yang sangat populer dan hampir dimainkan setiap orang. Game ini tersedia di berbagai device, mulai dari game boy yang dedicated untuk tetris, hand phone, komputer, Nitendo, dll. Dulu saat saya masih kecil, saya main tetris pertama kali di game boy milik teman saya. Perlu diketahui dulu tidak ada orang yang punya handphone di tempat tinggal saya. :) .Mungkin terakhir kali saya aktif main tetris saat saya punya handphone modem Smart merk Huawey. Di situ disediakan game tetris. Saya hampir setiap saat memainkannya. Bahkan blok-blok tetris sampai terbawa mimpi. Serius !!. -hahaha-. Dan ternyata tetris memang bisa menyebabkan apa yang disebut &lt;a href=&#34;http://en.wikipedia.org/wiki/Tetris_effect&#34;&gt;Tetris Effect&lt;/a&gt;. &lt;a href=&#34;http://www.google.co.id/search?sourceid=chrome&amp;amp;ie=UTF-8&amp;amp;q=tetris+effect&#34;&gt;Tetris Effect 2&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>C&#43;&#43; bahasa pemrograman masa depan ?</title>
-      <link>http://localhost:1313/2011/07/31/c-bahasa-pemrograman-masa-depan/</link>
+      <link>https://xedixermawan.github.io/2011/07/31/c-bahasa-pemrograman-masa-depan/</link>
       <pubDate>Sun, 31 Jul 2011 23:06:24 +0000</pubDate>
-      <guid>http://localhost:1313/2011/07/31/c-bahasa-pemrograman-masa-depan/</guid>
+      <guid>https://xedixermawan.github.io/2011/07/31/c-bahasa-pemrograman-masa-depan/</guid>
       <description>&lt;p&gt;Kita pasti tahu bahwa yang tren para developer tergantung dari pembuat compiler. Contoh yang sederhana misalnya .NET. .Net menjadi tren saat ini karena Microsoft mempromosikan dan memberi dukungan sebelumnya , Java juga begitu. Nah, akhir-akhir ini sepertinya ada yang berubah, – dan saya berharap ini benar – . Microsoft mulai melirik lagi C++ (baca: C++ Modern ):&lt;/p&gt;&#xA;&lt;p&gt;Dari artikel-artikel yang saya temukan.&lt;/p&gt;&#xA;&lt;p&gt; :: Why your next language better be C++&lt;/p&gt;</description>
     </item>
     <item>
       <title>post code: proximity game</title>
-      <link>http://localhost:1313/2011/07/18/post-code-proximity-game/</link>
+      <link>https://xedixermawan.github.io/2011/07/18/post-code-proximity-game/</link>
       <pubDate>Mon, 18 Jul 2011 15:14:17 +0000</pubDate>
-      <guid>http://localhost:1313/2011/07/18/post-code-proximity-game/</guid>
+      <guid>https://xedixermawan.github.io/2011/07/18/post-code-proximity-game/</guid>
       <description>&lt;p&gt;Berawal dari (May 17, 2011 : &lt;a href=&#34;http://offground.wordpress.com/2011/05/17/proximity-game-clone/&#34;&gt;from this post&lt;/a&gt; ) saya upload hasilnya disini . Untuk sekarang hanya bisa play dengan komputer. Play dengan teman di LAN belum saya implementasikan.&lt;/p&gt;&#xA;&lt;p&gt;Screenshoot Main Menu:&lt;/p&gt;&#xA;&lt;p&gt;[caption id=&amp;ldquo;attachment_461&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;300&amp;rdquo; caption=&amp;ldquo;Click untuk memperbesar&amp;rdquo;]&lt;a href=&#34;http://offground.files.wordpress.com/2011/07/proximity_mm_offground.png&#34;&gt;&lt;img src=&#34;http://offground.files.wordpress.com/2011/07/proximity_mm_offground.png?w=300&#34; alt=&#34;Click untuk memperbesar&#34;&gt;&#xA;&lt;/a&gt;[/caption]&lt;/p&gt;&#xA;&lt;p&gt;Screenshoot Gameplay:&lt;/p&gt;&#xA;&lt;p&gt;[caption id=&amp;ldquo;attachment_462&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;300&amp;rdquo; caption=&amp;ldquo;Click untuk memperbesar&amp;rdquo;]&lt;a href=&#34;http://offground.files.wordpress.com/2011/07/proximity_gameplay_offground.png&#34;&gt;&lt;img src=&#34;http://offground.files.wordpress.com/2011/07/proximity_gameplay_offground.png?w=300&#34; alt=&#34;Click untuk memperbesar&#34;&gt;&#xA;&lt;/a&gt;[/caption]&lt;/p&gt;&#xA;&lt;p&gt;Source code (SVN check out) :&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://proximity-game-clone.googlecode.com/svn/trunk&#34;&gt;https://proximity-game-clone.googlecode.com/svn/trunk&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Untuk binary and source code download :&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://code.google.com/p/proximity-game-clone/&#34;&gt;http://code.google.com/p/proximity-game-clone/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt; # Keyword: simple SDL game, game  C/C++, game sederhana SDL, C/C++, puzzle.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Proximity Game Clone</title>
-      <link>http://localhost:1313/2011/05/17/proximity-game-clone/</link>
+      <link>https://xedixermawan.github.io/2011/05/17/proximity-game-clone/</link>
       <pubDate>Tue, 17 May 2011 18:39:13 +0000</pubDate>
-      <guid>http://localhost:1313/2011/05/17/proximity-game-clone/</guid>
+      <guid>https://xedixermawan.github.io/2011/05/17/proximity-game-clone/</guid>
       <description>&lt;p&gt;Pengin membuat &lt;em&gt;clone&lt;/em&gt; versi PC dari &amp;ldquo;proximity game&amp;rdquo;, saya main game ini awalnya di ponsel. Belum selesai, baru dimulai :) .  Semoga ada waktu luang dan ada semangat untuk melanjutkannya :p .&lt;!-- more --&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://offground.files.wordpress.com/2011/05/proximityclone.png&#34;&gt;&lt;img src=&#34;http://offground.files.wordpress.com/2011/05/proximityclone.png&#34; alt=&#34;&#34;&gt;&#xA;&lt;/a&gt;&lt;em&gt;Hand Cursor:&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;[caption id=&amp;ldquo;attachment_388&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;126&amp;rdquo; caption=&amp;ldquo;click image, to see animated gif&amp;rdquo;]&lt;a href=&#34;http://offground.files.wordpress.com/2011/05/pclone.gif&#34;&gt;&lt;img src=&#34;http://offground.files.wordpress.com/2011/05/pclone.gif&#34; alt=&#34;&#34;&gt;&#xA;&lt;/a&gt;[/caption]&lt;/p&gt;&#xA;&lt;p&gt;Ingat &amp;ldquo;&lt;em&gt;Hand Cursor&lt;/em&gt;&amp;rdquo; itu ? . it&amp;rsquo;s  from An*** B*** . :D.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mencoba Visitor Pattern. </title>
-      <link>http://localhost:1313/2011/04/16/visitor-pattern-mencoba/</link>
+      <link>https://xedixermawan.github.io/2011/04/16/visitor-pattern-mencoba/</link>
       <pubDate>Sat, 16 Apr 2011 14:46:07 +0000</pubDate>
-      <guid>http://localhost:1313/2011/04/16/visitor-pattern-mencoba/</guid>
+      <guid>https://xedixermawan.github.io/2011/04/16/visitor-pattern-mencoba/</guid>
       <description>&lt;p&gt;Visitor, pengunjung. Visitor pattern menggunakan prisip open/close dalam desain sebuah program. Pattern ini memisahkan &amp;ldquo;sebuah operasi -tindakan/algoritma&amp;rdquo; dari objek. Terdapat dua objek: Visitor dan Objek yang bisa dikunjungi (visitable objek). Kelihatannya Pattern ini mirip dengan strategi pattern: memisahkan algoritma dari kelas menjadi kelas yang lain. Namun Visitor Pattern dan strategi pattern berbeda.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Strategy pattern&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;AlgoritmaX adalah abstract class. punya method Count()&lt;/p&gt;&#xA;&lt;p&gt;AlgoritmaX1 turunan AlgoritmaX. AlgoritmaX1 mengimplementasikan method Count() dengan algoritma tertentu&lt;/p&gt;</description>
     </item>
     <item>
       <title>switching</title>
-      <link>http://localhost:1313/2011/03/05/switching/</link>
+      <link>https://xedixermawan.github.io/2011/03/05/switching/</link>
       <pubDate>Sat, 05 Mar 2011 17:03:21 +0000</pubDate>
-      <guid>http://localhost:1313/2011/03/05/switching/</guid>
+      <guid>https://xedixermawan.github.io/2011/03/05/switching/</guid>
       <description>&lt;p&gt;Starting this month, I switch from desktop programming to mobile programming. Even though lately, mobile hardware has an amazing ability, is the fact that it has limited resources and limited power source (of cource from battery). So, all things must be efficient. Do I need to learn assembly? :-)&lt;/p&gt;&#xA;&lt;p&gt;It should be interesting !!&lt;/p&gt;</description>
     </item>
     <item>
       <title>Zword Project :yet another dictionary</title>
-      <link>http://localhost:1313/2011/02/23/zword-project-yet-another-dictionary/</link>
+      <link>https://xedixermawan.github.io/2011/02/23/zword-project-yet-another-dictionary/</link>
       <pubDate>Wed, 23 Feb 2011 19:12:30 +0000</pubDate>
-      <guid>http://localhost:1313/2011/02/23/zword-project-yet-another-dictionary/</guid>
+      <guid>https://xedixermawan.github.io/2011/02/23/zword-project-yet-another-dictionary/</guid>
       <description>&lt;p&gt;Sebuah project simple dan sederhana pakai Qt dan SQLite3 Zword: Multi Languanges dictionary . O yeah , Reinvent the wheel!!! sudah banyak program kamus di luar sana. &amp;ndash;ini sebenarnya adalah best practices dengan Qt saja&amp;ndash; .Tetapi selain itu, saya ingin pengguna juga bisa menambahkan pasangan bahasa sendiri. Misalnya, saya ingin kamus Jawa-Belanda,  saya tidak perlu memrogram lagi tinggal menambah kamus di program,dan tentu menambah kan kata.&lt;/p&gt;&#xA;&lt;p&gt;fitur sekarang:&lt;/p&gt;&#xA;&lt;ol start=&#34;0&#34;&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Tentu sebagai kamus :p&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mencoba SQLite3</title>
-      <link>http://localhost:1313/2011/01/12/mencoba-sqlite3/</link>
+      <link>https://xedixermawan.github.io/2011/01/12/mencoba-sqlite3/</link>
       <pubDate>Wed, 12 Jan 2011 10:52:35 +0000</pubDate>
-      <guid>http://localhost:1313/2011/01/12/mencoba-sqlite3/</guid>
+      <guid>https://xedixermawan.github.io/2011/01/12/mencoba-sqlite3/</guid>
       <description>&lt;p&gt;Dulu saya sempat mencari-cari, ada nggak ya sebuah database engine yang bisa diakses secara lokal layaknya file?. Waktu itu saya cari-cari di Google ternyata saya nggak nemu. -mungkin belum beruntung atau kata kunci belum tepat -. :) . Kira2 sebulan yang lalu secara tidak sengaja saya nemu SQLite.DLL disebuah folder suatu game,  saya langsung berfikir ini yang saya cari2 dulu!!!.  Karena ada kata &amp;ldquo;SQL&amp;rdquo; dan &amp;ldquo;Lite&amp;rdquo; .  Dan ternyata benar!, langsung ta download di &lt;a href=&#34;http://www.sqlite.org/download.html&#34;&gt;official-webnya&lt;/a&gt; . Disitu bisa download .DLL -nya , source, semuanya.Untuk Sqlite3.lib tidak ada, dan bisa di-generate dengan:&lt;/p&gt;</description>
     </item>
     <item>
       <title>avira update caused debug error</title>
-      <link>http://localhost:1313/2010/12/20/avira-update-caused-debug-error/</link>
+      <link>https://xedixermawan.github.io/2010/12/20/avira-update-caused-debug-error/</link>
       <pubDate>Mon, 20 Dec 2010 05:53:37 +0000</pubDate>
-      <guid>http://localhost:1313/2010/12/20/avira-update-caused-debug-error/</guid>
+      <guid>https://xedixermawan.github.io/2010/12/20/avira-update-caused-debug-error/</guid>
       <description>&lt;p&gt;The error message is like that:&lt;/p&gt;&#xA;&lt;p&gt;NtClose was called on a handle that was protected from close via NtSetInformationObject.﻿&lt;/p&gt;&#xA;&lt;p&gt;it happen when you debug application from visual c++, but when you run it outside ide, it&amp;rsquo;s fine. after looking around, then this problem is  solved. look at &lt;a href=&#34;https://forum.avira.com/wbb/index.php?page=Thread&amp;amp;postID=1031807&#34;&gt;avira forum &lt;/a&gt;. the fast solution: uninstalled avira, reboot the computer, then install avira again and disabled auto update. hope this useful for others.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Android issues on Xperia X8</title>
-      <link>http://localhost:1313/2010/12/19/android-1-6-is-alpha-version/</link>
+      <link>https://xedixermawan.github.io/2010/12/19/android-1-6-is-alpha-version/</link>
       <pubDate>Sun, 19 Dec 2010 18:12:19 +0000</pubDate>
-      <guid>http://localhost:1313/2010/12/19/android-1-6-is-alpha-version/</guid>
+      <guid>https://xedixermawan.github.io/2010/12/19/android-1-6-is-alpha-version/</guid>
       <description>&lt;p&gt;&lt;strong&gt;#1 : Dec 19, 2010&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Sekedar sharing, mungkin ada yang mengalami masalah seperti ini di se X8 (atau sejenis) ber-OS android&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&amp;ldquo;the application home screen(process com.sonyericsson.homescreen) has stopped unexpectedly.please try again.&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;solusi:&lt;/p&gt;&#xA;&lt;p&gt;-download software updater di web se.&lt;/p&gt;&#xA;&lt;p&gt;-lakukan langkah2 yang diberikan.&lt;/p&gt;&#xA;&lt;p&gt;software ini nanti akan mendownload firmware terbaru untuk android yang anda miliki. cukup besar ~130 an MB. setelah download selesai firmware akan diprogramkan di handphone. pada waktu saya dapet masalah ini, sudah org yang banyak bertanya di forum se, namun jawabannya saya pikir kurang jelas. kenapa banyak org bertanya?, karena pesan error diatas menyebabkan &lt;strong&gt;hanphone crash&lt;/strong&gt; a.k.a tidak bisa dipakai :p . Itu terjadi (untuk saya) , setelah install software ke handphone.&lt;/p&gt;</description>
     </item>
     <item>
       <title>yet another memory game&#39;s project</title>
-      <link>http://localhost:1313/2010/11/21/yet-another-memory-games-project/</link>
+      <link>https://xedixermawan.github.io/2010/11/21/yet-another-memory-games-project/</link>
       <pubDate>Sun, 21 Nov 2010 17:52:39 +0000</pubDate>
-      <guid>http://localhost:1313/2010/11/21/yet-another-memory-games-project/</guid>
+      <guid>https://xedixermawan.github.io/2010/11/21/yet-another-memory-games-project/</guid>
       <description>&lt;p&gt;Iseng membuat game yang lengkap. ada menu game, sound, score, level, dll. tapi belum selesai, setidaknya sudah bisa dimainkan :) . project-nya saya post di Google Code SVN.&lt;/p&gt;&#xA;&lt;p&gt;SVN Checkout: (read only check out)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://frogmemory.googlecode.com/svn/trunk/frogmem&#34;&gt;https://frogmemory.googlecode.com/svn/trunk/frogmem&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;sementara, isinya cuma file project dan source code. file asset dan dependencies tidak ada.  project ini menggunakan SDL sebagai &amp;ldquo;system&amp;rdquo;-nya dan &lt;a href=&#34;http://www.cegui.org.uk&#34;&gt;CEGUI (Crazy Eddie&amp;rsquo;s GUI System)&lt;/a&gt;, dan tentu pakai bahasa C++.&lt;/p&gt;&#xA;&lt;p&gt;update:&lt;/p&gt;&#xA;&lt;p&gt;Januari 29, 2010 : Add binary file dan data file&lt;/p&gt;</description>
     </item>
     <item>
       <title>just-do-it!</title>
-      <link>http://localhost:1313/2010/10/11/just-do-it/</link>
+      <link>https://xedixermawan.github.io/2010/10/11/just-do-it/</link>
       <pubDate>Mon, 11 Oct 2010 16:45:43 +0000</pubDate>
-      <guid>http://localhost:1313/2010/10/11/just-do-it/</guid>
+      <guid>https://xedixermawan.github.io/2010/10/11/just-do-it/</guid>
       <description>&lt;p&gt;Ada hal yang patut diperjuangkan dan ada pula yang tidak. Untuk membedakannya, kita perlu berfikir. Banyak yang perlu difikirkan huh?, hmm.. setelah saya berfikir &amp;ndash;berfikir lagi!!&amp;ndash;, saat yang tidak perlu menggunakan fikiran adalah saat kita mau bangun tidur, khususnya bangun lebih awal.  Jika berfikir, hal yang dilakukan adalah meraih Alarm, lalu mematikannya, lalu tidur lagi :p.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mencoba Observer Pattern dan Strategy Pattern di C&#43;&#43;</title>
-      <link>http://localhost:1313/2010/08/10/mencoba-observer-pattern-dan-strategy-pattern-di-c/</link>
+      <link>https://xedixermawan.github.io/2010/08/10/mencoba-observer-pattern-dan-strategy-pattern-di-c/</link>
       <pubDate>Tue, 10 Aug 2010 04:32:58 +0000</pubDate>
-      <guid>http://localhost:1313/2010/08/10/mencoba-observer-pattern-dan-strategy-pattern-di-c/</guid>
+      <guid>https://xedixermawan.github.io/2010/08/10/mencoba-observer-pattern-dan-strategy-pattern-di-c/</guid>
       <description>&lt;p&gt;Saya tidak mempelajari ilmu komputer sebagai &lt;em&gt;background&lt;/em&gt; pendidikan saya, dan ketika saya “nemu” &lt;em&gt;design pattern&lt;/em&gt; dalam pengembangan &lt;em&gt;software&lt;/em&gt;, hal itu menurut saya adalah keberuntungan :). Kenapa? walaupun waktu kuliah isinya juga &lt;em&gt;coding&lt;/em&gt;, ( kebanyakan untuk &lt;em&gt;hardware&lt;/em&gt; seperti : &lt;em&gt;microcontroller&lt;/em&gt;, PLC, &lt;em&gt;microprocessor&lt;/em&gt;, atau program-program kecil untuk &lt;em&gt;interfacing&lt;/em&gt;), namun tidak menggunakan teknik pengembangan &lt;em&gt;software&lt;/em&gt; apapun. Cuma prosedural dan efisiensi penggunaan memori – dan itu memang sudah cukup -  . Hal itu sangat berbeda jika kita ingin mengembangkan &lt;em&gt;software&lt;/em&gt; yang komplek dan besar. Sebuah teknik/pola harus ada, dan jawabannya adalah &lt;em&gt;design pattern.&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Menengok kembali: C&#43;&#43; virtual function</title>
-      <link>http://localhost:1313/2010/05/15/menengok-kembali-c-virtual-function/</link>
+      <link>https://xedixermawan.github.io/2010/05/15/menengok-kembali-c-virtual-function/</link>
       <pubDate>Sat, 15 May 2010 15:17:07 +0000</pubDate>
-      <guid>http://localhost:1313/2010/05/15/menengok-kembali-c-virtual-function/</guid>
+      <guid>https://xedixermawan.github.io/2010/05/15/menengok-kembali-c-virtual-function/</guid>
       <description>&lt;p&gt;edi ermawan, &lt;a href=&#34;http://offground.wordpress.com&#34;&gt;http://offground.wordpress.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Fungsi Virtual&lt;/strong&gt;. Alasan kenapa sebuah fungsi perlu dibuat virtual adalah agar fungsi tersebut bisa di-deklarasikan ulang di kelas turunannya ( meng-override fungsi ) **dan **jika kamu ingin me-resolve pemanggilan &lt;em&gt;body function&lt;/em&gt; saat runtime ( late binding/ dynamic binding ). perhatikan kata dihubungkan dengan &amp;ldquo;dan&amp;rdquo; bold mode : ) . Karena member fungsi tanpa virtual pun juga bisa di-override. Bedanya jika sebuah fungsi itu &lt;strong&gt;tidak&lt;/strong&gt; virtual dan dideklarasikan ulang di kelas turunan, ketika fungsi itu dijalankan , maka &amp;ldquo;&lt;em&gt;body function&lt;/em&gt;&amp;rdquo; yang akan dijalankan adalah sesuai yang didefinikan. ( body function yang akan dipanggil sudah ditentukan / di-resolve saat compile time , atau yang disebut static binding ).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Integrasi Qt ke Ms Visual C&#43;&#43; 2008 Express</title>
-      <link>http://localhost:1313/2010/05/15/215/</link>
+      <link>https://xedixermawan.github.io/2010/05/15/215/</link>
       <pubDate>Sat, 15 May 2010 14:37:37 +0000</pubDate>
-      <guid>http://localhost:1313/2010/05/15/215/</guid>
+      <guid>https://xedixermawan.github.io/2010/05/15/215/</guid>
       <description>&lt;p&gt;edi ermawan, &lt;a href=&#34;../../../../../&#34;&gt;http://offground.wordpress.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Apa itu Qt?, Qt: sebuah C++ library yang cukup lengkap untuk mengembangkan aplikasi mulai dari library GUI, grafik, networking, multimedia, multithreading, sql interface, openGL interface , web, dll.&lt;/p&gt;&#xA;&lt;p&gt;Motivasi:&lt;/p&gt;&#xA;&lt;p&gt;1.Aplikasi bisa berjalan multiplatform tanpa virtual machine seperti .NET atau Java&#xA;2.C/C++ :)&#xA;3.Gratis, lisensi: Lesser GPL.&#xA;4.Library cukup lengkap.&#xA;5.Dokumentasi dari Qt lengkap.&lt;/p&gt;&#xA;&lt;p&gt;Qt bisa di download di &lt;a href=&#34;http://www.qtsoftware.com/&#34;&gt;www.qtsoftware.com&lt;/a&gt; . Qt sebenarnya sudah mempunyai IDE sendiri yang dinamakan Qt Creator, sebuah IDE yang mudah digunakan, menggunakan gcc compiler dan gdb debugger. Namun jika kita terbiasa bekerja atau ingin mengintegrasikannya dengan IDE Miscrosoft visual C++(msvc) hal tersebut bisa dilakukan dengan mudah, karena Qt software dengan sangat baik hati sudah mengantisipasinya. :). Ada dua cara untuk melakukannya, download library Qt khusus untuk msvc atau melakukan build sendiri dari source dari Qt. Postingan ini akan mencoba cara ke-2. Kenapa? saya download Qt dengan IDE creator, library yang di-bundle disitu khusus untuk gcc tidak bisa untuk msvc. Untuk men-buildnya tidak perlu effort yang keras, pertama buat solution untuk semua project di Qt. Di direktori bin Qt:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Belajar : Heap dan Stack</title>
-      <link>http://localhost:1313/2010/05/15/heap-and-stack/</link>
+      <link>https://xedixermawan.github.io/2010/05/15/heap-and-stack/</link>
       <pubDate>Sat, 15 May 2010 13:56:48 +0000</pubDate>
-      <guid>http://localhost:1313/2010/05/15/heap-and-stack/</guid>
+      <guid>https://xedixermawan.github.io/2010/05/15/heap-and-stack/</guid>
       <description>&lt;p&gt;edi ermawan, &lt;a href=&#34;http://offground.wordpress.com&#34;&gt;http://offground.wordpress.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&amp;mdash;&amp;mdash;&amp;mdash; May 15, 2010 &amp;mdash;&amp;mdash;&amp;ndash;&#xA;Ketika suatu program berjalan, processor (– atau lebih tepatnya 80x86 ? &amp;ndash;) mengalokasikan memory untuk program tersebut di RAM, yang terbagi menjadi empat bagian yaitu Code Segment (CS), Stack Segment (SS), Data Segment (DS), dan Extra Segment (ES).&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://offground.files.wordpress.com/2010/05/stack_head_offgnd.png&#34;&gt;&lt;img src=&#34;http://offground.files.wordpress.com/2010/05/stack_head_offgnd.png?w=300&#34; alt=&#34;&#34;&gt;&#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Code Segment menyimpan semua kode dan instruksi-instruksi processor yang digunakan oleh program tersebut. Semua data di memori ini bersifat read-only.&lt;/p&gt;&#xA;&lt;p&gt;Stack Segment teralokasi untuk berbagai keperluan, seperti menyimpan return address dari pemanggilan fungsi, menyimpan parameter-parameter yang dilewatkan ke fungsi, menyimpan variabel lokal di dalam fungsi, dll. Penambahan dan pengurangan memory stack menggunakan metode last in first out (LIFO). Misalnya, saat suatu fungsi dipanggil, seketika itu variabel lokal di dalam fungsi tersebut dialokasikan di stack (push), dan ketika fungsi sudah berakhir, variabel lokal di-dealokasikan (pop).  Walaupun proses LIFO di stack terjadi otomatis, di stack bisa terjadi overflow, atau yang disebut stack overflow. Stack overflow terjadi misalnya ketika terjadi pemanggilan recursive tak berujung (infinite recursive). Contoh:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Shifting Puzzle</title>
-      <link>http://localhost:1313/2009/09/02/shifting-puzzle/</link>
+      <link>https://xedixermawan.github.io/2009/09/02/shifting-puzzle/</link>
       <pubDate>Wed, 02 Sep 2009 05:57:45 +0000</pubDate>
-      <guid>http://localhost:1313/2009/09/02/shifting-puzzle/</guid>
+      <guid>https://xedixermawan.github.io/2009/09/02/shifting-puzzle/</guid>
       <description>&lt;p&gt;Dengan melakukan sedikit modifikasi pada &lt;a href=&#34;http://offground.wordpress.com/2009/07/30/java-based-simple-game/&#34;&gt;game sederhana berbasis java ini&lt;/a&gt;, tercipta game baru yang juga melibatkan objek yang sama yaitu : kotak. Kodenya hampir sama dan juga menggunakan pattern yang sama : MVC. Satu tambahan class adalah kotak puzzle yang merupakan&lt;!-- more --&gt; class turunan dari class kotak. OOP ternyata memberi banyak kemudahan dalam mengembangkan aplikasi -seperti yang digembor2kan- :-) . Game ini adalah puzzle menyusun angka-angka menjadi terurut. Penyusunannya dengan cara mengeser-geser kotak yang ada dengan memanfaatkan 1 posisi kotak kosong untuk menggerakkan kotak. Puzzle ini sebenarnya sudah ada di dunia riil berupa kotak tipis berisi 15 kotak-kotak kecil yang bisa digeser-geser. Seingat saya dulu pernah memainkannya saat masih SD. cukup menyenangkan: membuatnya-&amp;gt;lalu memainkannya :-)&lt;/p&gt;</description>
     </item>
     <item>
       <title>Java based-simple game</title>
-      <link>http://localhost:1313/2009/07/30/java-based-simple-game/</link>
+      <link>https://xedixermawan.github.io/2009/07/30/java-based-simple-game/</link>
       <pubDate>Thu, 30 Jul 2009 07:48:56 +0000</pubDate>
-      <guid>http://localhost:1313/2009/07/30/java-based-simple-game/</guid>
+      <guid>https://xedixermawan.github.io/2009/07/30/java-based-simple-game/</guid>
       <description>&lt;p&gt;edie/surabaya/July,30,2009 &lt;a href=&#34;mailto:sosinester@gmail.com&#34;&gt;.&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Since two month ago, I had learned Java periodically from several e-book from internet (thank for all guys for providing those book free). My motivation learns java is because it’s multi platform capability. Learning Java one time, you can code on several environment : desktop, server, embedded system ( smard card is the smallest embedded system that can be programmed by Java ) , and mobile phone. This like Java’s motto : “One coding , run everywhere”. Remember that C/C++ have motto “one coding, compile everywhere” .it nice too.  Ok, let we discuss about the game. This game is my first useful program (in my opinion  ) that I programmed by &lt;!-- more --&gt;java . it’s a memory game like common memory game as you ever played. There are some rectangles which you should search where it’s couple. In this game I used number (for simplicity) not symbol to sign a rectangle. Suppose you choose 4x4 rectangles, so there will be 8 couples rectangles that you should eliminated. The game is simple but not easy especially if you choose more than 4x4 . The list menu on the GUI make you easier to determine how many rectangles which you want to play. I build the game using Model-View-Controller (MVC) design pattern. It’s not good code may be. Design pattern is new material for me and this is my design pattern’s exercises. Below is explanation for each class :&lt;/p&gt;</description>
     </item>
     <item>
       <title>Kecanduan Su Doku</title>
-      <link>http://localhost:1313/2009/05/11/kecanduan-su-doku/</link>
+      <link>https://xedixermawan.github.io/2009/05/11/kecanduan-su-doku/</link>
       <pubDate>Mon, 11 May 2009 04:33:50 +0000</pubDate>
-      <guid>http://localhost:1313/2009/05/11/kecanduan-su-doku/</guid>
+      <guid>https://xedixermawan.github.io/2009/05/11/kecanduan-su-doku/</guid>
       <description>&lt;p&gt;Akhir-akhir ini saya nemu mainan baru yang menarik di waktu luang: Su Doku. Su Doku adalah permainan puzzle menempatkan angka di kotak berukuran 9x9 (ini yang umum, namun adajuga 4x4).  Walaupun permainan ini melibatkan angka, namun sama sekali tidak ada aturan matematis dan itung2an di sini, yang diperlukan cuma logika biasa. Aturannya cukup sederhana :&lt;!-- more --&gt;&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;  1. Dalam 1 baris atau 1 kolom angka 1-9 hanya boleh terulang 1 kali&#xD;&#xA;  2. Kotak berukuran 9x9 tadi dibagi menjadi 9 kotak kecil, dan di setiap kotak kecil ini (3x3), angka 1-9 juga hanya boleh berulang 1 kali.&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;Su Doku adalah kata yang berasal dari kata Jepang yan mempunyai arti &amp;ldquo;menempatkan angka&amp;rdquo;. Namun diduga Su doku tidak diciptakan bangsa Jepang, tetapi oleh ahli matematik terkenal dari Swiss: Euler (ia membuat versi sederhananya). Kenapa Su Doku berasal dari Jepang? karena permainan ini di populerkan disana. Pada saat pertama kali main, mungkin bosan. Namun jika sudah menyelesaikan beberapa permainan, kita akan kecanduan. Terdapat beberapa tingkatan kesulitan di permaianan ini, mulai dari pemula, menengah, sulit sampai menantang . Contoh permainan:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Golput : orang-orang yang tidak belajar ilmu hitam</title>
-      <link>http://localhost:1313/2009/03/17/golput-orang-orang-yang-tidak-belajar-ilmu-hitam/</link>
+      <link>https://xedixermawan.github.io/2009/03/17/golput-orang-orang-yang-tidak-belajar-ilmu-hitam/</link>
       <pubDate>Tue, 17 Mar 2009 03:58:54 +0000</pubDate>
-      <guid>http://localhost:1313/2009/03/17/golput-orang-orang-yang-tidak-belajar-ilmu-hitam/</guid>
+      <guid>https://xedixermawan.github.io/2009/03/17/golput-orang-orang-yang-tidak-belajar-ilmu-hitam/</guid>
       <description>&lt;p&gt;Sekarang sedang ramai kampanye pemilu. beberapa waktu yang lalu hal-hal seperti ini tidaklah menarik . Lalu saya mencoba mempelajarinya. Namun itu dulu, kalau sekarang saya juga tidak tertarik. :-o . Bukan saya saja yang mengatakan [1] terlalu banyak partai [2]dalam satu partai terdapat banyak caleg [3] sangat sulit untuk mengenal masing masing caleg dsb.,  yang    &lt;!-- more --&gt; merupakan semacam kumpulan protes terhadap pemilu yang konon mahal itu. Untuk memilih orang-orang yang mewakili kita tentu kita harus mengenalnya, namun kenyataannya sulit untuk semua orang. sebenarnya kata yang tepat adalah bukan &amp;ldquo;sulit&amp;rdquo;, namun banyak orang melakukan hal yang lebih penting lainnya daripada mempelajari semua caleg. Bukankah seharusnya penyelenggara lebih menjemput bola?, atau sistemnya yang salah ?.  Bagaimana partai-partai itu menentukan caleg untuk dipilih? kompeten kah? .itu masih gelap. Karena banyak artis dan dukun pun menjadi caleg  (walaupun semua kalangan masyarakat mungkin saja layak). Dan saat ini susah membedakan antara iklan sabun mandi dengan iklan caleg di jalan-jalan. Catatan -catatan buruk (korupsi, skandal, dll) dari anggota parlemen (DPR/DPRD) semakin menyemangati banyak orang untuk tidak peduli dengan ini.  Masyarakat awam spt saya ini seharusnya memilih orang-orang pilihan. dan orang -orang pilihan adalah orang-orang yang dipilih oleh orang - orang yang ahli. (arggghhh apa pula), hanya sekedar pendapat. Kenapa? kita tidak akan ragu jika yang dipilih adalah orang-orang pilihan. Contoh yang bisa dipelajari dari &amp;ldquo;memilih orang-orang pilihan&amp;rdquo; dapat dilihat di negara &lt;a href=&#34;http://id.wikipedia.org/wiki/Iran&#34;&gt;Republik Islam Iran (Islamic Republic of Iran)&lt;/a&gt;. Meniru?, jangan sungkan meniru jika yang ada sekarang memang kurang pas.  Pengertian:  golput itu adalah orang-orang yang tidak belajar ilmu hitam. :-)&lt;/p&gt;</description>
     </item>
     <item>
       <title>decision effect</title>
-      <link>http://localhost:1313/2009/03/04/decision-effect/</link>
+      <link>https://xedixermawan.github.io/2009/03/04/decision-effect/</link>
       <pubDate>Wed, 04 Mar 2009 16:41:56 +0000</pubDate>
-      <guid>http://localhost:1313/2009/03/04/decision-effect/</guid>
+      <guid>https://xedixermawan.github.io/2009/03/04/decision-effect/</guid>
       <description>&lt;p&gt;Apapun keputusannyanya, selama itu menyangkut hal penting, kita akan diserang oleh diri sendiri dan mungkin oleh orang lain.  Setidaknya  pasti dalam  gangguan fikiran, gelisah, cemas, atau apalah, . Itu biasa n sangat natural. Tidak perlu sedih akan masa lalu&amp;hellip;..percaya diri di masa kini&amp;hellip;.tidak perlu cemas akan masa depan&amp;hellip;..do it with hard&amp;rsquo;s work and ultimate motivation.pray it. Begitulah seharusnya seorang yang disebut &amp;ldquo;keren&amp;rdquo; itu. whtever&amp;hellip;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>troublefinder, not trouble maker</title>
-      <link>http://localhost:1313/2009/01/10/troublefinder-not-trouble-maker/</link>
+      <link>https://xedixermawan.github.io/2009/01/10/troublefinder-not-trouble-maker/</link>
       <pubDate>Sat, 10 Jan 2009 12:40:50 +0000</pubDate>
-      <guid>http://localhost:1313/2009/01/10/troublefinder-not-trouble-maker/</guid>
+      <guid>https://xedixermawan.github.io/2009/01/10/troublefinder-not-trouble-maker/</guid>
       <description>&lt;p&gt;Kesalahan adalah sesuatu yang perlu diperbaiki. tentu saja. Namun ada step lain yang terlebih dahulu dilakukan, yaitu mencari kesalahan itu..!!. kesalahan hidup, kesalahan program, kesalahan berkata-kata, kesalahan cetak, dll. , membuat bidang bidang bersangkutan tidak sempurna. Walaupun tidak ada yang sempurna (jadi selalu ada kesalahan itu). Mencari sebuah kesalahan bukanlah hal mudah. Kesalahan kesalahan disini adalah kesalahan kecil-kecil, yang mengurangi &amp;ldquo;kesempurnaan&amp;rdquo; atau kesalahan kecil yang memang fatal secara akumulatif. Debugging,-istilah lainnya. seberapa banyak yang akan kau temukan ?, cobalah lihat sekeliling. Mencari kesalahan bukan menyebar kan keburukan, namun dicari untuk diperbaiki. Semacam patch. Pencarian kesalahan akan mengasah ketelitian, menaikkan  standart kesempurnaan.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hello World dengan WinAVR</title>
-      <link>http://localhost:1313/2008/12/28/hello-world-dengan-winavr/</link>
+      <link>https://xedixermawan.github.io/2008/12/28/hello-world-dengan-winavr/</link>
       <pubDate>Sun, 28 Dec 2008 12:54:43 +0000</pubDate>
-      <guid>http://localhost:1313/2008/12/28/hello-world-dengan-winavr/</guid>
+      <guid>https://xedixermawan.github.io/2008/12/28/hello-world-dengan-winavr/</guid>
       <description>&lt;p&gt;Just a documentation.&lt;/p&gt;&#xA;&lt;p&gt;Minggu Desember 14 2008/Surabaya&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- start of doc &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;WinAVR dengan IDE pemrograman Code Block&lt;/strong&gt;&#xA;Beberapa software open source yang dibutuhkan:&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;  1. GNU AVR GCC Compiler, disini digunakan WinAVR20080610 (versi sesuai tanggal update terakhir)&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Download &lt;a href=&#34;http://winavr.sourceforge.net/&#34;&gt;http://winavr.sourceforge.net/&lt;/a&gt; (sekitar 22 MB)&lt;/li&gt;&#xA;&lt;li&gt;Install. (selalu ingatlah tombol Next, Accept, Agree, dan OK :-) ) .Pilih saja direktori instalasi default agar mudah diingat, biasanya di dir utama= C:\WinAVR-20080610&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ol start=&#34;2&#34;&gt;&#xA;&lt;li&gt;Code::Block, sebuah IDE pemrograman untuk berbagai macam keperluan pemrograman , salah satunya bisa untuk IDE pemrograman mikrokontroler keluarga AVR.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Download di www.CodeBlocks.Org (sekitar 11 MB)&lt;/li&gt;&#xA;&lt;li&gt;Install.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ol start=&#34;3&#34;&gt;&#xA;&lt;li&gt;Buka Code::Block yang telah terinstall, lalu buat project baru (File-&amp;gt;New-&amp;gt;Project ). pada menu listbox terdapat beberapa pilihan tipe dari project yang bisa dibuat. Pilih “AVR Project”, lalu klik “Go”.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;!-- more --&gt;&#xD;&#xA;&lt;ol start=&#34;4&#34;&gt;&#xA;&lt;li&gt;klik next, lalu tentukan nama project yang akan dibuat beserta letak direktori. Next.&lt;/li&gt;&#xA;&lt;li&gt;Muncul dialog pilihan untuk “debug” dan “release”, pilih saja semuanya. Next.&lt;/li&gt;&#xA;&lt;li&gt;Setelah itu muncul dialog:&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Tipe mikrokontroler Atmega16 (atau terserah uC yg digunakan)&lt;/li&gt;&#xA;&lt;li&gt;Tidak ada  eksternal memori.&lt;/li&gt;&#xA;&lt;li&gt;F_CPU ( Crystal yang digunakan ) : 8 MHz. (terserah crystal yg dipakai)&lt;/li&gt;&#xA;&lt;li&gt;Centang pada creates .map, creates .hex, creates binary files, creates extended listing files.&lt;/li&gt;&#xA;&lt;li&gt;Centang “run avr-size after build”&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ol start=&#34;7&#34;&gt;&#xA;&lt;li&gt;Buat program sederhana untuk mencoba mikrokontroler. misalnya menghidup/matikan led di PORTC, seperti berikut ini&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;#include &amp;lt;avr/io.h&amp;gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Embedded Web Server untuk Monitoring dan Data Logging.</title>
-      <link>http://localhost:1313/2008/11/21/embedded-web-server-untuk-monitoring-dan-data-logging/</link>
+      <link>https://xedixermawan.github.io/2008/11/21/embedded-web-server-untuk-monitoring-dan-data-logging/</link>
       <pubDate>Fri, 21 Nov 2008 12:15:54 +0000</pubDate>
-      <guid>http://localhost:1313/2008/11/21/embedded-web-server-untuk-monitoring-dan-data-logging/</guid>
+      <guid>https://xedixermawan.github.io/2008/11/21/embedded-web-server-untuk-monitoring-dan-data-logging/</guid>
       <description>&lt;p&gt;Sekarang ini banyak sekali macam Ethernet modul yang ada di pasaran yang sudah jadi dan pemakaiannya relatif mudah, seperti varian produk dari Wiznet. Tentu yang sudah jadi itu, harganya relatif lebih mahal dibanding kalau kita merakit sendiri !! . ENC28J60 dari Microchip  bisa sebagai pilihan. IC ini adalah sebuah ethernet controller  yang didalamnya terdapat Physical layer dan MAC&lt;/p&gt;&#xA;&lt;!-- more --&gt;&#xD;&#xA;&lt;p&gt;Berikut spesifikasi ringkas:&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;- IEEE 802.3 compatible Ethernet controller&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Interface barcode ke mikrokontroler AVR atmega.</title>
-      <link>http://localhost:1313/2008/11/21/interface-barcode-ke-mikrokontroler-avr-atmega/</link>
+      <link>https://xedixermawan.github.io/2008/11/21/interface-barcode-ke-mikrokontroler-avr-atmega/</link>
       <pubDate>Fri, 21 Nov 2008 12:00:26 +0000</pubDate>
-      <guid>http://localhost:1313/2008/11/21/interface-barcode-ke-mikrokontroler-avr-atmega/</guid>
+      <guid>https://xedixermawan.github.io/2008/11/21/interface-barcode-ke-mikrokontroler-avr-atmega/</guid>
       <description>&lt;p&gt;Barcode Scanner banyak digunakan di toko-toko retail untuk men-scan barang barang yang akan dibayar pembeli di kasir atau digunakan di perpustakaan untuk mempercepat petugas mendaftar buku-buku yang akan dipinjam. Dengan adanya alat ini semuanya menjadi cepat dan mudah, karena setiap jenis barang memiliki kode barcode sendiri yang unik sehingga bisa dikelompokkan dengan mudah.  Seperti halnya keyboard dan mouse , terdapat banyak macam tipe barcode scanner berdasarkan jenis komunikasinya, misalnya barcode scanner serial, PS/2, dan USB. Pada proyek kali ini barcode scanner PS/2 yang akan digunakan, sehingga penanganannya sama dengan keyboard PS/2. Komunikasi PS/2 adalah komunikasi serial asinkronous yang menggunakan 2 kabel yaitu data&#xA;dan clock.&#xA;&lt;strong&gt;&lt;!-- more --&gt;&lt;/strong&gt; Namun jangan salah sangka, serial sinkronous disini bukanlah protokol I2C(eis to see atau twi, atau apalah). konektor yang digunakan yaitu mini Din female. barcode scanner disini akan digunakan sebagai validator apakah seseorang berhak menggunakan peralatan tersebut atau tidak, jadi siapa orang yang memiliki kartu dengan nomor barcode yang sesuai berhak menggunakannya. Dan untuk mengetahui apakah ada orang yang menggunakan scan barcode tersebut, data hasil scanning dikirim melalui SMS ke nomor tertentu. Ide awal proyek ini bukan dari saya sendiri, namun dari orang lain , sehingga seberapa efektif alat akan berguna, saya sendiri meragukannya :-) . mikrokontroler yang digunakan yaitu avr Atmega32(sebenarnya terlalu berlebihan, dapat digunakan tipe lain) dari Atmel. PORTD.2 digunakan untuk clock, dan data di PORTD.7. PORTD.2 difungsikan sebagai pin untuk interupt eksternal, sedangkan PORTD.7 sebagai input biasa. berikut koneksinya :&lt;/p&gt;</description>
     </item>
     <item>
       <title>membaca_menulis</title>
-      <link>http://localhost:1313/2008/10/17/membaca_menulis/</link>
+      <link>https://xedixermawan.github.io/2008/10/17/membaca_menulis/</link>
       <pubDate>Fri, 17 Oct 2008 11:58:24 +0000</pubDate>
-      <guid>http://localhost:1313/2008/10/17/membaca_menulis/</guid>
+      <guid>https://xedixermawan.github.io/2008/10/17/membaca_menulis/</guid>
       <description>&lt;p&gt;mulai 2 minggu ini sepertinya saya sangat banyak membaca dan juga banyak menulis(baca mengetik). yang dibaca tentu bukan novel atau &amp;ldquo;cerita mesum&amp;rdquo; :-D . Walaupun kadang juga baca novel dirumah( novel musashi qu blom ta selesain ). menu bacaannya adalah datasheet, dan source code. dan source codenya itu tidak ditulis dalam satu bahasa pemrograman,-ada beberapa- setidaknya berbasis C,Basic, Pascal. sehingga selain datasheet dan source code menu lainnya adalah &amp;lsquo;help&amp;quot; dan manual. Sebenarnya membaca bacaan seperti itu bukan hal asing, tapi intensitasnya sangat meningkat pesat saat ini.  Ada efek yang saya kira bagus, yaitu penegtahuan saya saya harap meningkat pesat juga&amp;hellip;tapi ada efek buruknya, yaitu harus mampu bertahannnnnnnnnnnnnnn&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip; . Begitu jga dengan menulis. memilih kata kata yang dapat dipahami banyak orang itu kadang susah.apalagi  yang dibahas adalah maslah teknis. padahal saya tidak terlalu baik dalam &amp;ldquo;bahasa&amp;rdquo;. Tapi secara garis besar ini akan dinikmati.&lt;/p&gt;</description>
     </item>
     <item>
       <title>taste of life</title>
-      <link>http://localhost:1313/2008/08/13/taste-of-life/</link>
+      <link>https://xedixermawan.github.io/2008/08/13/taste-of-life/</link>
       <pubDate>Wed, 13 Aug 2008 09:45:49 +0000</pubDate>
-      <guid>http://localhost:1313/2008/08/13/taste-of-life/</guid>
+      <guid>https://xedixermawan.github.io/2008/08/13/taste-of-life/</guid>
       <description>&lt;p&gt;2 minggu yang lalu ,waktu saya pergi ke tempat fotokopian,saya bertemu dengan seseorang.  Dia membawa fotokopian, sebuah PCB.tidak ada yang aneh dengan fotokopiannya,pada mulanya.setelah berbicara ngobrol sana-sini,ternyata dia mau membuat oscilator.ini yang aneh&amp;hellip;&#xA;Bapak ini katanya kuliahnya di jurusan komunikasi, lalu sekarang ini bekerja sebagai kepala proyek bangunan perumahan, tapi hobinya elektronik&amp;hellip;!, rela membuat PCB dengan eagle, lalu memfotokopi, lalu etching, lalu trouble shooting rangkaian kalau belum jalan. Sebuah proses yang panjang dan &amp;lsquo;&amp;rsquo;neraka&amp;rsquo;&amp;rsquo; bagi yang gak suka LK .&#xA;Walaupun saya juga menyukai elektronika, tapi saya masih merasa aneh dengan bapak ini. yeah banyak yang aneh memang gak aneh. Hidup memang harus punya rasa. Thinking, Research is taste of life.&#xA;What is taste of ur life?&lt;/p&gt;</description>
     </item>
     <item>
       <title>migrasi ke avr-gcc</title>
-      <link>http://localhost:1313/2008/06/24/migrasi-ke-avr-gcc/</link>
+      <link>https://xedixermawan.github.io/2008/06/24/migrasi-ke-avr-gcc/</link>
       <pubDate>Tue, 24 Jun 2008 04:15:13 +0000</pubDate>
-      <guid>http://localhost:1313/2008/06/24/migrasi-ke-avr-gcc/</guid>
+      <guid>https://xedixermawan.github.io/2008/06/24/migrasi-ke-avr-gcc/</guid>
       <description>&lt;p&gt;selama ini menggunakan code vision untuk mrogram mikro,dan kebnyakan orang-orang disini juga memakainya,walaupun ada juga yang msih pakai assembly murni (so rarely),namun codevision adalah yang mayoritas.code vision itu mudah,ada code wizard,dan tentu saja ini bukan freeware.lalu apakah semua orang disini membayar untuk itu?, tidak tahu lah.. . :-P .di sisi lain ada yang freeware, yaitu  win-avr (avr-gcc). rasa-rasanya sejak dulu memang ingin mencoba yang satu ini.dan sekarang aku telah mnggunakanya penuh.apa perlu uninstall code vision?tidak perlu &amp;hellip;,yang terjadi terjadilah&amp;hellip;&lt;/p&gt;</description>
     </item>
     <item>
       <title>ketenangan hati itu apa dan bagaimana?</title>
-      <link>http://localhost:1313/2008/05/20/ketenangan-hati-itu-apa-dan-bagaimana/</link>
+      <link>https://xedixermawan.github.io/2008/05/20/ketenangan-hati-itu-apa-dan-bagaimana/</link>
       <pubDate>Tue, 20 May 2008 09:07:54 +0000</pubDate>
-      <guid>http://localhost:1313/2008/05/20/ketenangan-hati-itu-apa-dan-bagaimana/</guid>
+      <guid>https://xedixermawan.github.io/2008/05/20/ketenangan-hati-itu-apa-dan-bagaimana/</guid>
       <description>&lt;p&gt;ketenangan hati itu apa, dan bagaimanakah rasanya?,..apakah terhindar dari kecemasan2 hidup yang datang ke fikiran ini atau mendapat pasangan tepat ? atau mendapatkan pekerjaan yang dapat memenuhi kehidupan kita secara ekonomi,atau berfikir dengan bebas dan hati yang tenang setiap hari karena tidak adanya tekanan dari luar, baik seseorang atau suatu masalah yang muncul&amp;hellip;&lt;/p&gt;&#xA;&lt;p&gt;jika penyebabnya ketenangan hati adalah salah satu atau lebih dari yang diatas, bukankah semuannya yang tersebut diatas dapat muncul dan lenyap secara kontinyu dalam hidup ini? hidup ini takkanlah indah jika dilalui dengan ketidak tenangan hati.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Kotak Kardus Masa Depan</title>
-      <link>http://localhost:1313/2008/03/26/kotak-kardus-masa-depan/</link>
+      <link>https://xedixermawan.github.io/2008/03/26/kotak-kardus-masa-depan/</link>
       <pubDate>Wed, 26 Mar 2008 00:41:54 +0000</pubDate>
-      <guid>http://localhost:1313/2008/03/26/kotak-kardus-masa-depan/</guid>
+      <guid>https://xedixermawan.github.io/2008/03/26/kotak-kardus-masa-depan/</guid>
       <description>&lt;p&gt;sekarang adalah march,26 2089. 17 hari lagi umurku sudah 94 tahun,apa yang terjadi saat ini,aku juga belum tahu.semuanya masih kabur seperti dalam kotak kotak kardus didalam almari didalam gedung,di suatu belahan dunia yang saya juga tidak tahu.itupun kalau saya masih hidup,94 tahun adalah usia yang sangat panjang(untuk ukuran saaat ini).yang seandainya masih hidup pastilah sudah lolos dari banyak hal,lolos dari berbagai macam penyakit,lolos dari berbagai macam kecelakaan transportasi,lolos dari gempa,lolos dari luapan banjir.semuanya masih dalam kardus,Tuhan yang Maha Tahu.saya sudah 94 tahun tapi belum tahu apa yang terjadi.tunggu aku ingin mengingat sesuatu!. apa mimpi2 ku sudah menjadi kenyataan ?,apa yang saya kerjakan ketika saya berumur 22 tahun dulu masih berguna saaat ini? Apa saya menjadi Master? or Looser? bagaimana dengan orangg2 yang saya cintai?bagaimana dengan iman saya?&#xA;saya berumur 94 tahun,tapi belum tahu yang terjadi.&lt;/p&gt;</description>
     </item>
     <item>
       <title>ber-windows,ber-linux.</title>
-      <link>http://localhost:1313/2008/03/07/ber-windowsber-linux/</link>
+      <link>https://xedixermawan.github.io/2008/03/07/ber-windowsber-linux/</link>
       <pubDate>Fri, 07 Mar 2008 04:27:03 +0000</pubDate>
-      <guid>http://localhost:1313/2008/03/07/ber-windowsber-linux/</guid>
+      <guid>https://xedixermawan.github.io/2008/03/07/ber-windowsber-linux/</guid>
       <description>&lt;p&gt;minggu minggu terakhir ini sangat bermasalah dengan komputerku. pertama mendapaty serangan virus yang sangtserius,ngrusak program-program windows ku,ngrusak installer program, fuffff,sangat menyebalkan,tapi iku sebener E kesalahn diri sendiri kenapa sejak dulu tidak mneggunakan anti virusss.windowsku tak coba ta recovery,pake cd installer,keliatannya agak membaik,tapi ternyata tetap saja.bermasalah untuk program2 tertentu.wis install ulang ae. (solusi kuno).karena kejadian ini berfikir ulang tentang penggunaan antivirus dan  linux(walaupun ada virus kan dikit,apa begitu ya,mungkin saja).install lagi,sekalian install linux ubuntu (dual boot&amp;ndash;ubuntu ku sing ndisik lali password E-kebodohan tertinggi :-P).Install windows sih lancar 2 saja.&#xA;di hardiskku sudah ada ISO image alternate cd ubuntu 7.10 gutsy gibbon,daripada burning ke cd(oga ono cd/dvd rw ne :-( ),tak coba install lewat ISO image ini aja. eh ternyata ada tutorialnya di  ubuntu id.cukup singkat:&#xA;1.buat direktory hd-media di c:&lt;br&gt;&#xA;2.Donlod &lt;a href=&#34;http://archive.ubuntu.com/ubuntu/dists/gutsy/main/installer-i386/current/images/hd-media/&#34;&gt;vmlinuz dan initrd.gz&lt;/a&gt; simpan di c:\hd-media&#xA;3.siap kan alternate cd(live cd ga bisa),simpan di c:.aku dunlud &lt;a href=&#34;http://mirror.its.ac.id/&#34;&gt;dari sini&lt;/a&gt;&#xA;4.Donlod &lt;a href=&#34;http://sarovar.org/download.php/1138/grub_for_dos-0.4.2.zip&#34;&gt;Grub For Dos&lt;/a&gt; .lalu buka dengan zip-nya ekstak file grldr(ini saja yg dipakai).lalu taruh grldr di c:&lt;br&gt;&#xA;5.buka c:\boot.ini.lalu tambahkan baris** c:\grldr=&amp;ldquo;InstallUbuntu&amp;rdquo;** . save&#xA;6.buka notepad,lalu copy pastekan:&lt;/p&gt;</description>
     </item>
     <item>
       <title>ADC pada uC AVR ATMEGA16(dan untuk type yang lain),</title>
-      <link>http://localhost:1313/2007/12/30/adc-pada-uc-avr-atmega16dan-untuk-type-yang-lain/</link>
+      <link>https://xedixermawan.github.io/2007/12/30/adc-pada-uc-avr-atmega16dan-untuk-type-yang-lain/</link>
       <pubDate>Sun, 30 Dec 2007 09:39:10 +0000</pubDate>
-      <guid>http://localhost:1313/2007/12/30/adc-pada-uc-avr-atmega16dan-untuk-type-yang-lain/</guid>
+      <guid>https://xedixermawan.github.io/2007/12/30/adc-pada-uc-avr-atmega16dan-untuk-type-yang-lain/</guid>
       <description>&lt;p&gt;26/12/07, tft-LGoffice Bekasi&#xA;Atmega16 (dan sejenisnya) memiliki fitur ADC sebanyak 8 channel dengan resolusi 10-bit Register yang digunakan untuk setting ADC ini adalah:&#xA;+&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-+&#xA;ADCSR        |    ADEN    |  ADSC  |  ADATE  |   ADIF  |   ADIE   |   ADPS2   |   ADPS1  |  ADPS0  |&#xA;+&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;+&#xA;7                  6            5              4             3              2                1               0&#xA;ADEN : 1=adc enable, 0=adc turn off&#xA;ADSC : 1:mulai konversi,0:konversi belum terjadi&#xA;ADATE:1:auto trigger di aktifkan ,trigger berasal; dari sinyal yang dipilih(set pada register SFIOR bit ADTS).ADC akan start konversi pada edge positip sinyal trigger.&#xA;ADIF:di set ke 1,jika konversi ADC selesai dan data register ter-Update.Namun ADC Conversion Complete Interrupt di eksekusi jika bit ADIE dan bit-I dalam register SREG di set.&#xA;ADIE:di set 1,jika bit-I dalam register SREG di set.&#xA;ADPS0:2 ,faktor pembagi  0-7   = 2  2  4  8  16  32  64  128.&#xA;+&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-+&#xA;ADMUX      |    REFS1    |  REFS0  |  ADLAR  |   MUX4  |   MUX3   |   MUX2   |   MUX1  |  MUX0  |&#xA;+&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;+&#xA;7                  6            5              4             3              2                1               0&#xA;REFS 0,1 :pemilihan tegangan referensi ADC&#xA;00:vref=AREF, 01:vref=AVCC dengan eksternal capasitor pada AREF,  10:Vref= Reserved , 11:  vref= internal 2.56 volt dengan eksternal kapasitor pada AREF&#xA;ADLAR:&#xA;Untuk setting format data hasil konversi ADC,default=0.&#xA;MUX0-MUX4 :pemilihan channel ADC yang digunakan&#xA;0=channel1,1=channel 2,dst.&#xA;+&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-+&#xA;SFIOR         |   ADTS2   |  ADTS1  |  ADTS0  |   ADHSM  |   ACME   |   PUD   |   PSR2  |  PSR10  |&#xA;+&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;+&#xA;7                  6            5              4             3              2                1               0&#xA;ADTS0-ADTS2 :pemilihan trigger untuk konversi ADC.bit-bit ini berhubungan dengan bit ADATE pada register ADCSRA.&#xA;ADHSM:ADC high speed mode enabled.&#xA;àlebih jelas baca datasheet&#xA;Contoh:&#xA;Inisialisasi:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ok,cancel,next,agree,dll</title>
-      <link>http://localhost:1313/2007/12/20/okcancelnextagreedll/</link>
+      <link>https://xedixermawan.github.io/2007/12/20/okcancelnextagreedll/</link>
       <pubDate>Thu, 20 Dec 2007 09:21:21 +0000</pubDate>
-      <guid>http://localhost:1313/2007/12/20/okcancelnextagreedll/</guid>
+      <guid>https://xedixermawan.github.io/2007/12/20/okcancelnextagreedll/</guid>
       <description>&lt;p&gt;akhir ini sring nggunain software dgn tulisan bahasa ora nggenah(korea) . Wajar juga disini prsahaan miik org korea,firefoxnya saja korea-an, jadi kalo ngeklik ya meraba-raba. Kalo install next,ok, agree kudu apal di-pass kan aja dengan bahasa inggris letak tombolnya,hhhh.&#xA;Karena browsing selalu pake firefos yang korea,&#xA;ta&amp;rsquo; putusin tuk dunlud yang inggris,eehh pas udah selesai donlodnya -instal, kok yg keluar firefox versi belanda?,aneh,padahal nggak salah klik.tapi yg susah itu versi arab,karena tombol OK,cancel, dibalik,semua dari kanan.ngetik juga dari kanan.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Semangat.....................</title>
-      <link>http://localhost:1313/2007/11/25/semangat-or-kesepian/</link>
+      <link>https://xedixermawan.github.io/2007/11/25/semangat-or-kesepian/</link>
       <pubDate>Sun, 25 Nov 2007 04:36:19 +0000</pubDate>
-      <guid>http://localhost:1313/2007/11/25/semangat-or-kesepian/</guid>
+      <guid>https://xedixermawan.github.io/2007/11/25/semangat-or-kesepian/</guid>
       <description>&lt;p&gt;ternyata lab adalah lingkungan yang sangat ideal untuk belajar,karena disana ada banyak fasilitas,ketenangan yang asik(walaupun tidak selalu,setidaknya malam hari pasti).kesimpulan ini  di dapat jika kita bekerja kita sudah tidak bisa lagi full belajar bebas(kecuali jika kita bekerja sebagai peneliti,ini pasti indah),tidak bisa melakukan banyak percobaan yang mengganggu fikiran. ketika begini,semangat saya sangat besar untuk belajar lebih banyak lagi,hal yang mendasar jika banyak yang diketahui pasti menyenangkanlah,dan tentu saja lebih nyaman.Road to Master.Hrs bnyk yg diabaikan,walalupun tdk sesuai aliran hidup pada umumnya.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Everytime learning</title>
-      <link>http://localhost:1313/2007/10/09/everytime-learning/</link>
+      <link>https://xedixermawan.github.io/2007/10/09/everytime-learning/</link>
       <pubDate>Tue, 09 Oct 2007 04:07:24 +0000</pubDate>
-      <guid>http://localhost:1313/2007/10/09/everytime-learning/</guid>
+      <guid>https://xedixermawan.github.io/2007/10/09/everytime-learning/</guid>
       <description>&lt;p&gt;Setiap hari saya belajar. Belajar yang saya sadari dan secara tidak sadar belajar. Belajar yang disadari, belajar hal-hal yang sudah diinginkan sebelumnya, seperti belajar ilmu teknik sekarang ini. Dan ada juga belajar yang pasti. Setiap hari kan manusia melalui banyak peristiwa yang menyangkut perasaan, fikiran, benar-salah, ataupun yang kabur. Hal paling terasa(menurut saya) adalah belajar bagaimana hidup yang benar.&#xA;Karena wajar saja setiap hari kita melalui kehidupan, setidaknya sampai pada detik ini. Jika disuruh memilih kamu suka kesulitan atau bingung(tak ada pilihan lain), tentu aku memilih dapat kesulitan tapi tidak bingung. Kalau kita belajar ilmu-ilmu pengetahuan atau teknis, parameter nya banyak yang jelas, kalau ada yang tidak jelas,&amp;ndash;bisa dicarikan referensi, atau dilakukan penelitian dulu &amp;ndash;atau dgn kata lain bisa ditunda. Ini yang saya maksud sulit. Beda dengan kehidupan kita sehari-hari. Kadang kita mendapat suatu masalah yang harus diputuskan dengan cepat, atau bahkan langsung dalam sebuah pembicaraan. Inilah yang saya maksud membingungkan. Dan juga rasa nyaman yang ditanggung pun beda, karena menyangkut perasaan orang lain, perasaan kita dan sebuah hubungan. Parameter benar salah juga kabur.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Magang atau tidak</title>
-      <link>http://localhost:1313/2007/10/09/magang-ato-ndak-yach/</link>
+      <link>https://xedixermawan.github.io/2007/10/09/magang-ato-ndak-yach/</link>
       <pubDate>Tue, 09 Oct 2007 04:03:30 +0000</pubDate>
-      <guid>http://localhost:1313/2007/10/09/magang-ato-ndak-yach/</guid>
+      <guid>https://xedixermawan.github.io/2007/10/09/magang-ato-ndak-yach/</guid>
       <description>&lt;p&gt;Dua pilihan kadang lebih membingungkan daripada banyak. Semakin sedikit (minimal pasti dua,namanya saja memilih) bebannya semakin besar. Dulu ketika mau SPMB atau PMDK juga gitu. PMDK atau SPMB. Sekarang ikut magang atau ngerjain TA(tugas akhir) dulu, lulus dulu (kalo lancar&amp;hellip;&amp;hellip;.,kayaknya masalah sensor beli, adalah solusi terbaik, buat sendiri bisa, tapi tidak stabil). Kalau magang dapat pengalaman tapi kompensasinya lulus lama.(tertunda satu tahun lah) dan jika lulus lama, teman2 saya akan berganti (setidaknya sudah berkurang), kalau jadi, besok beli tiket KA, habis lebaran berangkat&amp;hellip;..&lt;/p&gt;</description>
     </item>
     <item>
       <title>Timer di AVR</title>
-      <link>http://localhost:1313/2007/09/28/timer-di-avr/</link>
+      <link>https://xedixermawan.github.io/2007/09/28/timer-di-avr/</link>
       <pubDate>Fri, 28 Sep 2007 01:52:00 +0000</pubDate>
-      <guid>http://localhost:1313/2007/09/28/timer-di-avr/</guid>
+      <guid>https://xedixermawan.github.io/2007/09/28/timer-di-avr/</guid>
       <description>&lt;p&gt;Timer dalam embendded system sangat banyak kegunaannya.Itulah karenanya setiap mikrokontroler terdapat fitur timer. Mikrokontroller AVR keluaran Atmel memiliki beberapa timer(ATmega16 dalam hal ini,tipe lain yang lebih tinggi sama ,kecuali penambahan jumlah timernya),diantaranya timer0(8 bit),timer1(16 bit),dan timer2(8 bit).&lt;/p&gt;&#xA;&lt;p&gt;Timer0 dan timer2(8 bit).&lt;/p&gt;&#xA;&lt;p&gt;timer ini menghitung maksimal 255 hitungan.dimana periode setiap hitungan(detaknya) tergantung dari setting prescaler-nya. Untuk mengatur timer mode operasi apa yang digunakan dan mengatur prescaler digunakan register TCCRx(x=0,2).TCCRx adalah register 8 bit sebagai berikut:&lt;/p&gt;</description>
     </item>
     <item>
       <title>AVR development board, memulai AVR dengan otodidak</title>
-      <link>http://localhost:1313/2007/08/31/avr-development-boardmemulai-avr-dengan-otodidak/</link>
+      <link>https://xedixermawan.github.io/2007/08/31/avr-development-boardmemulai-avr-dengan-otodidak/</link>
       <pubDate>Fri, 31 Aug 2007 02:46:28 +0000</pubDate>
-      <guid>http://localhost:1313/2007/08/31/avr-development-boardmemulai-avr-dengan-otodidak/</guid>
+      <guid>https://xedixermawan.github.io/2007/08/31/avr-development-boardmemulai-avr-dengan-otodidak/</guid>
       <description>&lt;p&gt;Memulai belajar mikrocontroller, langkah pertama adalah membuat dulu board-development nya. Dapat juga dengan mencoba-coba fitur nya dulu dengan software simulasi mikrokontroler seperti Proteus. Saya sendiri belum pernah memakai. Menurutku kalau belajar ya langsung saja secara real , pengalaman nyata memprogram dan melihat hasil itu sangat berbeda dengan hanya simulasi, setidaknya mendapat tingkat semangat yang beda.&lt;/p&gt;&#xA;&lt;p&gt;Board Avrku:&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://offground.files.wordpress.com/2008/06/avr.jpg&#34;&gt;&lt;img src=&#34;http://offground.files.wordpress.com/2008/06/avr.jpg?w=300&#34; alt=&#34;avr development versi 1&#34;&gt;&#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;fitur board:&lt;/p&gt;&#xA;&lt;p&gt;-Avr Atmega 16 atau 32 -8 led simulator&lt;/p&gt;</description>
     </item>
     <item>
       <title>Akuisisi data dan Polisi</title>
-      <link>http://localhost:1313/2007/08/15/akuisisi-data-vs-pulisi/</link>
+      <link>https://xedixermawan.github.io/2007/08/15/akuisisi-data-vs-pulisi/</link>
       <pubDate>Wed, 15 Aug 2007 08:06:40 +0000</pubDate>
-      <guid>http://localhost:1313/2007/08/15/akuisisi-data-vs-pulisi/</guid>
+      <guid>https://xedixermawan.github.io/2007/08/15/akuisisi-data-vs-pulisi/</guid>
       <description>&lt;p&gt;Hari ini secara tak sengaja mendapat tawaran seminar akuisisi data dari dosenku. pertama kali saya agak males, karena tak pikir pasti mirip kuliah yang membosankan (duduk dan mendengar). Tapi karena bapaknya terlalu berharap, saya iya kan saja. karena boleh 2 orang saya ajak saja temenku, lagipula tempatnya jauh dari kampus (hotel jw mariott ,30 menit perjalanan). Eh ternyata asik seminarnya. karena pesertanya banyak dari orang2 industri (real engineer :-) ).  Seminar berjudul PC-based data acquisition with DAQ ,membahas penggunaan kartu akuisisi data produk NI, yang telah banyak digunakan di indutri. Ternyata simple, cepat , dan praktis. Itu berita bagusnya.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Memulai OpenGL</title>
-      <link>http://localhost:1313/2007/08/13/memulai-open-gl/</link>
+      <link>https://xedixermawan.github.io/2007/08/13/memulai-open-gl/</link>
       <pubDate>Mon, 13 Aug 2007 12:59:19 +0000</pubDate>
-      <guid>http://localhost:1313/2007/08/13/memulai-open-gl/</guid>
+      <guid>https://xedixermawan.github.io/2007/08/13/memulai-open-gl/</guid>
       <description>&lt;p&gt;c:\program files\microsoft visual studio\vc98\include\gl\gl.h(1573) : error C2144: syntax error : missing &amp;lsquo;;&amp;rsquo; before type &amp;lsquo;void&amp;rsquo;&#xA;c:\program files\microsoft visual studio\vc98\include\gl\gl.h(1573) : error C2501: &amp;lsquo;WINGDIAPI&amp;rsquo; : missing storage-class or type specifiers&#xA;c:\program files\microsoft visual studio\vc98\include\gl\gl.h(1573) : fatal error C1004: unexpected end of file found&#xA;Error executing cl.exe.&lt;/p&gt;&#xA;&lt;p&gt;GL_2.exe - 3 error(s), 0 warning(s)&lt;/p&gt;&#xA;&lt;p&gt;Sebuah permulaan yang buruk.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Liga Inggris aku merindukanmu</title>
-      <link>http://localhost:1313/2007/08/13/liga-inggris-aku-merindukanmu/</link>
+      <link>https://xedixermawan.github.io/2007/08/13/liga-inggris-aku-merindukanmu/</link>
       <pubDate>Mon, 13 Aug 2007 12:56:29 +0000</pubDate>
-      <guid>http://localhost:1313/2007/08/13/liga-inggris-aku-merindukanmu/</guid>
+      <guid>https://xedixermawan.github.io/2007/08/13/liga-inggris-aku-merindukanmu/</guid>
       <description>&lt;p&gt;Liga Inggris? bukannya Inggris adalah tempat hidup Tony Blair (baca:orang jahat). Yup. Inggris bukannya negaraku, atau aku punya nenek moyang dari sana. Bahkan saya tak punya hubungan apapun, kecuali aku belajar bahasa Inggris sejak smp. Kenapa liga Inggris dirindukan? karena menurutku adalah liga terbaik, baik dari segi penampilan setiap pertandingan, dari segi penayangan, maupun dari segi jam tayang yang baik bagi orang Indonesia kaya&amp;rsquo; saya. Masalah sebenarnya adalah nonton liga Inggris sekarang nggak gratis.padahal sekarang kan belum lulus &lt;em&gt;Suck&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Cerita Juni-Juli 2007</title>
-      <link>http://localhost:1313/2007/07/25/interface-barcode-ke-uc/</link>
+      <link>https://xedixermawan.github.io/2007/07/25/interface-barcode-ke-uc/</link>
       <pubDate>Wed, 25 Jul 2007 17:28:26 +0000</pubDate>
-      <guid>http://localhost:1313/2007/07/25/interface-barcode-ke-uc/</guid>
+      <guid>https://xedixermawan.github.io/2007/07/25/interface-barcode-ke-uc/</guid>
       <description>&lt;p&gt;Akhir bulan lalu (Juni 2007) , Ada dua org masuk lab, minta bantuan &amp;ndash;pada temen saya pada mulanya&amp;ndash;. Karena temenku sedng sibuk, aku mencoba membantunya. Tidak yakin sebenarnya, tapi kasian juga. Alatnya sudah ditinggal di Lab tapi tidak ada yang mengerjakan, padahal &lt;em&gt;deadline&lt;/em&gt; nya kan semakin mendekat. Tak coba saja. Sebenarnya program untuk itu sudah ada, tapi dalam bentuk assembly. (dia membeli modul yang menyertaan include/header untuk assembly). Dia menginginkan pakai program C, karena akan digabung dengan program milik temennya. Ini adalah tugas akhir yang dikerjakan 2 orang.&#xA;Masalahnya kalau buat program C, saya harus buat header sendiri (ini yang sulit,dugaanku pertama kali). Setelah beberapa kali gagal memakai modul yang disertakan itu, Aku memutuskan untuk tidak pakai modul. Karena ternyata modulnya uC juga. Modul nya diganti software semua saja. Modul itu berisi pengambil data secara serial sinkronous dari barcode lalu dikirim ke uC dengan komunikasi I2C. &lt;em&gt;too suck&lt;/em&gt;. Langsung saja dari barcode secara serial sinkron ke uC pakai interrupt. Saya coba pakai keyboard, bisa !. Lalu saya coba pakai barcodetidak bisa :(.&#xA;Apa penyebabnya?&#xA;Penyebabnya adalah kebodohan yang berlangsung berhari-hari. Saya keliru menyambungkan konektor barcodenya.payah. Barcode di desain untuk dipakai di komputer, jadi terdapat 2 konektor input pada barcode, yaitu yang ditancap ke kompputer,yang satunya untuk keyboard komputer. saya mengira bahwa 2 konektor itu sama saja. Lalu saya ganti dan bisa!, Syukurlah . Setidaknya bisa bantu orang lain.&#xA;karena ngerjain itu, lab agak banyak pengunjung, jadi menambah temen wanita&#xA;dari jurusan lain yang pada mulanya tak punya sama sekali sejak kuliah di sini. :-)&lt;/p&gt;</description>
     </item>
     <item>
       <title>Kelelawar, Aku dan Batman</title>
-      <link>http://localhost:1313/2007/07/25/kelelawaraku-dan-batman/</link>
+      <link>https://xedixermawan.github.io/2007/07/25/kelelawaraku-dan-batman/</link>
       <pubDate>Wed, 25 Jul 2007 17:08:59 +0000</pubDate>
-      <guid>http://localhost:1313/2007/07/25/kelelawaraku-dan-batman/</guid>
+      <guid>https://xedixermawan.github.io/2007/07/25/kelelawaraku-dan-batman/</guid>
       <description>&lt;p&gt;Kelelawar terkenal dengan kehidupan malamnya. Bukan untuk dugem atau kehidupan malam, tapi untuk mencari makan. Kelelawar terbang dalam kegelapan, dengan dipandu oleh gekombang ultrasonik yang dipancarkannya. Itu untuk mengukur jarak benda benda yang ada di sekelilingnya. Makanan mereka buah-buahhan yang akan masak atau sudah masak. .Pada siang hari mereka tidur, dengan menggantungkan tubuh mereka di pohon atau disuatu tempat yang tinggi (gedung,misalnya).&lt;/p&gt;&#xA;&lt;p&gt;Ketika tidur inilah yang agak aneh. Mereka tidur dengan menggantung, bagaimana ya? . Bagaimana dengan kesadaran mereka?. Apa mereka mengikat kaki dulu sebelum tidur?. ini saya ketahui karena di dekat laboratoriumku ada kelelawar (tepatnya dekat tangga-dimana setiap hari aku sering lewat situ). Tapi kehidupan kelelawar ini agak aneh, tidak teratur. Kadang siang tidak ada , bahkan kadang ada terus dari siang-malam. (apa tidak cari makan, atau makanan masih ada, atau dia pemalas).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Indah</title>
-      <link>http://localhost:1313/2007/07/09/indah/</link>
+      <link>https://xedixermawan.github.io/2007/07/09/indah/</link>
       <pubDate>Mon, 09 Jul 2007 17:06:57 +0000</pubDate>
-      <guid>http://localhost:1313/2007/07/09/indah/</guid>
+      <guid>https://xedixermawan.github.io/2007/07/09/indah/</guid>
       <description>&lt;p&gt;Rasanya dunia terasa sangat indah jika baris baris program kita berjalan sesuai harapan. Indah sekali, setidaknya itulah yang dapat dirasakan sekarang :-D.&lt;/p&gt;&#xA;&lt;p&gt;Tapi saya juga tak menyangkal bahwa jika program mengandung banyak error tidak hilang-hilang atau tidak error tapi tidak sesuai (logic error) adalah bukan keindahan. :D. fakta hidup yang harus dihadapi. Pefhhh.&lt;/p&gt;&#xA;&lt;p&gt;Hidup yang indah.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ilmu Teknik</title>
-      <link>http://localhost:1313/2007/06/15/ilmu-teknik/</link>
+      <link>https://xedixermawan.github.io/2007/06/15/ilmu-teknik/</link>
       <pubDate>Fri, 15 Jun 2007 12:40:24 +0000</pubDate>
-      <guid>http://localhost:1313/2007/06/15/ilmu-teknik/</guid>
+      <guid>https://xedixermawan.github.io/2007/06/15/ilmu-teknik/</guid>
       <description>&lt;p&gt;Ternyata semua ilmu teknik itu dapat diringkas&#xA;hanya dalam beberapa kata saja:&#xA;-logika&#xA;-imanjinasi untuk mengembangkan logika yang kaku&lt;/p&gt;&#xA;&lt;p&gt;Dan sebagian besar Teknik Elektro itu melibatkan logika untuk pemrograman. Tapi ada sedikit pengecualian, yaitu elektronika analog. Walaupun logika sudah benar, dengan pengecekan beberapa kali, belum tentu bisa!! . (tentu saja tidak mistis disini, :D )&lt;/p&gt;&#xA;&lt;p&gt;Tapi elka analog itu bukan ilmu mistis, tetep saja ilmu logis yang dapat dijelaskan&lt;/p&gt;&#xA;&lt;p&gt;berbeda dengan ilmu:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Yang Inginku</title>
-      <link>http://localhost:1313/2007/06/15/enemy-unexpected/</link>
+      <link>https://xedixermawan.github.io/2007/06/15/enemy-unexpected/</link>
       <pubDate>Fri, 15 Jun 2007 06:11:43 +0000</pubDate>
-      <guid>http://localhost:1313/2007/06/15/enemy-unexpected/</guid>
+      <guid>https://xedixermawan.github.io/2007/06/15/enemy-unexpected/</guid>
       <description>&lt;p&gt;Aku ingin menghancurkanmu&lt;/p&gt;&#xA;&lt;p&gt;mengirimimu bubuk antrak, lewat surat-suratmu&lt;/p&gt;&#xA;&lt;p&gt;mengirimimu santet pada setiap malam&lt;/p&gt;&#xA;&lt;p&gt;meletakkan bom pada sore hari di tong sampahmu&lt;/p&gt;&#xA;&lt;p&gt;dan suatu pagi, kau buang sampah dan booooom !!&lt;/p&gt;&#xA;&lt;p&gt;kau berkeping-keping&lt;/p&gt;&#xA;&lt;p&gt;menerormu secara psikologist, lewat telepon telepon yang berdering&lt;/p&gt;&#xA;&lt;p&gt;email-mu akan berisi spam, virus dan sesuatu yang menyakitkan&lt;/p&gt;&#xA;&lt;p&gt;Jika aku bertemu kamu, Akan kutikam kau tepat pada jantungmu.&lt;/p&gt;&#xA;&lt;p&gt;Jantungmu pun berhenti&lt;/p&gt;&#xA;&lt;p&gt;tapi kau tak pernah bisa ditemui&lt;/p&gt;&#xA;&lt;p&gt;tapi kau tak punya email&lt;/p&gt;</description>
     </item>
     <item>
       <title>Menginstall Ubuntu</title>
-      <link>http://localhost:1313/2007/06/06/nginstall-ubuntu/</link>
+      <link>https://xedixermawan.github.io/2007/06/06/nginstall-ubuntu/</link>
       <pubDate>Wed, 06 Jun 2007 06:28:10 +0000</pubDate>
-      <guid>http://localhost:1313/2007/06/06/nginstall-ubuntu/</guid>
+      <guid>https://xedixermawan.github.io/2007/06/06/nginstall-ubuntu/</guid>
       <description>&lt;p&gt;Akhirnya berhasil juga install Ubuntu. Sebenarnya ingin install Fedora Core tapi daripada nyari2 CD isntaller lagi, langsung saja pakai ubuntu, kan sudah punya. Dulu CD installer-nya pesen gratis dari &lt;a href=&#34;https://shipit.ubuntu.com&#34;&gt;https://shipit.ubuntu.com&lt;/a&gt;, pesen 10 CD sekaligus (untuk 3 jenis komputer berbeda).&lt;/p&gt;&#xA;&lt;p&gt;Selain itu sebelumnya saya mencari alasan lain-kenapa harus pakai Ubuntu. Ternyata dapat banyak alasan. Ubuntu sudah berkembang sekarang (versi terakhir ubuntu 7.07 Feisty Fawn, aku memakai versi 6.06), Dan juga Ubuntu ternyata turunan debian. Komunitas Ubuntu di Indonesia juga sedang berkembang. Ada juga &lt;em&gt;free&lt;/em&gt; &lt;em&gt;magazine&lt;/em&gt; nya (baru dirilis beberapa hari dari sekarang,dalam 6 bahasa, bahasa Indonesia termasuk didalamnya man !).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mempercantik tampilan windows</title>
-      <link>http://localhost:1313/2007/06/01/mempercantik-tampilan-windows/</link>
+      <link>https://xedixermawan.github.io/2007/06/01/mempercantik-tampilan-windows/</link>
       <pubDate>Fri, 01 Jun 2007 09:20:59 +0000</pubDate>
-      <guid>http://localhost:1313/2007/06/01/mempercantik-tampilan-windows/</guid>
+      <guid>https://xedixermawan.github.io/2007/06/01/mempercantik-tampilan-windows/</guid>
       <description>&lt;p&gt;Memperindah tampilan windows sebenarnya sudah tak asing lagi : mengganti desktop, &lt;em&gt;theme&lt;/em&gt;, &lt;em&gt;appearance&lt;/em&gt;. Jika menggunakan winxp mau pindah tampilan(tampak seperti)&#xA;vista dapat mendownload vista service pack.(saya belum mencobanya)&lt;/p&gt;&#xA;&lt;p&gt;Sekarang ini saya menggunaka Brico Pack(crystal XP)&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;  * Pertama yang perlu dilakukan adalah mendownload&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;Bricopack-nya dulu(cek di &lt;a href=&#34;https://www.crystalxp.net&#34;&gt;www.crystalxp.net&lt;/a&gt;.&#xA;* Lalu install. space yang diperlukan sebesar 300MB.&#xA;ini akan mengganti icon-icon windows,theme,appearance&#xA;dan tampilan menu dan toolbar windows.&#xA;* Jika perlu menambah theme dan appearance tambahan yang didukung bricopack tadi juga bisa di download theme dan appearance tambahan di crystalxp.net.&#xA;seperti: crystal db,crystal black,crystal milk,royal noir,vista CG,vsta inspirat.dll.&#xA;caranya tinggal unzip file nya lalu letakkan di folder:&#xA;C:\WINDOWS\Resources\Themes&#xA;untuk menggantinya tinggal klik dua kali&lt;/p&gt;</description>
     </item>
     <item>
       <title>Kecemasan dan Ketakutan</title>
-      <link>http://localhost:1313/post/2007-06-01-kecemasan-n-ketakutan/</link>
+      <link>https://xedixermawan.github.io/post/2007-06-01-kecemasan-n-ketakutan/</link>
       <pubDate>Fri, 01 Jun 2007 09:01:30 +0000</pubDate>
-      <guid>http://localhost:1313/post/2007-06-01-kecemasan-n-ketakutan/</guid>
+      <guid>https://xedixermawan.github.io/post/2007-06-01-kecemasan-n-ketakutan/</guid>
       <description>&lt;p&gt;Kamu akan menghadapi ujian semester, test TOEFL, atau mau ujian masuk kerja ? semua hal yang berjudul &amp;ldquo;test&amp;rdquo;, biasanya menimbulkan kecemasan dan kekawatiran. Karena sebuah &amp;ldquo;test&amp;rdquo;, akan menghasilkan 2 hal yang bertolak belakang : sebuah kegembiraan dan kebanggan ATAU sebuah kekecewaan / kesedihan / rasa malu.&lt;/p&gt;&#xA;&lt;p&gt;Jadi sangat wajar jika dalam pikiran kita timbul kecemasan, &amp;mdash;atau mungkin plus ketakutan. Hal tersebut semacam sistem kontrol yang ada di dalam tubuh kita dan semua orang memilikinya. Kontrol semacam ini bahkan berguna untuk pengambilan tindakan selanjutnya untuk menghadapi &amp;ldquo;test -test&amp;rdquo; tersebut. Lazimnya, dengan mengambil langkah : mempersiapkan diri sebaik-baiknya.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Diam</title>
-      <link>http://localhost:1313/post/2007-06-01-diam/</link>
+      <link>https://xedixermawan.github.io/post/2007-06-01-diam/</link>
       <pubDate>Fri, 01 Jun 2007 08:50:44 +0000</pubDate>
-      <guid>http://localhost:1313/post/2007-06-01-diam/</guid>
+      <guid>https://xedixermawan.github.io/post/2007-06-01-diam/</guid>
       <description>&lt;p&gt;Diam mungkin adalah sebuah masalah ( atau &amp;ndash;tidak ). Saya sangat dekat dengan diam, setidaknya itu banyak dikatakan &lt;del&gt;banyak&lt;/del&gt; beberapa orang, walaupun saya merasa itu hal yang belum pada level terburuk :D . Apa diam itu sebuah kesalahan? sebuah kekurangan?. Tidak tahu juga. Bukankah lebih baik diam daripada terlalu banyak bicara tak perlu. Banyak ibadah keagamaan yang dilakukan dengan diam baik di agama Islam atau di agama lain. Intinya, mengasingkan diri dari manusia dan keramaian.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Op Amp</title>
-      <link>http://localhost:1313/post/2007-05-31-op-amp/</link>
+      <link>https://xedixermawan.github.io/post/2007-05-31-op-amp/</link>
       <pubDate>Thu, 31 May 2007 08:43:13 +0000</pubDate>
-      <guid>http://localhost:1313/post/2007-05-31-op-amp/</guid>
+      <guid>https://xedixermawan.github.io/post/2007-05-31-op-amp/</guid>
       <description>&lt;p&gt;Beberapa hari ini saya mencoba membuat amplifier, dengan penguatan 1000 kali. Agar mudah diselesaikan, saya menggunakan Op Amp. Bagaimana hasilnya? Amplifiernya jalan, tapi tidak menunjukkan penguatan yang diinginkan.&lt;/p&gt;&#xA;&lt;p&gt;Penguatannya tidak seribu kali. Saya menggunakan input sinyal kotak frekuensi 40 khz, sekitar 500mV (sebenarnya ini terlalu besar), &lt;em&gt;output&lt;/em&gt;-nya cuma sekitar 2 volt. Ketika frekuensi input saya turunkan penguatannya semakin besar. Dan diturunkan dalam orde pengali 100k, 10k, 1k, hz. Apa frekuensi 40khz sudah dianggap -frekuensi tinggi- oleh opamp ?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Menulis atau Mengetik ?</title>
-      <link>http://localhost:1313/post/2007-05-31-menulis-atau-mengetik-ya/</link>
+      <link>https://xedixermawan.github.io/post/2007-05-31-menulis-atau-mengetik-ya/</link>
       <pubDate>Thu, 31 May 2007 08:29:48 +0000</pubDate>
-      <guid>http://localhost:1313/post/2007-05-31-menulis-atau-mengetik-ya/</guid>
+      <guid>https://xedixermawan.github.io/post/2007-05-31-menulis-atau-mengetik-ya/</guid>
       <description>&lt;p&gt;Menulis memang aktivitas yang bagus. Karena dengan menulis kamu dapat mengikat ide-ide yang ada di angan-angan, mengikat ilmu-ilmu lama yang terpendam, menuangkan banyak masalah, atau mungkin memberikan solusi untuk masalah. Semoga saja blog saya ini bertahan dan selalu ada konten baru.&lt;/p&gt;&#xA;&lt;p&gt;Jika seseorang tak punya blog, sebenarnya, juga tak apa apa, tapi dengan adanya blog semoga dapat memberikan yang lebih dari semula, dan bisa untuk menuangkan ide, pemikiran, dan menulis hasil kerja.&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/post/2024-10-26_teknik-hitung-harga-wajar-saham/</link>
+      <link>https://xedixermawan.github.io/post/2024-10-26_teknik-hitung-harga-wajar-saham/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2024-10-26_teknik-hitung-harga-wajar-saham/</guid>
+      <guid>https://xedixermawan.github.io/post/2024-10-26_teknik-hitung-harga-wajar-saham/</guid>
       <description>&lt;p&gt;Berikut adalah beberapa teknik yang umum digunakan untuk menghitung &lt;strong&gt;harga wajar suatu saham&lt;/strong&gt; selain menggunakan &lt;strong&gt;Graham Number&lt;/strong&gt;. Metode ini mencakup pendekatan fundamental yang memperhitungkan berbagai aspek seperti pendapatan, arus kas, pertumbuhan, dan nilai aset perusahaan:&lt;/p&gt;&#xA;&lt;h3 id=&#34;1-discounted-cash-flow-dcf&#34;&gt;1. &lt;strong&gt;Discounted Cash Flow (DCF)&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Teknik ini menghitung nilai intrinsik saham berdasarkan proyeksi arus kas masa depan yang didiskon dengan tingkat diskonto (discount rate) yang sesuai, biasanya &lt;strong&gt;weighted average cost of capital (WACC)&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Rumus dasar:&lt;/strong&gt;&#xA;[&#xA;\text{Nilai Saham} = \frac{\text{FCF}&lt;em&gt;{1}}{(1 + r)^1} + \frac{\text{FCF}&lt;/em&gt;{2}}{(1 + r)^2} + \cdots + \frac{\text{FCF}&lt;em&gt;{n}}{(1 + r)^n}&#xA;]&#xA;Di mana:&lt;br&gt;&#xA;( \text{FCF}&lt;/em&gt;{n} ) = Free Cash Flow (Arus Kas Bebas) di tahun ke-n&lt;br&gt;&#xA;( r ) = Tingkat diskonto (WACC)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;2-priceearnings-pe-ratio-valuation&#34;&gt;2. &lt;strong&gt;Price/Earnings (P/E) Ratio Valuation&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Menggunakan rasio P/E untuk menghitung harga saham wajar dengan mengalikan EPS perusahaan dengan rata-rata P/E industri atau P/E yang sesuai.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Rumus dasar:&lt;/strong&gt;&#xA;[&#xA;\text{Harga Wajar} = \text{EPS} \times \text{P/E Ratio Industri}&#xA;]&lt;/li&gt;&#xA;&lt;li&gt;Cocok untuk menilai saham dalam industri dengan EPS stabil.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;3-pricebook-pb-ratio-valuation&#34;&gt;3. &lt;strong&gt;Price/Book (P/B) Ratio Valuation&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Menggunakan nilai buku per saham (book value per share) dan rasio P/B untuk menghitung harga wajar saham, terutama untuk perusahaan dalam sektor yang padat aset.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Rumus dasar:&lt;/strong&gt;&#xA;[&#xA;\text{Harga Wajar} = \text{Book Value per Share} \times \text{P/B Ratio}&#xA;]&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;4-dividend-discount-model-ddm&#34;&gt;4. &lt;strong&gt;Dividend Discount Model (DDM)&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Menghitung nilai saham berdasarkan dividen yang diharapkan akan dibayarkan di masa depan dan tingkat diskonto yang digunakan untuk menilai arus dividen tersebut.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Rumus dasar (model pertumbuhan Gordon):&lt;/strong&gt;&#xA;[&#xA;\text{Nilai Saham} = \frac{D_1}{r - g}&#xA;]&#xA;Di mana:&lt;br&gt;&#xA;( D_1 ) = Dividen yang diharapkan pada tahun depan&lt;br&gt;&#xA;( r ) = Tingkat pengembalian yang diharapkan (discount rate)&lt;br&gt;&#xA;( g ) = Tingkat pertumbuhan dividen&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;5-enterprise-value-evebitda-multiple-valuation&#34;&gt;5. &lt;strong&gt;Enterprise Value (EV)/EBITDA Multiple Valuation&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Teknik ini menghitung harga wajar berdasarkan nilai perusahaan (Enterprise Value) yang diperkirakan dari EBITDA dan rasio EV/EBITDA yang lazim di industri.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Rumus dasar:&lt;/strong&gt;&#xA;[&#xA;\text{Nilai Saham} = \frac{\text{EV}}{\text{EBITDA}} \times \text{EBITDA Perusahaan} - \text{Total Liabilities} + \text{Kas dan Setara Kas}&#xA;]&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;6-price-to-sales-ps-ratio-valuation&#34;&gt;6. &lt;strong&gt;Price-to-Sales (P/S) Ratio Valuation&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Menggunakan rasio harga terhadap penjualan untuk menghitung harga saham berdasarkan penjualan perusahaan per saham dan P/S yang umum di industri.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Rumus dasar:&lt;/strong&gt;&#xA;[&#xA;\text{Harga Wajar} = \text{Sales per Share} \times \text{P/S Ratio}&#xA;]&lt;/li&gt;&#xA;&lt;li&gt;Cocok untuk perusahaan dengan margin keuntungan yang rendah tapi volume penjualan tinggi.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;7-peg-ratio-priceearnings-to-growth-ratio&#34;&gt;7. &lt;strong&gt;PEG Ratio (Price/Earnings to Growth Ratio)&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Teknik ini memperbaiki kelemahan dari rasio P/E dengan memperhitungkan pertumbuhan laba perusahaan. PEG di bawah 1 sering dianggap undervalued.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Rumus dasar:&lt;/strong&gt;&#xA;[&#xA;\text{PEG Ratio} = \frac{\text{P/E Ratio}}{\text{Tingkat Pertumbuhan Laba (EPS Growth)}}&#xA;]&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;8-residual-income-model-rim&#34;&gt;8. &lt;strong&gt;Residual Income Model (RIM)&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Teknik ini menghitung nilai intrinsik dengan menghitung laba bersih yang tersisa setelah mengurangi biaya ekuitas (cost of equity).&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Rumus dasar:&lt;/strong&gt;&#xA;[&#xA;\text{Nilai Saham} = \text{Equity Capital} + \sum_{t=1}^{\infty} \frac{\text{Residual Income}_t}{(1 + r)^t}&#xA;]&#xA;Di mana residual income dihitung sebagai:&lt;br&gt;&#xA;[&#xA;\text{Residual Income} = \text{Net Income} - (r \times \text{Equity Capital})&#xA;]&#xA;( r ) = Cost of Equity.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;9-replacement-cost-method&#34;&gt;9. &lt;strong&gt;Replacement Cost Method&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Menghitung harga wajar saham berdasarkan biaya untuk mengganti semua aset perusahaan dengan yang baru. Ini lebih relevan untuk perusahaan yang aset fisiknya memainkan peran besar dalam operasi.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;10-sum-of-the-parts-sotp-valuation&#34;&gt;10. &lt;strong&gt;Sum-of-the-Parts (SOTP) Valuation&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Teknik ini menghitung nilai perusahaan dengan membagi bisnisnya ke dalam segmen-segmen yang berbeda, menilai masing-masing segmen secara terpisah (misalnya berdasarkan P/E, EV/EBITDA, dll.), lalu menjumlahkan semuanya untuk mendapatkan nilai total perusahaan.&lt;/li&gt;&#xA;&lt;li&gt;Cocok untuk perusahaan konglomerat atau bisnis dengan banyak segmen berbeda.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;11-earnings-power-value-epv&#34;&gt;11. &lt;strong&gt;Earnings Power Value (EPV)&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Menghitung nilai intrinsik saham berdasarkan kemampuan perusahaan untuk menghasilkan laba di masa depan tanpa memperhitungkan pertumbuhan.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Rumus dasar:&lt;/strong&gt;&#xA;[&#xA;EPV = \frac{\text{Normalized Earnings}}{\text{Cost of Capital}}&#xA;]&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;12-asset-based-valuation&#34;&gt;12. &lt;strong&gt;Asset-based Valuation&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Teknik ini menghitung harga wajar saham berdasarkan nilai aset bersih perusahaan, baik itu aset tetap maupun aset tidak berwujud. Ini sering digunakan untuk perusahaan yang mengalami kesulitan keuangan atau likuidasi.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Rumus dasar:&lt;/strong&gt;&#xA;[&#xA;\text{Nilai Saham} = \frac{\text{Aset Bersih (Net Asset Value)}}{\text{Jumlah Saham Beredar}}&#xA;]&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;13-free-cash-flow-to-equity-fcfe&#34;&gt;13. &lt;strong&gt;Free Cash Flow to Equity (FCFE)&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Metode ini menghitung harga wajar saham berdasarkan arus kas bebas untuk pemegang saham (Free Cash Flow to Equity), setelah memperhitungkan utang dan kewajiban.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Rumus dasar:&lt;/strong&gt;&#xA;[&#xA;\text{Nilai Saham} = \sum_{t=1}^{\infty} \frac{\text{FCFE}_t}{(1 + r)^t}&#xA;]&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;kesimpulan&#34;&gt;Kesimpulan:&lt;/h3&gt;&#xA;&lt;p&gt;Teknik valuasi saham yang berbeda dapat digunakan tergantung pada karakteristik perusahaan, industri, dan tujuan analisis. Teknik seperti &lt;strong&gt;DCF&lt;/strong&gt; dan &lt;strong&gt;DDM&lt;/strong&gt; lebih cocok untuk perusahaan yang memiliki proyeksi arus kas atau dividen yang stabil, sementara &lt;strong&gt;P/E&lt;/strong&gt; atau &lt;strong&gt;EV/EBITDA&lt;/strong&gt; lebih relevan untuk valuasi cepat berdasarkan data industri.&lt;/p&gt;</description>
     </item>
   </channel>

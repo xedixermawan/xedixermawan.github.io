@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Android on Home</title>
-    <link>http://localhost:1313/categories/android/</link>
+    <link>https://xedixermawan.github.io/categories/android/</link>
     <description>Recent content in Android on Home</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© 2007-2024 XediXermawan</copyright>
     <lastBuildDate>Wed, 09 Jan 2019 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/android/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://xedixermawan.github.io/categories/android/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Android Vector Drawable</title>
-      <link>http://localhost:1313/post/2019-01-09__membuat_vector_drawable/</link>
+      <link>https://xedixermawan.github.io/post/2019-01-09__membuat_vector_drawable/</link>
       <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2019-01-09__membuat_vector_drawable/</guid>
+      <guid>https://xedixermawan.github.io/post/2019-01-09__membuat_vector_drawable/</guid>
       <description>&lt;p&gt;Asset berformat vector drawable memiliki beberapa keunggulan ketika dipakai di aplikasi Android. Vector drawable pada dasarnya adalah file text yang berisi deskripsi gambar. Karena format text maka ukurannya sangat kecil. Terlebih kita tidak perlu membuat assets untuk bermacam macam resolusi, karena vector drawable bisa di &lt;em&gt;scale&lt;/em&gt; ukuran gambarnya tanpa mengurangi kualitas.&lt;/p&gt;&#xA;&lt;p&gt;Hal ini memperkuat keuntungan dari segi ukuran gambar, karena tidak perlu menyediakan gambar dalam beberapa versi resolusi layar. Efek lainnya adalah tidak perlu ribet, cukup mengurusi 1 gambar saja.&lt;/p&gt;</description>
     </item>
   </channel>

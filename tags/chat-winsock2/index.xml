@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Chat Winsock2 on Home</title>
-    <link>http://localhost:1313/tags/chat-winsock2/</link>
+    <link>https://xedixermawan.github.io/tags/chat-winsock2/</link>
     <description>Recent content in Chat Winsock2 on Home</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© 2007-2024 XediXermawan</copyright>
     <lastBuildDate>Tue, 27 May 2014 18:43:03 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/chat-winsock2/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://xedixermawan.github.io/tags/chat-winsock2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TCP client server dengan winsock2</title>
-      <link>http://localhost:1313/2014/05/27/tcp-client-server-dengan-winsock2/</link>
+      <link>https://xedixermawan.github.io/2014/05/27/tcp-client-server-dengan-winsock2/</link>
       <pubDate>Tue, 27 May 2014 18:43:03 +0000</pubDate>
-      <guid>http://localhost:1313/2014/05/27/tcp-client-server-dengan-winsock2/</guid>
+      <guid>https://xedixermawan.github.io/2014/05/27/tcp-client-server-dengan-winsock2/</guid>
       <description>&lt;p&gt;Untuk keperluan selanjutnya di pengembangan game yang sedang saya buat ( :-o ), saya memerlukan program yang bisa di tweak lewat program lain. Dengan kata lain 2 program yang saling bisa berkomunikasi. Cara yang bisa dicapai , pakai file sharing atau dengan cara yang pas : pakai networking tcp / udp . Kalau mau buat program dengan kemampuan networking, cara yang bijaksana mungkin pakai 3rd party library yang sudah cukup populer dan reliable. Di antaranya, yang saya ketahui dan sepertinya sudah terbukti bagus :&lt;a href=&#34;http://www.boost.org/doc/libs/1_55_0/doc/html/boost_asio.html&#34;&gt; boost-asio&lt;/a&gt; ( free ), &lt;a href=&#34;http://www.jenkinssoftware.com/download.html&#34;&gt;raknet &lt;/a&gt;( free untuk hobyist ), &lt;a href=&#34;http://libevent.org/&#34;&gt;libevent &lt;/a&gt;( free ), etc. ada yang lain ?. Tapi saya pinginnya ndak usah pakai 3rd party lib, lagipula program yang akan saya buat cukup sederhana. winsock2 &amp;amp; c/c++ . itu pilihannya. dan rasanya akan fun juga buat program nya hehe. Sebagai pemanasan awal dengan winsock2 ( saya pemula ) , saya perlu membuat program seperti ini : ada client dan server. client bisa kirim data ke server. server bisa kirim data ke client. jika client nya lebih dari satu, client bisa kirim data ke client yang lain. representasi dari program ini adalah program &amp;ldquo;chatting&amp;rdquo; :d .&#xA;kemampuan server dalam keadaan running :&lt;/p&gt;</description>
     </item>
   </channel>

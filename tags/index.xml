@@ -2,361 +2,361 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Home</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://xedixermawan.github.io/tags/</link>
     <description>Recent content in Tags on Home</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© 2007-2024 XediXermawan</copyright>
     <lastBuildDate>Sat, 26 Oct 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://xedixermawan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Index</title>
-      <link>http://localhost:1313/tags/index/</link>
+      <link>https://xedixermawan.github.io/tags/index/</link>
       <pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/index/</guid>
+      <guid>https://xedixermawan.github.io/tags/index/</guid>
       <description></description>
     </item>
     <item>
       <title>Css</title>
-      <link>http://localhost:1313/tags/css/</link>
+      <link>https://xedixermawan.github.io/tags/css/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/css/</guid>
+      <guid>https://xedixermawan.github.io/tags/css/</guid>
       <description></description>
     </item>
     <item>
       <title>Html</title>
-      <link>http://localhost:1313/tags/html/</link>
+      <link>https://xedixermawan.github.io/tags/html/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/html/</guid>
+      <guid>https://xedixermawan.github.io/tags/html/</guid>
       <description></description>
     </item>
     <item>
       <title>Markdown</title>
-      <link>http://localhost:1313/tags/markdown/</link>
+      <link>https://xedixermawan.github.io/tags/markdown/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/markdown/</guid>
+      <guid>https://xedixermawan.github.io/tags/markdown/</guid>
       <description></description>
     </item>
     <item>
       <title>Privacy</title>
-      <link>http://localhost:1313/tags/privacy/</link>
+      <link>https://xedixermawan.github.io/tags/privacy/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/privacy/</guid>
+      <guid>https://xedixermawan.github.io/tags/privacy/</guid>
       <description></description>
     </item>
     <item>
       <title>Shortcodes</title>
-      <link>http://localhost:1313/tags/shortcodes/</link>
+      <link>https://xedixermawan.github.io/tags/shortcodes/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/shortcodes/</guid>
+      <guid>https://xedixermawan.github.io/tags/shortcodes/</guid>
       <description></description>
     </item>
     <item>
       <title>Text</title>
-      <link>http://localhost:1313/tags/text/</link>
+      <link>https://xedixermawan.github.io/tags/text/</link>
       <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/text/</guid>
+      <guid>https://xedixermawan.github.io/tags/text/</guid>
       <description></description>
     </item>
     <item>
       <title>Emoji</title>
-      <link>http://localhost:1313/tags/emoji/</link>
+      <link>https://xedixermawan.github.io/tags/emoji/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/emoji/</guid>
+      <guid>https://xedixermawan.github.io/tags/emoji/</guid>
       <description></description>
     </item>
     <item>
       <title>Android</title>
-      <link>http://localhost:1313/tags/android/</link>
+      <link>https://xedixermawan.github.io/tags/android/</link>
       <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/android/</guid>
+      <guid>https://xedixermawan.github.io/tags/android/</guid>
       <description></description>
     </item>
     <item>
       <title>Assets</title>
-      <link>http://localhost:1313/tags/assets/</link>
+      <link>https://xedixermawan.github.io/tags/assets/</link>
       <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/assets/</guid>
+      <guid>https://xedixermawan.github.io/tags/assets/</guid>
       <description></description>
     </item>
     <item>
       <title>Development</title>
-      <link>http://localhost:1313/tags/development/</link>
+      <link>https://xedixermawan.github.io/tags/development/</link>
       <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/development/</guid>
+      <guid>https://xedixermawan.github.io/tags/development/</guid>
       <description></description>
     </item>
     <item>
       <title>Catatan Keuangan</title>
-      <link>http://localhost:1313/tags/catatan-keuangan/</link>
+      <link>https://xedixermawan.github.io/tags/catatan-keuangan/</link>
       <pubDate>Sat, 08 Jul 2017 04:34:22 +0000</pubDate>
-      <guid>http://localhost:1313/tags/catatan-keuangan/</guid>
+      <guid>https://xedixermawan.github.io/tags/catatan-keuangan/</guid>
       <description></description>
     </item>
     <item>
       <title>Pencatat Keuangan Pribadi</title>
-      <link>http://localhost:1313/tags/pencatat-keuangan-pribadi/</link>
+      <link>https://xedixermawan.github.io/tags/pencatat-keuangan-pribadi/</link>
       <pubDate>Sat, 08 Jul 2017 04:34:22 +0000</pubDate>
-      <guid>http://localhost:1313/tags/pencatat-keuangan-pribadi/</guid>
+      <guid>https://xedixermawan.github.io/tags/pencatat-keuangan-pribadi/</guid>
       <description></description>
     </item>
     <item>
       <title>Kalender Android Indonesia</title>
-      <link>http://localhost:1313/tags/kalender-android-indonesia/</link>
+      <link>https://xedixermawan.github.io/tags/kalender-android-indonesia/</link>
       <pubDate>Tue, 07 Mar 2017 07:57:33 +0000</pubDate>
-      <guid>http://localhost:1313/tags/kalender-android-indonesia/</guid>
+      <guid>https://xedixermawan.github.io/tags/kalender-android-indonesia/</guid>
       <description></description>
     </item>
     <item>
       <title>Misalnya</title>
-      <link>http://localhost:1313/tags/misalnya/</link>
+      <link>https://xedixermawan.github.io/tags/misalnya/</link>
       <pubDate>Fri, 13 Feb 2015 16:30:09 +0000</pubDate>
-      <guid>http://localhost:1313/tags/misalnya/</guid>
+      <guid>https://xedixermawan.github.io/tags/misalnya/</guid>
       <description></description>
     </item>
     <item>
       <title>Kalender Bulan</title>
-      <link>http://localhost:1313/tags/kalender-bulan/</link>
+      <link>https://xedixermawan.github.io/tags/kalender-bulan/</link>
       <pubDate>Sun, 16 Nov 2014 17:56:12 +0000</pubDate>
-      <guid>http://localhost:1313/tags/kalender-bulan/</guid>
+      <guid>https://xedixermawan.github.io/tags/kalender-bulan/</guid>
       <description></description>
     </item>
     <item>
       <title>Kalender Hijriah</title>
-      <link>http://localhost:1313/tags/kalender-hijriah/</link>
+      <link>https://xedixermawan.github.io/tags/kalender-hijriah/</link>
       <pubDate>Sun, 16 Nov 2014 17:56:12 +0000</pubDate>
-      <guid>http://localhost:1313/tags/kalender-hijriah/</guid>
+      <guid>https://xedixermawan.github.io/tags/kalender-hijriah/</guid>
       <description></description>
     </item>
     <item>
       <title>Kalender Indonesia</title>
-      <link>http://localhost:1313/tags/kalender-indonesia/</link>
+      <link>https://xedixermawan.github.io/tags/kalender-indonesia/</link>
       <pubDate>Sun, 16 Nov 2014 17:56:12 +0000</pubDate>
-      <guid>http://localhost:1313/tags/kalender-indonesia/</guid>
+      <guid>https://xedixermawan.github.io/tags/kalender-indonesia/</guid>
       <description></description>
     </item>
     <item>
       <title>Kalender Indonesia 2016</title>
-      <link>http://localhost:1313/tags/kalender-indonesia-2016/</link>
+      <link>https://xedixermawan.github.io/tags/kalender-indonesia-2016/</link>
       <pubDate>Sun, 16 Nov 2014 17:56:12 +0000</pubDate>
-      <guid>http://localhost:1313/tags/kalender-indonesia-2016/</guid>
+      <guid>https://xedixermawan.github.io/tags/kalender-indonesia-2016/</guid>
       <description></description>
     </item>
     <item>
       <title>Kalender Jawa</title>
-      <link>http://localhost:1313/tags/kalender-jawa/</link>
+      <link>https://xedixermawan.github.io/tags/kalender-jawa/</link>
       <pubDate>Sun, 16 Nov 2014 17:56:12 +0000</pubDate>
-      <guid>http://localhost:1313/tags/kalender-jawa/</guid>
+      <guid>https://xedixermawan.github.io/tags/kalender-jawa/</guid>
       <description></description>
     </item>
     <item>
       <title>Kalender Libur Nasional</title>
-      <link>http://localhost:1313/tags/kalender-libur-nasional/</link>
+      <link>https://xedixermawan.github.io/tags/kalender-libur-nasional/</link>
       <pubDate>Sun, 16 Nov 2014 17:56:12 +0000</pubDate>
-      <guid>http://localhost:1313/tags/kalender-libur-nasional/</guid>
+      <guid>https://xedixermawan.github.io/tags/kalender-libur-nasional/</guid>
       <description></description>
     </item>
     <item>
       <title>Pasaran Jawa</title>
-      <link>http://localhost:1313/tags/pasaran-jawa/</link>
+      <link>https://xedixermawan.github.io/tags/pasaran-jawa/</link>
       <pubDate>Sun, 16 Nov 2014 17:56:12 +0000</pubDate>
-      <guid>http://localhost:1313/tags/pasaran-jawa/</guid>
+      <guid>https://xedixermawan.github.io/tags/pasaran-jawa/</guid>
       <description></description>
     </item>
     <item>
       <title>Calendar Maker</title>
-      <link>http://localhost:1313/tags/calendar-maker/</link>
+      <link>https://xedixermawan.github.io/tags/calendar-maker/</link>
       <pubDate>Sun, 16 Nov 2014 16:13:14 +0000</pubDate>
-      <guid>http://localhost:1313/tags/calendar-maker/</guid>
+      <guid>https://xedixermawan.github.io/tags/calendar-maker/</guid>
       <description></description>
     </item>
     <item>
       <title>Command Line</title>
-      <link>http://localhost:1313/tags/command-line/</link>
+      <link>https://xedixermawan.github.io/tags/command-line/</link>
       <pubDate>Sun, 16 Nov 2014 16:13:14 +0000</pubDate>
-      <guid>http://localhost:1313/tags/command-line/</guid>
+      <guid>https://xedixermawan.github.io/tags/command-line/</guid>
       <description></description>
     </item>
     <item>
       <title>Png Calendar</title>
-      <link>http://localhost:1313/tags/png-calendar/</link>
+      <link>https://xedixermawan.github.io/tags/png-calendar/</link>
       <pubDate>Sun, 16 Nov 2014 16:13:14 +0000</pubDate>
-      <guid>http://localhost:1313/tags/png-calendar/</guid>
+      <guid>https://xedixermawan.github.io/tags/png-calendar/</guid>
       <description></description>
     </item>
     <item>
       <title>#Komputer #Pc</title>
-      <link>http://localhost:1313/tags/%23komputer-%23pc/</link>
+      <link>https://xedixermawan.github.io/tags/%23komputer-%23pc/</link>
       <pubDate>Sun, 05 Oct 2014 15:18:50 +0000</pubDate>
-      <guid>http://localhost:1313/tags/%23komputer-%23pc/</guid>
+      <guid>https://xedixermawan.github.io/tags/%23komputer-%23pc/</guid>
       <description></description>
     </item>
     <item>
       <title>C/C&#43;&#43;</title>
-      <link>http://localhost:1313/tags/c/c&#43;&#43;/</link>
+      <link>https://xedixermawan.github.io/tags/c/c&#43;&#43;/</link>
       <pubDate>Fri, 30 May 2014 00:31:56 +0000</pubDate>
-      <guid>http://localhost:1313/tags/c/c&#43;&#43;/</guid>
+      <guid>https://xedixermawan.github.io/tags/c/c&#43;&#43;/</guid>
       <description></description>
     </item>
     <item>
       <title>Directx</title>
-      <link>http://localhost:1313/tags/directx/</link>
+      <link>https://xedixermawan.github.io/tags/directx/</link>
       <pubDate>Fri, 30 May 2014 00:31:56 +0000</pubDate>
-      <guid>http://localhost:1313/tags/directx/</guid>
+      <guid>https://xedixermawan.github.io/tags/directx/</guid>
       <description></description>
     </item>
     <item>
       <title>Gif</title>
-      <link>http://localhost:1313/tags/gif/</link>
+      <link>https://xedixermawan.github.io/tags/gif/</link>
       <pubDate>Fri, 30 May 2014 00:31:56 +0000</pubDate>
-      <guid>http://localhost:1313/tags/gif/</guid>
+      <guid>https://xedixermawan.github.io/tags/gif/</guid>
       <description></description>
     </item>
     <item>
       <title>Rendering</title>
-      <link>http://localhost:1313/tags/rendering/</link>
+      <link>https://xedixermawan.github.io/tags/rendering/</link>
       <pubDate>Fri, 30 May 2014 00:31:56 +0000</pubDate>
-      <guid>http://localhost:1313/tags/rendering/</guid>
+      <guid>https://xedixermawan.github.io/tags/rendering/</guid>
       <description></description>
     </item>
     <item>
       <title>Chat Winsock2</title>
-      <link>http://localhost:1313/tags/chat-winsock2/</link>
+      <link>https://xedixermawan.github.io/tags/chat-winsock2/</link>
       <pubDate>Tue, 27 May 2014 18:43:03 +0000</pubDate>
-      <guid>http://localhost:1313/tags/chat-winsock2/</guid>
+      <guid>https://xedixermawan.github.io/tags/chat-winsock2/</guid>
       <description></description>
     </item>
     <item>
       <title>Tcp/Ip</title>
-      <link>http://localhost:1313/tags/tcp/ip/</link>
+      <link>https://xedixermawan.github.io/tags/tcp/ip/</link>
       <pubDate>Tue, 27 May 2014 18:43:03 +0000</pubDate>
-      <guid>http://localhost:1313/tags/tcp/ip/</guid>
+      <guid>https://xedixermawan.github.io/tags/tcp/ip/</guid>
       <description></description>
     </item>
     <item>
       <title>Winsock2</title>
-      <link>http://localhost:1313/tags/winsock2/</link>
+      <link>https://xedixermawan.github.io/tags/winsock2/</link>
       <pubDate>Tue, 27 May 2014 18:43:03 +0000</pubDate>
-      <guid>http://localhost:1313/tags/winsock2/</guid>
+      <guid>https://xedixermawan.github.io/tags/winsock2/</guid>
       <description></description>
     </item>
     <item>
       <title>Preprocessors</title>
-      <link>http://localhost:1313/tags/preprocessors/</link>
+      <link>https://xedixermawan.github.io/tags/preprocessors/</link>
       <pubDate>Wed, 21 May 2014 17:22:18 +0000</pubDate>
-      <guid>http://localhost:1313/tags/preprocessors/</guid>
+      <guid>https://xedixermawan.github.io/tags/preprocessors/</guid>
       <description></description>
     </item>
     <item>
       <title>Desktop App</title>
-      <link>http://localhost:1313/tags/desktop-app/</link>
+      <link>https://xedixermawan.github.io/tags/desktop-app/</link>
       <pubDate>Tue, 13 May 2014 11:55:30 +0000</pubDate>
-      <guid>http://localhost:1313/tags/desktop-app/</guid>
+      <guid>https://xedixermawan.github.io/tags/desktop-app/</guid>
       <description></description>
     </item>
     <item>
       <title>Windows Phone 8</title>
-      <link>http://localhost:1313/tags/windows-phone-8/</link>
+      <link>https://xedixermawan.github.io/tags/windows-phone-8/</link>
       <pubDate>Tue, 13 May 2014 11:55:30 +0000</pubDate>
-      <guid>http://localhost:1313/tags/windows-phone-8/</guid>
+      <guid>https://xedixermawan.github.io/tags/windows-phone-8/</guid>
       <description></description>
     </item>
     <item>
       <title>Utah Teapot</title>
-      <link>http://localhost:1313/tags/utah-teapot/</link>
+      <link>https://xedixermawan.github.io/tags/utah-teapot/</link>
       <pubDate>Mon, 30 Dec 2013 19:01:38 +0000</pubDate>
-      <guid>http://localhost:1313/tags/utah-teapot/</guid>
+      <guid>https://xedixermawan.github.io/tags/utah-teapot/</guid>
       <description></description>
     </item>
     <item>
       <title>Directx 11</title>
-      <link>http://localhost:1313/tags/directx-11/</link>
+      <link>https://xedixermawan.github.io/tags/directx-11/</link>
       <pubDate>Fri, 27 Dec 2013 16:50:35 +0000</pubDate>
-      <guid>http://localhost:1313/tags/directx-11/</guid>
+      <guid>https://xedixermawan.github.io/tags/directx-11/</guid>
       <description></description>
     </item>
     <item>
       <title>Directx11</title>
-      <link>http://localhost:1313/tags/directx11/</link>
+      <link>https://xedixermawan.github.io/tags/directx11/</link>
       <pubDate>Thu, 26 Dec 2013 16:44:48 +0000</pubDate>
-      <guid>http://localhost:1313/tags/directx11/</guid>
+      <guid>https://xedixermawan.github.io/tags/directx11/</guid>
       <description></description>
     </item>
     <item>
       <title>Texturing</title>
-      <link>http://localhost:1313/tags/texturing/</link>
+      <link>https://xedixermawan.github.io/tags/texturing/</link>
       <pubDate>Thu, 26 Dec 2013 16:44:48 +0000</pubDate>
-      <guid>http://localhost:1313/tags/texturing/</guid>
+      <guid>https://xedixermawan.github.io/tags/texturing/</guid>
       <description></description>
     </item>
     <item>
       <title>#Wordpress #Tips #Code</title>
-      <link>http://localhost:1313/tags/%23wordpress-%23tips-%23code/</link>
+      <link>https://xedixermawan.github.io/tags/%23wordpress-%23tips-%23code/</link>
       <pubDate>Sun, 22 Dec 2013 17:24:20 +0000</pubDate>
-      <guid>http://localhost:1313/tags/%23wordpress-%23tips-%23code/</guid>
+      <guid>https://xedixermawan.github.io/tags/%23wordpress-%23tips-%23code/</guid>
       <description></description>
     </item>
     <item>
       <title>Exception Java</title>
-      <link>http://localhost:1313/tags/exception-java/</link>
+      <link>https://xedixermawan.github.io/tags/exception-java/</link>
       <pubDate>Sat, 26 May 2012 19:40:52 +0000</pubDate>
-      <guid>http://localhost:1313/tags/exception-java/</guid>
+      <guid>https://xedixermawan.github.io/tags/exception-java/</guid>
       <description></description>
     </item>
     <item>
       <title>Software-Development</title>
-      <link>http://localhost:1313/tags/software-development/</link>
+      <link>https://xedixermawan.github.io/tags/software-development/</link>
       <pubDate>Sat, 26 May 2012 19:40:52 +0000</pubDate>
-      <guid>http://localhost:1313/tags/software-development/</guid>
+      <guid>https://xedixermawan.github.io/tags/software-development/</guid>
       <description></description>
     </item>
     <item>
       <title>Opengl</title>
-      <link>http://localhost:1313/tags/opengl/</link>
+      <link>https://xedixermawan.github.io/tags/opengl/</link>
       <pubDate>Sun, 16 Oct 2011 16:36:27 +0000</pubDate>
-      <guid>http://localhost:1313/tags/opengl/</guid>
+      <guid>https://xedixermawan.github.io/tags/opengl/</guid>
       <description></description>
     </item>
     <item>
       <title>Belajar</title>
-      <link>http://localhost:1313/tags/belajar/</link>
+      <link>https://xedixermawan.github.io/tags/belajar/</link>
       <pubDate>Sat, 15 May 2010 15:17:07 +0000</pubDate>
-      <guid>http://localhost:1313/tags/belajar/</guid>
+      <guid>https://xedixermawan.github.io/tags/belajar/</guid>
       <description></description>
     </item>
     <item>
       <title>C&#43;&#43;</title>
-      <link>http://localhost:1313/tags/c&#43;&#43;/</link>
+      <link>https://xedixermawan.github.io/tags/c&#43;&#43;/</link>
       <pubDate>Sat, 15 May 2010 15:17:07 +0000</pubDate>
-      <guid>http://localhost:1313/tags/c&#43;&#43;/</guid>
+      <guid>https://xedixermawan.github.io/tags/c&#43;&#43;/</guid>
       <description></description>
     </item>
     <item>
       <title>Virtual Function</title>
-      <link>http://localhost:1313/tags/virtual-function/</link>
+      <link>https://xedixermawan.github.io/tags/virtual-function/</link>
       <pubDate>Sat, 15 May 2010 15:17:07 +0000</pubDate>
-      <guid>http://localhost:1313/tags/virtual-function/</guid>
+      <guid>https://xedixermawan.github.io/tags/virtual-function/</guid>
       <description></description>
     </item>
     <item>
       <title>Life</title>
-      <link>http://localhost:1313/tags/life/</link>
+      <link>https://xedixermawan.github.io/tags/life/</link>
       <pubDate>Fri, 01 Jun 2007 09:01:30 +0000</pubDate>
-      <guid>http://localhost:1313/tags/life/</guid>
+      <guid>https://xedixermawan.github.io/tags/life/</guid>
       <description></description>
     </item>
     <item>
       <title>Random</title>
-      <link>http://localhost:1313/tags/random/</link>
+      <link>https://xedixermawan.github.io/tags/random/</link>
       <pubDate>Fri, 01 Jun 2007 09:01:30 +0000</pubDate>
-      <guid>http://localhost:1313/tags/random/</guid>
+      <guid>https://xedixermawan.github.io/tags/random/</guid>
       <description></description>
     </item>
     <item>
       <title>Elektronik</title>
-      <link>http://localhost:1313/tags/elektronik/</link>
+      <link>https://xedixermawan.github.io/tags/elektronik/</link>
       <pubDate>Thu, 31 May 2007 08:43:13 +0000</pubDate>
-      <guid>http://localhost:1313/tags/elektronik/</guid>
+      <guid>https://xedixermawan.github.io/tags/elektronik/</guid>
       <description></description>
     </item>
   </channel>

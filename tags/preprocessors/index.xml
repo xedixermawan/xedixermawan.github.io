@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Preprocessors on Home</title>
-    <link>http://localhost:1313/tags/preprocessors/</link>
+    <link>https://xedixermawan.github.io/tags/preprocessors/</link>
     <description>Recent content in Preprocessors on Home</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© 2007-2024 XediXermawan</copyright>
     <lastBuildDate>Wed, 21 May 2014 17:22:18 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/preprocessors/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://xedixermawan.github.io/tags/preprocessors/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>#define problem</title>
-      <link>http://localhost:1313/2014/05/21/define-problem/</link>
+      <link>https://xedixermawan.github.io/2014/05/21/define-problem/</link>
       <pubDate>Wed, 21 May 2014 17:22:18 +0000</pubDate>
-      <guid>http://localhost:1313/2014/05/21/define-problem/</guid>
+      <guid>https://xedixermawan.github.io/2014/05/21/define-problem/</guid>
       <description>&lt;p&gt;Masalah kecil tapi fatal di projects C/C++ yang  saya temui ( dan parahnya terulang-ulang ), adalah penggunaan define. #define secara salah digunakan karena dicampur aduk antara definisi &amp;amp; pengecekannya. sebagai contoh ada 2 define :&lt;/p&gt;&#xA;&lt;p&gt;#define USE_FEATURE_A&#xA;#define USE_FEATURE_B (1)&lt;/p&gt;&#xA;&lt;p&gt;Dalam penggunaanya ada beberapa kemungkinan :&lt;/p&gt;&#xA;&lt;p&gt;#ifdef USE_FEATURE_A&#xA;// code_inside_a.1&#xA;#endif&#xA;&amp;ndash;&amp;gt;penggunaan yang benar. code &amp;ldquo;code_inside_a.1&amp;rdquo; akan ter-compile jika USE_FEATURE_A ter-define. kalau ingin menghilangkan code &amp;ldquo;code_inside_a.1&amp;rdquo;, USE_FEATURE_A harus un-define dengan komen : // #define USE_FEATURE_A&lt;/p&gt;</description>
     </item>
   </channel>

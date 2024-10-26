@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Scripting&amp;amp;Automation on Home</title>
-    <link>http://localhost:1313/categories/scriptingampautomation/</link>
+    <link>https://xedixermawan.github.io/categories/scriptingampautomation/</link>
     <description>Recent content in Scripting&amp;amp;Automation on Home</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© 2007-2024 XediXermawan</copyright>
     <lastBuildDate>Fri, 13 Feb 2015 16:30:09 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/scriptingampautomation/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://xedixermawan.github.io/categories/scriptingampautomation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mencoba Cmake</title>
-      <link>http://localhost:1313/2015/02/13/mencobacmake/</link>
+      <link>https://xedixermawan.github.io/2015/02/13/mencobacmake/</link>
       <pubDate>Fri, 13 Feb 2015 16:30:09 +0000</pubDate>
-      <guid>http://localhost:1313/2015/02/13/mencobacmake/</guid>
+      <guid>https://xedixermawan.github.io/2015/02/13/mencobacmake/</guid>
       <description>&lt;p&gt;Visual Studio adalah favorite ide pemrograman saya. Sudah sejak lama saya pakai, kira-kira sejak 4 tahun yang lalu. Mungkin menjadi favorite karena kebiasaan :) dan juga visual studio mudah dipakai. Walaupun kadang ada juga bugs &amp;lsquo;aneh&amp;rsquo; yang terjadi selama nge-build project dengan VS. Sayangnya, &amp;lsquo;build file&amp;rsquo; dari VS tidak bisa dipakai di environment lain, misalnya mau &lt;em&gt;build&lt;/em&gt; pakai gcc di Linux. Oleh karena itulah harus ada cara lain yang harus dipakai. Berikut sebagai contoh case saya :&lt;/p&gt;</description>
     </item>
     <item>
       <title>Auto beautifying C&#43;&#43; code</title>
-      <link>http://localhost:1313/2013/12/23/auto-beautifying-c-code/</link>
+      <link>https://xedixermawan.github.io/2013/12/23/auto-beautifying-c-code/</link>
       <pubDate>Mon, 23 Dec 2013 09:40:50 +0000</pubDate>
-      <guid>http://localhost:1313/2013/12/23/auto-beautifying-c-code/</guid>
+      <guid>https://xedixermawan.github.io/2013/12/23/auto-beautifying-c-code/</guid>
       <description>&lt;p&gt;Disini saya ingin share simple script untuk &amp;ldquo;mempercantik&amp;rdquo; c++ code disuatu folder project dan melakukan svn commit setelah itu. jadi semacam selalu ada auto corrector jika kamu menulis code yang tidak sesuai aturan ( bahkan mungkin aturan yang kamu buat sendiri) .&lt;/p&gt;&#xA;&lt;p&gt;code yang rapih diharapkan memiliki sedikit bugs dan juga ingat programmer menulis code tidak hanya untuk mesin, tetapi juga untuk dibaca manusia yang lain. untung nya untuk masalah indentation &amp;amp; formating ada software keren &amp;amp; free untuk melakukan ini, yaitu AStyle (  &lt;a href=&#34;http://astyle.sourceforge.net/&#34;&gt;http://astyle.sourceforge.net/&lt;/a&gt; )  .  dengan batch script dibawah ini, semuanya terjadi otomatis :&lt;/p&gt;</description>
     </item>
     <item>
       <title>File mana yang termodifikasi ?</title>
-      <link>http://localhost:1313/2013/04/26/file-mana-yang-termodifikasi/</link>
+      <link>https://xedixermawan.github.io/2013/04/26/file-mana-yang-termodifikasi/</link>
       <pubDate>Fri, 26 Apr 2013 18:07:04 +0000</pubDate>
-      <guid>http://localhost:1313/2013/04/26/file-mana-yang-termodifikasi/</guid>
+      <guid>https://xedixermawan.github.io/2013/04/26/file-mana-yang-termodifikasi/</guid>
       <description>&lt;p&gt;Misalnya saya memiliki 1000 file yang akan saya prosess oleh suatu program, dengan script saya bisa melakukannya seperti ini :&lt;/p&gt;&#xA;&lt;p&gt;for i=0 to i=1000 { process file ke-i }      &lt;/p&gt;&#xA;&lt;p&gt;jadi dengan klik sebuat script pekerjaan selesai. Namun, ada beberapa file dari 1000 file tersebut yang berubah / saya modifikasi lagi, sehingga saya perlu mengulang eksekusi script diatas lagi :&lt;/p&gt;&#xA;&lt;p&gt;for i=0 to i=1000 { process file ke-i }      &lt;/p&gt;&#xA;&lt;p&gt;Ini tentu tidak efisien dan lama, karena saya mengubah beberapa file, namun 1000 file masih diprocess lagi. Kode yang efisien seharusnya begini :&lt;/p&gt;</description>
     </item>
     <item>
       <title>Otomatisasi dengan script : windows powershell</title>
-      <link>http://localhost:1313/2013/01/06/otomatisasi-dengan-script-windows-powershell/</link>
+      <link>https://xedixermawan.github.io/2013/01/06/otomatisasi-dengan-script-windows-powershell/</link>
       <pubDate>Sun, 06 Jan 2013 16:50:18 +0000</pubDate>
-      <guid>http://localhost:1313/2013/01/06/otomatisasi-dengan-script-windows-powershell/</guid>
+      <guid>https://xedixermawan.github.io/2013/01/06/otomatisasi-dengan-script-windows-powershell/</guid>
       <description>&lt;p&gt;Kita mungkin pernah menjumpai orang-orang yang bekerja sangat cepat atau menyelesaikan banyak pekerjaan dengan waktu yang singkat, dan ada yang biasa saja dan bahkan mungkin lambat. Kenapa? Jawabannya mungkin : &amp;ldquo;orang kan beda-beda&amp;rdquo;, maksudnya? : &amp;ldquo;ada orang pintar dan ada orang bodoh&amp;rdquo;. :d, just kiddin&amp;rsquo; . Yah, itu tentu tidak benar . Mungkin ada orang yang diberi kemampuan mengatur waktunya dengan baik &amp;amp; memiliki fokus yang tinggi dalam bekerja ( &lt;em&gt;say NO to distraction&lt;/em&gt; ). Dan mungkin dia menggunakan &amp;ldquo;alat&amp;rdquo; yang benar dan cocok dalam menyelesaikan pekerjaan. Dan mungkin juga mereka menggunakan &amp;ldquo;&lt;em&gt;magic&lt;/em&gt;&amp;rdquo; :-p, maksudku mereka mengotomatisasi pekerjaan. Kalau kita bekerja dengan komputer, banyak hal yang bisa di-otomatisasi.&lt;/p&gt;</description>
     </item>
   </channel>
