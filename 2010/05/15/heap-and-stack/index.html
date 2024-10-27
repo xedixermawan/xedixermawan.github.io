@@ -50,7 +50,7 @@
   lang="en"
   dir="ltr"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -138,6 +138,48 @@ Stack Segment teralokasi untuk berbagai keperluan, seperti menyimpan return addr
   <meta name="generator" content="Hugo 0.136.5">
 
   
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="Belajar : Heap dan Stack">
+  <meta itemprop="description" content="edi ermawan, http://offground.wordpress.com
+——— May 15, 2010 ——– Ketika suatu program berjalan, processor (– atau lebih tepatnya 80x86 ? –) mengalokasikan memory untuk program tersebut di RAM, yang terbagi menjadi empat bagian yaitu Code Segment (CS), Stack Segment (SS), Data Segment (DS), dan Extra Segment (ES).
+Code Segment menyimpan semua kode dan instruksi-instruksi processor yang digunakan oleh program tersebut. Semua data di memori ini bersifat read-only.
+Stack Segment teralokasi untuk berbagai keperluan, seperti menyimpan return address dari pemanggilan fungsi, menyimpan parameter-parameter yang dilewatkan ke fungsi, menyimpan variabel lokal di dalam fungsi, dll. Penambahan dan pengurangan memory stack menggunakan metode last in first out (LIFO). Misalnya, saat suatu fungsi dipanggil, seketika itu variabel lokal di dalam fungsi tersebut dialokasikan di stack (push), dan ketika fungsi sudah berakhir, variabel lokal di-dealokasikan (pop). Walaupun proses LIFO di stack terjadi otomatis, di stack bisa terjadi overflow, atau yang disebut stack overflow. Stack overflow terjadi misalnya ketika terjadi pemanggilan recursive tak berujung (infinite recursive). Contoh:">
+  <meta itemprop="datePublished" content="2010-05-15T13:56:48+00:00">
+  <meta itemprop="dateModified" content="2010-05-15T13:56:48+00:00">
+  <meta itemprop="wordCount" content="499">
+  <meta itemprop="keywords" content="C/C&#43;&#43; Diary">
+  
+  <meta property="og:url" content="https://xedixermawan.github.io/2010/05/15/heap-and-stack/">
+  <meta property="og:site_name" content="Home">
+  <meta property="og:title" content="Belajar : Heap dan Stack">
+  <meta property="og:description" content="edi ermawan, http://offground.wordpress.com
+——— May 15, 2010 ——– Ketika suatu program berjalan, processor (– atau lebih tepatnya 80x86 ? –) mengalokasikan memory untuk program tersebut di RAM, yang terbagi menjadi empat bagian yaitu Code Segment (CS), Stack Segment (SS), Data Segment (DS), dan Extra Segment (ES).
+Code Segment menyimpan semua kode dan instruksi-instruksi processor yang digunakan oleh program tersebut. Semua data di memori ini bersifat read-only.
+Stack Segment teralokasi untuk berbagai keperluan, seperti menyimpan return address dari pemanggilan fungsi, menyimpan parameter-parameter yang dilewatkan ke fungsi, menyimpan variabel lokal di dalam fungsi, dll. Penambahan dan pengurangan memory stack menggunakan metode last in first out (LIFO). Misalnya, saat suatu fungsi dipanggil, seketika itu variabel lokal di dalam fungsi tersebut dialokasikan di stack (push), dan ketika fungsi sudah berakhir, variabel lokal di-dealokasikan (pop). Walaupun proses LIFO di stack terjadi otomatis, di stack bisa terjadi overflow, atau yang disebut stack overflow. Stack overflow terjadi misalnya ketika terjadi pemanggilan recursive tak berujung (infinite recursive). Contoh:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2010-05-15T13:56:48+00:00">
+    <meta property="article:modified_time" content="2010-05-15T13:56:48+00:00">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Belajar : Heap dan Stack">
+  <meta name="twitter:description" content="edi ermawan, http://offground.wordpress.com
+——— May 15, 2010 ——– Ketika suatu program berjalan, processor (– atau lebih tepatnya 80x86 ? –) mengalokasikan memory untuk program tersebut di RAM, yang terbagi menjadi empat bagian yaitu Code Segment (CS), Stack Segment (SS), Data Segment (DS), dan Extra Segment (ES).
+Code Segment menyimpan semua kode dan instruksi-instruksi processor yang digunakan oleh program tersebut. Semua data di memori ini bersifat read-only.
+Stack Segment teralokasi untuk berbagai keperluan, seperti menyimpan return address dari pemanggilan fungsi, menyimpan parameter-parameter yang dilewatkan ke fungsi, menyimpan variabel lokal di dalam fungsi, dll. Penambahan dan pengurangan memory stack menggunakan metode last in first out (LIFO). Misalnya, saat suatu fungsi dipanggil, seketika itu variabel lokal di dalam fungsi tersebut dialokasikan di stack (push), dan ketika fungsi sudah berakhir, variabel lokal di-dealokasikan (pop). Walaupun proses LIFO di stack terjadi otomatis, di stack bisa terjadi overflow, atau yang disebut stack overflow. Stack overflow terjadi misalnya ketika terjadi pemanggilan recursive tak berujung (infinite recursive). Contoh:">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://xedixermawan.github.io/2010/05/15/heap-and-stack/" />
   
   
 </head>

@@ -50,7 +50,7 @@
   lang="en"
   dir="ltr"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -141,6 +141,39 @@ dari contoh ini, assert bisa menghemat waktu :). assert akan dihilangkan di-rele
   <meta name="generator" content="Hugo 0.136.5">
 
   
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="Memperbanyak Assert">
+  <meta itemprop="description" content="Dalam pembuatan program, programmer sering kehilangan detail apa yang terjadi di bagian kode tertentu. Terutama kalau program yang dibuat terdiri dari ribuan baris kode.Lebih parah lagi, jika kode tersebut sudah lama tidak disentuh. Dan ketika bug ditemukan , programmer akan mencari cara untuk memperbaiki bug tersebut dengan melakukan debugging ke kode yang diduga sebagai penyebab. Waktu penyelesaian tentu tergantung seberapa sulit bug tersebut. Usaha “mencari” solusi dengan debugging ini bisa di minimalkan jika kita memasang banyak ASSERT di kode. Contoh : void DataSender::Init(std::string filename) { std::ifstream config_file(filename, std::ios::in | std::ios::binary | std::ios::ate); assert( config_file.is_open() ) ; // do something // … // … } jika file config tidak bisa di buka, assertion failed akan terjadi , dan programmer/user akan segera tau. Skenario yang terjadi jika kode diatas tanpa ASSERT : suatu saat path file diubah, dan file tidak bisa dibuka. akibatnya akan ada masalah dengan class DataSender, jika berungtung program akan crash, dan programmer dapat crash/ stack trace, jika tidak kemungkinan DataSender akan tetap berjalan tapi data tidak terkirim. Programmer akan mencari dengan banyak dugaan penyebab: apa jaringan internet lagi down?, apa library networknya bermasalah?, apa pemakai class DataSender? apa terkirim tapi ada delay ?. banyak yang harus dijawab . arghhh. dari contoh ini, assert bisa menghemat waktu :). assert akan dihilangkan di-release version , jika assert ingin dipakai di release version lebih baik memakai preprocessor untuk menggantikannya. disini ASSERT diganti dengan std::exception failed :p .">
+  <meta itemprop="datePublished" content="2013-04-14T18:54:40+00:00">
+  <meta itemprop="dateModified" content="2013-04-14T18:54:40+00:00">
+  <meta itemprop="wordCount" content="271">
+  <meta itemprop="keywords" content="C/C&#43;&#43; Diary">
+  
+  <meta property="og:url" content="https://xedixermawan.github.io/2013/04/14/memperbanyak-assert/">
+  <meta property="og:site_name" content="Home">
+  <meta property="og:title" content="Memperbanyak Assert">
+  <meta property="og:description" content="Dalam pembuatan program, programmer sering kehilangan detail apa yang terjadi di bagian kode tertentu. Terutama kalau program yang dibuat terdiri dari ribuan baris kode.Lebih parah lagi, jika kode tersebut sudah lama tidak disentuh. Dan ketika bug ditemukan , programmer akan mencari cara untuk memperbaiki bug tersebut dengan melakukan debugging ke kode yang diduga sebagai penyebab. Waktu penyelesaian tentu tergantung seberapa sulit bug tersebut. Usaha “mencari” solusi dengan debugging ini bisa di minimalkan jika kita memasang banyak ASSERT di kode. Contoh : void DataSender::Init(std::string filename) { std::ifstream config_file(filename, std::ios::in | std::ios::binary | std::ios::ate); assert( config_file.is_open() ) ; // do something // … // … } jika file config tidak bisa di buka, assertion failed akan terjadi , dan programmer/user akan segera tau. Skenario yang terjadi jika kode diatas tanpa ASSERT : suatu saat path file diubah, dan file tidak bisa dibuka. akibatnya akan ada masalah dengan class DataSender, jika berungtung program akan crash, dan programmer dapat crash/ stack trace, jika tidak kemungkinan DataSender akan tetap berjalan tapi data tidak terkirim. Programmer akan mencari dengan banyak dugaan penyebab: apa jaringan internet lagi down?, apa library networknya bermasalah?, apa pemakai class DataSender? apa terkirim tapi ada delay ?. banyak yang harus dijawab . arghhh. dari contoh ini, assert bisa menghemat waktu :). assert akan dihilangkan di-release version , jika assert ingin dipakai di release version lebih baik memakai preprocessor untuk menggantikannya. disini ASSERT diganti dengan std::exception failed :p .">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2013-04-14T18:54:40+00:00">
+    <meta property="article:modified_time" content="2013-04-14T18:54:40+00:00">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Memperbanyak Assert">
+  <meta name="twitter:description" content="Dalam pembuatan program, programmer sering kehilangan detail apa yang terjadi di bagian kode tertentu. Terutama kalau program yang dibuat terdiri dari ribuan baris kode.Lebih parah lagi, jika kode tersebut sudah lama tidak disentuh. Dan ketika bug ditemukan , programmer akan mencari cara untuk memperbaiki bug tersebut dengan melakukan debugging ke kode yang diduga sebagai penyebab. Waktu penyelesaian tentu tergantung seberapa sulit bug tersebut. Usaha “mencari” solusi dengan debugging ini bisa di minimalkan jika kita memasang banyak ASSERT di kode. Contoh : void DataSender::Init(std::string filename) { std::ifstream config_file(filename, std::ios::in | std::ios::binary | std::ios::ate); assert( config_file.is_open() ) ; // do something // … // … } jika file config tidak bisa di buka, assertion failed akan terjadi , dan programmer/user akan segera tau. Skenario yang terjadi jika kode diatas tanpa ASSERT : suatu saat path file diubah, dan file tidak bisa dibuka. akibatnya akan ada masalah dengan class DataSender, jika berungtung program akan crash, dan programmer dapat crash/ stack trace, jika tidak kemungkinan DataSender akan tetap berjalan tapi data tidak terkirim. Programmer akan mencari dengan banyak dugaan penyebab: apa jaringan internet lagi down?, apa library networknya bermasalah?, apa pemakai class DataSender? apa terkirim tapi ada delay ?. banyak yang harus dijawab . arghhh. dari contoh ini, assert bisa menghemat waktu :). assert akan dihilangkan di-release version , jika assert ingin dipakai di release version lebih baik memakai preprocessor untuk menggantikannya. disini ASSERT diganti dengan std::exception failed :p .">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://xedixermawan.github.io/2013/04/14/memperbanyak-assert/" />
   
   
 </head>

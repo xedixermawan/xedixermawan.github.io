@@ -50,7 +50,7 @@
   lang="en"
   dir="ltr"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -135,6 +135,41 @@ DirectX::XMFLOAT2 texcoord;" />
   <meta name="generator" content="Hugo 0.136.5">
 
   
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="[3] on directx 11 : load 3D model from file">
+  <meta itemprop="description" content="di project sebelumnya saya hanya menggambar 3d kubus. sangat menarik jika program bisa me-load model 3D yang dibuat oleh 3D editor. format paling populer untuk coba-coba tentu adalah wavefront obj :) . File .obj ini hanya bisa untuk static 3d model, tidak mendukung animasi. Dan biasanya ada 1 file pasangan tambahan untuk setiap .obj yaitu .mtl. File .mtl dimaksudkan untuk menyimpan material ( konstanta pencahayaan , seperti diffuse, spekular ) . namun .mtl file ini optional. File .obj sebenarnya adalah text file. terdapat 2 kata disini “3D model” &amp; “text file”, dan pasti yang terbayang adalah parsing yang lamaaaa . dan memang iya. parsingnya lama. untuk mengakali ini , .obj diubah ke .vbo ( ada orang yang sudah buat tool converter .obj to .vbo . .vbo apa itu?, .vbo sebenarnya adalah versi binary dari .obj, sehingga tidak perlu ada proses parsing waktu load object. 1 fungsi tambahan LoadModel_VBO, dan saya mengubah informasi vertex menjadi : DirectX::XMFLOAT3 position; DirectX::XMFLOAT3 normal; DirectX::XMFLOAT2 texcoord;">
+  <meta itemprop="datePublished" content="2013-12-30T19:01:38+00:00">
+  <meta itemprop="dateModified" content="2013-12-30T19:01:38+00:00">
+  <meta itemprop="wordCount" content="383">
+  <meta itemprop="keywords" content="Directx,Utah Teapot">
+  
+  <meta property="og:url" content="https://xedixermawan.github.io/2013/12/30/3-on-directx-11-load-3d-model-from-file/">
+  <meta property="og:site_name" content="Home">
+  <meta property="og:title" content="[3] on directx 11 : load 3D model from file">
+  <meta property="og:description" content="di project sebelumnya saya hanya menggambar 3d kubus. sangat menarik jika program bisa me-load model 3D yang dibuat oleh 3D editor. format paling populer untuk coba-coba tentu adalah wavefront obj :) . File .obj ini hanya bisa untuk static 3d model, tidak mendukung animasi. Dan biasanya ada 1 file pasangan tambahan untuk setiap .obj yaitu .mtl. File .mtl dimaksudkan untuk menyimpan material ( konstanta pencahayaan , seperti diffuse, spekular ) . namun .mtl file ini optional. File .obj sebenarnya adalah text file. terdapat 2 kata disini “3D model” &amp; “text file”, dan pasti yang terbayang adalah parsing yang lamaaaa . dan memang iya. parsingnya lama. untuk mengakali ini , .obj diubah ke .vbo ( ada orang yang sudah buat tool converter .obj to .vbo . .vbo apa itu?, .vbo sebenarnya adalah versi binary dari .obj, sehingga tidak perlu ada proses parsing waktu load object. 1 fungsi tambahan LoadModel_VBO, dan saya mengubah informasi vertex menjadi : DirectX::XMFLOAT3 position; DirectX::XMFLOAT3 normal; DirectX::XMFLOAT2 texcoord;">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2013-12-30T19:01:38+00:00">
+    <meta property="article:modified_time" content="2013-12-30T19:01:38+00:00">
+    <meta property="article:tag" content="Directx">
+    <meta property="article:tag" content="Utah Teapot">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="[3] on directx 11 : load 3D model from file">
+  <meta name="twitter:description" content="di project sebelumnya saya hanya menggambar 3d kubus. sangat menarik jika program bisa me-load model 3D yang dibuat oleh 3D editor. format paling populer untuk coba-coba tentu adalah wavefront obj :) . File .obj ini hanya bisa untuk static 3d model, tidak mendukung animasi. Dan biasanya ada 1 file pasangan tambahan untuk setiap .obj yaitu .mtl. File .mtl dimaksudkan untuk menyimpan material ( konstanta pencahayaan , seperti diffuse, spekular ) . namun .mtl file ini optional. File .obj sebenarnya adalah text file. terdapat 2 kata disini “3D model” &amp; “text file”, dan pasti yang terbayang adalah parsing yang lamaaaa . dan memang iya. parsingnya lama. untuk mengakali ini , .obj diubah ke .vbo ( ada orang yang sudah buat tool converter .obj to .vbo . .vbo apa itu?, .vbo sebenarnya adalah versi binary dari .obj, sehingga tidak perlu ada proses parsing waktu load object. 1 fungsi tambahan LoadModel_VBO, dan saya mengubah informasi vertex menjadi : DirectX::XMFLOAT3 position; DirectX::XMFLOAT3 normal; DirectX::XMFLOAT2 texcoord;">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://xedixermawan.github.io/2013/12/30/3-on-directx-11-load-3d-model-from-file/" />
   
   
 </head>

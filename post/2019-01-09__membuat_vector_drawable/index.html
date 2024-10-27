@@ -50,7 +50,7 @@
   lang="en"
   dir="ltr"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -133,6 +133,42 @@ Hal ini memperkuat keuntungan dari segi ukuran gambar, karena tidak perlu menyed
   <meta name="generator" content="Hugo 0.136.5">
 
   
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="Android Vector Drawable">
+  <meta itemprop="description" content="Membuat vector drawable untuk Android app">
+  <meta itemprop="datePublished" content="2019-01-09T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2019-01-09T00:00:00+00:00">
+  <meta itemprop="wordCount" content="248">
+  <meta itemprop="keywords" content="Android,Assets,Development">
+  
+  <meta property="og:url" content="https://xedixermawan.github.io/post/2019-01-09__membuat_vector_drawable/">
+  <meta property="og:site_name" content="Home">
+  <meta property="og:title" content="Android Vector Drawable">
+  <meta property="og:description" content="Membuat vector drawable untuk Android app">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2019-01-09T00:00:00+00:00">
+    <meta property="article:modified_time" content="2019-01-09T00:00:00+00:00">
+    <meta property="article:tag" content="Android">
+    <meta property="article:tag" content="Assets">
+    <meta property="article:tag" content="Development">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Android Vector Drawable">
+  <meta name="twitter:description" content="Membuat vector drawable untuk Android app">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://xedixermawan.github.io/post/2019-01-09__membuat_vector_drawable/" />
   
   
 </head>
@@ -292,16 +328,16 @@ Hal ini memperkuat keuntungan dari segi ukuran gambar, karena tidak perlu menyed
 <p>Di menu utama Android Studio, <strong>File -&gt; New -&gt; Vector Assets</strong>:</p>
 <p><img src="/images/1-vector_asset_studio.jpg" alt="Example image"></p>
 <p>Hasil vector drawable sebagai berikut :</p>
-<pre tabindex="0"><code>&lt;vector xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34;
-        android:width=&#34;24dp&#34;
-        android:height=&#34;24dp&#34;
-        android:viewportWidth=&#34;24.0&#34;
-        android:viewportHeight=&#34;24.0&#34;&gt;
-    &lt;path
-        android:fillColor=&#34;#FF000000&#34;
-        android:pathData=&#34;M19.5,3.5L18,2l-1.5,1.5L15,2l-1.5,1.5L12,2l-1.5,1.5L9,2 7.5,3.5 6,2 4.5,3.5 3,2v20l1.5,-1.5L6,22l1.5,-1.5L9,22l1.5,-1.5L12,22l1.5,-1.5L15,22l1.5,-1.5L18,22l1.5,-1.5L21,22L21,2l-1.5,1.5zM19,19.09L5,19.09L5,4.91h14v14.18zM6,15h12v2L6,17zM6,11h12v2L6,13zM6,7h12v2L6,9z&#34;/&gt;
-&lt;/vector&gt;
-</code></pre><p>Kalau diperhatikan bagian <strong>path</strong>, sebenarnya adalah format SVG.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;vector</span> <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:width=</span><span style="color:#e6db74">&#34;24dp&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:height=</span><span style="color:#e6db74">&#34;24dp&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:viewportWidth=</span><span style="color:#e6db74">&#34;24.0&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:viewportHeight=</span><span style="color:#e6db74">&#34;24.0&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;path</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:fillColor=</span><span style="color:#e6db74">&#34;#FF000000&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">android:pathData=</span><span style="color:#e6db74">&#34;M19.5,3.5L18,2l-1.5,1.5L15,2l-1.5,1.5L12,2l-1.5,1.5L9,2 7.5,3.5 6,2 4.5,3.5 3,2v20l1.5,-1.5L6,22l1.5,-1.5L9,22l1.5,-1.5L12,22l1.5,-1.5L15,22l1.5,-1.5L18,22l1.5,-1.5L21,22L21,2l-1.5,1.5zM19,19.09L5,19.09L5,4.91h14v14.18zM6,15h12v2L6,17zM6,11h12v2L6,13zM6,7h12v2L6,9z&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/vector&gt;</span>
+</span></span></code></pre></div><p>Kalau diperhatikan bagian <strong>path</strong>, sebenarnya adalah format SVG.</p>
 <p>Untuk icon icon yang umum, file SVG bisa didapat secara gratis dari :  <a href="https://material.io/tools/icons/">https://material.io/tools/icons/</a> (lisensi  Apache license version 2.0 , : bebas untuk dipakai di komersial app ) . Kalau seandainya ingin membuat SVG sendiri, ada banyak juga online tools untuk membuatnya.</p>
 </section>
 
@@ -337,10 +373,6 @@ Hal ini memperkuat keuntungan dari segi ukuran gambar, karena tidak perlu menyed
   <nav
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
   >
-    
-    <a class="ltr:pr-3 rtl:pl-3" href="https://xedixermawan.github.io/post/emoji-support/"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Emoji Support</span></a
-    >
     
     
     <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://xedixermawan.github.io/2017/07/08/aplikasi-android-pencatat-keuangan/"

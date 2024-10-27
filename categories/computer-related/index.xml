@@ -38,7 +38,7 @@
       <description>&lt;p&gt;Beberapa malam hari yang lalu, saat lagi menggunakan komputer, secara tidak sengaja, kaki saya menyentuh kabel power dari power supply, dan tiba tiba komputer saya mati, dibarengi dengan percikan api. Cukup membuat kaget. Kecelakaan kecil yang mengkawatirkan . Saya coba lagi nyalakan 2-3 kali, tidak ada reaksi. Benar benar mati. Tidak ada yang saya lakukan setelah itu, karena saya langsung tidur.&lt;/p&gt;&#xA;&lt;p&gt;Saat akhir pekan, saya coba tes lagi kondisi PC, siapa tau ada keajaiban, haha. Ya, tentu saja, masih sama, tidak mau menyala. Mulai kawatir, semoga bukan motherboard/cpu yang rusak. Dugaan pertama saya adalah : power supply. Rencananya, PC nya akan saya bawa ke toko komputer di mall dekat sini ( perkiraan 2-3 km ), namun karena CPU nya lumayan berat , saya batalkan. Sebenarnya yang bikin berat casing nya. Ok, saya mencoba lepas power supplynya . Saya cari obeng, hmm untungnya nemu obeng di dalam tasku. (selain itu saya tidak punya peralatan, karena saya baru datang di kota baru ini ). Saya tidak ingat secara pasti , kenapa ada obeng ditasku 😁 .&lt;/p&gt;</description>
     </item>
     <item>
-      <title>solved: Conversion to Dalvik format failed with error 1</title>
+      <title>Solved: Conversion to Dalvik format failed with error 1</title>
       <link>https://xedixermawan.github.io/2012/05/26/solved-conversion-to-dalvik-format-failed-with-error-1/</link>
       <pubDate>Sat, 26 May 2012 19:40:52 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2012/05/26/solved-conversion-to-dalvik-format-failed-with-error-1/</guid>
@@ -59,7 +59,7 @@
       <description>&lt;p&gt;Kita pasti tahu bahwa yang tren para developer tergantung dari pembuat compiler. Contoh yang sederhana misalnya .NET. .Net menjadi tren saat ini karena Microsoft mempromosikan dan memberi dukungan sebelumnya , Java juga begitu. Nah, akhir-akhir ini sepertinya ada yang berubah, – dan saya berharap ini benar – . Microsoft mulai melirik lagi C++ (baca: C++ Modern ):&lt;/p&gt;&#xA;&lt;p&gt;Dari artikel-artikel yang saya temukan.&lt;/p&gt;&#xA;&lt;p&gt; :: Why your next language better be C++&lt;/p&gt;</description>
     </item>
     <item>
-      <title>switching</title>
+      <title>Switching</title>
       <link>https://xedixermawan.github.io/2011/03/05/switching/</link>
       <pubDate>Sat, 05 Mar 2011 17:03:21 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2011/03/05/switching/</guid>
@@ -80,7 +80,7 @@
       <description>&lt;p&gt;edie/surabaya/July,30,2009 &lt;a href=&#34;mailto:sosinester@gmail.com&#34;&gt;.&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Since two month ago, I had learned Java periodically from several e-book from internet (thank for all guys for providing those book free). My motivation learns java is because it’s multi platform capability. Learning Java one time, you can code on several environment : desktop, server, embedded system ( smard card is the smallest embedded system that can be programmed by Java ) , and mobile phone. This like Java’s motto : “One coding , run everywhere”. Remember that C/C++ have motto “one coding, compile everywhere” .it nice too.  Ok, let we discuss about the game. This game is my first useful program (in my opinion  ) that I programmed by &lt;!-- more --&gt;java . it’s a memory game like common memory game as you ever played. There are some rectangles which you should search where it’s couple. In this game I used number (for simplicity) not symbol to sign a rectangle. Suppose you choose 4x4 rectangles, so there will be 8 couples rectangles that you should eliminated. The game is simple but not easy especially if you choose more than 4x4 . The list menu on the GUI make you easier to determine how many rectangles which you want to play. I build the game using Model-View-Controller (MVC) design pattern. It’s not good code may be. Design pattern is new material for me and this is my design pattern’s exercises. Below is explanation for each class :&lt;/p&gt;</description>
     </item>
     <item>
-      <title>ber-windows,ber-linux.</title>
+      <title>Ber-windows, Ber-linux.</title>
       <link>https://xedixermawan.github.io/2008/03/07/ber-windowsber-linux/</link>
       <pubDate>Fri, 07 Mar 2008 04:27:03 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2008/03/07/ber-windowsber-linux/</guid>

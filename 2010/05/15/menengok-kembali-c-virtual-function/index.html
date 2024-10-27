@@ -50,7 +50,7 @@
   lang="en"
   dir="ltr"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -133,6 +133,45 @@ Fungsi Virtual. Alasan kenapa sebuah fungsi perlu dibuat virtual adalah agar fun
   <meta name="generator" content="Hugo 0.136.5">
 
   
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="Menengok kembali: C&#43;&#43; virtual function">
+  <meta itemprop="description" content="edi ermawan, http://offground.wordpress.com
+Fungsi Virtual. Alasan kenapa sebuah fungsi perlu dibuat virtual adalah agar fungsi tersebut bisa di-deklarasikan ulang di kelas turunannya ( meng-override fungsi ) **dan **jika kamu ingin me-resolve pemanggilan body function saat runtime ( late binding/ dynamic binding ). perhatikan kata dihubungkan dengan “dan” bold mode : ) . Karena member fungsi tanpa virtual pun juga bisa di-override. Bedanya jika sebuah fungsi itu tidak virtual dan dideklarasikan ulang di kelas turunan, ketika fungsi itu dijalankan , maka “body function” yang akan dijalankan adalah sesuai yang didefinikan. ( body function yang akan dipanggil sudah ditentukan / di-resolve saat compile time , atau yang disebut static binding ).">
+  <meta itemprop="datePublished" content="2010-05-15T15:17:07+00:00">
+  <meta itemprop="dateModified" content="2010-05-15T15:17:07+00:00">
+  <meta itemprop="wordCount" content="701">
+  <meta itemprop="keywords" content="Belajar,C&#43;&#43;,Virtual Function">
+  
+  <meta property="og:url" content="https://xedixermawan.github.io/2010/05/15/menengok-kembali-c-virtual-function/">
+  <meta property="og:site_name" content="Home">
+  <meta property="og:title" content="Menengok kembali: C&#43;&#43; virtual function">
+  <meta property="og:description" content="edi ermawan, http://offground.wordpress.com
+Fungsi Virtual. Alasan kenapa sebuah fungsi perlu dibuat virtual adalah agar fungsi tersebut bisa di-deklarasikan ulang di kelas turunannya ( meng-override fungsi ) **dan **jika kamu ingin me-resolve pemanggilan body function saat runtime ( late binding/ dynamic binding ). perhatikan kata dihubungkan dengan “dan” bold mode : ) . Karena member fungsi tanpa virtual pun juga bisa di-override. Bedanya jika sebuah fungsi itu tidak virtual dan dideklarasikan ulang di kelas turunan, ketika fungsi itu dijalankan , maka “body function” yang akan dijalankan adalah sesuai yang didefinikan. ( body function yang akan dipanggil sudah ditentukan / di-resolve saat compile time , atau yang disebut static binding ).">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2010-05-15T15:17:07+00:00">
+    <meta property="article:modified_time" content="2010-05-15T15:17:07+00:00">
+    <meta property="article:tag" content="Belajar">
+    <meta property="article:tag" content="C&#43;&#43;">
+    <meta property="article:tag" content="Virtual Function">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Menengok kembali: C&#43;&#43; virtual function">
+  <meta name="twitter:description" content="edi ermawan, http://offground.wordpress.com
+Fungsi Virtual. Alasan kenapa sebuah fungsi perlu dibuat virtual adalah agar fungsi tersebut bisa di-deklarasikan ulang di kelas turunannya ( meng-override fungsi ) **dan **jika kamu ingin me-resolve pemanggilan body function saat runtime ( late binding/ dynamic binding ). perhatikan kata dihubungkan dengan “dan” bold mode : ) . Karena member fungsi tanpa virtual pun juga bisa di-override. Bedanya jika sebuah fungsi itu tidak virtual dan dideklarasikan ulang di kelas turunan, ketika fungsi itu dijalankan , maka “body function” yang akan dijalankan adalah sesuai yang didefinikan. ( body function yang akan dipanggil sudah ditentukan / di-resolve saat compile time , atau yang disebut static binding ).">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://xedixermawan.github.io/2010/05/15/menengok-kembali-c-virtual-function/" />
   
   
 </head>

@@ -50,7 +50,7 @@
   lang="en"
   dir="ltr"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -59,7 +59,7 @@
   />
 
   
-  <title>packing resources - Home</title>
+  <title>Packing app resources - Home</title>
 
   
   <meta name="theme-color" />
@@ -132,6 +132,39 @@
   <meta name="generator" content="Hugo 0.136.5">
 
   
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="Packing app resources">
+  <meta itemprop="description" content="Jika kita memperhatikan secara seksama semua program-program atau game yang tidak trivial (yang serius) selalu memproteksi resources/sumber daya yang digunakan. Resources disini maksudnya file-file yang berguna untuk game/program, misalnya library, gambar, sound, config file, text file, dan lainnya. Tujuannya jelas, agar tidak mudah diubah/dimodifikasi oleh user, atau setidaknya kalau pun user bisa mengubah , itu tidak dilakukan secara mudah. (ya, tidak ada yang 100 % aman di dunia komputer ). Dari apa yang saya lihat di folder data dari program dan games yang ter-install di komputer, ada macam-macam teknik untuk memproteksinya, ada yang hanya mengubah ekstensi file, (misalnya file : gambar.jpg menjadi blablabla.dll ), melakukan enkripsi dan mengkompress file, dan ada juga yang menjadikan seluruh resources menjadi 1 file besar, misalnya data.pak . Bagaimana kalau ingin membuat proteksi semacam itu? . Saya ingin mencobanya disini, tidak perlu menulis program dari scratch, cukup menggunakan library yang sudah ada. Zlib (library kompres-dekompresi yang popular se-antero internet :-D ) dan C&#43;&#43; Boost adalah pilihan yang menarik. Dengan meng-kompresi data, kita tidak hanya membuat data tersebut tidak mudah di hack tapi juga membuat ukuran menjadi kecil a.k.a menghemat space.">
+  <meta itemprop="datePublished" content="2011-09-20T02:05:46+00:00">
+  <meta itemprop="dateModified" content="2011-09-20T02:05:46+00:00">
+  <meta itemprop="wordCount" content="826">
+  <meta itemprop="keywords" content="C/C&#43;&#43; Diary">
+  
+  <meta property="og:url" content="https://xedixermawan.github.io/2011/09/20/packing-resources/">
+  <meta property="og:site_name" content="Home">
+  <meta property="og:title" content="Packing app resources">
+  <meta property="og:description" content="Jika kita memperhatikan secara seksama semua program-program atau game yang tidak trivial (yang serius) selalu memproteksi resources/sumber daya yang digunakan. Resources disini maksudnya file-file yang berguna untuk game/program, misalnya library, gambar, sound, config file, text file, dan lainnya. Tujuannya jelas, agar tidak mudah diubah/dimodifikasi oleh user, atau setidaknya kalau pun user bisa mengubah , itu tidak dilakukan secara mudah. (ya, tidak ada yang 100 % aman di dunia komputer ). Dari apa yang saya lihat di folder data dari program dan games yang ter-install di komputer, ada macam-macam teknik untuk memproteksinya, ada yang hanya mengubah ekstensi file, (misalnya file : gambar.jpg menjadi blablabla.dll ), melakukan enkripsi dan mengkompress file, dan ada juga yang menjadikan seluruh resources menjadi 1 file besar, misalnya data.pak . Bagaimana kalau ingin membuat proteksi semacam itu? . Saya ingin mencobanya disini, tidak perlu menulis program dari scratch, cukup menggunakan library yang sudah ada. Zlib (library kompres-dekompresi yang popular se-antero internet :-D ) dan C&#43;&#43; Boost adalah pilihan yang menarik. Dengan meng-kompresi data, kita tidak hanya membuat data tersebut tidak mudah di hack tapi juga membuat ukuran menjadi kecil a.k.a menghemat space.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2011-09-20T02:05:46+00:00">
+    <meta property="article:modified_time" content="2011-09-20T02:05:46+00:00">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Packing app resources">
+  <meta name="twitter:description" content="Jika kita memperhatikan secara seksama semua program-program atau game yang tidak trivial (yang serius) selalu memproteksi resources/sumber daya yang digunakan. Resources disini maksudnya file-file yang berguna untuk game/program, misalnya library, gambar, sound, config file, text file, dan lainnya. Tujuannya jelas, agar tidak mudah diubah/dimodifikasi oleh user, atau setidaknya kalau pun user bisa mengubah , itu tidak dilakukan secara mudah. (ya, tidak ada yang 100 % aman di dunia komputer ). Dari apa yang saya lihat di folder data dari program dan games yang ter-install di komputer, ada macam-macam teknik untuk memproteksinya, ada yang hanya mengubah ekstensi file, (misalnya file : gambar.jpg menjadi blablabla.dll ), melakukan enkripsi dan mengkompress file, dan ada juga yang menjadikan seluruh resources menjadi 1 file besar, misalnya data.pak . Bagaimana kalau ingin membuat proteksi semacam itu? . Saya ingin mencobanya disini, tidak perlu menulis program dari scratch, cukup menggunakan library yang sudah ada. Zlib (library kompres-dekompresi yang popular se-antero internet :-D ) dan C&#43;&#43; Boost adalah pilihan yang menarik. Dengan meng-kompresi data, kita tidak hanya membuat data tersebut tidak mudah di hack tapi juga membuat ukuran menjadi kecil a.k.a menghemat space.">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://xedixermawan.github.io/2011/09/20/packing-resources/" />
   
   
 </head>
@@ -270,7 +303,7 @@
 
 <article>
   <header class="mb-14">
-    <h1 class="!my-0 pb-2.5">packing resources</h1>
+    <h1 class="!my-0 pb-2.5">Packing app resources</h1>
 
     
     <div class="text-xs antialiased opacity-60">
@@ -530,7 +563,7 @@ zlib ver 1.2.5</p>
   >
     
     <a class="ltr:pr-3 rtl:pl-3" href="https://xedixermawan.github.io/2011/10/06/love-what-you-do/"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>love what you do</span></a
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Love what you do</span></a
     >
     
     

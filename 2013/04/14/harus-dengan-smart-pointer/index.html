@@ -50,7 +50,7 @@
   lang="en"
   dir="ltr"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -147,6 +147,45 @@ m_DeviceContext-&gt;IASetInputLayout( my_input_layout );" />
   <meta name="generator" content="Hugo 0.136.5">
 
   
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="Smart pointer.">
+  <meta itemprop="description" content="Simple tips, tetapi sangat critical : Ada suatu keadaan dimana kita harus memakai smart pointer ! , Kapan?, salah satunya jika berurusan dengan DirectX API 11 . lihat salah satu contoh dibawah ini :
+HRESULT CreateInputLayout( [in] const D3D11_INPUT_ELEMENT_DESC *pInputElementDescs, [in] vUINT NumElements, [in] const void *pShaderBytecodeWithInputSignature, [in] SIZE_T BytecodeLength, [out] ID3D11InputLayout **ppInputLayout );
+parameter ke-5 fungsi diatas mengharapkan variabel pointer to pointer. Kalau kita memakai raw pointer, bisa juga, seperti dibawah ini : ID3D11InputLayout* my_input_layout ; HRESULT hr = m_Device-&gt;CreateInputLayout( VertexPositionColorTexture::InputElements, VertexPositionColorTexture::InputElementCount, shaderByteCode, byteCodeLength, &amp; my_input_layout ); m_DeviceContext-&gt;IASetInputLayout( my_input_layout );">
+  <meta itemprop="datePublished" content="2013-04-14T18:53:27+00:00">
+  <meta itemprop="dateModified" content="2013-04-14T18:53:27+00:00">
+  <meta itemprop="wordCount" content="218">
+  <meta itemprop="keywords" content="C/C&#43;&#43; Diary">
+  
+  <meta property="og:url" content="https://xedixermawan.github.io/2013/04/14/harus-dengan-smart-pointer/">
+  <meta property="og:site_name" content="Home">
+  <meta property="og:title" content="Smart pointer.">
+  <meta property="og:description" content="Simple tips, tetapi sangat critical : Ada suatu keadaan dimana kita harus memakai smart pointer ! , Kapan?, salah satunya jika berurusan dengan DirectX API 11 . lihat salah satu contoh dibawah ini :
+HRESULT CreateInputLayout( [in] const D3D11_INPUT_ELEMENT_DESC *pInputElementDescs, [in] vUINT NumElements, [in] const void *pShaderBytecodeWithInputSignature, [in] SIZE_T BytecodeLength, [out] ID3D11InputLayout **ppInputLayout );
+parameter ke-5 fungsi diatas mengharapkan variabel pointer to pointer. Kalau kita memakai raw pointer, bisa juga, seperti dibawah ini : ID3D11InputLayout* my_input_layout ; HRESULT hr = m_Device-&gt;CreateInputLayout( VertexPositionColorTexture::InputElements, VertexPositionColorTexture::InputElementCount, shaderByteCode, byteCodeLength, &amp; my_input_layout ); m_DeviceContext-&gt;IASetInputLayout( my_input_layout );">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2013-04-14T18:53:27+00:00">
+    <meta property="article:modified_time" content="2013-04-14T18:53:27+00:00">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Smart pointer.">
+  <meta name="twitter:description" content="Simple tips, tetapi sangat critical : Ada suatu keadaan dimana kita harus memakai smart pointer ! , Kapan?, salah satunya jika berurusan dengan DirectX API 11 . lihat salah satu contoh dibawah ini :
+HRESULT CreateInputLayout( [in] const D3D11_INPUT_ELEMENT_DESC *pInputElementDescs, [in] vUINT NumElements, [in] const void *pShaderBytecodeWithInputSignature, [in] SIZE_T BytecodeLength, [out] ID3D11InputLayout **ppInputLayout );
+parameter ke-5 fungsi diatas mengharapkan variabel pointer to pointer. Kalau kita memakai raw pointer, bisa juga, seperti dibawah ini : ID3D11InputLayout* my_input_layout ; HRESULT hr = m_Device-&gt;CreateInputLayout( VertexPositionColorTexture::InputElements, VertexPositionColorTexture::InputElementCount, shaderByteCode, byteCodeLength, &amp; my_input_layout ); m_DeviceContext-&gt;IASetInputLayout( my_input_layout );">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://xedixermawan.github.io/2013/04/14/harus-dengan-smart-pointer/" />
   
   
 </head>

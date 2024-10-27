@@ -50,7 +50,7 @@
   lang="en"
   dir="ltr"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -139,6 +139,50 @@ Dalam penggunaanya ada beberapa kemungkinan :
   <meta name="generator" content="Hugo 0.136.5">
 
   
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="#define problem">
+  <meta itemprop="description" content="Masalah kecil tapi fatal di projects C/C&#43;&#43; yang saya temui ( dan parahnya terulang-ulang ), adalah penggunaan define. #define secara salah digunakan karena dicampur aduk antara definisi &amp; pengecekannya. sebagai contoh ada 2 define :
+#define USE_FEATURE_A #define USE_FEATURE_B (1)
+Dalam penggunaanya ada beberapa kemungkinan :
+#ifdef USE_FEATURE_A // code_inside_a.1 #endif –&gt;penggunaan yang benar. code “code_inside_a.1” akan ter-compile jika USE_FEATURE_A ter-define. kalau ingin menghilangkan code “code_inside_a.1”, USE_FEATURE_A harus un-define dengan komen : // #define USE_FEATURE_A">
+  <meta itemprop="datePublished" content="2014-05-21T17:22:18+00:00">
+  <meta itemprop="dateModified" content="2014-05-21T17:22:18+00:00">
+  <meta itemprop="wordCount" content="213">
+  <meta itemprop="keywords" content="C/C&#43;&#43;,Preprocessors">
+  
+  <meta property="og:url" content="https://xedixermawan.github.io/2014/05/21/define-problem/">
+  <meta property="og:site_name" content="Home">
+  <meta property="og:title" content="#define problem">
+  <meta property="og:description" content="Masalah kecil tapi fatal di projects C/C&#43;&#43; yang saya temui ( dan parahnya terulang-ulang ), adalah penggunaan define. #define secara salah digunakan karena dicampur aduk antara definisi &amp; pengecekannya. sebagai contoh ada 2 define :
+#define USE_FEATURE_A #define USE_FEATURE_B (1)
+Dalam penggunaanya ada beberapa kemungkinan :
+#ifdef USE_FEATURE_A // code_inside_a.1 #endif –&gt;penggunaan yang benar. code “code_inside_a.1” akan ter-compile jika USE_FEATURE_A ter-define. kalau ingin menghilangkan code “code_inside_a.1”, USE_FEATURE_A harus un-define dengan komen : // #define USE_FEATURE_A">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2014-05-21T17:22:18+00:00">
+    <meta property="article:modified_time" content="2014-05-21T17:22:18+00:00">
+    <meta property="article:tag" content="C/C&#43;&#43;">
+    <meta property="article:tag" content="Preprocessors">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="#define problem">
+  <meta name="twitter:description" content="Masalah kecil tapi fatal di projects C/C&#43;&#43; yang saya temui ( dan parahnya terulang-ulang ), adalah penggunaan define. #define secara salah digunakan karena dicampur aduk antara definisi &amp; pengecekannya. sebagai contoh ada 2 define :
+#define USE_FEATURE_A #define USE_FEATURE_B (1)
+Dalam penggunaanya ada beberapa kemungkinan :
+#ifdef USE_FEATURE_A // code_inside_a.1 #endif –&gt;penggunaan yang benar. code “code_inside_a.1” akan ter-compile jika USE_FEATURE_A ter-define. kalau ingin menghilangkan code “code_inside_a.1”, USE_FEATURE_A harus un-define dengan komen : // #define USE_FEATURE_A">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://xedixermawan.github.io/2014/05/21/define-problem/" />
   
   
 </head>

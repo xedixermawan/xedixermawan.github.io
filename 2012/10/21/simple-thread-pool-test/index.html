@@ -50,7 +50,7 @@
   lang="en"
   dir="ltr"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -59,7 +59,7 @@
   />
 
   
-  <title>simple thread pool test - Home</title>
+  <title>Simple &#34;thread pool&#34; test - Home</title>
 
   
   <meta name="theme-color" />
@@ -160,6 +160,42 @@ vecFunc.clear();
   <meta name="generator" content="Hugo 0.136.5">
 
   
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="Simple &#34;thread pool&#34; test">
+  <meta itemprop="description" content="saya mencoba simple thread pool menggunakan std::thread C&#43;&#43; 11 dan sepertinya bekerja sesuai keinginan dari test yang saya lakukan (warning : code dibawah ini trivial). jumlah thread saya harcode berjumlah 2 :p. untuk mengetest thread pool, saya beri task meng-copy files berjumlah 100 (nama file : 1- 100) . compiler: vs studio express 2012 . header :
+#include &lt;time.h&gt; #include #include #include [sourcecode language=“cpp”] //kelas worker thread class worker { private: std::vector&lt; std::function&lt;void()&gt; &gt; vecFunc; std::mutex m_mutex; public: void addtask(std::function&lt;void()&gt; task) { std::lock_guardstd::mutex lockg(m_mutex); vecFunc.push_back(task); } void executeSave() { while(1) { if (vecFunc.size() &gt; 0) { std::lock_guardstd::mutex lockg(m_mutex); for (int i = 0; i &lt; vecFunc.size(); i&#43;&#43;) { vecFunci; } vecFunc.clear(); } } } };">
+  <meta itemprop="datePublished" content="2012-10-21T17:05:52+00:00">
+  <meta itemprop="dateModified" content="2012-10-21T17:05:52+00:00">
+  <meta itemprop="wordCount" content="353">
+  <meta itemprop="keywords" content="C/C&#43;&#43; Diary">
+  
+  <meta property="og:url" content="https://xedixermawan.github.io/2012/10/21/simple-thread-pool-test/">
+  <meta property="og:site_name" content="Home">
+  <meta property="og:title" content="Simple &#34;thread pool&#34; test">
+  <meta property="og:description" content="saya mencoba simple thread pool menggunakan std::thread C&#43;&#43; 11 dan sepertinya bekerja sesuai keinginan dari test yang saya lakukan (warning : code dibawah ini trivial). jumlah thread saya harcode berjumlah 2 :p. untuk mengetest thread pool, saya beri task meng-copy files berjumlah 100 (nama file : 1- 100) . compiler: vs studio express 2012 . header :
+#include &lt;time.h&gt; #include #include #include [sourcecode language=“cpp”] //kelas worker thread class worker { private: std::vector&lt; std::function&lt;void()&gt; &gt; vecFunc; std::mutex m_mutex; public: void addtask(std::function&lt;void()&gt; task) { std::lock_guardstd::mutex lockg(m_mutex); vecFunc.push_back(task); } void executeSave() { while(1) { if (vecFunc.size() &gt; 0) { std::lock_guardstd::mutex lockg(m_mutex); for (int i = 0; i &lt; vecFunc.size(); i&#43;&#43;) { vecFunci; } vecFunc.clear(); } } } };">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2012-10-21T17:05:52+00:00">
+    <meta property="article:modified_time" content="2012-10-21T17:05:52+00:00">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Simple &#34;thread pool&#34; test">
+  <meta name="twitter:description" content="saya mencoba simple thread pool menggunakan std::thread C&#43;&#43; 11 dan sepertinya bekerja sesuai keinginan dari test yang saya lakukan (warning : code dibawah ini trivial). jumlah thread saya harcode berjumlah 2 :p. untuk mengetest thread pool, saya beri task meng-copy files berjumlah 100 (nama file : 1- 100) . compiler: vs studio express 2012 . header :
+#include &lt;time.h&gt; #include #include #include [sourcecode language=“cpp”] //kelas worker thread class worker { private: std::vector&lt; std::function&lt;void()&gt; &gt; vecFunc; std::mutex m_mutex; public: void addtask(std::function&lt;void()&gt; task) { std::lock_guardstd::mutex lockg(m_mutex); vecFunc.push_back(task); } void executeSave() { while(1) { if (vecFunc.size() &gt; 0) { std::lock_guardstd::mutex lockg(m_mutex); for (int i = 0; i &lt; vecFunc.size(); i&#43;&#43;) { vecFunci; } vecFunc.clear(); } } } };">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://xedixermawan.github.io/2012/10/21/simple-thread-pool-test/" />
   
   
 </head>
@@ -298,7 +334,7 @@ vecFunc.clear();
 
 <article>
   <header class="mb-14">
-    <h1 class="!my-0 pb-2.5">simple thread pool test</h1>
+    <h1 class="!my-0 pb-2.5">Simple &#34;thread pool&#34; test</h1>
 
     
     <div class="text-xs antialiased opacity-60">

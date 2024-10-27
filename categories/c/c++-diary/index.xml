@@ -115,7 +115,7 @@
       <description>&lt;p&gt;Array ?, sepertinya mudah, dan mungkin memang mudah. Sekelompok/himpunan type data disimpan dalam area memory sequential , untuk mempermudah pengaturan dan pengaksesan, itulah array. Di C/C++ contoh penggunaannya sebagai berikut :&lt;/p&gt;&#xA;&lt;p&gt;initialisasi :&lt;/p&gt;&#xA;&lt;table cellpadding=&#34;4&#34; width=&#34;100%&#34; cellspacing=&#34;0&#34; border=&#34;1&#34; &gt; &#xD;&#xA;&lt;tbody &gt;&#xD;&#xA;&lt;tr valign=&#34;TOP&#34; &gt;&#xD;&#xA;&lt;td width=&#34;33%&#34; height=&#34;86&#34; &gt;&#xD;&#xA;&lt;p&gt;int arrayA[3] = {4,5,6};&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;td width=&#34;33%&#34; &gt;&#xD;&#xA;&lt;p&gt;int arrayB[3];&lt;/p&gt;&#xA;&lt;p&gt;arrayB[0]=8;&lt;/p&gt;&#xA;&lt;p&gt;arrayB[1]=9;&lt;/p&gt;&#xA;&lt;p&gt;arrayB[2] =10;&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;td width=&#34;33%&#34; &gt;&#xD;&#xA;&lt;p&gt;int* arrayC = new int[3];&lt;/p&gt;&#xA;&lt;p&gt;arrayC[0] = 11;&lt;/p&gt;&#xA;&lt;p&gt;arrayC[1] = 12;&lt;/p&gt;&#xA;&lt;p&gt;arrayC[2] = 13;&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;/tr&gt;&#xD;&#xA;&lt;/tbody&gt;&#xD;&#xA;&lt;/table&gt;&#xD;&#xA;&lt;p&gt;arrayA dan arrayB , arrayC adalah array dari data bertipe integer dan (dimaksudkan) memiliki ukuran maksimum 3. Pengaksesan array dibawah ini sesuai rencana, karena index &amp;lt;=2 .&lt;/p&gt;</description>
     </item>
     <item>
-      <title>simple thread pool test</title>
+      <title>Simple &#34;thread pool&#34; test</title>
       <link>https://xedixermawan.github.io/2012/10/21/simple-thread-pool-test/</link>
       <pubDate>Sun, 21 Oct 2012 17:05:52 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2012/10/21/simple-thread-pool-test/</guid>
@@ -136,7 +136,7 @@
       <description>&lt;p&gt;I created 2D sprite  editor. version 1.00 is released.  :) . At beginning, actually I wanna create a game, but I think I need a tool to make my job is easier in term of anything when handling 2D sprite (yes, it&amp;rsquo;s 2D game) .  Furthermore, game tool in a game  development is make possible to divide a jobs, between artist , game designer, and programmer. so, in non-trivial game dev, tool is must !. But why I create this? why didn&amp;rsquo;t use available sprite editor outside there? . Before write the first line of code of this editor, actually I had been search on internet, yeah, there are some of them make me interested (an example Allegro Sprite Editor ),  but i decide to make it (as simple as possible )  from scratch so I can customized the output. (saved and exported sprite file format&amp;quot;) . And now, after about ~ 2,5 month first version is already released . it can create animation , save it to .xml, exported to binary, and I already success read the binary use LibGDX to construct a animation. I plan to read the output in SDL too.  this sprite editor is created using Qt framework , coded in C++. Link of the project:  &lt;a href=&#34;http://code.google.com/p/xedithor/&#34;&gt;http://code.google.com/p/xedithor/&lt;/a&gt; . I can&amp;rsquo;t deny that this work is influenced by sprite editor that used by company out there (I know, because i used it ,hehehe ) . Just like Linus Trovald create GIT inspired by BitKeeper. :D&lt;/p&gt;</description>
     </item>
     <item>
-      <title>packing resources</title>
+      <title>Packing app resources</title>
       <link>https://xedixermawan.github.io/2011/09/20/packing-resources/</link>
       <pubDate>Tue, 20 Sep 2011 02:05:46 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2011/09/20/packing-resources/</guid>
@@ -157,7 +157,7 @@
       <description>&lt;p&gt;Tetris mungkin salah satu game puzzle yang sangat populer dan hampir dimainkan setiap orang. Game ini tersedia di berbagai device, mulai dari game boy yang dedicated untuk tetris, hand phone, komputer, Nitendo, dll. Dulu saat saya masih kecil, saya main tetris pertama kali di game boy milik teman saya. Perlu diketahui dulu tidak ada orang yang punya handphone di tempat tinggal saya. :) .Mungkin terakhir kali saya aktif main tetris saat saya punya handphone modem Smart merk Huawey. Di situ disediakan game tetris. Saya hampir setiap saat memainkannya. Bahkan blok-blok tetris sampai terbawa mimpi. Serius !!. -hahaha-. Dan ternyata tetris memang bisa menyebabkan apa yang disebut &lt;a href=&#34;http://en.wikipedia.org/wiki/Tetris_effect&#34;&gt;Tetris Effect&lt;/a&gt;. &lt;a href=&#34;http://www.google.co.id/search?sourceid=chrome&amp;amp;ie=UTF-8&amp;amp;q=tetris+effect&#34;&gt;Tetris Effect 2&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>post code: proximity game</title>
+      <title>Proximity game code</title>
       <link>https://xedixermawan.github.io/2011/07/18/post-code-proximity-game/</link>
       <pubDate>Mon, 18 Jul 2011 15:14:17 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2011/07/18/post-code-proximity-game/</guid>
@@ -192,14 +192,14 @@
       <description>&lt;p&gt;Dulu saya sempat mencari-cari, ada nggak ya sebuah database engine yang bisa diakses secara lokal layaknya file?. Waktu itu saya cari-cari di Google ternyata saya nggak nemu. -mungkin belum beruntung atau kata kunci belum tepat -. :) . Kira2 sebulan yang lalu secara tidak sengaja saya nemu SQLite.DLL disebuah folder suatu game,  saya langsung berfikir ini yang saya cari2 dulu!!!.  Karena ada kata &amp;ldquo;SQL&amp;rdquo; dan &amp;ldquo;Lite&amp;rdquo; .  Dan ternyata benar!, langsung ta download di &lt;a href=&#34;http://www.sqlite.org/download.html&#34;&gt;official-webnya&lt;/a&gt; . Disitu bisa download .DLL -nya , source, semuanya.Untuk Sqlite3.lib tidak ada, dan bisa di-generate dengan:&lt;/p&gt;</description>
     </item>
     <item>
-      <title>avira update caused debug error</title>
+      <title>Avira update caused debug error</title>
       <link>https://xedixermawan.github.io/2010/12/20/avira-update-caused-debug-error/</link>
       <pubDate>Mon, 20 Dec 2010 05:53:37 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2010/12/20/avira-update-caused-debug-error/</guid>
       <description>&lt;p&gt;The error message is like that:&lt;/p&gt;&#xA;&lt;p&gt;NtClose was called on a handle that was protected from close via NtSetInformationObject.﻿&lt;/p&gt;&#xA;&lt;p&gt;it happen when you debug application from visual c++, but when you run it outside ide, it&amp;rsquo;s fine. after looking around, then this problem is  solved. look at &lt;a href=&#34;https://forum.avira.com/wbb/index.php?page=Thread&amp;amp;postID=1031807&#34;&gt;avira forum &lt;/a&gt;. the fast solution: uninstalled avira, reboot the computer, then install avira again and disabled auto update. hope this useful for others.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>yet another memory game&#39;s project</title>
+      <title>Yet another memory game&#39;s project</title>
       <link>https://xedixermawan.github.io/2010/11/21/yet-another-memory-games-project/</link>
       <pubDate>Sun, 21 Nov 2010 17:52:39 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2010/11/21/yet-another-memory-games-project/</guid>

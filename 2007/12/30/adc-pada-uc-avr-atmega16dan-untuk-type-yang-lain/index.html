@@ -50,7 +50,7 @@
   lang="en"
   dir="ltr"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -162,6 +162,39 @@ Inisialisasi:" />
   <meta name="generator" content="Hugo 0.136.5">
 
   
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="ADC pada uC AVR ATMEGA16(dan untuk type yang lain),">
+  <meta itemprop="description" content="26/12/07, tft-LGoffice Bekasi Atmega16 (dan sejenisnya) memiliki fitur ADC sebanyak 8 channel dengan resolusi 10-bit Register yang digunakan untuk setting ADC ini adalah: &#43;————————————————————————————————————-&#43; ADCSR | ADEN | ADSC | ADATE | ADIF | ADIE | ADPS2 | ADPS1 | ADPS0 | &#43;————————————————————————————————————–&#43; 7 6 5 4 3 2 1 0 ADEN : 1=adc enable, 0=adc turn off ADSC : 1:mulai konversi,0:konversi belum terjadi ADATE:1:auto trigger di aktifkan ,trigger berasal; dari sinyal yang dipilih(set pada register SFIOR bit ADTS).ADC akan start konversi pada edge positip sinyal trigger. ADIF:di set ke 1,jika konversi ADC selesai dan data register ter-Update.Namun ADC Conversion Complete Interrupt di eksekusi jika bit ADIE dan bit-I dalam register SREG di set. ADIE:di set 1,jika bit-I dalam register SREG di set. ADPS0:2 ,faktor pembagi 0-7 = 2 2 4 8 16 32 64 128. &#43;————————————————————————————————————-&#43; ADMUX | REFS1 | REFS0 | ADLAR | MUX4 | MUX3 | MUX2 | MUX1 | MUX0 | &#43;————————————————————————————————————–&#43; 7 6 5 4 3 2 1 0 REFS 0,1 :pemilihan tegangan referensi ADC 00:vref=AREF, 01:vref=AVCC dengan eksternal capasitor pada AREF, 10:Vref= Reserved , 11: vref= internal 2.56 volt dengan eksternal kapasitor pada AREF ADLAR: Untuk setting format data hasil konversi ADC,default=0. MUX0-MUX4 :pemilihan channel ADC yang digunakan 0=channel1,1=channel 2,dst. &#43;————————————————————————————————————-&#43; SFIOR | ADTS2 | ADTS1 | ADTS0 | ADHSM | ACME | PUD | PSR2 | PSR10 | &#43;————————————————————————————————————–&#43; 7 6 5 4 3 2 1 0 ADTS0-ADTS2 :pemilihan trigger untuk konversi ADC.bit-bit ini berhubungan dengan bit ADATE pada register ADCSRA. ADHSM:ADC high speed mode enabled. àlebih jelas baca datasheet Contoh: Inisialisasi:">
+  <meta itemprop="datePublished" content="2007-12-30T09:39:10+00:00">
+  <meta itemprop="dateModified" content="2007-12-30T09:39:10+00:00">
+  <meta itemprop="wordCount" content="444">
+  <meta itemprop="keywords" content="Elektronics Design">
+  
+  <meta property="og:url" content="https://xedixermawan.github.io/2007/12/30/adc-pada-uc-avr-atmega16dan-untuk-type-yang-lain/">
+  <meta property="og:site_name" content="Home">
+  <meta property="og:title" content="ADC pada uC AVR ATMEGA16(dan untuk type yang lain),">
+  <meta property="og:description" content="26/12/07, tft-LGoffice Bekasi Atmega16 (dan sejenisnya) memiliki fitur ADC sebanyak 8 channel dengan resolusi 10-bit Register yang digunakan untuk setting ADC ini adalah: &#43;————————————————————————————————————-&#43; ADCSR | ADEN | ADSC | ADATE | ADIF | ADIE | ADPS2 | ADPS1 | ADPS0 | &#43;————————————————————————————————————–&#43; 7 6 5 4 3 2 1 0 ADEN : 1=adc enable, 0=adc turn off ADSC : 1:mulai konversi,0:konversi belum terjadi ADATE:1:auto trigger di aktifkan ,trigger berasal; dari sinyal yang dipilih(set pada register SFIOR bit ADTS).ADC akan start konversi pada edge positip sinyal trigger. ADIF:di set ke 1,jika konversi ADC selesai dan data register ter-Update.Namun ADC Conversion Complete Interrupt di eksekusi jika bit ADIE dan bit-I dalam register SREG di set. ADIE:di set 1,jika bit-I dalam register SREG di set. ADPS0:2 ,faktor pembagi 0-7 = 2 2 4 8 16 32 64 128. &#43;————————————————————————————————————-&#43; ADMUX | REFS1 | REFS0 | ADLAR | MUX4 | MUX3 | MUX2 | MUX1 | MUX0 | &#43;————————————————————————————————————–&#43; 7 6 5 4 3 2 1 0 REFS 0,1 :pemilihan tegangan referensi ADC 00:vref=AREF, 01:vref=AVCC dengan eksternal capasitor pada AREF, 10:Vref= Reserved , 11: vref= internal 2.56 volt dengan eksternal kapasitor pada AREF ADLAR: Untuk setting format data hasil konversi ADC,default=0. MUX0-MUX4 :pemilihan channel ADC yang digunakan 0=channel1,1=channel 2,dst. &#43;————————————————————————————————————-&#43; SFIOR | ADTS2 | ADTS1 | ADTS0 | ADHSM | ACME | PUD | PSR2 | PSR10 | &#43;————————————————————————————————————–&#43; 7 6 5 4 3 2 1 0 ADTS0-ADTS2 :pemilihan trigger untuk konversi ADC.bit-bit ini berhubungan dengan bit ADATE pada register ADCSRA. ADHSM:ADC high speed mode enabled. àlebih jelas baca datasheet Contoh: Inisialisasi:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2007-12-30T09:39:10+00:00">
+    <meta property="article:modified_time" content="2007-12-30T09:39:10+00:00">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ADC pada uC AVR ATMEGA16(dan untuk type yang lain),">
+  <meta name="twitter:description" content="26/12/07, tft-LGoffice Bekasi Atmega16 (dan sejenisnya) memiliki fitur ADC sebanyak 8 channel dengan resolusi 10-bit Register yang digunakan untuk setting ADC ini adalah: &#43;————————————————————————————————————-&#43; ADCSR | ADEN | ADSC | ADATE | ADIF | ADIE | ADPS2 | ADPS1 | ADPS0 | &#43;————————————————————————————————————–&#43; 7 6 5 4 3 2 1 0 ADEN : 1=adc enable, 0=adc turn off ADSC : 1:mulai konversi,0:konversi belum terjadi ADATE:1:auto trigger di aktifkan ,trigger berasal; dari sinyal yang dipilih(set pada register SFIOR bit ADTS).ADC akan start konversi pada edge positip sinyal trigger. ADIF:di set ke 1,jika konversi ADC selesai dan data register ter-Update.Namun ADC Conversion Complete Interrupt di eksekusi jika bit ADIE dan bit-I dalam register SREG di set. ADIE:di set 1,jika bit-I dalam register SREG di set. ADPS0:2 ,faktor pembagi 0-7 = 2 2 4 8 16 32 64 128. &#43;————————————————————————————————————-&#43; ADMUX | REFS1 | REFS0 | ADLAR | MUX4 | MUX3 | MUX2 | MUX1 | MUX0 | &#43;————————————————————————————————————–&#43; 7 6 5 4 3 2 1 0 REFS 0,1 :pemilihan tegangan referensi ADC 00:vref=AREF, 01:vref=AVCC dengan eksternal capasitor pada AREF, 10:Vref= Reserved , 11: vref= internal 2.56 volt dengan eksternal kapasitor pada AREF ADLAR: Untuk setting format data hasil konversi ADC,default=0. MUX0-MUX4 :pemilihan channel ADC yang digunakan 0=channel1,1=channel 2,dst. &#43;————————————————————————————————————-&#43; SFIOR | ADTS2 | ADTS1 | ADTS0 | ADHSM | ACME | PUD | PSR2 | PSR10 | &#43;————————————————————————————————————–&#43; 7 6 5 4 3 2 1 0 ADTS0-ADTS2 :pemilihan trigger untuk konversi ADC.bit-bit ini berhubungan dengan bit ADATE pada register ADCSRA. ADHSM:ADC high speed mode enabled. àlebih jelas baca datasheet Contoh: Inisialisasi:">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://xedixermawan.github.io/2007/12/30/adc-pada-uc-avr-atmega16dan-untuk-type-yang-lain/" />
   
   
 </head>
@@ -412,7 +445,7 @@ Program diatas menggunakan mode free running, ADC interrupt terjadi jika konvers
   >
     
     <a class="ltr:pr-3 rtl:pl-3" href="https://xedixermawan.github.io/2008/03/07/ber-windowsber-linux/"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>ber-windows,ber-linux.</span></a
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Ber-windows, Ber-linux.</span></a
     >
     
     

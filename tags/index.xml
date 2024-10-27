@@ -7,64 +7,8 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© 2007-2024 XediXermawan</copyright>
-    <lastBuildDate>Sat, 26 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Jan 2019 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://xedixermawan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Index</title>
-      <link>https://xedixermawan.github.io/tags/index/</link>
-      <pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://xedixermawan.github.io/tags/index/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Css</title>
-      <link>https://xedixermawan.github.io/tags/css/</link>
-      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://xedixermawan.github.io/tags/css/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Html</title>
-      <link>https://xedixermawan.github.io/tags/html/</link>
-      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://xedixermawan.github.io/tags/html/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Markdown</title>
-      <link>https://xedixermawan.github.io/tags/markdown/</link>
-      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://xedixermawan.github.io/tags/markdown/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Privacy</title>
-      <link>https://xedixermawan.github.io/tags/privacy/</link>
-      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://xedixermawan.github.io/tags/privacy/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Shortcodes</title>
-      <link>https://xedixermawan.github.io/tags/shortcodes/</link>
-      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://xedixermawan.github.io/tags/shortcodes/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Text</title>
-      <link>https://xedixermawan.github.io/tags/text/</link>
-      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://xedixermawan.github.io/tags/text/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Emoji</title>
-      <link>https://xedixermawan.github.io/tags/emoji/</link>
-      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://xedixermawan.github.io/tags/emoji/</guid>
-      <description></description>
-    </item>
     <item>
       <title>Android</title>
       <link>https://xedixermawan.github.io/tags/android/</link>
@@ -84,6 +28,13 @@
       <link>https://xedixermawan.github.io/tags/development/</link>
       <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
       <guid>https://xedixermawan.github.io/tags/development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Index</title>
+      <link>https://xedixermawan.github.io/tags/index/</link>
+      <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://xedixermawan.github.io/tags/index/</guid>
       <description></description>
     </item>
     <item>
@@ -357,6 +308,55 @@
       <link>https://xedixermawan.github.io/tags/elektronik/</link>
       <pubDate>Thu, 31 May 2007 08:43:13 +0000</pubDate>
       <guid>https://xedixermawan.github.io/tags/elektronik/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Css</title>
+      <link>https://xedixermawan.github.io/tags/css/</link>
+      <pubDate>Sat, 11 Mar 2000 00:00:00 +0000</pubDate>
+      <guid>https://xedixermawan.github.io/tags/css/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Html</title>
+      <link>https://xedixermawan.github.io/tags/html/</link>
+      <pubDate>Sat, 11 Mar 2000 00:00:00 +0000</pubDate>
+      <guid>https://xedixermawan.github.io/tags/html/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Markdown</title>
+      <link>https://xedixermawan.github.io/tags/markdown/</link>
+      <pubDate>Sat, 11 Mar 2000 00:00:00 +0000</pubDate>
+      <guid>https://xedixermawan.github.io/tags/markdown/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Privacy</title>
+      <link>https://xedixermawan.github.io/tags/privacy/</link>
+      <pubDate>Fri, 10 Mar 2000 00:00:00 +0000</pubDate>
+      <guid>https://xedixermawan.github.io/tags/privacy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Shortcodes</title>
+      <link>https://xedixermawan.github.io/tags/shortcodes/</link>
+      <pubDate>Fri, 10 Mar 2000 00:00:00 +0000</pubDate>
+      <guid>https://xedixermawan.github.io/tags/shortcodes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Text</title>
+      <link>https://xedixermawan.github.io/tags/text/</link>
+      <pubDate>Thu, 09 Mar 2000 00:00:00 +0000</pubDate>
+      <guid>https://xedixermawan.github.io/tags/text/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Emoji</title>
+      <link>https://xedixermawan.github.io/tags/emoji/</link>
+      <pubDate>Sun, 05 Mar 2000 00:00:00 +0000</pubDate>
+      <guid>https://xedixermawan.github.io/tags/emoji/</guid>
       <description></description>
     </item>
   </channel>

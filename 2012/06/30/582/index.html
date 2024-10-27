@@ -50,7 +50,7 @@
   lang="en"
   dir="ltr"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -132,6 +132,39 @@
   <meta name="generator" content="Hugo 0.136.5">
 
   
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="Mencoba Smart pointer dari Boost">
+  <meta itemprop="description" content="Smart pointer adalah pointer yang smart. :d. ya memang begitu tujuannya. Seperti diketahui tidak ada management object secara otomatis [garbage collecor] di c/c&#43;&#43;, jadi setiap dynamic-object yang di alokasi di heap dan sudah waktunya dihapus harus di-delete secara eksplisit. (dynamic-object == setiap object yang di-create dengan keyword new). Apa akibatnya jika delete tidak dilakukan?, kemungkinan terjadi memory leak ( : keadaan dimana pembuat program tidak bahagia). kemungkinan memory leak ini semakin besar seiring semakin kompleknya project, dan juga memory leak akan susah dicari :| . untuk itu dibuat smart pointer: pointer yang mengurusi kepemilikan object (secara singkatnya begitu) . Smart pointer sudah lama digunakan, namun tetap saja masih banyak project yang menggunakan raw pointer , (dengan alasan kemudahan dan malas. haha.) . Kelemahan dari smart pointer , tentu akan lebih lambat dari raw pointer, karena smart pointer sebenarnya adalah wrapper class untuk pointer. Walaupun ada, saya yakin, keuntungannya lebih tinggi karena kecepatan processor yang semakin tinggi dan project yang rumit. {riil project == pasti rumit }. Okey, itulah motivasinya :), saatnya mencoba smart pointer. Saya pilih smart pointer dari Boost library yang banyak digunakan. Di Boost terdapat beberapa smart pointer, saya akan mencoba 3 diantaranya: scoped pointer, shared pointer, dan weak pointer.">
+  <meta itemprop="datePublished" content="2012-06-30T13:40:25+00:00">
+  <meta itemprop="dateModified" content="2012-06-30T13:40:25+00:00">
+  <meta itemprop="wordCount" content="1117">
+  <meta itemprop="keywords" content="C/C&#43;&#43; Diary">
+  
+  <meta property="og:url" content="https://xedixermawan.github.io/2012/06/30/582/">
+  <meta property="og:site_name" content="Home">
+  <meta property="og:title" content="Mencoba Smart pointer dari Boost">
+  <meta property="og:description" content="Smart pointer adalah pointer yang smart. :d. ya memang begitu tujuannya. Seperti diketahui tidak ada management object secara otomatis [garbage collecor] di c/c&#43;&#43;, jadi setiap dynamic-object yang di alokasi di heap dan sudah waktunya dihapus harus di-delete secara eksplisit. (dynamic-object == setiap object yang di-create dengan keyword new). Apa akibatnya jika delete tidak dilakukan?, kemungkinan terjadi memory leak ( : keadaan dimana pembuat program tidak bahagia). kemungkinan memory leak ini semakin besar seiring semakin kompleknya project, dan juga memory leak akan susah dicari :| . untuk itu dibuat smart pointer: pointer yang mengurusi kepemilikan object (secara singkatnya begitu) . Smart pointer sudah lama digunakan, namun tetap saja masih banyak project yang menggunakan raw pointer , (dengan alasan kemudahan dan malas. haha.) . Kelemahan dari smart pointer , tentu akan lebih lambat dari raw pointer, karena smart pointer sebenarnya adalah wrapper class untuk pointer. Walaupun ada, saya yakin, keuntungannya lebih tinggi karena kecepatan processor yang semakin tinggi dan project yang rumit. {riil project == pasti rumit }. Okey, itulah motivasinya :), saatnya mencoba smart pointer. Saya pilih smart pointer dari Boost library yang banyak digunakan. Di Boost terdapat beberapa smart pointer, saya akan mencoba 3 diantaranya: scoped pointer, shared pointer, dan weak pointer.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2012-06-30T13:40:25+00:00">
+    <meta property="article:modified_time" content="2012-06-30T13:40:25+00:00">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Mencoba Smart pointer dari Boost">
+  <meta name="twitter:description" content="Smart pointer adalah pointer yang smart. :d. ya memang begitu tujuannya. Seperti diketahui tidak ada management object secara otomatis [garbage collecor] di c/c&#43;&#43;, jadi setiap dynamic-object yang di alokasi di heap dan sudah waktunya dihapus harus di-delete secara eksplisit. (dynamic-object == setiap object yang di-create dengan keyword new). Apa akibatnya jika delete tidak dilakukan?, kemungkinan terjadi memory leak ( : keadaan dimana pembuat program tidak bahagia). kemungkinan memory leak ini semakin besar seiring semakin kompleknya project, dan juga memory leak akan susah dicari :| . untuk itu dibuat smart pointer: pointer yang mengurusi kepemilikan object (secara singkatnya begitu) . Smart pointer sudah lama digunakan, namun tetap saja masih banyak project yang menggunakan raw pointer , (dengan alasan kemudahan dan malas. haha.) . Kelemahan dari smart pointer , tentu akan lebih lambat dari raw pointer, karena smart pointer sebenarnya adalah wrapper class untuk pointer. Walaupun ada, saya yakin, keuntungannya lebih tinggi karena kecepatan processor yang semakin tinggi dan project yang rumit. {riil project == pasti rumit }. Okey, itulah motivasinya :), saatnya mencoba smart pointer. Saya pilih smart pointer dari Boost library yang banyak digunakan. Di Boost terdapat beberapa smart pointer, saya akan mencoba 3 diantaranya: scoped pointer, shared pointer, dan weak pointer.">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://xedixermawan.github.io/2012/06/30/582/" />
   
   
 </head>
@@ -464,12 +497,12 @@ bbb-&gt;setA(aaa);
   >
     
     <a class="ltr:pr-3 rtl:pl-3" href="https://xedixermawan.github.io/2012/10/21/simple-thread-pool-test/"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>simple thread pool test</span></a
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Simple &#34;thread pool&#34; test</span></a
     >
     
     
     <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://xedixermawan.github.io/2012/05/26/solved-conversion-to-dalvik-format-failed-with-error-1/"
-      ><span>solved: Conversion to Dalvik format failed with error 1</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+      ><span>Solved: Conversion to Dalvik format failed with error 1</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     >
     
   </nav>

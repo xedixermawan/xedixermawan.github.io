@@ -24,7 +24,7 @@
       <description>&lt;p&gt;&lt;strong&gt;#1 : Dec 19, 2010&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Sekedar sharing, mungkin ada yang mengalami masalah seperti ini di se X8 (atau sejenis) ber-OS android&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&amp;ldquo;the application home screen(process com.sonyericsson.homescreen) has stopped unexpectedly.please try again.&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;solusi:&lt;/p&gt;&#xA;&lt;p&gt;-download software updater di web se.&lt;/p&gt;&#xA;&lt;p&gt;-lakukan langkah2 yang diberikan.&lt;/p&gt;&#xA;&lt;p&gt;software ini nanti akan mendownload firmware terbaru untuk android yang anda miliki. cukup besar ~130 an MB. setelah download selesai firmware akan diprogramkan di handphone. pada waktu saya dapet masalah ini, sudah org yang banyak bertanya di forum se, namun jawabannya saya pikir kurang jelas. kenapa banyak org bertanya?, karena pesan error diatas menyebabkan &lt;strong&gt;hanphone crash&lt;/strong&gt; a.k.a tidak bisa dipakai :p . Itu terjadi (untuk saya) , setelah install software ke handphone.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>just-do-it!</title>
+      <title>Just-do-it!</title>
       <link>https://xedixermawan.github.io/2010/10/11/just-do-it/</link>
       <pubDate>Mon, 11 Oct 2010 16:45:43 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2010/10/11/just-do-it/</guid>
@@ -38,25 +38,25 @@
       <description>&lt;p&gt;Akhir-akhir ini saya nemu mainan baru yang menarik di waktu luang: Su Doku. Su Doku adalah permainan puzzle menempatkan angka di kotak berukuran 9x9 (ini yang umum, namun adajuga 4x4).  Walaupun permainan ini melibatkan angka, namun sama sekali tidak ada aturan matematis dan itung2an di sini, yang diperlukan cuma logika biasa. Aturannya cukup sederhana :&lt;!-- more --&gt;&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;  1. Dalam 1 baris atau 1 kolom angka 1-9 hanya boleh terulang 1 kali&#xD;&#xA;  2. Kotak berukuran 9x9 tadi dibagi menjadi 9 kotak kecil, dan di setiap kotak kecil ini (3x3), angka 1-9 juga hanya boleh berulang 1 kali.&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;Su Doku adalah kata yang berasal dari kata Jepang yan mempunyai arti &amp;ldquo;menempatkan angka&amp;rdquo;. Namun diduga Su doku tidak diciptakan bangsa Jepang, tetapi oleh ahli matematik terkenal dari Swiss: Euler (ia membuat versi sederhananya). Kenapa Su Doku berasal dari Jepang? karena permainan ini di populerkan disana. Pada saat pertama kali main, mungkin bosan. Namun jika sudah menyelesaikan beberapa permainan, kita akan kecanduan. Terdapat beberapa tingkatan kesulitan di permaianan ini, mulai dari pemula, menengah, sulit sampai menantang . Contoh permainan:&lt;/p&gt;</description>
     </item>
     <item>
-      <title>membaca_menulis</title>
+      <title>Membaca menulis</title>
       <link>https://xedixermawan.github.io/2008/10/17/membaca_menulis/</link>
       <pubDate>Fri, 17 Oct 2008 11:58:24 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2008/10/17/membaca_menulis/</guid>
       <description>&lt;p&gt;mulai 2 minggu ini sepertinya saya sangat banyak membaca dan juga banyak menulis(baca mengetik). yang dibaca tentu bukan novel atau &amp;ldquo;cerita mesum&amp;rdquo; :-D . Walaupun kadang juga baca novel dirumah( novel musashi qu blom ta selesain ). menu bacaannya adalah datasheet, dan source code. dan source codenya itu tidak ditulis dalam satu bahasa pemrograman,-ada beberapa- setidaknya berbasis C,Basic, Pascal. sehingga selain datasheet dan source code menu lainnya adalah &amp;lsquo;help&amp;quot; dan manual. Sebenarnya membaca bacaan seperti itu bukan hal asing, tapi intensitasnya sangat meningkat pesat saat ini.  Ada efek yang saya kira bagus, yaitu penegtahuan saya saya harap meningkat pesat juga&amp;hellip;tapi ada efek buruknya, yaitu harus mampu bertahannnnnnnnnnnnnnn&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip; . Begitu jga dengan menulis. memilih kata kata yang dapat dipahami banyak orang itu kadang susah.apalagi  yang dibahas adalah maslah teknis. padahal saya tidak terlalu baik dalam &amp;ldquo;bahasa&amp;rdquo;. Tapi secara garis besar ini akan dinikmati.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>taste of life</title>
+      <title>Taste of life</title>
       <link>https://xedixermawan.github.io/2008/08/13/taste-of-life/</link>
       <pubDate>Wed, 13 Aug 2008 09:45:49 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2008/08/13/taste-of-life/</guid>
       <description>&lt;p&gt;2 minggu yang lalu ,waktu saya pergi ke tempat fotokopian,saya bertemu dengan seseorang.  Dia membawa fotokopian, sebuah PCB.tidak ada yang aneh dengan fotokopiannya,pada mulanya.setelah berbicara ngobrol sana-sini,ternyata dia mau membuat oscilator.ini yang aneh&amp;hellip;&#xA;Bapak ini katanya kuliahnya di jurusan komunikasi, lalu sekarang ini bekerja sebagai kepala proyek bangunan perumahan, tapi hobinya elektronik&amp;hellip;!, rela membuat PCB dengan eagle, lalu memfotokopi, lalu etching, lalu trouble shooting rangkaian kalau belum jalan. Sebuah proses yang panjang dan &amp;lsquo;&amp;rsquo;neraka&amp;rsquo;&amp;rsquo; bagi yang gak suka LK .&#xA;Walaupun saya juga menyukai elektronika, tapi saya masih merasa aneh dengan bapak ini. yeah banyak yang aneh memang gak aneh. Hidup memang harus punya rasa. Thinking, Research is taste of life.&#xA;What is taste of ur life?&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Semangat.....................</title>
+      <title>Semangat!</title>
       <link>https://xedixermawan.github.io/2007/11/25/semangat-or-kesepian/</link>
       <pubDate>Sun, 25 Nov 2007 04:36:19 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2007/11/25/semangat-or-kesepian/</guid>
-      <description>&lt;p&gt;ternyata lab adalah lingkungan yang sangat ideal untuk belajar,karena disana ada banyak fasilitas,ketenangan yang asik(walaupun tidak selalu,setidaknya malam hari pasti).kesimpulan ini  di dapat jika kita bekerja kita sudah tidak bisa lagi full belajar bebas(kecuali jika kita bekerja sebagai peneliti,ini pasti indah),tidak bisa melakukan banyak percobaan yang mengganggu fikiran. ketika begini,semangat saya sangat besar untuk belajar lebih banyak lagi,hal yang mendasar jika banyak yang diketahui pasti menyenangkanlah,dan tentu saja lebih nyaman.Road to Master.Hrs bnyk yg diabaikan,walalupun tdk sesuai aliran hidup pada umumnya.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Ternyata lab adalah lingkungan yang sangat ideal untuk belajar,karena disana ada banyak fasilitas,ketenangan yang asik(walaupun tidak selalu,setidaknya malam hari pasti).kesimpulan ini  di dapat jika kita bekerja kita sudah tidak bisa lagi full belajar bebas(kecuali jika kita bekerja sebagai peneliti,ini pasti indah),tidak bisa melakukan banyak percobaan yang mengganggu fikiran. ketika begini,semangat saya sangat besar untuk belajar lebih banyak lagi,hal yang mendasar jika banyak yang diketahui pasti menyenangkanlah,dan tentu saja lebih nyaman.Road to Master.Hrs bnyk yg diabaikan,walalupun tdk sesuai aliran hidup pada umumnya.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Magang atau tidak</title>

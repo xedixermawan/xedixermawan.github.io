@@ -7,56 +7,14 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© 2007-2024 XediXermawan</copyright>
-    <lastBuildDate>Sat, 26 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://xedixermawan.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Placeholder Text</title>
-      <link>https://xedixermawan.github.io/post/placeholder-text/</link>
-      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://xedixermawan.github.io/post/placeholder-text/</guid>
-      <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Analisis laporan keuangan</title>
-      <link>https://xedixermawan.github.io/post/2024-10-26_contoh-analisis-laporan-keuangan/</link>
-      <pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://xedixermawan.github.io/post/2024-10-26_contoh-analisis-laporan-keuangan/</guid>
-      <description>&lt;p&gt;Untuk memberikan contoh analisis laporan keuangan suatu perusahaan, saya akan menggunakan data yang disederhanakan dari laporan keuangan hipotetis. Berikut adalah contoh data dari sebuah perusahaan fiktif:&lt;/p&gt;&#xA;&lt;h3 id=&#34;laporan-laba-rugi-income-statement&#34;&gt;Laporan Laba Rugi (Income Statement)&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;&lt;strong&gt;Komponen&lt;/strong&gt;&lt;/th&gt;&#xA;          &lt;th&gt;&lt;strong&gt;Jumlah (dalam juta USD)&lt;/strong&gt;&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Pendapatan (Revenue)&lt;/td&gt;&#xA;          &lt;td&gt;100&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Harga Pokok Penjualan (COGS)&lt;/td&gt;&#xA;          &lt;td&gt;60&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Laba Kotor (Gross Profit)&lt;/td&gt;&#xA;          &lt;td&gt;40&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Biaya Operasional (Operating Expenses)&lt;/td&gt;&#xA;          &lt;td&gt;20&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Laba Operasional (Operating Income)&lt;/td&gt;&#xA;          &lt;td&gt;20&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Beban Bunga (Interest Expense)&lt;/td&gt;&#xA;          &lt;td&gt;5&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Pajak (Taxes)&lt;/td&gt;&#xA;          &lt;td&gt;3&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Laba Bersih (Net Income)&lt;/td&gt;&#xA;          &lt;td&gt;12&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h3 id=&#34;laporan-neraca-balance-sheet&#34;&gt;Laporan Neraca (Balance Sheet)&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;&lt;strong&gt;Komponen&lt;/strong&gt;&lt;/th&gt;&#xA;          &lt;th&gt;&lt;strong&gt;Jumlah (dalam juta USD)&lt;/strong&gt;&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Aset&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Aset Lancar (Current Assets)&lt;/td&gt;&#xA;          &lt;td&gt;50&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Aset Tetap (Fixed Assets)&lt;/td&gt;&#xA;          &lt;td&gt;100&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Total Aset (Total Assets)&lt;/td&gt;&#xA;          &lt;td&gt;150&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Liabilitas&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Liabilitas Lancar (Current Liabilities)&lt;/td&gt;&#xA;          &lt;td&gt;30&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Utang Jangka Panjang (Long-term Debt)&lt;/td&gt;&#xA;          &lt;td&gt;40&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Total Liabilitas (Total Liabilities)&lt;/td&gt;&#xA;          &lt;td&gt;70&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Ekuitas Pemegang Saham&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Ekuitas (Equity)&lt;/td&gt;&#xA;          &lt;td&gt;80&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Total Liabilitas dan Ekuitas&lt;/td&gt;&#xA;          &lt;td&gt;150&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h3 id=&#34;laporan-arus-kas-cash-flow-statement&#34;&gt;Laporan Arus Kas (Cash Flow Statement)&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;&lt;strong&gt;Komponen&lt;/strong&gt;&lt;/th&gt;&#xA;          &lt;th&gt;&lt;strong&gt;Jumlah (dalam juta USD)&lt;/strong&gt;&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Arus Kas dari Operasi (Operating Cash Flow)&lt;/td&gt;&#xA;          &lt;td&gt;25&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Arus Kas dari Investasi (Investing Cash Flow)&lt;/td&gt;&#xA;          &lt;td&gt;(15)&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Arus Kas dari Pendanaan (Financing Cash Flow)&lt;/td&gt;&#xA;          &lt;td&gt;(5)&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Perubahan Bersih Kas (Net Cash Flow)&lt;/td&gt;&#xA;          &lt;td&gt;5&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h3 id=&#34;rasio-keuangan-financial-ratios&#34;&gt;Rasio Keuangan (Financial Ratios)&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Gross Profit Margin (Laba Kotor/Pendapatan)&lt;/strong&gt;&lt;br&gt;&#xA;$$&#xA;\frac{Laba Kotor}{Pendapatan} = \frac{40}{100} = 40%&#xA;$$&lt;/p&gt;</description>
-    </item>
     <item>
       <title></title>
       <link>https://xedixermawan.github.io/archives/</link>
       <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
       <guid>https://xedixermawan.github.io/archives/</guid>
       <description></description>
-    </item>
-    <item>
-      <title>Markdown Syntax Guide</title>
-      <link>https://xedixermawan.github.io/post/markdown-syntax/</link>
-      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://xedixermawan.github.io/post/markdown-syntax/</guid>
-      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Rich Content</title>
-      <link>https://xedixermawan.github.io/post/rich-content/</link>
-      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://xedixermawan.github.io/post/rich-content/</guid>
-      <description>&lt;p&gt;Hugo ships with several &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes&#34;&gt;Built-in Shortcodes&lt;/a&gt; for rich content, along with a &lt;a href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;&gt;Privacy Config&lt;/a&gt; and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p&gt;&#xA;&lt;h2 id=&#34;heading&#34;&gt;&lt;/h2&gt;</description>
-    </item>
-    <item>
-      <title>Math Typesetting</title>
-      <link>https://xedixermawan.github.io/post/math-typesetting/</link>
-      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://xedixermawan.github.io/post/math-typesetting/</guid>
-      <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Emoji Support</title>
-      <link>https://xedixermawan.github.io/post/emoji-support/</link>
-      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://xedixermawan.github.io/post/emoji-support/</guid>
-      <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
     </item>
     <item>
       <title>About</title>
@@ -70,7 +28,7 @@
       <link>https://xedixermawan.github.io/contact/</link>
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
       <guid>https://xedixermawan.github.io/contact/</guid>
-      <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/xedixermawan&#34;&gt;github.com/xedixermawan&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.linkedin.com/in/ediermawan/&#34;&gt;xedixermawan&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/xedixermawan&#34;&gt;Github&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.linkedin.com/in/ediermawan/&#34;&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://x.com/XediXermawan&#34;&gt;X-twitter&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Android Vector Drawable</title>
@@ -185,7 +143,7 @@
       <description>&lt;p&gt;Disini saya ingin share simple script untuk &amp;ldquo;mempercantik&amp;rdquo; c++ code disuatu folder project dan melakukan svn commit setelah itu. jadi semacam selalu ada auto corrector jika kamu menulis code yang tidak sesuai aturan ( bahkan mungkin aturan yang kamu buat sendiri) .&lt;/p&gt;&#xA;&lt;p&gt;code yang rapih diharapkan memiliki sedikit bugs dan juga ingat programmer menulis code tidak hanya untuk mesin, tetapi juga untuk dibaca manusia yang lain. untung nya untuk masalah indentation &amp;amp; formating ada software keren &amp;amp; free untuk melakukan ini, yaitu AStyle (  &lt;a href=&#34;http://astyle.sourceforge.net/&#34;&gt;http://astyle.sourceforge.net/&lt;/a&gt; )  .  dengan batch script dibawah ini, semuanya terjadi otomatis :&lt;/p&gt;</description>
     </item>
     <item>
-      <title>problem solved : wordpress remove code indentation</title>
+      <title>Problem solved : wordpress remove code indentation</title>
       <link>https://xedixermawan.github.io/2013/12/22/problem-solved-wordpress-remove-code-indentation/</link>
       <pubDate>Sun, 22 Dec 2013 17:24:20 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2013/12/22/problem-solved-wordpress-remove-code-indentation/</guid>
@@ -234,7 +192,7 @@
       <description>&lt;p&gt;Array ?, sepertinya mudah, dan mungkin memang mudah. Sekelompok/himpunan type data disimpan dalam area memory sequential , untuk mempermudah pengaturan dan pengaksesan, itulah array. Di C/C++ contoh penggunaannya sebagai berikut :&lt;/p&gt;&#xA;&lt;p&gt;initialisasi :&lt;/p&gt;&#xA;&lt;table cellpadding=&#34;4&#34; width=&#34;100%&#34; cellspacing=&#34;0&#34; border=&#34;1&#34; &gt; &#xD;&#xA;&lt;tbody &gt;&#xD;&#xA;&lt;tr valign=&#34;TOP&#34; &gt;&#xD;&#xA;&lt;td width=&#34;33%&#34; height=&#34;86&#34; &gt;&#xD;&#xA;&lt;p&gt;int arrayA[3] = {4,5,6};&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;td width=&#34;33%&#34; &gt;&#xD;&#xA;&lt;p&gt;int arrayB[3];&lt;/p&gt;&#xA;&lt;p&gt;arrayB[0]=8;&lt;/p&gt;&#xA;&lt;p&gt;arrayB[1]=9;&lt;/p&gt;&#xA;&lt;p&gt;arrayB[2] =10;&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;td width=&#34;33%&#34; &gt;&#xD;&#xA;&lt;p&gt;int* arrayC = new int[3];&lt;/p&gt;&#xA;&lt;p&gt;arrayC[0] = 11;&lt;/p&gt;&#xA;&lt;p&gt;arrayC[1] = 12;&lt;/p&gt;&#xA;&lt;p&gt;arrayC[2] = 13;&lt;/p&gt;&#xA;&lt;/td&gt;&#xD;&#xA;&lt;/tr&gt;&#xD;&#xA;&lt;/tbody&gt;&#xD;&#xA;&lt;/table&gt;&#xD;&#xA;&lt;p&gt;arrayA dan arrayB , arrayC adalah array dari data bertipe integer dan (dimaksudkan) memiliki ukuran maksimum 3. Pengaksesan array dibawah ini sesuai rencana, karena index &amp;lt;=2 .&lt;/p&gt;</description>
     </item>
     <item>
-      <title>simple thread pool test</title>
+      <title>Simple &#34;thread pool&#34; test</title>
       <link>https://xedixermawan.github.io/2012/10/21/simple-thread-pool-test/</link>
       <pubDate>Sun, 21 Oct 2012 17:05:52 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2012/10/21/simple-thread-pool-test/</guid>
@@ -248,7 +206,7 @@
       <description>&lt;p&gt;Smart pointer adalah pointer yang smart. :d. ya memang begitu tujuannya. Seperti diketahui tidak ada management object secara otomatis [garbage collecor] di c/c++, jadi setiap dynamic-object yang di alokasi di heap dan sudah waktunya dihapus harus di-delete secara eksplisit. (dynamic-object == setiap object yang di-create dengan keyword new). Apa akibatnya jika delete tidak dilakukan?, kemungkinan terjadi memory leak ( : keadaan dimana pembuat program tidak bahagia). kemungkinan memory leak ini semakin besar seiring semakin kompleknya project, dan juga memory leak akan susah dicari :| . untuk itu dibuat smart pointer: pointer yang mengurusi kepemilikan object (secara singkatnya begitu) . Smart pointer sudah lama digunakan, namun tetap saja masih banyak project yang menggunakan raw pointer , (dengan alasan kemudahan dan malas. haha.) . Kelemahan dari smart pointer , tentu akan lebih lambat dari raw pointer, karena smart pointer sebenarnya adalah wrapper class untuk pointer. Walaupun ada, saya yakin, keuntungannya lebih tinggi karena kecepatan processor yang semakin tinggi dan project yang rumit. {riil project == pasti rumit }. Okey, itulah motivasinya :), saatnya mencoba smart pointer. Saya pilih smart pointer dari Boost library yang banyak digunakan. Di Boost terdapat beberapa smart pointer, saya akan mencoba 3 diantaranya: scoped pointer, shared pointer, dan weak pointer.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>solved: Conversion to Dalvik format failed with error 1</title>
+      <title>Solved: Conversion to Dalvik format failed with error 1</title>
       <link>https://xedixermawan.github.io/2012/05/26/solved-conversion-to-dalvik-format-failed-with-error-1/</link>
       <pubDate>Sat, 26 May 2012 19:40:52 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2012/05/26/solved-conversion-to-dalvik-format-failed-with-error-1/</guid>
@@ -290,14 +248,14 @@
       <description>&lt;p&gt;hmm, yah mungkin bukan hanya saya, tapi semua orang suka cepat dalam segala hal, tak terkecuali di komputer { apalagi } . Saya sedang membicarakan tampilan komputer. Kita bisa mengatur tampilan komputer kita, baik di Linux maupun Ms-Windows atau OS lain, dengan 2 batas : tampilan terindah dan tampilan tercepat. Beberapa orang memang suka hal-hal yang sangaaat indah, seperti tampilan GUI transparan, animasi button, dan lainnya (coba: win 7 tampilan terbaik, atau GNU/Linux Ubuntu tampilan terbaik). Dan ada orang yang suka super cepat!! :D . Super indah mengorbankan kecepatan dan super cepat mengorbankan keindahan. Bukankah komputer sekarang sudah sangat cepat. Hmm.. gimana kalo komputer yang super cepat itu di setting dengan tampilan super cepat, pasti itu yang paling cepat. Di Ms-Windows (XP di komputer ku, dan Win 7 di tempat kerja ) saya setting win classic theme, simple dan cepat. Di GNU/linux Ubuntu saya mencoba melakukan hal yang sama, namun belum nemu, karena walaupun saya setting dengan tanpa visual effect sama sekali, cursor masih menampakan shadow dan transparansi (argh.. pasti CPU ku perlu beberapa clock cycle untuk meng-generate itu).&lt;/p&gt;</description>
     </item>
     <item>
-      <title>love what you do</title>
+      <title>Love what you do</title>
       <link>https://xedixermawan.github.io/2011/10/06/love-what-you-do/</link>
       <pubDate>Thu, 06 Oct 2011 06:04:58 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2011/10/06/love-what-you-do/</guid>
       <description>&lt;p&gt;learn many thing from Steve Jobs.&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven&amp;rsquo;t found it yet, keep looking. Don&amp;rsquo;t settle. As with all matters of the heart, you&amp;rsquo;ll know when you find it. And, like any great relationship, it just gets better and better as the years roll on. So keep looking until you find it. Don&amp;rsquo;t settle.&amp;rdquo;&#xA;– Stanford commencement speech 2005&lt;/p&gt;</description>
     </item>
     <item>
-      <title>packing resources</title>
+      <title>Packing app resources</title>
       <link>https://xedixermawan.github.io/2011/09/20/packing-resources/</link>
       <pubDate>Tue, 20 Sep 2011 02:05:46 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2011/09/20/packing-resources/</guid>
@@ -325,7 +283,7 @@
       <description>&lt;p&gt;Kita pasti tahu bahwa yang tren para developer tergantung dari pembuat compiler. Contoh yang sederhana misalnya .NET. .Net menjadi tren saat ini karena Microsoft mempromosikan dan memberi dukungan sebelumnya , Java juga begitu. Nah, akhir-akhir ini sepertinya ada yang berubah, – dan saya berharap ini benar – . Microsoft mulai melirik lagi C++ (baca: C++ Modern ):&lt;/p&gt;&#xA;&lt;p&gt;Dari artikel-artikel yang saya temukan.&lt;/p&gt;&#xA;&lt;p&gt; :: Why your next language better be C++&lt;/p&gt;</description>
     </item>
     <item>
-      <title>post code: proximity game</title>
+      <title>Proximity game code</title>
       <link>https://xedixermawan.github.io/2011/07/18/post-code-proximity-game/</link>
       <pubDate>Mon, 18 Jul 2011 15:14:17 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2011/07/18/post-code-proximity-game/</guid>
@@ -346,7 +304,7 @@
       <description>&lt;p&gt;Visitor, pengunjung. Visitor pattern menggunakan prisip open/close dalam desain sebuah program. Pattern ini memisahkan &amp;ldquo;sebuah operasi -tindakan/algoritma&amp;rdquo; dari objek. Terdapat dua objek: Visitor dan Objek yang bisa dikunjungi (visitable objek). Kelihatannya Pattern ini mirip dengan strategi pattern: memisahkan algoritma dari kelas menjadi kelas yang lain. Namun Visitor Pattern dan strategi pattern berbeda.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Strategy pattern&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;AlgoritmaX adalah abstract class. punya method Count()&lt;/p&gt;&#xA;&lt;p&gt;AlgoritmaX1 turunan AlgoritmaX. AlgoritmaX1 mengimplementasikan method Count() dengan algoritma tertentu&lt;/p&gt;</description>
     </item>
     <item>
-      <title>switching</title>
+      <title>Switching</title>
       <link>https://xedixermawan.github.io/2011/03/05/switching/</link>
       <pubDate>Sat, 05 Mar 2011 17:03:21 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2011/03/05/switching/</guid>
@@ -367,7 +325,7 @@
       <description>&lt;p&gt;Dulu saya sempat mencari-cari, ada nggak ya sebuah database engine yang bisa diakses secara lokal layaknya file?. Waktu itu saya cari-cari di Google ternyata saya nggak nemu. -mungkin belum beruntung atau kata kunci belum tepat -. :) . Kira2 sebulan yang lalu secara tidak sengaja saya nemu SQLite.DLL disebuah folder suatu game,  saya langsung berfikir ini yang saya cari2 dulu!!!.  Karena ada kata &amp;ldquo;SQL&amp;rdquo; dan &amp;ldquo;Lite&amp;rdquo; .  Dan ternyata benar!, langsung ta download di &lt;a href=&#34;http://www.sqlite.org/download.html&#34;&gt;official-webnya&lt;/a&gt; . Disitu bisa download .DLL -nya , source, semuanya.Untuk Sqlite3.lib tidak ada, dan bisa di-generate dengan:&lt;/p&gt;</description>
     </item>
     <item>
-      <title>avira update caused debug error</title>
+      <title>Avira update caused debug error</title>
       <link>https://xedixermawan.github.io/2010/12/20/avira-update-caused-debug-error/</link>
       <pubDate>Mon, 20 Dec 2010 05:53:37 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2010/12/20/avira-update-caused-debug-error/</guid>
@@ -381,14 +339,14 @@
       <description>&lt;p&gt;&lt;strong&gt;#1 : Dec 19, 2010&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Sekedar sharing, mungkin ada yang mengalami masalah seperti ini di se X8 (atau sejenis) ber-OS android&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&amp;ldquo;the application home screen(process com.sonyericsson.homescreen) has stopped unexpectedly.please try again.&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;solusi:&lt;/p&gt;&#xA;&lt;p&gt;-download software updater di web se.&lt;/p&gt;&#xA;&lt;p&gt;-lakukan langkah2 yang diberikan.&lt;/p&gt;&#xA;&lt;p&gt;software ini nanti akan mendownload firmware terbaru untuk android yang anda miliki. cukup besar ~130 an MB. setelah download selesai firmware akan diprogramkan di handphone. pada waktu saya dapet masalah ini, sudah org yang banyak bertanya di forum se, namun jawabannya saya pikir kurang jelas. kenapa banyak org bertanya?, karena pesan error diatas menyebabkan &lt;strong&gt;hanphone crash&lt;/strong&gt; a.k.a tidak bisa dipakai :p . Itu terjadi (untuk saya) , setelah install software ke handphone.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>yet another memory game&#39;s project</title>
+      <title>Yet another memory game&#39;s project</title>
       <link>https://xedixermawan.github.io/2010/11/21/yet-another-memory-games-project/</link>
       <pubDate>Sun, 21 Nov 2010 17:52:39 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2010/11/21/yet-another-memory-games-project/</guid>
       <description>&lt;p&gt;Iseng membuat game yang lengkap. ada menu game, sound, score, level, dll. tapi belum selesai, setidaknya sudah bisa dimainkan :) . project-nya saya post di Google Code SVN.&lt;/p&gt;&#xA;&lt;p&gt;SVN Checkout: (read only check out)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://frogmemory.googlecode.com/svn/trunk/frogmem&#34;&gt;https://frogmemory.googlecode.com/svn/trunk/frogmem&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;sementara, isinya cuma file project dan source code. file asset dan dependencies tidak ada.  project ini menggunakan SDL sebagai &amp;ldquo;system&amp;rdquo;-nya dan &lt;a href=&#34;http://www.cegui.org.uk&#34;&gt;CEGUI (Crazy Eddie&amp;rsquo;s GUI System)&lt;/a&gt;, dan tentu pakai bahasa C++.&lt;/p&gt;&#xA;&lt;p&gt;update:&lt;/p&gt;&#xA;&lt;p&gt;Januari 29, 2010 : Add binary file dan data file&lt;/p&gt;</description>
     </item>
     <item>
-      <title>just-do-it!</title>
+      <title>Just-do-it!</title>
       <link>https://xedixermawan.github.io/2010/10/11/just-do-it/</link>
       <pubDate>Mon, 11 Oct 2010 16:45:43 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2010/10/11/just-do-it/</guid>
@@ -451,14 +409,14 @@
       <description>&lt;p&gt;Sekarang sedang ramai kampanye pemilu. beberapa waktu yang lalu hal-hal seperti ini tidaklah menarik . Lalu saya mencoba mempelajarinya. Namun itu dulu, kalau sekarang saya juga tidak tertarik. :-o . Bukan saya saja yang mengatakan [1] terlalu banyak partai [2]dalam satu partai terdapat banyak caleg [3] sangat sulit untuk mengenal masing masing caleg dsb.,  yang    &lt;!-- more --&gt; merupakan semacam kumpulan protes terhadap pemilu yang konon mahal itu. Untuk memilih orang-orang yang mewakili kita tentu kita harus mengenalnya, namun kenyataannya sulit untuk semua orang. sebenarnya kata yang tepat adalah bukan &amp;ldquo;sulit&amp;rdquo;, namun banyak orang melakukan hal yang lebih penting lainnya daripada mempelajari semua caleg. Bukankah seharusnya penyelenggara lebih menjemput bola?, atau sistemnya yang salah ?.  Bagaimana partai-partai itu menentukan caleg untuk dipilih? kompeten kah? .itu masih gelap. Karena banyak artis dan dukun pun menjadi caleg  (walaupun semua kalangan masyarakat mungkin saja layak). Dan saat ini susah membedakan antara iklan sabun mandi dengan iklan caleg di jalan-jalan. Catatan -catatan buruk (korupsi, skandal, dll) dari anggota parlemen (DPR/DPRD) semakin menyemangati banyak orang untuk tidak peduli dengan ini.  Masyarakat awam spt saya ini seharusnya memilih orang-orang pilihan. dan orang -orang pilihan adalah orang-orang yang dipilih oleh orang - orang yang ahli. (arggghhh apa pula), hanya sekedar pendapat. Kenapa? kita tidak akan ragu jika yang dipilih adalah orang-orang pilihan. Contoh yang bisa dipelajari dari &amp;ldquo;memilih orang-orang pilihan&amp;rdquo; dapat dilihat di negara &lt;a href=&#34;http://id.wikipedia.org/wiki/Iran&#34;&gt;Republik Islam Iran (Islamic Republic of Iran)&lt;/a&gt;. Meniru?, jangan sungkan meniru jika yang ada sekarang memang kurang pas.  Pengertian:  golput itu adalah orang-orang yang tidak belajar ilmu hitam. :-)&lt;/p&gt;</description>
     </item>
     <item>
-      <title>decision effect</title>
+      <title>Decision effect</title>
       <link>https://xedixermawan.github.io/2009/03/04/decision-effect/</link>
       <pubDate>Wed, 04 Mar 2009 16:41:56 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2009/03/04/decision-effect/</guid>
       <description>&lt;p&gt;Apapun keputusannyanya, selama itu menyangkut hal penting, kita akan diserang oleh diri sendiri dan mungkin oleh orang lain.  Setidaknya  pasti dalam  gangguan fikiran, gelisah, cemas, atau apalah, . Itu biasa n sangat natural. Tidak perlu sedih akan masa lalu&amp;hellip;..percaya diri di masa kini&amp;hellip;.tidak perlu cemas akan masa depan&amp;hellip;..do it with hard&amp;rsquo;s work and ultimate motivation.pray it. Begitulah seharusnya seorang yang disebut &amp;ldquo;keren&amp;rdquo; itu. whtever&amp;hellip;.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>troublefinder, not trouble maker</title>
+      <title>Troublefinder, not trouble maker</title>
       <link>https://xedixermawan.github.io/2009/01/10/troublefinder-not-trouble-maker/</link>
       <pubDate>Sat, 10 Jan 2009 12:40:50 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2009/01/10/troublefinder-not-trouble-maker/</guid>
@@ -486,28 +444,28 @@
       <description>&lt;p&gt;Barcode Scanner banyak digunakan di toko-toko retail untuk men-scan barang barang yang akan dibayar pembeli di kasir atau digunakan di perpustakaan untuk mempercepat petugas mendaftar buku-buku yang akan dipinjam. Dengan adanya alat ini semuanya menjadi cepat dan mudah, karena setiap jenis barang memiliki kode barcode sendiri yang unik sehingga bisa dikelompokkan dengan mudah.  Seperti halnya keyboard dan mouse , terdapat banyak macam tipe barcode scanner berdasarkan jenis komunikasinya, misalnya barcode scanner serial, PS/2, dan USB. Pada proyek kali ini barcode scanner PS/2 yang akan digunakan, sehingga penanganannya sama dengan keyboard PS/2. Komunikasi PS/2 adalah komunikasi serial asinkronous yang menggunakan 2 kabel yaitu data&#xA;dan clock.&#xA;&lt;strong&gt;&lt;!-- more --&gt;&lt;/strong&gt; Namun jangan salah sangka, serial sinkronous disini bukanlah protokol I2C(eis to see atau twi, atau apalah). konektor yang digunakan yaitu mini Din female. barcode scanner disini akan digunakan sebagai validator apakah seseorang berhak menggunakan peralatan tersebut atau tidak, jadi siapa orang yang memiliki kartu dengan nomor barcode yang sesuai berhak menggunakannya. Dan untuk mengetahui apakah ada orang yang menggunakan scan barcode tersebut, data hasil scanning dikirim melalui SMS ke nomor tertentu. Ide awal proyek ini bukan dari saya sendiri, namun dari orang lain , sehingga seberapa efektif alat akan berguna, saya sendiri meragukannya :-) . mikrokontroler yang digunakan yaitu avr Atmega32(sebenarnya terlalu berlebihan, dapat digunakan tipe lain) dari Atmel. PORTD.2 digunakan untuk clock, dan data di PORTD.7. PORTD.2 difungsikan sebagai pin untuk interupt eksternal, sedangkan PORTD.7 sebagai input biasa. berikut koneksinya :&lt;/p&gt;</description>
     </item>
     <item>
-      <title>membaca_menulis</title>
+      <title>Membaca menulis</title>
       <link>https://xedixermawan.github.io/2008/10/17/membaca_menulis/</link>
       <pubDate>Fri, 17 Oct 2008 11:58:24 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2008/10/17/membaca_menulis/</guid>
       <description>&lt;p&gt;mulai 2 minggu ini sepertinya saya sangat banyak membaca dan juga banyak menulis(baca mengetik). yang dibaca tentu bukan novel atau &amp;ldquo;cerita mesum&amp;rdquo; :-D . Walaupun kadang juga baca novel dirumah( novel musashi qu blom ta selesain ). menu bacaannya adalah datasheet, dan source code. dan source codenya itu tidak ditulis dalam satu bahasa pemrograman,-ada beberapa- setidaknya berbasis C,Basic, Pascal. sehingga selain datasheet dan source code menu lainnya adalah &amp;lsquo;help&amp;quot; dan manual. Sebenarnya membaca bacaan seperti itu bukan hal asing, tapi intensitasnya sangat meningkat pesat saat ini.  Ada efek yang saya kira bagus, yaitu penegtahuan saya saya harap meningkat pesat juga&amp;hellip;tapi ada efek buruknya, yaitu harus mampu bertahannnnnnnnnnnnnnn&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip; . Begitu jga dengan menulis. memilih kata kata yang dapat dipahami banyak orang itu kadang susah.apalagi  yang dibahas adalah maslah teknis. padahal saya tidak terlalu baik dalam &amp;ldquo;bahasa&amp;rdquo;. Tapi secara garis besar ini akan dinikmati.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>taste of life</title>
+      <title>Taste of life</title>
       <link>https://xedixermawan.github.io/2008/08/13/taste-of-life/</link>
       <pubDate>Wed, 13 Aug 2008 09:45:49 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2008/08/13/taste-of-life/</guid>
       <description>&lt;p&gt;2 minggu yang lalu ,waktu saya pergi ke tempat fotokopian,saya bertemu dengan seseorang.  Dia membawa fotokopian, sebuah PCB.tidak ada yang aneh dengan fotokopiannya,pada mulanya.setelah berbicara ngobrol sana-sini,ternyata dia mau membuat oscilator.ini yang aneh&amp;hellip;&#xA;Bapak ini katanya kuliahnya di jurusan komunikasi, lalu sekarang ini bekerja sebagai kepala proyek bangunan perumahan, tapi hobinya elektronik&amp;hellip;!, rela membuat PCB dengan eagle, lalu memfotokopi, lalu etching, lalu trouble shooting rangkaian kalau belum jalan. Sebuah proses yang panjang dan &amp;lsquo;&amp;rsquo;neraka&amp;rsquo;&amp;rsquo; bagi yang gak suka LK .&#xA;Walaupun saya juga menyukai elektronika, tapi saya masih merasa aneh dengan bapak ini. yeah banyak yang aneh memang gak aneh. Hidup memang harus punya rasa. Thinking, Research is taste of life.&#xA;What is taste of ur life?&lt;/p&gt;</description>
     </item>
     <item>
-      <title>migrasi ke avr-gcc</title>
+      <title>Migrasi ke avr-gcc</title>
       <link>https://xedixermawan.github.io/2008/06/24/migrasi-ke-avr-gcc/</link>
       <pubDate>Tue, 24 Jun 2008 04:15:13 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2008/06/24/migrasi-ke-avr-gcc/</guid>
       <description>&lt;p&gt;selama ini menggunakan code vision untuk mrogram mikro,dan kebnyakan orang-orang disini juga memakainya,walaupun ada juga yang msih pakai assembly murni (so rarely),namun codevision adalah yang mayoritas.code vision itu mudah,ada code wizard,dan tentu saja ini bukan freeware.lalu apakah semua orang disini membayar untuk itu?, tidak tahu lah.. . :-P .di sisi lain ada yang freeware, yaitu  win-avr (avr-gcc). rasa-rasanya sejak dulu memang ingin mencoba yang satu ini.dan sekarang aku telah mnggunakanya penuh.apa perlu uninstall code vision?tidak perlu &amp;hellip;,yang terjadi terjadilah&amp;hellip;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>ketenangan hati itu apa dan bagaimana?</title>
+      <title>Ketenangan hati itu apa dan bagaimana?</title>
       <link>https://xedixermawan.github.io/2008/05/20/ketenangan-hati-itu-apa-dan-bagaimana/</link>
       <pubDate>Tue, 20 May 2008 09:07:54 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2008/05/20/ketenangan-hati-itu-apa-dan-bagaimana/</guid>
@@ -521,7 +479,7 @@
       <description>&lt;p&gt;sekarang adalah march,26 2089. 17 hari lagi umurku sudah 94 tahun,apa yang terjadi saat ini,aku juga belum tahu.semuanya masih kabur seperti dalam kotak kotak kardus didalam almari didalam gedung,di suatu belahan dunia yang saya juga tidak tahu.itupun kalau saya masih hidup,94 tahun adalah usia yang sangat panjang(untuk ukuran saaat ini).yang seandainya masih hidup pastilah sudah lolos dari banyak hal,lolos dari berbagai macam penyakit,lolos dari berbagai macam kecelakaan transportasi,lolos dari gempa,lolos dari luapan banjir.semuanya masih dalam kardus,Tuhan yang Maha Tahu.saya sudah 94 tahun tapi belum tahu apa yang terjadi.tunggu aku ingin mengingat sesuatu!. apa mimpi2 ku sudah menjadi kenyataan ?,apa yang saya kerjakan ketika saya berumur 22 tahun dulu masih berguna saaat ini? Apa saya menjadi Master? or Looser? bagaimana dengan orangg2 yang saya cintai?bagaimana dengan iman saya?&#xA;saya berumur 94 tahun,tapi belum tahu yang terjadi.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>ber-windows,ber-linux.</title>
+      <title>Ber-windows, Ber-linux.</title>
       <link>https://xedixermawan.github.io/2008/03/07/ber-windowsber-linux/</link>
       <pubDate>Fri, 07 Mar 2008 04:27:03 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2008/03/07/ber-windowsber-linux/</guid>
@@ -542,11 +500,11 @@
       <description>&lt;p&gt;akhir ini sring nggunain software dgn tulisan bahasa ora nggenah(korea) . Wajar juga disini prsahaan miik org korea,firefoxnya saja korea-an, jadi kalo ngeklik ya meraba-raba. Kalo install next,ok, agree kudu apal di-pass kan aja dengan bahasa inggris letak tombolnya,hhhh.&#xA;Karena browsing selalu pake firefos yang korea,&#xA;ta&amp;rsquo; putusin tuk dunlud yang inggris,eehh pas udah selesai donlodnya -instal, kok yg keluar firefox versi belanda?,aneh,padahal nggak salah klik.tapi yg susah itu versi arab,karena tombol OK,cancel, dibalik,semua dari kanan.ngetik juga dari kanan.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Semangat.....................</title>
+      <title>Semangat!</title>
       <link>https://xedixermawan.github.io/2007/11/25/semangat-or-kesepian/</link>
       <pubDate>Sun, 25 Nov 2007 04:36:19 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2007/11/25/semangat-or-kesepian/</guid>
-      <description>&lt;p&gt;ternyata lab adalah lingkungan yang sangat ideal untuk belajar,karena disana ada banyak fasilitas,ketenangan yang asik(walaupun tidak selalu,setidaknya malam hari pasti).kesimpulan ini  di dapat jika kita bekerja kita sudah tidak bisa lagi full belajar bebas(kecuali jika kita bekerja sebagai peneliti,ini pasti indah),tidak bisa melakukan banyak percobaan yang mengganggu fikiran. ketika begini,semangat saya sangat besar untuk belajar lebih banyak lagi,hal yang mendasar jika banyak yang diketahui pasti menyenangkanlah,dan tentu saja lebih nyaman.Road to Master.Hrs bnyk yg diabaikan,walalupun tdk sesuai aliran hidup pada umumnya.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Ternyata lab adalah lingkungan yang sangat ideal untuk belajar,karena disana ada banyak fasilitas,ketenangan yang asik(walaupun tidak selalu,setidaknya malam hari pasti).kesimpulan ini  di dapat jika kita bekerja kita sudah tidak bisa lagi full belajar bebas(kecuali jika kita bekerja sebagai peneliti,ini pasti indah),tidak bisa melakukan banyak percobaan yang mengganggu fikiran. ketika begini,semangat saya sangat besar untuk belajar lebih banyak lagi,hal yang mendasar jika banyak yang diketahui pasti menyenangkanlah,dan tentu saja lebih nyaman.Road to Master.Hrs bnyk yg diabaikan,walalupun tdk sesuai aliran hidup pada umumnya.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Everytime learning</title>
@@ -673,6 +631,41 @@
       <pubDate>Thu, 31 May 2007 08:29:48 +0000</pubDate>
       <guid>https://xedixermawan.github.io/post/2007-05-31-menulis-atau-mengetik-ya/</guid>
       <description>&lt;p&gt;Menulis memang aktivitas yang bagus. Karena dengan menulis kamu dapat mengikat ide-ide yang ada di angan-angan, mengikat ilmu-ilmu lama yang terpendam, menuangkan banyak masalah, atau mungkin memberikan solusi untuk masalah. Semoga saja blog saya ini bertahan dan selalu ada konten baru.&lt;/p&gt;&#xA;&lt;p&gt;Jika seseorang tak punya blog, sebenarnya, juga tak apa apa, tapi dengan adanya blog semoga dapat memberikan yang lebih dari semula, dan bisa untuk menuangkan ide, pemikiran, dan menulis hasil kerja.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Markdown Syntax Guide</title>
+      <link>https://xedixermawan.github.io/post/markdown-syntax/</link>
+      <pubDate>Sat, 11 Mar 2000 00:00:00 +0000</pubDate>
+      <guid>https://xedixermawan.github.io/post/markdown-syntax/</guid>
+      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Rich Content</title>
+      <link>https://xedixermawan.github.io/post/rich-content/</link>
+      <pubDate>Fri, 10 Mar 2000 00:00:00 +0000</pubDate>
+      <guid>https://xedixermawan.github.io/post/rich-content/</guid>
+      <description>&lt;p&gt;Hugo ships with several &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes&#34;&gt;Built-in Shortcodes&lt;/a&gt; for rich content, along with a &lt;a href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;&gt;Privacy Config&lt;/a&gt; and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p&gt;&#xA;&lt;h2 id=&#34;heading&#34;&gt;&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Placeholder Text</title>
+      <link>https://xedixermawan.github.io/post/placeholder-text/</link>
+      <pubDate>Thu, 09 Mar 2000 00:00:00 +0000</pubDate>
+      <guid>https://xedixermawan.github.io/post/placeholder-text/</guid>
+      <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Math Typesetting</title>
+      <link>https://xedixermawan.github.io/post/math-typesetting/</link>
+      <pubDate>Wed, 08 Mar 2000 00:00:00 +0000</pubDate>
+      <guid>https://xedixermawan.github.io/post/math-typesetting/</guid>
+      <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Emoji Support</title>
+      <link>https://xedixermawan.github.io/post/emoji-support/</link>
+      <pubDate>Sun, 05 Mar 2000 00:00:00 +0000</pubDate>
+      <guid>https://xedixermawan.github.io/post/emoji-support/</guid>
+      <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
