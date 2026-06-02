@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICBP — Indofood CBP Sukses Makmur | IDX Profile</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --background-primary:        #ffffff;
+      --background-secondary:      #f2f3f5;
+      --background-secondary-alt:  #e9eaec;
+      --background-modifier-border:#ddd;
+      --background-modifier-hover: rgba(0,0,0,0.05);
+      --text-normal:     #2e3338;
+      --text-muted:      #706f6f;
+      --text-faint:      #999999;
+      --text-on-accent:  #ffffff;
+      --text-accent:     #7f6df2;
+      --text-accent-hover: #5d4ff0;
+      --interactive-accent: #7f6df2;
+      --line-width: 42em;
+      --font-text-size: 16px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--background-primary);
+      color: var(--text-normal);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+      font-size: var(--font-text-size);
+      line-height: 1.7;
+    }
+
+    /* TOP NAV */
+    .site-nav {
+      background: var(--background-secondary);
+      border-bottom: 1px solid var(--background-modifier-border);
+      padding: 8px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav-inner {
+      max-width: var(--line-width);
+      margin: 0 auto;
+      padding: 0 2em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .site-nav a {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .site-nav a:hover { color: var(--text-accent); }
+
+    #page-wrapper {
+      max-width: var(--line-width);
+      margin: 0 auto;
+      padding: 3em 2em 8em;
+    }
+
+    /* HEADER */
+    .page-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-normal);
+      margin-bottom: 0.3em;
+      line-height: 1.2;
+    }
+    .ticker-badge {
+      display: inline-block;
+      background: var(--text-accent);
+      color: var(--text-on-accent);
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 5px;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+    .page-meta {
+      font-size: 0.82rem;
+      color: var(--text-faint);
+      margin-bottom: 0.5em;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .price-tag {
+      background: var(--background-secondary);
+      border: 1px solid var(--background-modifier-border);
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-weight: 700;
+      color: var(--text-normal);
+    }
+
+    /* DIVIDER */
+    hr {
+      border: none;
+      border-top: 1px solid var(--background-modifier-border);
+      margin: 1.8em 0;
+    }
+
+    /* HEADINGS */
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-normal);
+      margin: 1.8em 0 0.6em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      user-select: none;
+    }
+    h2:hover { color: var(--text-accent); }
+    h2 .collapse-icon {
+      width: 15px; height: 15px;
+      flex-shrink: 0;
+      opacity: 0.35;
+      transition: transform 0.2s;
+      color: var(--text-muted);
+    }
+    h2 .collapse-icon svg { width: 100%; height: 100%; }
+    h2.collapsed .collapse-icon { transform: rotate(-90deg); }
+    h2.collapsed + .section-body { display: none; }
+
+    h3 {
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--text-normal);
+      margin: 1.2em 0 0.4em;
+    }
+
+    /* TEXT */
+    p { margin-bottom: 0.85em; color: var(--text-normal); }
+    strong { color: var(--text-normal); font-weight: 700; }
+    a { color: var(--text-accent); text-decoration: none; }
+    a:hover { text-decoration: underline; color: var(--text-accent-hover); }
+
+    /* KPI GRID */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 1em 0 1.5em;
+    }
+    @media (max-width: 700px) { .kpi-grid { grid-template-columns: repeat(2,1fr); } }
+
+    /* CALLOUT / KPI CARD */
+    .callout {
+      background: var(--background-secondary);
+      border-left: 3px solid var(--text-accent);
+      border-radius: 0 6px 6px 0;
+      padding: 12px 16px;
+      margin: 0;
+    }
+    .callout-title {
+      font-size: 0.73rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-accent);
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    .callout-value {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-normal);
+    }
+    .callout-sub { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+    .callout-up   { border-left-color: #3d9e71; }
+    .callout-up   .callout-title { color: #3d9e71; }
+    .callout-down { border-left-color: #c0392b; }
+    .callout-down .callout-title { color: #c0392b; }
+
+    /* TABLE */
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 1em 0; }
+    thead tr { background: var(--background-secondary); }
+    th {
+      padding: 9px 12px;
+      text-align: left;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-accent);
+      font-weight: 700;
+      border-bottom: 2px solid var(--background-modifier-border);
+    }
+    td { padding: 9px 12px; border-bottom: 1px solid var(--background-modifier-border); color: var(--text-normal); }
+    tr:hover td { background: var(--background-modifier-hover); }
+    tr.highlight td { font-weight: 700; }
+    tr.highlight td:first-child { color: var(--text-accent); }
+
+    /* CHART BLOCK */
+    .chart-block {
+      background: var(--background-secondary);
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin: 1.2em 0;
+      border: 1px solid var(--background-modifier-border);
+    }
+    .chart-block .chart-title {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: var(--text-faint);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .chart-block canvas { max-height: 260px; }
+
+    /* NEWS ITEM */
+    .news-item {
+      border-left: 2px solid var(--background-modifier-border);
+      padding: 10px 14px;
+      margin: 10px 0;
+      transition: border-left-color 0.15s;
+    }
+    .news-item:hover { border-left-color: var(--text-accent); background: var(--background-modifier-hover); border-radius: 0 4px 4px 0; }
+    .news-date { font-size: 0.73rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.5px; }
+    .news-title { font-weight: 600; color: var(--text-normal); font-size: 0.92rem; margin: 3px 0; }
+    .news-desc { font-size: 0.81rem; color: var(--text-muted); }
+
+    /* BADGE */
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      margin-top: 5px;
+    }
+    .badge-green  { background: #d4edda; color: #2d6a4f; }
+    .badge-red    { background: #fde8e8; color: #922b21; }
+    .badge-amber  { background: #fef3cd; color: #7d5a00; }
+    .badge-accent { background: #ede9fe; color: var(--text-accent); }
+    .badge-blue   { background: #dbeafe; color: #1e40af; }
+
+    /* ESG BARS */
+    .esg-row { margin: 14px 0; }
+    .esg-label-row { display: flex; justify-content: space-between; margin-bottom: 5px; }
+    .esg-label { font-size: 0.86rem; font-weight: 600; color: var(--text-normal); }
+    .esg-score { font-size: 0.86rem; font-weight: 700; }
+    .esg-bar-bg { height: 7px; background: var(--background-secondary-alt); border-radius: 4px; overflow: hidden; }
+    .esg-bar-fill { height: 100%; border-radius: 4px; }
+    .esg-sub { font-size: 0.75rem; color: var(--text-faint); margin-top: 4px; }
+
+    /* FOOTER */
+    footer {
+      margin-top: 4em;
+      padding-top: 1.5em;
+      border-top: 1px solid var(--background-modifier-border);
+      font-size: 0.76rem;
+      color: var(--text-faint);
+      line-height: 1.6;
+    }
+    .sources { margin-top: 0.8em; display: flex; flex-wrap: wrap; gap: 6px; }
+    .sources a {
+      color: var(--text-muted);
+      background: var(--background-secondary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid var(--background-modifier-border);
+      font-size: 0.72rem;
+    }
+    .sources a:hover { color: var(--text-accent); }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <svg width="14" height="14" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 2L3.5 5L6.5 8"/></svg>
+    <a href="https://xedixermawan.github.io">xedixermawan.github.io</a>
+  </div>
+</nav>
+
+<div id="page-wrapper">
+
+  <!-- HEADER -->
+  <div class="page-title">
+    Indofood CBP Sukses Makmur
+    <span class="ticker-badge">ICBP</span>
+  </div>
+  <div class="page-meta">
+    <span>📅 21 Mei 2026</span>
+    <span>🏭 Consumer Staples · Makanan &amp; Minuman</span>
+    <span>🇮🇩 IDX — BEI</span>
+    <span class="price-tag">💹 Harga: Rp 6.725 (per 21 Mei 2026)</span>
+  </div>
+  <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:1.2em;">
+    Produsen makanan bermerek terbesar di Indonesia dan salah satu produsen mi instan terbesar di dunia. Anak usaha PT Indofood Sukses Makmur Tbk (INDF) yang tergabung dalam Grup Salim.
+  </p>
+
+  <hr>
+
+  <!-- KPI GRID -->
+  <div class="kpi-grid">
+    <div class="callout">
+      <div class="callout-title">Kapitalisasi Pasar</div>
+      <div class="callout-value">Rp 78,4 T</div>
+      <div class="callout-sub">11,66 miliar saham beredar</div>
+    </div>
+    <div class="callout callout-up">
+      <div class="callout-title">Pendapatan FY2025</div>
+      <div class="callout-value">Rp 74,9 T</div>
+      <div class="callout-sub">+3,1% dari 2024</div>
+    </div>
+    <div class="callout callout-up">
+      <div class="callout-title">Laba Bersih FY2025</div>
+      <div class="callout-value">Rp 9,22 T</div>
+      <div class="callout-sub">+30,4% YoY · Net margin 12,3%</div>
+    </div>
+    <div class="callout">
+      <div class="callout-title">Dividen per Saham</div>
+      <div class="callout-value">Rp 250</div>
+      <div class="callout-sub">Yield 3,72% (TTM)</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION 1: PROFIL SINGKAT -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    🏢 Profil Singkat
+  </h2>
+  <div class="section-body">
+    <p>PT Indofood CBP Sukses Makmur Tbk (ICBP) adalah perusahaan pengolahan makanan bermerek yang sahamnya tercatat di Bursa Efek Indonesia sejak 7 Oktober 2010. Perusahaan ini merupakan hasil pemisahan (spin-off) Divisi Consumer Branded Products (CBP) dari induknya, PT Indofood Sukses Makmur Tbk, yang secara resmi berdiri pada 2 September 2009. Dengan kapitalisasi pasar senilai Rp 78,4 triliun, ICBP menempati posisi sebagai salah satu emiten terbesar di sektor konsumer di Bursa Efek Indonesia.</p>
+    <p>Akar sejarah perusahaan ini jauh lebih panjang dari usianya sebagai entitas publik. Grup Salim — konglomerat yang dipimpin oleh keluarga Salim — melahirkan produk mi instan pertamanya, Sarimi, pada tahun 1982. Produk demi produk kemudian hadir: makanan nutrisi dan khusus pada 1985, makanan ringan pada 1990, serta penyedap makanan pada 1991. Seluruh bisnis ini dikonsolidasikan di bawah bendera Indofood sejak 1994, dan selama lebih dari satu dekade berkembang sebagai divisi internal sebelum akhirnya dipisahkan menjadi entitas tersendiri. Harga IPO ICBP tercatat Rp 5.395 per lembar, dengan perseroan melepas 20% sahamnya ke publik dan berhasil menghimpun dana Rp 6 triliun.</p>
+    <p>Saat ini, PT Indofood Sukses Makmur Tbk (INDF) memegang 80,53% saham ICBP — menjadikan ICBP sebagai anak usaha yang sangat strategis bagi grup. Manajemen ICBP berkantor pusat di Jakarta dan menjalankan operasinya melalui jaringan puluhan pabrik yang tersebar di Indonesia dan internasional.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Atribut</th>
+          <th>Keterangan</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Nama Resmi</td><td>PT Indofood CBP Sukses Makmur Tbk</td></tr>
+        <tr><td>Kode Saham</td><td>ICBP (IDX)</td></tr>
+        <tr><td>Tanggal Berdiri</td><td>2 September 2009</td></tr>
+        <tr><td>Tanggal IPO</td><td>7 Oktober 2010 · Harga IPO Rp 5.395</td></tr>
+        <tr><td>Kantor Pusat</td><td>Jakarta, Indonesia</td></tr>
+        <tr><td>Sektor / Industri</td><td>Consumer Staples / Makanan &amp; Minuman Bermerek</td></tr>
+        <tr><td>Perusahaan Induk</td><td>PT Indofood Sukses Makmur Tbk (INDF) — Grup Salim</td></tr>
+        <tr><td>Jumlah Karyawan</td><td>±60.000 (est., konsolidasian)</td></tr>
+        <tr><td>Operasi Internasional</td><td>Timur Tengah, Afrika, Eropa (via Pinehill Group)</td></tr>
+        <tr><td>Website Resmi</td><td><a href="https://www.indofoodcbp.com">www.indofoodcbp.com</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 2: MODEL BISNIS -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    ⚙️ Model Bisnis
+  </h2>
+  <div class="section-body">
+    <p>ICBP beroperasi dalam model bisnis <em>branded food manufacturer</em> yang mengedepankan kekuatan merek, skala produksi, dan distribusi masif. Perusahaan tidak sekadar memproduksi barang — ia membangun ekosistem makanan bermerek yang menyentuh hampir setiap momen konsumsi sehari-hari masyarakat Indonesia dan sebagian besar dunia berkembang.</p>
+
+    <h3>Enam Segmen Bisnis Utama</h3>
+    <p><strong>Divisi Mi Instan</strong> adalah jantung dari seluruh operasi ICBP. Segmen ini menyumbang sekitar 74% dari total pendapatan konsolidasi, dengan portofolio merek yang sangat kuat: Indomie (merek mi instan nomor satu di dunia berdasarkan volume), Supermi, Sarimi, Sakura, Pop Mie, Pop Bihun, dan Mi Telur Cap 3 Ayam. Produksi dilakukan di puluhan fasilitas di Indonesia dan diperluas ke lebih dari 50 negara melalui ekspor maupun produksi lokal via anak usaha internasional (termasuk Pinehill Group yang diakuisisi pada 2021, mencakup operasi di Nigeria, Arab Saudi, Turki, Serbia, dan beberapa negara lainnya).</p>
+    <p><strong>Divisi Dairy (Produk Susu)</strong> merupakan segmen terbesar kedua, mencakup produk susu kental manis, susu cair UHT, susu bubuk, es krim, dan mentega. Merek-merek seperti Indomilk, Cap Enaak, Tiga Sapi, dan Milkuat melayani segmen pasar dari premium hingga ekonomi.</p>
+    <p><strong>Divisi Penyedap Makanan</strong> memproduksi kecap, saus sambal, saus tomat, dan berbagai bumbu masak dengan merek Indofood, Piring Lombok, dan Maggi (di bawah lisensi). Segmen ini menikmati pertumbuhan stabil seiring meningkatnya konsumsi makanan olahan rumah tangga.</p>
+    <p><strong>Divisi Makanan Ringan</strong> menghadirkan produk snack bermerek Chitato, Cheetos, Qtela, Lays, dan Doritos — sebagian di antaranya dijalankan melalui kemitraan strategis dengan PepsiCo. Segmen ini menyasar segmen konsumen muda dan urban.</p>
+    <p><strong>Divisi Nutrisi &amp; Makanan Khusus</strong> memproduksi makanan bayi dan produk nutrisi dengan merek Promina dan SUN, melayani segmen ibu dan anak yang menjadi pasar bernilai tinggi di Indonesia.</p>
+    <p><strong>Divisi Minuman</strong> dikelola melalui usaha patungan (joint venture) bersama Asahi Group Holdings dari Jepang, menghasilkan produk air minum dalam kemasan, jus buah, dan minuman berkarbonasi. Kemitraan strategis ini memberikan ICBP akses ke teknologi minuman kelas dunia sekaligus jaringan distribusi Asahi di Asia.</p>
+
+    <h3>Rantai Nilai dan Sumber Keunggulan</h3>
+    <p>Keunggulan kompetitif ICBP terletak pada tiga pilar: <strong>kekuatan merek yang luar biasa</strong> (Indomie adalah salah satu merek konsumen paling dikenal di Indonesia, bahkan menjadi kata generik untuk mi instan), <strong>skala distribusi yang tak tertandingi</strong> (jaringan distribusi menjangkau lebih dari 1 juta titik penjualan di seluruh kepulauan Indonesia), dan <strong>integrasi vertikal parsial</strong> melalui induknya INDF yang mengelola bisnis tepung terigu (Bogasari), sehingga ICBP menikmati jaminan pasokan bahan baku di tengah volatilitas harga gandum global.</p>
+    <p>Secara finansial, ICBP menghasilkan pendapatan melalui penjualan langsung produk ke distributor dan pengecer, dengan margin operasi yang konsisten berada di atas 20% — jauh lebih tinggi dari rata-rata industri makanan di Indonesia. Skala produksi yang sangat besar memungkinkan efisiensi biaya per unit yang menjadi hambatan masuk yang signifikan bagi pesaing baru.</p>
+  </div>
+
+  <!-- SECTION 3: KINERJA KEUANGAN -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    📊 Kinerja Keuangan
+  </h2>
+  <div class="section-body">
+    <p>Perjalanan keuangan ICBP dalam lima tahun terakhir mencerminkan ketangguhan model bisnis makanan bermerek yang defensif, sekaligus kemampuan grup untuk menyerap tekanan eksternal — mulai dari lonjakan harga komoditas pasca pandemi hingga depresiasi nilai tukar rupiah yang memukul biaya impor bahan baku.</p>
+    <p><strong>Tahun 2021–2022</strong> ditandai oleh konsolidasi pasca-akuisisi Pinehill Group senilai USD 2,99 miliar — salah satu transaksi M&amp;A terbesar dalam sejarah korporasi Indonesia. Akuisisi ini secara signifikan memperluas lini pendapatan internasional namun juga membawa beban utang yang lebih besar dan tantangan integrasi operasional lintas negara. Tekanan biaya bahan baku (khususnya gandum dan minyak nabati) akibat konflik Rusia-Ukraina menekan margin laba bersih.</p>
+    <p><strong>Tahun 2023</strong> menjadi tahun pemulihan bertahap. Pendapatan tumbuh dari sekitar Rp 61,5 triliun (2022) menjadi Rp 67,9 triliun, sementara laba bersih yang dapat diatribusikan kepada pemilik entitas induk mencapai Rp 6,99 triliun. Normalisasi harga komoditas global mulai memberikan ruang bagi perbaikan margin.</p>
+    <p><strong>Tahun 2024</strong> mencatat pertumbuhan penjualan sebesar 7% menjadi Rp 72,6 triliun, dengan laba bersih meningkat tipis 1,2% menjadi Rp 7,07 triliun. Yang lebih menggembirakan adalah margin laba usaha yang naik dari 21,2% menjadi 22,5%, mencerminkan efisiensi operasional yang semakin solid dan terkendalinya biaya produksi.</p>
+    <p><strong>Tahun 2025</strong> menjadi tahun terbaik ICBP dalam beberapa tahun terakhir. Laba bersih melonjak 30,4% menjadi Rp 9,22 triliun, sementara pendapatan bersih konsolidasi mencapai Rp 74,85 triliun. Lonjakan profitabilitas ini didorong oleh kombinasi pertumbuhan volume penjualan, perbaikan bauran produk ke segmen yang lebih bernilai tinggi, serta penguatan kinerja operasi internasional terutama di kawasan Timur Tengah dan Afrika.</p>
+    <p><strong>Kuartal I 2026</strong> menunjukkan tren pertumbuhan pendapatan yang berkelanjutan — naik 7,6% YoY menjadi Rp 21,72 triliun — meski laba bersih turun tipis 3,1% YoY menjadi Rp 2,57 triliun, terimbas oleh normalisasi biaya dan beberapa tekanan nilai tukar. Analis merekomendasikan posisi <em>hold</em> dengan target harga konsensus di kisaran Rp 6.850–Rp 12.400 per lembar.</p>
+
+    <div class="chart-block">
+      <div class="chart-title">Pendapatan &amp; Laba Bersih (Rp Triliun) — 2021–2025</div>
+      <canvas id="chartRevenue"></canvas>
+    </div>
+
+    <div class="chart-block">
+      <div class="chart-title">Margin Laba Usaha (%) — 2021–2025</div>
+      <canvas id="chartMargin"></canvas>
+    </div>
+
+    <h3>Tabel Rasio Keuangan Utama</h3>
+    <p>Seluruh rasio valuasi berikut dihitung menggunakan harga saham aktual Rp 6.725 per lembar (21 Mei 2026). EPS dihitung dari laba bersih FY2025 sebesar Rp 9,22 triliun dibagi 11,66 miliar saham beredar, menghasilkan EPS sebesar Rp 790,74. Book Value per saham dihitung dari estimasi total ekuitas ≈ Rp 51,48 triliun dibagi jumlah saham, menghasilkan Rp 4.415 per lembar.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Rasio</th>
+          <th>2021 (est.)</th>
+          <th>2022 (est.)</th>
+          <th>2023</th>
+          <th>2024</th>
+          <th>2025</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="highlight"><td>PER (×)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>8,51×</td></tr>
+        <tr><td>PBV (×)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>1,52×</td></tr>
+        <tr><td>ROE (%)</td><td>~18,5</td><td>~12,0</td><td>~14,2</td><td>~14,5</td><td>~17,9</td></tr>
+        <tr><td>Margin Laba Usaha (%)</td><td>18,0 est.</td><td>17,5 est.</td><td>21,2</td><td>22,5</td><td>~23,0 est.</td></tr>
+        <tr><td>Margin Laba Bersih (%)</td><td>~12,8</td><td>~10,7</td><td>10,3</td><td>9,8</td><td>12,3</td></tr>
+        <tr><td>DER (×)</td><td>~0,6 est.</td><td>~0,7 est.</td><td>~0,5 est.</td><td>~0,45 est.</td><td>~0,4 est.</td></tr>
+        <tr class="highlight"><td>Dividend Yield (%)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>3,72</td></tr>
+        <tr><td>DPS (Rp)</td><td>~300</td><td>~200</td><td>~235</td><td>~250</td><td>250</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.78rem; color:var(--text-faint);">*) Rasio PER, PBV, dan Dividend Yield dihitung menggunakan harga pasar aktual Rp 6.725/lembar per 21 Mei 2026. Nilai (est.) merupakan estimasi berdasarkan data historis yang tersedia secara publik.</p>
+  </div>
+
+  <!-- SECTION 4: KEPEMILIKAN & SEGMEN -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    🥧 Struktur Kepemilikan &amp; Segmen Bisnis
+  </h2>
+  <div class="section-body">
+    <p>Struktur kepemilikan ICBP mencerminkan model konglomerat yang lazim di Indonesia: mayoritas saham dikuasai oleh induk perusahaan, sementara sebagian kecil diperdagangkan di pasar publik. Berdasarkan data registrasi pemegang efek per 30 September 2025, PT Indofood Sukses Makmur Tbk (INDF) menguasai sekitar 9,39 miliar saham atau setara 80,53% dari total saham beredar. Posisi mayoritas yang sangat dominan ini menjadikan kebijakan dividen, strategi ekspansi, dan arah korporasi ICBP hampir sepenuhnya ditentukan oleh Grup Salim melalui INDF.</p>
+    <p>Investor publik (termasuk institusi domestik dan asing, serta investor ritel) menguasai 19,47% sisanya — sekitar 2,27 miliar saham. Meski persentasenya kecil, likuiditas saham ICBP di bursa tetap cukup baik mengingat besarnya kapitalisasi pasar. Jajaran direksi dan komisaris memiliki saham dalam jumlah tidak material (di bawah 0,1%).</p>
+
+    <div class="chart-block">
+      <div class="chart-title">Komposisi Pemegang Saham ICBP (Sept 2025)</div>
+      <canvas id="chartOwnership"></canvas>
+    </div>
+
+    <p>Dari sisi kontribusi pendapatan per segmen bisnis, Divisi Mi Instan mendominasi dengan porsi sekitar 74% dari total penjualan konsolidasi. Dominasi ini bukan tanpa alasan: Indomie adalah merek yang telah menembus budaya konsumsi di lebih dari 80 negara, dengan volume penjualan internasional yang terus meningkat berkat ekspansi Pinehill Group. Divisi Dairy menempati posisi kedua dengan kontribusi sekitar 9%, diikuti Penyedap Makanan (6%), Makanan Ringan (5%), Minuman (3%), serta Nutrisi &amp; Makanan Khusus (3%).</p>
+
+    <div class="chart-block">
+      <div class="chart-title">Kontribusi Pendapatan per Segmen Bisnis FY2025 (est.)</div>
+      <canvas id="chartSegment"></canvas>
+    </div>
+  </div>
+
+  <!-- SECTION 5: BERITA & PERKEMBANGAN -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    📰 Berita &amp; Perkembangan Terkini
+  </h2>
+  <div class="section-body">
+    <div class="news-item">
+      <div class="news-date">Mei 2026</div>
+      <div class="news-title">Laba Q1 2026 Turun Tipis, Pendapatan Tumbuh 7,6% YoY — Rekomendasi Hold</div>
+      <div class="news-desc">ICBP membukukan pendapatan Rp 21,72 triliun pada kuartal pertama 2026, tumbuh 7,6% year-on-year, didorong pertumbuhan volume penjualan terutama segmen mi instan yang menyumbang sekitar 74% penjualan. Namun laba bersih turun tipis 3,1% YoY menjadi Rp 2,57 triliun akibat normalisasi biaya dan tekanan nilai tukar. Beberapa analis mempertahankan rekomendasi <em>hold</em> dengan target harga revisi di kisaran Rp 6.850.</div>
+      <span class="badge badge-amber">Hold</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">Desember 2025</div>
+      <div class="news-title">Pabrik Baru di Bogor Mulai Beroperasi — Kapasitas Produksi Naik ~4%</div>
+      <div class="news-desc">ICBP meresmikan fasilitas produksi baru di Bogor, Jawa Barat, yang mulai beroperasi penuh pada Desember 2025. Penambahan kapasitas ini diproyeksikan meningkatkan output produksi konsolidasi sebesar sekitar 4% pada 2026, memperkuat posisi ICBP dalam memenuhi pertumbuhan permintaan domestik yang konsisten, khususnya untuk segmen mi instan dan penyedap makanan.</div>
+      <span class="badge badge-green">Ekspansi</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">November 2025</div>
+      <div class="news-title">ICBP Dikeluarkan dari MSCI Global Standard Indexes</div>
+      <div class="news-desc">Dalam tinjauan periodik November 2025, MSCI memutuskan mengeluarkan ICBP dari MSCI Global Standard Indexes. Langkah ini terjadi di tengah kinerja saham yang melemah lebih dari 23% sejak awal tahun 2025, yang berdampak pada pengurangan bobot pasar. Pengecualian dari indeks MSCI berpotensi memicu aliran keluar dari fund-fund yang mengacu pada indeks tersebut. Meski demikian, kinerja operasional perusahaan tetap kuat dengan pertumbuhan laba bersih 30,4% di sepanjang 2025.</div>
+      <span class="badge badge-red">Indeks</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">Februari 2025</div>
+      <div class="news-title">Laba Bersih FY2024 Rp 9,22 Triliun — Pertumbuhan Terkuat dalam 4 Tahun</div>
+      <div class="news-desc">ICBP merilis hasil keuangan penuh tahun 2025 yang melampaui ekspektasi analis. Laba bersih yang dapat diatribusikan kepada pemegang saham induk mencapai Rp 9,22 triliun, naik 30,4% dari tahun sebelumnya. Pertumbuhan ini didorong oleh normalisasi harga bahan baku, peningkatan efisiensi operasional, dan kontribusi positif operasi internasional terutama di Timur Tengah dan Afrika. Perusahaan mengumumkan dividen tunai Rp 250 per saham untuk tahun buku 2025.</div>
+      <span class="badge badge-green">Hasil Keuangan</span>
+    </div>
+  </div>
+
+  <!-- SECTION 6: RISIKO & PELUANG -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    ⚡ Risiko &amp; Peluang
+  </h2>
+  <div class="section-body">
+    <h3>Risiko Utama</h3>
+    <p><strong>Volatilitas harga komoditas</strong> merupakan risiko terbesar dan paling konsisten bagi ICBP. Gandum adalah bahan baku utama mi instan, dan sebagian besar gandum di Indonesia diimpor. Gejolak geopolitik seperti konflik di kawasan penghasil gandum utama (seperti yang terjadi dalam konflik Rusia-Ukraina) dapat memicu lonjakan biaya produksi yang signifikan dan menekan margin secara tajam. <span class="badge badge-red">Risiko Tinggi</span></p>
+    <p><strong>Risiko nilai tukar</strong> menjadi semakin relevan pasca akuisisi Pinehill Group. Utang dalam denominasi dolar AS yang digunakan untuk membiayai akuisisi, dikombinasikan dengan pendapatan internasional dalam berbagai mata uang asing, menciptakan eksposur valuta yang kompleks. Pelemahan rupiah secara berkepanjangan akan meningkatkan beban pembayaran utang dan berpotensi menggerus profitabilitas konsolidasi. <span class="badge badge-red">Risiko Tinggi</span></p>
+    <p><strong>Persaingan yang semakin ketat</strong> — khususnya dari Mie Sedaap (Wings Food) di pasar domestik, serta merek-merek global seperti Samyang (Korea), Nongshim, dan Nissin di segmen premium — terus menekan pangsa pasar ICBP. Munculnya produk mi instan sehat seperti Lemonilo juga menunjukkan pergeseran preferensi konsumen muda yang kian sadar kesehatan. <span class="badge badge-amber">Risiko Sedang</span></p>
+    <p><strong>Tekanan regulasi dan gizi publik</strong> berupa kebijakan pembatasan kandungan sodium atau MSG dalam makanan olahan, serta tren konsumen global yang bergeser menuju makanan segar dan minim pengolahan, dapat mengancam permintaan jangka panjang untuk mi instan dan makanan olahan. <span class="badge badge-amber">Risiko Sedang</span></p>
+    <p><strong>Konsentrasi kepemilikan</strong> — dengan INDF memegang 80,53% saham — berarti kepentingan pemegang saham minoritas berpotensi terabaikan dalam pengambilan keputusan korporat besar seperti kebijakan dividen, transaksi afiliasi, atau akuisisi strategis. <span class="badge badge-amber">Risiko Sedang</span></p>
+
+    <h3>Peluang Strategis</h3>
+    <p><strong>Ekspansi internasional yang masih sangat luas</strong> adalah peluang terbesar jangka panjang. Melalui Pinehill Group, ICBP kini memiliki pabrik di Nigeria, Arab Saudi, Turki, Serbia, dan beberapa negara lainnya. Pasar Afrika, dengan populasi muda yang tumbuh pesat dan daya beli yang meningkat, merupakan frontier pertumbuhan yang sangat menjanjikan untuk mi instan. <span class="badge badge-green">Peluang Tinggi</span></p>
+    <p><strong>Inovasi produk kesehatan dan fungsional</strong> menjadi area yang semakin penting. ICBP mulai mengembangkan varian mi instan rendah sodium, mi berbahan tepung sayuran, dan produk nutrisi yang menyasar segmen konsumen sehat. Portofolio merek yang kuat (terutama Indomie) memberikan "transfer of trust" yang berharga saat memasuki segmen produk baru. <span class="badge badge-green">Peluang Tinggi</span></p>
+    <p><strong>Pertumbuhan segmen dairy dan minuman</strong> di Indonesia yang masih rendah konsumsi per kapita relatif terhadap negara-negara Asia lainnya. Peningkatan pendapatan kelas menengah membuka pasar yang signifikan untuk produk susu premium dan minuman kemasan bermerek. <span class="badge badge-blue">Peluang Sedang</span></p>
+    <p><strong>Digitalisasi distribusi dan e-commerce</strong> memungkinkan ICBP menjangkau konsumen di daerah terpencil yang sebelumnya sulit dilayani melalui jalur tradisional, sekaligus memperkuat data konsumen untuk pengembangan produk yang lebih tepat sasaran. <span class="badge badge-blue">Peluang Sedang</span></p>
+  </div>
+
+  <!-- SECTION 7: ESG & KEBERLANJUTAN -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    🌱 ESG &amp; Keberlanjutan
+  </h2>
+  <div class="section-body">
+    <p>PT Indofood CBP Sukses Makmur Tbk mempublikasikan Laporan Keberlanjutan (Sustainability Report) secara berkala sebagai wujud komitmen terhadap prinsip <em>Environmental, Social, and Governance</em> (ESG). Laporan terbaru mencakup empat pilar utama: ketahanan pangan, nutrisi dan kesehatan, pemberdayaan masyarakat, dan pengelolaan lingkungan. ICBP menjadikan keberlanjutan bukan sekadar kewajiban pelaporan, tetapi bagian dari strategi jangka panjang untuk menjaga relevansi bisnis di tengah tuntutan konsumen dan regulasi yang semakin ketat terhadap praktik bisnis yang bertanggung jawab.</p>
+
+    <div class="esg-row">
+      <div class="esg-label-row">
+        <span class="esg-label">🌿 Environmental (Lingkungan)</span>
+        <span class="esg-score" style="color:#3d9e71;">68/100</span>
+      </div>
+      <div class="esg-bar-bg"><div class="esg-bar-fill" style="width:68%; background:#3d9e71;"></div></div>
+      <div class="esg-sub">Reduksi emisi karbon, efisiensi air, pengelolaan limbah pabrik, pengurangan kemasan plastik</div>
+    </div>
+
+    <div class="esg-row">
+      <div class="esg-label-row">
+        <span class="esg-label">🤝 Social (Sosial)</span>
+        <span class="esg-score" style="color:#50a5dc;">72/100</span>
+      </div>
+      <div class="esg-bar-bg"><div class="esg-bar-fill" style="width:72%; background:#50a5dc;"></div></div>
+      <div class="esg-sub">Program gizi masyarakat, pemberdayaan petani lokal, kesehatan &amp; keselamatan kerja karyawan</div>
+    </div>
+
+    <div class="esg-row">
+      <div class="esg-label-row">
+        <span class="esg-label">🏛️ Governance (Tata Kelola)</span>
+        <span class="esg-score" style="color:#7f6df2;">75/100</span>
+      </div>
+      <div class="esg-bar-bg"><div class="esg-bar-fill" style="width:75%; background:#7f6df2;"></div></div>
+      <div class="esg-sub">Struktur dewan yang baik, transparansi laporan, kebijakan anti-korupsi, perlindungan investor minoritas</div>
+    </div>
+
+    <p>Pada sisi lingkungan, ICBP berkomitmen mengurangi intensitas emisi karbon dari operasi manufaktur melalui efisiensi energi dan peningkatan penggunaan energi terbarukan secara bertahap. Program pengelolaan air bersih di fasilitas produksi dan reduksi limbah padat juga menjadi prioritas. Namun, tantangan nyata terletak pada pengurangan kemasan plastik sekali pakai — satu isu yang mendapat sorotan semakin besar dari konsumen dan regulator.</p>
+    <p>Di dimensi sosial, ICBP menjalankan program <em>Indofood Peduli</em> yang mencakup bantuan gizi anak, pelatihan keterampilan warga sekitar fasilitas produksi, serta kemitraan dengan petani lokal penyuplai bahan baku pertanian. Keselamatan dan kesehatan kerja (K3) karyawan juga menjadi fokus utama, dengan target zero major accident di seluruh fasilitas produksi.</p>
+    <p>Dari sisi tata kelola, ICBP mempertahankan Dewan Komisaris yang beranggotakan 12 orang — termasuk komisaris independen — dengan komite audit dan komite risiko yang aktif. Pada 2024, perusahaan menambah satu kursi direktur baru untuk memperkuat pengawasan operasional yang semakin kompleks pasca ekspansi internasional.</p>
+  </div>
+
+  <hr>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>Disclaimer:</strong> Dokumen ini dibuat secara otomatis untuk tujuan informasi dan edukasi keuangan semata, bukan merupakan rekomendasi investasi. Harga saham, rasio keuangan, dan data pasar yang tercantum mencerminkan kondisi pada tanggal pembuatan (21 Mei 2026) dan dapat berubah sewaktu-waktu. Selalu lakukan riset mandiri dan konsultasikan keputusan investasi Anda dengan profesional keuangan yang berwenang.</p>
+    <p style="margin-top:0.5em;">Harga saham Rp 6.725 diambil dari data pasar IDX pada 21 Mei 2026. Rasio valuasi (PER, PBV, Dividend Yield, Market Cap) dihitung menggunakan harga aktual tersebut. Beberapa data historis 2021–2022 ditandai (est.) merupakan estimasi berdasarkan informasi publik yang tersedia.</p>
+    <div class="sources">
+      <a href="https://www.indofoodcbp.com">indofoodcbp.com</a>
+      <a href="https://www.investing.com/equities/indofood-cbp">investing.com/ICBP</a>
+      <a href="https://id.tradingview.com/symbols/IDX-ICBP/">tradingview/ICBP</a>
+      <a href="https://investasi.kontan.co.id">kontan.co.id</a>
+      <a href="https://www.bareksa.com">bareksa.com</a>
+      <a href="https://www.liputan6.com/saham">liputan6.com/saham</a>
+      <a href="https://sectors.app/idx/icbp">sectors.app/ICBP</a>
+      <a href="https://www.idx.co.id">idx.co.id</a>
+      <a href="https://pintarsaham.id">pintarsaham.id</a>
+      <a href="https://id.wikipedia.org/wiki/Indofood_CBP">Wikipedia ICBP</a>
+    </div>
+    <p style="margin-top:1em;">IDX Profile Series | Consumer Staples · Makanan &amp; Minuman | 21 Mei 2026 | <a href="https://xedixermawan.github.io">xedixermawan.github.io</a></p>
+  </footer>
+
+</div><!-- end #page-wrapper -->
+
+<script>
+  // ── Toggle collapsible sections
+  function toggleSection(h2el) {
+    h2el.classList.toggle('collapsed');
+  }
+
+  // ── Chart.js defaults
+  Chart.defaults.color = '#706f6f';
+  Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+  const PALETTE = ['#7f6df2','#3d9e71','#e5a53a','#50a5dc','#c0392b','#aaa'];
+  const GRID    = 'rgba(0,0,0,0.07)';
+
+  // ── Chart 1: Revenue & Net Income combo
+  new Chart(document.getElementById('chartRevenue'), {
+    type: 'bar',
+    data: {
+      labels: ['2021 (est.)', '2022 (est.)', '2023', '2024', '2025'],
+      datasets: [
+        {
+          label: 'Pendapatan (Rp T)',
+          type: 'bar',
+          data: [54.6, 61.5, 67.9, 72.6, 74.9],
+          backgroundColor: 'rgba(127,109,242,0.18)',
+          borderColor: '#7f6df2',
+          borderWidth: 2,
+          borderRadius: 4,
+          yAxisID: 'y',
+        },
+        {
+          label: 'Laba Bersih (Rp T)',
+          type: 'line',
+          data: [7.0, 6.6, 6.99, 7.07, 9.22],
+          borderColor: '#3d9e71',
+          backgroundColor: 'rgba(61,158,113,0.12)',
+          borderWidth: 2.5,
+          pointRadius: 4,
+          pointBackgroundColor: '#3d9e71',
+          tension: 0.3,
+          fill: true,
+          yAxisID: 'y2',
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { position: 'top', labels: { boxWidth: 12, font: { size: 11 } } },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.dataset.label}: Rp ${ctx.parsed.y.toFixed(2)} T` } }
+      },
+      scales: {
+        y: {
+          position: 'left',
+          title: { display: true, text: 'Pendapatan (Rp T)', font: { size: 10 } },
+          grid: { color: GRID },
+          ticks: { callback: v => 'Rp ' + v + ' T' }
+        },
+        y2: {
+          position: 'right',
+          title: { display: true, text: 'Laba Bersih (Rp T)', font: { size: 10 } },
+          grid: { drawOnChartArea: false },
+          ticks: { callback: v => 'Rp ' + v + ' T' }
+        },
+        x: { grid: { color: GRID } }
+      }
+    }
+  });
+
+  // ── Chart 2: Operating Margin
+  new Chart(document.getElementById('chartMargin'), {
+    type: 'line',
+    data: {
+      labels: ['2021 (est.)', '2022 (est.)', '2023', '2024', '2025 (est.)'],
+      datasets: [{
+        label: 'Margin Laba Usaha (%)',
+        data: [18.0, 17.5, 21.2, 22.5, 23.0],
+        borderColor: '#e5a53a',
+        backgroundColor: 'rgba(229,165,58,0.12)',
+        borderWidth: 2.5,
+        pointRadius: 5,
+        pointBackgroundColor: '#e5a53a',
+        tension: 0.3,
+        fill: true,
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'top', labels: { boxWidth: 12, font: { size: 11 } } },
+        tooltip: { callbacks: { label: ctx => ` Margin: ${ctx.parsed.y.toFixed(1)}%` } }
+      },
+      scales: {
+        y: {
+          min: 12,
+          grid: { color: GRID },
+          ticks: { callback: v => v + '%' }
+        },
+        x: { grid: { color: GRID } }
+      }
+    }
+  });
+
+  // ── Chart 3: Ownership Donut
+  new Chart(document.getElementById('chartOwnership'), {
+    type: 'doughnut',
+    data: {
+      labels: ['PT Indofood Sukses Makmur Tbk (INDF)', 'Publik & Institusional'],
+      datasets: [{
+        data: [80.53, 19.47],
+        backgroundColor: ['#7f6df2', '#e9eaec'],
+        borderColor: ['#5d4ff0', '#ccc'],
+        borderWidth: 2,
+        hoverOffset: 8,
+      }]
+    },
+    options: {
+      responsive: true,
+      cutout: '60%',
+      plugins: {
+        legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.label}: ${ctx.parsed.toFixed(2)}%` } }
+      }
+    }
+  });
+
+  // ── Chart 4: Segment Horizontal Bar
+  new Chart(document.getElementById('chartSegment'), {
+    type: 'bar',
+    data: {
+      labels: ['Mi Instan', 'Dairy (Susu)', 'Penyedap Makanan', 'Makanan Ringan', 'Minuman', 'Nutrisi & Khusus'],
+      datasets: [{
+        label: 'Kontribusi Pendapatan (%)',
+        data: [74, 9, 6, 5, 3, 3],
+        backgroundColor: PALETTE,
+        borderRadius: 4,
+        borderSkipped: false,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.x}%` } }
+      },
+      scales: {
+        x: {
+          max: 85,
+          grid: { color: GRID },
+          ticks: { callback: v => v + '%' }
+        },
+        y: { grid: { color: GRID } }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

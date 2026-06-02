@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PT Vale Indonesia Tbk (INCO)</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --background-primary:        #ffffff;
+      --background-secondary:      #f2f3f5;
+      --background-secondary-alt:  #e9eaec;
+      --background-modifier-border:#dddddd;
+      --background-modifier-hover: rgba(0,0,0,0.04);
+      --text-normal:     #2e3338;
+      --text-muted:      #706f6f;
+      --text-faint:      #999999;
+      --text-on-accent:  #ffffff;
+      --text-accent:     #7f6df2;
+      --text-accent-hover: #5d4ff0;
+      --line-width: 44em;
+      --font-text-size: 16px;
+    }
+
+    body {
+      background-color: var(--background-primary);
+      color: var(--text-normal);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+      font-size: var(--font-text-size);
+      line-height: 1.75;
+    }
+
+    #page-wrapper {
+      max-width: var(--line-width);
+      margin: 0 auto;
+      padding: 3.5em 2em 8em;
+    }
+
+    /* ── HEADER ── */
+    .page-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-normal);
+      margin-bottom: 0.3em;
+      line-height: 1.2;
+    }
+    .ticker-badge {
+      display: inline-block;
+      background: var(--text-accent);
+      color: var(--text-on-accent);
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 3px 11px;
+      border-radius: 5px;
+      margin-left: 10px;
+      vertical-align: middle;
+      letter-spacing: 0.5px;
+    }
+    .page-meta {
+      font-size: 0.82rem;
+      color: var(--text-faint);
+      margin-bottom: 0.4em;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    /* ── DIVIDER ── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--background-modifier-border);
+      margin: 1.8em 0;
+    }
+
+    /* ── HEADINGS ── */
+    h2 {
+      font-size: 1.28rem;
+      font-weight: 600;
+      color: var(--text-normal);
+      margin: 1.8em 0 0.65em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      user-select: none;
+    }
+    h2:hover { color: var(--text-accent); }
+    h2 .collapse-icon {
+      width: 15px; height: 15px;
+      flex-shrink: 0;
+      opacity: 0.35;
+      transition: transform 0.2s;
+      color: var(--text-muted);
+    }
+    h2 .collapse-icon svg { width: 100%; height: 100%; }
+    h2.collapsed .collapse-icon { transform: rotate(-90deg); }
+    h2.collapsed + .section-body { display: none; }
+
+    h3 {
+      font-size: 1.01rem;
+      font-weight: 600;
+      color: var(--text-normal);
+      margin: 1.2em 0 0.35em;
+    }
+
+    /* ── TEXT ── */
+    p { margin-bottom: 0.85em; }
+    strong { font-weight: 700; }
+    em { color: var(--text-muted); font-style: italic; }
+    a { color: var(--text-accent); text-decoration: none; }
+    a:hover { text-decoration: underline; color: var(--text-accent-hover); }
+
+    /* ── KPI GRID ── */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 1em 0 1.5em;
+    }
+    @media (max-width: 680px) { .kpi-grid { grid-template-columns: repeat(2,1fr); } }
+
+    .callout {
+      background: var(--background-secondary);
+      border-left: 3px solid var(--text-accent);
+      border-radius: 0 6px 6px 0;
+      padding: 13px 16px;
+    }
+    .callout-title {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-accent);
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    .callout-value { font-size: 1.38rem; font-weight: 800; color: var(--text-normal); }
+    .callout-sub { font-size: 0.78rem; color: var(--text-muted); margin-top: 3px; }
+    .callout-up   { border-left-color: #3d9e71; }
+    .callout-up   .callout-title { color: #3d9e71; }
+    .callout-down { border-left-color: #c0392b; }
+    .callout-down .callout-title { color: #c0392b; }
+    .callout-neutral { border-left-color: #999; }
+    .callout-neutral .callout-title { color: #888; }
+
+    /* ── TABLE ── */
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 1em 0; }
+    thead tr { background: var(--background-secondary); }
+    th {
+      padding: 9px 12px;
+      text-align: left;
+      font-size: 0.73rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-accent);
+      font-weight: 700;
+      border-bottom: 2px solid var(--background-modifier-border);
+    }
+    td { padding: 9px 12px; border-bottom: 1px solid var(--background-modifier-border); }
+    tr:hover td { background: var(--background-modifier-hover); }
+    tr.highlight td { font-weight: 700; }
+    tr.highlight td:first-child { color: var(--text-accent); }
+
+    /* ── CHART BLOCK ── */
+    .chart-block {
+      background: var(--background-secondary);
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin: 1.2em 0;
+      border: 1px solid var(--background-modifier-border);
+    }
+    .chart-block .chart-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: var(--text-faint);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .chart-block canvas { max-height: 260px; }
+
+    /* ── CHART ROW (side by side) ── */
+    .chart-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 1.2em 0;
+    }
+    @media (max-width: 600px) { .chart-row { grid-template-columns: 1fr; } }
+
+    /* ── NEWS ITEM ── */
+    .news-item {
+      border-left: 2px solid var(--background-modifier-border);
+      padding: 10px 14px;
+      margin: 10px 0;
+      transition: border-left-color 0.15s, background 0.15s;
+      border-radius: 0 4px 4px 0;
+    }
+    .news-item:hover { border-left-color: var(--text-accent); background: var(--background-modifier-hover); }
+    .news-date { font-size: 0.73rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.5px; }
+    .news-title { font-weight: 600; font-size: 0.92rem; margin: 3px 0; }
+    .news-desc { font-size: 0.81rem; color: var(--text-muted); }
+
+    /* ── BADGE ── */
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      padding: 2px 9px;
+      border-radius: 4px;
+      font-weight: 700;
+      margin-top: 5px;
+    }
+    .badge-green  { background: #d4edda; color: #1e6642; }
+    .badge-red    { background: #fde8e8; color: #922b21; }
+    .badge-amber  { background: #fef3cd; color: #7d5a00; }
+    .badge-accent { background: #ede9fe; color: #5b4fc0; }
+    .badge-blue   { background: #dbeafe; color: #1e40af; }
+    .badge-teal   { background: #ccfbf1; color: #0f766e; }
+
+    /* ── ESG ── */
+    .esg-row { margin: 14px 0; }
+    .esg-label-row { display: flex; justify-content: space-between; margin-bottom: 5px; }
+    .esg-label { font-size: 0.86rem; font-weight: 600; }
+    .esg-score { font-size: 0.86rem; font-weight: 700; }
+    .esg-bar-bg { height: 7px; background: var(--background-secondary-alt); border-radius: 4px; overflow: hidden; }
+    .esg-bar-fill { height: 100%; border-radius: 4px; }
+    .esg-sub { font-size: 0.75rem; color: var(--text-faint); margin-top: 5px; }
+    .esg-e .esg-score { color: #2d6a4f; }
+    .esg-e .esg-bar-fill { background: linear-gradient(90deg, #52b788, #95d5b2); }
+    .esg-s .esg-score { color: #1e40af; }
+    .esg-s .esg-bar-fill { background: linear-gradient(90deg, #3b82f6, #93c5fd); }
+    .esg-g .esg-score { color: #5b4fc0; }
+    .esg-g .esg-bar-fill { background: linear-gradient(90deg, #7f6df2, #c4b5fd); }
+
+    /* ── DATA NOTE ── */
+    .data-note { font-size: 0.74rem; color: var(--text-faint); font-style: italic; margin-top: 6px; }
+
+    /* ── FOOTER ── */
+    footer {
+      margin-top: 4em;
+      padding-top: 1.5em;
+      border-top: 1px solid var(--background-modifier-border);
+      font-size: 0.76rem;
+      color: var(--text-faint);
+      line-height: 1.6;
+    }
+    .sources { margin-top: 0.8em; display: flex; flex-wrap: wrap; gap: 6px; }
+    .sources a {
+      color: var(--text-muted);
+      background: var(--background-secondary);
+      padding: 3px 9px;
+      border-radius: 4px;
+      border: 1px solid var(--background-modifier-border);
+      font-size: 0.72rem;
+      text-decoration: none;
+    }
+    .sources a:hover { color: var(--text-accent); }
+    .footer-brand { margin-top: 1em; color: var(--text-faint); }
+  </style>
+</head>
+<body>
+<div id="page-wrapper">
+
+  <!-- ══ HEADER ══ -->
+  <h1 class="page-title">PT Vale Indonesia Tbk <span class="ticker-badge">INCO</span></h1>
+  <div class="page-meta">
+    <span>📅 15 Mei 2026</span>
+    <span>⛏️ Pertambangan — Nikel</span>
+    <span>💹 IDX: INCO</span>
+    <span>🌿 ESG Sustainability Leader</span>
+  </div>
+  <hr>
+
+  <!-- ══ KPI GRID ══ -->
+  <div class="kpi-grid">
+    <div class="callout callout-down">
+      <div class="callout-title">💰 Kapitalisasi Pasar</div>
+      <div class="callout-value">Rp 57,18 T</div>
+      <div class="callout-sub">▼ dari puncak Rp 71,93 T (Apr 2026)</div>
+    </div>
+    <div class="callout callout-up">
+      <div class="callout-title">📈 Pendapatan 2025</div>
+      <div class="callout-value">Rp 15,50 T</div>
+      <div class="callout-sub">▲ +4,2% YoY vs Rp 14,87 T (2024)</div>
+    </div>
+    <div class="callout callout-up">
+      <div class="callout-title">💵 Laba Bersih 2025</div>
+      <div class="callout-value">Rp 1,19 T</div>
+      <div class="callout-sub">▲ +32% YoY | Q1 2026: Rp 757 M (+100%)</div>
+    </div>
+    <div class="callout callout-neutral">
+      <div class="callout-title">🏦 Dividen per Saham</div>
+      <div class="callout-value">Rp 53,40</div>
+      <div class="callout-sub">Dividend Yield TTM: ~0,98%</div>
+    </div>
+  </div>
+  <hr>
+
+  <!-- ══ SECTION 1: PROFIL ══ -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+    Profil Singkat
+  </h2>
+  <div class="section-body">
+    <p>
+      <strong>PT Vale Indonesia Tbk (INCO)</strong> adalah perusahaan tambang nikel terbesar di Indonesia, beroperasi di Pulau Sulawesi sejak 1968 di bawah Kontrak Karya pertama yang ditandatangani dengan pemerintah Indonesia. Selama lebih dari setengah abad, perseroan telah membangun reputasi sebagai salah satu produsen <em>nickel-in-matte</em> berkualitas tinggi di Asia Tenggara, menjual produk utamanya ke Jepang melalui perjanjian jangka panjang dengan mitra strategis Sumitomo Metal Mining Co., Ltd. (SMM).
+    </p>
+    <p>
+      Sejak Juli 2024, PT Mineral Industri Indonesia (MIND ID) — holding BUMN pertambangan Indonesia — resmi menjadi pemegang saham terbesar dengan porsi 34,03%, menandai era baru dalam perjalanan Vale Indonesia. Akuisisi ini memperkuat narasi hilirisasi nikel nasional dan membuka sinergi dengan ekosistem pertambangan milik negara. Perseroan kini tengah mengembangkan tiga blok tambang secara paralel: Sorowako (beroperasi sejak 1977), Bahodopi, dan Pomalaa — sebuah ambisi ekspansi terbesar dalam sejarah perusahaan.
+    </p>
+
+    <table>
+      <thead><tr><th>Keterangan</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td>Didirikan</td><td>1968 (Kontrak Karya I)</td></tr>
+        <tr><td>Listing IDX</td><td>1990 (kode: INCO)</td></tr>
+        <tr><td>Kantor Pusat</td><td>Jakarta Selatan, DKI Jakarta</td></tr>
+        <tr><td>Area Operasi</td><td>Sorowako, Bahodopi, Pomalaa (Sulawesi)</td></tr>
+        <tr><td>Produksi 2025</td><td>72.027 metrik ton nikel dalam matte</td></tr>
+        <tr><td>Harga Saham (Mei 2026)</td><td>~Rp 5.450/lembar</td></tr>
+        <tr><td>Induk Internasional</td><td>Vale S.A. (Brasil) via Vale Canada Limited</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <hr>
+
+  <!-- ══ SECTION 2: MODEL BISNIS ══ -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+    Model Bisnis
+  </h2>
+  <div class="section-body">
+    <p>
+      <strong>Apa yang diproduksi Vale Indonesia?</strong> Vale Indonesia tidak memproduksi nikel logam murni, melainkan <em>nickel-in-matte</em> — suatu produk intermediate dengan kandungan nikel sekitar 78–80% yang dihasilkan melalui proses pyrometallurgy (peleburan). Nikel matte ini kemudian dikirim ke fasilitas pemurnian Sumitomo Metal Mining di Jepang untuk diproses lebih lanjut menjadi nikel rafinasi kelas tinggi (Class 1 nickel) yang digunakan di industri baja tahan karat, baterai, dan pelapisan.
+    </p>
+    <p>
+      <strong>Dari mana bijih nikelnya?</strong> Sulawesi Selatan menyimpan cadangan laterit nikel yang sangat kaya. Di tambang Sorowako, Vale menambang bijih saprolite dan limonite dari lahan konsesi seluas ribuan hektar, kemudian meleburnya di fasilitas smelter yang telah beroperasi sejak 1977. Inilah yang membedakan Vale dari mayoritas produsen nikel Indonesia lainnya yang mengandalkan teknologi Rotary Kiln Electric Furnace (RKEF) untuk menghasilkan Nickel Pig Iron (NPI).
+    </p>
+    <p>
+      <strong>Mengapa nickel matte berbeda dari NPI?</strong> Nickel Pig Iron adalah produk kadar rendah (10–15% Ni) yang hanya bisa digunakan untuk baja tahan karat, tidak cocok untuk baterai EV. Nickel matte Vale dengan kadar ~79% Ni adalah bahan baku premium yang bisa diproses menjadi nikel sulfat untuk baterai lithium-ion — menjadikan Vale lebih relevan di era transisi energi. Inilah juga alasan mengapa proyek Bahodopi dan Pomalaa dirancang dengan teknologi High Pressure Acid Leaching (HPAL) yang menghasilkan Mixed Hydroxide Precipitate (MHP) — bahan baku langsung untuk baterai kendaraan listrik.
+    </p>
+    <p>
+      <strong>Model pendapatan</strong> Vale Indonesia hampir seluruhnya bergantung pada satu produk: penjualan nickel matte ke SMM Jepang melalui perjanjian jangka panjang. Harga jual mengacu pada harga nikel di London Metal Exchange (LME), sehingga pendapatan sangat sensitif terhadap fluktuasi harga komoditas global. Ini adalah pedang bermata dua: ketika harga nikel melambung seperti 2022–2023, Vale meraih laba luar biasa; ketika tertekan seperti 2024, margin langsung terkompres.
+    </p>
+  </div>
+  <hr>
+
+  <!-- ══ SECTION 3: KINERJA KEUANGAN ══ -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+    Kinerja Keuangan
+  </h2>
+  <div class="section-body">
+
+    <div class="chart-block">
+      <div class="chart-title">Tren Pendapatan, EBITDA & Laba Bersih (2023–2025)</div>
+      <canvas id="financialChart"></canvas>
+    </div>
+    <p class="data-note">* Konversi USD→IDR menggunakan kurs rata-rata ~Rp 15.600/USD. EBITDA 2023 merupakan estimasi berdasarkan margin historis.</p>
+
+    <p>
+      <strong>2023 — Tahun Terbaik: Laba Rp 4,29 Triliun.</strong> Sepanjang 2023, Vale Indonesia membukukan pendapatan sebesar US$1,23 miliar (~Rp 19,24 T), naik 4,5% YoY. Laba bersih melonjak 36,9% menjadi US$274,33 juta (~Rp 4,29 T) — level tertinggi dalam sejarah perseroan, ditopang harga nikel yang masih relatif tinggi pasca-lonjakan 2022 dan peningkatan volume produksi.
+    </p>
+    <p>
+      <strong>2024 — Koreksi Tajam: Laba Anjlok ke Rp 901 Miliar.</strong> Harga nikel LME turun drastis 30–40% sepanjang 2024, dipicu lonjakan produksi NPI dari China dan Indonesia sendiri yang membanjiri pasar global. Pendapatan Vale tertekan ke US$950,38 juta (~Rp 14,87 T) dan laba bersih terjun bebas ke US$57,6 juta (~Rp 901 M). Ini adalah tahun paling berat bagi seluruh produsen nikel premium, namun Vale masih mampu mencetak laba berkat efisiensi biaya yang ketat.
+    </p>
+    <p>
+      <strong>2025 — Pemulihan Solid: Laba Tumbuh 32%.</strong> Vale membuktikan ketahanannya. Di tengah harga nikel matte yang rata-rata masih tertekan 7% YoY menjadi US$12.157/ton, perseroan berhasil menumbuhkan pendapatan 4,2% menjadi US$990,19 juta (~Rp 15,50 T) dan laba bersih naik 32% menjadi US$76,1 juta (~Rp 1,19 T). EBITDA tercatat US$228,2 juta (~Rp 3,57 T). Kunci pemulihan ini adalah program efisiensi biaya yang agresif dan peningkatan volume produksi.
+    </p>
+    <p>
+      <strong>Q1 2026 — Momentum Kuat Berlanjut.</strong> Vale membukukan laba bersih US$43,6 juta (~Rp 757,54 M) di kuartal pertama 2026, melonjak 100% YoY dan 85% secara kuartalan. Pendapatan tumbuh 23,34% YoY menjadi US$252,66 juta. Posisi kas dan setara kas per 31 Maret 2026 tercatat US$220,1 juta.
+    </p>
+
+    <h3>Rasio Keuangan Utama (FY 2025)</h3>
+    <table>
+      <thead><tr><th>Rasio</th><th>2025</th><th>2024</th><th>Keterangan</th></tr></thead>
+      <tbody>
+        <tr><td>Gross Margin</td><td>~23%</td><td>~15%</td><td>Pemulihan margin signifikan</td></tr>
+        <tr><td>EBITDA Margin</td><td>~23%</td><td>~15%</td><td>US$228,2 juta EBITDA</td></tr>
+        <tr><td>Net Margin</td><td>~7,7%</td><td>~6,1%</td><td>Masih tertekan harga nikel</td></tr>
+        <tr><td>PER (est. Mei 2026)</td><td colspan="2">~12–14×</td><td>Di bawah rata-rata historis</td></tr>
+        <tr><td>Dividend Yield TTM</td><td colspan="2">~0,98%</td><td>Rp 53,40/saham</td></tr>
+        <tr><td>Belanja Modal 2025</td><td colspan="2">US$485,9 juta</td><td>▲ +46% YoY untuk ekspansi</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <hr>
+
+  <!-- ══ SECTION 4: KEPEMILIKAN & SEGMEN ══ -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+    Struktur Kepemilikan &amp; Kapasitas Produksi
+  </h2>
+  <div class="section-body">
+    <p>
+      Komposisi pemegang saham Vale Indonesia mengalami perubahan fundamental sejak Juli 2024. <strong>MIND ID</strong> (PT Mineral Industri Indonesia), holding BUMN yang menaungi PT Antam, PT Freeport Indonesia, dan PT Timah, kini menguasai 34,03% saham — menjadi pemegang saham terbesar pertama kali dalam sejarah perusahaan yang sebelumnya dikontrol penuh oleh entitas asing. <strong>Vale Canada Limited</strong> kini berada di posisi kedua dengan 33,91%, sementara <strong>Sumitomo Metal Mining</strong> Jepang mempertahankan kepemilikan strategis 15,03%. Sisanya 17,03% dimiliki oleh publik, termasuk investor institusional domestik dan asing.
+    </p>
+    <p>
+      Dari sisi kapasitas produksi, Vale kini menjalankan tiga blok tambang sekaligus. <strong>Sorowako</strong> adalah jantung operasi dengan kapasitas 72.000 ton/tahun yang telah berjalan selama hampir 50 tahun. <strong>Bahodopi</strong> dan <strong>Pomalaa</strong> adalah proyek ekspansi ambisius yang dirancang menghasilkan MHP (nikel baterai) dengan target kapasitas 30.000 dan 40.000 ton/tahun masing-masing — setelah rampung, total kapasitas Vale Indonesia akan mencapai sekitar 142.000 ton/tahun, hampir dua kali lipat saat ini.
+    </p>
+
+    <div class="chart-row">
+      <div class="chart-block">
+        <div class="chart-title">Struktur Pemegang Saham</div>
+        <canvas id="donutChart" style="max-height:220px;"></canvas>
+      </div>
+      <div class="chart-block">
+        <div class="chart-title">Kapasitas Produksi per Blok Tambang (ribu ton/thn)</div>
+        <canvas id="segmentChart" style="max-height:220px;"></canvas>
+      </div>
+    </div>
+    <p class="data-note">* Pemegang saham per Juli 2024. Kapasitas Bahodopi &amp; Pomalaa adalah target — proyek masih dalam pengembangan.</p>
+  </div>
+  <hr>
+
+  <!-- ══ SECTION 5: BERITA ══ -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+    Berita &amp; Perkembangan Terkini
+  </h2>
+  <div class="section-body">
+    <div class="news-item">
+      <div class="news-date">30 April 2026</div>
+      <div class="news-title">Laba Bersih Q1 2026 Melonjak 100% YoY Menjadi Rp 757,54 Miliar</div>
+      <div class="news-desc">Vale Indonesia membukukan laba bersih US$43,6 juta di Q1 2026, melonjak 100% YoY dan 85% secara kuartalan (QoQ). Pendapatan tumbuh 23,34% YoY menjadi US$252,66 juta, ditopang kenaikan harga nikel dan efisiensi operasional yang terus diperkuat manajemen.</div>
+      <span class="badge badge-green">📈 Kinerja Kuat</span>
+    </div>
+    <div class="news-item">
+      <div class="news-date">13 Mei 2026</div>
+      <div class="news-title">Sustainability Report 2025 Dirilis — "Resourcing for a Greener Future"</div>
+      <div class="news-desc">Vale merilis Laporan Keberlanjutan 2025 dengan tema transformasi menuju bisnis tambang yang lebih hijau. Highlight utama: komposisi Dewan Komisaris kini 50% perempuan — salah satu tertinggi di industri pertambangan Indonesia — serta peta jalan dekarbonisasi yang lebih konkret.</div>
+      <span class="badge badge-teal">🌿 ESG</span>
+    </div>
+    <div class="news-item">
+      <div class="news-date">April 2026</div>
+      <div class="news-title">Tiga Blok Tambang Mulai Dioperasikan Paralel di 2026</div>
+      <div class="news-desc">Vale mulai mengoperasikan Sorowako, Bahodopi, dan Pomalaa secara bersamaan — sebuah momen bersejarah dalam ekspansi perseroan. Belanja modal 2025 meningkat 46% YoY menjadi US$485,9 juta, mencerminkan komitmen investasi jangka panjang untuk membangun posisi Vale sebagai pemasok nikel baterai kelas dunia.</div>
+      <span class="badge badge-accent">🏗️ Ekspansi</span>
+    </div>
+    <div class="news-item">
+      <div class="news-date">1 Juli 2024</div>
+      <div class="news-title">MIND ID Resmi Jadi Pemegang Saham Terbesar INCO dengan 34,03%</div>
+      <div class="news-desc">Transaksi pembelian 14% saham divestasi dari Vale Canada Limited dan SMM tuntas. MIND ID meningkatkan kepemilikannya dari 20% menjadi 34,03%, menjadikannya pemegang saham pengendali pertama dari Indonesia dalam sejarah Vale Indonesia. Langkah ini memperkuat peran BUMN dalam agenda hilirisasi mineral strategis nasional.</div>
+      <span class="badge badge-blue">🏛️ Korporasi</span>
+    </div>
+  </div>
+  <hr>
+
+  <!-- ══ SECTION 6: KOMPETITOR ══ -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+    Lanskap Kompetitif
+  </h2>
+  <div class="section-body">
+    <p>
+      Pasar nikel Indonesia didominasi oleh dua jenis pemain: produsen nikel kelas dua berbasis teknologi RKEF (menghasilkan NPI/FeNi untuk baja) dan produsen nikel premium seperti Vale yang mengincar pasar baterai. Vale berada di posisi unik sebagai satu-satunya produsen nickel matte skala besar di Indonesia, namun menghadapi tekanan kompetitif dari ekspansi cepat pemain HPAL yang juga mengincar pasar nikel baterai.
+    </p>
+
+    <table>
+      <thead>
+        <tr><th>Perusahaan</th><th>Ticker</th><th>Produk Utama</th><th>Keunggulan vs INCO</th></tr>
+      </thead>
+      <tbody>
+        <tr class="highlight">
+          <td>PT Vale Indonesia</td><td>INCO</td><td>Nickel Matte (Class 1 base)</td><td>Kualitas premium, ESG terdepan, ekspansi 3 blok, kemitraan SMM-MIND ID</td>
+        </tr>
+        <tr>
+          <td>PT Aneka Tambang</td><td>ANTM</td><td>FeNi, Emas, Bauksit</td><td>Diversifikasi komoditas, jaringan BUMN lebih luas</td>
+        </tr>
+        <tr>
+          <td>PT Trimegah Bangun Persada</td><td>NCKL</td><td>MHP / Nickel Sulfate (HPAL)</td><td>Teknologi HPAL modern, pasokan langsung ke produsen baterai EV</td>
+        </tr>
+        <tr>
+          <td>PT Merdeka Copper Gold</td><td>MDKA</td><td>Tembaga, Nikel HPAL</td><td>Diversifikasi tambang tembaga, proyek AIM smelter</td>
+        </tr>
+        <tr>
+          <td>PT Harum Energy</td><td>HRUM</td><td>Nikel via Nickel Industries</td><td>Transformasi agresif dari batu bara, investasi RKEF skala besar</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <hr>
+
+  <!-- ══ SECTION 7: RISIKO & PELUANG ══ -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+    Risiko &amp; Peluang
+  </h2>
+  <div class="section-body">
+    <h3>⚠️ Risiko Utama</h3>
+    <p>
+      <strong>Volatilitas harga nikel global</strong> <span class="badge badge-red">Risiko Tinggi</span><br>
+      Harga nikel di LME sangat fluktuatif dan sulit diprediksi. Koreksi 2024 yang mencapai 30–40% membuktikan betapa cepatnya margin bisa terkompres. Kelebihan pasokan dari produsen NPI Indonesia dan China strukturnya bersifat jangka panjang dan belum sepenuhnya terserap pasar.
+    </p>
+    <p>
+      <strong>Tekanan dari nikel kelas dua (NPI/RKEF)</strong> <span class="badge badge-red">Risiko Tinggi</span><br>
+      Masifnya produksi NPI dari pemain RKEF terus menekan harga nikel konvensional. Meski Vale memainkan segmen berbeda, harga LME yang dijadikan acuan tetap terpengaruh oleh banjir pasokan NPI yang seringkali dijual di bawah harga pasar wajar oleh produsen China.
+    </p>
+    <p>
+      <strong>Beban capex ekspansi yang sangat besar</strong> <span class="badge badge-amber">Risiko Sedang</span><br>
+      Belanja modal 2025 melonjak 46% YoY menjadi US$485,9 juta. Pengembangan Bahodopi dan Pomalaa membutuhkan investasi miliaran dolar dalam horizon 3–5 tahun ke depan, yang berpotensi menekan free cash flow dan kemampuan pembayaran dividen di jangka menengah.
+    </p>
+    <p>
+      <strong>Risiko regulasi dan kebijakan hilirisasi</strong> <span class="badge badge-amber">Risiko Sedang</span><br>
+      Perubahan kebijakan ekspor nikel matte, revisi Kontrak Karya, atau kewajiban hilirisasi baru dapat memaksa perubahan model bisnis yang sudah berjalan puluhan tahun. Ketergantungan pada ekspor ke Jepang juga rentan terhadap perubahan kebijakan perdagangan bilateral.
+    </p>
+
+    <h3>✅ Peluang Pertumbuhan</h3>
+    <p>
+      <strong>Lonjakan permintaan nikel baterai EV global</strong> <span class="badge badge-green">Potensi Besar</span><br>
+      Proyek Bahodopi dan Pomalaa dirancang menghasilkan MHP — bahan baku langsung untuk baterai lithium-ion kendaraan listrik. Dengan adopsi EV yang diproyeksikan tumbuh eksponensial hingga 2030, Vale berpotensi menjadi pemasok nikel baterai kelas dunia dari Indonesia, menikmati premium harga dibandingkan produsen NPI.
+    </p>
+    <p>
+      <strong>Dukungan strategis MIND ID dan ekosistem BUMN</strong> <span class="badge badge-accent">Strategis</span><br>
+      Kepemilikan MIND ID 34% membuka akses ke pembiayaan perbankan BUMN, dukungan regulasi, dan potensi sinergi offtake dengan industri baterai nasional yang sedang dibangun pemerintah. Posisi ini juga memberikan "political cover" yang melindungi Vale dari risiko nasionalisasi atau pembatasan operasi.
+    </p>
+    <p>
+      <strong>Efisiensi operasional dan pemulihan harga nikel</strong> <span class="badge badge-green">Jangka Menengah</span><br>
+      Program efisiensi biaya yang konsisten terbukti mampu menumbuhkan laba 100% YoY di Q1 2026 meski harga masih tertekan. Ketika harga nikel pulih — yang secara siklus hampir pasti terjadi — earnings Vale akan melesat jauh lebih cepat karena basis biaya yang sudah efisien.
+    </p>
+    <p>
+      <strong>Kepemimpinan ESG sebagai premium valuasi</strong> <span class="badge badge-blue">Jangka Panjang</span><br>
+      Posisi ESG terdepan di industri pertambangan Indonesia menarik investor institusional global dan ESG fund yang semakin dominan di pasar modal. Dengan standar pelaporan GRI-aligned dan governance yang diawasi pemegang saham internasional kelas dunia, Vale dipersepsikan sebagai "nikel bersih" — komoditas yang semakin berharga di era dekarbonisasi global.
+    </p>
+  </div>
+  <hr>
+
+  <!-- ══ SECTION 8: ESG ══ -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+    Inisiatif ESG &amp; Keberlanjutan
+  </h2>
+  <div class="section-body">
+    <p>
+      Vale Indonesia merilis Sustainability Report 2025 bertema <em>"Resourcing for a Greener Future: Leading with Impact through Sustainability"</em> pada 13 Mei 2026. Laporan ini mencerminkan komitmen perseroan untuk menjadi benchmark ESG di industri pertambangan Asia Tenggara.
+    </p>
+
+    <div class="esg-row esg-e">
+      <div class="esg-label-row">
+        <span class="esg-label">🌱 Environmental (E)</span>
+        <span class="esg-score">68 / 100</span>
+      </div>
+      <div class="esg-bar-bg"><div class="esg-bar-fill" style="width:68%;"></div></div>
+      <div class="esg-sub">Target dekarbonisasi 2030, reklamasi lahan bekas tambang Sorowako aktif, peta jalan energi terbarukan untuk mengurangi emisi smelter. Tantangan utama: jejak karbon operasi pyrometallurgy yang tinggi energi.</div>
+    </div>
+
+    <div class="esg-row esg-s">
+      <div class="esg-label-row">
+        <span class="esg-label">🤝 Social (S)</span>
+        <span class="esg-score">74 / 100</span>
+      </div>
+      <div class="esg-bar-bg"><div class="esg-bar-fill" style="width:74%;"></div></div>
+      <div class="esg-sub">Program pemberdayaan masyarakat Sorowako aktif selama 50+ tahun, pelatihan tenaga kerja lokal, keterlibatan komunitas di area ekspansi Bahodopi & Pomalaa. Vale dikenal memiliki hubungan komunitas yang jauh lebih baik dibanding rata-rata perusahaan tambang.</div>
+    </div>
+
+    <div class="esg-row esg-g">
+      <div class="esg-label-row">
+        <span class="esg-label">🏛️ Governance (G)</span>
+        <span class="esg-score">81 / 100</span>
+      </div>
+      <div class="esg-bar-bg"><div class="esg-bar-fill" style="width:81%;"></div></div>
+      <div class="esg-sub">50% perempuan di Dewan Komisaris (2025), pelaporan GRI-aligned, tata kelola ganda antara pemegang saham internasional kelas dunia (Vale S.A., SMM) dan BUMN. Struktur kepemilikan yang beragam secara efektif mencegah penyalahgunaan kekuasaan satu pihak.</div>
+    </div>
+
+    <p class="data-note">* Skor ESG merupakan estimasi berdasarkan Sustainability Report 2025, data Sustainalytics, dan informasi publik. Bukan penilaian resmi lembaga rating.</p>
+  </div>
+  <hr>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <p><strong>Disclaimer Investasi:</strong> Dokumen ini disusun semata-mata untuk tujuan informasi dan edukasi. Konten ini bukan merupakan saran investasi, rekomendasi beli/jual, atau solicitation untuk bertransaksi efek. Investasi di pasar modal mengandung risiko kehilangan sebagian atau seluruh modal. Selalu lakukan riset mandiri (DYOR) dan konsultasikan dengan profesional keuangan sebelum mengambil keputusan investasi.</p>
+    <div class="sources">
+      <a href="https://www.inspirasitimur.com/2026/05/kinerja-1q2026-solid-pt-vale-indonesia.html" target="_blank">Inspirasi Timur – Q1 2026</a>
+      <a href="https://market.bisnis.com/read/20260504/192/1971105/laba-vale-indonesia-inco-melonjak-100-jadi-rp75754-miliar-kuartal-i2026" target="_blank">Bisnis.com – Laba Q1 2026</a>
+      <a href="https://www.maybanktrade.co.id/berita/laba-bersih-inco-tumbuh-32-di-tahun-2025/" target="_blank">Maybank Trade – FY 2025</a>
+      <a href="https://pelakita.id/2026/03/17/laba-vale-indonesia-melonjak-di-2025-tunjukkan-ketahanan-di-tengah-dinamika-nikel-global/" target="_blank">Pelakita.id – Full Year 2025</a>
+      <a href="https://mind.id/en/news/tuntaskan-transaksi-mind-id-resmi-jadi-pemegang-saham-terbesar-pt-vale-indonesia-tbk" target="_blank">MIND ID – Divestasi Saham</a>
+      <a href="https://www.marketscreener.com/news/pt-vale-indonesia-tbk-sustainabilty-report-2025-english-ce7f5bdfdd8af320" target="_blank">MarketScreener – Sustainability 2025</a>
+      <a href="https://vale.com/indonesia/esg" target="_blank">Vale.com – ESG</a>
+    </div>
+    <p class="footer-brand">IDX Profile Series &nbsp;·&nbsp; PT Vale Indonesia Tbk (INCO) &nbsp;·&nbsp; 15 Mei 2026 &nbsp;·&nbsp; Sektor: Pertambangan Nikel</p>
+  </footer>
+
+</div><!-- /page-wrapper -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+  /* ── Toggle collapse ── */
+  function toggleSection(h2el) {
+    h2el.classList.toggle('collapsed');
+  }
+
+  /* ── Chart.js global defaults (light mode) ── */
+  Chart.defaults.color = '#706f6f';
+  Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+
+  const gridColor = 'rgba(0,0,0,0.07)';
+
+  /* ── 1. Financial Chart ── */
+  new Chart(document.getElementById('financialChart').getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: ['2023', '2024', '2025'],
+      datasets: [
+        {
+          type: 'bar',
+          label: 'Pendapatan (Rp T)',
+          data: [19.24, 14.87, 15.50],
+          backgroundColor: 'rgba(127,109,242,0.25)',
+          borderColor: '#7f6df2',
+          borderWidth: 2,
+          borderRadius: 5,
+          yAxisID: 'y'
+        },
+        {
+          type: 'bar',
+          label: 'EBITDA (Rp T)',
+          data: [6.80, 2.24, 3.57],
+          backgroundColor: 'rgba(229,165,58,0.3)',
+          borderColor: '#e5a53a',
+          borderWidth: 2,
+          borderRadius: 5,
+          yAxisID: 'y'
+        },
+        {
+          type: 'line',
+          label: 'Laba Bersih (Rp T)',
+          data: [4.29, 0.90, 1.19],
+          borderColor: '#3d9e71',
+          backgroundColor: 'rgba(61,158,113,0.1)',
+          borderWidth: 2.5,
+          pointBackgroundColor: '#3d9e71',
+          pointRadius: 5,
+          pointHoverRadius: 7,
+          tension: 0.35,
+          fill: true,
+          yAxisID: 'y'
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: {
+          position: 'top',
+          labels: { usePointStyle: true, padding: 16, font: { size: 12 } }
+        },
+        tooltip: {
+          callbacks: { label: ctx => ` ${ctx.dataset.label}: Rp ${ctx.parsed.y.toFixed(2)} T` }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          grid: { color: gridColor },
+          ticks: { callback: v => 'Rp ' + v + ' T' }
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+
+  /* ── 2. Donut Chart ── */
+  new Chart(document.getElementById('donutChart').getContext('2d'), {
+    type: 'doughnut',
+    data: {
+      labels: ['MIND ID (BUMN)', 'Vale Canada Ltd', 'Sumitomo Metal Mining', 'Publik'],
+      datasets: [{
+        data: [34.03, 33.91, 15.03, 17.03],
+        backgroundColor: ['#7f6df2', '#3d9e71', '#e5a53a', '#50a5dc'],
+        borderColor: '#ffffff',
+        borderWidth: 3,
+        hoverOffset: 6
+      }]
+    },
+    options: {
+      responsive: true,
+      cutout: '60%',
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { padding: 14, font: { size: 11.5 }, usePointStyle: true }
+        },
+        tooltip: {
+          callbacks: { label: ctx => ` ${ctx.label}: ${ctx.parsed}%` }
+        }
+      }
+    }
+  });
+
+  /* ── 3. Segment Bar Chart ── */
+  new Chart(document.getElementById('segmentChart').getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: ['Sorowako (Beroperasi)', 'Bahodopi (Target 2026–27)', 'Pomalaa (Target 2027–28)'],
+      datasets: [{
+        label: 'Kapasitas (ribu ton/tahun)',
+        data: [72, 30, 40],
+        backgroundColor: ['rgba(127,109,242,0.8)', 'rgba(127,109,242,0.4)', 'rgba(127,109,242,0.25)'],
+        borderColor: ['#7f6df2', '#7f6df2', '#7f6df2'],
+        borderWidth: 2,
+        borderRadius: 5
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.x} rb ton/tahun` } }
+      },
+      scales: {
+        x: {
+          beginAtZero: true,
+          max: 85,
+          grid: { color: gridColor },
+          ticks: { callback: v => v + ' rb' }
+        },
+        y: { grid: { display: false }, ticks: { font: { size: 11 } } }
+      }
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Read on Home</title>
+    <link>https://xedixermawan.github.io/read/</link>
+    <description>Recent content in Read on Home</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>© 2007-2024 XediXermawan</copyright>
+    <lastBuildDate>Mon, 01 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://xedixermawan.github.io/read/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jenis-Jenis Baterai</title>
+      <link>https://xedixermawan.github.io/read/solar-energy-content/jenis-baterai-komprehensif/</link>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://xedixermawan.github.io/read/solar-energy-content/jenis-baterai-komprehensif/</guid>
+      <description>&lt;h1 id=&#34;pendahuluan&#34;&gt;Pendahuluan&lt;/h1&gt;&#xA;&lt;p&gt;Dokumen ini membahas jenis baterai yang umum dipakai di elektronik konsumen, sistem PLTS (Pembangkit Listrik Tenaga Surya), UPS, PSU, kendaraan, sampai penyimpanan skala besar. Untuk tiap jenis dibahas bahan penyusun, kelebihan, kekurangan, tingkat keamanan, dan kualitasnya.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-klasifikasi-dasar&#34;&gt;1. Klasifikasi Dasar&lt;/h2&gt;&#xA;&lt;p&gt;Baterai dibagi dua kelompok besar:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Baterai primer&lt;/strong&gt; — sekali pakai, tidak bisa diisi ulang (alkaline, zinc-carbon, sel koin lithium).&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Baterai sekunder&lt;/strong&gt; — bisa diisi ulang (lead-acid, Li-ion, NiMH, NiCd, dll).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Istilah penting:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solar Energy</title>
+      <link>https://xedixermawan.github.io/read/solar-energy/</link>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://xedixermawan.github.io/read/solar-energy/</guid>
+      <description>&lt;p&gt;Solar energy:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

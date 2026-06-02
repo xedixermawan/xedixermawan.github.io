@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BJTM – PT Bank Pembangunan Daerah Jawa Timur Tbk | IDX Profile</title>
+<style>
+:root {
+  --background-primary:        #ffffff;
+  --background-secondary:      #f2f3f5;
+  --background-secondary-alt:  #e9eaec;
+  --background-modifier-border:#ddd;
+  --background-modifier-hover: rgba(0,0,0,0.05);
+  --text-normal:     #2e3338;
+  --text-muted:      #706f6f;
+  --text-faint:      #999999;
+  --text-on-accent:  #ffffff;
+  --text-accent:     #7f6df2;
+  --text-accent-hover: #5d4ff0;
+  --interactive-accent: #7f6df2;
+  --line-width: 42em;
+  --font-text-size: 16px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--background-primary);
+  color: var(--text-normal);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+  font-size: var(--font-text-size);
+  line-height: 1.7;
+}
+
+/* TOP NAV */
+.site-nav {
+  background: var(--background-secondary);
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding: 8px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.site-nav-inner {
+  max-width: var(--line-width);
+  margin: 0 auto;
+  padding: 0 2em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.site-nav a {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.site-nav a:hover { color: var(--text-accent); }
+
+#page-wrapper {
+  max-width: var(--line-width);
+  margin: 0 auto;
+  padding: 3em 2em 8em;
+}
+
+/* HEADER */
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-normal);
+  margin-bottom: 0.3em;
+  line-height: 1.2;
+}
+.ticker-badge {
+  display: inline-block;
+  background: var(--text-accent);
+  color: var(--text-on-accent);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.page-meta {
+  font-size: 0.82rem;
+  color: var(--text-faint);
+  margin-bottom: 0.5em;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.price-tag {
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-weight: 700;
+  color: var(--text-normal);
+}
+
+/* DIVIDER */
+hr {
+  border: none;
+  border-top: 1px solid var(--background-modifier-border);
+  margin: 1.8em 0;
+}
+
+/* HEADINGS */
+h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-normal);
+  margin: 1.8em 0 0.6em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+h2:hover { color: var(--text-accent); }
+h2 .collapse-icon {
+  width: 15px; height: 15px;
+  flex-shrink: 0;
+  opacity: 0.35;
+  transition: transform 0.2s;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+}
+h2 .collapse-icon svg { width: 100%; height: 100%; }
+h2.collapsed .collapse-icon { transform: rotate(-90deg); }
+h2.collapsed + .section-body { display: none; }
+
+h3 {
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--text-normal);
+  margin: 1.2em 0 0.4em;
+}
+
+/* TEXT */
+p { margin-bottom: 0.85em; color: var(--text-normal); }
+strong { color: var(--text-normal); font-weight: 700; }
+a { color: var(--text-accent); text-decoration: none; }
+a:hover { text-decoration: underline; color: var(--text-accent-hover); }
+
+/* KPI GRID */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 1em 0 1.5em;
+}
+@media (max-width: 700px) { .kpi-grid { grid-template-columns: repeat(2,1fr); } }
+
+/* CALLOUT / KPI CARD */
+.callout {
+  background: var(--background-secondary);
+  border-left: 3px solid var(--text-accent);
+  border-radius: 0 6px 6px 0;
+  padding: 12px 16px;
+  margin: 0;
+}
+.callout-title {
+  font-size: 0.73rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-accent);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.callout-value {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-normal);
+}
+.callout-sub { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+.callout-up   { border-left-color: #3d9e71; }
+.callout-up   .callout-title { color: #3d9e71; }
+.callout-down { border-left-color: #c0392b; }
+.callout-down .callout-title { color: #c0392b; }
+
+/* TABLE */
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 1em 0; }
+thead tr { background: var(--background-secondary); }
+th {
+  padding: 9px 12px;
+  text-align: left;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-accent);
+  font-weight: 700;
+  border-bottom: 2px solid var(--background-modifier-border);
+}
+td { padding: 9px 12px; border-bottom: 1px solid var(--background-modifier-border); color: var(--text-normal); }
+tr:hover td { background: var(--background-modifier-hover); }
+tr.highlight td { font-weight: 700; }
+tr.highlight td:first-child { color: var(--text-accent); }
+
+/* CHART BLOCK */
+.chart-block {
+  background: var(--background-secondary);
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin: 1.2em 0;
+  border: 1px solid var(--background-modifier-border);
+}
+.chart-block .chart-title {
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: var(--text-faint);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.chart-block canvas { max-height: 260px; }
+
+/* NEWS ITEM */
+.news-item {
+  border-left: 2px solid var(--background-modifier-border);
+  padding: 10px 14px;
+  margin: 10px 0;
+  transition: border-left-color 0.15s;
+}
+.news-item:hover { border-left-color: var(--text-accent); background: var(--background-modifier-hover); border-radius: 0 4px 4px 0; }
+.news-date { font-size: 0.73rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.5px; }
+.news-title { font-weight: 600; color: var(--text-normal); font-size: 0.92rem; margin: 3px 0; }
+.news-desc { font-size: 0.81rem; color: var(--text-muted); }
+
+/* BADGE */
+.badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+.badge-green  { background: #d4edda; color: #2d6a4f; }
+.badge-red    { background: #fde8e8; color: #922b21; }
+.badge-amber  { background: #fef3cd; color: #7d5a00; }
+.badge-accent { background: #ede9fe; color: var(--text-accent); }
+.badge-blue   { background: #dbeafe; color: #1e40af; }
+
+/* ESG BARS */
+.esg-row { margin: 14px 0; }
+.esg-label-row { display: flex; justify-content: space-between; margin-bottom: 5px; }
+.esg-label { font-size: 0.86rem; font-weight: 600; color: var(--text-normal); }
+.esg-score { font-size: 0.86rem; font-weight: 700; }
+.esg-bar-bg { height: 7px; background: var(--background-secondary-alt); border-radius: 4px; overflow: hidden; }
+.esg-bar-fill { height: 100%; border-radius: 4px; }
+.esg-sub { font-size: 0.75rem; color: var(--text-faint); margin-top: 4px; }
+
+/* FOOTER */
+footer {
+  margin-top: 4em;
+  padding-top: 1.5em;
+  border-top: 1px solid var(--background-modifier-border);
+  font-size: 0.76rem;
+  color: var(--text-faint);
+  line-height: 1.6;
+}
+.sources { margin-top: 0.8em; display: flex; flex-wrap: wrap; gap: 6px; }
+.sources a {
+  color: var(--text-muted);
+  background: var(--background-secondary);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--background-modifier-border);
+  font-size: 0.72rem;
+}
+.sources a:hover { color: var(--text-accent); }
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <svg width="14" height="14" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 2L3.5 5L6.5 8"/></svg>
+    <a href="https://xedixermawan.github.io">xedixermawan.github.io</a>
+  </div>
+</nav>
+
+<div id="page-wrapper">
+
+  <!-- HEADER -->
+  <h1 class="page-title">
+    PT Bank Pembangunan Daerah Jawa Timur Tbk
+    <span class="ticker-badge">BJTM</span>
+  </h1>
+  <div class="page-meta">
+    <span>📅 29 Mei 2026</span>
+    <span>🏦 Keuangan · Perbankan · BPD</span>
+    <span>🇮🇩 IDX · Jakarta</span>
+    <span class="price-tag">💹 Harga: Rp 600 (per 29 Mei 2026)</span>
+  </div>
+
+  <hr>
+
+  <!-- KPI GRID -->
+  <div class="kpi-grid">
+    <div class="callout callout-up">
+      <div class="callout-title">Kapitalisasi Pasar</div>
+      <div class="callout-value">Rp 9,01T</div>
+      <div class="callout-sub">15,015 juta lembar × Rp 600</div>
+    </div>
+    <div class="callout">
+      <div class="callout-title">Pend. Bunga Bersih 2025</div>
+      <div class="callout-value">Rp 6,10T</div>
+      <div class="callout-sub">+12,1% YoY</div>
+    </div>
+    <div class="callout callout-up">
+      <div class="callout-title">Laba Bersih 2025</div>
+      <div class="callout-value">Rp 1,54T</div>
+      <div class="callout-sub">+20,65% YoY</div>
+    </div>
+    <div class="callout">
+      <div class="callout-title">Dividen per Saham 2025</div>
+      <div class="callout-value">Rp 56,62</div>
+      <div class="callout-sub">Yield 9,44% · Total Rp 850,17M</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION 1: PROFIL SINGKAT -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    🏛️ Profil Singkat
+  </h2>
+  <div class="section-body">
+    <p>PT Bank Pembangunan Daerah Jawa Timur Tbk, yang lebih dikenal publik sebagai <strong>Bank Jatim</strong>, adalah bank pembangunan daerah (BPD) milik Pemerintah Provinsi Jawa Timur yang telah berdiri sejak 17 Agustus 1961. Selama lebih dari enam dekade, Bank Jatim mengemban misi ganda: sebagai institusi keuangan komersial yang menghasilkan profit bagi pemegang saham, sekaligus menjadi mitra strategis pembangunan ekonomi daerah Jawa Timur. Bank ini resmi mencatatkan sahamnya di Bursa Efek Indonesia pada 12 Juli 2012 dengan kode emiten <strong>BJTM</strong>, menjadi salah satu dari sedikit BPD yang berstatus perusahaan terbuka (Tbk).</p>
+    <p>Kantor pusat Bank Jatim berlokasi di Jl. Basuki Rahmat No. 98-104, Surabaya, Jawa Timur. Dengan jaringan yang tersebar di seluruh Jawa Timur dan beberapa kota besar di Indonesia, Bank Jatim melayani segmen aparatur sipil negara (ASN), pensiunan, pelaku UMKM, korporasi, serta masyarakat umum. Per akhir 2025, bank ini mengelola aset individual sebesar <strong>Rp 120+ triliun</strong> dengan jaringan ratusan kantor cabang dan unit layanan.</p>
+
+    <table>
+      <thead><tr><th>Informasi</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td>Nama Resmi</td><td>PT Bank Pembangunan Daerah Jawa Timur Tbk</td></tr>
+        <tr><td>Nama Populer</td><td>Bank Jatim</td></tr>
+        <tr><td>Kode Saham (IDX)</td><td>BJTM</td></tr>
+        <tr><td>Tanggal Berdiri</td><td>17 Agustus 1961</td></tr>
+        <tr><td>IPO / Listing</td><td>12 Juli 2012</td></tr>
+        <tr><td>Kantor Pusat</td><td>Surabaya, Jawa Timur</td></tr>
+        <tr><td>Sektor / Subsektor</td><td>Keuangan / Perbankan Daerah (BPD)</td></tr>
+        <tr><td>Jumlah Saham Beredar</td><td>±15.015 juta lembar</td></tr>
+        <tr><td>Total Aset (2025, individual)</td><td>±Rp 120 triliun</td></tr>
+        <tr><td>Total Aset (2025, konsolidasi)</td><td>Rp 168,86 triliun</td></tr>
+        <tr><td>Pemegang Saham Pengendali</td><td>Pemerintah Provinsi Jawa Timur (51,13%)</td></tr>
+        <tr><td>Rating</td><td>Platinum — ASRRAT 2025</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 2: MODEL BISNIS -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    ⚙️ Model Bisnis
+  </h2>
+  <div class="section-body">
+    <p><strong>Fondasi bisnis sebagai bank pegawai negeri.</strong> Tulang punggung pendapatan Bank Jatim selama puluhan tahun adalah kredit konsumer, khususnya Kredit Multiguna (KMG) yang ditujukan bagi Aparatur Sipil Negara (ASN), anggota TNI/Polri, dan pensiunan. Pinjaman jenis ini memiliki tingkat kredit macet (NPL) yang sangat rendah karena cicilan dipotong langsung dari gaji melalui mekanisme payroll. Keunggulan struktural ini memberi Bank Jatim kualitas aset yang stabil dan biaya provisi yang relatif terkendali, bahkan di tengah tekanan ekonomi makro.</p>
+    <p><strong>Diversifikasi ke kredit produktif.</strong> Menyadari ketergantungan yang tinggi pada segmen konsumer, manajemen Bank Jatim secara konsisten mendorong porsi kredit produktif — yakni kredit kepada UMKM, komersial, dan korporasi. Kredit UMKM mendapat perhatian khusus karena selaras dengan mandat BPD sebagai penggerak ekonomi daerah, sekaligus mengakses pasar yang lebih luas di Jawa Timur yang merupakan provinsi dengan kepadatan pelaku usaha kecil terbesar kedua di Indonesia. Kredit korporasi biasanya menyasar proyek infrastruktur daerah dan BUMD yang bersinggungan langsung dengan ekosistem pemerintah Jawa Timur.</p>
+    <p><strong>Pendapatan bunga sebagai mesin utama.</strong> Sebagaimana umumnya bank konvensional, pendapatan bunga bersih (Net Interest Income / NII) adalah kontributor terbesar terhadap laba. Pada 2025, NII Bank Jatim tercatat Rp 6,1 triliun, tumbuh 12,1% YoY. Net Interest Margin (NIM) bank ini tergolong tinggi dibandingkan rata-rata industri perbankan nasional, berkat dominasi kredit konsumer berbunga relatif lebih tinggi. Pendapatan nonbunga — termasuk fee-based income dari layanan transaksi, trade finance, dan jasa kustodian — menjadi segmen yang terus dikembangkan, mencapai Rp 1,1 triliun pada 2025 (+19,2% YoY).</p>
+    <p><strong>Strategi digitalisasi dan perluasan layanan.</strong> Bank Jatim menjalankan transformasi digital melalui platform mobile banking dan internet banking, dengan transaksi digital yang mencapai <strong>Rp 65,77 triliun</strong> sepanjang 2025 — pertumbuhan yang mencerminkan adopsi nasabah terhadap layanan perbankan non-tunai. Kerja sama lintas entitas dalam kelompok usaha bank (KUB) juga diperkuat untuk memperluas jangkauan layanan, termasuk sinergi dengan BPR Jatim dan lembaga keuangan mikro daerah.</p>
+    <p><strong>Sumber pendanaan (liabilitas).</strong> Dana pihak ketiga (DPK) — terdiri dari tabungan, giro, dan deposito dari nasabah individual, PEMDA, dan BUMD — menjadi sumber pendanaan utama Bank Jatim. Dana pemerintah daerah yang parkir di Bank Jatim menjadi keunggulan kompetitif tersendiri: bank ini memiliki akses ke dana murah (low-cost fund) dari institusi pemerintah yang sulit ditandingi oleh bank swasta. Per 2025 (konsolidasi), DPK mencapai Rp 127,24 triliun, tumbuh 41,36% YoY.</p>
+  </div>
+
+  <!-- SECTION 3: KINERJA KEUANGAN -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    📊 Kinerja Keuangan
+  </h2>
+  <div class="section-body">
+    <p>Perjalanan keuangan Bank Jatim dalam lima tahun terakhir menggambarkan siklus yang menarik: pertumbuhan stabil di 2021–2022, tekanan di 2023–2024, lalu pemulihan kuat di 2025. <strong>Tahun 2021 dan 2022</strong> menjadi periode solid dengan laba bersih masing-masing Rp 1,52 triliun dan Rp 1,54 triliun, ditopang NIM tinggi dan kualitas aset yang membaik pasca-pandemi, termasuk penurunan NPL dari 4,48% menjadi 2,83%.</p>
+    <p><strong>Tahun 2023</strong> menjadi tahun konsolidasi — laba turun tipis ke Rp 1,47 triliun, namun kualitas aset terus membaik (NPL 2,49%) dan NIM justru naik ke 5,57%. Tekanan berlanjut di <strong>2024</strong> dengan laba yang merosot lebih dalam ke Rp 1,28 triliun, di tengah lonjakan biaya operasional dan investasi transformasi digital. Namun, total aset mencatat pertumbuhan signifikan ke Rp 118 triliun (+13,7% YoY), menandai ekspansi bisnis yang sesungguhnya sedang berlangsung.</p>
+    <p><strong>Tahun 2025 menjadi titik balik.</strong> Laba bersih individual melonjak 20,65% ke Rp 1,54 triliun, sementara secara konsolidasi mencapai Rp 1,617 triliun (+24,80% YoY). Pendapatan bunga bruto tumbuh 6,7% ke Rp 8,6 triliun, NII naik 12,1% ke Rp 6,1 triliun, dan PPOP (laba operasi pra-provisi) melejit 27,3% ke Rp 3,68 triliun — sinyal bahwa perbaikan efisiensi operasional mulai membuahkan hasil. Ekuitas bank tumbuh 9,1% menjadi Rp 13,6 triliun, memperkuat basis permodalan untuk ekspansi ke depan.</p>
+
+    <div class="chart-block">
+      <div class="chart-title">Pendapatan Bunga Bersih & Laba Bersih (Rp Miliar) — 2021–2025</div>
+      <canvas id="chartFinancial"></canvas>
+    </div>
+
+    <h3>Tabel Rasio Keuangan Utama</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Indikator</th>
+          <th>2021</th>
+          <th>2022</th>
+          <th>2023</th>
+          <th>2024</th>
+          <th>2025</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Laba Bersih (Rp M)</td><td>1.520</td><td>1.540</td><td>1.470</td><td>1.280</td><td>1.540</td></tr>
+        <tr><td>NII (Rp M)</td><td>4.810 <em style="font-size:0.75em;color:var(--text-faint)">(est.)</em></td><td>5.120 <em style="font-size:0.75em;color:var(--text-faint)">(est.)</em></td><td>5.440 <em style="font-size:0.75em;color:var(--text-faint)">(est.)</em></td><td>5.700</td><td>6.100</td></tr>
+        <tr><td>NIM</td><td>5,11%</td><td>5,11%</td><td>5,57%</td><td>~5,8% <em style="font-size:0.75em;color:var(--text-faint)">(est.)</em></td><td>~6,1% <em style="font-size:0.75em;color:var(--text-faint)">(est.)</em></td></tr>
+        <tr><td>ROE</td><td>17,26%</td><td>16,24%</td><td>13,96%</td><td>~11,5% <em style="font-size:0.75em;color:var(--text-faint)">(est.)</em></td><td>~11,3%</td></tr>
+        <tr><td>NPL (Gross)</td><td>4,48%</td><td>2,83%</td><td>2,49%</td><td>~2,3% <em style="font-size:0.75em;color:var(--text-faint)">(est.)</em></td><td>~2,1% <em style="font-size:0.75em;color:var(--text-faint)">(est.)</em></td></tr>
+        <tr><td>DPS (Rp)</td><td>—</td><td>52,11</td><td>54,39</td><td>54,71</td><td>56,62</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Rasio Valuasi — Berdasarkan Harga Rp 600 (29 Mei 2026)</h3>
+    <table>
+      <thead><tr><th>Rasio</th><th>Nilai</th><th>Keterangan</th></tr></thead>
+      <tbody>
+        <tr class="highlight"><td>PER</td><td>5,85×</td><td>Harga / EPS (Rp 600 / Rp 102,57)</td></tr>
+        <tr class="highlight"><td>PBV</td><td>0,66×</td><td>Harga / BV per lembar (Rp 600 / Rp 905,76)</td></tr>
+        <tr><td>EPS 2025</td><td>Rp 102,57</td><td>Laba Rp 1,54T / 15.015 juta lembar</td></tr>
+        <tr><td>BV per lembar</td><td>Rp 905,76</td><td>Ekuitas Rp 13,6T / 15.015 juta lembar</td></tr>
+        <tr class="highlight"><td>Dividend Yield</td><td>9,44%</td><td>Rp 56,62 / Rp 600 × 100%</td></tr>
+        <tr><td>Market Cap</td><td>Rp 9,01T</td><td>15.015 juta × Rp 600</td></tr>
+        <tr><td>DER (bank)</td><td>~6,6×</td><td>Total Liabilitas / Ekuitas (wajar untuk bank)</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.8rem;color:var(--text-faint);margin-top:-0.5em;">Catatan: PBV di bawah 1× dan PER &lt;6× mencerminkan valuasi yang relatif murah untuk bank dengan fundamental sehat. Dividend Yield 9,44% sangat kompetitif dibandingkan instrumen pendapatan tetap.</p>
+  </div>
+
+  <!-- SECTION 4: KEPEMILIKAN & SEGMEN -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    🥧 Struktur Kepemilikan &amp; Segmen Bisnis
+  </h2>
+  <div class="section-body">
+    <p>Bank Jatim adalah institusi keuangan semi-pemerintah yang sahamnya dipegang secara dominan oleh entitas pemerintah daerah. <strong>Pemerintah Provinsi Jawa Timur</strong> menjadi pemegang saham pengendali dengan porsi 51,13%, menjadikan bank ini sebagai instrumen kebijakan pembangunan Pemprov Jatim. Selain Pemprov, delapan pemerintah daerah kabupaten/kota di Jawa Timur turut tercatat sebagai pemegang saham institusional dengan total kepemilikan sekitar 28,35%. Sisanya, sebesar 20,52%, dimiliki oleh publik — baik investor domestik maupun asing — yang dapat bertransaksi di Bursa Efek Indonesia.</p>
+
+    <div class="chart-block">
+      <div class="chart-title">Struktur Kepemilikan Saham BJTM (%)</div>
+      <canvas id="chartOwnership"></canvas>
+    </div>
+
+    <p>Dari sisi komposisi kredit, Bank Jatim masih didominasi oleh <strong>kredit konsumer</strong> yang menyasar ASN dan pensiunan — segmen yang secara historis menghasilkan kualitas aset terbaik. Porsi kredit produktif (korporasi, komersial, UMKM) terus didorong untuk meningkat, sesuai arahan regulator dan strategi diversifikasi jangka menengah bank.</p>
+
+    <div class="chart-block">
+      <div class="chart-title">Komposisi Kredit Berdasarkan Segmen — 2025 (est.)</div>
+      <canvas id="chartSegment"></canvas>
+    </div>
+
+    <p style="font-size:0.8rem;color:var(--text-faint);">* Komposisi kredit merupakan estimasi berdasarkan laporan publik dan tren historis. Angka spesifik dapat berbeda dengan laporan resmi.</p>
+  </div>
+
+  <!-- SECTION 5: BERITA & PERKEMBANGAN -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    📰 Berita &amp; Perkembangan Terkini
+  </h2>
+  <div class="section-body">
+
+    <div class="news-item">
+      <div class="news-date">07 Mei 2026</div>
+      <div class="news-title">RUPS 2026: Dividen Rp 850,17 Miliar untuk Tahun Buku 2025</div>
+      <div class="news-desc">Dalam RUPS Tahunan yang digelar di Surabaya (6 Mei 2026), Bank Jatim menyetujui pembagian dividen tunai sebesar Rp 56,62 per saham (total Rp 850,17 miliar) untuk tahun buku 2025, naik dari Rp 54,71 per saham di tahun sebelumnya. Dividend yield mencapai 9,44% terhadap harga saham saat ini — salah satu yang tertinggi di sektor BPD. RUPS juga melakukan perombakan pengurus perseroan.</div>
+      <span class="badge badge-green">Dividen Naik</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">20 Mei 2026</div>
+      <div class="news-title">Transaksi Digital BJTM Tembus Rp 65,77 Triliun Sepanjang 2025</div>
+      <div class="news-desc">Bank Jatim mencatat pertumbuhan signifikan dalam ekosistem digital, dengan total nilai transaksi digital mencapai Rp 65,77 triliun sepanjang 2025. Angka ini mencerminkan akselerasi adopsi mobile banking dan internet banking oleh nasabah, seiring strategi transformasi digital yang digenjot manajemen sebagai pilar pertumbuhan jangka menengah.</div>
+      <span class="badge badge-accent">Transformasi Digital</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">Maret 2026</div>
+      <div class="news-title">Laba Bersih 2025 Melonjak 20,65%, Tembus Rp 1,54 Triliun</div>
+      <div class="news-desc">Bank Jatim merilis laporan keuangan tahunan 2025 yang menunjukkan pemulihan kuat: laba bersih individual naik 20,65% YoY ke Rp 1,54 triliun, sementara konsolidasi mencapai Rp 1,617 triliun (+24,80%). PPOP melonjak 27,3% ke Rp 3,68 triliun. Ekuitas tumbuh 9,1% menjadi Rp 13,6 triliun. Kredit konsolidasi tumbuh 46,65% YoY ke Rp 110,50 triliun, sebagian besar didorong konsolidasi entitas anak.</div>
+      <span class="badge badge-green">Kinerja Kuat</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">Oktober 2025</div>
+      <div class="news-title">Bank Jatim Raih Platinum Rank dalam ASRRAT 2025</div>
+      <div class="news-desc">Bank Jatim berhasil naik peringkat ke Platinum dalam Asia Sustainability Reporting Rating and Rankings (ASRRAT) 2025, meningkat dari peringkat Gold yang sebelumnya diraih secara konsisten. Pencapaian ini mencerminkan komitmen peningkatan kualitas implementasi prinsip ESG dan pelaporan keberlanjutan, termasuk pembiayaan sektor ekonomi hijau yang melonjak hampir empat kali lipat pada 2024.</div>
+      <span class="badge badge-blue">ESG · Platinum ASRRAT</span>
+    </div>
+
+  </div>
+
+  <!-- SECTION 6: RISIKO & PELUANG -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    ⚠️ Risiko &amp; Peluang
+  </h2>
+  <div class="section-body">
+    <h3>Risiko Utama</h3>
+    <p><strong>Konsentrasi segmen dan ketergantungan pada ASN.</strong> Dominasi kredit konsumer untuk ASN adalah pedang bermata dua. Meskipun NPL-nya rendah, perubahan kebijakan kepegawaian negeri — seperti pemangkasan jumlah PNS atau perubahan mekanisme gaji — dapat menekan permintaan kredit secara signifikan. <span class="badge badge-amber">Risiko Sedang</span></p>
+    <p><strong>Persaingan dari bank nasional dan fintech.</strong> Bank-bank besar nasional semakin agresif masuk ke pasar ASN dan pensiunan melalui produk payroll dan pinjaman digital. Sementara fintech lending terus menggerus pangsa kredit UMKM. Bank Jatim harus terus meningkatkan proposisi nilai dan kecepatan layanan untuk mempertahankan basis nasabah. <span class="badge badge-amber">Risiko Sedang</span></p>
+    <p><strong>Tekanan margin dari suku bunga.</strong> Dalam siklus penurunan suku bunga, NIM bank cenderung tertekan karena yield kredit turun lebih cepat dari penurunan biaya dana, terutama pada deposito dengan tenor panjang. Hal ini dapat menekan NII yang menjadi tulang punggung profitabilitas bank. <span class="badge badge-amber">Risiko Sedang</span></p>
+    <p><strong>Risiko konsentrasi geografis.</strong> Meski merupakan keunggulan, fokus di Jawa Timur membuat bank ini rentan terhadap guncangan ekonomi regional, bencana alam, atau perubahan kebijakan Pemprov yang dapat memengaruhi aliran dana pemerintah yang diparkir di bank. <span class="badge badge-green">Risiko Rendah-Sedang</span></p>
+
+    <h3>Peluang Utama</h3>
+    <p><strong>Ekonomi Jawa Timur yang dinamis.</strong> Jawa Timur adalah provinsi dengan PDRB terbesar kedua di Indonesia, dengan basis industri, perdagangan, dan pertanian yang beragam. Pertumbuhan ekonomi daerah yang konsisten menciptakan permintaan kredit produktif yang besar — ruang yang masih bisa diisi Bank Jatim secara lebih agresif. <span class="badge badge-green">Peluang Tinggi</span></p>
+    <p><strong>Potensi pendalaman kredit UMKM dan green finance.</strong> Dengan target penyaluran kredit hijau yang telah tumbuh hampir empat kali lipat di 2024, Bank Jatim memiliki momentum untuk menjadi pemimpin pembiayaan berkelanjutan di antara BPD. Akses ke program KUR dan pembiayaan hijau bersubsidi pemerintah membuka jalur pertumbuhan baru. <span class="badge badge-green">Peluang Tinggi</span></p>
+    <p><strong>Ekspansi ekosistem KUB dan sinergi anak usaha.</strong> Pembentukan kelompok usaha bank (KUB) membuka peluang cross-selling layanan antara Bank Jatim, BPR Jatim, dan entitas anak lainnya. Konsolidasi ini juga memperbesar skala bisnis yang tecermin pada lonjakan aset konsolidasi ke Rp 168,86 triliun. <span class="badge badge-accent">Peluang Strategis</span></p>
+    <p><strong>Monetisasi platform digital.</strong> Dengan Rp 65,77 triliun transaksi digital di 2025, Bank Jatim memiliki fondasi untuk mengembangkan pendapatan berbasis fee dari layanan digital, termasuk QRIS, open banking API, dan layanan keuangan untuk ekosistem pemerintah daerah. <span class="badge badge-blue">Peluang Jangka Menengah</span></p>
+  </div>
+
+  <!-- SECTION 7: ESG & KEBERLANJUTAN -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    🌿 ESG &amp; Keberlanjutan
+  </h2>
+  <div class="section-body">
+    <p>Bank Jatim telah mengimplementasikan prinsip ESG secara formal sejak 2020, mengacu pada POJK No. 51/POJK.03/2017 tentang Penerapan Keuangan Berkelanjutan. Komitmen ini bukan sekadar kepatuhan regulasi — Bank Jatim mendemoraikan integrasi ESG ke dalam proses bisnis inti, termasuk kebijakan perkreditan, manajemen risiko lingkungan, dan program sosial kemasyarakatan. Pencapaian puncak datang pada 2025, saat bank ini meraih <strong>Platinum Rank</strong> dalam ASRRAT — peringkat tertinggi dalam kategori pelaporan keberlanjutan di Asia.</p>
+
+    <div class="esg-row">
+      <div class="esg-label-row">
+        <span class="esg-label">🌱 Environmental (Lingkungan)</span>
+        <span class="esg-score" style="color:#3d9e71;">78 / 100</span>
+      </div>
+      <div class="esg-bar-bg"><div class="esg-bar-fill" style="width:78%;background:#3d9e71;"></div></div>
+      <div class="esg-sub">Pembiayaan sektor hijau Rp 5,6T (2024), naik ~4× dari Rp 1,3T (2023). Fokus: efisiensi energi Rp 2,4T, pengelolaan air Rp 557M, lahan berkelanjutan Rp 2T+. Program pengurangan emisi operasional kantor.</div>
+    </div>
+
+    <div class="esg-row">
+      <div class="esg-label-row">
+        <span class="esg-label">🤝 Social (Sosial)</span>
+        <span class="esg-score" style="color:#50a5dc;">72 / 100</span>
+      </div>
+      <div class="esg-bar-bg"><div class="esg-bar-fill" style="width:72%;background:#50a5dc;"></div></div>
+      <div class="esg-sub">Program CSR aktif di bidang pendidikan (beasiswa, pelatihan wirausaha), kesehatan (fasilitas masyarakat), seni-budaya Jawa Timur, dan pemberdayaan UMKM. Inklusi keuangan untuk segmen unbankable di pelosok Jawa Timur.</div>
+    </div>
+
+    <div class="esg-row">
+      <div class="esg-label-row">
+        <span class="esg-label">🏛️ Governance (Tata Kelola)</span>
+        <span class="esg-score" style="color:#7f6df2;">82 / 100</span>
+      </div>
+      <div class="esg-bar-bg"><div class="esg-bar-fill" style="width:82%;background:#7f6df2;"></div></div>
+      <div class="esg-sub">Platinum ASRRAT 2025. Kepatuhan penuh POJK tata kelola BPD. Transparansi laporan tahunan, laporan keberlanjutan, dan keterbukaan informasi IDX. Implementasi manajemen risiko terintegrasi. Direksi aktif borong saham BJTM sebagai sinyal keyakinan terhadap prospek perusahaan.</div>
+    </div>
+
+    <p>Dalam dimensi lingkungan, Bank Jatim menjadi salah satu pelopor green banking di antara bank-bank daerah, dengan lonjakan pembiayaan hijau yang dramatis pada 2024 — dari Rp 1,3 triliun menjadi Rp 5,6 triliun. Efisiensi proses bisnis berbasis ESG juga diklaim berkontribusi pada penghematan biaya operasional. Di sisi tata kelola, kepercayaan direksi terhadap prospek bank tercermin dari aksi borong saham BJTM yang dilakukan secara kolektif oleh tim manajemen — sinyal positif yang jarang terlihat di emiten BPD.</p>
+  </div>
+
+  <hr>
+
+  <footer>
+    <p><strong>Disclaimer:</strong> Dokumen ini disusun untuk tujuan informasi dan edukasi. Bukan merupakan rekomendasi investasi. Data keuangan bersumber dari laporan resmi perusahaan, keterbukaan IDX, dan media keuangan terpercaya. Angka bertanda <em>(est.)</em> merupakan estimasi berdasarkan data publik yang tersedia. Harga saham Rp 600 digunakan sebagai acuan per 29 Mei 2026.</p>
+    <div class="sources">
+      <a href="https://www.bankjatim.co.id/id/hubungan-investor/kinerja-keuangan">bankjatim.co.id — IR</a>
+      <a href="https://finansial.bisnis.com/read/20250321/90/1863492/bank-jatim-bjtm-bukukan-laba-bersih-rp128-triliun-pada-2024">Bisnis.com — Laba 2024</a>
+      <a href="https://www.idxchannel.com/banking/bank-jatim-bjtm-raih-laba-bersih-rp154-triliun-sepanjang-2025">IDXChannel — Laba 2025</a>
+      <a href="https://jatim.antaranews.com/amp/berita/1063680/bank-jatim-bagikan-dividen-rp85017-miliar-tahun-buku-2025">Antara — Dividen 2025</a>
+      <a href="https://finansial.bisnis.com/read/20260520/90/1975163/bank-jatim-bjtm-catat-transaksi-digital-rp6577-triliun-sepanjang-2025">Bisnis.com — Transaksi Digital</a>
+      <a href="https://klikjatim.com/news-43730-bank-jatim-raih-platinum-rank-dalam-asrrat-2025-bukti-komitmen-tingkatkan-kualitas-keberlanjutan">KlikJatim — ASRRAT 2025</a>
+      <a href="https://www.idx.co.id/id/perusahaan-tercatat/profil-perusahaan-tercatat/BJTM">IDX — Profil BJTM</a>
+    </div>
+    <p style="margin-top:1em;">IDX Profile Series | Keuangan · Perbankan BPD | 29 Mei 2026 | <a href="https://xedixermawan.github.io">xedixermawan.github.io</a></p>
+  </footer>
+
+</div><!-- /page-wrapper -->
+
+<!-- Chart.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+// Toggle Section
+function toggleSection(h2el) {
+  h2el.classList.toggle('collapsed');
+}
+
+// Chart.js Defaults
+Chart.defaults.color = '#706f6f';
+Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+
+const PALETTE = ['#7f6df2','#3d9e71','#e5a53a','#50a5dc','#c0392b','#aaa'];
+const GRID_COLOR = 'rgba(0,0,0,0.07)';
+
+// --- CHART 1: Financial Performance (Combo) ---
+(function() {
+  const ctx = document.getElementById('chartFinancial').getContext('2d');
+  const labels = ['2021','2022','2023','2024','2025'];
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Pend. Bunga Bersih (NII)',
+          type: 'bar',
+          data: [4810, 5120, 5440, 5700, 6100],
+          backgroundColor: 'rgba(127,109,242,0.18)',
+          borderColor: '#7f6df2',
+          borderWidth: 1.5,
+          borderRadius: 4,
+          yAxisID: 'yLeft',
+          order: 2
+        },
+        {
+          label: 'Laba Bersih',
+          type: 'line',
+          data: [1520, 1540, 1470, 1280, 1540],
+          borderColor: '#3d9e71',
+          backgroundColor: 'rgba(61,158,113,0.1)',
+          borderWidth: 2.5,
+          pointRadius: 5,
+          pointBackgroundColor: '#3d9e71',
+          tension: 0.35,
+          fill: true,
+          yAxisID: 'yLeft',
+          order: 1
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { position: 'top', labels: { boxWidth: 12, padding: 16, font: { size: 11 } } },
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.dataset.label}: Rp ${ctx.parsed.y.toLocaleString('id-ID')} M`
+          }
+        }
+      },
+      scales: {
+        yLeft: {
+          type: 'linear',
+          position: 'left',
+          grid: { color: GRID_COLOR },
+          ticks: {
+            callback: v => 'Rp ' + (v/1000).toFixed(1) + 'T',
+            font: { size: 10 }
+          }
+        },
+        x: { grid: { display: false }, ticks: { font: { size: 11 } } }
+      }
+    }
+  });
+})();
+
+// --- CHART 2: Ownership Donut ---
+(function() {
+  const ctx = document.getElementById('chartOwnership').getContext('2d');
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Pemprov Jawa Timur', 'Pemda Kab/Kota Jatim (8 PEMDA)', 'Publik'],
+      datasets: [{
+        data: [51.13, 28.35, 20.52],
+        backgroundColor: ['#7f6df2','#3d9e71','#50a5dc'],
+        borderColor: '#f2f3f5',
+        borderWidth: 3,
+        hoverOffset: 8
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      cutout: '62%',
+      plugins: {
+        legend: { position: 'bottom', labels: { boxWidth: 12, padding: 14, font: { size: 11 } } },
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.label}: ${ctx.parsed}%`
+          }
+        }
+      }
+    }
+  });
+})();
+
+// --- CHART 3: Kredit Segment Horizontal Bar ---
+(function() {
+  const ctx = document.getElementById('chartSegment').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Konsumer / ASN / Pensiunan', 'Korporasi', 'Komersial & UMKM', 'Sindikasi & Lainnya'],
+      datasets: [{
+        label: 'Komposisi Kredit (%)',
+        data: [52, 22, 20, 6],
+        backgroundColor: ['#7f6df2','#3d9e71','#e5a53a','#50a5dc'],
+        borderRadius: 4,
+        borderWidth: 0
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => ` ${ctx.parsed.x}%`
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: GRID_COLOR },
+          ticks: { callback: v => v + '%', font: { size: 10 } },
+          max: 60
+        },
+        y: { grid: { display: false }, ticks: { font: { size: 11 } } }
+      }
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

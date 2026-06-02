@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GOTO — PT GoTo Gojek Tokopedia Tbk | IDX Profile</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root {
+  --background-primary:        #ffffff;
+  --background-secondary:      #f2f3f5;
+  --background-secondary-alt:  #e9eaec;
+  --background-modifier-border:#ddd;
+  --background-modifier-hover: rgba(0,0,0,0.05);
+  --text-normal:     #2e3338;
+  --text-muted:      #706f6f;
+  --text-faint:      #999999;
+  --text-on-accent:  #ffffff;
+  --text-accent:     #7f6df2;
+  --text-accent-hover: #5d4ff0;
+  --interactive-accent: #7f6df2;
+  --line-width: 42em;
+  --font-text-size: 16px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--background-primary);
+  color: var(--text-normal);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+  font-size: var(--font-text-size);
+  line-height: 1.7;
+}
+
+/* TOP NAV */
+.site-nav {
+  background: var(--background-secondary);
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding: 8px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.site-nav-inner {
+  max-width: var(--line-width);
+  margin: 0 auto;
+  padding: 0 2em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.site-nav a {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.site-nav a:hover { color: var(--text-accent); }
+
+#page-wrapper {
+  max-width: var(--line-width);
+  margin: 0 auto;
+  padding: 3em 2em 8em;
+}
+
+/* HEADER */
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-normal);
+  margin-bottom: 0.3em;
+  line-height: 1.2;
+}
+.ticker-badge {
+  display: inline-block;
+  background: var(--text-accent);
+  color: var(--text-on-accent);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.page-meta {
+  font-size: 0.82rem;
+  color: var(--text-faint);
+  margin-bottom: 0.5em;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.price-tag {
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-weight: 700;
+  color: var(--text-normal);
+}
+
+/* DIVIDER */
+hr {
+  border: none;
+  border-top: 1px solid var(--background-modifier-border);
+  margin: 1.8em 0;
+}
+
+/* HEADINGS */
+h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-normal);
+  margin: 1.8em 0 0.6em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+h2:hover { color: var(--text-accent); }
+h2 .collapse-icon {
+  width: 15px; height: 15px;
+  flex-shrink: 0;
+  opacity: 0.35;
+  transition: transform 0.2s;
+  color: var(--text-muted);
+}
+h2 .collapse-icon svg { width: 100%; height: 100%; }
+h2.collapsed .collapse-icon { transform: rotate(-90deg); }
+h2.collapsed + .section-body { display: none; }
+
+h3 {
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--text-normal);
+  margin: 1.2em 0 0.4em;
+}
+
+/* TEXT */
+p { margin-bottom: 0.85em; color: var(--text-normal); }
+strong { color: var(--text-normal); font-weight: 700; }
+a { color: var(--text-accent); text-decoration: none; }
+a:hover { text-decoration: underline; color: var(--text-accent-hover); }
+
+/* KPI GRID */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 1em 0 1.5em;
+}
+@media (max-width: 700px) { .kpi-grid { grid-template-columns: repeat(2,1fr); } }
+
+/* CALLOUT / KPI CARD */
+.callout {
+  background: var(--background-secondary);
+  border-left: 3px solid var(--text-accent);
+  border-radius: 0 6px 6px 0;
+  padding: 12px 16px;
+  margin: 0;
+}
+.callout-title {
+  font-size: 0.73rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-accent);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.callout-value {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-normal);
+}
+.callout-sub { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+.callout-up   { border-left-color: #3d9e71; }
+.callout-up   .callout-title { color: #3d9e71; }
+.callout-down { border-left-color: #c0392b; }
+.callout-down .callout-title { color: #c0392b; }
+
+/* TABLE */
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 1em 0; }
+thead tr { background: var(--background-secondary); }
+th {
+  padding: 9px 12px;
+  text-align: left;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-accent);
+  font-weight: 700;
+  border-bottom: 2px solid var(--background-modifier-border);
+}
+td { padding: 9px 12px; border-bottom: 1px solid var(--background-modifier-border); color: var(--text-normal); }
+tr:hover td { background: var(--background-modifier-hover); }
+tr.highlight td { font-weight: 700; }
+tr.highlight td:first-child { color: var(--text-accent); }
+
+/* CHART BLOCK */
+.chart-block {
+  background: var(--background-secondary);
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin: 1.2em 0;
+  border: 1px solid var(--background-modifier-border);
+}
+.chart-block .chart-title {
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: var(--text-faint);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.chart-block canvas { max-height: 260px; }
+
+/* TWO-COL CHART LAYOUT */
+.chart-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 1.2em 0;
+}
+@media (max-width: 600px) { .chart-row { grid-template-columns: 1fr; } }
+
+/* NEWS ITEM */
+.news-item {
+  border-left: 2px solid var(--background-modifier-border);
+  padding: 10px 14px;
+  margin: 10px 0;
+  transition: border-left-color 0.15s;
+}
+.news-item:hover { border-left-color: var(--text-accent); background: var(--background-modifier-hover); border-radius: 0 4px 4px 0; }
+.news-date { font-size: 0.73rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.5px; }
+.news-title { font-weight: 600; color: var(--text-normal); font-size: 0.92rem; margin: 3px 0; }
+.news-desc { font-size: 0.81rem; color: var(--text-muted); }
+
+/* BADGE */
+.badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+.badge-green  { background: #d4edda; color: #2d6a4f; }
+.badge-red    { background: #fde8e8; color: #922b21; }
+.badge-amber  { background: #fef3cd; color: #7d5a00; }
+.badge-accent { background: #ede9fe; color: var(--text-accent); }
+.badge-blue   { background: #dbeafe; color: #1e40af; }
+
+/* ESG BARS */
+.esg-row { margin: 14px 0; }
+.esg-label-row { display: flex; justify-content: space-between; margin-bottom: 5px; }
+.esg-label { font-size: 0.86rem; font-weight: 600; color: var(--text-normal); }
+.esg-score { font-size: 0.86rem; font-weight: 700; }
+.esg-bar-bg { height: 7px; background: var(--background-secondary-alt); border-radius: 4px; overflow: hidden; }
+.esg-bar-fill { height: 100%; border-radius: 4px; }
+.esg-sub { font-size: 0.75rem; color: var(--text-faint); margin-top: 4px; }
+
+/* FOOTER */
+footer {
+  margin-top: 4em;
+  padding-top: 1.5em;
+  border-top: 1px solid var(--background-modifier-border);
+  font-size: 0.76rem;
+  color: var(--text-faint);
+  line-height: 1.6;
+}
+.sources { margin-top: 0.8em; display: flex; flex-wrap: wrap; gap: 6px; }
+.sources a {
+  color: var(--text-muted);
+  background: var(--background-secondary);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--background-modifier-border);
+  font-size: 0.72rem;
+}
+.sources a:hover { color: var(--text-accent); }
+</style>
+</head>
+<body>
+
+<!-- TOP NAV BAR -->
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <svg width="14" height="14" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 2L3.5 5L6.5 8"/></svg>
+    <a href="https://xedixermawan.github.io">xedixermawan.github.io</a>
+  </div>
+</nav>
+
+<div id="page-wrapper">
+
+  <!-- HEADER -->
+  <div class="page-title">
+    PT GoTo Gojek Tokopedia Tbk
+    <span class="ticker-badge">GOTO</span>
+  </div>
+  <div class="page-meta">
+    <span>📅 18 Mei 2026</span>
+    <span>🏭 Teknologi &amp; Ekonomi Digital</span>
+    <span>🏛️ IDX: GOTO</span>
+    <span class="price-tag">💹 Harga: Rp 50 (per 6 Mei 2026, harga terakhir diketahui)</span>
+  </div>
+  <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:1.4em;">Profil komprehensif ekosistem digital terbesar Indonesia — dari ride-hailing hingga fintech — di tengah momen bersejarah pencapaian laba bersih perdana.</p>
+
+  <!-- KPI GRID -->
+  <div class="kpi-grid">
+    <div class="callout">
+      <div class="callout-title">Kapitalisasi Pasar</div>
+      <div class="callout-value">Rp 53,02 T</div>
+      <div class="callout-sub">Harga Rp 50 × ~1,06 T lembar saham beredar</div>
+    </div>
+    <div class="callout">
+      <div class="callout-title">Pendapatan 2025</div>
+      <div class="callout-value">Rp 18,32 T</div>
+      <div class="callout-sub">Tumbuh organik pasca-dekonsolidasi Tokopedia</div>
+    </div>
+    <div class="callout callout-up">
+      <div class="callout-title">Laba Bersih Q1-2026</div>
+      <div class="callout-value">+Rp 170,7 M</div>
+      <div class="callout-sub">🎉 PERDANA — pertama dalam sejarah perusahaan</div>
+    </div>
+    <div class="callout callout-down">
+      <div class="callout-title">Rugi Bersih 2025</div>
+      <div class="callout-value">−Rp 1,63 T</div>
+      <div class="callout-sub">Membaik drastis dari −Rp 5,15 T di 2024</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION 1: PROFIL SINGKAT -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 6l4 4 4-4"/></svg></span>
+    📋 Profil Singkat
+  </h2>
+  <div class="section-body">
+    <p>PT GoTo Gojek Tokopedia Tbk, yang diperdagangkan di Bursa Efek Indonesia (IDX) dengan kode saham <strong>GOTO</strong>, adalah perusahaan induk dari ekosistem digital terbesar di Indonesia. Perusahaan ini lahir dari penggabungan dua raksasa teknologi Indonesia — Gojek dan Tokopedia — yang diumumkan pada April 2021 dan diselesaikan secara resmi pada bulan yang sama. Pada April 2022, GoTo mencatatkan sahamnya di IDX melalui penawaran umum perdana (IPO) yang menjadi salah satu IPO terbesar dalam sejarah pasar modal Indonesia, berhasil meraih dana sekitar Rp 15,8 triliun.</p>
+
+    <p>GoTo Group mengoperasikan dua platform utama yang saling melengkapi: <strong>Gojek</strong>, super-app on-demand yang menyediakan layanan transportasi (ojek online dan mobil), pengiriman makanan (GoFood), pengiriman barang (GoSend), dan berbagai layanan lainnya; serta <strong>GoTo Financial</strong>, yang menaungi ekosistem keuangan digital termasuk GoPay (dompet digital), GoPayLater (paylater), dan layanan keuangan berbasis teknologi lainnya. Sejak Februari 2024, Tokopedia tidak lagi dikonsolidasikan ke dalam laporan keuangan GOTO setelah kepemilikan diturunkan menjadi 24,99% berikut kemitraan strategis dengan TikTok/ByteDance, yang kini mengoperasikan TikTok Shop di Indonesia menggunakan infrastruktur Tokopedia.</p>
+
+    <table>
+      <thead><tr><th>Atribut</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td>Nama Resmi</td><td>PT GoTo Gojek Tokopedia Tbk</td></tr>
+        <tr><td>Kode Saham</td><td>GOTO (IDX)</td></tr>
+        <tr><td>Berdiri</td><td>2010 (Gojek); 2009 (Tokopedia); Merger 2021</td></tr>
+        <tr><td>IPO</td><td>11 April 2022 — salah satu IPO terbesar IDX</td></tr>
+        <tr><td>Kantor Pusat</td><td>Jakarta, Indonesia</td></tr>
+        <tr><td>Sektor</td><td>Teknologi &amp; Layanan Digital</td></tr>
+        <tr><td>CEO</td><td>Patrick Walujo (sejak pertengahan 2023; diperpanjang hingga 2029)</td></tr>
+        <tr><td>Karyawan Tetap</td><td>~6.000+ (GoTo Group, 2025)</td></tr>
+        <tr><td>Mitra Pengemudi Gojek</td><td>&gt;2,5 juta mitra aktif di seluruh Asia Tenggara</td></tr>
+        <tr><td>Negara Operasi</td><td>Indonesia, Vietnam, Singapura, Thailand, Filipina</td></tr>
+        <tr><td>Kepemilikan Tokopedia</td><td>24,99% (asosiasi, tidak dikonsolidasi sejak Feb 2024)</td></tr>
+        <tr><td>Saham Beredar</td><td>~1,06 triliun lembar (dihitung dari Market Cap ÷ Harga)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 2: MODEL BISNIS -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 6l4 4 4-4"/></svg></span>
+    🔄 Model Bisnis
+  </h2>
+  <div class="section-body">
+    <p>GoTo Group beroperasi sebagai <strong>ekosistem platform digital terintegrasi</strong> — sebuah model yang menggabungkan marketplace dua sisi (two-sided marketplace) dengan flywheel effect yang kuat. Di sisi penawaran, perusahaan merekrut mitra pengemudi, mitra merchant, dan penyedia jasa lainnya. Di sisi permintaan, GoTo melayani konsumen yang membutuhkan transportasi, makanan, pengiriman barang, dan layanan keuangan — semuanya melalui satu super-app. Setiap interaksi di platform menghasilkan data yang digunakan untuk memperkuat rekomendasi algoritma, mencegah penipuan, dan meningkatkan efisiensi matching antara penawaran dan permintaan.</p>
+
+    <p><strong>Segmen Layanan On-Demand (Gojek)</strong> merupakan mesin pendapatan utama GoTo saat ini. Gojek memungut komisi dari setiap transaksi di platform — umumnya berkisar 15–25% dari nilai transaksi — dan memperoleh pendapatan iklan dari merchant yang ingin meningkatkan visibilitas di GoFood. Layanan GoCar dan GoRide menghasilkan pendapatan berbasis persentase tarif perjalanan, sementara GoSend dan GoKilat memanfaatkan jaringan mitra pengemudi yang sama untuk layanan kurir on-demand. Segmen ini mendapat EBITDA guidance Rp 1,7–1,8 triliun untuk 2025 dan menjadi landasan pertumbuhan jangka panjang GoTo.</p>
+
+    <p><strong>Segmen GoTo Financial</strong> menghasilkan pendapatan dari fee transaksi GoPay (dompet digital dengan lebih dari 20 juta pengguna aktif), bunga dan fee dari produk GoPayLater (paylater bertenaga AI untuk segmen konsumen dan UMKM), serta layanan perbankan digital melalui Bank Jago — di mana GOTO memegang ~22% saham. EBITDA guidance segmen ini adalah Rp 1,4–1,5 triliun untuk 2025. Model ini menciptakan loop saling memperkuat: pengguna yang bertransaksi di Gojek terdorong mengisi saldo GoPay, yang kemudian digunakan kembali untuk transaksi di seluruh ekosistem.</p>
+
+    <p><strong>Strategi efisiensi menuju profitabilitas</strong> menjadi pilar terpenting sejak 2022. Manajemen secara agresif memangkas biaya operasional — termasuk restrukturisasi karyawan, pengurangan subsidi promosi yang tidak produktif, dan konsolidasi infrastruktur teknologi berbasis cloud. Hasilnya terbukti nyata: adjusted EBITDA konsisten positif sejak Q4 2024, dan pada Q1 2026, GoTo untuk pertama kalinya dalam sejarahnya mencatat laba bersih sebesar Rp 170,7 miliar — sebuah tonggak yang selama ini diragukan akan tercapai.</p>
+  </div>
+
+  <!-- SECTION 3: KINERJA KEUANGAN -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 6l4 4 4-4"/></svg></span>
+    📊 Kinerja Keuangan
+  </h2>
+  <div class="section-body">
+    <p>Perjalanan keuangan GoTo sejak IPO adalah kisah dramatis transformasi sebuah perusahaan "bakar uang" menjadi entitas yang mulai berkelanjutan. Pada 2022 dan 2023, GoTo mencatat kerugian bersih yang sangat besar — sebagian besar merupakan biaya non-kas dari amortisasi goodwill dan penurunan nilai investasi terkait restrukturisasi Tokopedia (2023 mencatat impairment ~Rp 80 triliun non-kas). <strong>Tahun 2024</strong> menjadi titik pembalikan arah nyata: kerugian bersih menyusut drastis ke Rp 5,15 triliun, sementara pendapatan bersih tumbuh ke Rp 19,38 triliun.</p>
+
+    <p><strong>Tahun 2025</strong> menandai babak kedewasaan finansial baru. Pendapatan bersih tercatat Rp 18,32 triliun — sedikit lebih rendah dibandingkan 2024 karena efek basis (dekonsolidasi Tokopedia sempat tercatat sebulan di 2024), namun secara kualitas jauh lebih sehat. Kerugian bersih menyusut lagi ke Rp 1,63 triliun, dan adjusted EBITDA konsisten positif empat kuartal berturut-turut. Total aset GoTo per akhir 2025 tercatat Rp 43,74 triliun dengan ekuitas pemegang saham Rp 29,78 triliun — mencerminkan neraca yang relatif bersih dengan DER hanya 0,47×.</p>
+
+    <p><strong>Kuartal I-2026</strong> menjadi tonggak paling bersejarah: untuk pertama kalinya, GoTo mencetak laba bersih positif senilai Rp 170,7 miliar — tumbuh dari rugi bersih Rp 366,5 miliar di Q1-2025. Pencapaian ini mengkonfirmasi bahwa strategi efisiensi operasional dan monetisasi ekosistem yang dijalankan sejak 2022 akhirnya membuahkan hasil konkret dan berkelanjutan.</p>
+
+    <!-- CHART 1: Revenue Bar -->
+    <div class="chart-block">
+      <div class="chart-title">Pendapatan Bersih Tahunan (Triliun IDR) · 2022–2025</div>
+      <canvas id="revenueChart"></canvas>
+    </div>
+
+    <!-- CHART 2: Profit Journey Bar -->
+    <div class="chart-block">
+      <div class="chart-title">Perjalanan Menuju Profitabilitas — Laba/(Rugi) Bersih (Triliun IDR)</div>
+      <canvas id="profitChart"></canvas>
+      <p style="font-size:0.74rem;color:var(--text-faint);margin-top:10px;margin-bottom:0;">* 2023 mencakup penurunan nilai non-kas (impairment) ~Rp 80 T terkait restrukturisasi Tokopedia. Q1-2026 disetahunkan untuk perbandingan skala.</p>
+    </div>
+
+    <h3>Tabel Kinerja Keuangan Historis</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Tahun</th>
+          <th>Pendapatan Bersih</th>
+          <th>Laba/(Rugi) Bersih</th>
+          <th>Total Aset</th>
+          <th>Total Ekuitas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>2022 (est.)</td><td>Rp 4,50 T</td><td>−Rp 40,4 T</td><td>n/a</td><td>n/a</td></tr>
+        <tr><td>2023</td><td>Rp 15,9 T (est.)</td><td>−Rp 90,4 T *</td><td>n/a</td><td>n/a</td></tr>
+        <tr><td>2024</td><td>Rp 19,38 T</td><td>−Rp 5,15 T</td><td>~Rp 50,6 T (est.)</td><td>n/a</td></tr>
+        <tr class="highlight"><td>2025</td><td>Rp 18,32 T</td><td>−Rp 1,63 T</td><td>Rp 43,74 T</td><td>Rp 29,78 T</td></tr>
+        <tr class="highlight"><td>Q1-2026</td><td>n/a</td><td><strong>+Rp 170,7 M 🎉</strong></td><td>n/a</td><td>n/a</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Rasio Valuasi &amp; Fundamental (Harga Rp 50 per lembar, per 18 Mei 2026)</h3>
+    <table>
+      <thead>
+        <tr><th>Rasio</th><th>Nilai</th><th>Keterangan</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>PER (Trailing, 2025)</td><td>N/A</td><td>Masih rugi di 2025; Q1-2026 baru pertama kali laba</td></tr>
+        <tr><td>PBV</td><td>1,78×</td><td>Harga Rp 50 ÷ Book Value Rp 28,08/lembar (ekuitas 2025)</td></tr>
+        <tr><td>DER</td><td>0,47×</td><td>Liabilitas Rp 13,97 T ÷ Ekuitas Rp 29,78 T (2025)</td></tr>
+        <tr><td>ROE</td><td>−5,48%</td><td>Berbasis rugi bersih 2025; membaik pesat dari tahun-tahun sebelumnya</td></tr>
+        <tr><td>Dividend Yield</td><td>0%</td><td>DPS = Rp 0; belum membagikan dividen, fokus pada pertumbuhan</td></tr>
+        <tr><td>Market Cap</td><td>Rp 53,02 T</td><td>Harga Rp 50 × ~1,060 miliar lembar saham beredar</td></tr>
+        <tr><td>EPS 2025</td><td>−Rp 1,54</td><td>Rugi Rp 1,63 T ÷ ~1,06 T lembar saham</td></tr>
+        <tr><td>Book Value/Lembar</td><td>Rp 28,08</td><td>Ekuitas Rp 29,78 T ÷ ~1,06 T lembar (2025)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 4: STRUKTUR KEPEMILIKAN & SEGMEN -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 6l4 4 4-4"/></svg></span>
+    🏛️ Struktur Kepemilikan &amp; Segmen Bisnis
+  </h2>
+  <div class="section-body">
+    <p>Struktur kepemilikan GoTo mencerminkan kombinasi menarik antara investor institusional global, pendiri lokal, dan kini negara melalui BPI Danantara. <strong>SoftBank Vision Fund</strong> (melalui SVF GT Subco PTE Ltd, Singapura) merupakan pemegang saham terbesar dengan 7,58%, diikuti oleh <strong>Alibaba Group</strong> (melalui Taobao China Holding Ltd, Hong Kong) dengan 7,37%. Para pendiri perusahaan — termasuk Andre Soelistyo, William Tanuwijaya, Kevin Aluwi, dan Melissa Siska Juminto — mempertahankan pengaruh strategis melalui kepemilikan saham Seri B dengan hak suara lebih, meskipun porsi ekonomi mereka terus menyusut. Pada Mei 2026, <strong>BPI Danantara</strong> (badan pengelola investasi negara) masuk sebagai pemegang saham baru dengan kepemilikan di bawah 1% — langkah sarat signifikansi politik, dengan tujuan mendorong kesejahteraan mitra pengemudi ojek online dan memiliki pengaruh pada kebijakan perusahaan. Mayoritas saham (~78%) dipegang oleh publik.</p>
+
+    <p>Di sisi segmen bisnis, pasca-dekonsolidasi Tokopedia per Februari 2024, GOTO Group kini beroperasi di dua pilar utama. <strong>Layanan On-Demand (Gojek)</strong> berkontribusi sekitar 63% dari total pendapatan dan mencakup ride-hailing, food delivery, kurir, serta pendapatan iklan platform. <strong>GoTo Financial</strong> menyumbang sekitar 37% pendapatan dari GoPay, GoPayLater, dan layanan keuangan terintegrasi lainnya. Kedua segmen ini memiliki EBITDA guidance masing-masing Rp 1,7–1,8 triliun dan Rp 1,4–1,5 triliun untuk 2025.</p>
+
+    <div class="chart-row">
+      <div class="chart-block" style="margin:0;">
+        <div class="chart-title">Kepemilikan Saham (per Mei 2026)</div>
+        <canvas id="ownershipChart"></canvas>
+      </div>
+      <div class="chart-block" style="margin:0;">
+        <div class="chart-title">Kontribusi Segmen — Pendapatan 2025 (est.)</div>
+        <canvas id="segmentChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 5: BERITA & PERKEMBANGAN TERKINI -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 6l4 4 4-4"/></svg></span>
+    📰 Berita &amp; Perkembangan Terkini
+  </h2>
+  <div class="section-body">
+
+    <div class="news-item">
+      <div class="news-date">Mei 2026</div>
+      <div class="news-title">GoTo Cetak Laba Bersih Perdana Rp 170,7 Miliar di Q1-2026</div>
+      <div class="news-desc">Melampaui ekspektasi, PT GoTo Gojek Tokopedia Tbk mengumumkan laba bersih positif untuk pertama kalinya dalam sejarah perusahaan pada kuartal pertama 2026. Pencapaian senilai Rp 170,7 miliar ini merupakan pembalikan total dari rugi bersih Rp 366,5 miliar di periode yang sama tahun sebelumnya. Efisiensi operasional yang konsisten, monetisasi ekosistem GoPay, dan pertumbuhan GoFood menjadi katalis utama. Saham GOTO sempat melonjak di hari pengumuman sebelum kembali tertekan oleh aliran keluar dana asing dan tersangkut di level harga Rp 50.</div>
+      <span class="badge badge-green">Tonggak Sejarah</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">5–11 Mei 2026</div>
+      <div class="news-title">Danantara Resmi Masuk sebagai Pemegang Saham GOTO</div>
+      <div class="news-desc">Badan Pengelola Investasi (BPI) Danantara secara resmi mengakuisisi saham GOTO di bawah porsi 1% pada awal Mei 2026. CEO BPI Danantara Rosan Roeslani menegaskan langkah ini adalah bagian dari strategi pemerintah untuk memengaruhi kebijakan perusahaan terkait kesejahteraan mitra pengemudi ojol, termasuk potensi penurunan komisi. Danantara menyatakan akan terus menambah kepemilikan secara bertahap sesuai rencana jangka panjang, sambil menegaskan bahwa investasi didasarkan pada fundamental GoTo yang semakin solid.</div>
+      <span class="badge badge-blue">Aksi Korporasi</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">April–Mei 2026</div>
+      <div class="news-title">Regulasi Baru Ojol Bayangi Margin Gojek</div>
+      <div class="news-desc">Pemerintah Indonesia tengah memfinalisasi regulasi baru terkait pembatasan komisi yang dapat diambil platform dari mitra pengemudi ojek online. Wacana ini menciptakan ketidakpastian bagi segmen on-demand Gojek. Analis memperkirakan bahwa jika komisi dipangkas dari ~20% ke 15%, pendapatan segmen tersebut bisa terkoreksi Rp 800 miliar–Rp 1 triliun per tahun. Manajemen GoTo menyatakan kesiapan untuk berdialog dengan pemerintah guna menemukan solusi yang menguntungkan semua pihak, termasuk mitra pengemudi, konsumen, dan investor.</div>
+      <span class="badge badge-amber">Risiko Regulasi</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">Maret 2026</div>
+      <div class="news-title">GOTO Annual Public Expose 2026: Roadmap Profitabilitas Berkelanjutan</div>
+      <div class="news-desc">Dalam Public Expose Tahunan 2026, manajemen GoTo memaparkan peta jalan profitabilitas jangka panjang. Perusahaan menargetkan adjusted EBITDA positif secara keseluruhan di 2026 dengan berfokus pada pertumbuhan GTV (Gross Transaction Value), ekspansi GoTo Financial ke segmen UMKM, dan penerapan AI untuk efisiensi operasional. CEO Patrick Walujo menegaskan komitmen untuk tidak kembali ke model "bakar uang" dan memprioritaskan pertumbuhan yang disertai profitabilitas nyata — sebuah pergeseran fundamental dari era startup GoTo sebelumnya.</div>
+      <span class="badge badge-accent">Strategi Korporasi</span>
+    </div>
+
+  </div>
+
+  <!-- SECTION 6: RISIKO & PELUANG -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 6l4 4 4-4"/></svg></span>
+    ⚖️ Risiko &amp; Peluang
+  </h2>
+  <div class="section-body">
+
+    <h3>Risiko Utama</h3>
+
+    <p><strong>Risiko Regulasi Ojol — Tinggi.</strong> Tekanan pemerintah untuk mengatur komisi platform ojek online merupakan ancaman paling konkret saat ini. Jika regulasi mewajibkan penurunan komisi pengemudi dari ~20% ke level yang lebih rendah, margin segmen on-demand Gojek — yang baru saja mulai sehat — bisa tergerus signifikan. Masuknya Danantara sebagai pemegang saham menciptakan konflik kepentingan potensial antara agenda sosial pemerintah dan kepentingan pemegang saham komersial.
+    <span class="badge badge-red">Risiko Tinggi</span></p>
+
+    <p><strong>Persaingan Platform Digital — Sedang-Tinggi.</strong> GoTo menghadapi kompetisi intens dari Grab di ride-hailing dan food delivery, ShopeeFood di segmen makanan, serta OVO dan Dana di dompet digital. Munculnya neobank dan produk BNPL berbasis AI mengancam proposisi nilai GoPayLater. Meskipun GoTo memiliki keunggulan ekosistem terintegrasi, biaya untuk mempertahankan posisi pasar tetap substansial.
+    <span class="badge badge-amber">Risiko Sedang-Tinggi</span></p>
+
+    <p><strong>Struktur Tata Kelola Dual-Class Share — Sedang.</strong> Pendiri GOTO memegang saham Seri B dengan hak suara lebih tinggi, yang secara efektif membatasi pengaruh pemegang saham publik. Dalam situasi di mana kepentingan pendiri berbeda dari kepentingan investor publik — misalnya dalam keputusan besar terkait M&amp;A atau penetapan kompensasi — tata kelola ini menjadi persoalan.
+    <span class="badge badge-amber">Risiko Sedang</span></p>
+
+    <p><strong>Tekanan Makro &amp; Sentimen Pasar — Sedang.</strong> Saham GOTO tersangkut di level Rp 50 (batas bawah harga saham IDX) dengan 52-week range Rp 50–Rp 87, mencerminkan sentimen pasar yang masih cautious. Aliran keluar dana asing dari pasar modal Indonesia menekan valuasi emiten teknologi growth secara keseluruhan.
+    <span class="badge badge-amber">Risiko Sedang</span></p>
+
+    <h3>Peluang Utama</h3>
+
+    <p><strong>Penetrasi Layanan Keuangan Digital — Sangat Besar.</strong> Indonesia dengan ~280 juta penduduk masih memiliki tingkat unbanked dan underbanked yang tinggi. GoTo Financial, melalui GoPay, GoPayLater, dan sinergi dengan Bank Jago, berada di posisi ideal menjangkau segmen ini. Pertumbuhan kredit digital, asuransi mikro berbasis perilaku transaksi, dan investasi ritel melalui platform menawarkan runway pertumbuhan yang sangat lebar.
+    <span class="badge badge-green">Peluang Sangat Besar</span></p>
+
+    <p><strong>Monetisasi Data &amp; Kecerdasan Buatan — Besar.</strong> GoTo memiliki salah satu dataset terbesar tentang perilaku konsumen Indonesia yang dikumpulkan selama satu dekade. Penerapan AI untuk personalisasi iklan, manajemen risiko kredit GoPayLater, dan optimisasi rute Gojek berpotensi meningkatkan margin secara material tanpa penambahan biaya yang proporsional.
+    <span class="badge badge-green">Peluang Besar</span></p>
+
+    <p><strong>Ekspansi Regional Asia Tenggara — Sedang.</strong> Seiring kondisi keuangan yang membaik, GoTo dapat meningkatkan investasi di Vietnam, Singapura, dan Thailand — pasar yang masih memiliki pertumbuhan ekonomi digital pesat. Jaringan mitra pengemudi dan infrastruktur GoPay dapat direplikasi dengan biaya marjinal yang semakin rendah.
+    <span class="badge badge-accent">Peluang Sedang</span></p>
+
+    <p><strong>Sinergi TikTok Shop &amp; Ekosistem ByteDance — Sedang.</strong> Meski Tokopedia didekonsolidasikan, GoTo masih memegang 24,99% kepemilikan dan mendapat manfaat dari pertumbuhan TikTok Shop yang pesat di Indonesia. Sinergi antara konten viral TikTok, infrastruktur logistik Gojek, dan pembayaran GoPay menciptakan proposisi unik yang sulit ditiru pesaing.
+    <span class="badge badge-accent">Peluang Sedang</span></p>
+
+  </div>
+
+  <!-- SECTION 7: ESG & KEBERLANJUTAN -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 6l4 4 4-4"/></svg></span>
+    🌱 ESG &amp; Keberlanjutan
+  </h2>
+  <div class="section-body">
+    <p>GoTo Group telah menerbitkan lima Laporan Keberlanjutan (Sustainability Report) sejak 2020, mencerminkan komitmen serius terhadap agenda ESG yang dimulai jauh sebelum kewajiban regulasi. Pada Oktober 2024, S&amp;P Global memberikan skor ESG <strong>44 dari 100</strong> kepada GoTo — dengan nilai tertinggi di kategori lingkungan di antara semua dimensi ESG. Yang lebih signifikan, GoTo telah mendapatkan verifikasi dari <strong>Science-Based Targets Initiative (SBTi)</strong> — standar tertinggi dalam memvalidasi bahwa target net-zero perusahaan secara ilmiah kredibel dan dapat diverifikasi.</p>
+
+    <p>Strategi ESG GoTo dirangkum dalam komitmen <strong>"Tiga Nol (Three Zeros)"</strong> — Zero Emissions, Zero Waste, dan Zero Barriers — yang ditargetkan tercapai pada 2030. Dari sisi lingkungan, setidaknya 90% emisi GoTo bersumber dari mobilitas pengemudi dan pengiriman barang di platform. GoTo mencatat total emisi karbon sebesar 872.632,56 tCO₂e pada 2023, turun 11% dari 2022 berkat optimisasi algoritma rute Gojek. Program elektrifikasi armada Gojek berhasil mendistribusikan 5.000 unit kendaraan listrik roda dua kepada mitra pengemudi — target yang bahkan tercapai lebih awal dari jadwal pada Agustus 2024.</p>
+
+    <!-- ESG BARS -->
+    <div style="margin:1.4em 0;">
+      <div class="esg-row">
+        <div class="esg-label-row">
+          <span class="esg-label">🌿 Lingkungan (Environmental)</span>
+          <span class="esg-score" style="color:#3d9e71;">58 / 100</span>
+        </div>
+        <div class="esg-bar-bg">
+          <div class="esg-bar-fill" style="width:58%;background:#3d9e71;"></div>
+        </div>
+        <div class="esg-sub">Terbaik dalam kategori ESG GoTo; SBTi verified; 5.000 unit EV tercapai lebih awal; emisi turun 11% YoY (2023 vs 2022). Risiko utama: scope 3 emissions dari jaringan mitra pengemudi.</div>
+      </div>
+
+      <div class="esg-row">
+        <div class="esg-label-row">
+          <span class="esg-label">🤝 Sosial (Social)</span>
+          <span class="esg-score" style="color:#e5a53a;">40 / 100</span>
+        </div>
+        <div class="esg-bar-bg">
+          <div class="esg-bar-fill" style="width:40%;background:#e5a53a;"></div>
+        </div>
+        <div class="esg-sub">Program pemberdayaan >2,5 juta mitra pengemudi; GoTo Pahlawan (pelatihan digital UMKM); Zero Barriers untuk inklusi penyandang disabilitas. Isu komisi ojol masih menjadi tekanan sosial utama di 2026.</div>
+      </div>
+
+      <div class="esg-row">
+        <div class="esg-label-row">
+          <span class="esg-label">🏛️ Tata Kelola (Governance)</span>
+          <span class="esg-score" style="color:#50a5dc;">38 / 100</span>
+        </div>
+        <div class="esg-bar-bg">
+          <div class="esg-bar-fill" style="width:38%;background:#50a5dc;"></div>
+        </div>
+        <div class="esg-sub">Dewan Komisaris independen; transparansi pelaporan meningkat. Tantangan: struktur dual-class share mengurangi hak suara publik; masuknya Danantara menambah kompleksitas governance.</div>
+      </div>
+    </div>
+
+    <p>Dalam dimensi sosial, GoTo menjalankan program <strong>GoTo Pahlawan</strong> yang melatih ratusan ribu pelaku UMKM dalam literasi digital dan pemasaran online — selaras dengan misi Zero Barriers untuk menghilangkan hambatan partisipasi ekonomi digital. Program aksesibilitas di aplikasi Gojek juga terus diperluas untuk memastikan layanan dapat diakses oleh pengguna difabel. Meski demikian, ketegangan antara tujuan profitabilitas korporasi dan kesejahteraan mitra pengemudi tetap menjadi isu sosial paling kompleks dan paling menentukan bagi masa depan GoTo di 2026 dan seterusnya.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>Disclaimer:</strong> Profil ini disusun untuk tujuan informasi dan edukasi semata, bukan merupakan rekomendasi investasi. Data keuangan bersumber dari laporan publik, pengumuman perusahaan, dan platform keuangan terpercaya. Harga saham per 6 Mei 2026 (harga terakhir diketahui, est.); angka bertanda (est.) merupakan estimasi wajar berdasarkan data yang tersedia. Angka keuangan dinyatakan dalam Rupiah Indonesia (IDR). Lakukan riset mandiri sebelum mengambil keputusan investasi.</p>
+    <div class="sources">
+      <a href="https://market.bisnis.com/read/20260429/192/1970094/beda-nasib-kinerja-emiten-teknologi-goto-vs-buka-kuartal-i2026">Bisnis.com — GOTO Q1 2026</a>
+      <a href="https://stockanalysis.com/quote/idx/GOTO/financials/">StockAnalysis GOTO</a>
+      <a href="https://www.investing.com/equities/goto-gojek-tokopedia-pt-financial-summary">Investing.com</a>
+      <a href="https://katadata.co.id/finansial/korporasi/69f9950ad3008/pemerintah-akuisisi-goto-lewat-danantara-porsi-saham-ditingkatkan-bertahap">Katadata — Danantara</a>
+      <a href="https://www.asatunews.co.id/danantara-resmi-akuisisi-saham-goto-demi-kesejahteraan-mitra-pengemudi">AsatuNews — Danantara</a>
+      <a href="https://databoks.katadata.co.id/en/market/statistics/691290e32d201/goto-shareholder-composition-early-november-2025">Databoks — Pemegang Saham</a>
+      <a href="https://market.bisnis.com/read/20240502/192/1762384/goto-catat-capaian-komitmen-esg-lewat-laporan-keberlanjutan-ke-empat">Bisnis.com — ESG</a>
+      <a href="https://www.gotocompany.com/our-commitments">GoTo Commitments</a>
+      <a href="https://www.liputan6.com/saham/read/6330127/intip-saham-goto-hari-ini-6-mei-2026">Liputan6 — Harga GOTO</a>
+      <a href="https://insiderindonesia.com/detail/1446447/rekomendasi-saham-teknologi-kuartal-i-2026-goto-cetak-hasil-perdana">InsiderIndonesia</a>
+    </div>
+    <p style="margin-top:1em;">IDX Profile Series | Teknologi &amp; Ekonomi Digital | 18 Mei 2026 | <a href="https://xedixermawan.github.io">xedixermawan.github.io</a></p>
+  </footer>
+
+</div><!-- end #page-wrapper -->
+
+<script>
+// ========================
+// CHART.JS DEFAULTS
+// ========================
+Chart.defaults.color = '#706f6f';
+Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+Chart.defaults.font.size = 12;
+
+const gridColor = 'rgba(0,0,0,0.07)';
+
+// ========================
+// CHART 1: REVENUE BAR
+// ========================
+(function(){
+  const ctx = document.getElementById('revenueChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['2022 (est.)', '2023 (est.)', '2024', '2025'],
+      datasets: [{
+        label: 'Pendapatan Bersih (Triliun IDR)',
+        data: [4.5, 15.9, 19.38, 18.32],
+        backgroundColor: [
+          'rgba(127,109,242,0.45)',
+          'rgba(127,109,242,0.58)',
+          'rgba(127,109,242,0.78)',
+          'rgba(127,109,242,1)'
+        ],
+        borderColor: '#7f6df2',
+        borderWidth: 1.5,
+        borderRadius: 5,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (c) => ` Rp ${c.raw} T`
+          }
+        }
+      },
+      scales: {
+        x: { grid: { color: gridColor } },
+        y: {
+          grid: { color: gridColor },
+          ticks: { callback: (v) => 'Rp ' + v + ' T' }
+        }
+      }
+    }
+  });
+})();
+
+// ========================
+// CHART 2: PROFIT/LOSS JOURNEY
+// ========================
+(function(){
+  const ctx = document.getElementById('profitChart').getContext('2d');
+  const data = [-40.4, -90.4, -5.15, -1.63, 0.68];
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['2022*', '2023* (impairment)', '2024', '2025', 'Q1-2026 (ann.)'],
+      datasets: [{
+        label: 'Laba/(Rugi) Bersih (Triliun IDR)',
+        data: data,
+        backgroundColor: data.map(v => v < 0 ? 'rgba(192,57,43,0.65)' : 'rgba(61,158,113,0.85)'),
+        borderColor: data.map(v => v < 0 ? '#c0392b' : '#3d9e71'),
+        borderWidth: 1.5,
+        borderRadius: 4,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (c) => {
+              const v = c.raw;
+              return v < 0 ? ` Rugi Rp ${Math.abs(v)} T` : ` Laba Rp ${v} T`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: { grid: { color: gridColor } },
+        y: {
+          grid: { color: gridColor },
+          ticks: { callback: (v) => 'Rp ' + v + ' T' }
+        }
+      }
+    }
+  });
+})();
+
+// ========================
+// CHART 3: OWNERSHIP DONUT
+// ========================
+(function(){
+  const ctx = document.getElementById('ownershipChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Publik', 'SoftBank (SVF GT)', 'Alibaba (Taobao)', 'Pendiri & Mgmt', 'BPI Danantara'],
+      datasets: [{
+        data: [78.05, 7.58, 7.37, 6.5, 0.5],
+        backgroundColor: ['#e9eaec','#7f6df2','#50a5dc','#3d9e71','#e5a53a'],
+        borderColor: '#ffffff',
+        borderWidth: 2,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      cutout: '60%',
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { font: { size: 10 }, boxWidth: 11, padding: 7 }
+        },
+        tooltip: {
+          callbacks: {
+            label: (c) => ` ${c.label}: ${c.raw}%`
+          }
+        }
+      }
+    }
+  });
+})();
+
+// ========================
+// CHART 4: SEGMENT HORIZONTAL BAR
+// ========================
+(function(){
+  const ctx = document.getElementById('segmentChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['On-Demand (Gojek)', 'GoTo Financial'],
+      datasets: [{
+        label: 'Pendapatan 2025 (Triliun IDR, est.)',
+        data: [11.5, 6.8],
+        backgroundColor: ['rgba(127,109,242,0.8)', 'rgba(61,158,113,0.8)'],
+        borderColor: ['#7f6df2','#3d9e71'],
+        borderWidth: 1.5,
+        borderRadius: 5,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (c) => ` Rp ${c.raw} T (est.)`
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: gridColor },
+          ticks: { callback: (v) => 'Rp ' + v + ' T' }
+        },
+        y: { grid: { display: false } }
+      }
+    }
+  });
+})();
+
+// ========================
+// TOGGLE SECTION
+// ========================
+function toggleSection(h2el) {
+  h2el.classList.toggle('collapsed');
+}
+</script>
+</body>
+</html>

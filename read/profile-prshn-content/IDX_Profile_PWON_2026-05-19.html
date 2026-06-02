@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PWON — PT Pakuwon Jati Tbk | IDX Profile</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root {
+  --background-primary:        #ffffff;
+  --background-secondary:      #f2f3f5;
+  --background-secondary-alt:  #e9eaec;
+  --background-modifier-border:#ddd;
+  --background-modifier-hover: rgba(0,0,0,0.05);
+  --text-normal:     #2e3338;
+  --text-muted:      #706f6f;
+  --text-faint:      #999999;
+  --text-on-accent:  #ffffff;
+  --text-accent:     #7f6df2;
+  --text-accent-hover: #5d4ff0;
+  --interactive-accent: #7f6df2;
+  --line-width: 42em;
+  --font-text-size: 16px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--background-primary);
+  color: var(--text-normal);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+  font-size: var(--font-text-size);
+  line-height: 1.7;
+}
+
+/* TOP NAV */
+.site-nav {
+  background: var(--background-secondary);
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding: 8px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.site-nav-inner {
+  max-width: var(--line-width);
+  margin: 0 auto;
+  padding: 0 2em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.site-nav a {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.site-nav a:hover { color: var(--text-accent); }
+
+#page-wrapper {
+  max-width: var(--line-width);
+  margin: 0 auto;
+  padding: 3em 2em 8em;
+}
+
+/* HEADER */
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-normal);
+  margin-bottom: 0.3em;
+  line-height: 1.2;
+}
+.ticker-badge {
+  display: inline-block;
+  background: var(--text-accent);
+  color: var(--text-on-accent);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.page-meta {
+  font-size: 0.82rem;
+  color: var(--text-faint);
+  margin-bottom: 0.5em;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.price-tag {
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-weight: 700;
+  color: var(--text-normal);
+}
+
+/* DIVIDER */
+hr {
+  border: none;
+  border-top: 1px solid var(--background-modifier-border);
+  margin: 1.8em 0;
+}
+
+/* HEADINGS */
+h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-normal);
+  margin: 1.8em 0 0.6em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+h2:hover { color: var(--text-accent); }
+h2 .collapse-icon {
+  width: 15px; height: 15px;
+  flex-shrink: 0;
+  opacity: 0.35;
+  transition: transform 0.2s;
+  color: var(--text-muted);
+}
+h2 .collapse-icon svg { width: 100%; height: 100%; }
+h2.collapsed .collapse-icon { transform: rotate(-90deg); }
+h2.collapsed + .section-body { display: none; }
+
+h3 {
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--text-normal);
+  margin: 1.2em 0 0.4em;
+}
+
+/* TEXT */
+p { margin-bottom: 0.85em; color: var(--text-normal); }
+strong { color: var(--text-normal); font-weight: 700; }
+a { color: var(--text-accent); text-decoration: none; }
+a:hover { text-decoration: underline; color: var(--text-accent-hover); }
+
+/* KPI GRID */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 1em 0 1.5em;
+}
+@media (max-width: 700px) { .kpi-grid { grid-template-columns: repeat(2,1fr); } }
+
+/* CALLOUT / KPI CARD */
+.callout {
+  background: var(--background-secondary);
+  border-left: 3px solid var(--text-accent);
+  border-radius: 0 6px 6px 0;
+  padding: 12px 16px;
+  margin: 0;
+}
+.callout-title {
+  font-size: 0.73rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-accent);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.callout-value {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-normal);
+}
+.callout-sub { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+.callout-up   { border-left-color: #3d9e71; }
+.callout-up   .callout-title { color: #3d9e71; }
+.callout-down { border-left-color: #c0392b; }
+.callout-down .callout-title { color: #c0392b; }
+
+/* TABLE */
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 1em 0; }
+thead tr { background: var(--background-secondary); }
+th {
+  padding: 9px 12px;
+  text-align: left;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-accent);
+  font-weight: 700;
+  border-bottom: 2px solid var(--background-modifier-border);
+}
+td { padding: 9px 12px; border-bottom: 1px solid var(--background-modifier-border); color: var(--text-normal); }
+tr:hover td { background: var(--background-modifier-hover); }
+tr.highlight td { font-weight: 700; }
+tr.highlight td:first-child { color: var(--text-accent); }
+
+/* CHART BLOCK */
+.chart-block {
+  background: var(--background-secondary);
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin: 1.2em 0;
+  border: 1px solid var(--background-modifier-border);
+}
+.chart-block .chart-title {
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: var(--text-faint);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.chart-block canvas { max-height: 260px; }
+
+/* NEWS ITEM */
+.news-item {
+  border-left: 2px solid var(--background-modifier-border);
+  padding: 10px 14px;
+  margin: 10px 0;
+  transition: border-left-color 0.15s;
+}
+.news-item:hover { border-left-color: var(--text-accent); background: var(--background-modifier-hover); border-radius: 0 4px 4px 0; }
+.news-date { font-size: 0.73rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.5px; }
+.news-title { font-weight: 600; color: var(--text-normal); font-size: 0.92rem; margin: 3px 0; }
+.news-desc { font-size: 0.81rem; color: var(--text-muted); }
+
+/* BADGE */
+.badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+.badge-green  { background: #d4edda; color: #2d6a4f; }
+.badge-red    { background: #fde8e8; color: #922b21; }
+.badge-amber  { background: #fef3cd; color: #7d5a00; }
+.badge-accent { background: #ede9fe; color: var(--text-accent); }
+.badge-blue   { background: #dbeafe; color: #1e40af; }
+
+/* ESG BARS */
+.esg-row { margin: 14px 0; }
+.esg-label-row { display: flex; justify-content: space-between; margin-bottom: 5px; }
+.esg-label { font-size: 0.86rem; font-weight: 600; color: var(--text-normal); }
+.esg-score { font-size: 0.86rem; font-weight: 700; }
+.esg-bar-bg { height: 7px; background: var(--background-secondary-alt); border-radius: 4px; overflow: hidden; }
+.esg-bar-fill { height: 100%; border-radius: 4px; }
+.esg-sub { font-size: 0.75rem; color: var(--text-faint); margin-top: 4px; }
+
+/* FOOTER */
+footer {
+  margin-top: 4em;
+  padding-top: 1.5em;
+  border-top: 1px solid var(--background-modifier-border);
+  font-size: 0.76rem;
+  color: var(--text-faint);
+  line-height: 1.6;
+}
+.sources { margin-top: 0.8em; display: flex; flex-wrap: wrap; gap: 6px; }
+.sources a {
+  color: var(--text-muted);
+  background: var(--background-secondary);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--background-modifier-border);
+  font-size: 0.72rem;
+}
+.sources a:hover { color: var(--text-accent); }
+
+/* TWO CHARTS SIDE BY SIDE */
+.chart-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 1.2em 0;
+}
+@media (max-width: 650px) { .chart-row { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <svg width="14" height="14" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 2L3.5 5L6.5 8"/></svg>
+    <a href="https://xedixermawan.github.io">xedixermawan.github.io</a>
+  </div>
+</nav>
+
+<div id="page-wrapper">
+
+  <!-- HEADER -->
+  <h1 class="page-title">
+    PT Pakuwon Jati Tbk
+    <span class="ticker-badge">PWON</span>
+  </h1>
+  <div class="page-meta">
+    <span>📅 19 Mei 2026</span>
+    <span>🏗️ Properti &amp; Real Estate</span>
+    <span>🏦 IDX: PWON</span>
+    <span class="price-tag">💹 Harga: Rp 304 (per 19 Mei 2026)</span>
+  </div>
+  <p style="font-size:0.83rem; color:var(--text-faint); margin-bottom:0.3em;">
+    Pengembang properti terdiversifikasi dengan model superblock terkuat di Indonesia — dari Tunjungan Plaza hingga Kota Kasablanka.
+  </p>
+
+  <hr>
+
+  <!-- KPI GRID -->
+  <div class="kpi-grid">
+    <div class="callout callout-up">
+      <div class="callout-title">Kapitalisasi Pasar</div>
+      <div class="callout-value">Rp 14,64 T</div>
+      <div class="callout-sub">@ Rp 304/saham × 48,16 miliar lembar</div>
+    </div>
+    <div class="callout">
+      <div class="callout-title">Pendapatan FY2025</div>
+      <div class="callout-value">Rp 7,11 T</div>
+      <div class="callout-sub">+6,6% YoY dari Rp 6,67 T (2024)</div>
+    </div>
+    <div class="callout callout-up">
+      <div class="callout-title">Laba Bersih FY2025</div>
+      <div class="callout-value">Rp 2,34 T</div>
+      <div class="callout-sub">+13,0% YoY (attributable to parent)</div>
+    </div>
+    <div class="callout">
+      <div class="callout-title">Dividen per Saham</div>
+      <div class="callout-value">Rp 13</div>
+      <div class="callout-sub">FY2024 · yield 4,3% · dibayar Jul 2025</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION 1: PROFIL SINGKAT -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4L5 7L8 4"/></svg></span>
+    🏢 Profil Singkat
+  </h2>
+  <div class="section-body">
+    <p>PT Pakuwon Jati Tbk adalah salah satu pengembang properti terbesar dan paling terdiversifikasi di Indonesia. Perusahaan ini berdiri pada tahun 1982 dan memulai operasi komersialnya pada Mei 1986 dengan pembukaan Tunjungan Plaza I — pusat perbelanjaan modern pertama di Surabaya yang sekaligus menjadi tonggak awal era ritel modern di Indonesia timur. Tiga tahun berselang, tepatnya pada 9 Oktober 1989, Pakuwon Jati mencatatkan sahamnya di Bursa Efek Jakarta (kini BEI) menjadi perusahaan properti pertama yang melakukannya.</p>
+    <p>Selama lebih dari empat dekade, Pakuwon Jati telah bertransformasi dari sebuah pengembang lokal Surabaya menjadi kekuatan nasional dengan jejak properti yang terentang dari Surabaya, Jakarta, hingga kini mulai merambah Semarang dan Ibu Kota Nusantara (IKN). Kode saham <strong>PWON</strong> kini identik dengan model bisnis superblock — kawasan terpadu yang menggabungkan mal, apartemen, perkantoran, dan hotel dalam satu kompleks — yang menjadi DNA kompetitif paling diandalkan perseroan.</p>
+    <p>Pemegang kendali utama adalah <strong>PT Pakuwon Arthaniaga</strong> yang menguasai 68,68% saham, dengan <em>ultimate beneficial owner</em> Alexander Tedja. Publik memegang 31,28% sisanya, menjadikan PWON salah satu saham properti dengan free float yang cukup likuid di BEI.</p>
+
+    <table>
+      <thead><tr><th>Atribut</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td>Nama Resmi</td><td>PT Pakuwon Jati Tbk</td></tr>
+        <tr><td>Kode Saham</td><td>PWON (IDX)</td></tr>
+        <tr><td>Didirikan</td><td>1982 (operasi komersial: Mei 1986)</td></tr>
+        <tr><td>IPO</td><td>9 Oktober 1989</td></tr>
+        <tr><td>Kantor Pusat</td><td>Surabaya (operasional juga di Jakarta)</td></tr>
+        <tr><td>Sektor / Industri</td><td>Properti &amp; Real Estate (mixed-use)</td></tr>
+        <tr><td>Total Aset (FY2024)</td><td>Rp 35,37 Triliun</td></tr>
+        <tr><td>Total Ekuitas (FY2024)</td><td>Rp 24,74 Triliun</td></tr>
+        <tr><td>Jumlah Saham Beredar</td><td>48.159.602.400 lembar</td></tr>
+        <tr><td>Pemegang Saham Pengendali</td><td>PT Pakuwon Arthaniaga (68,68%)</td></tr>
+        <tr><td>Jumlah Karyawan</td><td>~5.000+ (est.)</td></tr>
+        <tr class="highlight"><td>Harga Saham (19 Mei 2026)</td><td>Rp 304</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 2: MODEL BISNIS -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4L5 7L8 4"/></svg></span>
+    ⚙️ Model Bisnis
+  </h2>
+  <div class="section-body">
+    <p>Pakuwon Jati menjalankan strategi bisnis properti yang paling defensif sekaligus bertumbuh di kelasnya: model <strong>superblock mixed-use</strong>. Alih-alih mengandalkan penjualan hunian tunggal yang bersifat satu kali (one-shot), perseroan membangun ekosistem properti terpadu yang menghasilkan pendapatan dari dua kaki yang saling menopang — <em>recurring revenue</em> dan <em>project revenue</em>.</p>
+
+    <p><strong>Recurring Revenue (pendapatan berulang)</strong> adalah tulang punggung stabilitas bisnis PWON. Segmen ini mencakup pendapatan sewa dari pusat perbelanjaan (mal), perkantoran, dan hotel yang semuanya beroperasi di dalam kompleks superblock. Pada tahun 2024, recurring revenue mencapai Rp 5,19 triliun — setara 77,8% dari total pendapatan — dan tumbuh 11% YoY. Ketahanan segmen ini menjadi tameng yang efektif di tengah siklus perlambatan properti nasional, karena sewa mal dan hotel tidak terpengaruh langsung oleh fluktuasi harga jual hunian.</p>
+
+    <p><strong>Project Revenue (pendapatan proyek)</strong> berasal dari penjualan apartemen dan rumah tapak (landed house). Meski porsinya lebih kecil (~22% dari total revenue 2025), segmen ini menjadi katalis pertumbuhan organik. Saat Pakuwon meluncurkan tower apartemen baru di dalam kompleks superblock yang sudah berjalan, produk tersebut sudah diuntungkan oleh ekosistem yang mature — mal ramai, aksesibilitas terjamin, dan reputasi kawasan yang kuat — sehingga penyerapan unit cenderung lebih cepat.</p>
+
+    <p><strong>Aset superblock utama</strong> perseroan terdiri dari tiga klaster besar: di Surabaya terdapat Tunjungan Plaza, Grand Pakuwon, dan Pakuwon Mall; di Jakarta terdapat Kota Kasablanka dan Gandaria City; dan yang sedang dalam pengembangan adalah Pakuwon Mall Semarang (senilai Rp 5,6 triliun, target operasional 2029) serta superblock di kawasan IKN (konstruksi mulai Maret 2026). Value chain bisnis Pakuwon berjalan dari akuisisi lahan strategis, pengembangan anchor tenant ritel, lalu monetisasi berlapis melalui penjualan unit residensial dan komersial seiring ekosistem kawasan terbentuk.</p>
+
+    <p><strong>Keunggulan kompetitif utama</strong> PWON terletak pada posisi tawar sebagai tuan tanah di lokasi premium yang sulit direplikasi. Mal-mal Pakuwon di Surabaya seperti Tunjungan Plaza sudah beroperasi puluhan tahun dengan tingkat hunian (occupancy) di atas 90%, menciptakan switching cost yang tinggi bagi tenant. Model ini menghasilkan arus kas yang relatif dapat diprediksi, memungkinkan perusahaan membayar dividen secara konsisten bahkan di masa perlambatan.</p>
+  </div>
+
+  <!-- SECTION 3: KINERJA KEUANGAN -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4L5 7L8 4"/></svg></span>
+    📊 Kinerja Keuangan
+  </h2>
+  <div class="section-body">
+    <p>Rekam jejak keuangan Pakuwon Jati dalam tiga tahun terakhir mencerminkan pemulihan yang terstruktur pascapandemi. <strong>Pada 2023</strong>, pendapatan bersih mencapai Rp 6,20 triliun dengan laba bersih konsolidasi Rp 2,38 triliun — fondasi yang solid setelah gangguan operasional mal dan hotel di 2020–2021. <strong>Pada 2024</strong>, pendapatan tumbuh 7,6% menjadi Rp 6,67 triliun, didorong kenaikan recurring revenue yang naik 11% YoY ke Rp 5,19 triliun. Laba bersih konsolidasi sedikit naik menjadi Rp 2,42 triliun, sementara laba yang dapat diatribusikan ke pemilik induk tercatat Rp 2,08 triliun. <strong>Pada 2025</strong>, momentum semakin kuat — pendapatan bersih naik 6,6% ke Rp 7,11 triliun dan laba attributable tumbuh 13,0% menjadi Rp 2,34 triliun (EPS Rp 48,72), menegaskan bahwa ekspansi Pakuwon menghasilkan leverage operasional yang nyata.</p>
+
+    <div class="chart-block">
+      <div class="chart-title">Pendapatan &amp; Laba Bersih — 5 Tahun (Rp Triliun)</div>
+      <canvas id="chartRevenue"></canvas>
+    </div>
+
+    <p>Dari sisi neraca, total aset perseroan per akhir 2024 berdiri kokoh di Rp 35,37 triliun, dengan total ekuitas Rp 24,74 triliun — mencerminkan rasio DER (Debt-to-Equity) yang konservatif sebesar 0,43x. Pertumbuhan aset per September 2025 sudah mencapai Rp 36,07 triliun dengan ekuitas Rp 26,24 triliun, menunjukkan penguatan neraca yang konsisten. Perseroan secara historis menjaga rasio utang di bawah 0,5x, memberikan ruang ekspansi yang memadai tanpa tekanan refinancing berlebih.</p>
+
+    <div class="chart-block">
+      <div class="chart-title">Dividen per Saham (DPS) — Historis (Rp)</div>
+      <canvas id="chartDividen"></canvas>
+    </div>
+
+    <h3>Tabel Rasio Valuasi Kunci</h3>
+    <p>Seluruh rasio di bawah dihitung menggunakan harga saham aktual Rp 304 per 19 Mei 2026:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Rasio</th>
+          <th>Nilai</th>
+          <th>Basis Perhitungan</th>
+          <th>Konteks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="highlight"><td>PER</td><td>6,2x</td><td>Rp 304 ÷ EPS Rp 48,72 (FY2025)</td><td>Murah vs sektor rata-rata 10–15x</td></tr>
+        <tr><td>PBV</td><td>0,59x</td><td>Rp 304 ÷ BVPS Rp 513,7 (FY2024)</td><td>Di bawah nilai buku — diskon signifikan</td></tr>
+        <tr><td>DER</td><td>0,43x</td><td>Liabilitas Rp 10,63T ÷ Ekuitas Rp 24,74T</td><td>Konservatif, risiko utang rendah</td></tr>
+        <tr><td>ROE</td><td>9,5%</td><td>Laba Rp 2,34T ÷ Ekuitas Rp 24,74T</td><td>Stabil, ruang peningkatan ada</td></tr>
+        <tr><td>Dividend Yield</td><td>4,3%</td><td>DPS Rp 13 ÷ Rp 304 × 100%</td><td>Di atas rata-rata deposito</td></tr>
+        <tr><td>Market Cap</td><td>Rp 14,64 T</td><td>Rp 304 × 48,16 miliar saham</td><td>Mid-large cap IDX</td></tr>
+        <tr><td>EV/EBITDA (est.)</td><td>~5,5x</td><td>EBITDA FY2024 Rp 3,58 T (est.)</td><td>Sangat atraktif secara historis</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 4: KEPEMILIKAN & SEGMEN BISNIS -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4L5 7L8 4"/></svg></span>
+    🥧 Struktur Kepemilikan &amp; Segmen Bisnis
+  </h2>
+  <div class="section-body">
+    <p>Pakuwon Jati dikendalikan oleh keluarga Alexander Tedja melalui <strong>PT Pakuwon Arthaniaga</strong> yang memegang 68,68% saham. Struktur ini memberikan kestabilan kepemimpinan jangka panjang, sekaligus mencerminkan komitmen founder terhadap visi ekspansi superblock yang konsisten dieksekusi sejak dekade 1980-an. Publik menguasai 31,28% saham sisanya — sebuah free float yang cukup memadai untuk menjaga likuiditas perdagangan di BEI. Kepemilikan direksi dan komisaris secara individual sangat kecil (di bawah 0,1%), lazim untuk perusahaan dengan pemegang pengendali dominan.</p>
+
+    <div class="chart-row">
+      <div class="chart-block">
+        <div class="chart-title">Struktur Pemegang Saham (%)</div>
+        <canvas id="chartOwnership"></canvas>
+      </div>
+      <div class="chart-block">
+        <div class="chart-title">Komposisi Pendapatan FY2025 (Rp Triliun)</div>
+        <canvas id="chartSegment"></canvas>
+      </div>
+    </div>
+
+    <p>Dari sisi segmentasi pendapatan, <strong>recurring revenue</strong> mendominasi dengan kontribusi ~73% pada FY2025. Segmen ini terdiri dari pendapatan sewa mal (terbesar), hotel, dan perkantoran. Sementara <strong>project revenue</strong> yang berasal dari penjualan apartemen dan rumah tapak menyumbang ~27%. Komposisi ini merupakan kekuatan struktural yang membedakan PWON dari mayoritas pengembang properti Indonesia yang lebih mengandalkan pendapatan proyek yang bersifat siklus.</p>
+
+    <p>Secara geografis, <strong>Surabaya</strong> masih menjadi kontributor pendapatan terbesar — didukung kompleks Tunjungan Plaza, Grand Pakuwon, dan Pakuwon City — namun bobot <strong>Jakarta</strong> terus meningkat seiring matangnya Kota Kasablanka dan Gandaria City. Dalam 3–5 tahun ke depan, pipeline Semarang dan IKN berpotensi menggeser keseimbangan geografis secara bermakna.</p>
+  </div>
+
+  <!-- SECTION 5: BERITA TERKINI -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4L5 7L8 4"/></svg></span>
+    📰 Berita &amp; Perkembangan Terkini
+  </h2>
+  <div class="section-body">
+
+    <div class="news-item">
+      <div class="news-date">Maret 2026</div>
+      <div class="news-title">Konstruksi Superblock Pakuwon di IKN Resmi Dimulai</div>
+      <div class="news-desc">PT Pakuwon Jati memasuki fase konstruksi proyek superblock di Ibu Kota Nusantara pada Maret 2026. Kawasan terpadu ini akan mencakup pusat perbelanjaan dan Hotel Pakuwon Nusantara. Proyek ini merupakan bagian dari strategi diversifikasi geografis perseroan ke kota-kota pertumbuhan baru Indonesia.</div>
+      <span class="badge badge-accent">Ekspansi Strategis</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">Februari 2026</div>
+      <div class="news-title">PWON Siapkan Capex Rp 2,2 Triliun untuk 2026</div>
+      <div class="news-desc">Dalam paparan publik awal 2026, manajemen Pakuwon Jati mengumumkan alokasi belanja modal sebesar Rp 2,2 triliun — dengan 49% diarahkan untuk pengembangan superblock baru dan lanjutan, termasuk perluasan Kota Kasablanka, Pakuwon Mall Surabaya, dan pembangunan superblock Semarang. Target peluncuran apartemen di Kota Kasablanka tahap baru juga masuk dalam pipeline 2026.</div>
+      <span class="badge badge-blue">Capex &amp; Investasi</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">April 2025</div>
+      <div class="news-title">Laba FY2025 Tumbuh 13% — Pendapatan Berulang Jadi Andalan</div>
+      <div class="news-desc">Pakuwon Jati membukukan laba bersih yang dapat diatribusikan ke pemilik induk sebesar Rp 2,34 triliun (EPS Rp 48,72) sepanjang 2025, tumbuh 13,04% YoY. Pendapatan bersih naik 6,6% ke Rp 7,11 triliun, dimotori kenaikan pendapatan kontrak dari pelanggan (recurring) yang mencapai Rp 4,74 triliun atau 66,75% dari total pendapatan.</div>
+      <span class="badge badge-green">Kinerja Keuangan</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">Juni 2025</div>
+      <div class="news-title">PWON Bagikan Dividen Rp 626 Miliar — Naik 45% dari Tahun Lalu</div>
+      <div class="news-desc">RUPS Pakuwon Jati menyetujui pembagian dividen tunai sebesar Rp 13 per saham (total Rp 626 miliar) dari laba tahun buku 2024 — naik 45% dibandingkan dividen tahun sebelumnya. Dengan payout ratio 30%, kebijakan dividen ini mencerminkan kepercayaan diri manajemen terhadap arus kas berulang yang makin kuat. Pembayaran dilakukan pada 30 Juli 2025.</div>
+      <span class="badge badge-green">Dividen</span>
+    </div>
+
+  </div>
+
+  <!-- SECTION 6: RISIKO & PELUANG -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4L5 7L8 4"/></svg></span>
+    ⚖️ Risiko &amp; Peluang
+  </h2>
+  <div class="section-body">
+    <p><strong>Siklus properti yang melambat</strong> masih menjadi risiko utama jangka pendek. Meski recurring revenue PWON memberikan tameng yang kuat, penjualan unit residensial baru bersifat siklus dan sensitif terhadap suku bunga KPR, daya beli konsumen menengah atas, dan sentimen properti nasional. Kenaikan suku bunga acuan yang berkepanjangan dapat menekan penyerapan unit apartemen baru di pipeline IKN maupun Semarang. <span class="badge badge-amber">Risiko Sedang</span></p>
+
+    <p><strong>Konsentrasi proyek di dua kota</strong> (Surabaya dan Jakarta) secara historis membuat perseroan rentan terhadap dinamika ekonomi regional. Meski diversifikasi ke Semarang dan IKN sedang berjalan, proses matangnya sebuah superblock membutuhkan waktu 5–10 tahun — artinya risiko eksekusi proyek baru cukup nyata. Keterlambatan konstruksi atau perizinan di IKN, misalnya, bisa memundurkan target pendapatan dari klaster baru. <span class="badge badge-amber">Risiko Sedang</span></p>
+
+    <p><strong>Persaingan dari pengembang nasional lain</strong> seperti CTRA (Ciputra), BSDE (BSD City), dan SMRA (Summarecon) tetap ketat, terutama di segmen apartemen Jakarta. Namun posisi PWON di Surabaya — di mana perseroan adalah dominant player tanpa pesaing berformat superblock yang setara — memberikan perlindungan kompetitif yang jarang dimiliki pemain lain. <span class="badge badge-green">Risiko Rendah (di Surabaya)</span></p>
+
+    <p><strong>Peluang IKN dan Kota Baru</strong> merupakan katalis jangka panjang yang paling menarik. Pakuwon menjadi salah satu dari sedikit pengembang properti dengan komitmen konkret (groundbreaking 2026) di IKN. Jika ekosistem IKN berkembang sesuai rencana pemerintah, superblock Pakuwon Nusantara berpotensi menjadi anchor ritel dan komersial utama di ibu kota baru — reputasi yang sama dengan yang diraih Tunjungan Plaza di Surabaya lima dekade lalu. <span class="badge badge-green">Peluang Besar</span></p>
+
+    <p><strong>Momentum recurring revenue</strong> yang terus tumbuh double-digit memberikan visibilitas pendapatan yang superior dibanding mayoritas emiten properti. Dengan tingkat hunian mal di atas 90% dan pipeline ekspansi yang konkret, PWON memiliki kapasitas untuk meningkatkan payout ratio dividen secara bertahap — sebuah peluang menarik bagi investor berorientasi yield. <span class="badge badge-accent">Peluang Menarik</span></p>
+  </div>
+
+  <!-- SECTION 7: ESG & KEBERLANJUTAN -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4L5 7L8 4"/></svg></span>
+    🌿 ESG &amp; Keberlanjutan
+  </h2>
+  <div class="section-body">
+    <p>Komitmen ESG Pakuwon Jati memasuki babak baru pada April 2025 ketika perseroan menerbitkan <strong>Laporan Keberlanjutan 2024 yang berdiri sendiri untuk pertama kalinya</strong> — dipisahkan dari laporan tahunan dan disusun mengacu pada standar GRI serta regulasi POJK No. 51/POJK.03/2017 dan SEOJK No. 16/SEOJK.04.2021. Langkah ini mencerminkan peningkatan serius dalam tata kelola pelaporan ESG yang selama ini masih terintegrasi dalam laporan tahunan.</p>
+
+    <p>Dari dimensi <strong>Lingkungan (Environmental)</strong>, PWON menetapkan target reduksi emisi yang ambisius: penurunan absolut emisi Scope 1 dan Scope 2 sebesar 54,6% dan penurunan Scope 3 sebesar 32,5% dari aktivitas terkait bahan bakar dan energi — seluruhnya dengan baseline 2033 sebagai target. Perseroan mulai mengintegrasikan efisiensi energi dalam desain bangunan baru, termasuk sistem pencahayaan LED dan pengelolaan air di kompleks mal.</p>
+
+    <div class="esg-row">
+      <div class="esg-label-row">
+        <span class="esg-label">🌱 Environmental (E)</span>
+        <span class="esg-score" style="color:#3d9e71;">62 / 100</span>
+      </div>
+      <div class="esg-bar-bg"><div class="esg-bar-fill" style="width:62%; background:#3d9e71;"></div></div>
+      <div class="esg-sub">Target reduksi emisi Scope 1&amp;2 sebesar 54,6% pada 2033. Laporan pertama terbit 2025.</div>
+    </div>
+
+    <div class="esg-row">
+      <div class="esg-label-row">
+        <span class="esg-label">👥 Social (S)</span>
+        <span class="esg-score" style="color:#50a5dc;">68 / 100</span>
+      </div>
+      <div class="esg-bar-bg"><div class="esg-bar-fill" style="width:68%; background:#50a5dc;"></div></div>
+      <div class="esg-sub">Program pemberdayaan komunitas sekitar superblock, pelatihan UMKM tenant lokal, dan kesehatan &amp; keselamatan kerja konstruksi.</div>
+    </div>
+
+    <div class="esg-row">
+      <div class="esg-label-row">
+        <span class="esg-label">🏛️ Governance (G)</span>
+        <span class="esg-score" style="color:#7f6df2;">74 / 100</span>
+      </div>
+      <div class="esg-bar-bg"><div class="esg-bar-fill" style="width:74%; background:#7f6df2;"></div></div>
+      <div class="esg-sub">Penghargaan Best Managed Company oleh Deloitte 4 tahun berturut-turut (2024); perusahaan Indonesia pertama capai Gold Standard.</div>
+    </div>
+
+    <p>Dari dimensi <strong>Sosial (Social)</strong>, Pakuwon aktif memberdayakan komunitas di sekitar kawasan superbloknya, termasuk program inkubasi UMKM untuk tenant lokal di mal Surabaya dan program keselamatan kerja di seluruh proyek konstruksi. Sementara dari dimensi <strong>Tata Kelola (Governance)</strong>, pencapaian yang paling menonjol adalah penghargaan <em>Best Managed Company</em> dari Deloitte untuk keempat kalinya berturut-turut pada 2024, sekaligus menjadikan PWON perusahaan Indonesia pertama yang mencapai status Gold Standard — sebuah pengakuan atas keunggulan dalam strategi bisnis, budaya korporat, inovasi, dan kinerja keuangan.</p>
+
+    <p>Skor ESG di atas merupakan estimasi redaksi berdasarkan inisiatif yang dilaporkan secara publik, bukan penilaian agensi rating ESG independen. Investor yang memerlukan skor ESG terverifikasi disarankan merujuk pada MSCI, Sustainalytics, atau laporan keberlanjutan resmi PWON di <a href="https://www.pakuwonjati.com" target="_blank">pakuwonjati.com</a>.</p>
+  </div>
+
+  <!-- SECTION 8: PORTOFOLIO PROYEK -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4L5 7L8 4"/></svg></span>
+    🗺️ Portofolio Proyek
+  </h2>
+  <div class="section-body">
+    <p>Pakuwon Jati mengoperasikan, membangun, dan merencanakan total lebih dari <strong>12 kompleks superblock dan township</strong> yang tersebar di tujuh kota besar Indonesia. Portofolio ini terbagi dalam tiga kategori: properti yang sudah beroperasi penuh dan menghasilkan recurring income, proyek yang sedang dalam tahap konstruksi aktif, serta pipeline yang masih dalam fase perencanaan dan akuisisi lahan.</p>
+
+    <!-- SUB 1: OPERASIONAL -->
+    <h3>✅ Proyek Operasional — Sumber Recurring Income</h3>
+    <p>Tujuh kompleks berikut merupakan tulang punggung pendapatan berulang PWON. Seluruhnya sudah beroperasi dan menghasilkan arus kas dari sewa mal, hotel, dan perkantoran.</p>
+
+    <div style="overflow-x:auto;">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nama Proyek</th>
+          <th>Kota / Lokasi</th>
+          <th>Komponen Utama</th>
+          <th>Luas Lahan / Area</th>
+          <th>NLA / GFA Mal</th>
+          <th>Nilai Est. (Rp)</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><strong>Tunjungan Plaza Superblock</strong></td>
+          <td>Surabaya Pusat</td>
+          <td>Mall TP 1–6, Sheraton Hotel, apartemen, perkantoran</td>
+          <td>~17,5 ha (est.)</td>
+          <td>NLA ~170.000 m²</td>
+          <td>≥ Rp 10 T (est.)</td>
+          <td><span class="badge badge-green">Operasional sejak 1986</span></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>Pakuwon Mall Superblock</strong></td>
+          <td>Surabaya Barat</td>
+          <td>Pakuwon Mall (terluas di Indonesia), apartemen Mansion, hotel, perkantoran Pakuwon Center</td>
+          <td>30 ha</td>
+          <td>NLA ~180.000 m²</td>
+          <td>≥ Rp 8 T (est.)</td>
+          <td><span class="badge badge-green">Operasional; fase lanjutan berjalan</span></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong>Pakuwon City Township</strong></td>
+          <td>Surabaya Timur</td>
+          <td>Township 9-in-1: mal (50.000 m²), apartemen (Educity, Amor, Bella, East Coast), hotel, sekolah</td>
+          <td>600 ha</td>
+          <td>NLA ~50.000 m²</td>
+          <td>≥ Rp 15 T (est., multidekade)</td>
+          <td><span class="badge badge-green">Operasional; pengembangan lanjutan</span></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><strong>Grand Pakuwon Township</strong></td>
+          <td>Surabaya Barat</td>
+          <td>Landed house, kavling, ruko, fasilitas komersial dan pendidikan</td>
+          <td>400 ha</td>
+          <td>—</td>
+          <td>n.a. (est. multi-T)</td>
+          <td><span class="badge badge-green">Operasional; pengembangan bertahap</span></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><strong>Gandaria City</strong></td>
+          <td>Jakarta Selatan</td>
+          <td>Mall (GFA 232.000 m²), Gandaria 8 Office Tower (83.113 m²), Gandaria Heights (2 tower apartemen), Sheraton Grand Gandaria City Hotel</td>
+          <td>8,5 ha</td>
+          <td>GFA 232.000 m²</td>
+          <td>≥ Rp 2,2 T</td>
+          <td><span class="badge badge-green">Operasional sejak ~2010</span></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><strong>Kota Kasablanka</strong></td>
+          <td>Jakarta Selatan</td>
+          <td>Mall (NLA 110.000 m²), 4 tower kondominium, 2 gedung perkantoran</td>
+          <td>~10 ha (est.)</td>
+          <td>NLA 110.000 m²</td>
+          <td>Rp 2,9 T</td>
+          <td><span class="badge badge-green">Operasional sejak 2012</span></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td><strong>Pakuwon Mall Bekasi Superblock</strong></td>
+          <td>Bekasi, Jawa Barat</td>
+          <td>Mall (NLA 45.300 m², occ. >95%), 4 tower apartemen (Amor, Bella + 2 lagi), 2 hotel internasional</td>
+          <td>3,6 ha</td>
+          <td>NLA 45.300 m²</td>
+          <td>Rp 2,4 T (total superblock)</td>
+          <td><span class="badge badge-blue">Mall operasional Nov 2024; tower & hotel dalam penyelesaian</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- SUB 2: DALAM PEMBANGUNAN -->
+    <h3>🚧 Proyek Dalam Konstruksi Aktif</h3>
+    <p>Dua proyek besar berikut sudah memasuki fase konstruksi fisik dan merupakan katalis pertumbuhan PWON dalam 3–5 tahun ke depan.</p>
+
+    <div style="overflow-x:auto;">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nama Proyek</th>
+          <th>Kota / Lokasi</th>
+          <th>Komponen Utama</th>
+          <th>Luas Lahan</th>
+          <th>NLA / Kapasitas</th>
+          <th>Nilai Investasi</th>
+          <th>Target Operasional</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><strong>Pakuwon Mall Semarang Superblock</strong></td>
+          <td>Gombel, Semarang, Jawa Tengah</td>
+          <td>Mall (digadang terbesar di Indonesia), Convention &amp; Exhibition Hall, piazza (5.000 orang), apartemen, hotel</td>
+          <td>18,2 ha (total akuisisi); fase 1: 12,7 ha</td>
+          <td>NLA 134.000 m² (fase 1)</td>
+          <td>Rp 5,6 T</td>
+          <td><span class="badge badge-amber">Fase 1 tahun 2029; groundbreaking Agt 2025</span></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>Pakuwon Nusantara Superblock (IKN)</strong></td>
+          <td>Kawasan Inti Pusat Pemerintahan (KIPP), Penajam Paser Utara, Kaltim</td>
+          <td>Mall, Hotel Pakuwon Nusantara, kawasan terpadu di depan Titik Nol IKN</td>
+          <td>7,2 ha</td>
+          <td>n.a. (dalam finalisasi desain)</td>
+          <td>Rp 5 T</td>
+          <td><span class="badge badge-amber">Konstruksi mulai Maret 2026; TBD</span></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong>Kota Kasablanka — Tahap Lanjutan</strong></td>
+          <td>Jakarta Selatan</td>
+          <td>Tower apartemen baru, perluasan kawasan Kasablanka</td>
+          <td>Lahan existing</td>
+          <td>n.a.</td>
+          <td>Bagian dari Capex Rp 2,2 T (2026)</td>
+          <td><span class="badge badge-amber">Launch 2026; konstruksi bertahap</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- SUB 3: PIPELINE / RENCANA -->
+    <h3>📋 Pipeline &amp; Rencana Ekspansi</h3>
+    <p>Proyek-proyek berikut masih dalam fase studi kelayakan, akuisisi lahan, atau negosiasi awal. Beberapa di antaranya sudah ada komitmen lahan namun belum groundbreaking.</p>
+
+    <div style="overflow-x:auto;">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nama Proyek</th>
+          <th>Kota / Lokasi</th>
+          <th>Rencana Komponen</th>
+          <th>Luas Lahan (Rencana)</th>
+          <th>Nilai Investasi (Est.)</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><strong>Superblock Batam</strong></td>
+          <td>Batam, Kepulauan Riau</td>
+          <td>Rencana 6 superblock (mall, apartemen, hotel, perkantoran) di kawasan strategis Batam</td>
+          <td>12,4 ha (sudah diakuisisi)</td>
+          <td>Rp 5,4 T</td>
+          <td><span class="badge badge-accent">Lahan diakuisisi; studi &amp; perizinan</span></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>Pakuwon Mall Jogja &amp; Yogyakarta Marriott Hotel</strong></td>
+          <td>Yogyakarta</td>
+          <td>Mall ritel, Marriott Hotel (brand partnership dengan Marriott International)</td>
+          <td>n.a.</td>
+          <td>n.a.</td>
+          <td><span class="badge badge-accent">Dalam pengembangan / perencanaan</span></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong>Landed House Township Surabaya (Baru)</strong></td>
+          <td>Surabaya</td>
+          <td>Cluster perumahan tapak baru di luar Grand Pakuwon; target launch 2026</td>
+          <td>n.a.</td>
+          <td>Bagian dari Capex Rp 2,2 T (2026)</td>
+          <td><span class="badge badge-accent">Persiapan launch 2026</span></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><strong>Semarang Superblock — Fase 2</strong></td>
+          <td>Semarang, Jawa Tengah</td>
+          <td>Lanjutan pengembangan di sisa 5,5 ha (dari total 18,2 ha) — apartemen, perkantoran, hotel tambahan</td>
+          <td>5,5 ha (sisa akuisisi fase 2)</td>
+          <td>Estimasi tambahan dari total Rp 5,6 T</td>
+          <td><span class="badge badge-accent">Setelah fase 1 (post-2029)</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- RINGKASAN VALUASI -->
+    <h3>💰 Ringkasan Nilai Portofolio Proyek</h3>
+    <p>Total nilai investasi yang teridentifikasi dari seluruh pipeline PWON (proyek dalam konstruksi dan rencana) mencapai lebih dari <strong>Rp 18 triliun</strong>, belum termasuk nilai buku aset operasional yang sudah ada. Angka ini mencerminkan skala ekspansi yang ambisius dan terencana — setara dengan membangun hampir satu setengah portofolio PWON yang ada hari ini.</p>
+
+    <div style="overflow-x:auto;">
+    <table>
+      <thead>
+        <tr>
+          <th>Kategori</th>
+          <th>Jumlah Proyek</th>
+          <th>Nilai Teridentifikasi</th>
+          <th>Kota / Wilayah</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="highlight"><td>Operasional (Existing)</td><td>7 kompleks</td><td>≥ Rp 40 T (est. aset buku)</td><td>Surabaya, Jakarta, Bekasi</td></tr>
+        <tr><td>Dalam Konstruksi Aktif</td><td>3 proyek</td><td>≥ Rp 10,6 T</td><td>Semarang, IKN, Jakarta</td></tr>
+        <tr><td>Pipeline / Rencana</td><td>4 proyek</td><td>≥ Rp 5,4 T (sebagian est.)</td><td>Batam, Yogyakarta, Surabaya</td></tr>
+        <tr class="highlight"><td><strong>Total Teridentifikasi</strong></td><td><strong>14 proyek</strong></td><td><strong>≥ Rp 56 T (est.)</strong></td><td>7 kota</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p style="font-size:0.8rem; color:var(--text-faint); margin-top:0.5em;">* Nilai aset operasional merupakan estimasi redaksi berdasarkan nilai buku dan komparasi transaksi properti sejenis. Nilai proyek pipeline berdasarkan pengumuman resmi perusahaan. n.a. = data tidak tersedia secara publik.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>Disclaimer:</strong> Dokumen ini bersifat informatif dan tidak merupakan rekomendasi beli atau jual saham. Seluruh data keuangan bersumber dari laporan resmi perusahaan, siaran pers, dan media keuangan terpercaya. Harga saham Rp 304 per 19 Mei 2026 sesuai data aktual. Rasio keuangan dihitung menggunakan harga tersebut. Investor wajib melakukan riset mandiri sebelum mengambil keputusan investasi.</p>
+    <div class="sources">
+      <a href="https://www.pakuwonjati.com" target="_blank">pakuwonjati.com (IR Resmi)</a>
+      <a href="https://beritamoneter.com/pakuwon-jati-pwon-cetak-laba-rp234-triliun-pada-2025-tumbuh-1304/" target="_blank">Berita Moneter — Laba 2025</a>
+      <a href="https://stockwatch.id/kinerja-solid-pendapatan-dan-laba-pakuwon-jati-kompak-tumbuh-di-2025/" target="_blank">StockWatch — Kinerja 2025</a>
+      <a href="https://market.bisnis.com/read/20250502/192/1873850/pakuwon-jati-pwon-cetak-laba-bersih-rp301-miliar-kuartal-i2025" target="_blank">Bisnis.com — Q1 2025</a>
+      <a href="https://jagatbisnis.com/2025/06/29/pakuwon-jati-pwon-bagikan-dividen-rp-626-miliar-naik-45-dari-tahun-lalu/" target="_blank">JagatBisnis — Dividen 2025</a>
+      <a href="https://amp.kontan.co.id/news/pakuwon-jati-pwon-siapkan-capex-rp-22-triliun-di-tahun-2026" target="_blank">Kontan — Capex 2026</a>
+      <a href="https://kabarsdgs.com/sustainability/2025/11/21284/pembangunan-superblok-pakuwon-di-ikn-segera-dimulai-maret-2026/" target="_blank">KabarSDGs — IKN 2026</a>
+      <a href="https://pintarsaham.id/kinerja-keuangan-pt-pakuwon-jati-tbk-pwon-kuartal-iii-2025/" target="_blank">PintarSaham — Q3 2025</a>
+      <a href="https://akufrugal.com/saham/PWON" target="_blank">AkuFrugal — Harga Saham</a>
+      <a href="https://www.idx.co.id/id/perusahaan-tercatat/profil-perusahaan-tercatat/PWON" target="_blank">IDX — Profil PWON</a>
+    </div>
+    <p style="margin-top:1em;">IDX Profile Series | Properti &amp; Real Estate | 19 Mei 2026 | <a href="https://xedixermawan.github.io">xedixermawan.github.io</a></p>
+  </footer>
+
+</div><!-- /#page-wrapper -->
+
+<script>
+/* ── Toggle collapse ── */
+function toggleSection(h2el) {
+  h2el.classList.toggle('collapsed');
+}
+
+/* ── Chart.js global defaults (Light Mode) ── */
+Chart.defaults.color = '#706f6f';
+Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+
+const palette = ['#7f6df2','#3d9e71','#e5a53a','#50a5dc','#c0392b','#aaa'];
+const gridColor = 'rgba(0,0,0,0.07)';
+
+/* ── Chart 1: Revenue + Net Income combo bar+line ── */
+(function() {
+  const ctx = document.getElementById('chartRevenue').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['2021 (est.)', '2022 (est.)', '2023', '2024', '2025'],
+      datasets: [
+        {
+          label: 'Pendapatan Bersih (Rp T)',
+          data: [4.2, 5.4, 6.20, 6.67, 7.11],
+          backgroundColor: palette[0] + 'cc',
+          borderRadius: 4,
+          order: 2
+        },
+        {
+          label: 'Laba Bersih (Rp T)',
+          data: [0.9, 1.7, 2.38, 2.42, 2.34],
+          type: 'line',
+          borderColor: palette[1],
+          backgroundColor: palette[1] + '22',
+          tension: 0.3,
+          fill: true,
+          pointBackgroundColor: palette[1],
+          pointRadius: 4,
+          order: 1
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'top' },
+        tooltip: { mode: 'index', intersect: false }
+      },
+      scales: {
+        x: { grid: { color: gridColor } },
+        y: {
+          grid: { color: gridColor },
+          ticks: { callback: v => 'Rp ' + v + 'T' }
+        }
+      }
+    }
+  });
+})();
+
+/* ── Chart 2: Dividend per Share ── */
+(function() {
+  const ctx = document.getElementById('chartDividen').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['FY2021', 'FY2022', 'FY2023', 'FY2024'],
+      datasets: [{
+        label: 'DPS (Rp/saham)',
+        data: [3, 6, 9, 13],
+        backgroundColor: [palette[2]+'bb', palette[2]+'cc', palette[1]+'cc', palette[1]],
+        borderRadius: 4
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => 'Rp ' + ctx.parsed.y + '/saham' } }
+      },
+      scales: {
+        x: { grid: { color: gridColor } },
+        y: {
+          grid: { color: gridColor },
+          beginAtZero: true,
+          ticks: { callback: v => 'Rp ' + v }
+        }
+      }
+    }
+  });
+})();
+
+/* ── Chart 3: Ownership donut ── */
+(function() {
+  const ctx = document.getElementById('chartOwnership').getContext('2d');
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['PT Pakuwon Arthaniaga', 'Publik / Masyarakat', 'Manajemen & Lain-lain'],
+      datasets: [{
+        data: [68.68, 31.28, 0.04],
+        backgroundColor: [palette[0], palette[3], palette[5]],
+        borderColor: '#ffffff',
+        borderWidth: 3
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'bottom', labels: { font: { size: 11 } } },
+        tooltip: { callbacks: { label: ctx => ctx.label + ': ' + ctx.parsed + '%' } }
+      },
+      cutout: '60%'
+    }
+  });
+})();
+
+/* ── Chart 4: Revenue breakdown horizontal bar ── */
+(function() {
+  const ctx = document.getElementById('chartSegment').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Recurring Revenue', 'Project Revenue'],
+      datasets: [{
+        label: 'FY2025 (Rp T)',
+        data: [4.74, 2.37],
+        backgroundColor: [palette[1], palette[0]],
+        borderRadius: 4
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => 'Rp ' + ctx.parsed.x + ' T' } }
+      },
+      scales: {
+        x: {
+          grid: { color: gridColor },
+          ticks: { callback: v => 'Rp ' + v + 'T' }
+        },
+        y: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
+</body>
+</html>

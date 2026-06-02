@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DKFT — PT Central Omega Resources Tbk | IDX Profile</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --background-primary:        #ffffff;
+      --background-secondary:      #f2f3f5;
+      --background-secondary-alt:  #e9eaec;
+      --background-modifier-border:#ddd;
+      --background-modifier-hover: rgba(0,0,0,0.05);
+      --text-normal:     #2e3338;
+      --text-muted:      #706f6f;
+      --text-faint:      #999999;
+      --text-on-accent:  #ffffff;
+      --text-accent:     #7f6df2;
+      --text-accent-hover: #5d4ff0;
+      --interactive-accent: #7f6df2;
+      --line-width: 42em;
+      --font-text-size: 16px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--background-primary);
+      color: var(--text-normal);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+      font-size: var(--font-text-size);
+      line-height: 1.7;
+    }
+
+    /* TOP NAV */
+    .site-nav {
+      background: var(--background-secondary);
+      border-bottom: 1px solid var(--background-modifier-border);
+      padding: 8px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav-inner {
+      max-width: var(--line-width);
+      margin: 0 auto;
+      padding: 0 2em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .site-nav a {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .site-nav a:hover { color: var(--text-accent); }
+
+    #page-wrapper {
+      max-width: var(--line-width);
+      margin: 0 auto;
+      padding: 3em 2em 8em;
+    }
+
+    /* HEADER */
+    .page-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-normal);
+      margin-bottom: 0.3em;
+      line-height: 1.2;
+    }
+    .ticker-badge {
+      display: inline-block;
+      background: var(--text-accent);
+      color: var(--text-on-accent);
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 5px;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+    .page-meta {
+      font-size: 0.82rem;
+      color: var(--text-faint);
+      margin-bottom: 0.5em;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .price-tag {
+      background: var(--background-secondary);
+      border: 1px solid var(--background-modifier-border);
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-weight: 700;
+      color: var(--text-normal);
+    }
+
+    /* DIVIDER */
+    hr {
+      border: none;
+      border-top: 1px solid var(--background-modifier-border);
+      margin: 1.8em 0;
+    }
+
+    /* HEADINGS */
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-normal);
+      margin: 1.8em 0 0.6em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      user-select: none;
+    }
+    h2:hover { color: var(--text-accent); }
+    h2 .collapse-icon {
+      width: 15px; height: 15px;
+      flex-shrink: 0;
+      opacity: 0.35;
+      transition: transform 0.2s;
+      color: var(--text-muted);
+    }
+    h2 .collapse-icon svg { width: 100%; height: 100%; }
+    h2.collapsed .collapse-icon { transform: rotate(-90deg); }
+    h2.collapsed + .section-body { display: none; }
+
+    h3 {
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--text-normal);
+      margin: 1.2em 0 0.4em;
+    }
+
+    /* TEXT */
+    p { margin-bottom: 0.85em; color: var(--text-normal); }
+    strong { color: var(--text-normal); font-weight: 700; }
+    a { color: var(--text-accent); text-decoration: none; }
+    a:hover { text-decoration: underline; color: var(--text-accent-hover); }
+
+    /* KPI GRID */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 1em 0 1.5em;
+    }
+    @media (max-width: 700px) { .kpi-grid { grid-template-columns: repeat(2,1fr); } }
+
+    /* CALLOUT / KPI CARD */
+    .callout {
+      background: var(--background-secondary);
+      border-left: 3px solid var(--text-accent);
+      border-radius: 0 6px 6px 0;
+      padding: 12px 16px;
+      margin: 0;
+    }
+    .callout-title {
+      font-size: 0.73rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-accent);
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    .callout-value {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-normal);
+    }
+    .callout-sub { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+    .callout-up   { border-left-color: #3d9e71; }
+    .callout-up   .callout-title { color: #3d9e71; }
+    .callout-down { border-left-color: #c0392b; }
+    .callout-down .callout-title { color: #c0392b; }
+
+    /* TABLE */
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 1em 0; }
+    thead tr { background: var(--background-secondary); }
+    th {
+      padding: 9px 12px;
+      text-align: left;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-accent);
+      font-weight: 700;
+      border-bottom: 2px solid var(--background-modifier-border);
+    }
+    td { padding: 9px 12px; border-bottom: 1px solid var(--background-modifier-border); color: var(--text-normal); }
+    tr:hover td { background: var(--background-modifier-hover); }
+    tr.highlight td { font-weight: 700; }
+    tr.highlight td:first-child { color: var(--text-accent); }
+
+    /* CHART BLOCK */
+    .chart-block {
+      background: var(--background-secondary);
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin: 1.2em 0;
+      border: 1px solid var(--background-modifier-border);
+    }
+    .chart-block .chart-title {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: var(--text-faint);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .chart-block canvas { max-height: 260px; }
+
+    /* CHARTS IN COLUMNS */
+    .chart-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 1.2em 0;
+    }
+    @media (max-width: 700px) { .chart-row { grid-template-columns: 1fr; } }
+
+    /* NEWS ITEM */
+    .news-item {
+      border-left: 2px solid var(--background-modifier-border);
+      padding: 10px 14px;
+      margin: 10px 0;
+      transition: border-left-color 0.15s;
+    }
+    .news-item:hover { border-left-color: var(--text-accent); background: var(--background-modifier-hover); border-radius: 0 4px 4px 0; }
+    .news-date { font-size: 0.73rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.5px; }
+    .news-title { font-weight: 600; color: var(--text-normal); font-size: 0.92rem; margin: 3px 0; }
+    .news-desc { font-size: 0.81rem; color: var(--text-muted); }
+
+    /* BADGE */
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      margin-top: 5px;
+    }
+    .badge-green  { background: #d4edda; color: #2d6a4f; }
+    .badge-red    { background: #fde8e8; color: #922b21; }
+    .badge-amber  { background: #fef3cd; color: #7d5a00; }
+    .badge-accent { background: #ede9fe; color: var(--text-accent); }
+    .badge-blue   { background: #dbeafe; color: #1e40af; }
+
+    /* ESG BARS */
+    .esg-row { margin: 14px 0; }
+    .esg-label-row { display: flex; justify-content: space-between; margin-bottom: 5px; }
+    .esg-label { font-size: 0.86rem; font-weight: 600; color: var(--text-normal); }
+    .esg-score { font-size: 0.86rem; font-weight: 700; }
+    .esg-bar-bg { height: 7px; background: var(--background-secondary-alt); border-radius: 4px; overflow: hidden; }
+    .esg-bar-fill { height: 100%; border-radius: 4px; }
+    .esg-sub { font-size: 0.75rem; color: var(--text-faint); margin-top: 4px; }
+
+    /* FOOTER */
+    footer {
+      margin-top: 4em;
+      padding-top: 1.5em;
+      border-top: 1px solid var(--background-modifier-border);
+      font-size: 0.76rem;
+      color: var(--text-faint);
+      line-height: 1.6;
+    }
+    .sources { margin-top: 0.8em; display: flex; flex-wrap: wrap; gap: 6px; }
+    .sources a {
+      color: var(--text-muted);
+      background: var(--background-secondary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid var(--background-modifier-border);
+      font-size: 0.72rem;
+    }
+    .sources a:hover { color: var(--text-accent); }
+  </style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <svg width="14" height="14" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 2L3.5 5L6.5 8"/></svg>
+    <a href="https://xedixermawan.github.io">xedixermawan.github.io</a>
+  </div>
+</nav>
+
+<div id="page-wrapper">
+
+  <!-- HEADER -->
+  <h1 class="page-title">
+    PT Central Omega Resources Tbk
+    <span class="ticker-badge">DKFT</span>
+  </h1>
+  <div class="page-meta">
+    <span>📅 25 Mei 2026</span>
+    <span>⛏️ Pertambangan Nikel — IDX</span>
+    <span class="price-tag">💹 Harga: Rp835 (per 30 Apr 2026)</span>
+    <span>📍 Jakarta, Indonesia</span>
+  </div>
+
+  <hr />
+
+  <!-- KPI GRID -->
+  <div class="kpi-grid">
+    <div class="callout callout-up">
+      <div class="callout-title">Kapitalisasi Pasar</div>
+      <div class="callout-value">Rp4,71T</div>
+      <div class="callout-sub">835 × 5,638 juta saham</div>
+    </div>
+    <div class="callout">
+      <div class="callout-title">Pendapatan FY2025</div>
+      <div class="callout-value">Rp1,58T</div>
+      <div class="callout-sub">+7,87% dari FY2024</div>
+    </div>
+    <div class="callout callout-up">
+      <div class="callout-title">Laba Bersih FY2025</div>
+      <div class="callout-value">Rp573,5M</div>
+      <div class="callout-sub">+55,7% dari FY2024</div>
+    </div>
+    <div class="callout">
+      <div class="callout-title">Dividen per Saham FY2025</div>
+      <div class="callout-value">Rp69,22</div>
+      <div class="callout-sub">Yield 8,29% @ Rp835</div>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- SECTION 1: PROFIL SINGKAT -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    📋 Profil Singkat
+  </h2>
+  <div class="section-body">
+    <p>PT Central Omega Resources Tbk adalah perusahaan pertambangan nikel terbuka yang tercatat di Bursa Efek Indonesia (IDX) dengan kode saham <strong>DKFT</strong>. Perusahaan ini merupakan entitas induk investasi yang mengelola anak-anak perusahaan yang bergerak di bidang penambangan, pengolahan, dan perdagangan bijih nikel di wilayah Sulawesi. Lewat transformasi bisnis yang dramatis sejak 2008, Central Omega telah berkembang dari perusahaan keuangan kecil menjadi salah satu pemain independen terkemuka di sektor nikel Indonesia.</p>
+
+    <p>Didirikan pada tahun <strong>1995</strong> dengan nama PT Duta Kirana Finance — sebuah perusahaan pembiayaan yang mencerminkan dinamika industri keuangan di era sebelum krisis moneter Asia — perusahaan ini melantai di Bursa Efek Surabaya pada <strong>1997</strong>. Menyusul konsolidasi pasar modal Indonesia, sahamnya berpindah ke BEI. Titik balik terbesar terjadi di tahun <strong>2008</strong>, ketika manajemen memutuskan untuk sepenuhnya beralih ke sektor pertambangan mineral, mengubah nama menjadi Central Omega Resources dan memulai perjalanan panjang untuk membangun portofolio tambang nikel di Sulawesi Tengah dan Sulawesi Tenggara.</p>
+
+    <p>Saat ini, perusahaan mengoperasikan dua kawasan konsesi tambang nikel aktif: di <strong>Morowali, Sulawesi Tengah</strong> — salah satu distrik nikel paling produktif di dunia — serta di <strong>Konawe Utara, Sulawesi Tenggara</strong>. Selain kegiatan penambangan hulu, DKFT juga memiliki fasilitas peleburan nikel berkapasitas hingga 300.000 ton Ferronickel (FeNi) per tahun. Di samping itu, perusahaan masih mengelola dua proyek eksplorasi tembaga dan emas di Nusa Tenggara Timur dan Maluku Utara yang belum memasuki fase produksi komersial.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Keterangan</th>
+          <th>Detail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Nama Resmi</td><td>PT Central Omega Resources Tbk</td></tr>
+        <tr><td>Kode Saham</td><td>DKFT (IDX)</td></tr>
+        <tr><td>Didirikan</td><td>1995 (sebagai PT Duta Kirana Finance)</td></tr>
+        <tr><td>IPO / Listing</td><td>1997 (Bursa Efek Surabaya)</td></tr>
+        <tr><td>Perubahan Bisnis</td><td>2008 (beralih ke pertambangan nikel)</td></tr>
+        <tr><td>Kantor Pusat</td><td>Jakarta, Indonesia</td></tr>
+        <tr><td>Wilayah Operasi</td><td>Morowali (Sulteng), Konawe Utara (Sultra)</td></tr>
+        <tr><td>Sektor / Subsektor</td><td>Pertambangan / Pertambangan Mineral (Nikel)</td></tr>
+        <tr><td>Jumlah Saham Beredar</td><td>5.638.246.600 lembar</td></tr>
+        <tr><td>Website</td><td><a href="https://www.centralomega.com" target="_blank">centralomega.com</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 2: MODEL BISNIS -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    🏭 Model Bisnis
+  </h2>
+  <div class="section-body">
+    <p>Central Omega Resources beroperasi sebagai perusahaan induk yang memegang kepemilikan strategis di sejumlah anak perusahaan tambang. Model bisnisnya terentang dari hulu ke hilir dalam rantai nilai nikel: dimulai dari <strong>eksplorasi dan penambangan bijih nikel</strong> di wilayah konsesi, lalu <strong>penjualan bijih mentah (nikel ore)</strong> kepada smelter lokal dan pembeli internasional, hingga <strong>pengolahan nikel</strong> menjadi Ferronickel (FeNi) melalui fasilitas smelter milik sendiri.</p>
+
+    <p><strong>Sumber pendapatan utama</strong> perusahaan masih didominasi oleh penjualan bijih nikel (ore). Bijih nikel — khususnya jenis saprolit dengan kadar nikel lebih tinggi dan limonit dengan kadar lebih rendah — dijual kepada smelter-smelter di kawasan industri Morowali, sebagian besar dimiliki atau terkait dengan investor asal China. Ini mencerminkan ekosistem rantai nilai nikel Indonesia yang kini telah terintegrasi secara regional. Penetapan harga bijih nikel mengacu pada <strong>Harga Patokan Mineral (HPM)</strong> yang ditetapkan pemerintah Indonesia setiap triwulan, dengan formula yang mempertimbangkan harga nikel di London Metal Exchange (LME) serta kadar nikel bijih yang ditambang.</p>
+
+    <p><strong>Fasilitas smelter FeNi</strong> milik DKFT menjadi pembeda kompetitif yang penting. Dengan kapasitas 300.000 ton per tahun, operasi smelter memungkinkan perusahaan menangkap nilai tambah lebih besar dari mineral yang diekstraksi, dibandingkan sekadar menjual bijih mentah. FeNi merupakan bahan baku penting dalam produksi baja nirkarat (stainless steel), yang permintaannya terus tumbuh seiring urbanisasi dan industrialisasi global.</p>
+
+    <p>Ke depan, perusahaan tengah <strong>mengkaji ekspansi ke hilirisasi lebih lanjut</strong>, khususnya membangun fasilitas High Pressure Acid Leaching (HPAL) untuk mengolah bijih limonit menjadi Mixed Hydroxide Precipitate (MHP) — prekursor material katoda baterai kendaraan listrik (EV). Ini sejalan dengan kebijakan hilirisasi nikel pemerintah Indonesia dan lonjakan permintaan baterai EV secara global. Anggaran belanja modal (capex) hingga Rp300 miliar disiapkan untuk akuisisi tambang baru dan ekspansi kapasitas produksi guna mendukung target ambisius 7 juta ton bijih nikel di tahun 2026.</p>
+
+    <p><strong>Pemegang saham pengendali utama</strong>, PT Jinsheng Mining — afiliasi dari kelompok usaha Jinsheng asal China yang juga bergerak di industri nikel global — memiliki 63,79% saham DKFT per Mei 2026. Kemitraan strategis ini membuka akses DKFT ke jaringan distribusi dan teknologi pengolahan nikel tingkat lanjut dari ekosistem industri China, sekaligus memberikan dukungan permodalan yang memungkinkan ekspansi agresif.</p>
+  </div>
+
+  <!-- SECTION 3: KINERJA KEUANGAN -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    📊 Kinerja Keuangan
+  </h2>
+  <div class="section-body">
+    <p>Perjalanan keuangan Central Omega Resources dalam lima tahun terakhir adalah kisah tentang transformasi — dari emiten kecil dengan laba tipis menjadi perusahaan nikel yang profitable dan rajin membagi dividen. Tahun <strong>2021</strong> dan <strong>2022</strong> masih mencatat pendapatan di kisaran Rp777–812 miliar dengan laba yang sangat terbatas, mencerminkan tekanan harga nikel global dan tantangan operasional pasca pandemi. Namun mulai <strong>2023</strong>, momentum berubah drastis: pendapatan melesat ke Rp1,46 triliun seiring pulihnya permintaan nikel dan peningkatan volume penjualan bijih nikel.</p>
+
+    <p>Lonjakan yang paling mencolok terjadi di <strong>2024</strong>, ketika laba bersih melejit lebih dari 1.300% menjadi Rp368,6 miliar — didorong kombinasi peningkatan volume produksi, efisiensi biaya, dan struktur HPM yang lebih menguntungkan. EPS 2024 tercatat Rp65,39 per saham. Tren pertumbuhan berlanjut ke <strong>2025</strong>, dengan pendapatan tumbuh 7,87% menjadi Rp1,58 triliun dan laba bersih bertambah 55,7% menjadi Rp573,5 miliar — menghasilkan EPS Rp101,7. Sinyal terkuat kepercayaan diri manajemen: distribusi dividen total Rp390,3 miliar (Rp69,22/saham) untuk tahun buku 2025, setara yield 8,29% pada harga saham Rp835.</p>
+
+    <div class="chart-block">
+      <div class="chart-title">Pendapatan &amp; Laba Bersih — 5 Tahun (Rp Miliar)</div>
+      <canvas id="chartRevenue"></canvas>
+    </div>
+
+    <h3>Tabel Rasio Valuasi &amp; Keuangan</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Rasio</th>
+          <th>2021</th>
+          <th>2022</th>
+          <th>2023</th>
+          <th>2024</th>
+          <th>2025</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Pendapatan (Rp M)</td><td>777,4</td><td>811,7</td><td>1.461,2</td><td>1.465,0</td><td>1.580,0</td></tr>
+        <tr><td>Laba Bersih (Rp M)</td><td>~12 (est.)</td><td>~45 (est.)</td><td>62,7</td><td>368,6</td><td>573,5</td></tr>
+        <tr><td>EPS (Rp)</td><td>~2,1 (est.)</td><td>~8,0 (est.)</td><td>11,1</td><td>65,39</td><td>101,7</td></tr>
+        <tr class="highlight"><td>PER (×)</td><td>—</td><td>—</td><td>—</td><td>12,8×</td><td>8,2× ①</td></tr>
+        <tr class="highlight"><td>PBV (×)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>~1,7× (est.) ②</td></tr>
+        <tr><td>DPS (Rp)</td><td>—</td><td>—</td><td>—</td><td>~25 (est.)</td><td>69,22</td></tr>
+        <tr class="highlight"><td>Dividend Yield</td><td>—</td><td>—</td><td>—</td><td>—</td><td>8,29% ①</td></tr>
+        <tr><td>ROE</td><td>—</td><td>—</td><td>~3%</td><td>~15%</td><td>~21% (est.) ②</td></tr>
+        <tr><td>DER</td><td>—</td><td>—</td><td>—</td><td>—</td><td>~0,3× (est.) ②</td></tr>
+        <tr><td>Net Margin</td><td>~1,5%</td><td>~5,5%</td><td>4,3%</td><td>25,2%</td><td>36,3%</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.75rem;color:var(--text-faint);margin-top:0.4em;">① Dihitung menggunakan harga saham Rp835 (30 Apr 2026). ② Estimasi berdasarkan data yang tersedia; tandai sebagai <em>est.</em></p>
+
+    <div class="chart-block">
+      <div class="chart-title">Produksi Bijih Nikel Operasional (Juta Ton)</div>
+      <canvas id="chartProduction"></canvas>
+    </div>
+  </div>
+
+  <!-- SECTION 4: STRUKTUR KEPEMILIKAN & SEGMEN -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    🥧 Struktur Kepemilikan &amp; Segmen Bisnis
+  </h2>
+  <div class="section-body">
+    <p>Struktur kepemilikan DKFT mencerminkan konsentrasi kontrol yang signifikan di tangan investor institusional asal China. <strong>PT Jinsheng Mining</strong>, afiliasi kelompok usaha nikel global Jinsheng, menjadi pemegang saham pengendali dengan kepemilikan 63,79% per Mei 2026 — meningkat dari 61,63% setelah melakukan penambahan investasi pada 12 Mei 2026. Langkah akuisisi bertahap ini menunjukkan keyakinan kuat Jinsheng terhadap prospek jangka panjang DKFT di tengah tren hilirisasi nikel Indonesia. <strong>Kiki Hamidjaja</strong>, direktur sekaligus salah satu pendiri kelompok usaha Central Omega, memegang 2,53% saham sebagai pengendali individual. Sementara <strong>publik</strong> dan pemegang saham minoritas lainnya menguasai sekitar 33,45% dari total saham yang beredar.</p>
+
+    <div class="chart-row">
+      <div class="chart-block">
+        <div class="chart-title">Komposisi Pemegang Saham (%)</div>
+        <canvas id="chartOwnership"></canvas>
+      </div>
+      <div class="chart-block">
+        <div class="chart-title">Estimasi Bauran Pendapatan per Segmen (FY2025)</div>
+        <canvas id="chartSegment"></canvas>
+      </div>
+    </div>
+
+    <p>Dari sisi segmen bisnis, <strong>penjualan bijih nikel</strong> masih menjadi kontributor dominan pendapatan DKFT — diperkirakan menyumbang sekitar 65–70% dari total pendapatan FY2025. Penjualan bijih langsung kepada smelter di kawasan industri Morowali adalah tulang punggung arus kas perusahaan. Segmen <strong>Ferronickel (FeNi)</strong> dari fasilitas smelter milik DKFT berkontribusi sekitar 25–30%, dengan margin yang lebih tinggi namun juga memerlukan investasi modal yang lebih besar. Segmen <strong>eksplorasi dan lain-lain</strong> (termasuk proyek tembaga/emas di NTT dan Maluku Utara) belum memberikan kontribusi pendapatan signifikan dan masih dalam tahap investasi.</p>
+  </div>
+
+  <!-- SECTION 5: BERITA TERKINI -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    📰 Berita &amp; Perkembangan Terkini
+  </h2>
+  <div class="section-body">
+
+    <div class="news-item">
+      <div class="news-date">21 Mei 2026</div>
+      <div class="news-title">Jinsheng Mining Kembali Tambah Kepemilikan Saham DKFT</div>
+      <div class="news-desc">PT Jinsheng Mining menambah investasi di DKFT pada 12–21 Mei 2026, meningkatkan kepemilikan dari 61,63% menjadi 63,79% atau setara 3.596.671.278 saham. Penambahan ini dilakukan setelah distribusi dividen final Rp35 per saham, menunjukkan keyakinan kuat pemegang saham pengendali terhadap prospek bisnis nikel DKFT.</div>
+      <span class="badge badge-accent">Aksi Korporasi</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">12 Mei 2026</div>
+      <div class="news-title">DKFT Distribusikan Dividen Final Rp35 per Saham, Total FY2025 Rp69,22</div>
+      <div class="news-desc">Dalam RUPS Tahunan 2026, Central Omega Resources memutuskan pembayaran dividen final Rp35 per saham (total Rp197,33 miliar) untuk pemegang saham per recording date 5 Mei 2026. Termasuk dua dividen interim sebelumnya (Rp10 + Rp25/saham), total dividen FY2025 mencapai Rp390,31 miliar atau Rp69,22 per saham — setara dividend yield 8,29% pada harga Rp835.</div>
+      <span class="badge badge-green">Dividen</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">Q4 2025</div>
+      <div class="news-title">Target Produksi 7 Juta Ton di 2026, DKFT Siapkan Capex Rp300 Miliar</div>
+      <div class="news-desc">Manajemen DKFT menetapkan target ambisius produksi bijih nikel 7 juta ton di tahun 2026, naik signifikan dari realisasi 2025. Perseroan menyiapkan anggaran capex Rp300 miliar untuk akuisisi tambang baru dan peningkatan infrastruktur operasional. Kredit senilai Rp245 miliar juga telah cair untuk mendukung ekspansi ini.</div>
+      <span class="badge badge-blue">Ekspansi</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">Q3 2025</div>
+      <div class="news-title">Produksi Bijih Nikel DKFT Capai 2,07 Juta Ton, Naik 18% YoY</div>
+      <div class="news-desc">Hingga kuartal III 2025, DKFT membukukan produksi bijih nikel 2,07 juta ton (naik 18% YoY dari 1,75 juta ton) dan volume penjualan 2,29 juta ton (naik 31% YoY). Pendapatan sembilan bulan pertama 2025 tumbuh 29,5% menjadi Rp1,2 triliun, sementara laba bersih melompat 54,8% ke Rp442,69 miliar.</div>
+      <span class="badge badge-green">Kinerja Operasional</span>
+    </div>
+
+  </div>
+
+  <!-- SECTION 6: RISIKO & PELUANG -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    ⚖️ Risiko &amp; Peluang
+  </h2>
+  <div class="section-body">
+
+    <h3>Peluang Utama</h3>
+    <p><strong>Lonjakan permintaan nikel untuk baterai EV</strong> merupakan peluang terbesar jangka menengah-panjang bagi DKFT. Transisi energi global mendorong permintaan nikel kelas baterai — terutama dalam bentuk MHP dan nikel sulfat — yang diproyeksikan tumbuh eksponensial hingga 2030. Rencana DKFT membangun fasilitas HPAL untuk mengolah bijih limonit menjadi MHP adalah langkah strategis yang berpotensi melipatgandakan margin dan membuka pasar baru. <span class="badge badge-green">Peluang Tinggi</span></p>
+
+    <p><strong>Formula HPM baru untuk limonit</strong> yang tengah dirumuskan pemerintah Indonesia diperkirakan akan menaikkan harga patokan bijih nikel limonit secara signifikan. Ini akan langsung mengerek pendapatan DKFT mengingat sebagian besar cadangan nikel di wilayah konsesi perusahaan berjenis limonit. Reformasi HPM menjadi katalis potensial untuk re-rating valuasi saham. <span class="badge badge-green">Peluang Tinggi</span></p>
+
+    <p><strong>Ekspansi tambang agresif</strong> dengan target 7 juta ton produksi di 2026 — lebih dari dua kali lipat realisasi 2025 — berpotensi mendongkrak pendapatan dan laba secara substansial. Dukungan permodalan dari Jinsheng Mining sebagai pemegang saham pengendali memberikan keyakinan bahwa ekspansi ini dapat terealisasi. <span class="badge badge-blue">Peluang Sedang–Tinggi</span></p>
+
+    <h3>Risiko Utama</h3>
+    <p><strong>Volatilitas harga nikel global</strong> adalah risiko struktural terbesar. Harga nikel di LME sangat sensitif terhadap kondisi ekonomi China, kebijakan ekspor Indonesia, dan dinamika pasokan global. Penurunan harga nikel secara tajam — seperti yang terjadi di 2023 akibat oversupply dari Indonesia — dapat langsung menggerus margin dan laba perusahaan. <span class="badge badge-red">Risiko Tinggi</span></p>
+
+    <p><strong>Konsentrasi kepemilikan dan ketergantungan pada Jinsheng</strong> membawa risiko governance. Dengan Jinsheng menguasai 63,79% saham, pemegang saham minoritas memiliki kekuatan pengambilan keputusan yang sangat terbatas. Perubahan strategi atau kepentingan pemegang saham pengendali berpotensi tidak selalu sejalan dengan kepentingan investor publik. <span class="badge badge-amber">Risiko Sedang</span></p>
+
+    <p><strong>Risiko regulasi dan lingkungan</strong> semakin meningkat seiring tekanan global terhadap industri nikel. Uni Eropa akan mewajibkan Battery Passport — sertifikasi ESG lengkap untuk produk nikel — mulai 2027. Perusahaan yang tidak memenuhi standar ESG internasional berisiko kehilangan akses ke pasar premium. Di dalam negeri, tekanan terhadap praktik pertambangan yang ramah lingkungan terus meningkat. <span class="badge badge-amber">Risiko Sedang</span></p>
+
+    <p><strong>Risiko eksekusi ekspansi</strong> cukup nyata mengingat target produksi 7 juta ton di 2026 memerlukan peningkatan kapasitas yang sangat signifikan dalam waktu singkat. Tantangan teknis, keterbatasan infrastruktur di daerah terpencil, dan persaingan untuk mendapatkan tenaga kerja terampil bisa menjadi hambatan realisasi. <span class="badge badge-amber">Risiko Sedang</span></p>
+
+  </div>
+
+  <!-- SECTION 7: ESG & KEBERLANJUTAN -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    🌿 ESG &amp; Keberlanjutan
+  </h2>
+  <div class="section-body">
+    <p>Sebagai perusahaan tambang nikel yang beroperasi di dua provinsi di Sulawesi, Central Omega Resources dihadapkan pada tantangan ESG yang inheren dengan industri pertambangan mineral. Perusahaan telah menerbitkan <strong>Laporan Tahunan dan Keberlanjutan (Annual &amp; Sustainability Report)</strong> secara terpisah sejak 2024, mencerminkan komitmen yang meningkat terhadap transparansi non-finansial. Laporan keberlanjutan 2025 telah tersedia di website resmi perusahaan.</p>
+
+    <p>Dari sisi <strong>lingkungan (Environmental)</strong>, tantangan utama mencakup pengelolaan limbah tambang, reklamasi lahan pasca-tambang, dan pengendalian erosi di kawasan tambang aktif. Industri nikel Indonesia secara keseluruhan mendapat sorotan terkait dampak deforestasi dan pencemaran perairan, mendorong DKFT untuk terus meningkatkan standar pengelolaan lingkungan. Rencana ekspansi ke HPAL juga membawa konsekuensi pengelolaan limbah asam yang memerlukan infrastruktur khusus.</p>
+
+    <p>Di dimensi <strong>sosial (Social)</strong>, perusahaan menjalankan program CSR di komunitas sekitar wilayah tambang, mencakup pemberdayaan ekonomi lokal, pengembangan infrastruktur desa, dan program pendidikan. Keterlibatan dengan masyarakat adat dan pemangku kepentingan lokal menjadi kunci dalam mempertahankan social license to operate.</p>
+
+    <p>Dari perspektif <strong>tata kelola (Governance)</strong>, konsentrasi kepemilikan di tangan Jinsheng Mining (63,79%) menjadi perhatian para investor ESG yang menyoroti perlindungan pemegang saham minoritas. Namun demikian, perusahaan telah memiliki komisaris independen dan komite audit yang berfungsi sebagai mekanisme pengawasan internal.</p>
+
+    <!-- ESG Bars (estimasi internal, skala 0-100) -->
+    <div class="esg-row">
+      <div class="esg-label-row">
+        <span class="esg-label">🌱 Environmental</span>
+        <span class="esg-score" style="color:#3d9e71">58 / 100</span>
+      </div>
+      <div class="esg-bar-bg">
+        <div class="esg-bar-fill" style="width:58%;background:#3d9e71;"></div>
+      </div>
+      <div class="esg-sub">Reklamasi lahan dan pengelolaan limbah tambang dalam proses perbaikan; tantangan HPAL ke depan</div>
+    </div>
+
+    <div class="esg-row">
+      <div class="esg-label-row">
+        <span class="esg-label">🤝 Social</span>
+        <span class="esg-score" style="color:#e5a53a">62 / 100</span>
+      </div>
+      <div class="esg-bar-bg">
+        <div class="esg-bar-fill" style="width:62%;background:#e5a53a;"></div>
+      </div>
+      <div class="esg-sub">Program CSR aktif di komunitas lokal Sulawesi; keterlibatan pemangku kepentingan terus ditingkatkan</div>
+    </div>
+
+    <div class="esg-row">
+      <div class="esg-label-row">
+        <span class="esg-label">🏛️ Governance</span>
+        <span class="esg-score" style="color:#50a5dc">55 / 100</span>
+      </div>
+      <div class="esg-bar-bg">
+        <div class="esg-bar-fill" style="width:55%;background:#50a5dc;"></div>
+      </div>
+      <div class="esg-sub">Struktur tata kelola memadai; konsentrasi kepemilikan Jinsheng 63,79% jadi perhatian investor ESG</div>
+    </div>
+
+    <p style="font-size:0.78rem;color:var(--text-faint);margin-top:0.6em;"><em>Skor ESG merupakan estimasi kualitatif internal berdasarkan informasi publik yang tersedia; bukan penilaian resmi dari lembaga pemeringkat ESG.</em></p>
+  </div>
+
+  <hr />
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>Disclaimer:</strong> Dokumen ini disusun semata-mata untuk tujuan informasi dan edukasi. Konten ini bukan merupakan rekomendasi investasi, ajakan untuk membeli atau menjual efek, maupun nasihat keuangan dalam bentuk apapun. Investasi di pasar modal mengandung risiko. Seluruh data finansial berasal dari sumber publik dan dapat memiliki ketidakakuratan. Harga saham yang digunakan adalah Rp835 per tanggal 30 April 2026. Rasio bertanda <em>(est.)</em> merupakan estimasi berdasarkan data yang tersedia.</p>
+    <div class="sources">
+      <a href="https://www.centralomega.com" target="_blank">centralomega.com</a>
+      <a href="https://www.idx.co.id/id/perusahaan-tercatat/profil-perusahaan-tercatat/DKFT" target="_blank">IDX Profil DKFT</a>
+      <a href="https://www.idnfinancials.com/dkft/pt-central-omega-resources-tbk" target="_blank">IDNFinancials</a>
+      <a href="https://stockanalysis.com/quote/idx/DKFT/financials/" target="_blank">StockAnalysis</a>
+      <a href="https://www.bareksa.com/berita/saham/2026-04-27/dividen-dkft-total-rp39031-miliar" target="_blank">Bareksa — Dividen DKFT</a>
+      <a href="https://beritamoneter.com/central-omega-resources-dkft-distribusi-dividen-final-rp35-per-saham-pada-12-mei-2026/" target="_blank">BeritaMoneter</a>
+      <a href="https://pasardana.id/news/2026/5/21/jinsheng-mining-tambah-investasi-sahamnya-di-dkft" target="_blank">PasarDana</a>
+      <a href="https://mediaasuransinews.co.id/news-in-brief/laba-bersih-central-omega-resources-dkft-meroket-1-329-di-2024/" target="_blank">MediaAsuransiNews</a>
+      <a href="https://id.wikipedia.org/wiki/Central_Omega_Resources" target="_blank">Wikipedia ID</a>
+      <a href="https://www.idxchannel.com/market-news/dkft-saham-perusahaan-apa-emiten-tambang-nikel-inilah-sosok-pemiliknya" target="_blank">IDXChannel</a>
+    </div>
+    <p style="margin-top:1em;">IDX Profile Series | Pertambangan Nikel | 25 Mei 2026 | <a href="https://xedixermawan.github.io">xedixermawan.github.io</a></p>
+  </footer>
+
+</div><!-- /#page-wrapper -->
+
+<script>
+  Chart.defaults.color = '#706f6f';
+  Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+
+  const gridColor = 'rgba(0,0,0,0.07)';
+  const palette = ['#7f6df2','#3d9e71','#e5a53a','#50a5dc','#c0392b','#aaa'];
+
+  // CHART 1: Revenue & Net Income
+  new Chart(document.getElementById('chartRevenue'), {
+    type: 'bar',
+    data: {
+      labels: ['2021','2022','2023','2024','2025'],
+      datasets: [
+        {
+          label: 'Pendapatan (Rp M)',
+          data: [777.4, 811.7, 1461.2, 1465.0, 1580.0],
+          backgroundColor: palette[0] + 'cc',
+          borderRadius: 4,
+          yAxisID: 'y',
+        },
+        {
+          label: 'Laba Bersih (Rp M)',
+          data: [12, 45, 62.7, 368.6, 573.5],
+          type: 'line',
+          borderColor: palette[1],
+          backgroundColor: palette[1] + '22',
+          pointBackgroundColor: palette[1],
+          pointRadius: 5,
+          tension: 0.35,
+          fill: true,
+          yAxisID: 'y2',
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { position: 'top' },
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.dataset.label}: Rp${ctx.parsed.y.toLocaleString('id-ID', {maximumFractionDigits:1})} M`
+          }
+        }
+      },
+      scales: {
+        x: { grid: { color: gridColor } },
+        y: {
+          type: 'linear',
+          position: 'left',
+          grid: { color: gridColor },
+          title: { display: true, text: 'Pendapatan (Rp M)' }
+        },
+        y2: {
+          type: 'linear',
+          position: 'right',
+          grid: { drawOnChartArea: false },
+          title: { display: true, text: 'Laba Bersih (Rp M)' }
+        }
+      }
+    }
+  });
+
+  // CHART 2: Nickel Ore Production
+  new Chart(document.getElementById('chartProduction'), {
+    type: 'bar',
+    data: {
+      labels: ['2021 (est.)','2022 (est.)','2023','Q1-Q3 2024','Q1-Q3 2025','Target 2026'],
+      datasets: [{
+        label: 'Produksi Bijih Nikel (Juta Ton)',
+        data: [0.8, 1.0, 1.75, 1.75, 2.07, 7.0],
+        backgroundColor: [
+          palette[3]+'bb', palette[3]+'bb', palette[3]+'bb',
+          palette[2]+'bb', palette[1]+'bb', palette[0]+'bb'
+        ],
+        borderRadius: 4,
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.parsed.y} juta ton`
+          }
+        }
+      },
+      scales: {
+        x: { grid: { color: gridColor } },
+        y: { grid: { color: gridColor }, title: { display: true, text: 'Juta Ton' } }
+      }
+    }
+  });
+
+  // CHART 3: Ownership Donut
+  new Chart(document.getElementById('chartOwnership'), {
+    type: 'doughnut',
+    data: {
+      labels: ['PT Jinsheng Mining','Kiki Hamidjaja','Feni S. Budiman','Publik & Lainnya'],
+      datasets: [{
+        data: [63.79, 2.53, 0.23, 33.45],
+        backgroundColor: [palette[0], palette[1], palette[2], palette[5]],
+        borderWidth: 1,
+        borderColor: '#fff'
+      }]
+    },
+    options: {
+      responsive: true,
+      cutout: '65%',
+      plugins: {
+        legend: { position: 'bottom', labels: { font: { size: 11 } } },
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.label}: ${ctx.parsed.toFixed(2)}%`
+          }
+        }
+      }
+    }
+  });
+
+  // CHART 4: Business Segment
+  new Chart(document.getElementById('chartSegment'), {
+    type: 'bar',
+    data: {
+      labels: ['Bijih Nikel (Ore)','Ferronickel (FeNi)','Eksplorasi & Lain'],
+      datasets: [{
+        label: 'Kontribusi Pendapatan (%)',
+        data: [68, 28, 4],
+        backgroundColor: [palette[0]+'cc', palette[1]+'cc', palette[5]+'cc'],
+        borderRadius: 4,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.parsed.x}% dari total pendapatan`
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: gridColor },
+          max: 100,
+          ticks: { callback: v => v + '%' }
+        },
+        y: { grid: { color: gridColor } }
+      }
+    }
+  });
+
+  // TOGGLE SECTIONS
+  function toggleSection(h2el) {
+    h2el.classList.toggle('collapsed');
+  }
+</script>
+</body>
+</html>

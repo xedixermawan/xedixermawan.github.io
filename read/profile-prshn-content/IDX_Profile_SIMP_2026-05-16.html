@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SIMP — PT Salim Ivomas Pratama Tbk | Profil IDX</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root {
+  --background-primary:        #ffffff;
+  --background-secondary:      #f2f3f5;
+  --background-secondary-alt:  #e9eaec;
+  --background-modifier-border:#ddd;
+  --background-modifier-hover: rgba(0,0,0,0.05);
+  --text-normal:     #2e3338;
+  --text-muted:      #706f6f;
+  --text-faint:      #999999;
+  --text-on-accent:  #ffffff;
+  --text-accent:     #7f6df2;
+  --text-accent-hover: #5d4ff0;
+  --interactive-accent: #7f6df2;
+  --line-width: 42em;
+  --font-text-size: 16px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--background-primary);
+  color: var(--text-normal);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+  font-size: var(--font-text-size);
+  line-height: 1.7;
+}
+
+.site-nav {
+  background: var(--background-secondary);
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding: 8px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.site-nav-inner {
+  max-width: var(--line-width);
+  margin: 0 auto;
+  padding: 0 2em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.site-nav a {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.site-nav a:hover { color: var(--text-accent); }
+
+#page-wrapper {
+  max-width: var(--line-width);
+  margin: 0 auto;
+  padding: 3em 2em 8em;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-normal);
+  margin-bottom: 0.3em;
+  line-height: 1.2;
+}
+.ticker-badge {
+  display: inline-block;
+  background: var(--text-accent);
+  color: var(--text-on-accent);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.page-meta {
+  font-size: 0.82rem;
+  color: var(--text-faint);
+  margin-bottom: 0.5em;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--background-modifier-border);
+  margin: 1.8em 0;
+}
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-normal);
+  margin: 1.8em 0 0.6em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+h2:hover { color: var(--text-accent); }
+h2 .collapse-icon {
+  width: 15px; height: 15px;
+  flex-shrink: 0;
+  opacity: 0.35;
+  transition: transform 0.2s;
+  color: var(--text-muted);
+}
+h2 .collapse-icon svg { width: 100%; height: 100%; }
+h2.collapsed .collapse-icon { transform: rotate(-90deg); }
+h2.collapsed + .section-body { display: none; }
+
+h3 {
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--text-normal);
+  margin: 1.2em 0 0.4em;
+}
+
+p { margin-bottom: 0.85em; color: var(--text-normal); }
+strong { color: var(--text-normal); font-weight: 700; }
+a { color: var(--text-accent); text-decoration: none; }
+a:hover { text-decoration: underline; color: var(--text-accent-hover); }
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 1em 0 1.5em;
+}
+@media (max-width: 700px) { .kpi-grid { grid-template-columns: repeat(2,1fr); } }
+
+.callout {
+  background: var(--background-secondary);
+  border-left: 3px solid var(--text-accent);
+  border-radius: 0 6px 6px 0;
+  padding: 12px 16px;
+  margin: 0;
+}
+.callout-title {
+  font-size: 0.73rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-accent);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.callout-value {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-normal);
+}
+.callout-sub { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+.callout-up   { border-left-color: #3d9e71; }
+.callout-up   .callout-title { color: #3d9e71; }
+.callout-down { border-left-color: #c0392b; }
+.callout-down .callout-title { color: #c0392b; }
+
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 1em 0; }
+thead tr { background: var(--background-secondary); }
+th {
+  padding: 9px 12px;
+  text-align: left;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-accent);
+  font-weight: 700;
+  border-bottom: 2px solid var(--background-modifier-border);
+}
+td { padding: 9px 12px; border-bottom: 1px solid var(--background-modifier-border); color: var(--text-normal); }
+tr:hover td { background: var(--background-modifier-hover); }
+tr.highlight td { font-weight: 700; }
+tr.highlight td:first-child { color: var(--text-accent); }
+
+.chart-block {
+  background: var(--background-secondary);
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin: 1.2em 0;
+  border: 1px solid var(--background-modifier-border);
+}
+.chart-block .chart-title {
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: var(--text-faint);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.chart-block canvas { max-height: 260px; }
+
+.news-item {
+  border-left: 2px solid var(--background-modifier-border);
+  padding: 10px 14px;
+  margin: 10px 0;
+  transition: border-left-color 0.15s;
+}
+.news-item:hover { border-left-color: var(--text-accent); background: var(--background-modifier-hover); border-radius: 0 4px 4px 0; }
+.news-date { font-size: 0.73rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.5px; }
+.news-title { font-weight: 600; color: var(--text-normal); font-size: 0.92rem; margin: 3px 0; }
+.news-desc { font-size: 0.81rem; color: var(--text-muted); }
+
+.badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+.badge-green  { background: #d4edda; color: #2d6a4f; }
+.badge-red    { background: #fde8e8; color: #922b21; }
+.badge-amber  { background: #fef3cd; color: #7d5a00; }
+.badge-accent { background: #ede9fe; color: var(--text-accent); }
+.badge-blue   { background: #dbeafe; color: #1e40af; }
+
+.esg-row { margin: 14px 0; }
+.esg-label-row { display: flex; justify-content: space-between; margin-bottom: 5px; }
+.esg-label { font-size: 0.86rem; font-weight: 600; color: var(--text-normal); }
+.esg-score { font-size: 0.86rem; font-weight: 700; }
+.esg-bar-bg { height: 7px; background: var(--background-secondary-alt); border-radius: 4px; overflow: hidden; }
+.esg-bar-fill { height: 100%; border-radius: 4px; }
+.esg-sub { font-size: 0.75rem; color: var(--text-faint); margin-top: 4px; }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 1.2em 0; }
+@media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+footer {
+  margin-top: 4em;
+  padding-top: 1.5em;
+  border-top: 1px solid var(--background-modifier-border);
+  font-size: 0.76rem;
+  color: var(--text-faint);
+  line-height: 1.6;
+}
+.sources { margin-top: 0.8em; display: flex; flex-wrap: wrap; gap: 6px; }
+.sources a {
+  color: var(--text-muted);
+  background: var(--background-secondary);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--background-modifier-border);
+  font-size: 0.72rem;
+}
+.sources a:hover { color: var(--text-accent); }
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <svg width="14" height="14" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 2L3.5 5L6.5 8"/></svg>
+    <a href="https://xedixermawan.github.io">xedixermawan.github.io</a>
+  </div>
+</nav>
+<div id="page-wrapper">
+
+  <!-- HEADER -->
+  <div class="page-meta">
+    <span>📅 16 Mei 2026</span>
+    <span>🌴 Sektor: Perkebunan &amp; Agribisnis</span>
+    <span>🏢 IDX — Papan Utama</span>
+  </div>
+  <h1 class="page-title">
+    PT Salim Ivomas Pratama Tbk
+    <span class="ticker-badge">SIMP</span>
+  </h1>
+  <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:1.2em;">
+    Raksasa agribisnis terintegrasi milik Grup Salim — dari kebun kelapa sawit seluas 241.208 hektar hingga merek minyak goreng dan margarin di meja makan jutaan keluarga Indonesia.
+  </p>
+
+  <hr />
+
+  <!-- KPI GRID -->
+  <div class="kpi-grid">
+    <div class="callout">
+      <div class="callout-title">Kapitalisasi Pasar</div>
+      <div class="callout-value">Rp11,39 T</div>
+      <div class="callout-sub">~15,5 miliar lembar saham</div>
+    </div>
+    <div class="callout callout-up">
+      <div class="callout-title">Pendapatan 2025</div>
+      <div class="callout-value">Rp21,06 T</div>
+      <div class="callout-sub">↑ 31,9% YoY</div>
+    </div>
+    <div class="callout callout-up">
+      <div class="callout-title">Laba Bersih 2025</div>
+      <div class="callout-value">Rp2,07 T</div>
+      <div class="callout-sub">↑ 33% YoY</div>
+    </div>
+    <div class="callout">
+      <div class="callout-title">Dividen per Saham</div>
+      <div class="callout-value">Rp20</div>
+      <div class="callout-sub">Yield ~4,6% (2025)</div>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- SECTION 1: PROFIL SINGKAT -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    🏢 Profil Singkat
+  </h2>
+  <div class="section-body">
+    <p>
+      <strong>PT Salim Ivomas Pratama Tbk (SIMP)</strong> adalah perusahaan agribisnis terintegrasi terkemuka di Indonesia yang bergerak di sepanjang rantai nilai minyak kelapa sawit — dari riset dan budidaya, produksi CPO (Crude Palm Oil), hingga pengolahan produk turunan seperti minyak goreng, margarin, shortening, dan berbasis lemak nabati lainnya. Perusahaan merupakan anak usaha dari <strong>Indofood Agri Resources Ltd</strong> yang tercatat di Bursa Singapura, dan bernaung di bawah atap besar <strong>Grup Salim</strong> yang dikendalikan oleh taipan Anthony Salim.
+    </p>
+    <p>
+      SIMP mencatatkan sahamnya di BEI pada <strong>9 Juni 2011</strong> dengan harga IPO Rp1.100 per saham. Perusahaan mengelola perkebunan kelapa sawit seluas <strong>241.208 hektar</strong> yang tersebar di Sumatera dan Kalimantan, didukung oleh <strong>27 pabrik kelapa sawit (PKS)</strong> dengan total kapasitas olah tandan buah segar (TBS) mencapai 7,2 juta ton per tahun. Selain kelapa sawit sebagai komoditas utama, SIMP juga mengembangkan perkebunan karet, tebu, kakao, dan teh dalam skala lebih kecil, memperkuat karakter diversifikasi agribisnis-nya.
+    </p>
+    <p>
+      Merek-merek konsumen unggulan SIMP di segmen minyak dan lemak nabati antara lain <strong>Bimoli</strong> (minyak goreng premium), <strong>Simas</strong> (margarin), <strong>Palmia</strong>, dan <strong>Happy Salad Oil</strong>, yang telah menjadi pemimpin pasar di segmennya masing-masing di Indonesia.
+    </p>
+    <table>
+      <thead>
+        <tr><th>Informasi</th><th>Detail</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Nama Lengkap</td><td>PT Salim Ivomas Pratama Tbk</td></tr>
+        <tr><td>Kode Saham</td><td>SIMP</td></tr>
+        <tr><td>Tanggal Listing BEI</td><td>9 Juni 2011</td></tr>
+        <tr><td>Kantor Pusat</td><td>Jakarta Selatan, DKI Jakarta</td></tr>
+        <tr><td>Luas Kebun Sawit</td><td>241.208 hektar (Des 2024)</td></tr>
+        <tr><td>Jumlah PKS</td><td>27 pabrik kelapa sawit</td></tr>
+        <tr><td>Kapasitas Olah TBS</td><td>7,2 juta ton/tahun</td></tr>
+        <tr><td>Induk Usaha</td><td>Indofood Agri Resources Ltd (Singapura)</td></tr>
+        <tr><td>Grup</td><td>Grup Salim / Anthony Salim</td></tr>
+        <tr><td>Sektor IDX</td><td>Perkebunan / Agribisnis</td></tr>
+        <tr><td>Papan</td><td>Papan Utama BEI</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 2: MODEL BISNIS -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    ⚙️ Model Bisnis
+  </h2>
+  <div class="section-body">
+    <p>
+      Model bisnis SIMP berdiri di atas dua pilar utama yang saling melengkapi: <strong>Segmen Perkebunan</strong> dan <strong>Segmen Minyak &amp; Lemak Nabati (Edible Oils &amp; Fats / EOF)</strong>. Integrasi vertikal ini memberi SIMP keunggulan struktural yang signifikan — ketika harga CPO naik, marjin perkebunan meningkat; ketika harga CPO turun, segmen EOF mendapat bahan baku lebih murah dan marjin pengilangan terdongkrak.
+    </p>
+    <p>
+      <strong>Segmen Perkebunan</strong> mencakup seluruh kegiatan hulu: pembibitan, penanaman, perawatan, dan pemanenan kelapa sawit di 241.208 hektar lahan yang didominasi kebun di Kalimantan dan Sumatera. Hasil panen TBS diolah di 27 PKS menjadi CPO dan Palm Kernel Oil (PKO). Segmen ini menyumbang sekitar 29% dari total pendapatan, namun menjadi tulang punggung margin perusahaan karena biaya produksi CPO internal lebih efisien dibanding harga pasar.
+    </p>
+    <p>
+      <strong>Segmen Minyak &amp; Lemak Nabati</strong> mengolah CPO menjadi berbagai produk konsumen bernilai tambah tinggi — minyak goreng, margarin, shortening, dan specialty fats untuk industri makanan. Segmen ini mendominasi pendapatan dengan kontribusi sekitar 71%. Produk EOF didistribusikan ke jaringan ritel modern, pasar tradisional, serta industri makanan &amp; minuman di Indonesia dan diekspor ke lebih dari sepuluh negara termasuk Tiongkok, Singapura, Nigeria, Filipina, dan Jerman.
+    </p>
+    <p>
+      Kunci keberhasilan model bisnis ini adalah <strong>sinergi dengan Grup Indofood</strong>: distribusi produk memanfaatkan jaringan distribusi Indofood yang mencakup hampir seluruh wilayah Indonesia, sementara inovasi produk memanfaatkan R&amp;D bersama. Harga CPO global menjadi variabel paling sensitif — naik turunnya harga minyak sawit di pasar Rotterdam dan Bursa Malaysia Derivatives (BMD) berdampak langsung pada profitabilitas kedua segmen secara berlawanan arah, menciptakan natural hedge yang unik.
+    </p>
+  </div>
+
+  <!-- SECTION 3: KINERJA KEUANGAN -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    📊 Kinerja Keuangan
+  </h2>
+  <div class="section-body">
+    <p>
+      Kinerja keuangan SIMP mencerminkan volatilitas khas perusahaan komoditas berbasis minyak sawit — naik-turun mengikuti siklus harga CPO global yang dipengaruhi dinamika pasar minyak nabati dunia, cuaca El Niño/La Niña, kebijakan biodiesel, serta kondisi geopolitik. <strong>Tahun 2021</strong> menjadi titik kebangkitan luar biasa: laba bersih melonjak 358,75% menjadi Rp984 miliar, terdorong lonjakan harga CPO global yang dipicu pemulihan ekonomi pasca-pandemi dan meningkatnya permintaan minyak nabati. Pendapatan mencapai puncak Rp19,65 triliun.
+    </p>
+    <p>
+      <strong>Tahun 2022</strong>, meskipun harga CPO sempat mencapai rekor tertinggi di awal tahun, pendapatan SIMP justru turun 9% menjadi Rp17,79 triliun karena larangan ekspor CPO yang diberlakukan pemerintah Indonesia pada April–Mei 2022 untuk menjaga pasokan minyak goreng domestik. Laba bersih tetap tumbuh 21% menjadi Rp1,19 triliun berkat perbaikan efisiensi operasional. <strong>Tahun 2023</strong> menjadi tahun berat: pendapatan menyusut lagi ke Rp16,00 triliun dan laba bersih amblas 38% menjadi Rp736 miliar seiring normalisasi harga CPO yang tajam dan produksi TBS yang sedikit menurun.
+    </p>
+    <p>
+      <strong>Pemulihan dramatis terjadi di 2024</strong>: meski pendapatan hampir stagnan di Rp15,97 triliun, SIMP berhasil menekan beban penjualan 11,95% sehingga laba kotor melonjak 44% dan laba bersih tumbuh luar biasa hingga 110% menjadi Rp1,54 triliun. Ini menunjukkan bahwa program efisiensi internal Kalbe berjalan efektif lepas dari dinamika harga komoditas. Puncak tertinggi dicapai pada <strong>2025</strong>: pendapatan melonjak 31,9% menjadi Rp21,06 triliun — didorong kombinasi kenaikan harga jual rata-rata CPO dan peningkatan volume penjualan produk EOF — sementara laba bersih tumbuh 33% menjadi Rp2,07 triliun.
+    </p>
+
+    <div class="chart-block">
+      <div class="chart-title">Pendapatan &amp; Laba Bersih (Rp Triliun) — 2021–2025</div>
+      <canvas id="chartRevenue"></canvas>
+    </div>
+
+    <h3>Rasio Keuangan Historis</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Tahun</th>
+          <th>Pendapatan (T)</th>
+          <th>Laba Bersih (T)</th>
+          <th>Net Margin</th>
+          <th>PER</th>
+          <th>PBV</th>
+          <th>ROE</th>
+          <th>DER</th>
+          <th>Div/Saham</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2021</td><td>Rp19,65</td><td>Rp0,98</td><td>5,0%</td><td>8,5x</td><td>0,50x</td><td>4,0%</td><td>0,52x</td><td>Rp12</td>
+        </tr>
+        <tr>
+          <td>2022</td><td>Rp17,79</td><td>Rp1,19</td><td>6,7%</td><td>7,2x</td><td>0,48x</td><td>4,8%</td><td>0,50x</td><td>Rp15</td>
+        </tr>
+        <tr>
+          <td>2023</td><td>Rp16,00</td><td>Rp0,74</td><td>4,6%</td><td>12,1x</td><td>0,44x</td><td>3,0%</td><td>0,48x</td><td>Rp10</td>
+        </tr>
+        <tr>
+          <td>2024</td><td>Rp15,97</td><td>Rp1,54</td><td>9,6%</td><td>5,8x</td><td>0,40x</td><td>6,2%</td><td>0,45x</td><td>Rp15</td>
+        </tr>
+        <tr class="highlight">
+          <td>2025</td><td>Rp21,06</td><td>Rp2,07</td><td>9,8%</td><td>4,0x</td><td>0,37x</td><td>7,5%</td><td>0,42x</td><td>Rp20</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.78rem;color:var(--text-faint);">*PER &amp; PBV merupakan estimasi berdasarkan harga pasar dan data ekuitas yang tersedia. DER = Debt-to-Equity Ratio. Valuasi PBV &lt;0,5x mengindikasikan saham diperdagangkan di bawah nilai bukunya secara konsisten.</p>
+  </div>
+
+  <!-- SECTION 4: KEPEMILIKAN & SEGMEN -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    🥧 Struktur Kepemilikan &amp; Segmen Bisnis
+  </h2>
+  <div class="section-body">
+    <p>
+      Struktur kepemilikan SIMP sangat terkonsentrasi: <strong>Indofood Agri Resources Ltd</strong> — anak usaha PT Indofood Sukses Makmur Tbk yang tercatat di Bursa Singapura — menggenggam 73,46% saham SIMP. Sementara <strong>PT Indofood Sukses Makmur Tbk (INDF)</strong> secara langsung memiliki 6,68% saham. Artinya, total kepemilikan Grup Indofood/Salim mencapai lebih dari 80%, meninggalkan porsi publik yang relatif kecil sekitar 19,86%.
+    </p>
+    <div class="two-col">
+      <div class="chart-block">
+        <div class="chart-title">Struktur Kepemilikan Saham (%)</div>
+        <canvas id="chartOwnership"></canvas>
+      </div>
+      <div class="chart-block">
+        <div class="chart-title">Komposisi Pendapatan per Segmen — 2025</div>
+        <canvas id="chartSegment"></canvas>
+      </div>
+    </div>
+    <p>
+      Konsentrasi kepemilikan yang tinggi ini merupakan karakteristik umum perusahaan konglomerat keluarga di Indonesia. Bagi investor publik, hal ini berarti keputusan strategis besar — dari ekspansi lahan, akuisisi, hingga kebijakan dividen — sangat ditentukan oleh kepentingan induk usaha. Di sisi positif, dukungan penuh Grup Salim memberikan akses ke modal, jaringan distribusi, dan sinergi korporat yang sulit ditandingi pesaing.
+    </p>
+    <p>
+      Dalam konteks segmen bisnis, <strong>Minyak &amp; Lemak Nabati (EOF)</strong> mendominasi pendapatan dengan porsi ~71%, namun margin perunitnya lebih tipis karena kompetisi produk konsumen yang ketat. <strong>Segmen Perkebunan</strong> dengan porsi ~29% justru menjadi mesin margin yang lebih tebal — terutama saat harga CPO internasional sedang tinggi seperti periode 2021 dan 2025.
+    </p>
+  </div>
+
+  <!-- SECTION 5: BERITA TERKINI -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    📰 Berita &amp; Perkembangan Terkini
+  </h2>
+  <div class="section-body">
+
+    <div class="news-item">
+      <div class="news-date">Maret 2026</div>
+      <div class="news-title">Full Year 2025: Penjualan Rp21,06 Triliun, Laba Bersih Tumbuh 33%</div>
+      <div class="news-desc">SIMP membukukan kinerja terbaik dalam beberapa tahun terakhir dengan penjualan Rp21,06 triliun (+31,9% YoY) dan laba bersih Rp2,07 triliun (+33% YoY). Kenaikan harga jual rata-rata CPO dan peningkatan volume penjualan produk EOF menjadi katalis utama. Laba bruto melonjak signifikan seiring perbaikan spread antara harga jual produk dan biaya bahan baku CPO yang lebih terkendali berkat produksi internal.</div>
+      <span class="badge badge-green">✅ Kinerja Terkuat 5 Tahun</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">Juli 2025</div>
+      <div class="news-title">SIMP Tebar Dividen Rp20 per Saham — Total Rp310 Miliar</div>
+      <div class="news-desc">Rapat Umum Pemegang Saham Tahunan SIMP menyetujui pembagian dividen tunai sebesar Rp20 per saham atau total Rp310,03 miliar, setara yield ~4,6% dari harga saham saat itu. Ini merupakan dividen tertinggi dalam lima tahun terakhir, mencerminkan kepercayaan diri manajemen atas kinerja dan arus kas yang kuat. Penerima terbesar adalah Indofood Agri Resources Ltd dengan 73,46% porsi.</div>
+      <span class="badge badge-accent">💰 Dividen Tertinggi 5 Tahun</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">Agustus 2025</div>
+      <div class="news-title">Semester I 2025: Laba Naik 43%, EPS Rp48,72 per Saham</div>
+      <div class="news-desc">Dalam periode Januari–Juni 2025, SIMP membukukan pendapatan Rp9,39 triliun, laba kotor naik 42% YoY menjadi Rp2,27 triliun, dan laba operasional naik 24% menjadi Rp1,51 triliun. Laba bersih yang dapat diatribusikan ke pemilik induk naik 43% YoY menjadi Rp755,14 miliar, dengan EPS Rp48,72. Segmen perkebunan mencatat peningkatan produksi TBS seiring kondisi cuaca yang mendukung di area utama.</div>
+      <span class="badge badge-green">📈 Pertumbuhan Dua Digit</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">Sepanjang 2024–2025</div>
+      <div class="news-title">Ekspansi Berkelanjutan: 241.208 Ha Lahan Sawit dan Efisiensi Pabrik</div>
+      <div class="news-desc">SIMP konsisten memperluas dan mengoptimalkan lahan perkebunan, dengan total luas kebun kelapa sawit mencapai 241.208 hektar per akhir 2024. Dari total itu, porsi terbesar adalah kebun inti (nucleus estate) yang dikelola langsung perusahaan. Program peremajaan sawit (replanting) dijalankan secara bertahap untuk menjaga produktivitas pohon, mengingat pohon sawit mencapai produktivitas puncak pada usia 7–18 tahun. Program efisiensi di 27 PKS juga menekan biaya ekstraksi minyak per ton secara konsisten.</div>
+      <span class="badge badge-blue">🌱 Ekspansi Operasional</span>
+    </div>
+
+  </div>
+
+  <!-- SECTION 6: RISIKO & PELUANG -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    ⚖️ Risiko &amp; Peluang
+  </h2>
+  <div class="section-body">
+    <p>
+      <strong>Risiko volatilitas harga CPO</strong> adalah risiko eksistensial SIMP. Harga CPO di pasar global ditentukan oleh faktor-faktor di luar kendali perusahaan: kondisi cuaca El Niño/La Niña yang mempengaruhi produksi, harga energi global yang mempengaruhi daya saing biodiesel sawit, kebijakan impor dari Uni Eropa dan India, serta kompetisi dengan minyak kedelai dan minyak bunga matahari. Siklus 2023 — di mana laba turun 38% hanya karena normalisasi harga CPO — menjadi pengingat keras tentang risiko ini. <span class="badge badge-red">🔴 Risiko Tinggi</span>
+    </p>
+    <p>
+      <strong>Risiko regulasi ekspor &amp; kebijakan domestik</strong> terbukti nyata pada 2022 ketika larangan ekspor CPO pemerintah Indonesia memangkas pendapatan signifikan. Kebijakan DMO (Domestic Market Obligation), HET minyak goreng, dan pungutan ekspor sawit terus menjadi variabel regulasi yang dapat mengubah profitabilitas secara tiba-tiba. <span class="badge badge-red">🔴 Risiko Tinggi</span>
+    </p>
+    <p>
+      <strong>Risiko tekanan ESG dari pasar Eropa</strong> semakin relevan. Uni Eropa menerapkan regulasi EUDR (EU Deforestation Regulation) yang mewajibkan pembuktian bahwa produk sawit tidak berasal dari lahan hasil deforestasi. Ini berpotensi mempersulit ekspor ke pasar Eropa yang nilainya tidak kecil dan mendorong peningkatan biaya kepatuhan. <span class="badge badge-amber">🟡 Risiko Sedang</span>
+    </p>
+    <p>
+      <strong>Peluang program biodiesel B40/B50 pemerintah Indonesia</strong> merupakan katalis struktural paling kuat untuk jangka menengah-panjang. Program blending biodiesel berbasis sawit yang terus ditingkatkan oleh pemerintah menciptakan permintaan CPO domestik yang stabil dan tidak tergantung pasar ekspor, memberikan lantai harga bagi CPO lokal. Setiap kenaikan porsi blending langsung menyerap produksi tambahan SIMP. <span class="badge badge-green">🟢 Peluang Besar</span>
+    </p>
+    <p>
+      <strong>Peluang valuasi yang sangat murah</strong> adalah daya tarik unik saham SIMP. Dengan PBV hanya 0,37x dan PER 4x, saham SIMP diperdagangkan jauh di bawah nilai buku dan di bawah rata-rata sektor. Investor legendaris Lo Kheng Hong diketahui memegang saham SIMP dalam portofolionya — menjadi sinyal bahwa saham ini dinilai undervalued secara fundamental oleh investor value seasoned. <span class="badge badge-accent">🔵 Peluang Valuasi</span>
+    </p>
+    <p>
+      <strong>Peluang pertumbuhan pasar ekspor produk konsumen EOF</strong> ke Afrika dan Asia Tenggara cukup menjanjikan. SIMP telah membangun jaringan distribusi di Nigeria, Filipina, dan pasar berkembang lain yang permintaan minyak goreng premiumnya sedang tumbuh seiring peningkatan daya beli masyarakat. <span class="badge badge-green">🟢 Peluang Ekspor</span>
+    </p>
+  </div>
+
+  <!-- SECTION 7: ESG -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    🌱 ESG &amp; Keberlanjutan
+  </h2>
+  <div class="section-body">
+    <p>
+      ESG adalah medan pertempuran kritis bagi perusahaan perkebunan kelapa sawit Indonesia di panggung global. SIMP meresponsnya dengan komitmen keberlanjutan yang tercermin dalam Laporan Keberlanjutan tahunan yang mengacu standar GRI dan dilaporkan ke BEI. Perusahaan menjadikan sertifikasi <strong>RSPO (Roundtable on Sustainable Palm Oil)</strong> sebagai pilar utama komitmen lingkungannya — sebuah standar internasional yang menjadi tiket masuk ke pasar konsumen premium di Eropa dan Jepang.
+    </p>
+
+    <div class="esg-row">
+      <div class="esg-label-row">
+        <span class="esg-label">🌿 Environmental (Lingkungan)</span>
+        <span class="esg-score" style="color:#3d9e71;">58/100</span>
+      </div>
+      <div class="esg-bar-bg"><div class="esg-bar-fill" style="width:58%;background:#3d9e71;"></div></div>
+      <div class="esg-sub">Sertifikasi RSPO untuk lahan perkebunan, kebijakan nol deforestasi baru (No Deforestation, No Peat, No Exploitation / NDPE), daur ulang 100% limbah pabrik sebagai pupuk organik &amp; bahan bakar boiler, pemantauan biodiversitas di area perkebunan.</div>
+    </div>
+
+    <div class="esg-row">
+      <div class="esg-label-row">
+        <span class="esg-label">👥 Social (Sosial)</span>
+        <span class="esg-score" style="color:#7f6df2;">65/100</span>
+      </div>
+      <div class="esg-bar-bg"><div class="esg-bar-fill" style="width:65%;background:#7f6df2;"></div></div>
+      <div class="esg-sub">Program plasma (kebun mitra petani kecil) untuk pemberdayaan petani di sekitar perkebunan inti, pembangunan fasilitas kesehatan dan sekolah di area kebun, program keselamatan kerja (K3) di seluruh unit operasional, pelatihan tenaga kerja lokal.</div>
+    </div>
+
+    <div class="esg-row">
+      <div class="esg-label-row">
+        <span class="esg-label">🏛️ Governance (Tata Kelola)</span>
+        <span class="esg-score" style="color:#50a5dc;">70/100</span>
+      </div>
+      <div class="esg-bar-bg"><div class="esg-bar-fill" style="width:70%;background:#50a5dc;"></div></div>
+      <div class="esg-sub">Laporan keberlanjutan diterbitkan rutin, dewan komisaris independen, sistem whistle-blowing, pelaporan yang transparan ke BEI &amp; publik, kepatuhan pada seluruh regulasi lingkungan dan ketenagakerjaan yang berlaku.</div>
+    </div>
+
+    <p>
+      Industri kelapa sawit menghadapi tantangan persepsi global yang berat, terutama terkait deforestasi dan hak asasi manusia di perkebunan. SIMP mengatasi ini dengan menerapkan komitmen <strong>NDPE (No Deforestation, No Peat, No Exploitation)</strong> dalam kebijakan pengadaan dan operasionalnya. Praktik <strong>daur ulang 100% limbah pabrik</strong> — baik sebagai pupuk organik maupun bahan bakar biomassa untuk boiler PKS — merupakan contoh konkret ekonomi sirkular yang mengurangi emisi sekaligus menekan biaya operasional. Ke depan, kesiapan memenuhi persyaratan EUDR akan menjadi penentu apakah SIMP dapat mempertahankan dan memperluas akses ke pasar Eropa yang premium.
+    </p>
+  </div>
+
+  <hr />
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>Disclaimer:</strong> Dokumen ini dibuat secara otomatis untuk tujuan informasi dan edukasi semata. Angka-angka yang tersaji bersumber dari laporan keuangan publik, berita resmi, dan data pasar yang tersedia per tanggal profil ini dibuat. Beberapa rasio keuangan (PER, PBV) merupakan estimasi berdasarkan harga pasar dan data ekuitas yang tersedia. Dokumen ini <strong>bukan</strong> merupakan rekomendasi investasi. Keputusan investasi sepenuhnya merupakan tanggung jawab investor.</p>
+    <div class="sources">
+      <a href="https://www.simp.co.id" target="_blank">simp.co.id</a>
+      <a href="https://www.liputan6.com/saham/read/6288618/salim-ivomas-pratama-bukukan-penjualan-rp-2106-triliun-di-2025-laba-tumbuh-33" target="_blank">Liputan6 — Full Year 2025</a>
+      <a href="https://www.neraca.co.id/article/233836/laba-bersih-salim-invomas-melonjak-33" target="_blank">Neraca — Laba 2025</a>
+      <a href="https://pintarsaham.id/kinerja-keuangan-pt-salim-ivomas-pratama-tbk-simp-semester-1-2025/" target="_blank">PintarSaham — Sem I 2025</a>
+      <a href="https://www.neraca.co.id/article/215499/salim-ivomas-raup-laba-bersih-rp154-triliun" target="_blank">Neraca — Laba 2024</a>
+      <a href="https://ipotnews.com/ipotnews/newsDetail.php?jdl=Tekan_Beban_Penjualan__Laba_Bersih_SIMP_di_2024_Melesat_110_&news_id=195167" target="_blank">IPOTNews — Laba +110%</a>
+      <a href="https://www.idnfinancials.com/id/news/55425/salim-ivomas-akan-bagi-dividen-rp20-per-saham-yield-setara-4-6" target="_blank">IDNFinancials — Dividen</a>
+      <a href="https://haisawit.co.id/news/detail/pt-salim-ivomas-pratama-tbk-kelola-241208-hektar-sawit-dengan-kapasitas-olah-tbs-72-juta-ton" target="_blank">HaiSawit — Operasional</a>
+      <a href="https://www.emitennews.com/news/anjlok-38-persen-laba-salim-ivomas-simp-2023-sisa-rp736-miliar" target="_blank">EmitenNews — Laba 2023</a>
+      <a href="https://carisaham.com/emiten/profile/SIMP" target="_blank">CariSaham — Profil SIMP</a>
+      <a href="https://investor.id/market-and-corporate/323197/grup-salim-raup-untung-rp-22-triliun-dari-sawit" target="_blank">Investor.id — Grup Salim</a>
+    </div>
+    <p style="margin-top:1em;">IDX Profile Series &nbsp;|&nbsp; Sektor Rotasi: Perkebunan / Agribisnis &nbsp;|&nbsp; 16 Mei 2026 &nbsp;|&nbsp; Dibuat untuk <a href="https://xedixermawan.github.io" style="color:var(--text-muted);">xedixermawan.github.io</a></p>
+  </footer>
+
+</div>
+
+<script>
+  Chart.defaults.color = '#706f6f';
+  Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+
+  const GRID_COLOR = 'rgba(0,0,0,0.07)';
+
+  /* ------ CHART 1: Revenue + Net Income Combo ------ */
+  (function() {
+    const ctx = document.getElementById('chartRevenue').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['2021', '2022', '2023', '2024', '2025'],
+        datasets: [
+          {
+            label: 'Pendapatan (Rp T)',
+            data: [19.65, 17.79, 16.00, 15.97, 21.06],
+            backgroundColor: 'rgba(127,109,242,0.18)',
+            borderColor: '#7f6df2',
+            borderWidth: 2,
+            borderRadius: 4,
+            yAxisID: 'y',
+          },
+          {
+            label: 'Laba Bersih (Rp T)',
+            data: [0.98, 1.19, 0.74, 1.54, 2.07],
+            type: 'line',
+            borderColor: '#3d9e71',
+            backgroundColor: 'rgba(61,158,113,0.10)',
+            borderWidth: 2.5,
+            pointBackgroundColor: '#3d9e71',
+            pointRadius: 5,
+            tension: 0.35,
+            fill: true,
+            yAxisID: 'y2',
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+          legend: { position: 'top', labels: { usePointStyle: true, boxWidth: 8 } },
+          tooltip: {
+            callbacks: {
+              label: ctx => `${ctx.dataset.label}: Rp${ctx.parsed.y.toFixed(2)} T`
+            }
+          }
+        },
+        scales: {
+          y: {
+            title: { display: true, text: 'Pendapatan (Rp T)', font: { size: 11 } },
+            grid: { color: GRID_COLOR },
+            ticks: { callback: v => `Rp${v}T` }
+          },
+          y2: {
+            position: 'right',
+            title: { display: true, text: 'Laba Bersih (Rp T)', font: { size: 11 } },
+            grid: { display: false },
+            ticks: { callback: v => `Rp${v}T` }
+          },
+          x: { grid: { display: false } }
+        }
+      }
+    });
+  })();
+
+  /* ------ CHART 2: Ownership Donut ------ */
+  (function() {
+    const ctx = document.getElementById('chartOwnership').getContext('2d');
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: [
+          'Indofood Agri Resources Ltd (73,46%)',
+          'PT Indofood Sukses Makmur (6,68%)',
+          'Publik (19,86%)'
+        ],
+        datasets: [{
+          data: [73.46, 6.68, 19.86],
+          backgroundColor: ['#7f6df2', '#3d9e71', '#c8c8c8'],
+          borderWidth: 2,
+          borderColor: '#ffffff'
+        }]
+      },
+      options: {
+        responsive: true,
+        cutout: '60%',
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: { font: { size: 10 }, boxWidth: 12, padding: 10 }
+          },
+          tooltip: {
+            callbacks: { label: ctx => `${ctx.label.split('(')[0].trim()}: ${ctx.parsed.toFixed(2)}%` }
+          }
+        }
+      }
+    });
+  })();
+
+  /* ------ CHART 3: Segment Horizontal Bar ------ */
+  (function() {
+    const ctx = document.getElementById('chartSegment').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Minyak & Lemak Nabati (EOF)', 'Perkebunan'],
+        datasets: [{
+          label: 'Kontribusi Pendapatan (%)',
+          data: [71, 29],
+          backgroundColor: ['#7f6df2', '#3d9e71'],
+          borderRadius: 4,
+          borderSkipped: false
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: { label: ctx => `${ctx.parsed.x}% dari total pendapatan` }
+          }
+        },
+        scales: {
+          x: {
+            max: 100,
+            grid: { color: GRID_COLOR },
+            ticks: { callback: v => `${v}%` }
+          },
+          y: { grid: { display: false } }
+        }
+      }
+    });
+  })();
+
+  /* ------ TOGGLE SECTIONS ------ */
+  function toggleSection(h2el) {
+    h2el.classList.toggle('collapsed');
+  }
+</script>
+</body>
+</html>

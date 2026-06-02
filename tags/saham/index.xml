@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Saham on Home</title>
+    <link>https://xedixermawan.github.io/tags/saham/</link>
+    <description>Recent content in Saham on Home</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>© 2007-2024 XediXermawan</copyright>
+    <lastBuildDate>Sat, 26 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://xedixermawan.github.io/tags/saham/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Teknik Hitung Harga Wajar Saham</title>
+      <link>https://xedixermawan.github.io/2024/10/26/teknik-hitung-harga-wajar-saham/</link>
+      <pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://xedixermawan.github.io/2024/10/26/teknik-hitung-harga-wajar-saham/</guid>
+      <description>&lt;p&gt;Berikut adalah beberapa teknik yang umum digunakan untuk menghitung &lt;strong&gt;harga wajar&#xA;suatu saham&lt;/strong&gt; selain menggunakan &lt;strong&gt;Graham Number&lt;/strong&gt;. Metode ini mencakup&#xA;pendekatan fundamental yang memperhitungkan berbagai aspek seperti pendapatan,&#xA;arus kas, pertumbuhan, dan nilai aset perusahaan:&lt;/p&gt;&#xA;&lt;h3 id=&#34;1-discounted-cash-flow-dcf&#34;&gt;1. Discounted Cash Flow (DCF)&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Teknik ini menghitung nilai intrinsik saham berdasarkan proyeksi arus kas&#xA;masa depan yang didiskon dengan tingkat diskonto (discount rate) yang sesuai,&#xA;biasanya &lt;strong&gt;weighted average cost of capital (WACC)&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Rumus dasar:&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;$$&#xA;\text{Nilai Saham} =&#xA;\frac{\mathrm{FCF}_1}{(1 + r)^1} +&#xA;\frac{\mathrm{FCF}_2}{(1 + r)^2} +&#xA;\cdots +&#xA;\frac{\mathrm{FCF}_n}{(1 + r)^n}&#xA;$$&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mengenal bursa saham</title>
+      <link>https://xedixermawan.github.io/2022/03/28/mengenal-bursa-saham/</link>
+      <pubDate>Mon, 28 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://xedixermawan.github.io/2022/03/28/mengenal-bursa-saham/</guid>
+      <description>&lt;p&gt;Saya sudah kenal istilah bursa saham sejak lama, mungkin sekitar tahun 2011. Tapi waktu itu ya cuma sebatas tahu saja. Saya sering mendengar informasi tentang saham dan memang sempat tertarik, hanya saja karena kesibukan dan minimnya pemahaman, saya belum pernah benar-benar mencoba. Jadi, saham itu seperti ada di radar, tapi belum pernah saya jalani secara serius. Lalu datanglah masa pandemi tahun 2020. Saat itu media sosial ramai sekali membahas saham. Mulai dari tips investasi sampai cerita orang-orang yang berhasil mendapatkan keuntungan besar. Dari situ saya mulai berpikir, “Menarik juga kalau dicoba.” Akhirnya pada September 2020, saya memberanikan diri membuka akun sekuritas. Kebetulan saat itu ada dana menganggur, dan kondisi pasar juga sedang turun akibat pandemi COVID-19.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

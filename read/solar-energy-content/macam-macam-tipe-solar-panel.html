@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Macam-Macam Tipe Solar Panel — Catatan</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&family=Mona+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+/* ─── TOKENS ─────────────────────────────────────────────── */
+:root {
+  --bg:          #faf9f7;
+  --bg-alt:      #f3f1ed;
+  --bg-hover:    #ede9e2;
+  --border:      #ddd8cf;
+  --border-light:#e8e3da;
+  --text:        #1a1917;
+  --text-muted:  #6b6760;
+  --text-faint:  #a09c96;
+  --accent:      #7c6f5a;        /* warm sepia-brown */
+  --accent-2:    #c07a2e;        /* amber for highlights */
+  --tag-bg:      #ede9e2;
+  --tag-text:    #5c5347;
+  --callout-tip: #eef6f0;
+  --callout-tip-border: #91c4a2;
+  --callout-warn:#fdf4e3;
+  --callout-warn-border: #d4a843;
+  --callout-info:#edf2fb;
+  --callout-info-border: #7aa5d4;
+  --code-bg:     #f0ece6;
+  --link:        #5c7fad;
+
+  --sidebar-w:   240px;
+  --content-w:   720px;
+  --font-body:   'Source Serif 4', Georgia, serif;
+  --font-ui:     'Mona Sans', sans-serif;
+  --font-mono:   'JetBrains Mono', monospace;
+}
+
+/* ─── RESET ──────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── LAYOUT ─────────────────────────────────────────────── */
+.layout {
+  display: flex;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: var(--sidebar-w);
+  flex-shrink: 0;
+  border-right: 1px solid var(--border);
+  padding: 32px 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  background: var(--bg);
+}
+.sidebar-brand {
+  padding: 0 20px 24px;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 20px;
+}
+.sidebar-brand-name {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.sidebar-brand-sub {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--text-faint);
+  margin-top: 2px;
+}
+
+.sidebar-section-label {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0 20px;
+  margin-bottom: 6px;
+  margin-top: 16px;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 20px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: all 0.15s;
+  cursor: pointer;
+}
+.nav-item:hover { color: var(--text); background: var(--bg-alt); }
+.nav-item.active {
+  color: var(--accent-2);
+  border-left-color: var(--accent-2);
+  background: var(--bg-alt);
+  font-weight: 500;
+}
+.nav-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--border);
+  flex-shrink: 0;
+}
+.nav-item.active .nav-dot { background: var(--accent-2); }
+
+.sidebar-tags {
+  padding: 16px 20px 0;
+  border-top: 1px solid var(--border-light);
+  margin-top: 20px;
+}
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  margin: 3px 2px;
+  cursor: default;
+}
+
+/* MAIN CONTENT */
+.main {
+  flex: 1;
+  min-width: 0;
+  padding: 60px 64px 120px;
+  max-width: calc(var(--content-w) + 128px);
+}
+
+/* TOC right panel */
+.toc-panel {
+  width: 200px;
+  flex-shrink: 0;
+  padding: 60px 0 60px 32px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+.toc-title {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+.toc-link {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-faint);
+  text-decoration: none;
+  padding: 3px 0 3px 10px;
+  border-left: 1px solid var(--border-light);
+  margin-bottom: 2px;
+  transition: all 0.15s;
+  line-height: 1.4;
+}
+.toc-link:hover { color: var(--text); border-left-color: var(--accent); }
+.toc-link.active { color: var(--accent-2); border-left-color: var(--accent-2); }
+.toc-link.sub { padding-left: 20px; font-size: 11px; }
+
+/* ─── TYPOGRAPHY ─────────────────────────────────────────── */
+.note-title {
+  font-family: var(--font-body);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text);
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+.note-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-light);
+}
+.note-meta-item {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-faint);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.note-meta-sep { color: var(--border); }
+.note-meta .tag-pill { margin: 0; }
+
+h2 {
+  font-family: var(--font-body);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 48px 0 12px;
+  padding-top: 8px;
+  letter-spacing: -0.01em;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 8px;
+}
+h3 {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 32px 0 8px;
+  letter-spacing: -0.005em;
+}
+h4 {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  margin: 24px 0 6px;
+}
+p { margin-bottom: 16px; }
+p:last-child { margin-bottom: 0; }
+
+a { color: var(--link); text-decoration: none; border-bottom: 1px solid transparent; }
+a:hover { border-bottom-color: var(--link); }
+
+strong { font-weight: 600; color: var(--text); }
+em { font-style: italic; color: var(--text); }
+
+code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  background: var(--code-bg);
+  border: 1px solid var(--border-light);
+  border-radius: 3px;
+  padding: 1px 5px;
+  color: var(--accent);
+}
+
+/* ─── CALLOUTS ───────────────────────────────────────────── */
+.callout {
+  border-radius: 5px;
+  padding: 14px 18px;
+  margin: 24px 0;
+  border-left: 3px solid;
+  font-size: 15px;
+  line-height: 1.65;
+}
+.callout-header {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.callout.tip    { background: var(--callout-tip);  border-color: var(--callout-tip-border); }
+.callout.tip .callout-header    { color: #2d7a4f; }
+.callout.warn   { background: var(--callout-warn); border-color: var(--callout-warn-border); }
+.callout.warn .callout-header   { color: #8a6020; }
+.callout.info   { background: var(--callout-info); border-color: var(--callout-info-border); }
+.callout.info .callout-header   { color: #3a6491; }
+
+/* ─── WIKILINK STYLE ─────────────────────────────────────── */
+.wikilink {
+  color: var(--link);
+  background: rgba(92,127,173,0.08);
+  border-radius: 3px;
+  padding: 1px 4px;
+  font-size: 0.95em;
+  border-bottom: none;
+  cursor: pointer;
+}
+
+/* ─── INLINE DATAVIEW ────────────────────────────────────── */
+.dataview-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-ui);
+  font-size: 13.5px;
+  margin: 24px 0;
+}
+.dataview-table th {
+  background: var(--bg-alt);
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 9px 14px;
+  text-align: left;
+  border: 1px solid var(--border-light);
+}
+.dataview-table td {
+  padding: 9px 14px;
+  border: 1px solid var(--border-light);
+  color: var(--text);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.dataview-table tr:nth-child(even) td { background: var(--bg-alt); }
+.dataview-table tr:hover td { background: var(--bg-hover); }
+.eff-badge {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+.eff-high   { background: #d4edda; color: #1a5e2a; }
+.eff-mid    { background: #fff3cd; color: #7a5a00; }
+.eff-low    { background: #fde8e8; color: #8a1f1f; }
+.eff-lab    { background: #e8d4f5; color: #4a1a7a; }
+
+/* ─── PANEL ENTRY ────────────────────────────────────────── */
+.panel-entry {
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  margin: 28px 0;
+  overflow: hidden;
+}
+.panel-entry-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 18px 22px;
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--border-light);
+  gap: 16px;
+}
+.panel-entry-title-group {}
+.panel-entry-num {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-faint);
+  margin-bottom: 3px;
+}
+.panel-entry-name {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+.panel-entry-latin {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-faint);
+}
+.panel-entry-badges {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  flex-shrink: 0;
+}
+.status-badge {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.badge-komersial { background: #d4edda; color: #1a5e2a; }
+.badge-popular   { background: #cce5ff; color: #004085; }
+.badge-nextgen   { background: #e2d4f5; color: #4a1a7a; }
+.badge-flexible  { background: #fff3cd; color: #7a5a00; }
+.badge-eco       { background: #d4f5e5; color: #1a5e3a; }
+.badge-compound  { background: #fde8cc; color: #7a3000; }
+
+.panel-entry-body { padding: 18px 22px; }
+.panel-entry-body p { font-size: 15.5px; line-height: 1.72; color: var(--text); margin-bottom: 14px; }
+
+.props-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border-light);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 14px;
+  font-size: 13px;
+}
+.prop-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 14px;
+  background: var(--bg);
+}
+.prop-key {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-faint);
+}
+.prop-val {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* inline bar */
+.eff-inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+.eff-inline-label {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--text-faint);
+  width: 56px;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.eff-bar-track {
+  flex: 1;
+  height: 5px;
+  background: var(--bg-alt);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.eff-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: var(--accent-2);
+  transition: width 1s cubic-bezier(.22,1,.36,1);
+}
+.eff-inline-val {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  width: 56px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* ─── CHART CONTAINER ────────────────────────────────────── */
+.chart-wrap {
+  margin: 28px 0;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.chart-caption {
+  padding: 10px 18px;
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--border-light);
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.chart-canvas-wrap { padding: 16px 20px; background: var(--bg); }
+.chart-figcaption {
+  padding: 8px 18px;
+  font-family: var(--font-ui);
+  font-size: 11.5px;
+  color: var(--text-faint);
+  border-top: 1px solid var(--border-light);
+  background: var(--bg-alt);
+  font-style: italic;
+}
+
+/* ─── PROCESS STEPS ──────────────────────────────────────── */
+.steps-list { margin: 20px 0; }
+.step-row {
+  display: flex;
+  gap: 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border-light);
+  align-items: flex-start;
+}
+.step-row:last-child { border-bottom: none; }
+.step-num-badge {
+  flex-shrink: 0;
+  width: 26px; height: 26px;
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 2px;
+  background: var(--bg);
+}
+.step-content {}
+.step-title-sm {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.step-desc-sm {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* ─── FRONTMATTER BLOCK ──────────────────────────────────── */
+.frontmatter {
+  border: 1px solid var(--border-light);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.frontmatter-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: var(--bg-alt);
+  color: var(--text-faint);
+  cursor: pointer;
+  user-select: none;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+.frontmatter-body {
+  padding: 12px 16px;
+  background: var(--bg);
+  border-top: 1px solid var(--border-light);
+  display: none;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+.frontmatter-body.open { display: block; }
+.fm-key { color: var(--accent); }
+.fm-val { color: var(--text-muted); }
+
+/* ─── DIVIDER ────────────────────────────────────────────── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border-light);
+  margin: 40px 0;
+}
+
+/* ─── FOOTER ─────────────────────────────────────────────── */
+.note-footer {
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-light);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-faint);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.backlinks {
+  margin-top: 28px;
+  padding: 16px 18px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border-light);
+  border-radius: 5px;
+}
+.backlinks-title {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  margin-bottom: 10px;
+}
+.backlink-item {
+  font-family: var(--font-ui);
+  font-size: 12.5px;
+  color: var(--link);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 0;
+  cursor: pointer;
+}
+.backlink-item::before { content: '←'; font-size: 10px; opacity: 0.6; }
+
+/* ─── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .toc-panel { display: none; }
+  .main { padding: 40px 32px 80px; }
+}
+@media (max-width: 640px) {
+  .sidebar { display: none; }
+  .main { padding: 32px 20px 60px; }
+  .props-grid { grid-template-columns: 1fr; }
+  .panel-entry-header { flex-direction: column; }
+  .panel-entry-badges { flex-direction: row; align-items: flex-start; }
+}
+
+/* ─── SCROLL PROGRESS ────────────────────────────────────── */
+#progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: var(--accent-2);
+  width: 0%;
+  z-index: 1000;
+  transition: width 0.1s linear;
+}
+
+/* ─── TOPBAR ─────────────────────────────────────────────── */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border-light);
+  padding: 0 24px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+}
+.topbar-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-faint);
+  text-decoration: none;
+  border-bottom: none;
+  transition: color 0.15s;
+}
+.topbar-back:hover { color: var(--accent-2); border-bottom: none; }
+.topbar-arrow { font-size: 13px; transition: transform 0.15s; }
+.topbar-back:hover .topbar-arrow { transform: translateX(-3px); }
+
+/* ─── FOOTER HOME LINK ───────────────────────────────────── */
+.footer-home-link {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-faint);
+  text-decoration: none;
+  border-bottom: none;
+  transition: color 0.15s;
+}
+.footer-home-link:hover { color: var(--accent-2); border-bottom: none; }
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <a href="https://xedixermawan.github.io/" class="topbar-back">
+    <span class="topbar-arrow">←</span>
+    <span>xedixermawan.github.io</span>
+  </a>
+</div>
+
+<div class="layout">
+
+<!-- ── SIDEBAR ─────────────────────────────────────────── -->
+<aside class="sidebar">
+  <div class="sidebar-brand">
+    <div class="sidebar-brand-name">☀ Energi Surya</div>
+    <div class="sidebar-brand-sub">Kumpulan Catatan Teknis</div>
+  </div>
+
+  <div class="sidebar-section-label">Dalam Dokumen</div>
+  <a class="nav-item active" href="#intro" onclick="scrollTo('#intro')">
+    <span class="nav-dot"></span>Pendahuluan
+  </a>
+  <a class="nav-item" href="#cara-kerja">
+    <span class="nav-dot"></span>Cara Kerja
+  </a>
+  <a class="nav-item" href="#tipe-panel">
+    <span class="nav-dot"></span>Tipe-Tipe Panel
+  </a>
+  <a class="nav-item" href="#monokristalin">
+    <span class="nav-dot"></span>&nbsp;&nbsp;↳ Monokristalin
+  </a>
+  <a class="nav-item" href="#polikristalin">
+    <span class="nav-dot"></span>&nbsp;&nbsp;↳ Polikristalin
+  </a>
+  <a class="nav-item" href="#thin-film">
+    <span class="nav-dot"></span>&nbsp;&nbsp;↳ Thin-Film
+  </a>
+  <a class="nav-item" href="#perovskit">
+    <span class="nav-dot"></span>&nbsp;&nbsp;↳ Perovskit
+  </a>
+  <a class="nav-item" href="#organik">
+    <span class="nav-dot"></span>&nbsp;&nbsp;↳ Organik (OPV)
+  </a>
+  <a class="nav-item" href="#cigs">
+    <span class="nav-dot"></span>&nbsp;&nbsp;↳ CIGS / CdTe
+  </a>
+  <a class="nav-item" href="#perbandingan">
+    <span class="nav-dot"></span>Perbandingan
+  </a>
+  <a class="nav-item" href="#cara-memilih">
+    <span class="nav-dot"></span>Cara Memilih
+  </a>
+
+  <div class="sidebar-section-label">Catatan Terkait</div>
+  <a class="nav-item" href="#">
+    <span class="nav-dot"></span>Inverter Solar
+  </a>
+  <a class="nav-item" href="#">
+    <span class="nav-dot"></span>Sistem Baterai BESS
+  </a>
+  <a class="nav-item" href="#">
+    <span class="nav-dot"></span>PLTS Atap Indonesia
+  </a>
+
+  <div class="sidebar-tags">
+    <div class="sidebar-section-label" style="padding:0 0 8px;">Tags</div>
+    <span class="tag-pill">#energi-surya</span>
+    <span class="tag-pill">#fotovoltaik</span>
+    <span class="tag-pill">#teknologi</span>
+    <span class="tag-pill">#silikon</span>
+    <span class="tag-pill">#renewables</span>
+  </div>
+</aside>
+
+<!-- ── MAIN NOTE ────────────────────────────────────────── -->
+<main class="main">
+
+  <!-- Frontmatter -->
+  <div class="frontmatter">
+    <button class="frontmatter-toggle" onclick="toggleFm()">
+      <span>▶</span> <span>Properties</span>
+    </button>
+    <div class="frontmatter-body" id="fm-body">
+      <span class="fm-key">title:</span> <span class="fm-val">Macam-Macam Tipe Solar Panel</span><br>
+      <span class="fm-key">author:</span> <span class="fm-val">Referensi Teknis</span><br>
+      <span class="fm-key">created:</span> <span class="fm-val">2026-06-01</span><br>
+      <span class="fm-key">tags:</span> <span class="fm-val">[energi-surya, fotovoltaik, teknologi]</span><br>
+      <span class="fm-key">status:</span> <span class="fm-val">published</span><br>
+      <span class="fm-key">version:</span> <span class="fm-val">2.0</span>
+    </div>
+  </div>
+
+  <!-- Title -->
+  <h1 class="note-title" id="intro">Macam-Macam Tipe Solar Panel</h1>
+  <div class="note-meta">
+    <span class="note-meta-item">📅 1 Juni 2026</span>
+    <span class="note-meta-sep">·</span>
+    <span class="note-meta-item">~12 menit baca</span>
+    <span class="note-meta-sep">·</span>
+    <span class="tag-pill">#fotovoltaik</span>
+    <span class="tag-pill">#teknologi</span>
+  </div>
+
+  <p>
+    Panel surya atau <strong>sel fotovoltaik</strong> adalah perangkat yang mengubah cahaya matahari langsung menjadi listrik melalui efek fotovoltaik. Sejak pertama dikembangkan secara praktis pada 1954 di Bell Labs, teknologi ini telah berkembang pesat dengan berbagai pendekatan material dan konstruksi yang berbeda.
+  </p>
+  <p>
+    Saat ini terdapat setidaknya <strong>enam kelompok teknologi utama</strong> panel surya yang tersedia secara komersial maupun dalam tahap penelitian aktif. Masing-masing memiliki karakteristik efisiensi, biaya, umur pakai, dan aplikasi yang berbeda-beda.
+  </p>
+
+  <div class="callout info">
+    <div class="callout-header">ℹ️ Konteks Global</div>
+    Kapasitas solar terpasang global melampaui <strong>1 terawatt (TW)</strong> pada 2022, dan diperkirakan tumbuh 3x lipat pada 2030. Indonesia sendiri memiliki potensi surya 207.8 GWp yang baru dimanfaatkan kurang dari 1%.
+  </div>
+
+  <!-- CARA KERJA -->
+  <h2 id="cara-kerja">Cara Kerja Panel Surya</h2>
+  <p>
+    Prinsip dasar semua panel surya adalah <strong>efek fotovoltaik</strong> — fenomena fisika di mana material semikonduktor melepas elektron ketika dikenai foton. Berikut alur prosesnya:
+  </p>
+
+  <div class="steps-list">
+    <div class="step-row">
+      <div class="step-num-badge">01</div>
+      <div class="step-content">
+        <div class="step-title-sm">Foton Matahari Menghantam Permukaan Sel</div>
+        <div class="step-desc-sm">Cahaya matahari terdiri dari partikel energi (foton). Foton dengan energi cukup diserap oleh material semikonduktor (biasanya silikon).</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num-badge">02</div>
+      <div class="step-content">
+        <div class="step-title-sm">Pembentukan Pasangan Elektron-Hole</div>
+        <div class="step-desc-sm">Energi foton membebaskan elektron dari ikatannya (efek fotolistrik). Meninggalkan "lubang" bermuatan positif — pasangan ini disebut <em>electron-hole pair</em>.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num-badge">03</div>
+      <div class="step-content">
+        <div class="step-title-sm">Pemisahan oleh Medan Listrik Internal (p-n Junction)</div>
+        <div class="step-desc-sm">Lapisan semikonduktor tipe-N dan tipe-P membentuk medan listrik internal yang memaksa elektron bergerak ke satu arah → arus DC terbentuk.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num-badge">04</div>
+      <div class="step-content">
+        <div class="step-title-sm">Konversi DC → AC via Inverter</div>
+        <div class="step-desc-sm">Inverter mengubah arus searah (DC) dari panel menjadi arus bolak-balik (AC) 220V untuk peralatan rumah. Kelebihan dapat disimpan di baterai atau diekspor ke jaringan PLN.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num-badge">05</div>
+      <div class="step-content">
+        <div class="step-title-sm">Distribusi & Monitoring</div>
+        <div class="step-desc-sm">Listrik didistribusikan ke beban. Sistem monitoring real-time (data logger) memantau produksi, mendeteksi shading loss, dan melacak performa tiap string panel.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHART 1: Efisiensi teoritis vs praktis -->
+  <div class="chart-wrap">
+    <div class="chart-caption">📊 Grafik 1 — Rentang Efisiensi Konversi per Tipe</div>
+    <div class="chart-canvas-wrap">
+      <canvas id="chartEff" height="280"></canvas>
+    </div>
+    <div class="chart-figcaption">Sumber: NREL Best Research Cell Efficiency Chart (2024). Nilai komersial aktual biasanya 20–30% di bawah rekor laboratorium.</div>
+  </div>
+
+  <!-- TIPE PANEL -->
+  <h2 id="tipe-panel">Tipe-Tipe Panel Surya</h2>
+  <p>
+    Klasifikasi panel surya umumnya dibagi berdasarkan <strong>material semikonduktor</strong> dan <strong>proses produksi</strong>. Dua kategori besar: panel berbasis <em>silikon kristal</em> (mature, dominan pasar) dan panel <em>thin-film</em> (lebih tipis, lebih fleksibel).
+  </p>
+
+  <!-- 1. MONOKRISTALIN -->
+  <h3 id="monokristalin">1. Monokristalin (Mono-Si)</h3>
+  <div class="panel-entry">
+    <div class="panel-entry-header">
+      <div class="panel-entry-title-group">
+        <div class="panel-entry-num">PANEL TYPE — 01</div>
+        <div class="panel-entry-name">Monokristalin</div>
+        <div class="panel-entry-latin">Monocrystalline Silicon · Mono-Si · c-Si</div>
+      </div>
+      <div class="panel-entry-badges">
+        <span class="status-badge badge-komersial">✓ Komersial</span>
+        <span class="status-badge badge-popular">★ Terbaik</span>
+      </div>
+    </div>
+    <div class="panel-entry-body">
+      <p>Dibuat dari <strong>satu kristal silikon tunggal</strong> yang ditumbuhkan menggunakan metode <em>Czochralski</em> — silikon cair ditarik perlahan membentuk "ingot" silinder, lalu diiris tipis menjadi wafer. Hasilnya adalah sel dengan struktur atom yang sangat teratur, memungkinkan elektron bergerak bebas dengan resistansi rendah.</p>
+      <p>Dapat dikenali dari warnanya yang <strong>hitam seragam</strong> dan sudut sel yang terpotong (bentuk oktagon) — ini untuk memaksimalkan penggunaan wafer bundar pada panel persegi. Merupakan pilihan terbaik untuk instalasi residensial dengan area atap terbatas.</p>
+
+      <div class="eff-inline">
+        <span class="eff-inline-label">Efisiensi</span>
+        <div class="eff-bar-track"><div class="eff-bar-fill" style="width:82%; background:#c07a2e;"></div></div>
+        <span class="eff-inline-val">15–24%</span>
+      </div>
+      <div class="eff-inline">
+        <span class="eff-inline-label">Umur Pakai</span>
+        <div class="eff-bar-track"><div class="eff-bar-fill" style="width:90%; background:#7c6f5a;"></div></div>
+        <span class="eff-inline-val">25–30 thn</span>
+      </div>
+
+      <div class="props-grid">
+        <div class="prop-item"><span class="prop-key">Tampilan</span><span class="prop-val">Hitam seragam, sudut terpotong</span></div>
+        <div class="prop-item"><span class="prop-key">Harga relatif</span><span class="prop-val">Tinggi (Rp 4–8 jt/kWp)</span></div>
+        <div class="prop-item"><span class="prop-key">Koef. suhu</span><span class="prop-val">−0.3 hingga −0.5%/°C</span></div>
+        <div class="prop-item"><span class="prop-key">Aplikasi ideal</span><span class="prop-val">Residensial, area terbatas</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. POLIKRISTALIN -->
+  <h3 id="polikristalin">2. Polikristalin (Poly-Si)</h3>
+  <div class="panel-entry">
+    <div class="panel-entry-header">
+      <div class="panel-entry-title-group">
+        <div class="panel-entry-num">PANEL TYPE — 02</div>
+        <div class="panel-entry-name">Polikristalin</div>
+        <div class="panel-entry-latin">Polycrystalline Silicon · Poly-Si · mc-Si</div>
+      </div>
+      <div class="panel-entry-badges">
+        <span class="status-badge badge-komersial">✓ Komersial</span>
+        <span class="status-badge badge-popular">Populer</span>
+      </div>
+    </div>
+    <div class="panel-entry-body">
+      <p>Diproduksi dengan menuangkan silikon cair ke cetakan persegi dan membiarkannya mendingin — proses <strong>lebih sederhana dan murah</strong> daripada Czochralski. Hasilnya adalah kristal-kristal kecil acak yang terlihat seperti pola mozaik biru berkilau. Batas antar-kristal (<em>grain boundaries</em>) ini menghambat pergerakan elektron, sehingga efisiensinya lebih rendah.</p>
+      <p>Selama lebih dari satu dekade, polikristalin mendominasi pasar global karena keseimbangan harga-performa. Namun sejak 2020, monokristalin PERC semakin kompetitif harganya dan perlahan menggeser dominasi ini.</p>
+
+      <div class="eff-inline">
+        <span class="eff-inline-label">Efisiensi</span>
+        <div class="eff-bar-track"><div class="eff-bar-fill" style="width:62%; background:#5c7fad;"></div></div>
+        <span class="eff-inline-val">13–18%</span>
+      </div>
+      <div class="eff-inline">
+        <span class="eff-inline-label">Umur Pakai</span>
+        <div class="eff-bar-track"><div class="eff-bar-fill" style="width:76%; background:#7c6f5a;"></div></div>
+        <span class="eff-inline-val">20–25 thn</span>
+      </div>
+
+      <div class="props-grid">
+        <div class="prop-item"><span class="prop-key">Tampilan</span><span class="prop-val">Biru berkilau, pola mozaik</span></div>
+        <div class="prop-item"><span class="prop-key">Harga relatif</span><span class="prop-val">Menengah (Rp 3–6 jt/kWp)</span></div>
+        <div class="prop-item"><span class="prop-key">Koef. suhu</span><span class="prop-val">−0.4 hingga −0.5%/°C</span></div>
+        <div class="prop-item"><span class="prop-key">Aplikasi ideal</span><span class="prop-val">Skala besar, anggaran moderat</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. THIN-FILM -->
+  <h3 id="thin-film">3. Thin-Film (TFPV)</h3>
+  <div class="panel-entry">
+    <div class="panel-entry-header">
+      <div class="panel-entry-title-group">
+        <div class="panel-entry-num">PANEL TYPE — 03</div>
+        <div class="panel-entry-name">Thin-Film</div>
+        <div class="panel-entry-latin">Thin Film Photovoltaic · TFPV · a-Si</div>
+      </div>
+      <div class="panel-entry-badges">
+        <span class="status-badge badge-flexible">Fleksibel</span>
+      </div>
+    </div>
+    <div class="panel-entry-body">
+      <p>Berbeda dari panel silikon kristal, thin-film menggunakan lapisan semikonduktor <strong>100–300 kali lebih tipis</strong> dari wafer silikon. Material disemprotkan atau di-<em>deposit</em> pada substrat kaca, logam, atau plastik fleksibel menggunakan teknik seperti CVD atau sputtering.</p>
+      <p>Panel thin-film amorfus silikon (<code>a-Si</code>) adalah varian paling umum. Kelebihannya: <strong>bekerja lebih baik dalam cahaya rendah atau bayang-bayang parsial</strong>, tahan suhu tinggi, dan bisa diproduksi dalam bentuk fleksibel untuk aplikasi BIPV (Building-Integrated Photovoltaics) seperti atap melengkung atau fasad gedung.</p>
+
+      <div class="callout tip">
+        <div class="callout-header">💡 Keunggulan Tersembunyi</div>
+        Thin-film memiliki koefisien suhu terbaik (~−0.2%/°C) di antara semua jenis panel. Di iklim tropis panas seperti Indonesia, keunggulan ini bisa signifikan karena panel bekerja di suhu 50–70°C.
+      </div>
+
+      <div class="eff-inline">
+        <span class="eff-inline-label">Efisiensi</span>
+        <div class="eff-bar-track"><div class="eff-bar-fill" style="width:42%; background:#2d7a4f;"></div></div>
+        <span class="eff-inline-val">7–15%</span>
+      </div>
+
+      <div class="props-grid">
+        <div class="prop-item"><span class="prop-key">Tampilan</span><span class="prop-val">Hitam/abu merata, bisa fleksibel</span></div>
+        <div class="prop-item"><span class="prop-key">Harga relatif</span><span class="prop-val">Rendah (Rp 2–4 jt/kWp)</span></div>
+        <div class="prop-item"><span class="prop-key">Koef. suhu</span><span class="prop-val">−0.2%/°C (terbaik)</span></div>
+        <div class="prop-item"><span class="prop-key">Aplikasi ideal</span><span class="prop-val">Atap datar besar, BIPV</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. PEROVSKIT -->
+  <h3 id="perovskit">4. Perovskit (PSC)</h3>
+  <div class="panel-entry">
+    <div class="panel-entry-header">
+      <div class="panel-entry-title-group">
+        <div class="panel-entry-num">PANEL TYPE — 04</div>
+        <div class="panel-entry-name">Perovskit</div>
+        <div class="panel-entry-latin">Perovskite Solar Cell · PSC · ABX₃</div>
+      </div>
+      <div class="panel-entry-badges">
+        <span class="status-badge badge-nextgen">🔬 Next-Gen</span>
+      </div>
+    </div>
+    <div class="panel-entry-body">
+      <p>Teknologi paling menjanjikan saat ini. Menggunakan struktur kristal <strong>ABX₃</strong> (umumnya methylammonium lead halide) yang dapat disintesis dari larutan — sangat murah secara potensial. Dalam waktu kurang dari 15 tahun riset intensif, efisiensi lab melonjak dari 3.8% (2009) ke <strong>33%+ (tandem dengan silikon, 2024)</strong>.</p>
+      <p>Tantangan utama: <strong>stabilitas jangka panjang</strong> (degradasi oleh kelembaban, panas, dan cahaya UV) dan penggunaan timbal (Pb) yang toksik. Riset aktif menuju formulasi bebas-Pb dan enkapsulasi tahan cuaca. Beberapa produsen mulai merilis produk komersial pertama pada 2025–2026.</p>
+
+      <div class="callout warn">
+        <div class="callout-header">⚠️ Status Komersialisasi</div>
+        Data efisiensi perovskit yang sering dikutip adalah <em>rekor laboratorium</em>, bukan performa produk komersial. Panel tandem Si/Perovskite komersial pertama mulai tersedia terbatas pada 2025 dengan efisiensi ~26–28% dan garansi hanya 10 tahun.
+      </div>
+
+      <div class="eff-inline">
+        <span class="eff-inline-label">Efisiensi</span>
+        <div class="eff-bar-track"><div class="eff-bar-fill" style="width:90%; background:#7a3fa0;"></div></div>
+        <span class="eff-inline-val">20–33%*</span>
+      </div>
+
+      <div class="props-grid">
+        <div class="prop-item"><span class="prop-key">Status</span><span class="prop-val">Riset → Komersialisasi awal</span></div>
+        <div class="prop-item"><span class="prop-key">Umur pakai (lab)</span><span class="prop-val">~5–10 tahun</span></div>
+        <div class="prop-item"><span class="prop-key">Tantangan utama</span><span class="prop-val">Stabilitas & kandungan Pb</span></div>
+        <div class="prop-item"><span class="prop-key">Potensi biaya</span><span class="prop-val">Sangat rendah (solution-processed)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. ORGANIK -->
+  <h3 id="organik">5. Organik (OPV)</h3>
+  <div class="panel-entry">
+    <div class="panel-entry-header">
+      <div class="panel-entry-title-group">
+        <div class="panel-entry-num">PANEL TYPE — 05</div>
+        <div class="panel-entry-name">Organik</div>
+        <div class="panel-entry-latin">Organic Photovoltaic · OPV · Polymer Solar Cell</div>
+      </div>
+      <div class="panel-entry-badges">
+        <span class="status-badge badge-eco">🌿 Eco-Tech</span>
+      </div>
+    </div>
+    <div class="panel-entry-body">
+      <p>Menggunakan <strong>molekul organik berbasis karbon</strong> sebagai lapisan penyerap cahaya. Bisa diproduksi melalui <em>roll-to-roll printing</em> seperti mencetak koran — biaya produksi sangat rendah dan prosesnya ramah lingkungan (tanpa suhu tinggi atau bahan toksik berat).</p>
+      <p>Keistimewaan utama: panel ini bisa dibuat <strong>semi-transparan</strong>, lentur, dan ringan. Ideal untuk integrasi di jendela gedung kaca (<em>building-integrated PV</em>), atap polimer, layar perangkat IoT bertenaga surya, hingga pakaian pintar. Efisiensi masih terbatas, namun riset terus mendorong batasnya.</p>
+
+      <div class="eff-inline">
+        <span class="eff-inline-label">Efisiensi</span>
+        <div class="eff-bar-track"><div class="eff-bar-fill" style="width:28%; background:#1a8a50;"></div></div>
+        <span class="eff-inline-val">5–12%</span>
+      </div>
+
+      <div class="props-grid">
+        <div class="prop-item"><span class="prop-key">Transparansi</span><span class="prop-val">Semi-transparan (bisa diatur)</span></div>
+        <div class="prop-item"><span class="prop-key">Produksi</span><span class="prop-val">Roll-to-roll printing</span></div>
+        <div class="prop-item"><span class="prop-key">Umur pakai</span><span class="prop-val">5–10 tahun</span></div>
+        <div class="prop-item"><span class="prop-key">Aplikasi ideal</span><span class="prop-val">BIPV, IoT, wearables</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. CIGS -->
+  <h3 id="cigs">6. CIGS / CdTe</h3>
+  <div class="panel-entry">
+    <div class="panel-entry-header">
+      <div class="panel-entry-title-group">
+        <div class="panel-entry-num">PANEL TYPE — 06</div>
+        <div class="panel-entry-name">CIGS / CdTe</div>
+        <div class="panel-entry-latin">Copper Indium Gallium Selenide / Cadmium Telluride</div>
+      </div>
+      <div class="panel-entry-badges">
+        <span class="status-badge badge-compound">Senyawa</span>
+        <span class="status-badge badge-komersial">✓ Komersial</span>
+      </div>
+    </div>
+    <div class="panel-entry-body">
+      <p><strong>CdTe</strong> dipopulerkan oleh First Solar (AS) dan merupakan panel komersial non-silikon paling sukses di dunia — digunakan luas untuk PLTS skala utilitas. <strong>CIGS</strong> (Tembaga-Indium-Galium-Selenida) menawarkan efisiensi lebih tinggi dari CdTe namun proses produksinya lebih kompleks.</p>
+      <p>Kedua jenis ini termasuk kategori <em>compound thin-film</em> — lebih efisien dari thin-film amorfus, dengan <strong>performa suhu tinggi yang unggul</strong>. Ideal untuk pembangkit skala besar di lokasi dengan iradiasi matahari intens seperti kawasan Nusa Tenggara atau Kalimantan.</p>
+
+      <div class="eff-inline">
+        <span class="eff-inline-label">Efisiensi</span>
+        <div class="eff-bar-track"><div class="eff-bar-fill" style="width:58%; background:#8a5020;"></div></div>
+        <span class="eff-inline-val">10–22%</span>
+      </div>
+
+      <div class="props-grid">
+        <div class="prop-item"><span class="prop-key">Material</span><span class="prop-val">Cd, Te / Cu, In, Ga, Se</span></div>
+        <div class="prop-item"><span class="prop-key">Performa panas</span><span class="prop-val">Sangat baik (koef. rendah)</span></div>
+        <div class="prop-item"><span class="prop-key">Umur pakai</span><span class="prop-val">15–20 tahun</span></div>
+        <div class="prop-item"><span class="prop-key">Aplikasi ideal</span><span class="prop-val">PLTS utilitas, iklim panas</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PERBANDINGAN -->
+  <h2 id="perbandingan">Tabel Perbandingan</h2>
+  <p>Rangkuman karakteristik utama semua tipe panel dalam satu tampilan:</p>
+
+  <table class="dataview-table">
+    <thead>
+      <tr>
+        <th>Tipe</th>
+        <th>Efisiensi</th>
+        <th>Harga</th>
+        <th>Umur Pakai</th>
+        <th>Kof. Suhu</th>
+        <th>Terbaik Untuk</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Monokristalin</strong></td>
+        <td><span class="eff-badge eff-high">15–24%</span></td>
+        <td>Tinggi</td>
+        <td>25–30 thn</td>
+        <td>−0.3 s/d −0.5%/°C</td>
+        <td>Residensial, ruang terbatas</td>
+      </tr>
+      <tr>
+        <td><strong>Polikristalin</strong></td>
+        <td><span class="eff-badge eff-mid">13–18%</span></td>
+        <td>Menengah</td>
+        <td>20–25 thn</td>
+        <td>−0.4 s/d −0.5%/°C</td>
+        <td>Anggaran moderat, skala besar</td>
+      </tr>
+      <tr>
+        <td><strong>Thin-Film</strong></td>
+        <td><span class="eff-badge eff-low">7–15%</span></td>
+        <td>Rendah</td>
+        <td>10–20 thn</td>
+        <td>−0.2%/°C ✓</td>
+        <td>BIPV, atap datar, cahaya rendah</td>
+      </tr>
+      <tr>
+        <td><strong>Perovskit</strong></td>
+        <td><span class="eff-badge eff-lab">20–33%*</span></td>
+        <td>TBD</td>
+        <td>&lt;10 thn (lab)</td>
+        <td>Variatif</td>
+        <td>Masa depan / R&D</td>
+      </tr>
+      <tr>
+        <td><strong>Organik (OPV)</strong></td>
+        <td><span class="eff-badge eff-low">5–12%</span></td>
+        <td>Sangat rendah</td>
+        <td>5–10 thn</td>
+        <td>−0.2%/°C</td>
+        <td>IoT, wearables, jendela</td>
+      </tr>
+      <tr>
+        <td><strong>CIGS / CdTe</strong></td>
+        <td><span class="eff-badge eff-mid">10–22%</span></td>
+        <td>Menengah</td>
+        <td>15–20 thn</td>
+        <td>−0.25 s/d −0.3%/°C</td>
+        <td>PLTS utilitas, iklim panas</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- CHART 2: Radar -->
+  <div class="chart-wrap">
+    <div class="chart-caption">📊 Grafik 2 — Perbandingan Multi-Dimensi (Radar)</div>
+    <div class="chart-canvas-wrap">
+      <canvas id="chartRadar" height="340"></canvas>
+    </div>
+    <div class="chart-figcaption">Skala 0–10 dinormalisasi dari data literatur. Biaya diinversi (10 = paling murah). Potensi masa depan mempertimbangkan roadmap teknologi.</div>
+  </div>
+
+  <!-- CHART 3: Biaya vs Efisiensi scatter -->
+  <div class="chart-wrap">
+    <div class="chart-caption">📊 Grafik 3 — Efisiensi vs Umur Pakai (Bubble Chart)</div>
+    <div class="chart-canvas-wrap">
+      <canvas id="chartBubble" height="320"></canvas>
+    </div>
+    <div class="chart-figcaption">Ukuran gelembung mewakili potensi market share relatif (2024). Data: IEA Photovoltaic Power Systems Programme.</div>
+  </div>
+
+  <!-- CARA MEMILIH -->
+  <h2 id="cara-memilih">Panduan Memilih Panel</h2>
+  <p>Pilihan tipe panel sangat bergantung pada konteks instalasi. Beberapa pertanyaan panduan:</p>
+
+  <div class="callout tip">
+    <div class="callout-header">✅ Untuk Rumah Tinggal (PLTS Atap)</div>
+    <strong>Monokristalin PERC</strong> adalah pilihan utama — efisiensi tertinggi memaksimalkan produksi di lahan atap terbatas. Cari panel dengan garansi output daya minimal 25 tahun dan garansi produk 12 tahun. Merek: Longi, JA Solar, Canadian Solar, Risen.
+  </div>
+
+  <div class="callout info">
+    <div class="callout-header">ℹ️ Untuk PLTS Industri/Komersial Skala Besar</div>
+    <strong>Monokristalin</strong> atau <strong>CdTe</strong> tergantung lokasi. Untuk iklim sangat panas (Nusa Tenggara, Kalimantan), thin-film compound dengan koefisien suhu rendah bisa menghasilkan lebih banyak kWh aktual meski efisiensi STC lebih rendah.
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-header">⚠️ Hindari Jebakan STC</div>
+    Efisiensi panel diukur pada kondisi standar (STC): iradiasi 1000 W/m², suhu sel 25°C. Di lapangan Indonesia, suhu sel bisa mencapai 65–70°C. Perhatikan <strong>NOCT rating</strong> dan koefisien suhu (Pmax temperature coefficient) — bukan hanya angka efisiensi STC.
+  </div>
+
+  <!-- CHART 4: Pasar global -->
+  <div class="chart-wrap">
+    <div class="chart-caption">📊 Grafik 4 — Pangsa Pasar Global per Teknologi (2024, estimasi)</div>
+    <div class="chart-canvas-wrap">
+      <canvas id="chartPie" height="260"></canvas>
+    </div>
+    <div class="chart-figcaption">Monokristalin (termasuk PERC, TOPCon, HJT) mendominasi produksi global sejak 2019. Data: BloombergNEF Solar Market Outlook 2024.</div>
+  </div>
+
+  <hr>
+
+  <!-- FOOTER -->
+  <div class="note-footer">
+    <span>Catatan ini bagian dari kumpulan: <span class="wikilink">Energi Surya Indonesia</span></span>
+    <span>Terakhir diperbarui: 1 Juni 2026</span>
+  </div>
+  <div class="note-footer" style="margin-top:10px; padding-top:14px; border-top:1px dashed var(--border-light);">
+    <a href="https://xedixermawan.github.io/" class="footer-home-link">← Kembali ke xedixermawan.github.io</a>
+  </div>
+
+  <!-- Backlinks -->
+  <div class="backlinks">
+    <div class="backlinks-title">Catatan yang Merujuk ke Sini</div>
+    <div class="backlink-item">Inverter Solar dan Sistem On-Grid</div>
+    <div class="backlink-item">Regulasi PLTS Atap Indonesia 2024</div>
+    <div class="backlink-item">Perhitungan ROI Sistem Solar 10 kWp</div>
+    <div class="backlink-item">Material Semikonduktor Generasi Berikutnya</div>
+  </div>
+
+</main>
+
+<!-- ── TOC PANEL ─────────────────────────────────────────── -->
+<aside class="toc-panel">
+  <div class="toc-title">Di Halaman Ini</div>
+  <a class="toc-link active" href="#intro">Pendahuluan</a>
+  <a class="toc-link" href="#cara-kerja">Cara Kerja</a>
+  <a class="toc-link" href="#tipe-panel">Tipe-Tipe Panel</a>
+  <a class="toc-link sub" href="#monokristalin">Monokristalin</a>
+  <a class="toc-link sub" href="#polikristalin">Polikristalin</a>
+  <a class="toc-link sub" href="#thin-film">Thin-Film</a>
+  <a class="toc-link sub" href="#perovskit">Perovskit</a>
+  <a class="toc-link sub" href="#organik">Organik</a>
+  <a class="toc-link sub" href="#cigs">CIGS / CdTe</a>
+  <a class="toc-link" href="#perbandingan">Perbandingan</a>
+  <a class="toc-link" href="#cara-memilih">Cara Memilih</a>
+</aside>
+
+</div><!-- /layout -->
+
+<script>
+/* ── FRONTMATTER TOGGLE ─── */
+function toggleFm() {
+  const b = document.getElementById('fm-body');
+  const btn = document.querySelector('.frontmatter-toggle span:first-child');
+  b.classList.toggle('open');
+  btn.textContent = b.classList.contains('open') ? '▼' : '▶';
+}
+
+/* ── SCROLL PROGRESS ─── */
+window.addEventListener('scroll', () => {
+  const doc = document.documentElement;
+  const pct = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+  document.getElementById('progress-bar').style.width = pct + '%';
+});
+
+/* ── TOC ACTIVE ─── */
+const tocLinks = document.querySelectorAll('.toc-link');
+const navLinks = document.querySelectorAll('.sidebar .nav-item');
+const headings = document.querySelectorAll('h2[id], h3[id]');
+
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const id = e.target.id;
+      tocLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
+      navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+
+headings.forEach(h => io.observe(h));
+
+/* ── CHART DEFAULTS ─── */
+Chart.defaults.font.family = "'Mona Sans', sans-serif";
+Chart.defaults.color = '#6b6760';
+
+const PALETTE = {
+  mono:    { bg: 'rgba(192, 122, 46, 0.75)',  border: '#c07a2e' },
+  poly:    { bg: 'rgba(92, 127, 173, 0.75)',  border: '#5c7fad' },
+  thin:    { bg: 'rgba(45, 122, 79, 0.75)',   border: '#2d7a4f' },
+  perc:    { bg: 'rgba(122, 63, 160, 0.75)',  border: '#7a3fa0' },
+  organic: { bg: 'rgba(26, 138, 80, 0.75)',   border: '#1a8a50' },
+  cigs:    { bg: 'rgba(138, 80, 32, 0.75)',   border: '#8a5020' },
+};
+
+/* ── CHART 1: Bar — Efisiensi Range ─── */
+new Chart(document.getElementById('chartEff'), {
+  type: 'bar',
+  data: {
+    labels: ['Monokristalin', 'Polikristalin', 'Thin-Film', 'Perovskit*', 'Organik', 'CIGS/CdTe'],
+    datasets: [
+      {
+        label: 'Min (%)',
+        data: [15, 13, 7, 20, 5, 10],
+        backgroundColor: Object.values(PALETTE).map(p => p.bg),
+        borderColor: Object.values(PALETTE).map(p => p.border),
+        borderWidth: 1.5,
+        borderRadius: 3,
+      },
+      {
+        label: 'Max (%)',
+        data: [9, 5, 8, 13, 7, 12],
+        backgroundColor: Object.values(PALETTE).map(p => p.bg.replace('0.75','0.25')),
+        borderColor: Object.values(PALETTE).map(p => p.border),
+        borderWidth: 1,
+        borderRadius: 3,
+        borderDash: [4,2],
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          label: ctx => {
+            const mins = [15,13,7,20,5,10];
+            const maxs = [24,18,15,33,12,22];
+            const i = ctx.dataIndex;
+            return ` Rentang: ${mins[i]}% – ${maxs[i]}%`;
+          }
+        }
+      }
+    },
+    scales: {
+      x: {
+        stacked: true,
+        grid: { color: 'rgba(0,0,0,0.05)' },
+        ticks: { font: { size: 11 } }
+      },
+      y: {
+        stacked: true,
+        title: { display: true, text: 'Efisiensi (%)', font: { size: 11 } },
+        grid: { color: 'rgba(0,0,0,0.05)' },
+        max: 40,
+        ticks: { callback: v => v + '%' }
+      }
+    }
+  }
+});
+
+/* ── CHART 2: Radar ─── */
+new Chart(document.getElementById('chartRadar'), {
+  type: 'radar',
+  data: {
+    labels: ['Efisiensi', 'Umur Pakai', 'Biaya Terjangkau', 'Perf. Panas', 'Fleksibilitas', 'Ramah Lingk.', 'Kematangan Pasar'],
+    datasets: [
+      { label: 'Monokristalin',  data: [9,9,4,5,3,5,10], borderColor: PALETTE.mono.border, backgroundColor: PALETTE.mono.bg.replace('0.75','0.15'), pointBackgroundColor: PALETTE.mono.border, borderWidth: 2 },
+      { label: 'Polikristalin',  data: [6,7,7,4,3,5,9],  borderColor: PALETTE.poly.border, backgroundColor: PALETTE.poly.bg.replace('0.75','0.1'),  pointBackgroundColor: PALETTE.poly.border, borderWidth: 2 },
+      { label: 'Thin-Film',      data: [4,5,9,9,8,7,7],  borderColor: PALETTE.thin.border, backgroundColor: PALETTE.thin.bg.replace('0.75','0.1'),  pointBackgroundColor: PALETTE.thin.border, borderWidth: 2 },
+      { label: 'Perovskit',      data: [10,2,8,6,6,4,2], borderColor: PALETTE.perc.border, backgroundColor: PALETTE.perc.bg.replace('0.75','0.1'),  pointBackgroundColor: PALETTE.perc.border, borderWidth: 2, borderDash: [5,3] },
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { position: 'bottom', labels: { font: { size: 11 }, boxWidth: 14, padding: 16 } } },
+    scales: {
+      r: {
+        min: 0, max: 10, ticks: { stepSize: 2, font: { size: 10 }, backdropColor: 'transparent' },
+        grid: { color: 'rgba(0,0,0,0.08)' },
+        angleLines: { color: 'rgba(0,0,0,0.08)' },
+        pointLabels: { font: { size: 11 } }
+      }
+    }
+  }
+});
+
+/* ── CHART 3: Bubble ─── */
+new Chart(document.getElementById('chartBubble'), {
+  type: 'bubble',
+  data: {
+    datasets: [
+      { label: 'Monokristalin',  data: [{ x: 19.5, y: 27, r: 22 }], backgroundColor: PALETTE.mono.bg, borderColor: PALETTE.mono.border, borderWidth: 1.5 },
+      { label: 'Polikristalin',  data: [{ x: 15.5, y: 22, r: 14 }], backgroundColor: PALETTE.poly.bg, borderColor: PALETTE.poly.border, borderWidth: 1.5 },
+      { label: 'Thin-Film',      data: [{ x: 11,   y: 15, r: 9  }], backgroundColor: PALETTE.thin.bg, borderColor: PALETTE.thin.border, borderWidth: 1.5 },
+      { label: 'CIGS/CdTe',      data: [{ x: 16,   y: 17, r: 8  }], backgroundColor: PALETTE.cigs.bg, borderColor: PALETTE.cigs.border, borderWidth: 1.5 },
+      { label: 'Organik',        data: [{ x: 8.5,  y: 7,  r: 5  }], backgroundColor: PALETTE.organic.bg, borderColor: PALETTE.organic.border, borderWidth: 1.5 },
+      { label: 'Perovskit*',     data: [{ x: 27,   y: 8,  r: 7  }], backgroundColor: PALETTE.perc.bg, borderColor: PALETTE.perc.border, borderWidth: 1.5, borderDash: [4,2] },
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { position: 'bottom', labels: { font: { size: 11 }, boxWidth: 12, padding: 14 } },
+      tooltip: {
+        callbacks: {
+          label: ctx => {
+            const d = ctx.raw;
+            return ` ${ctx.dataset.label}: Efisiensi ${d.x}% · Umur ${d.y} thn`;
+          }
+        }
+      }
+    },
+    scales: {
+      x: {
+        title: { display: true, text: 'Efisiensi Tipikal (%)', font: { size: 11 } },
+        min: 3, max: 36,
+        grid: { color: 'rgba(0,0,0,0.05)' }
+      },
+      y: {
+        title: { display: true, text: 'Umur Pakai (tahun)', font: { size: 11 } },
+        min: 0, max: 35,
+        grid: { color: 'rgba(0,0,0,0.05)' }
+      }
+    }
+  }
+});
+
+/* ── CHART 4: Doughnut — Market Share ─── */
+new Chart(document.getElementById('chartPie'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Monokristalin (PERC/TOPCon/HJT)', 'Polikristalin', 'CdTe (First Solar)', 'CIGS', 'Lainnya'],
+    datasets: [{
+      data: [72, 14, 8, 3, 3],
+      backgroundColor: [
+        PALETTE.mono.bg,
+        PALETTE.poly.bg,
+        PALETTE.cigs.bg,
+        PALETTE.organic.bg,
+        'rgba(160,156,150,0.6)'
+      ],
+      borderColor: [
+        PALETTE.mono.border,
+        PALETTE.poly.border,
+        PALETTE.cigs.border,
+        PALETTE.organic.border,
+        '#a09c96'
+      ],
+      borderWidth: 1.5,
+      hoverOffset: 8
+    }]
+  },
+  options: {
+    responsive: true,
+    cutout: '60%',
+    plugins: {
+      legend: { position: 'right', labels: { font: { size: 11 }, boxWidth: 12, padding: 14 } },
+      tooltip: { callbacks: { label: ctx => ` ${ctx.label}: ${ctx.raw}%` } }
+    }
+  }
+});
+</script>
+</body>
+</html>

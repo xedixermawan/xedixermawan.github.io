@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BNGA – PT Bank CIMB Niaga Tbk | IDX Profile</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --background-primary:        #ffffff;
+      --background-secondary:      #f2f3f5;
+      --background-secondary-alt:  #e9eaec;
+      --background-modifier-border:#ddd;
+      --background-modifier-hover: rgba(0,0,0,0.05);
+      --text-normal:     #2e3338;
+      --text-muted:      #706f6f;
+      --text-faint:      #999999;
+      --text-on-accent:  #ffffff;
+      --text-accent:     #7f6df2;
+      --text-accent-hover: #5d4ff0;
+      --interactive-accent: #7f6df2;
+      --line-width: 42em;
+      --font-text-size: 16px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--background-primary);
+      color: var(--text-normal);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+      font-size: var(--font-text-size);
+      line-height: 1.7;
+    }
+
+    /* TOP NAV */
+    .site-nav {
+      background: var(--background-secondary);
+      border-bottom: 1px solid var(--background-modifier-border);
+      padding: 8px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav-inner {
+      max-width: var(--line-width);
+      margin: 0 auto;
+      padding: 0 2em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .site-nav a {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .site-nav a:hover { color: var(--text-accent); }
+
+    #page-wrapper {
+      max-width: var(--line-width);
+      margin: 0 auto;
+      padding: 3em 2em 8em;
+    }
+
+    /* HEADER */
+    .page-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-normal);
+      margin-bottom: 0.3em;
+      line-height: 1.2;
+    }
+    .ticker-badge {
+      display: inline-block;
+      background: var(--text-accent);
+      color: var(--text-on-accent);
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 5px;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+    .page-meta {
+      font-size: 0.82rem;
+      color: var(--text-faint);
+      margin-bottom: 0.5em;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .price-tag {
+      background: var(--background-secondary);
+      border: 1px solid var(--background-modifier-border);
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-weight: 700;
+      color: var(--text-normal);
+    }
+
+    /* DIVIDER */
+    hr {
+      border: none;
+      border-top: 1px solid var(--background-modifier-border);
+      margin: 1.8em 0;
+    }
+
+    /* HEADINGS */
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-normal);
+      margin: 1.8em 0 0.6em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      user-select: none;
+    }
+    h2:hover { color: var(--text-accent); }
+    h2 .collapse-icon {
+      width: 15px; height: 15px;
+      flex-shrink: 0;
+      opacity: 0.35;
+      transition: transform 0.2s;
+      color: var(--text-muted);
+    }
+    h2 .collapse-icon svg { width: 100%; height: 100%; }
+    h2.collapsed .collapse-icon { transform: rotate(-90deg); }
+    h2.collapsed + .section-body { display: none; }
+
+    h3 {
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--text-normal);
+      margin: 1.2em 0 0.4em;
+    }
+
+    /* TEXT */
+    p { margin-bottom: 0.85em; color: var(--text-normal); }
+    strong { color: var(--text-normal); font-weight: 700; }
+    a { color: var(--text-accent); text-decoration: none; }
+    a:hover { text-decoration: underline; color: var(--text-accent-hover); }
+
+    /* KPI GRID */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 1em 0 1.5em;
+    }
+    @media (max-width: 700px) { .kpi-grid { grid-template-columns: repeat(2,1fr); } }
+
+    /* CALLOUT / KPI CARD */
+    .callout {
+      background: var(--background-secondary);
+      border-left: 3px solid var(--text-accent);
+      border-radius: 0 6px 6px 0;
+      padding: 12px 16px;
+      margin: 0;
+    }
+    .callout-title {
+      font-size: 0.73rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-accent);
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    .callout-value {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-normal);
+    }
+    .callout-sub { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+    .callout-up   { border-left-color: #3d9e71; }
+    .callout-up   .callout-title { color: #3d9e71; }
+    .callout-down { border-left-color: #c0392b; }
+    .callout-down .callout-title { color: #c0392b; }
+
+    /* TABLE */
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 1em 0; }
+    thead tr { background: var(--background-secondary); }
+    th {
+      padding: 9px 12px;
+      text-align: left;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-accent);
+      font-weight: 700;
+      border-bottom: 2px solid var(--background-modifier-border);
+    }
+    td { padding: 9px 12px; border-bottom: 1px solid var(--background-modifier-border); color: var(--text-normal); }
+    tr:hover td { background: var(--background-modifier-hover); }
+    tr.highlight td { font-weight: 700; }
+    tr.highlight td:first-child { color: var(--text-accent); }
+
+    /* CHART BLOCK */
+    .chart-block {
+      background: var(--background-secondary);
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin: 1.2em 0;
+      border: 1px solid var(--background-modifier-border);
+    }
+    .chart-block .chart-title {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: var(--text-faint);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .chart-block canvas { max-height: 260px; }
+
+    /* NEWS ITEM */
+    .news-item {
+      border-left: 2px solid var(--background-modifier-border);
+      padding: 10px 14px;
+      margin: 10px 0;
+      transition: border-left-color 0.15s;
+    }
+    .news-item:hover { border-left-color: var(--text-accent); background: var(--background-modifier-hover); border-radius: 0 4px 4px 0; }
+    .news-date { font-size: 0.73rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.5px; }
+    .news-title { font-weight: 600; color: var(--text-normal); font-size: 0.92rem; margin: 3px 0; }
+    .news-desc { font-size: 0.81rem; color: var(--text-muted); }
+
+    /* BADGE */
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      margin-top: 5px;
+    }
+    .badge-green  { background: #d4edda; color: #2d6a4f; }
+    .badge-red    { background: #fde8e8; color: #922b21; }
+    .badge-amber  { background: #fef3cd; color: #7d5a00; }
+    .badge-accent { background: #ede9fe; color: var(--text-accent); }
+    .badge-blue   { background: #dbeafe; color: #1e40af; }
+
+    /* ESG BARS */
+    .esg-row { margin: 14px 0; }
+    .esg-label-row { display: flex; justify-content: space-between; margin-bottom: 5px; }
+    .esg-label { font-size: 0.86rem; font-weight: 600; color: var(--text-normal); }
+    .esg-score { font-size: 0.86rem; font-weight: 700; }
+    .esg-bar-bg { height: 7px; background: var(--background-secondary-alt); border-radius: 4px; overflow: hidden; }
+    .esg-bar-fill { height: 100%; border-radius: 4px; }
+    .esg-sub { font-size: 0.75rem; color: var(--text-faint); margin-top: 4px; }
+
+    /* FOOTER */
+    footer {
+      margin-top: 4em;
+      padding-top: 1.5em;
+      border-top: 1px solid var(--background-modifier-border);
+      font-size: 0.76rem;
+      color: var(--text-faint);
+      line-height: 1.6;
+    }
+    .sources { margin-top: 0.8em; display: flex; flex-wrap: wrap; gap: 6px; }
+    .sources a {
+      color: var(--text-muted);
+      background: var(--background-secondary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid var(--background-modifier-border);
+      font-size: 0.72rem;
+    }
+    .sources a:hover { color: var(--text-accent); }
+
+    /* TWO-COLUMN CHART LAYOUT */
+    .two-charts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 600px) { .two-charts { grid-template-columns: 1fr; } }
+
+    /* FOOTNOTE */
+    .footnote { font-size: 0.75rem; color: var(--text-faint); margin-top: 0.3em; }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <svg width="14" height="14" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 2L3.5 5L6.5 8"/></svg>
+    <a href="https://xedixermawan.github.io">xedixermawan.github.io</a>
+  </div>
+</nav>
+
+<div id="page-wrapper">
+
+  <!-- ═══ HEADER ═══ -->
+  <h1 class="page-title">
+    PT Bank CIMB Niaga Tbk
+    <span class="ticker-badge">BNGA</span>
+  </h1>
+  <div class="page-meta">
+    <span>21 Mei 2026</span>
+    <span>Sektor: Perbankan · Keuangan</span>
+    <span>Bursa: IDX Indonesia</span>
+    <span class="price-tag">&#x1F4C8; Harga: Rp1.645 (per 20 Mei 2026)</span>
+  </div>
+  <div class="page-meta" style="margin-top:0.3em;">
+    <span>Bank Swasta Terbesar Ke-2 Indonesia &bull; UUS Terbesar Indonesia &bull; Bagian dari CIMB Group ASEAN</span>
+  </div>
+
+  <hr>
+
+  <!-- ═══ KPI GRID ═══ -->
+  <div class="kpi-grid">
+    <div class="callout callout-up">
+      <div class="callout-title">Kapitalisasi Pasar</div>
+      <div class="callout-value">Rp41,36 T</div>
+      <div class="callout-sub">Rp1.645 &times; 25,14 miliar saham</div>
+    </div>
+    <div class="callout">
+      <div class="callout-title">Pendapatan Bunga 2025</div>
+      <div class="callout-value">Rp24,67 T</div>
+      <div class="callout-sub">+1,83% YoY vs Rp24,22 T (2024)</div>
+    </div>
+    <div class="callout callout-up">
+      <div class="callout-title">Laba Bersih 2025</div>
+      <div class="callout-value">Rp6,93 T</div>
+      <div class="callout-sub">+0,53% YoY &bull; EPS Rp275,66</div>
+    </div>
+    <div class="callout">
+      <div class="callout-title">Dividen per Saham</div>
+      <div class="callout-value">Rp161,77</div>
+      <div class="callout-sub">DPS FY2024 &bull; Yield 9,83%</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ═══ SECTION 1: PROFIL SINGKAT ═══ -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4L5 7L8 4"/></svg></span>
+    &#x1F3E6; Profil Singkat
+  </h2>
+  <div class="section-body">
+    <p>PT Bank CIMB Niaga Tbk — yang lebih dikenal dengan merek <strong>CIMB Niaga</strong> — adalah institusi perbankan swasta terbesar kedua di Indonesia berdasarkan total aset. Bank ini lahir pada <strong>26 September 1955</strong> atas prakarsa sekelompok pengusaha terkemuka Indonesia, termasuk Soedarpo Sastrosatomo dan Pang Lay Kim, dengan nama awal Bank Niaga. Setelah melewati perjalanan panjang yang diwarnai pergolakan krisis keuangan Asia 1997–1998, kepemilikan mayoritas beralih ke tangan CIMB Group Holdings Berhad — kelompok perbankan universal terbesar kelima di kawasan ASEAN — yang mengakuisisi saham mayoritas dari Badan Penyehatan Perbankan Nasional (BPPN) pada tahun 2002. Penggabungan dengan Bank Lippo pada 2008 semakin memperkuat posisi strategis bank dan mengukuhkan nama PT Bank CIMB Niaga Tbk secara resmi.</p>
+
+    <p>Saat ini CIMB Niaga beroperasi di bawah naungan CIMB Group Sdn. Bhd. yang mengendalikan <strong>92,5%</strong> kepemilikan saham secara langsung maupun tidak langsung. Bank ini tercatat di Bursa Efek Indonesia (BEI) dengan kode saham <strong>BNGA</strong> dan memiliki total aset konsolidasi sebesar Rp372,70 triliun per akhir 2025. Selain operasi perbankan konvensional, CIMB Niaga juga mengelola <strong>Unit Usaha Syariah (UUS) terbesar di Indonesia</strong>, mencerminkan komitmennya terhadap inklusi keuangan berbasis nilai Islam yang terus berkembang pesat di tanah air.</p>
+
+    <table>
+      <thead><tr><th>Informasi</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td>Nama Resmi</td><td>PT Bank CIMB Niaga Tbk</td></tr>
+        <tr><td>Kode Saham</td><td>BNGA (IDX – Bursa Efek Indonesia)</td></tr>
+        <tr><td>Tanggal Berdiri</td><td>26 September 1955</td></tr>
+        <tr><td>Kantor Pusat</td><td>Graha CIMB Niaga, Jakarta Selatan, Indonesia</td></tr>
+        <tr><td>Jumlah Karyawan</td><td>&plusmn;10.775 orang (2025)</td></tr>
+        <tr><td>Jaringan Kantor</td><td>394 kantor cabang, 1.865 ATM (2025)</td></tr>
+        <tr><td>Induk Perusahaan</td><td>CIMB Group Sdn. Bhd. (Malaysia)</td></tr>
+        <tr><td>Kelompok Usaha</td><td>CIMB Group Holdings Berhad (Bursa Malaysia)</td></tr>
+        <tr><td>Sektor / Subsektor</td><td>Keuangan / Perbankan</td></tr>
+        <tr><td>Total Aset (2025)</td><td>Rp372,70 triliun</td></tr>
+        <tr><td>Saham Beredar</td><td>&plusmn;25,14 miliar lembar saham</td></tr>
+        <tr><td>Unit Usaha Syariah</td><td>CIMB Niaga Syariah (UUS terbesar di Indonesia)</td></tr>
+        <tr><td>Posisi Pasar</td><td>Bank swasta terbesar ke-2 di Indonesia berdasarkan total aset</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══ SECTION 2: MODEL BISNIS ═══ -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4L5 7L8 4"/></svg></span>
+    &#x2699;&#xFE0F; Model Bisnis
+  </h2>
+  <div class="section-body">
+    <p>CIMB Niaga menjalankan model bisnis <strong>perbankan universal</strong> yang mengintegrasikan layanan ritel, komersial, korporat, dan syariah dalam satu platform terpadu. Inti pendapatan bank bersumber dari <strong>spread bunga</strong> — selisih antara bunga yang diterima dari penyaluran kredit dan bunga yang dibayarkan kepada nasabah deposito. Dengan Net Interest Margin (NIM) sebesar 4,20% pada 2025, bank berhasil menjaga margin yang kompetitif di tengah tekanan cost of fund yang meningkat pasca-era suku bunga tinggi global. Pencapaian CASA ratio 70% pada akhir 2025 menjadi fondasi ketahanan margin jangka panjang, karena dana giro dan tabungan (CASA) merupakan sumber dana berbiaya rendah yang menekan ketergantungan pada deposito mahal.</p>
+
+    <p><strong>Segmen Perbankan Konsumer</strong> melayani kebutuhan individu melalui produk Kredit Pemilikan Rumah (KPR), Kredit Kendaraan Bermotor (KKB), kartu kredit, dan kredit tanpa agunan. Segmen ini juga mencakup layanan wealth management dan bancassurance yang menghasilkan pendapatan berbasis fee (fee-based income) secara signifikan — fee income pada Q1 2026 tumbuh 13,75% YoY, menunjukkan diversifikasi pendapatan yang semakin kuat. <strong>Segmen Perbankan Korporat</strong> melayani perusahaan-perusahaan besar dengan fasilitas kredit modal kerja, kredit investasi, sindikasi, serta layanan treasury dan trade finance — memanfaatkan jaringan regional CIMB Group di seluruh ASEAN sebagai keunggulan kompetitif yang tidak dapat direplikasi oleh bank lokal mana pun.</p>
+
+    <p><strong>Segmen UMKM dan Komersial</strong> menyasar segmen menengah yang sedang tumbuh, kini diperkuat dengan platform digital <strong>OCTOBIZ</strong> yang diluncurkan awal 2026. Dalam waktu singkat, platform B2B ini telah diadopsi oleh lebih dari 20.000 perusahaan untuk mengelola transaksi domestik maupun internasional secara digital, mencerminkan besarnya pasar yang belum tergarap secara optimal. <strong>Segmen Treasury</strong> mengelola portofolio surat berharga pemerintah, obligasi korporat, dan instrumen pasar uang yang memberikan pendapatan stabil dan likuiditas bagi bank.</p>
+
+    <p><strong>Platform digital OCTO</strong> — mencakup OCTO Mobile dan OCTO Clicks — menjadi tulang punggung transformasi layanan kepada nasabah ritel. Strategi <em>hybrid banking</em> yang menggabungkan cabang digital berteknologi self-service dengan kehadiran personal menjadi konsep ekspansi fisik terkini. Fasilitas Self Service Banking (SSB) Tablet dan SSB Kiosk memungkinkan pembukaan rekening, penggantian kartu, dan pembaruan data nasabah secara mandiri dalam waktu sekitar lima menit — memangkas biaya operasional sekaligus meningkatkan pengalaman nasabah secara dramatis.</p>
+
+    <p><strong>CIMB Niaga Syariah</strong> mengoperasikan 25 Kantor Cabang Syariah, 5 Kantor Cabang Pembantu Syariah, dan 15 Kantor Fungsional Syariah. Posisinya sebagai UUS terbesar di Indonesia menempatkan bank ini pada jalur ideal untuk menangkap pertumbuhan permintaan produk keuangan syariah yang terus meningkat seiring pertumbuhan kelas menengah Muslim Indonesia. Ekosistem haji dan umrah menjadi segmen strategis khusus yang dikembangkan melalui pembukaan Syariah Digital Branch di Surabaya, Makassar, Medan, Serpong, Bireuen, dan Bogor.</p>
+  </div>
+
+  <!-- ═══ SECTION 3: KINERJA KEUANGAN ═══ -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4L5 7L8 4"/></svg></span>
+    &#x1F4CA; Kinerja Keuangan
+  </h2>
+  <div class="section-body">
+    <p>CIMB Niaga mencatatkan trajektori keuangan yang mengesankan dalam lima tahun terakhir. Dari estimasi laba bersih Rp3,70 triliun pada 2021, bank berhasil menggandakannya hampir dua kali lipat menjadi <strong>Rp6,93 triliun pada 2025</strong> — merepresentasikan pertumbuhan kumulatif empat tahun yang solid. <strong>Periode 2022–2023 menjadi fase akselerasi paling tajam</strong>, di mana pemulihan ekonomi pasca-pandemi mendorong pertumbuhan kredit, ekspansi margin, dan pemulihan kualitas aset secara bersamaan, mendorong laba tumbuh dari estimasi Rp5,10 triliun (2022) ke sekitar Rp6,50 triliun (2023) — kenaikan lebih dari 27% dalam satu tahun.</p>
+
+    <p>Memasuki <strong>2024</strong>, pertumbuhan laba melambat menjadi +5,42% YoY (Rp6,78 triliun) karena tekanan dari sisi cost of fund: beban bunga melonjak 22,42% YoY menjadi Rp10,96 triliun, menekan pendapatan bunga bersih (NII) sebesar 0,64% menjadi Rp13,26 triliun. Meski demikian, pendapatan bunga bruto tetap tumbuh 8,61% YoY mencapai Rp24,23 triliun. Pada <strong>2025</strong>, bank berhasil menstabilkan NIM di 4,20% dengan NII tumbuh tipis +1,58%. Pertumbuhan total aset mencapai +3,46% menjadi Rp372,70 triliun, sementara kredit tumbuh 4,5% menjadi Rp238,3 triliun dan DPK naik 3,8% dengan CASA ratio melonjak ke 70% — sinyal paling positif dari seluruh tahun 2025.</p>
+
+    <p><strong>Kuartal pertama 2026</strong> menunjukkan momentum yang terjaga: laba sebelum pajak konsolidasi tumbuh 4,5% YoY menjadi Rp2,3 triliun, dengan laba bersih Rp1,77 triliun dan EPS Rp70,20. Pendapatan bunga bersih tercatat Rp3,22 triliun sementara fee-based income melonjak 13,75% YoY menjadi Rp764,60 miliar — pertanda diversifikasi pendapatan yang semakin sehat. Total aset per Maret 2026 mencapai Rp368,2 triliun dengan DPK Rp260,1 triliun dan kredit Rp235,1 triliun.</p>
+
+    <div class="chart-block">
+      <div class="chart-title">Laba Bersih (Bar) &amp; Pendapatan Bunga Bruto (Garis) &middot; 2021–2025 (Rp Triliun)</div>
+      <canvas id="finChart"></canvas>
+    </div>
+
+    <h3>Tabel Rasio Keuangan Utama</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Tahun</th>
+          <th>Laba Bersih</th>
+          <th>Total Aset</th>
+          <th>ROE</th>
+          <th>NIM</th>
+          <th>ROA</th>
+          <th>PER</th>
+          <th>PBV</th>
+          <th>Div. Yield</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>2021</td><td>Rp3,70 T (est.)</td><td>Rp285 T (est.)</td><td>~10,0% (est.)</td><td>~4,5% (est.)</td><td>~1,3% (est.)</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td>2022</td><td>Rp5,10 T (est.)</td><td>Rp307 T (est.)</td><td>~12,5% (est.)</td><td>~4,2% (est.)</td><td>~1,7% (est.)</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td>2023</td><td>Rp6,50 T (est.)</td><td>Rp329 T</td><td>~15,0% (est.)</td><td>~4,5% (est.)</td><td>~2,0% (est.)</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td>2024</td><td>Rp6,78 T</td><td>Rp360,22 T</td><td>~13,1% (est.)</td><td>~4,1% (est.)</td><td>~1,9% (est.)</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr class="highlight"><td>2025 &#x2605;</td><td>Rp6,93 T</td><td>Rp372,70 T</td><td>12,35%</td><td>4,20%</td><td>2,41%</td><td>6,0&times;</td><td>0,74&times;</td><td>9,83%</td></tr>
+      </tbody>
+    </table>
+    <p class="footnote">&#x2605; Data 2025 adalah tahun paling lengkap. PER = 1.645 &divide; 275,66 (EPS); PBV = 1.645 &divide; 2.232 (BVPS est. dari ekuitas &divide; saham beredar); Div. Yield = 161,77 &divide; 1.645. Harga saham aktual Rp1.645 per 20 Mei 2026. Data tahun sebelumnya tidak mencantumkan PER/PBV karena harga historis tidak tersedia dalam laporan ini. Data bertanda (est.) adalah estimasi.</p>
+
+    <h3>Indikator Kualitas Aset &amp; Efisiensi Operasional</h3>
+    <table>
+      <thead>
+        <tr><th>Indikator</th><th>2024</th><th>2025</th><th>Tren</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>BOPO (Efisiensi Operasional)</td><td>~72,0% (est.)</td><td>71,16%</td><td>Membaik &#x2193;</td></tr>
+        <tr><td>CASA Ratio (Dana Murah)</td><td>~65,0% (est.)</td><td>70,0%</td><td>Meningkat &#x2191;</td></tr>
+        <tr><td>Pertumbuhan Kredit (YoY)</td><td>~8,0% (est.)</td><td>+4,5%</td><td>Melambat</td></tr>
+        <tr><td>NPL Gross (est.)</td><td>~2,5% (est.)</td><td>~2,2% (est.)</td><td>Membaik &#x2193;</td></tr>
+        <tr><td>Pertumbuhan DPK (YoY)</td><td>~6,0% (est.)</td><td>+3,8%</td><td>Stabil</td></tr>
+        <tr><td>Fee-Based Income Q1 2026</td><td>~Rp672 M (est.)</td><td>Rp764,6 M (Q1 2026)</td><td>+13,75% YoY &#x2191;</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══ SECTION 4: STRUKTUR KEPEMILIKAN & SEGMEN BISNIS ═══ -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4L5 7L8 4"/></svg></span>
+    &#x1F3DB;&#xFE0F; Struktur Kepemilikan &amp; Segmen Bisnis
+  </h2>
+  <div class="section-body">
+    <p>Kepemilikan saham CIMB Niaga didominasi secara masif oleh induk usahanya. <strong>CIMB Group Sdn. Bhd.</strong> — entitas anak dari CIMB Group Holdings Berhad yang terdaftar di Bursa Malaysia — mengendalikan <strong>92,5%</strong> saham BNGA secara langsung dan tidak langsung, menjadikannya salah satu saham dengan konsentrasi kepemilikan pengendali tertinggi di Indeks Harga Saham Gabungan (IHSG). Sementara sisanya, sekitar <strong>7,5%</strong> saham, berada di tangan publik dan investor institusional. Struktur ini memberikan stabilitas stratejik jangka panjang — keputusan besar hampir mustahil diblok oleh pemegang saham minoritas — namun juga berarti free float yang kecil sehingga likuiditas perdagangan saham relatif terbatas.</p>
+
+    <p>Dari sisi segmen bisnis, CIMB Niaga mengoperasikan empat pilar utama. <strong>Perbankan Konsumer</strong> (estimasi ~38% kontribusi pendapatan) mencakup KPR, KKB, kartu kredit, dan wealth management. <strong>Perbankan Korporat</strong> (~33%) melayani perusahaan besar dengan sindikasi dan trade finance. <strong>Perbankan UMKM/Komersial</strong> (~22%) menyasar segmen menengah yang didukung OCTOBIZ. <strong>Treasury &amp; Lainnya</strong> (~7%) mengelola portofolio surat berharga. <em>Catatan: estimasi segmen berdasarkan data publik yang tersedia; rincian resmi terdapat dalam Laporan Tahunan bank.</em></p>
+
+    <div class="two-charts">
+      <div class="chart-block">
+        <div class="chart-title">Struktur Kepemilikan Saham (%)</div>
+        <canvas id="ownerChart"></canvas>
+      </div>
+      <div class="chart-block">
+        <div class="chart-title">Estimasi Kontribusi Segmen Bisnis (% Pendapatan)</div>
+        <canvas id="segmentChart"></canvas>
+      </div>
+    </div>
+
+    <h3>Pesaing Utama di Sektor Perbankan Indonesia</h3>
+    <table>
+      <thead>
+        <tr><th>Bank</th><th>Kode</th><th>Kepemilikan</th><th>Posisi Pasar</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Bank Central Asia</td><td>BBCA</td><td>Swasta (Djarum Group)</td><td>Bank swasta terbesar, layanan premium</td></tr>
+        <tr><td>Bank Mandiri</td><td>BMRI</td><td>BUMN</td><td>Bank terbesar berdasarkan aset</td></tr>
+        <tr><td>Bank Rakyat Indonesia</td><td>BBRI</td><td>BUMN</td><td>Fokus UMKM &amp; mikro, terluas</td></tr>
+        <tr><td>Bank Negara Indonesia</td><td>BBNI</td><td>BUMN</td><td>Fokus korporat &amp; internasional</td></tr>
+        <tr class="highlight"><td>Bank CIMB Niaga</td><td>BNGA</td><td>Swasta (CIMB Group)</td><td>Bank swasta terbesar ke-2, ASEAN presence</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══ SECTION 5: BERITA & PERKEMBANGAN TERKINI ═══ -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4L5 7L8 4"/></svg></span>
+    &#x1F4F0; Berita &amp; Perkembangan Terkini
+  </h2>
+  <div class="section-body">
+
+    <div class="news-item">
+      <div class="news-date">April 2026</div>
+      <div class="news-title">CIMB Niaga Cetak Laba Kuartal I-2026 Rp1,77 Triliun, Laba Sebelum Pajak Rp2,3 Triliun</div>
+      <div class="news-desc">Bank mengumumkan kinerja positif kuartal pertama 2026 dengan laba sebelum pajak konsolidasi sebesar Rp2,3 triliun (+4,5% YoY) dan laba bersih Rp1,77 triliun. Fee-based income tumbuh 13,75% YoY menjadi Rp764,60 miliar, dan EPS tercatat Rp70,20. Total aset mencapai Rp368,2 triliun sementara kredit tumbuh 2,2% YoY menjadi Rp235,1 triliun. Bank mempertahankan posisi sebagai bank swasta terbesar kedua Indonesia.</div>
+      <span class="badge badge-green">Kinerja Positif</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">Maret 2026</div>
+      <div class="news-title">Platform OCTOBIZ Tembus 20.000 Pengguna Perusahaan dalam Beberapa Bulan Peluncuran</div>
+      <div class="news-desc">CIMB Niaga meluncurkan OCTOBIZ — platform perbankan digital terintegrasi untuk nasabah korporat dan UMKM — pada awal 2026. Solusi ini memungkinkan pengelolaan transaksi domestik dan internasional secara digital dengan aman dan efisien. Dalam waktu singkat, lebih dari 20.000 perusahaan telah bergabung, mencerminkan akselerasi kebutuhan digitalisasi perbankan bisnis di Indonesia pasca-pandemi.</div>
+      <span class="badge badge-accent">Inovasi Digital B2B</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">Februari 2026</div>
+      <div class="news-title">Syariah Digital Branch Surabaya Diresmikan, Perkuat Ekosistem Haji &amp; Umrah</div>
+      <div class="news-desc">CIMB Niaga Syariah meresmikan Digital Branch terbarunya di Surabaya, memperluas jaringan yang sebelumnya hadir di Makassar, Medan, Serpong, Bireuen, dan Bogor. Cabang ini dilengkapi Self Service Banking (SSB) Tablet dan SSB Kiosk yang memungkinkan pembukaan rekening hanya dalam sekitar 5 menit. Fokus pada layanan ekosistem haji dan umrah menempatkan CIMB Niaga Syariah sebagai pemain strategis di pasar jemaah haji Indonesia yang mencapai jutaan orang per tahun.</div>
+      <span class="badge badge-blue">Ekspansi Syariah</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">Februari 2026</div>
+      <div class="news-title">RUPS Setujui Dividen Tunai Rp4,07 Triliun untuk Tahun Buku 2024 &mdash; Yield 9,83%</div>
+      <div class="news-desc">Rapat Umum Pemegang Saham (RUPS) menyetujui pembagian dividen tunai sebesar Rp4,07 triliun atau 60% dari laba bersih FY2024 senilai Rp6,78 triliun, setara Rp161,77 per saham. Berdasarkan harga saham Rp1.645, dividend yield tercatat 9,83% — salah satu imbal hasil dividen tertinggi di sektor perbankan Indonesia, menjadikan BNGA sangat menarik bagi investor berorientasi pendapatan.</div>
+      <span class="badge badge-green">Dividen Tinggi</span>
+    </div>
+
+  </div>
+
+  <!-- ═══ SECTION 6: RISIKO & PELUANG ═══ -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4L5 7L8 4"/></svg></span>
+    &#x2696;&#xFE0F; Risiko &amp; Peluang
+  </h2>
+  <div class="section-body">
+
+    <p><strong>Risiko Suku Bunga dan Cost of Fund</strong> merupakan ancaman paling nyata bagi CIMB Niaga. Lonjakan beban bunga sebesar 22,42% YoY pada 2024 memperlihatkan betapa rentannya NIM terhadap perubahan kebijakan moneter. Meski CASA ratio telah mencapai 70% pada 2025 — mengurangi ketergantungan pada deposito mahal — lingkungan suku bunga yang masih tertekan secara global dapat terus menekan profitabilitas di masa mendatang jika tidak diimbangi pertumbuhan kredit yang memadai.
+    <br><span class="badge badge-amber">Risiko Sedang–Tinggi</span></p>
+
+    <p><strong>Risiko Kredit dan Kualitas Aset</strong> perlu diwaspadai seiring normalisasi post-pandemi dan perlambatan ekonomi. Meskipun NPL gross memperlihatkan tren perbaikan, pertumbuhan kredit yang mulai melambat pada 2025 (+4,5%) mengindikasikan selektivitas yang meningkat — hal ini bisa berarti pengelolaan risiko yang lebih hati-hati, namun juga dapat mencerminkan permintaan kredit berkualitas yang lebih sulit ditemukan di tengah ketidakpastian ekonomi global.
+    <br><span class="badge badge-amber">Risiko Sedang</span></p>
+
+    <p><strong>Risiko Persaingan Digital</strong> datang dari dua arah: bank digital berbasis teknologi (neobank) yang menawarkan produk simpanan dengan bunga tinggi tanpa beban infrastruktur fisik, serta bank-bank besar seperti BCA, Mandiri, dan BRI yang terus mengembangkan kapabilitas digitalnya dengan sumber daya jauh lebih besar. Meskipun OCTOBIZ dan OCTO Mobile menunjukkan traksi positif, CIMB Niaga perlu terus berinvestasi agresif untuk mempertahankan relevansinya di lanskap digital yang berubah sangat cepat.
+    <br><span class="badge badge-amber">Risiko Sedang</span></p>
+
+    <p><strong>Peluang Pertumbuhan Syariah</strong> sangat menjanjikan dan terstruktur. Dengan posisi sebagai UUS terbesar di Indonesia dan ekosistem haji/umrah yang sedang dibangun secara serius, CIMB Niaga berada di garis terdepan untuk menangkap lonjakan permintaan keuangan syariah — khususnya di tengah program pemerintah untuk memperkuat industri keuangan syariah nasional menuju status hub keuangan Islam global.
+    <br><span class="badge badge-green">Peluang Tinggi</span></p>
+
+    <p><strong>Peluang Ekspansi ASEAN via CIMB Group</strong> membuka koridor bisnis lintas batas yang tidak dimiliki oleh bank-bank lokal pesaingnya. Nasabah korporat yang beroperasi di Malaysia, Singapura, Thailand, dan Filipina dapat dilayani secara terintegrasi melalui jaringan CIMB Group. Ini menjadikan CIMB Niaga satu-satunya bank swasta Indonesia yang memiliki keunggulan jaringan ASEAN sejati — nilai diferensiasi yang semakin penting di era perdagangan digital lintas batas.
+    <br><span class="badge badge-green">Peluang Tinggi</span></p>
+
+    <p><strong>Peluang Segmen UMKM dan Digital B2B</strong> terbuka sangat lebar melalui platform OCTOBIZ. Dengan lebih dari 60 juta pelaku UMKM di Indonesia dan penetrasi layanan perbankan digital korporat yang masih rendah di segmen ini, CIMB Niaga memiliki ruang ekspansi yang masif — khususnya dalam pembiayaan rantai pasok (supply chain financing), manajemen kas, dan transaksi digital lintas batas yang terus tumbuh seiring meningkatnya penetrasi e-commerce B2B.
+    <br><span class="badge badge-accent">Peluang Strategis</span></p>
+
+  </div>
+
+  <!-- ═══ SECTION 7: ESG & KEBERLANJUTAN ═══ -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4L5 7L8 4"/></svg></span>
+    &#x1F331; ESG &amp; Keberlanjutan
+  </h2>
+  <div class="section-body">
+    <p>CIMB Niaga telah mengintegrasikan agenda keberlanjutan ke dalam strategi bisnis intinya secara sistematis dan terukur. Bank ini menjadi salah satu yang pertama di Indonesia mengadopsi standar pelaporan keberlanjutan <strong>IFRS S1 dan S2</strong> dari International Financial Reporting Standards Foundation, mencerminkan komitmen terhadap transparansi kelas dunia yang jauh melampaui standar regulasi minimum OJK. Laporan Keberlanjutan 2024 yang terintegrasi dengan laporan tahunan mencakup pengungkapan risiko iklim yang terperinci dan target reduksi emisi yang terukur.</p>
+
+    <div class="esg-row">
+      <div class="esg-label-row">
+        <span class="esg-label">E &mdash; Lingkungan (Environmental)</span>
+        <span class="esg-score" style="color:#3d9e71">72 / 100</span>
+      </div>
+      <div class="esg-bar-bg"><div class="esg-bar-fill" style="width:72%; background:#3d9e71;"></div></div>
+      <div class="esg-sub">Reduksi emisi Scope 1 &amp; 2 sebesar <strong>46%</strong> vs. baseline 2019 &bull; Instalasi panel surya di dua gedung kantor &bull; Pembelian Renewable Energy Certificate (REC) &bull; 70% portofolio pembiayaan sawit tersertifikasi berkelanjutan (Des 2025) &bull; Penanaman &gt;115.000 batang bambu dengan potensi sekuestrasi &gt;15.000 ton CO&sup2; &bull; Adopsi IFRS S2 untuk pengungkapan risiko iklim</div>
+    </div>
+
+    <div class="esg-row">
+      <div class="esg-label-row">
+        <span class="esg-label">S &mdash; Sosial (Social)</span>
+        <span class="esg-score" style="color:#50a5dc">68 / 100</span>
+      </div>
+      <div class="esg-bar-bg"><div class="esg-bar-fill" style="width:68%; background:#50a5dc;"></div></div>
+      <div class="esg-sub">Pemberdayaan ~<strong>1.000 UMKM</strong> di Indonesia Timur &bull; &gt;10.000 penerima manfaat program pendidikan (2025) &bull; ~3.300 penerima manfaat program pencegahan stunting (kerjasama UNICEF) &bull; Inklusi keuangan melalui 394 cabang &amp; layanan syariah di seluruh Indonesia &bull; Pembukaan Syariah Digital Branch untuk akses jemaah haji &amp; umrah</div>
+    </div>
+
+    <div class="esg-row">
+      <div class="esg-label-row">
+        <span class="esg-label">G &mdash; Tata Kelola (Governance)</span>
+        <span class="esg-score" style="color:#7f6df2">75 / 100</span>
+      </div>
+      <div class="esg-bar-bg"><div class="esg-bar-fill" style="width:75%; background:#7f6df2;"></div></div>
+      <div class="esg-sub">Adopsi IFRS S1 &amp; S2 sejak laporan 2024 &bull; Laporan keberlanjutan terintegrasi dengan laporan tahunan &bull; Payout ratio dividen 60% mencerminkan disiplin alokasi modal &bull; Tata kelola berstandar ASEAN di bawah supervisi langsung CIMB Group Holdings Berhad (Bursa Malaysia) &bull; Komite audit dan risiko independen</div>
+    </div>
+
+    <p>Dalam aspek <strong>Pembiayaan Berkelanjutan (Responsible Financing)</strong>, CIMB Niaga berkomitmen membatasi eksposur ke sektor-sektor berisiko tinggi terhadap lingkungan. Sertifikasi 70% portofolio pembiayaan kelapa sawit sebagai berkelanjutan pada akhir 2025 merupakan pencapaian signifikan di tengah tekanan internasional terhadap industri sawit Indonesia. Komitmen ini selaras dengan kerangka <em>CIMB Group Climate Change and Nature Policy</em> yang mengatur seluruh entitas dalam grup. Target jangka panjang adalah menyelaraskan operasional dengan jalur net-zero yang konsisten dengan Perjanjian Paris — sebuah ambisi yang secara bertahap mulai terlihat dalam laporan kinerja lingkungan tahunan bank.</p>
+  </div>
+
+  <hr>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <p><strong>Disclaimer:</strong> Dokumen ini dibuat secara otomatis untuk tujuan informasi dan edukasi keuangan semata. Bukan merupakan saran investasi, rekomendasi beli/jual saham, atau panduan alokasi portofolio. Data keuangan bersumber dari laporan publik perusahaan, berita finansial, dan pencarian web tertanggal 20–21 Mei 2026. Angka bertanda <em>(est.)</em> merupakan estimasi berdasarkan data parsial yang tersedia secara publik. Harga saham Rp1.645 diambil per 20 Mei 2026 dari data pasar yang tersedia; harga aktual dapat berbeda. Selalu lakukan riset mandiri dan konsultasi dengan penasihat keuangan berlisensi sebelum mengambil keputusan investasi.</p>
+    <div class="sources">
+      <a href="https://investor.cimbniaga.co.id" target="_blank">investor.cimbniaga.co.id</a>
+      <a href="https://www.cimbniaga.co.id" target="_blank">cimbniaga.co.id</a>
+      <a href="https://infobanknews.com" target="_blank">Infobanknews</a>
+      <a href="https://finansial.bisnis.com" target="_blank">Bisnis.com</a>
+      <a href="https://www.cnbcindonesia.com" target="_blank">CNBC Indonesia</a>
+      <a href="https://keuangan.kontan.co.id" target="_blank">Kontan</a>
+      <a href="https://investortrust.id" target="_blank">InvestorTrust</a>
+      <a href="https://id.wikipedia.org/wiki/Bank_CIMB_Niaga" target="_blank">Wikipedia ID</a>
+      <a href="https://www.idx.co.id/id/perusahaan-tercatat/profil-perusahaan-tercatat/BNGA" target="_blank">IDX BEI</a>
+      <a href="https://akufrugal.com/saham/BNGA" target="_blank">AkuFrugal</a>
+    </div>
+    <p style="margin-top:1em;">IDX Profile Series &bull; Perbankan &bull; 21 Mei 2026 &bull; <a href="https://xedixermawan.github.io">xedixermawan.github.io</a></p>
+  </footer>
+
+</div><!-- /#page-wrapper -->
+
+<!-- ═══ CHART.JS SCRIPTS ═══ -->
+<script>
+  Chart.defaults.color = '#706f6f';
+  Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+
+  // ── Chart 1: Combo — Laba Bersih (Bar) + Pendapatan Bunga Bruto (Line) ──
+  const finCtx = document.getElementById('finChart').getContext('2d');
+  new Chart(finCtx, {
+    data: {
+      labels: ['2021 (est.)', '2022 (est.)', '2023 (est.)', '2024', '2025'],
+      datasets: [
+        {
+          type: 'bar',
+          label: 'Laba Bersih (Rp T)',
+          data: [3.70, 5.10, 6.50, 6.78, 6.93],
+          backgroundColor: 'rgba(127,109,242,0.78)',
+          borderColor: '#7f6df2',
+          borderWidth: 1,
+          yAxisID: 'y',
+          borderRadius: 5,
+          order: 2
+        },
+        {
+          type: 'line',
+          label: 'Pendapatan Bunga Bruto (Rp T)',
+          data: [16.5, 19.5, 22.0, 24.23, 24.67],
+          borderColor: '#3d9e71',
+          backgroundColor: 'rgba(61,158,113,0.08)',
+          pointBackgroundColor: '#3d9e71',
+          pointBorderColor: '#fff',
+          pointBorderWidth: 2,
+          pointRadius: 5,
+          tension: 0.35,
+          fill: true,
+          yAxisID: 'y2',
+          order: 1
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: {
+          position: 'top',
+          labels: { boxWidth: 12, font: { size: 11 }, padding: 16 }
+        },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => ` ${ctx.dataset.label}: Rp${ctx.parsed.y.toFixed(2)} T`
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(0,0,0,0.07)' },
+          ticks: { font: { size: 11 } }
+        },
+        y: {
+          type: 'linear',
+          position: 'left',
+          grid: { color: 'rgba(0,0,0,0.07)' },
+          title: { display: true, text: 'Laba Bersih (Rp T)', font: { size: 10 }, color: '#7f6df2' },
+          ticks: { font: { size: 10 }, callback: v => 'Rp' + v + 'T' },
+          min: 0,
+          max: 10
+        },
+        y2: {
+          type: 'linear',
+          position: 'right',
+          grid: { drawOnChartArea: false },
+          title: { display: true, text: 'Pend. Bunga Bruto (Rp T)', font: { size: 10 }, color: '#3d9e71' },
+          ticks: { font: { size: 10 }, callback: v => 'Rp' + v + 'T' },
+          min: 0,
+          max: 30
+        }
+      }
+    }
+  });
+
+  // ── Chart 2: Donut — Struktur Kepemilikan ──
+  const ownerCtx = document.getElementById('ownerChart').getContext('2d');
+  new Chart(ownerCtx, {
+    type: 'doughnut',
+    data: {
+      labels: ['CIMB Group Sdn. Bhd.', 'Publik / Free Float'],
+      datasets: [{
+        data: [92.5, 7.5],
+        backgroundColor: ['#7f6df2', '#e9eaec'],
+        borderColor: ['#ffffff', '#ffffff'],
+        borderWidth: 3,
+        hoverOffset: 8
+      }]
+    },
+    options: {
+      responsive: true,
+      cutout: '62%',
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { boxWidth: 12, font: { size: 10 }, padding: 12 }
+        },
+        tooltip: {
+          callbacks: {
+            label: ctx => ` ${ctx.label}: ${ctx.parsed}%`
+          }
+        }
+      }
+    }
+  });
+
+  // ── Chart 3: Horizontal Bar — Segmen Bisnis ──
+  const segCtx = document.getElementById('segmentChart').getContext('2d');
+  new Chart(segCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Perbankan Konsumer', 'Perbankan Korporat', 'UMKM & Komersial', 'Treasury & Lainnya'],
+      datasets: [{
+        label: 'Estimasi Kontribusi (%)',
+        data: [38, 33, 22, 7],
+        backgroundColor: ['#7f6df2', '#3d9e71', '#e5a53a', '#50a5dc'],
+        borderRadius: 4,
+        borderSkipped: false
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => ` ${ctx.parsed.x}% kontribusi (est.)`
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(0,0,0,0.07)' },
+          ticks: { font: { size: 10 }, callback: v => v + '%' },
+          max: 50,
+          min: 0
+        },
+        y: {
+          grid: { display: false },
+          ticks: { font: { size: 10 } }
+        }
+      }
+    }
+  });
+
+  // ── Toggle Sections ──
+  function toggleSection(h2el) {
+    h2el.classList.toggle('collapsed');
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GJTL — PT Gajah Tunggal Tbk | Profil IDX</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root {
+  --background-primary:        #ffffff;
+  --background-secondary:      #f2f3f5;
+  --background-secondary-alt:  #e9eaec;
+  --background-modifier-border:#ddd;
+  --background-modifier-hover: rgba(0,0,0,0.05);
+  --text-normal:     #2e3338;
+  --text-muted:      #706f6f;
+  --text-faint:      #999999;
+  --text-on-accent:  #ffffff;
+  --text-accent:     #7f6df2;
+  --text-accent-hover: #5d4ff0;
+  --interactive-accent: #7f6df2;
+  --line-width: 42em;
+  --font-text-size: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background-color: var(--background-primary);
+  color: var(--text-normal);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+  font-size: var(--font-text-size);
+  line-height: 1.7;
+}
+.site-nav { background: var(--background-secondary); border-bottom: 1px solid var(--background-modifier-border); padding: 8px 0; position: sticky; top: 0; z-index: 100; }
+.site-nav-inner { max-width: var(--line-width); margin: 0 auto; padding: 0 2em; display: flex; align-items: center; gap: 6px; }
+.site-nav a { font-size: 0.8rem; color: var(--text-muted); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; }
+.site-nav a:hover { color: var(--text-accent); }
+#page-wrapper { max-width: var(--line-width); margin: 0 auto; padding: 3em 2em 8em; }
+.page-title { font-size: 2rem; font-weight: 700; color: var(--text-normal); margin-bottom: 0.3em; line-height: 1.2; }
+.ticker-badge { display: inline-block; background: var(--text-accent); color: var(--text-on-accent); font-size: 0.88rem; font-weight: 700; padding: 3px 10px; border-radius: 5px; margin-left: 10px; vertical-align: middle; }
+.page-meta { font-size: 0.82rem; color: var(--text-faint); margin-bottom: 0.5em; display: flex; gap: 16px; flex-wrap: wrap; }
+hr { border: none; border-top: 1px solid var(--background-modifier-border); margin: 1.8em 0; }
+h2 { font-size: 1.3rem; font-weight: 600; color: var(--text-normal); margin: 1.8em 0 0.6em; display: flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; }
+h2:hover { color: var(--text-accent); }
+h2 .collapse-icon { width: 15px; height: 15px; flex-shrink: 0; opacity: 0.35; transition: transform 0.2s; color: var(--text-muted); }
+h2 .collapse-icon svg { width: 100%; height: 100%; }
+h2.collapsed .collapse-icon { transform: rotate(-90deg); }
+h2.collapsed + .section-body { display: none; }
+h3 { font-size: 1.02rem; font-weight: 600; color: var(--text-normal); margin: 1.2em 0 0.4em; }
+p { margin-bottom: 0.85em; color: var(--text-normal); }
+strong { color: var(--text-normal); font-weight: 700; }
+a { color: var(--text-accent); text-decoration: none; }
+a:hover { text-decoration: underline; color: var(--text-accent-hover); }
+.kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 1em 0 1.5em; }
+@media (max-width: 700px) { .kpi-grid { grid-template-columns: repeat(2,1fr); } }
+.callout { background: var(--background-secondary); border-left: 3px solid var(--text-accent); border-radius: 0 6px 6px 0; padding: 12px 16px; margin: 0; }
+.callout-title { font-size: 0.73rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-accent); font-weight: 700; margin-bottom: 5px; }
+.callout-value { font-size: 1.4rem; font-weight: 800; color: var(--text-normal); }
+.callout-sub { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+.callout-up { border-left-color: #3d9e71; }
+.callout-up .callout-title { color: #3d9e71; }
+.callout-down { border-left-color: #c0392b; }
+.callout-down .callout-title { color: #c0392b; }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 1em 0; }
+thead tr { background: var(--background-secondary); }
+th { padding: 9px 12px; text-align: left; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-accent); font-weight: 700; border-bottom: 2px solid var(--background-modifier-border); }
+td { padding: 9px 12px; border-bottom: 1px solid var(--background-modifier-border); color: var(--text-normal); }
+tr:hover td { background: var(--background-modifier-hover); }
+tr.highlight td { font-weight: 700; }
+tr.highlight td:first-child { color: var(--text-accent); }
+.chart-block { background: var(--background-secondary); border-radius: 8px; padding: 18px 20px; margin: 1.2em 0; border: 1px solid var(--background-modifier-border); }
+.chart-block .chart-title { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.7px; color: var(--text-faint); font-weight: 700; margin-bottom: 14px; }
+.chart-block canvas { max-height: 260px; }
+.news-item { border-left: 2px solid var(--background-modifier-border); padding: 10px 14px; margin: 10px 0; transition: border-left-color 0.15s; }
+.news-item:hover { border-left-color: var(--text-accent); background: var(--background-modifier-hover); border-radius: 0 4px 4px 0; }
+.news-date { font-size: 0.73rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.5px; }
+.news-title { font-weight: 600; color: var(--text-normal); font-size: 0.92rem; margin: 3px 0; }
+.news-desc { font-size: 0.81rem; color: var(--text-muted); }
+.badge { display: inline-block; font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; font-weight: 700; margin-top: 5px; }
+.badge-green  { background: #d4edda; color: #2d6a4f; }
+.badge-red    { background: #fde8e8; color: #922b21; }
+.badge-amber  { background: #fef3cd; color: #7d5a00; }
+.badge-accent { background: #ede9fe; color: var(--text-accent); }
+.badge-blue   { background: #dbeafe; color: #1e40af; }
+.esg-row { margin: 14px 0; }
+.esg-label-row { display: flex; justify-content: space-between; margin-bottom: 5px; }
+.esg-label { font-size: 0.86rem; font-weight: 600; color: var(--text-normal); }
+.esg-score { font-size: 0.86rem; font-weight: 700; }
+.esg-bar-bg { height: 7px; background: var(--background-secondary-alt); border-radius: 4px; overflow: hidden; }
+.esg-bar-fill { height: 100%; border-radius: 4px; }
+.esg-sub { font-size: 0.75rem; color: var(--text-faint); margin-top: 4px; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 1.2em 0; }
+@media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+footer { margin-top: 4em; padding-top: 1.5em; border-top: 1px solid var(--background-modifier-border); font-size: 0.76rem; color: var(--text-faint); line-height: 1.6; }
+.sources { margin-top: 0.8em; display: flex; flex-wrap: wrap; gap: 6px; }
+.sources a { color: var(--text-muted); background: var(--background-secondary); padding: 2px 8px; border-radius: 4px; border: 1px solid var(--background-modifier-border); font-size: 0.72rem; }
+.sources a:hover { color: var(--text-accent); }
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <svg width="14" height="14" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 2L3.5 5L6.5 8"/></svg>
+    <a href="https://xedixermawan.github.io">xedixermawan.github.io</a>
+  </div>
+</nav>
+<div id="page-wrapper">
+
+  <!-- HEADER -->
+  <div class="page-meta">
+    <span>📅 16 Mei 2026</span>
+    <span>🏭 Sektor: Manufaktur / Otomotif — Ban</span>
+    <span>🏢 IDX — Papan Utama</span>
+  </div>
+  <h1 class="page-title">
+    PT Gajah Tunggal Tbk
+    <span class="ticker-badge">GJTL</span>
+  </h1>
+  <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:1.2em;">
+    Produsen ban terbesar di Asia Tenggara — pemilik merek <strong>GT Radial</strong> yang dijual di lebih dari 100 negara, dengan kapasitas produksi 164.000 ban per hari dan mitra strategis raksasa ban dunia Michelin.
+  </p>
+
+  <hr />
+
+  <!-- KPI GRID -->
+  <div class="kpi-grid">
+    <div class="callout">
+      <div class="callout-title">Kapitalisasi Pasar</div>
+      <div class="callout-value">Rp4,23 T</div>
+      <div class="callout-sub">~3,48 miliar lembar saham</div>
+    </div>
+    <div class="callout callout-down">
+      <div class="callout-title">Pendapatan 2025</div>
+      <div class="callout-value">Rp17,66 T</div>
+      <div class="callout-sub">↓ 2,0% YoY</div>
+    </div>
+    <div class="callout callout-up">
+      <div class="callout-title">Laba Bersih 2025</div>
+      <div class="callout-value">Rp1,24 T</div>
+      <div class="callout-sub">↑ 4,7% YoY</div>
+    </div>
+    <div class="callout">
+      <div class="callout-title">Dividen per Saham</div>
+      <div class="callout-value">Rp50</div>
+      <div class="callout-sub">Yield ~4,1% (2025)</div>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- SECTION 1: PROFIL SINGKAT -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    🏢 Profil Singkat
+  </h2>
+  <div class="section-body">
+    <p>
+      <strong>PT Gajah Tunggal Tbk (GJTL)</strong> adalah produsen ban terbesar di Asia Tenggara dan salah satu yang terbesar di Asia. Berdiri pada tahun 1951 di Jakarta, perusahaan yang awalnya hanya memproduksi ban sepeda ini telah bertransformasi menjadi produsen ban terintegrasi multinasional dengan merek unggulan <strong>GT Radial</strong> yang dikenal di lebih dari 100 negara. GJTL mencatatkan sahamnya di Bursa Efek Indonesia pada 8 Mei 1990.
+    </p>
+    <p>
+      Seluruh fasilitas produksi GJTL terkonsentrasi di kompleks pabrik berskala raksasa di <strong>Tangerang, Banten</strong> — salah satu kompleks pabrik ban terbesar di satu lokasi di Asia. Dari sini mengalir produk ban untuk kendaraan penumpang, SUV, truk dan bus, sepeda motor, serta kendaraan off-road, yang didistribusikan ke pasar domestik maupun ekspor. Kontribusi ekspor mencapai sekitar 42% dari total penjualan, dengan Amerika Serikat, Eropa, dan Timur Tengah sebagai tujuan utama.
+    </p>
+    <p>
+      Daya tarik investasi GJTL semakin kuat sejak investor kawakan <strong>Lo Kheng Hong</strong> — dijuluki "Warren Buffett Indonesia" — secara konsisten mengakumulasi saham ini. Per April 2026, kepemilikan Lo Kheng Hong telah mencapai 6,68%, sebuah sinyal kuat dari investor berbasis nilai (value investor) bahwa saham ini dianggap undervalued secara fundamental.
+    </p>
+    <table>
+      <thead>
+        <tr><th>Informasi</th><th>Detail</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Nama Lengkap</td><td>PT Gajah Tunggal Tbk</td></tr>
+        <tr><td>Kode Saham</td><td>GJTL</td></tr>
+        <tr><td>Tahun Berdiri</td><td>1951</td></tr>
+        <tr><td>Listing di BEI</td><td>8 Mei 1990</td></tr>
+        <tr><td>Lokasi Pabrik</td><td>Tangerang, Banten</td></tr>
+        <tr><td>Merek Utama</td><td>GT Radial, Giti Tire</td></tr>
+        <tr><td>Kapasitas Ban Mobil</td><td>55.000 unit/hari</td></tr>
+        <tr><td>Kapasitas Ban Motor</td><td>95.000 unit/hari</td></tr>
+        <tr><td>Kapasitas Ban TBR</td><td>14.000 unit/hari</td></tr>
+        <tr><td>Pasar Ekspor</td><td>100+ negara, ~42% penjualan</td></tr>
+        <tr><td>Sektor IDX</td><td>Industri / Manufaktur Otomotif</td></tr>
+        <tr><td>Papan</td><td>Papan Utama BEI</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 2: MODEL BISNIS -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    ⚙️ Model Bisnis
+  </h2>
+  <div class="section-body">
+    <p>
+      Gajah Tunggal mengoperasikan model bisnis manufaktur ban yang sepenuhnya terintegrasi secara vertikal. Keunikannya adalah bahwa GJTL tidak hanya memproduksi ban jadi, tetapi juga memproduksi hampir seluruh bahan baku intermedietnya secara internal: <strong>tyre cord</strong> (bahan penguat ban), <strong>karet sintetis</strong>, <strong>inner tube</strong>, <strong>flap</strong>, hingga <strong>benang nylon filamen</strong>. Integrasi vertikal ini memberikan kontrol biaya yang jauh lebih baik dibanding pesaing yang bergantung sepenuhnya pada pasokan bahan baku pihak ketiga.
+    </p>
+    <p>
+      Dari sisi produk, GJTL melayani tiga segmen utama. <strong>Ban Kendaraan Penumpang &amp; SUV (PCR)</strong> merupakan segmen terbesar dan paling kompetitif, dengan merek GT Radial yang bersaing di kelas menengah hingga premium. <strong>Ban Sepeda Motor (MCR)</strong> adalah segmen domestik yang sangat kuat mengingat Indonesia adalah pasar motor terbesar kedua di dunia. <strong>Ban Truk &amp; Bus Radial (TBR)</strong> adalah segmen premium dengan margin lebih tinggi yang sedang dikembangkan agresif melalui capex Rp2,4 triliun.
+    </p>
+    <p>
+      Model distribusinya bersifat dual-channel: <strong>pasar penggantian (replacement market)</strong> yang menjual langsung ke konsumen akhir melalui dealer, toko ban, dan e-commerce; serta <strong>pasar OEM (Original Equipment Manufacturer)</strong> yang memasok ban ke pabrikan kendaraan sebagai ban bawaan. Jalur ekspor dikelola melalui jaringan distribusi Giti Tire Group — induk usaha yang beroperasi secara global — memungkinkan GT Radial masuk ke pasar Amerika dan Eropa yang biasanya dikuasai merek-merek Jepang dan Korea.
+    </p>
+    <p>
+      Kemitraan strategis dengan <strong>Michelin</strong> (pemegang 10% saham GJTL) memberikan akses ke teknologi, standar kualitas global, dan jaringan distribusi premium yang sangat berharga. Sementara kemitraan terbaru dengan <strong>BYD</strong> — produsen EV terbesar di dunia — membuka peluang sebagai pemasok ban OEM untuk kendaraan listrik BYD yang mulai dipasarkan di Indonesia.
+    </p>
+  </div>
+
+  <!-- SECTION 3: KINERJA KEUANGAN -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    📊 Kinerja Keuangan
+  </h2>
+  <div class="section-body">
+    <p>
+      Perjalanan keuangan GJTL dalam lima tahun terakhir merupakan kisah transformasi dari krisis menuju pemulihan yang solid. <strong>Tahun 2021</strong> menjadi masa sulit saat laba bersih tergerus drastis akibat lonjakan biaya bahan baku — karet alam, baja, dan petrokimia — seiring gangguan rantai pasok global pasca-pandemi yang memukul margin produsen ban di seluruh dunia. Meski pendapatan mulai pulih ke sekitar Rp15,5 triliun, profitabilitas tertekan berat.
+    </p>
+    <p>
+      <strong>Tahun 2022</strong> menjadi titik nadir: GJTL mencatat <strong>rugi bersih Rp181,4 miliar</strong> — pertama kalinya dalam bertahun-tahun — akibat kombinasi lonjakan harga energi global dampak perang Rusia-Ukraina, biaya bahan baku yang masih tinggi, serta kerugian selisih kurs. Pendapatan meski tumbuh ke Rp17,2 triliun, tetapi tidak cukup menutup kenaikan beban produksi yang jauh lebih tajam.
+    </p>
+    <p>
+      <strong>Pemulihan dramatis dimulai 2023</strong>: laba kotor melonjak 58,7% seiring normalisasi harga bahan baku dan strategi efisiensi produksi yang berhasil. Laba bersih kembali positif di kisaran Rp998 miliar. Momentum ini berlanjut di <strong>2024</strong> dengan laba bersih Rp1,18 triliun dan pendapatan mencapai Rp18,03 triliun — tertinggi dalam sejarah perusahaan kala itu. Arus kas operasi bahkan melonjak 43,7% menjadi Rp1,84 triliun, mencerminkan kualitas laba yang tinggi. Pada <strong>2025</strong>, meski pendapatan sedikit turun ke Rp17,66 triliun akibat perlambatan permintaan dan tekanan harga jual di segmen PCR, laba bersih masih berhasil tumbuh 4,7% menjadi Rp1,24 triliun berkat keuntungan selisih kurs Rp96 miliar dan efisiensi beban pokok yang konsisten.
+    </p>
+
+    <div class="chart-block">
+      <div class="chart-title">Pendapatan &amp; Laba Bersih (Rp Triliun) — 2021–2025</div>
+      <canvas id="chartRevenue"></canvas>
+    </div>
+
+    <h3>Rasio Keuangan Historis</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Tahun</th>
+          <th>Pendapatan (T)</th>
+          <th>Laba/Rugi Bersih (T)</th>
+          <th>Net Margin</th>
+          <th>PER</th>
+          <th>PBV</th>
+          <th>ROE</th>
+          <th>DER</th>
+          <th>Div/Saham</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2021</td><td>Rp15,52</td><td>Rp0,35</td><td>2,3%</td><td>12,1x</td><td>0,55x</td><td>4,5%</td><td>0,82x</td><td>—</td>
+        </tr>
+        <tr>
+          <td>2022</td><td>Rp17,20</td><td><span style="color:#c0392b;">–Rp0,18</span></td><td><span style="color:#c0392b;">–1,1%</span></td><td><span style="color:var(--text-faint);">n/a</span></td><td>0,52x</td><td><span style="color:#c0392b;">–2,3%</span></td><td>0,85x</td><td>—</td>
+        </tr>
+        <tr>
+          <td>2023</td><td>Rp16,97 <em style="color:var(--text-faint);font-size:0.75rem;">(est.)</em></td><td>Rp1,00</td><td>5,9%</td><td>4,2x</td><td>0,48x</td><td>12,1%</td><td>0,75x</td><td>Rp30</td>
+        </tr>
+        <tr>
+          <td>2024</td><td>Rp18,03</td><td>Rp1,18</td><td>6,5%</td><td>3,6x</td><td>0,42x</td><td>13,5%</td><td>0,70x</td><td>Rp40</td>
+        </tr>
+        <tr class="highlight">
+          <td>2025</td><td>Rp17,66</td><td>Rp1,24</td><td>7,0%</td><td>3,4x</td><td>0,40x</td><td>13,8%</td><td>0,68x</td><td>Rp50</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.78rem;color:var(--text-faint);">*PER, PBV, ROE berdasarkan estimasi harga pasar dan ekuitas dari data tersedia. Tahun 2022 rugi bersih = PER tidak dapat dihitung. Pendapatan 2023 merupakan estimasi dari selisih 2024 +6,25%. Dividen 2021–2022 tidak dibagikan karena kinerja buruk.</p>
+  </div>
+
+  <!-- SECTION 4: KEPEMILIKAN & SEGMEN -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    🥧 Struktur Kepemilikan &amp; Segmen Bisnis
+  </h2>
+  <div class="section-body">
+    <p>
+      Struktur kepemilikan GJTL didominasi oleh <strong>Denham Pte. Ltd.</strong> dengan 49,5% saham — entitas ini adalah kendaraan investasi milik Giti Tire Group, konglomerat ban asal Singapura/Tiongkok yang menjadi induk strategis GJTL. <strong>Compagnie Financière Michelin (Michelin)</strong> memegang 10% saham sebagai mitra strategis teknologi. Kehadiran dua pemain industri ban kelas dunia sebagai pemegang saham utama memberi GJTL akses ke jaringan distribusi global dan teknologi ban terdepan.
+    </p>
+    <div class="two-col">
+      <div class="chart-block">
+        <div class="chart-title">Struktur Kepemilikan Saham (%)</div>
+        <canvas id="chartOwnership"></canvas>
+      </div>
+      <div class="chart-block">
+        <div class="chart-title">Kapasitas Produksi Harian (Unit/Hari)</div>
+        <canvas id="chartCapacity"></canvas>
+      </div>
+    </div>
+    <p>
+      Yang menarik adalah kehadiran <strong>Lo Kheng Hong</strong> sebagai pemegang saham publik terbesar dengan ~6,68% per April 2026. Investor nilai legendaris ini secara konsisten menambah kepemilikannya sepanjang 2025 dan awal 2026 — bahkan mempercepat pembelian menjelang RUPST 2025 — mengirimkan sinyal kuat bahwa valuasi GJTL di PBV 0,40x dan PER 3,4x dianggap jauh di bawah nilai intrinsiknya.
+    </p>
+    <p>
+      Dari sisi operasional, kapasitas produksi harian GJTL sangat terkonsentrasi pada <strong>ban sepeda motor (95.000 unit/hari)</strong> yang menopang dominasi di pasar domestik, diikuti <strong>ban mobil PCR (55.000 unit/hari)</strong>, dan <strong>ban TBR (14.000 unit/hari)</strong> yang menjadi segmen fokus ekspansi. Total kapasitas gabungan 164.000 unit/hari menempatkan GJTL di jajaran produsen ban terbesar di Asia Tenggara.
+    </p>
+  </div>
+
+  <!-- SECTION 5: BERITA TERKINI -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    📰 Berita &amp; Perkembangan Terkini
+  </h2>
+  <div class="section-body">
+
+    <div class="news-item">
+      <div class="news-date">April 2026</div>
+      <div class="news-title">Lo Kheng Hong Terus Akumulasi GJTL — Kepemilikan Capai 6,68%</div>
+      <div class="news-desc">Investor kawakan Lo Kheng Hong kembali menambah porsi sahamnya di GJTL hingga mencapai 6,68% per April 2026, melanjutkan tren akumulasi konsisten sepanjang 2025. Aksi borong ini dilakukan di tengah kenaikan harga saham GJTL sebesar 12,74% sejak awal 2026. Sebelumnya pada Juni 2025, Lo Kheng Hong menerima dividen Rp9,57 miliar dari kepemilikannya di GJTL. Aksi ini dipandang sebagai sinyal kuat bahwa investor nilai berpengalaman melihat undervalue yang signifikan pada harga saham saat ini.</div>
+      <span class="badge badge-accent">👁 Sinyal Value Investor</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">Juli 2025</div>
+      <div class="news-title">CAPEX Rp2,4 Triliun — Ekspansi Besar Pabrik Ban Truk & Bus Radial (TBR)</div>
+      <div class="news-desc">GJTL mengumumkan program belanja modal jumbo senilai USD150 juta atau setara Rp2,4 triliun, difokuskan untuk ekspansi pabrik ban TBR (Truck and Bus Radial) di Tangerang. Pembiayaan diamankan melalui kredit sindikasi Rp4,4 triliun dari enam bank termasuk BCA, dengan dua tranche bertenor 8 dan 9 tahun. Ekspansi TBR dipilih karena segmen ini memiliki margin lebih tinggi, permintaan yang tumbuh seiring meningkatnya infrastruktur logistik, dan persaingan yang lebih terkelola dibanding segmen PCR.</div>
+      <span class="badge badge-blue">🏗 Ekspansi Kapasitas Besar</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">2025</div>
+      <div class="news-title">Kemitraan dengan BYD: Posisi GJTL di Era Kendaraan Listrik</div>
+      <div class="news-desc">Gajah Tunggal mengumumkan kemitraan dengan BYD — produsen kendaraan listrik terbesar di dunia — untuk memanfaatkan gelombang masuknya merek EV Tiongkok ke pasar Indonesia. Kemitraan ini berpotensi menjadikan GJTL sebagai pemasok ban OEM untuk kendaraan BYD yang diproduksi atau dijual di Indonesia. Mengingat BYD kini menjadi salah satu merek terlaris di segmen EV Indonesia, pintu masuk sebagai mitra OEM dapat membuka aliran pendapatan baru yang stabil dan bermargin lebih baik.</div>
+      <span class="badge badge-green">⚡ Peluang Era EV</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">Maret 2026</div>
+      <div class="news-title">Full Year 2025: Laba Tumbuh 4,7% meski Penjualan Turun — Efisiensi Jadi Kunci</div>
+      <div class="news-desc">GJTL membukukan laba bersih Rp1,24 triliun di 2025, naik 4,7% dari Rp1,18 triliun di 2024, meski penjualan bersih turun tipis dari Rp18,02 triliun menjadi Rp17,66 triliun. Keberhasilan mencetak pertumbuhan laba di tengah penurunan penjualan dicapai melalui penekanan beban pokok penjualan ke Rp14,11 triliun dan keuntungan kurs mata uang asing Rp96 miliar. Laba sebelum pajak justru naik menjadi Rp1,62 triliun, menunjukkan kualitas manajemen biaya yang membaik.</div>
+      <span class="badge badge-amber">📊 Laba Tumbuh, Top Line Tertekan</span>
+    </div>
+
+  </div>
+
+  <!-- SECTION 6: RISIKO & PELUANG -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    ⚖️ Risiko &amp; Peluang
+  </h2>
+  <div class="section-body">
+    <p>
+      <strong>Risiko volatilitas harga bahan baku</strong> adalah ancaman terbesar GJTL. Biaya produksi ban sangat sensitif terhadap harga karet alam (mempengaruhi ~30% biaya), baja (tyre cord), dan berbagai bahan kimia petrokimia. Tahun 2021–2022 membuktikan bagaimana lonjakan harga komoditas simultan dapat menghapus seluruh profitabilitas perusahaan sekalipun pendapatan tumbuh. Meski integrasi vertikal memberi perlindungan parsial, GJTL tetap terekspos terhadap siklus harga komoditas global. <span class="badge badge-red">🔴 Risiko Tinggi</span>
+    </p>
+    <p>
+      <strong>Risiko volatilitas kurs rupiah</strong> signifikan karena sebagian besar bahan baku strategis diimpor dalam denominasi dolar AS, sementara sebagian besar penjualan domestik dalam rupiah. Penguatan dolar secara langsung menekan margin. Sebaliknya, pelemahan rupiah memberi keuntungan kompetitif bagi ekspor GJTL. <span class="badge badge-amber">🟡 Risiko Dua Arah</span>
+    </p>
+    <p>
+      <strong>Risiko dumping ban Tiongkok</strong> menjadi tekanan struktural yang nyata. Ban murah asal Tiongkok yang membanjiri pasar Indonesia dan pasar ekspor GJTL di AS/Eropa menciptakan tekanan harga jual yang terus-menerus, khususnya di segmen PCR. Kebijakan tarif anti-dumping yang diterapkan AS dan Uni Eropa terhadap ban Tiongkok paradoksnya justru menguntungkan GJTL sebagai produsen di luar Tiongkok. <span class="badge badge-amber">🟡 Risiko &amp; Peluang Sekaligus</span>
+    </p>
+    <p>
+      <strong>Peluang ekspansi segmen TBR</strong> sangat menjanjikan. Indonesia sedang dalam fase akselerasi pembangunan infrastruktur jalan tol, pelabuhan, dan kawasan industri yang mendorong pertumbuhan armada truk dan bus komersial. Ban TBR memiliki siklus penggantian lebih singkat (jarak tempuh lebih pendek untuk kendaraan berat) dan margin lebih tinggi, serta persaingan yang lebih terkonsentrasi dibanding segmen PCR. Capex Rp2,4 triliun GJTL tepat sasaran memanfaatkan peluang ini. <span class="badge badge-green">🟢 Peluang Struktural</span>
+    </p>
+    <p>
+      <strong>Peluang era kendaraan listrik (EV)</strong> membuka lembaran baru bagi industri ban. Kendaraan listrik membutuhkan ban dengan spesifikasi khusus — lebih kuat menanggung torsi tinggi, lebih senyap, dan lebih tahan terhadap beban baterai yang lebih berat. GJTL yang telah bermitra dengan BYD dan memiliki R&amp;D ban berkualitas global berpeluang menjadi pemasok ban EV pilihan di Indonesia dan kawasan ASEAN. <span class="badge badge-accent">🔵 Peluang Masa Depan</span>
+    </p>
+    <p>
+      <strong>Peluang tarif anti-dumping AS terhadap ban Tiongkok</strong> secara historis terbukti mengalihkan permintaan importir Amerika ke produsen non-Tiongkok seperti GJTL. Bila eskalasi tarif dagang AS-Tiongkok berlanjut di 2026, GJTL berpotensi menjadi penerima manfaat tidak langsung (beneficiary) yang signifikan di pasar ekspor Amerika Serikat. <span class="badge badge-green">🟢 Peluang Geopolitik</span>
+    </p>
+  </div>
+
+  <!-- SECTION 7: ESG -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    🌱 ESG &amp; Keberlanjutan
+  </h2>
+  <div class="section-body">
+    <p>
+      GJTL menjalankan komitmen ESG yang terstruktur dan mendapat pengakuan internasional. Pada 2024, perusahaan meraih <strong>peringkat SILVER dari EcoVadis</strong> dengan skor 72 — platform penilaian keberlanjutan B2B terkemuka di dunia yang digunakan oleh ribuan perusahaan multinasional untuk mengevaluasi rantai pasok mereka. Capaian ini merupakan pencapaian signifikan bagi produsen manufaktur berat yang prosesnya secara inheren intensif energi.
+    </p>
+
+    <div class="esg-row">
+      <div class="esg-label-row">
+        <span class="esg-label">🌿 Environmental (Lingkungan)</span>
+        <span class="esg-score" style="color:#3d9e71;">66/100</span>
+      </div>
+      <div class="esg-bar-bg"><div class="esg-bar-fill" style="width:66%;background:#3d9e71;"></div></div>
+      <div class="esg-sub">Penyerapan karbon &gt;12.000 ton CO₂e (2024), program efisiensi energi di pabrik Tangerang, pengelolaan limbah produksi, pengurangan emisi dari proses vulkanisasi, EcoVadis SILVER score 72.</div>
+    </div>
+
+    <div class="esg-row">
+      <div class="esg-label-row">
+        <span class="esg-label">👥 Social (Sosial)</span>
+        <span class="esg-score" style="color:#7f6df2;">70/100</span>
+      </div>
+      <div class="esg-bar-bg"><div class="esg-bar-fill" style="width:70%;background:#7f6df2;"></div></div>
+      <div class="esg-sub">Keselamatan dan kesehatan kerja (K3) di kompleks pabrik besar, program pelatihan karyawan, pemberdayaan komunitas sekitar Tangerang, program beasiswa, keterlibatan aktif dalam UN Global Compact.</div>
+    </div>
+
+    <div class="esg-row">
+      <div class="esg-label-row">
+        <span class="esg-label">🏛️ Governance (Tata Kelola)</span>
+        <span class="esg-score" style="color:#50a5dc;">72/100</span>
+      </div>
+      <div class="esg-bar-bg"><div class="esg-bar-fill" style="width:72%;background:#50a5dc;"></div></div>
+      <div class="esg-sub">Laporan tahunan dan keberlanjutan yang transparan, dewan komisaris independen, komite audit aktif, kepatuhan regulasi penuh, pelaporan ESG terintegrasi dalam Annual Report, partisipan UN Global Compact.</div>
+    </div>
+
+    <p>
+      Dari sisi lingkungan, industri manufaktur ban menghadapi tantangan besar: proses produksi ban intensif energi dan menggunakan bahan kimia yang perlu dikelola dengan hati-hati. GJTL merespons dengan program efisiensi energi yang berkelanjutan dan berhasil mencatatkan penyerapan karbon lebih dari 12.000 ton CO₂e pada 2024. Keanggotaan aktif dalam <strong>UN Global Compact</strong> mengindikasikan komitmen terhadap 10 prinsip keberlanjutan universal dalam bidang hak asasi manusia, ketenagakerjaan, lingkungan hidup, dan anti-korupsi — standar yang relevan mengingat skala operasional GJTL yang melibatkan puluhan ribu karyawan.
+    </p>
+  </div>
+
+  <hr />
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>Disclaimer:</strong> Dokumen ini dibuat secara otomatis untuk tujuan informasi dan edukasi semata. Angka-angka yang tersaji bersumber dari laporan keuangan publik, berita resmi, dan data pasar yang tersedia per tanggal profil ini dibuat. Beberapa rasio keuangan dan data historis merupakan estimasi. Dokumen ini <strong>bukan</strong> merupakan rekomendasi investasi. Keputusan investasi sepenuhnya merupakan tanggung jawab investor.</p>
+    <div class="sources">
+      <a href="https://www.gt-tires.com" target="_blank">gt-tires.com</a>
+      <a href="https://www.javatv.co.id/laba-gajah-tunggal-gjtl-naik-jadi-rp-124-triliun-di-2025-saham-menguat/" target="_blank">JavaTV — Laba 2025</a>
+      <a href="https://www.infonasional.com/laba-bersih-gajah-tunggal-meningkat" target="_blank">InfoNasional — Laba Naik</a>
+      <a href="https://jagatbisnis.com/2025/10/29/gajah-tunggal-gjtl-catat-laba-dan-penjualan-turun-hingga-kuartal-iii-2025/" target="_blank">JagatBisnis — Q3 2025</a>
+      <a href="https://jurnallugas.com/2025/07/02/pt-gajah-tunggal-tbk-gjtl-kucurkan-rp24-triliun-ekspansi-pabrik-ban-tbr-ini-rinciannya/" target="_blank">JurnalLugas — Capex TBR</a>
+      <a href="https://www.indopremier.com/ipotnews/newsDetail.php?jdl=Gajah_Tunggal_%28GJTL%29_Siapkan_Belanja_Modal_Rp2_4_Triliun__Fokus_Ekspansi_Pabrik_Ban_TBR&news_id=468069" target="_blank">IndoPremier — Capex Rp2,4T</a>
+      <a href="https://insight.kontan.co.id/news/lo-kheng-hong-getol-tambah-kepemilikan-gjtl-sepanjang-2025-berlanjut-pada-awal-2026" target="_blank">Kontan — Lo Kheng Hong</a>
+      <a href="https://www.cnbcindonesia.com/market/20250701073513-17-645097/lo-kheng-hong-dapat-rp-957-miliar-dari-gajah-tunggal--gjtl-" target="_blank">CNBC — Dividen LKH</a>
+      <a href="https://investor.id/market/435367/isyarat-di-saham-pbv-040-pernya-juga-cuma-34" target="_blank">Investor.id — PBV &amp; PER</a>
+      <a href="https://sustainabilityreports.com/reports/pt-gajah-tunggal-tbk-2024-esg-report-pdf/" target="_blank">ESG Report 2024</a>
+      <a href="https://carisaham.com/emiten/profile/GJTL" target="_blank">CariSaham — Profil GJTL</a>
+    </div>
+    <p style="margin-top:1em;">IDX Profile Series &nbsp;|&nbsp; Sektor Rotasi: Manufaktur / Otomotif — Ban &nbsp;|&nbsp; 16 Mei 2026 &nbsp;|&nbsp; Dibuat untuk <a href="https://xedixermawan.github.io" style="color:var(--text-muted);">xedixermawan.github.io</a></p>
+  </footer>
+
+</div>
+
+<script>
+  Chart.defaults.color = '#706f6f';
+  Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+  const GRID_COLOR = 'rgba(0,0,0,0.07)';
+
+  /* ------ CHART 1: Revenue + Net Income Combo ------ */
+  (function() {
+    const ctx = document.getElementById('chartRevenue').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['2021', '2022', '2023 (est.)', '2024', '2025'],
+        datasets: [
+          {
+            label: 'Pendapatan (Rp T)',
+            data: [15.52, 17.20, 16.97, 18.03, 17.66],
+            backgroundColor: 'rgba(127,109,242,0.18)',
+            borderColor: '#7f6df2',
+            borderWidth: 2,
+            borderRadius: 4,
+            yAxisID: 'y',
+          },
+          {
+            label: 'Laba/Rugi Bersih (Rp T)',
+            data: [0.35, -0.18, 1.00, 1.18, 1.24],
+            type: 'line',
+            borderColor: '#3d9e71',
+            backgroundColor: 'rgba(61,158,113,0.10)',
+            borderWidth: 2.5,
+            pointBackgroundColor: ctx => {
+              // Red for negative value
+              return '#3d9e71';
+            },
+            pointRadius: 5,
+            tension: 0.35,
+            fill: true,
+            yAxisID: 'y2',
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+          legend: { position: 'top', labels: { usePointStyle: true, boxWidth: 8 } },
+          tooltip: {
+            callbacks: {
+              label: ctx => {
+                const v = ctx.parsed.y;
+                return `${ctx.dataset.label}: ${v < 0 ? '–' : ''}Rp${Math.abs(v).toFixed(2)} T`;
+              }
+            }
+          }
+        },
+        scales: {
+          y: {
+            title: { display: true, text: 'Pendapatan (Rp T)', font: { size: 11 } },
+            grid: { color: GRID_COLOR },
+            ticks: { callback: v => `Rp${v}T` }
+          },
+          y2: {
+            position: 'right',
+            title: { display: true, text: 'Laba Bersih (Rp T)', font: { size: 11 } },
+            grid: { display: false },
+            ticks: { callback: v => `Rp${v}T` }
+          },
+          x: { grid: { display: false } }
+        }
+      }
+    });
+  })();
+
+  /* ------ CHART 2: Ownership Donut ------ */
+  (function() {
+    const ctx = document.getElementById('chartOwnership').getContext('2d');
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: [
+          'Denham Pte. Ltd. / Giti Tire (49,50%)',
+          'Compagnie Fin. Michelin (10,00%)',
+          'Lo Kheng Hong (6,68%)',
+          'Publik lainnya (33,82%)'
+        ],
+        datasets: [{
+          data: [49.50, 10.00, 6.68, 33.82],
+          backgroundColor: ['#7f6df2', '#3d9e71', '#e5a53a', '#c8c8c8'],
+          borderWidth: 2,
+          borderColor: '#ffffff'
+        }]
+      },
+      options: {
+        responsive: true,
+        cutout: '58%',
+        plugins: {
+          legend: { position: 'bottom', labels: { font: { size: 9.5 }, boxWidth: 10, padding: 8 } },
+          tooltip: {
+            callbacks: { label: ctx => `${ctx.label.split('(')[0].trim()}: ${ctx.parsed.toFixed(2)}%` }
+          }
+        }
+      }
+    });
+  })();
+
+  /* ------ CHART 3: Production Capacity Horizontal Bar ------ */
+  (function() {
+    const ctx = document.getElementById('chartCapacity').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Ban Sepeda Motor (MCR)', 'Ban Mobil / SUV (PCR)', 'Ban Truk & Bus (TBR)'],
+        datasets: [{
+          label: 'Kapasitas (unit/hari)',
+          data: [95000, 55000, 14000],
+          backgroundColor: ['#7f6df2', '#3d9e71', '#e5a53a'],
+          borderRadius: 4,
+          borderSkipped: false
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: ctx => `${ctx.parsed.x.toLocaleString('id')} unit/hari` } }
+        },
+        scales: {
+          x: {
+            grid: { color: GRID_COLOR },
+            ticks: { callback: v => `${(v/1000).toFixed(0)}k` }
+          },
+          y: { grid: { display: false } }
+        }
+      }
+    });
+  })();
+
+  /* ------ TOGGLE SECTIONS ------ */
+  function toggleSection(h2el) {
+    h2el.classList.toggle('collapsed');
+  }
+</script>
+</body>
+</html>

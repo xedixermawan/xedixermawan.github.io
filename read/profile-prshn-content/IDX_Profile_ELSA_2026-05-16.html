@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ELSA — PT Elnusa Tbk | Profil IDX</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root {
+  --background-primary:        #ffffff;
+  --background-secondary:      #f2f3f5;
+  --background-secondary-alt:  #e9eaec;
+  --background-modifier-border:#ddd;
+  --background-modifier-hover: rgba(0,0,0,0.05);
+  --text-normal:     #2e3338;
+  --text-muted:      #706f6f;
+  --text-faint:      #999999;
+  --text-on-accent:  #ffffff;
+  --text-accent:     #7f6df2;
+  --text-accent-hover: #5d4ff0;
+  --interactive-accent: #7f6df2;
+  --line-width: 42em;
+  --font-text-size: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background-color: var(--background-primary);
+  color: var(--text-normal);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+  font-size: var(--font-text-size);
+  line-height: 1.7;
+}
+
+/* TOP NAV */
+.site-nav {
+  background: var(--background-secondary);
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding: 8px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.site-nav-inner {
+  max-width: var(--line-width);
+  margin: 0 auto;
+  padding: 0 2em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.site-nav a {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.site-nav a:hover { color: var(--text-accent); }
+
+#page-wrapper { max-width: var(--line-width); margin: 0 auto; padding: 3em 2em 8em; }
+.page-title { font-size: 2rem; font-weight: 700; color: var(--text-normal); margin-bottom: 0.3em; line-height: 1.2; }
+.ticker-badge { display: inline-block; background: var(--text-accent); color: var(--text-on-accent); font-size: 0.88rem; font-weight: 700; padding: 3px 10px; border-radius: 5px; margin-left: 10px; vertical-align: middle; }
+.page-meta { font-size: 0.82rem; color: var(--text-faint); margin-bottom: 0.5em; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+.price-tag { background: var(--background-secondary); border: 1px solid var(--background-modifier-border); border-radius: 4px; padding: 2px 9px; font-weight: 700; color: var(--text-normal); font-size: 0.83rem; }
+hr { border: none; border-top: 1px solid var(--background-modifier-border); margin: 1.8em 0; }
+h2 { font-size: 1.3rem; font-weight: 600; color: var(--text-normal); margin: 1.8em 0 0.6em; display: flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; }
+h2:hover { color: var(--text-accent); }
+h2 .collapse-icon { width: 15px; height: 15px; flex-shrink: 0; opacity: 0.35; transition: transform 0.2s; color: var(--text-muted); }
+h2 .collapse-icon svg { width: 100%; height: 100%; }
+h2.collapsed .collapse-icon { transform: rotate(-90deg); }
+h2.collapsed + .section-body { display: none; }
+h3 { font-size: 1.02rem; font-weight: 600; color: var(--text-normal); margin: 1.2em 0 0.4em; }
+p { margin-bottom: 0.85em; color: var(--text-normal); }
+strong { color: var(--text-normal); font-weight: 700; }
+a { color: var(--text-accent); text-decoration: none; }
+a:hover { text-decoration: underline; color: var(--text-accent-hover); }
+.kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 1em 0 1.5em; }
+@media (max-width: 700px) { .kpi-grid { grid-template-columns: repeat(2,1fr); } }
+.callout { background: var(--background-secondary); border-left: 3px solid var(--text-accent); border-radius: 0 6px 6px 0; padding: 12px 16px; margin: 0; }
+.callout-title { font-size: 0.73rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-accent); font-weight: 700; margin-bottom: 5px; }
+.callout-value { font-size: 1.4rem; font-weight: 800; color: var(--text-normal); }
+.callout-sub { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+.callout-up { border-left-color: #3d9e71; }
+.callout-up .callout-title { color: #3d9e71; }
+.callout-down { border-left-color: #c0392b; }
+.callout-down .callout-title { color: #c0392b; }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 1em 0; }
+thead tr { background: var(--background-secondary); }
+th { padding: 9px 12px; text-align: left; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-accent); font-weight: 700; border-bottom: 2px solid var(--background-modifier-border); }
+td { padding: 9px 12px; border-bottom: 1px solid var(--background-modifier-border); color: var(--text-normal); }
+tr:hover td { background: var(--background-modifier-hover); }
+tr.highlight td { font-weight: 700; }
+tr.highlight td:first-child { color: var(--text-accent); }
+.chart-block { background: var(--background-secondary); border-radius: 8px; padding: 18px 20px; margin: 1.2em 0; border: 1px solid var(--background-modifier-border); }
+.chart-block .chart-title { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.7px; color: var(--text-faint); font-weight: 700; margin-bottom: 14px; }
+.chart-block canvas { max-height: 260px; }
+.news-item { border-left: 2px solid var(--background-modifier-border); padding: 10px 14px; margin: 10px 0; transition: border-left-color 0.15s; }
+.news-item:hover { border-left-color: var(--text-accent); background: var(--background-modifier-hover); border-radius: 0 4px 4px 0; }
+.news-date { font-size: 0.73rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.5px; }
+.news-title { font-weight: 600; color: var(--text-normal); font-size: 0.92rem; margin: 3px 0; }
+.news-desc { font-size: 0.81rem; color: var(--text-muted); }
+.badge { display: inline-block; font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; font-weight: 700; margin-top: 5px; }
+.badge-green  { background: #d4edda; color: #2d6a4f; }
+.badge-red    { background: #fde8e8; color: #922b21; }
+.badge-amber  { background: #fef3cd; color: #7d5a00; }
+.badge-accent { background: #ede9fe; color: var(--text-accent); }
+.badge-blue   { background: #dbeafe; color: #1e40af; }
+.esg-row { margin: 14px 0; }
+.esg-label-row { display: flex; justify-content: space-between; margin-bottom: 5px; }
+.esg-label { font-size: 0.86rem; font-weight: 600; color: var(--text-normal); }
+.esg-score { font-size: 0.86rem; font-weight: 700; }
+.esg-bar-bg { height: 7px; background: var(--background-secondary-alt); border-radius: 4px; overflow: hidden; }
+.esg-bar-fill { height: 100%; border-radius: 4px; }
+.esg-sub { font-size: 0.75rem; color: var(--text-faint); margin-top: 4px; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 1.2em 0; }
+@media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+footer { margin-top: 4em; padding-top: 1.5em; border-top: 1px solid var(--background-modifier-border); font-size: 0.76rem; color: var(--text-faint); line-height: 1.6; }
+.sources { margin-top: 0.8em; display: flex; flex-wrap: wrap; gap: 6px; }
+.sources a { color: var(--text-muted); background: var(--background-secondary); padding: 2px 8px; border-radius: 4px; border: 1px solid var(--background-modifier-border); font-size: 0.72rem; }
+.sources a:hover { color: var(--text-accent); }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <svg width="14" height="14" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 2L3.5 5L6.5 8"/></svg>
+    <a href="https://xedixermawan.github.io">xedixermawan.github.io</a>
+  </div>
+</nav>
+
+<div id="page-wrapper">
+
+  <!-- HEADER -->
+  <div class="page-meta">
+    <span>📅 16 Mei 2026</span>
+    <span>⛽ Sektor: Energi — Jasa Hulu Migas</span>
+    <span>🏢 IDX — Papan Utama</span>
+    <span>💹 Harga: <span class="price-tag">Rp700</span> per lembar (16 Mei 2026)</span>
+  </div>
+  <h1 class="page-title">
+    PT Elnusa Tbk
+    <span class="ticker-badge">ELSA</span>
+  </h1>
+  <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:1.2em;">
+    Anak perusahaan Pertamina Hulu Energi — penyedia jasa energi terintegrasi terkemuka Indonesia dengan pengalaman 55+ tahun di industri hulu migas, dari seismik bawah tanah hingga distribusi BBM ke seluruh nusantara.
+  </p>
+
+  <hr />
+
+  <!-- KPI GRID — dihitung dari harga Rp700/lembar, saham beredar ~7,3 miliar -->
+  <div class="kpi-grid">
+    <div class="callout">
+      <div class="callout-title">Kapitalisasi Pasar</div>
+      <div class="callout-value">Rp5,11 T</div>
+      <div class="callout-sub">Rp700 × 7,3 M lembar</div>
+    </div>
+    <div class="callout callout-up">
+      <div class="callout-title">Pendapatan 2025</div>
+      <div class="callout-value">~Rp15,0 T</div>
+      <div class="callout-sub">↑ ~12% YoY (est.)</div>
+    </div>
+    <div class="callout callout-up">
+      <div class="callout-title">Laba Bersih 2025</div>
+      <div class="callout-value">Rp718 M</div>
+      <div class="callout-sub">↑ 0,66% YoY</div>
+    </div>
+    <div class="callout">
+      <div class="callout-title">Dividen per Saham</div>
+      <div class="callout-value">Rp39,11</div>
+      <div class="callout-sub">Yield 5,59% @ Rp700</div>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- SECTION 1: PROFIL SINGKAT -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    🏢 Profil Singkat
+  </h2>
+  <div class="section-body">
+    <p>
+      <strong>PT Elnusa Tbk (ELSA)</strong> adalah perusahaan jasa energi terintegrasi terkemuka di Indonesia yang berdiri sejak 1969. Sebagai anak perusahaan <strong>PT Pertamina Hulu Energi (PHE)</strong> — subholding upstream Pertamina — Elnusa memiliki posisi strategis yang unik: mendapat dukungan penuh dari induk usaha raksasa negara, sekaligus mampu melayani klien swasta dan internasional. Perseroan mencatatkan sahamnya di Bursa Efek Indonesia pada 6 Februari 2008.
+    </p>
+    <p>
+      Dengan pengalaman lebih dari 55 tahun menggarap industri minyak dan gas bumi Indonesia, Elnusa telah membangun kompetensi teknis dan portofolio aset yang sulit direplikasi. Dari survei seismik di pedalaman Kalimantan hingga pengelolaan depot BBM di 500+ titik distribusi nasional, Elnusa melayani hampir seluruh siklus produksi energi Indonesia. Transformasi terbaru membawa Elnusa ke ambisi baru sebagai <strong>low-cost operator hulu migas kelas dunia</strong>, termasuk pengelolaan lapangan marginal yang selama ini terabaikan.
+    </p>
+    <table>
+      <thead><tr><th>Informasi</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td>Nama Lengkap</td><td>PT Elnusa Tbk</td></tr>
+        <tr><td>Kode Saham</td><td>ELSA</td></tr>
+        <tr><td>Tahun Berdiri</td><td>1969</td></tr>
+        <tr><td>Listing di BEI</td><td>6 Februari 2008</td></tr>
+        <tr><td>Kantor Pusat</td><td>Graha Elnusa, TB Simatupang, Jakarta Selatan</td></tr>
+        <tr><td>Induk Usaha</td><td>PT Pertamina Hulu Energi (PHE) — 51,103%</td></tr>
+        <tr><td>Saham Beredar</td><td>~7,3 miliar lembar</td></tr>
+        <tr><td>Harga Saham</td><td>Rp700 (16 Mei 2026) | ATH Rp1.050 (2 Mar 2026)</td></tr>
+        <tr><td>Sektor IDX</td><td>Energi / Jasa Hulu Migas</td></tr>
+        <tr><td>Papan</td><td>Papan Utama BEI</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 2: MODEL BISNIS -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    ⚙️ Model Bisnis
+  </h2>
+  <div class="section-body">
+    <p>
+      Elnusa mengoperasikan tiga lini bisnis yang saling melengkapi di sepanjang rantai nilai energi Indonesia. Model bisnisnya bersifat <strong>asset-light hingga asset-heavy hybrid</strong> — beberapa segmen berbasis jasa teknis bermargin tinggi, sementara segmen distribusi berskala besar dengan volume tinggi namun margin lebih tipis.
+    </p>
+    <p>
+      <strong>Segmen Jasa Hulu Migas Terintegrasi</strong> adalah jantung teknis Elnusa, menyumbang sekitar 35% pendapatan dengan margin tertinggi. Layanannya mencakup tiga bidang utama: <em>Geoscience &amp; Reservoir</em> (survei seismik darat, transisi, dan laut serta pemrosesan data), <em>Drilling &amp; Well Services</em> (pengeboran, workover, stimulasi sumur), dan <em>EPC-OM</em> (engineering, procurement, construction &amp; operation maintenance fasilitas produksi migas). Survei seismik Elnusa mencakup wilayah sangat luas — dari daratan Sumatera, Kalimantan, Papua hingga perairan laut — menggunakan armada peralatan mutakhir yang sebagian dimiliki sendiri.
+    </p>
+    <p>
+      <strong>Segmen Distribusi &amp; Logistik Energi</strong> adalah mesin pendapatan terbesar (~55% total revenue) yang dioperasikan melalui anak usaha PT Elnusa Petrofin. Segmen ini mengelola transportasi BBM (avtur, solar, gasolin), pengelolaan dan operasi depot penyimpanan BBM Pertamina di seluruh Indonesia, serta penjualan produk kimia (chemical trading). Meski margin relatif tipis, segmen ini memberikan arus kas yang stabil dan dapat diprediksi karena berbasis kontrak jangka panjang dengan Pertamina sebagai klien utama.
+    </p>
+    <p>
+      <strong>Segmen Jasa Penunjang Migas</strong> (~14% pendapatan, dengan pertumbuhan tertinggi) mencakup layanan marine support (kapal servis untuk operasi offshore), fabrikasi konstruksi baja (melalui PT Elnusa Fabrikasi Konstruksi), perdagangan OCTG (pipa dan tabung minyak bumi), serta manajemen data geologi dan geofisika. Segmen ini tumbuh 52% YoY di Q1-2025 dan menjadi motor pertumbuhan baru, termasuk melalui ekspansi perdagangan OCTG ke proyek internasional di Aljazair.
+    </p>
+  </div>
+
+  <!-- SECTION 3: KINERJA KEUANGAN -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    📊 Kinerja Keuangan
+  </h2>
+  <div class="section-body">
+    <p>
+      Perjalanan keuangan Elnusa dalam lima tahun terakhir merupakan kisah kebangkitan luar biasa dari titik nadir pandemi. <strong>Tahun 2021</strong> menjadi masa paling berat: laba bersih hanya Rp108,8 miliar — terendah dalam satu dekade — akibat anjloknya aktivitas eksplorasi dan produksi migas global saat harga minyak terpuruk di bawah USD60/barel. Pendapatan terkontraksi ke sekitar Rp8,1 triliun seiring pemangkasan capex besar-besaran oleh klien KKKS (Kontraktor Kontrak Kerja Sama).
+    </p>
+    <p>
+      <strong>Tahun 2022</strong> menjadi titik balik dramatis: invasi Rusia ke Ukraina mengirim harga minyak mentah ke kisaran USD100-130/barel, memicu lonjakan belanja eksplorasi global. Pendapatan Elnusa melonjak 51% menjadi Rp12,3 triliun dan laba bersih melejit ke Rp378 miliar. Momentum ini berlanjut di <strong>2023</strong> dengan laba bersih tumbuh 33% menjadi Rp503 miliar, didorong oleh kontrak-kontrak seismik dan drilling baru dari KKKS yang mengintensifkan kegiatan eksplorasi.
+    </p>
+    <p>
+      <strong>Tahun 2024</strong> mencatat rekor baru: laba bersih melonjak 42% menjadi Rp713,67 miliar dengan pendapatan Rp13,39 triliun (+7% YoY). Margin EBITDA naik ke 10,9% — tertinggi dalam sejarah — berkat efisiensi operasional dan peningkatan utilisasi aset hingga 95% di segmen penunjang. Pada <strong>2025</strong>, pertumbuhan laba melambat signifikan ke hanya +0,66% (Rp718,41 miliar) meski pendapatan diperkirakan tumbuh ~12% ke Rp15 triliun. Perlambatan laba ini mengindikasikan tekanan pada margin operasional di tengah kenaikan biaya tenaga kerja dan bahan bakar operasional, yang sedang ditangani manajemen melalui program efisiensi lanjutan.
+    </p>
+
+    <div class="chart-block">
+      <div class="chart-title">Pendapatan &amp; Laba Bersih (Rp Triliun) — 2021–2025</div>
+      <canvas id="chartRevenue"></canvas>
+    </div>
+
+    <h3>Rasio Keuangan — Dihitung dari Harga Saham Rp700 (16 Mei 2026)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Tahun</th><th>Pendapatan (T)</th><th>Laba Bersih (M)</th>
+          <th>Net Margin</th><th>EPS</th><th>PER</th><th>PBV</th><th>ROE</th><th>DPS</th><th>Yield</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2021</td><td>Rp8,10</td><td>Rp108,8</td><td>1,3%</td><td>Rp14,9</td><td>47,0x <em style="color:var(--text-faint);font-size:0.72rem;">(est.)</em></td><td>0,55x</td><td>2,2%</td><td>—</td><td>—</td>
+        </tr>
+        <tr>
+          <td>2022</td><td>Rp12,30</td><td>Rp378,1</td><td>3,1%</td><td>Rp51,8</td><td>13,5x <em style="color:var(--text-faint);font-size:0.72rem;">(est.)</em></td><td>0,75x</td><td>7,6%</td><td>Rp18</td><td>2,6%</td>
+        </tr>
+        <tr>
+          <td>2023</td><td>Rp12,48</td><td>Rp503,1</td><td>4,0%</td><td>Rp68,9</td><td>10,2x <em style="color:var(--text-faint);font-size:0.72rem;">(est.)</em></td><td>0,85x</td><td>10,5%</td><td>Rp25</td><td>3,6%</td>
+        </tr>
+        <tr>
+          <td>2024</td><td>Rp13,39</td><td>Rp713,7</td><td>5,3%</td><td>Rp97,8</td><td>7,2x <em style="color:var(--text-faint);font-size:0.72rem;">(est.)</em></td><td>1,00x</td><td>14,6%</td><td>Rp39,11</td><td>5,6%</td>
+        </tr>
+        <tr class="highlight">
+          <td>2025</td><td>~Rp15,0 <em style="color:var(--text-faint);font-size:0.72rem;">(est.)</em></td><td>Rp718,4</td><td>~4,8%</td><td>Rp98,4</td>
+          <td><strong>7,1x</strong> @ Rp700</td><td><strong>1,04x</strong> @ Rp700</td><td>14,7%</td>
+          <td>~Rp38 <em style="color:var(--text-faint);font-size:0.72rem;">(est.)</em></td><td>~5,4%</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.78rem;color:var(--text-faint);">*Rasio 2025 dihitung dari harga saham aktual Rp700/lembar per 16 Mei 2026. EPS = laba bersih ÷ 7,3 miliar saham. PBV menggunakan ekuitas FY2024 Rp4,9 triliun (BV/saham Rp671). PER, PBV, yield 2021–2024 merupakan estimasi historis. Pendapatan 2025 dan DPS 2025 estimasi berdasarkan tren dan Q1-2025 yang tersedia.</p>
+  </div>
+
+  <!-- SECTION 4: KEPEMILIKAN & SEGMEN -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    🥧 Struktur Kepemilikan &amp; Segmen Bisnis
+  </h2>
+  <div class="section-body">
+    <p>
+      Struktur kepemilikan Elnusa sangat jelas: <strong>PT Pertamina Hulu Energi (PHE)</strong> memegang 51,103% saham sebagai pemegang saham pengendali, sementara 48,897% beredar di publik. PHE sendiri adalah subholding upstream Pertamina yang diberi mandat mengelola seluruh aset eksplorasi dan produksi minyak Pertamina. Dengan lebih dari separuh saham dipegang satu entitas negara, keputusan strategis Elnusa sangat erat terhubung dengan prioritas Pertamina — baik soal target produksi minyak nasional, alokasi kontrak, maupun kebijakan dividen.
+    </p>
+    <div class="two-col">
+      <div class="chart-block">
+        <div class="chart-title">Struktur Kepemilikan Saham (%)</div>
+        <canvas id="chartOwnership"></canvas>
+      </div>
+      <div class="chart-block">
+        <div class="chart-title">Kontribusi Segmen Pendapatan — Q1 2025 (Rp T)</div>
+        <canvas id="chartSegment"></canvas>
+      </div>
+    </div>
+    <p>
+      Porsi publik yang hampir 49% cukup besar untuk memastikan likuiditas perdagangan yang baik di BEI. Basis investor publik Elnusa mencakup investor institusi domestik (reksa dana, dana pensiun) dan asing yang tertarik pada eksposur jasa energi Indonesia. Kepemilikan publik yang besar juga berarti tekanan pengungkapan dan tata kelola yang lebih tinggi, dan ini tercermin dari kualitas laporan keuangan Elnusa yang konsisten.
+    </p>
+    <p>
+      Dari segmen bisnis, <strong>Distribusi &amp; Logistik Energi</strong> mendominasi dengan ~55% pendapatan, memberikan kestabilan arus kas. <strong>Jasa Hulu Migas Terintegrasi</strong> (~35%) adalah sumber margin terbesar dan pendorong pertumbuhan jangka panjang. <strong>Jasa Penunjang Migas</strong> (~14%) adalah segmen paling dinamis dengan pertumbuhan Q1-2025 mencapai 52% YoY, menjadi engine of growth baru.
+    </p>
+  </div>
+
+  <!-- SECTION 5: BERITA TERKINI -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    📰 Berita &amp; Perkembangan Terkini
+  </h2>
+  <div class="section-body">
+
+    <div class="news-item">
+      <div class="news-date">Mei 2026</div>
+      <div class="news-title">Q1 2026: Pendapatan Rp3,6 Triliun, Laba Rp190 Miliar — Tumbuh Solid</div>
+      <div class="news-desc">Elnusa membukukan pendapatan Rp3,6 triliun dan laba bersih Rp190 miliar pada Q1-2026, tumbuh 2% YoY. Pertumbuhan laba yang moderat mencerminkan tekanan biaya operasional di tengah ekspansi proyek, sementara utilisasi aset di segmen penunjang tetap tinggi dengan 186 kontrak aktif berjalan. Manajemen menegaskan pipeline proyek 2026 tetap kuat, dengan peluang dari tender seismik lepas pantai baru dan perluasan layanan distribusi BBM ke wilayah terpencil.</div>
+      <span class="badge badge-green">📈 Pertumbuhan Berkelanjutan</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">April 2026</div>
+      <div class="news-title">Elnusa Pamer Kemampuan di OTC Asia 2026 Kuala Lumpur — Bidik Proyek Energi Internasional</div>
+      <div class="news-desc">PT Elnusa Tbk berpartisipasi dalam Offshore Technology Conference (OTC) Asia 2026 di Kuala Lumpur pada 8 April 2026. Forum internasional ini menjadi panggung Elnusa untuk memperkenalkan kapabilitas teknis dan layanan integrasinya kepada operator migas internasional di Asia Tenggara dan Timur Tengah. Ekspansi internasional sudah dimulai melalui anak usaha PT Elnusa Fabrikasi Konstruksi yang aktif dalam perdagangan OCTG untuk proyek migas di Aljazair.</div>
+      <span class="badge badge-blue">🌏 Ekspansi Internasional</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">Maret 2026</div>
+      <div class="news-title">Saham ELSA Cetak ATH Rp1.050 — Tertinggi Sejak IPO, Naik 105% dalam 1 Tahun</div>
+      <div class="news-desc">Saham ELSA menyentuh level tertinggi sepanjang sejarah di Rp1.050 pada 2 Maret 2026, naik lebih dari 105% dalam satu tahun terakhir. Kenaikan ini ditopang oleh fundamental operasional yang kuat, strategi pertumbuhan 2026 yang jelas, dan sentimen positif terhadap sektor jasa energi di tengah rencana pemerintah meningkatkan lifting minyak nasional ke 600.000 barel/hari. ATH ini menarik perhatian luas investor dan menempatkan ELSA sebagai salah satu outperformer di BEI.</div>
+      <span class="badge badge-accent">🏆 All-Time High</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">Juni 2025</div>
+      <div class="news-title">Dividen FY2024: Rp39,11 per Saham — Total Rp285,5 Miliar, Yield 5,6%</div>
+      <div class="news-desc">RUPST Elnusa tanggal 22 Mei 2025 menyetujui pembagian dividen tunai untuk tahun buku 2024 sebesar Rp285,5 miliar atau Rp39,11 per saham — payout ratio 38,23% dari laba bersih Rp713,67 miliar. Pembayaran dilaksanakan 20 Juni 2025. Dividend yield 5,6% di harga saat itu merupakan salah satu yield tertinggi di sektor energi BEI, menarik minat investor berbasis pendapatan (income investor). Pemegang saham terbesar PHE menerima porsi ~Rp145,8 miliar dari total dividen.</div>
+      <span class="badge badge-amber">💰 Dividend Yield 5,6%</span>
+    </div>
+
+  </div>
+
+  <!-- SECTION 6: RISIKO & PELUANG -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    ⚖️ Risiko &amp; Peluang
+  </h2>
+  <div class="section-body">
+    <p>
+      <strong>Risiko ketergantungan pada klien tunggal (Pertamina)</strong> adalah risiko struktural paling dominan. Pertamina dan KKKS afiliasinya diperkirakan menyumbang lebih dari 60-70% pendapatan Elnusa. Artinya, setiap perubahan kebijakan capex Pertamina — baik karena tekanan APBN, kebijakan pemerintah, atau penurunan harga minyak — langsung berdampak ke Elnusa. Tahun 2021 menjadi bukti nyata: ketika Pertamina memangkas belanja, laba Elnusa ambruk ke Rp108 miliar. <span class="badge badge-red">🔴 Risiko Tinggi</span>
+    </p>
+    <p>
+      <strong>Risiko harga minyak global</strong> bersifat tidak langsung tetapi sangat nyata. Harga minyak yang tinggi mendorong klien KKKS meningkatkan investasi eksplorasi dan memanggil lebih banyak jasa seismik dan drilling. Harga minyak rendah sebaliknya menekan capex industri. Dengan harga minyak yang volatil di kisaran USD70-85/barel sepanjang 2025-2026, pandangan terhadap capex klien Elnusa masih kondusif namun bisa berubah cepat. <span class="badge badge-amber">🟡 Risiko Moderat</span>
+    </p>
+    <p>
+      <strong>Risiko transisi energi jangka panjang</strong> relevan untuk industri jasa hulu migas secara keseluruhan. Seiring target net-zero global dan percepatan energi terbarukan, permintaan layanan eksplorasi migas konvensional berpotensi melandai dalam 10-15 tahun ke depan. Elnusa merespons dengan diversifikasi ke segmen energi baru dan efisiensi lapangan marginal. <span class="badge badge-amber">🟡 Risiko Jangka Panjang</span>
+    </p>
+    <p>
+      <strong>Peluang program lifting minyak nasional 600.000 BOPD</strong> adalah katalis terkuat jangka menengah. Pemerintah Indonesia menargetkan peningkatan lifting minyak dari ~600.000 BOPD kini menuju 1 juta BOPD pada 2030. Untuk mencapai ini, diperlukan intensifikasi aktivitas seismik, drilling, dan EOR (Enhanced Oil Recovery) — semua layanan yang Elnusa kuasai. Setiap sumur baru berarti kontrak baru untuk Elnusa. <span class="badge badge-green">🟢 Peluang Besar</span>
+    </p>
+    <p>
+      <strong>Peluang pengelolaan lapangan marginal</strong> adalah frontier baru yang sedang digarap Elnusa. Indonesia memiliki ratusan lapangan migas marginal yang tidak ekonomis dioperasikan oleh perusahaan besar namun potensial bila dikelola oleh operator efisien berbiaya rendah. Elnusa melihat celah ini dan sedang membangun kapabilitas sebagai "marginal field operator" — model bisnis yang bila berhasil akan membuka sumber pendapatan berulang jangka panjang yang tidak bergantung pada siklus tender. <span class="badge badge-accent">🔵 Peluang Transformasional</span>
+    </p>
+    <p>
+      <strong>Peluang ekspansi internasional</strong> semakin konkret. Keberhasilan OCTG trading di Aljazair dan partisipasi aktif di OTC Asia 2026 membuka pintu ke proyek-proyek di Timur Tengah, Afrika, dan Asia Tenggara. Pengalaman teknis Elnusa di kondisi geologi kompleks Indonesia — yang sebanding dengan kondisi di banyak cekungan migas Asia Tenggara — menjadi modal kredibel untuk bersaing di pasar regional. <span class="badge badge-green">🟢 Peluang Global</span>
+    </p>
+  </div>
+
+  <!-- SECTION 7: ESG -->
+  <h2 onclick="toggleSection(this)">
+    <span class="collapse-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+    🌱 ESG &amp; Keberlanjutan
+  </h2>
+  <div class="section-body">
+    <p>
+      Elnusa menjalankan komitmen keberlanjutan yang terintegrasi dengan nilai-nilai korporat Pertamina Group. Sebagai perusahaan jasa energi yang beroperasi di lingkungan sensitif — hutan, rawa, laut, dan kawasan pemukiman — standar HSE (Health, Safety, Environment) bukan sekadar formalitas, melainkan persyaratan mutlak untuk mempertahankan izin operasi dan kepercayaan klien internasional. Tata kelola ESG mengacu pada standar <strong>GRI (Global Reporting Initiative)</strong> dan prinsip <strong>GCG (Good Corporate Governance)</strong> Pertamina Group.
+    </p>
+
+    <div class="esg-row">
+      <div class="esg-label-row">
+        <span class="esg-label">🌿 Environmental (Lingkungan)</span>
+        <span class="esg-score" style="color:#3d9e71;">65/100</span>
+      </div>
+      <div class="esg-bar-bg"><div class="esg-bar-fill" style="width:65%;background:#3d9e71;"></div></div>
+      <div class="esg-sub">Pengelolaan limbah B3 dari operasi drilling, pemulihan lahan pasca-survei seismik, efisiensi konsumsi bahan bakar armada distribusi, pemantauan kualitas air di sekitar fasilitas depot BBM, program reklamasi dan rehabilitasi lingkungan.</div>
+    </div>
+
+    <div class="esg-row">
+      <div class="esg-label-row">
+        <span class="esg-label">👥 Social (Sosial)</span>
+        <span class="esg-score" style="color:#7f6df2;">72/100</span>
+      </div>
+      <div class="esg-bar-bg"><div class="esg-bar-fill" style="width:72%;background:#7f6df2;"></div></div>
+      <div class="esg-sub">Program K3 (Keselamatan dan Kesehatan Kerja) ketat untuk ribuan pekerja lapangan di lokasi berisiko tinggi, pemberdayaan masyarakat sekitar wilayah operasi, pelatihan tenaga teknis migas lokal, program beasiswa untuk putra-putri karyawan dan komunitas sekitar operasi.</div>
+    </div>
+
+    <div class="esg-row">
+      <div class="esg-label-row">
+        <span class="esg-label">🏛️ Governance (Tata Kelola)</span>
+        <span class="esg-score" style="color:#50a5dc;">75/100</span>
+      </div>
+      <div class="esg-bar-bg"><div class="esg-bar-fill" style="width:75%;background:#50a5dc;"></div></div>
+      <div class="esg-sub">Tata kelola perusahaan sesuai standar GCG Pertamina Group, laporan tahunan dan keberlanjutan yang teratur, dewan komisaris independen, komite audit aktif, sistem anti-gratifikasi dan pencegahan korupsi, keterbukaan informasi ke BEI secara konsisten dan tepat waktu.</div>
+    </div>
+
+    <p>
+      Tantangan ESG terbesar Elnusa adalah mengelola dampak lingkungan dari operasi di wilayah sensitif seperti hutan tropis Kalimantan dan perairan dangkal. Survei seismik menggunakan gelombang kejut yang dapat mengganggu ekosistem lokal bila tidak dikelola dengan protokol yang ketat. Elnusa merespons dengan menerapkan prosedur HSE berlapis dan audit reguler. Di dimensi sosial, program pemberdayaan masyarakat di sekitar area operasi — mulai dari Sumatera hingga Papua — menjadi komponen penting untuk mempertahankan social license to operate yang esensial bagi keberlanjutan bisnis jangka panjang.
+    </p>
+  </div>
+
+  <hr />
+
+  <footer>
+    <p><strong>Disclaimer:</strong> Dokumen ini dibuat secara otomatis untuk tujuan informasi dan edukasi semata. Harga saham Rp700/lembar adalah harga indikatif per 16 Mei 2026 berdasarkan data yang tersedia saat pembuatan. Rasio PER (7,1x) dan PBV (1,04x) dihitung menggunakan harga tersebut dan ekuitas FY2024. Beberapa data bertanda <em>(est.)</em> merupakan estimasi. Dokumen ini <strong>bukan</strong> merupakan rekomendasi investasi. Keputusan investasi sepenuhnya merupakan tanggung jawab investor.</p>
+    <div class="sources">
+      <a href="https://www.elnusa.co.id" target="_blank">elnusa.co.id</a>
+      <a href="https://money.kompas.com/read/2025/04/29/180000026/elnusa-bukukan-pendapatan-rp-3-73-triliun-di-kuartal-i-2025" target="_blank">Kompas — Q1 2025</a>
+      <a href="https://www.idxchannel.com/market-news/elnusa-elsa-cetak-laba-bersih-rp187-miliar-di-kuartal-i-2025" target="_blank">IDXChannel — Laba Q1 2025</a>
+      <a href="https://mureks.co.id/elnusa-catat-laba-bersih-rp-5266-miliar-pada-kuartal-iii-2025-genjot-proyek-migas-dan-ekspansi-internasional" target="_blank">Mureks — Q3 2025</a>
+      <a href="https://pasardana.id/news/2025/5/26/elnusa-siap-bagi-dividen-tunai-sebesar-rp-39-11-per-saham-catat-jadwalnya/" target="_blank">PasarDana — Dividen Rp39,11</a>
+      <a href="https://www.kabarbursa.com/market-hari-ini/dividen-elnusa-elsa-2025-rp7136-miliar-yield-menggiurkan" target="_blank">KabarBursa — Dividen 2025</a>
+      <a href="https://cetro.or.id/artikel/elnusa-tbk-tumbuh-solid-kuartal-i-2026-diversifikasi-efisiensi-dan-ekspansi-internasional" target="_blank">Cetro — Q1 2026</a>
+      <a href="https://www.pilar.id/elnusa-ekspansi-global-otc-asia-2026-proyek-energi/" target="_blank">Pilar.id — OTC Asia 2026</a>
+      <a href="https://phe.pertamina.com/id/media/didukung-fundamental-operasional-yang-kuat-dan-strategi-pertumbuhan-2026-saham-elnusa-cetak-level-tertinggi-sejak-ipo" target="_blank">PHE — ATH ELSA</a>
+      <a href="https://investasi.kontan.co.id/news/elnusa-elsa-berpeluang-kembali-raih-kinerja-positif-pada-2026-ini-pendorongnya" target="_blank">Kontan — Prospek 2026</a>
+      <a href="https://databoks.katadata.co.id/datapublish/2021/09/08/pertamina-hulu-energi-jadi-pemegang-411-saham-elnusa" target="_blank">Databoks — Pemegang Saham</a>
+    </div>
+    <p style="margin-top:1em;">IDX Profile Series &nbsp;|&nbsp; Sektor Rotasi: Energi / Jasa Hulu Migas &nbsp;|&nbsp; 16 Mei 2026 &nbsp;|&nbsp; Dibuat untuk <a href="https://xedixermawan.github.io" style="color:var(--text-muted);">xedixermawan.github.io</a></p>
+  </footer>
+
+</div>
+
+<script>
+  Chart.defaults.color = '#706f6f';
+  Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+  const GRID_COLOR = 'rgba(0,0,0,0.07)';
+
+  /* ------ CHART 1: Revenue + Net Income Combo ------ */
+  (function() {
+    const ctx = document.getElementById('chartRevenue').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['2021', '2022', '2023', '2024', '2025 (est.)'],
+        datasets: [
+          {
+            label: 'Pendapatan (Rp T)',
+            data: [8.10, 12.30, 12.48, 13.39, 15.00],
+            backgroundColor: 'rgba(127,109,242,0.18)',
+            borderColor: '#7f6df2',
+            borderWidth: 2,
+            borderRadius: 4,
+            yAxisID: 'y',
+          },
+          {
+            label: 'Laba Bersih (Rp M)',
+            data: [108.8, 378.1, 503.1, 713.7, 718.4],
+            type: 'line',
+            borderColor: '#3d9e71',
+            backgroundColor: 'rgba(61,158,113,0.10)',
+            borderWidth: 2.5,
+            pointBackgroundColor: '#3d9e71',
+            pointRadius: 5,
+            tension: 0.35,
+            fill: true,
+            yAxisID: 'y2',
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+          legend: { position: 'top', labels: { usePointStyle: true, boxWidth: 8 } },
+          tooltip: {
+            callbacks: {
+              label: ctx => ctx.datasetIndex === 0
+                ? `Pendapatan: Rp${ctx.parsed.y.toFixed(2)} T`
+                : `Laba Bersih: Rp${ctx.parsed.y.toFixed(1)} M`
+            }
+          }
+        },
+        scales: {
+          y: {
+            title: { display: true, text: 'Pendapatan (Rp T)', font: { size: 11 } },
+            grid: { color: GRID_COLOR },
+            ticks: { callback: v => `Rp${v}T` }
+          },
+          y2: {
+            position: 'right',
+            title: { display: true, text: 'Laba Bersih (Rp M)', font: { size: 11 } },
+            grid: { display: false },
+            ticks: { callback: v => `Rp${v}M` }
+          },
+          x: { grid: { display: false } }
+        }
+      }
+    });
+  })();
+
+  /* ------ CHART 2: Ownership Donut ------ */
+  (function() {
+    const ctx = document.getElementById('chartOwnership').getContext('2d');
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['PT Pertamina Hulu Energi (51,10%)', 'Publik (48,90%)'],
+        datasets: [{
+          data: [51.10, 48.90],
+          backgroundColor: ['#7f6df2', '#c8c8c8'],
+          borderWidth: 2,
+          borderColor: '#ffffff'
+        }]
+      },
+      options: {
+        responsive: true,
+        cutout: '62%',
+        plugins: {
+          legend: { position: 'bottom', labels: { font: { size: 11 }, boxWidth: 12, padding: 10 } },
+          tooltip: { callbacks: { label: ctx => `${ctx.label.split('(')[0].trim()}: ${ctx.parsed.toFixed(2)}%` } }
+        }
+      }
+    });
+  })();
+
+  /* ------ CHART 3: Segment Revenue (Q1-2025) ------ */
+  (function() {
+    const ctx = document.getElementById('chartSegment').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Distribusi & Logistik Energi', 'Jasa Hulu Migas Terintegrasi', 'Jasa Penunjang Migas'],
+        datasets: [{
+          label: 'Pendapatan Q1-2025 (Rp T)',
+          data: [2.05, 1.29, 0.52],
+          backgroundColor: ['#7f6df2', '#3d9e71', '#e5a53a'],
+          borderRadius: 4,
+          borderSkipped: false
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: ctx => `Rp${ctx.parsed.x.toFixed(2)} triliun` } }
+        },
+        scales: {
+          x: { grid: { color: GRID_COLOR }, ticks: { callback: v => `${v}T` } },
+          y: { grid: { display: false } }
+        }
+      }
+    });
+  })();
+
+  /* ------ TOGGLE ------ */
+  function toggleSection(h2el) { h2el.classList.toggle('collapsed'); }
+</script>
+</body>
+</html>

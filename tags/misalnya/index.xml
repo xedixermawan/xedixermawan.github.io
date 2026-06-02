@@ -14,7 +14,7 @@
       <link>https://xedixermawan.github.io/2015/02/13/mencobacmake/</link>
       <pubDate>Fri, 13 Feb 2015 16:30:09 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2015/02/13/mencobacmake/</guid>
-      <description>&lt;p&gt;Visual Studio adalah favorite ide pemrograman saya. Sudah sejak lama saya pakai, kira-kira sejak 4 tahun yang lalu. Mungkin menjadi favorite karena kebiasaan :) dan juga visual studio mudah dipakai. Walaupun kadang ada juga bugs &amp;lsquo;aneh&amp;rsquo; yang terjadi selama nge-build project dengan VS. Sayangnya, &amp;lsquo;build file&amp;rsquo; dari VS tidak bisa dipakai di environment lain, misalnya mau &lt;em&gt;build&lt;/em&gt; pakai gcc di Linux. Oleh karena itulah harus ada cara lain yang harus dipakai. Berikut sebagai contoh case saya :&lt;/p&gt;</description>
+      <description>&lt;p&gt;Visual Studio adalah favorite ide pemrograman saya. Sudah sejak lama saya&#xA;pakai, kira-kira sejak 4 tahun yang lalu. Mungkin menjadi favorite karena&#xA;kebiasaan :) dan juga visual studio mudah dipakai. Walaupun kadang ada juga&#xA;bugs &amp;lsquo;aneh&amp;rsquo; yang terjadi selama nge-build project dengan VS. Sayangnya, &amp;lsquo;build&#xA;file&amp;rsquo; dari VS tidak bisa dipakai di environment lain, misalnya mau &lt;em&gt;build&lt;/em&gt; pakai&#xA;gcc di Linux. Oleh karena itulah harus ada cara lain yang harus dipakai.&#xA;Berikut sebagai contoh case saya :&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

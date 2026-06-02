@@ -7,21 +7,56 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© 2007-2024 XediXermawan</copyright>
-    <lastBuildDate>Wed, 09 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 30 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://xedixermawan.github.io/tags/android/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Apa yang baru di Android 2026</title>
+      <link>https://xedixermawan.github.io/2026/05/30/apa-yang-baru-di-android-2026/</link>
+      <pubDate>Sat, 30 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://xedixermawan.github.io/2026/05/30/apa-yang-baru-di-android-2026/</guid>
+      <description>&lt;p&gt;Diambil dari Google I/O 2026 (digelar 19 Mei 2026, didahului The Android Show pada 12 Mei), dibagi menjadi tiga bagian.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-apa-yang-baru-di-android-phone&#34;&gt;1. Apa yang baru di Android Phone&lt;/h2&gt;&#xA;&lt;p&gt;Tema besarnya adalah &lt;strong&gt;Gemini Intelligence&lt;/strong&gt;, lapisan AI proaktif yang ditanam langsung ke sistem Android. Google memperkenalkan Gemini Intelligence sebagai fitur AI proaktif baru di Android, dengan tujuan agar pengguna lebih sedikit menatap layar dan lebih banyak melakukan hal yang disukai. Beberapa hal penting:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Project PLTS mini</title>
+      <link>https://xedixermawan.github.io/2026/05/14/catatan-project-plts-mini-v1/</link>
+      <pubDate>Thu, 14 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://xedixermawan.github.io/2026/05/14/catatan-project-plts-mini-v1/</guid>
+      <description>&lt;h2 id=&#34;catatan-project-plts-mini-50-wp--lifepo4-12v-30ah&#34;&gt;Catatan Project PLTS Mini 50 Wp + LiFePO4 12V 30Ah&lt;/h2&gt;&#xA;&lt;p&gt;Saya sedang mencoba membuat sistem PLTS mini sederhana untuk kebutuhan ringan dan sekaligus belajar cara kerja panel surya, baterai, BMS, SCC, dan kabel dalam satu sistem. Ini adalah versi 1, dari project PLTS ku.&lt;/p&gt;&#xA;&lt;p&gt;Sistem ini menggunakan panel surya &lt;strong&gt;50 Wp&lt;/strong&gt; dan baterai &lt;strong&gt;LiFePO4 12V 30Ah&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;daftar-komponen&#34;&gt;Daftar Komponen&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Panel Surya 50 Wp        : Rp370.000&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Baterai 12V 30Ah (4 PCS) : Rp639.000&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;BMS                      : Rp74.000&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;SCC 12V/24V 10A           : Rp66.710&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Kabel twin MC4            : Rp185.000&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;------------------------------------&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Total                    : Rp1.334.000&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;detail-komponen&#34;&gt;Detail Komponen&lt;/h2&gt;&#xA;&lt;p&gt;Panel surya yang digunakan adalah &lt;strong&gt;Solar Panel 50 Wp Mono Zanetta Halfcut&lt;/strong&gt;. Panel ini menjadi sumber energi utama untuk mengisi baterai melalui solar charge controller.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Crash AutoBackup</title>
+      <link>https://xedixermawan.github.io/2025/04/29/crash-autobackup/</link>
+      <pubDate>Tue, 29 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://xedixermawan.github.io/2025/04/29/crash-autobackup/</guid>
+      <description>&lt;p&gt;**Case : Crash di Android&lt;/p&gt;&#xA;&lt;p&gt;Saya mengalami crash pada salah satu aplikasi, dengan log crash seperti terlampir. Crash ini hanya terjadi di satu perangkat Android, tidak di semua perangkat.&lt;/p&gt;&#xA;&lt;p&gt;Setelah mencari solusi di Google, saya menemukan saran dari beberapa orang untuk menonaktifkan allowBackup di Android manifest dengan menambahkan:&lt;/p&gt;&#xA;&lt;p&gt;android:allowBackup=&amp;ldquo;false&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;Lalu, apa hubungannya dengan flag allowBackup?&lt;/p&gt;&#xA;&lt;p&gt;Setelah saya telusuri dari log crash dan menelusuri sumber kodenya, ternyata crash disebabkan oleh penggunaan EncryptedSharedPreferences. Data yang disimpan menggunakan EncryptedSharedPreferences tidak boleh di backup secara otomatis. Mengapa?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Android Auto Backup</title>
+      <link>https://xedixermawan.github.io/2025/04/17/android-auto-backup/</link>
+      <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://xedixermawan.github.io/2025/04/17/android-auto-backup/</guid>
+      <description>&lt;p&gt;Android Auto Backup&lt;/p&gt;&#xA;&lt;p&gt;Android menyediakan fitur backup otomatis untuk setiap aplikasi sejak Android 6.0 ( API Level 23 ) , yang rilis sejak akhir 2015. Fitur backup otomatis ini maksudnya :  sistem Android akan melakukan online backup data dari sebuah aplikasi, tanpa sepengetahuan pengguna, dengan cara meng-upload data aplikasi ke Google Drive. Dari perspektif developer app, yang perlu dilakukan hanya menambahkan field android:allowBackup=&amp;ldquo;true&amp;rdquo;, tanpa perlu adanya code tambahan. Field di android manifest ini, tidaklah wajib ada saat diperkenalkan, namun secara default nilainya true .&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Belajar Android dan iOS</title>
+      <link>https://xedixermawan.github.io/2023/11/19/belajar-android-dan-ios/</link>
+      <pubDate>Sun, 19 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://xedixermawan.github.io/2023/11/19/belajar-android-dan-ios/</guid>
+      <description>&lt;p&gt;Saya mulai mendalami pengembangan aplikasi Android sekitar pertengahan tahun&#xA;2015. Sedangkan untuk iOS, saya baru mulai belajar di bulan Oktober&#xA;2023—jedanya memang cukup lama. Keinginan mempelajari iOS muncul karena saya&#xA;berencana merilis beberapa aplikasi yang sebelumnya sudah tersedia di Play&#xA;Store agar bisa diunggah juga di App Store. Meskipun jumlah pengguna iPhone di&#xA;Indonesia masih jauh di bawah Android, bukan berarti tidak ada peluang—pengguna&#xA;iPhone disini tetap lumayan banyak. Dan “mereka” –pengguna iPhone katanya&#xA;orang-orang berduit. &lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Android Vector Drawable</title>
-      <link>https://xedixermawan.github.io/post/2019-01-09__membuat_vector_drawable/</link>
-      <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://xedixermawan.github.io/post/2019-01-09__membuat_vector_drawable/</guid>
-      <description>&lt;p&gt;Asset berformat vector drawable memiliki beberapa keunggulan ketika dipakai di aplikasi Android. Vector drawable pada dasarnya adalah file text yang berisi deskripsi gambar. Karena format text maka ukurannya sangat kecil. Terlebih kita tidak perlu membuat assets untuk bermacam macam resolusi, karena vector drawable bisa di &lt;em&gt;scale&lt;/em&gt; ukuran gambarnya tanpa mengurangi kualitas.&lt;/p&gt;&#xA;&lt;p&gt;Hal ini memperkuat keuntungan dari segi ukuran gambar, karena tidak perlu menyediakan gambar dalam beberapa versi resolusi layar. Efek lainnya adalah tidak perlu ribet, cukup mengurusi 1 gambar saja.&lt;/p&gt;</description>
+      <link>https://xedixermawan.github.io/2019/09/01/android-vector-drawable/</link>
+      <pubDate>Sun, 01 Sep 2019 04:34:22 +0000</pubDate>
+      <guid>https://xedixermawan.github.io/2019/09/01/android-vector-drawable/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;p&gt;Asset berformat vector drawable memiliki beberapa keunggulan ketika dipakai di&#xA;aplikasi Android. Vector drawable pada dasarnya adalah file text yang berisi&#xA;deskripsi gambar. Karena format text maka ukurannya sangat kecil. Terlebih kita&#xA;tidak perlu membuat assets untuk bermacam macam resolusi, karena vector&#xA;drawable bisa di &lt;em&gt;scale&lt;/em&gt; ukuran gambarnya tanpa mengurangi kualitas.&lt;/p&gt;&#xA;&lt;p&gt;Hal ini memperkuat keuntungan dari segi ukuran gambar, karena tidak perlu&#xA;menyediakan gambar dalam beberapa versi resolusi layar. Efek lainnya adalah&#xA;tidak perlu ribet, cukup mengurusi 1 gambar saja.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Aplikasi Android Pencatat Keuangan</title>
       <link>https://xedixermawan.github.io/2017/07/08/aplikasi-android-pencatat-keuangan/</link>
       <pubDate>Sat, 08 Jul 2017 04:34:22 +0000</pubDate>
       <guid>https://xedixermawan.github.io/2017/07/08/aplikasi-android-pencatat-keuangan/</guid>
-      <description>&lt;p&gt;Aplikasi yang cukup membosankan secara teknis untuk dibuat, namun saya cukup tertarik untuk membuatnya, karena saya juga ingin mencatat pengeluaran ( waktu tertentu saja, tidak bisa kalau rajin ) . Aplikasi untuk mencatat pengeluaran dan pemasukan, dengan filosofi desain yang sama : simple dan mudah digunakan .&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://play.google.com/store/apps/details?id=com.asyncbyte.moneytracker&#34;&gt;&lt;img src=&#34;https://offground.files.wordpress.com/2017/07/screen-shoot_promo.png?w=600&#34; alt=&#34;screen-shoot_promo&#34;&gt;&#xA;&lt;/a&gt; Aplikasi Catatan Keuangan Harian&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;release 13 Juni 2017&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;saya release 13 Juni 2017, belum sampai 1 bulan ( hari ini 8 juli 2017 ), sudah terdownload &amp;gt;1000 pengguna. Permulaan stats yang bagus :)  .&lt;/p&gt;</description>
+      <description>&lt;p&gt;Aplikasi yang cukup membosankan secara teknis untuk dibuat, namun saya cukup&#xA;tertarik untuk membuatnya, karena saya juga ingin mencatat pengeluaran ( waktu&#xA;tertentu saja, tidak bisa kalau rajin ) . Aplikasi untuk mencatat pengeluaran&#xA;dan pemasukan, dengan filosofi desain yang sama : simple dan mudah digunakan .&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://offground.files.wordpress.com/2017/07/screen-shoot_promo.png?w=600&#34; alt=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;https://play.google.com/store/apps/details?id=com.asyncbyte.moneytracker&#34;&gt; &lt;/a&gt;&#xA;Aplikasi Catatan Keuangan Harian&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;release 13 Juni 2017&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;saya release 13 Juni 2017, belum sampai 1 bulan ( hari ini 8 juli 2017 ), sudah&#xA;terdownload &amp;gt;1000 pengguna. Permulaan stats yang bagus :)  .&lt;/p&gt;</description>
     </item>
     <item>
       <title>Solved: Conversion to Dalvik format failed with error 1</title>
