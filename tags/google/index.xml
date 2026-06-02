@@ -1,20 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Google on Home</title>
-    <link>https://xedixermawan.github.io/tags/google/</link>
-    <description>Recent content in Google on Home</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <copyright>© 2007-2024 XediXermawan</copyright>
-    <lastBuildDate>Sat, 30 May 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://xedixermawan.github.io/tags/google/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Apa yang baru di Android 2026</title>
-      <link>https://xedixermawan.github.io/2026/05/30/apa-yang-baru-di-android-2026/</link>
-      <pubDate>Sat, 30 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://xedixermawan.github.io/2026/05/30/apa-yang-baru-di-android-2026/</guid>
-      <description>&lt;p&gt;Diambil dari Google I/O 2026 (digelar 19 Mei 2026, didahului The Android Show pada 12 Mei), dibagi menjadi tiga bagian.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-apa-yang-baru-di-android-phone&#34;&gt;1. Apa yang baru di Android Phone&lt;/h2&gt;&#xA;&lt;p&gt;Tema besarnya adalah &lt;strong&gt;Gemini Intelligence&lt;/strong&gt;, lapisan AI proaktif yang ditanam langsung ke sistem Android. Google memperkenalkan Gemini Intelligence sebagai fitur AI proaktif baru di Android, dengan tujuan agar pengguna lebih sedikit menatap layar dan lebih banyak melakukan hal yang disukai. Beberapa hal penting:&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Google on Home</title><link>https://xedixermawan.github.io/tags/google/</link><description>Recent content in Google on Home</description><generator>Hugo</generator><language>en</language><copyright>© 2007-2024 XediXermawan</copyright><lastBuildDate>Sat, 30 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://xedixermawan.github.io/tags/google/index.xml" rel="self" type="application/rss+xml"/><item><title>Apa yang baru di Android 2026</title><link>https://xedixermawan.github.io/2026/05/30/apa-yang-baru-di-android-2026/</link><pubDate>Sat, 30 May 2026 00:00:00 +0000</pubDate><guid>https://xedixermawan.github.io/2026/05/30/apa-yang-baru-di-android-2026/</guid><description>&lt;p&gt;Diambil dari Google I/O 2026 (digelar 19 Mei 2026, didahului The Android Show pada 12 Mei), dibagi menjadi tiga bagian.&lt;/p&gt;
+&lt;h2 id="1-apa-yang-baru-di-android-phone"&gt;1. Apa yang baru di Android Phone&lt;/h2&gt;
+&lt;p&gt;Tema besarnya adalah &lt;strong&gt;Gemini Intelligence&lt;/strong&gt;, lapisan AI proaktif yang ditanam langsung ke sistem Android. Google memperkenalkan Gemini Intelligence sebagai fitur AI proaktif baru di Android, dengan tujuan agar pengguna lebih sedikit menatap layar dan lebih banyak melakukan hal yang disukai. Beberapa hal penting:&lt;/p&gt;</description></item></channel></rss>

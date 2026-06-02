@@ -1,31 +1,4 @@
-<!doctype html>
-
-
-
-
-
-
-
-<html
-  class="not-ready lg:text-base"
-  style="--bg:#fbfbfb"
-  lang="en"
-  dir="ltr"
-><head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
-
-  
-  <title>Hello World dengan WinAVR - Home</title>
-
-  
-  <meta name="theme-color" />
-
-  <meta name="description" content="Just a documentation.
+<!doctype html><html class="not-ready lg:text-base" style=--bg:#fbfbfb lang=en dir=ltr><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Hello World dengan WinAVR - Home</title><meta name=theme-color><meta name=description content="Just a documentation.
 Minggu Desember 14 2008/Surabaya
 &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;- start of doc &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
 WinAVR dengan IDE pemrograman Code Block
@@ -44,7 +17,7 @@ Download di www.CodeBlocks.Org (sekitar 11 MB)
 Install.
 
 
-Buka Code::Block yang telah terinstall, lalu buat project baru (File-&gt;New-&gt;Project ). pada menu listbox terdapat beberapa pilihan tipe dari project yang bisa dibuat. Pilih “AVR Project”, lalu klik “Go”.
+Buka Code::Block yang telah terinstall, lalu buat project baru (File->New->Project ). pada menu listbox terdapat beberapa pilihan tipe dari project yang bisa dibuat. Pilih “AVR Project”, lalu klik “Go”.
 
 
 
@@ -62,326 +35,56 @@ Centang “run avr-size after build”
 
 Buat program sederhana untuk mencoba mikrokontroler. misalnya menghidup/matikan led di PORTC, seperti berikut ini
 
-#include &lt;avr/io.h&gt;" />
-  <meta name="author" content="oth3rside" /><link rel="preload stylesheet" as="style" href="https://xedixermawan.github.io/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
-
-  
-  <link rel="preload" as="image" href="https://xedixermawan.github.io/theme.png" />
-
-  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/874371989962b8461ad94e8119d82bc7?s=160&amp;d=identicon" />
-
-  <link rel="preload" as="image" href="https://xedixermawan.github.io/twitter.svg" /><link rel="preload" as="image" href="https://xedixermawan.github.io/github.svg" /><link rel="preload" as="image" href="https://xedixermawan.github.io/instagram.svg" />
-
-  <script
-    defer
-    src="https://xedixermawan.github.io/highlight.min.js"
-    onload="hljs.initHighlightingOnLoad()"
-  ></script>
-
-  
-  <link
-    rel="icon"
-    href="https://xedixermawan.github.io/favicon.ico"
-  />
-  <link
-    rel="apple-touch-icon"
-    href="https://xedixermawan.github.io/apple-touch-icon.png"
-  />
-
-  <meta name="generator" content="Hugo 0.152.2">
-  <meta itemprop="name" content="Hello World dengan WinAVR">
-  <meta itemprop="description" content="Just a documentation.
+#include <avr/io.h>"><meta name=author content="oth3rside"><link rel="preload stylesheet" as=style href=https://xedixermawan.github.io/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css integrity="sha256-6GrmfgHi0gVRBqv3K+c1fJUBkQYOXxWfJOJ5D9gjfow="><link rel=preload as=image href=https://xedixermawan.github.io/theme.png><link rel=preload as=image href="https://www.gravatar.com/avatar/874371989962b8461ad94e8119d82bc7?s=160&amp;d=identicon"><link rel=preload as=image href=https://xedixermawan.github.io/twitter.svg><link rel=preload as=image href=https://xedixermawan.github.io/github.svg><link rel=preload as=image href=https://xedixermawan.github.io/instagram.svg><script defer src=https://xedixermawan.github.io/highlight.min.js onload=hljs.initHighlightingOnLoad()></script><link rel=icon href=https://xedixermawan.github.io/favicon.ico><link rel=apple-touch-icon href=https://xedixermawan.github.io/apple-touch-icon.png><meta name=generator content="Hugo 0.152.2"><meta itemprop=name content="Hello World dengan WinAVR"><meta itemprop=description content="Just a documentation.
 Minggu Desember 14 2008/Surabaya
 —————————- start of doc —————————-
 WinAVR dengan IDE pemrograman Code Block Beberapa software open source yang dibutuhkan:
-1. GNU AVR GCC Compiler, disini digunakan WinAVR20080610 (versi sesuai tanggal update terakhir) Download http://winavr.sourceforge.net/ (sekitar 22 MB) Install. (selalu ingatlah tombol Next, Accept, Agree, dan OK :-) ) .Pilih saja direktori instalasi default agar mudah diingat, biasanya di dir utama= C:\WinAVR-20080610 Code::Block, sebuah IDE pemrograman untuk berbagai macam keperluan pemrograman , salah satunya bisa untuk IDE pemrograman mikrokontroler keluarga AVR. Download di www.CodeBlocks.Org (sekitar 11 MB) Install. Buka Code::Block yang telah terinstall, lalu buat project baru (File-&gt;New-&gt;Project ). pada menu listbox terdapat beberapa pilihan tipe dari project yang bisa dibuat. Pilih “AVR Project”, lalu klik “Go”. klik next, lalu tentukan nama project yang akan dibuat beserta letak direktori. Next. Muncul dialog pilihan untuk “debug” dan “release”, pilih saja semuanya. Next. Setelah itu muncul dialog: Tipe mikrokontroler Atmega16 (atau terserah uC yg digunakan) Tidak ada eksternal memori. F_CPU ( Crystal yang digunakan ) : 8 MHz. (terserah crystal yg dipakai) Centang pada creates .map, creates .hex, creates binary files, creates extended listing files. Centang “run avr-size after build” Buat program sederhana untuk mencoba mikrokontroler. misalnya menghidup/matikan led di PORTC, seperti berikut ini #include &lt;avr/io.h&gt;">
-  <meta itemprop="datePublished" content="2008-12-28T12:54:43+00:00">
-  <meta itemprop="dateModified" content="2008-12-28T12:54:43+00:00">
-  <meta itemprop="wordCount" content="662">
-  <meta itemprop="keywords" content="Elektronics Design"><meta property="og:url" content="https://xedixermawan.github.io/2008/12/28/hello-world-dengan-winavr/">
-  <meta property="og:site_name" content="Home">
-  <meta property="og:title" content="Hello World dengan WinAVR">
-  <meta property="og:description" content="Just a documentation.
+1. GNU AVR GCC Compiler, disini digunakan WinAVR20080610 (versi sesuai tanggal update terakhir) Download http://winavr.sourceforge.net/ (sekitar 22 MB) Install. (selalu ingatlah tombol Next, Accept, Agree, dan OK :-) ) .Pilih saja direktori instalasi default agar mudah diingat, biasanya di dir utama= C:\WinAVR-20080610 Code::Block, sebuah IDE pemrograman untuk berbagai macam keperluan pemrograman , salah satunya bisa untuk IDE pemrograman mikrokontroler keluarga AVR. Download di www.CodeBlocks.Org (sekitar 11 MB) Install. Buka Code::Block yang telah terinstall, lalu buat project baru (File->New->Project ). pada menu listbox terdapat beberapa pilihan tipe dari project yang bisa dibuat. Pilih “AVR Project”, lalu klik “Go”. klik next, lalu tentukan nama project yang akan dibuat beserta letak direktori. Next. Muncul dialog pilihan untuk “debug” dan “release”, pilih saja semuanya. Next. Setelah itu muncul dialog: Tipe mikrokontroler Atmega16 (atau terserah uC yg digunakan) Tidak ada eksternal memori. F_CPU ( Crystal yang digunakan ) : 8 MHz. (terserah crystal yg dipakai) Centang pada creates .map, creates .hex, creates binary files, creates extended listing files. Centang “run avr-size after build” Buat program sederhana untuk mencoba mikrokontroler. misalnya menghidup/matikan led di PORTC, seperti berikut ini #include <avr/io.h>"><meta itemprop=datePublished content="2008-12-28T12:54:43+00:00"><meta itemprop=dateModified content="2008-12-28T12:54:43+00:00"><meta itemprop=wordCount content="662"><meta itemprop=keywords content="Elektronics Design"><meta property="og:url" content="https://xedixermawan.github.io/2008/12/28/hello-world-dengan-winavr/"><meta property="og:site_name" content="Home"><meta property="og:title" content="Hello World dengan WinAVR"><meta property="og:description" content="Just a documentation.
 Minggu Desember 14 2008/Surabaya
 —————————- start of doc —————————-
 WinAVR dengan IDE pemrograman Code Block Beberapa software open source yang dibutuhkan:
-1. GNU AVR GCC Compiler, disini digunakan WinAVR20080610 (versi sesuai tanggal update terakhir) Download http://winavr.sourceforge.net/ (sekitar 22 MB) Install. (selalu ingatlah tombol Next, Accept, Agree, dan OK :-) ) .Pilih saja direktori instalasi default agar mudah diingat, biasanya di dir utama= C:\WinAVR-20080610 Code::Block, sebuah IDE pemrograman untuk berbagai macam keperluan pemrograman , salah satunya bisa untuk IDE pemrograman mikrokontroler keluarga AVR. Download di www.CodeBlocks.Org (sekitar 11 MB) Install. Buka Code::Block yang telah terinstall, lalu buat project baru (File-&gt;New-&gt;Project ). pada menu listbox terdapat beberapa pilihan tipe dari project yang bisa dibuat. Pilih “AVR Project”, lalu klik “Go”. klik next, lalu tentukan nama project yang akan dibuat beserta letak direktori. Next. Muncul dialog pilihan untuk “debug” dan “release”, pilih saja semuanya. Next. Setelah itu muncul dialog: Tipe mikrokontroler Atmega16 (atau terserah uC yg digunakan) Tidak ada eksternal memori. F_CPU ( Crystal yang digunakan ) : 8 MHz. (terserah crystal yg dipakai) Centang pada creates .map, creates .hex, creates binary files, creates extended listing files. Centang “run avr-size after build” Buat program sederhana untuk mencoba mikrokontroler. misalnya menghidup/matikan led di PORTC, seperti berikut ini #include &lt;avr/io.h&gt;">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2008-12-28T12:54:43+00:00">
-    <meta property="article:modified_time" content="2008-12-28T12:54:43+00:00">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Hello World dengan WinAVR">
-  <meta name="twitter:description" content="Just a documentation.
+1. GNU AVR GCC Compiler, disini digunakan WinAVR20080610 (versi sesuai tanggal update terakhir) Download http://winavr.sourceforge.net/ (sekitar 22 MB) Install. (selalu ingatlah tombol Next, Accept, Agree, dan OK :-) ) .Pilih saja direktori instalasi default agar mudah diingat, biasanya di dir utama= C:\WinAVR-20080610 Code::Block, sebuah IDE pemrograman untuk berbagai macam keperluan pemrograman , salah satunya bisa untuk IDE pemrograman mikrokontroler keluarga AVR. Download di www.CodeBlocks.Org (sekitar 11 MB) Install. Buka Code::Block yang telah terinstall, lalu buat project baru (File->New->Project ). pada menu listbox terdapat beberapa pilihan tipe dari project yang bisa dibuat. Pilih “AVR Project”, lalu klik “Go”. klik next, lalu tentukan nama project yang akan dibuat beserta letak direktori. Next. Muncul dialog pilihan untuk “debug” dan “release”, pilih saja semuanya. Next. Setelah itu muncul dialog: Tipe mikrokontroler Atmega16 (atau terserah uC yg digunakan) Tidak ada eksternal memori. F_CPU ( Crystal yang digunakan ) : 8 MHz. (terserah crystal yg dipakai) Centang pada creates .map, creates .hex, creates binary files, creates extended listing files. Centang “run avr-size after build” Buat program sederhana untuk mencoba mikrokontroler. misalnya menghidup/matikan led di PORTC, seperti berikut ini #include <avr/io.h>"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2008-12-28T12:54:43+00:00"><meta property="article:modified_time" content="2008-12-28T12:54:43+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Hello World dengan WinAVR"><meta name=twitter:description content="Just a documentation.
 Minggu Desember 14 2008/Surabaya
 —————————- start of doc —————————-
 WinAVR dengan IDE pemrograman Code Block Beberapa software open source yang dibutuhkan:
-1. GNU AVR GCC Compiler, disini digunakan WinAVR20080610 (versi sesuai tanggal update terakhir) Download http://winavr.sourceforge.net/ (sekitar 22 MB) Install. (selalu ingatlah tombol Next, Accept, Agree, dan OK :-) ) .Pilih saja direktori instalasi default agar mudah diingat, biasanya di dir utama= C:\WinAVR-20080610 Code::Block, sebuah IDE pemrograman untuk berbagai macam keperluan pemrograman , salah satunya bisa untuk IDE pemrograman mikrokontroler keluarga AVR. Download di www.CodeBlocks.Org (sekitar 11 MB) Install. Buka Code::Block yang telah terinstall, lalu buat project baru (File-&gt;New-&gt;Project ). pada menu listbox terdapat beberapa pilihan tipe dari project yang bisa dibuat. Pilih “AVR Project”, lalu klik “Go”. klik next, lalu tentukan nama project yang akan dibuat beserta letak direktori. Next. Muncul dialog pilihan untuk “debug” dan “release”, pilih saja semuanya. Next. Setelah itu muncul dialog: Tipe mikrokontroler Atmega16 (atau terserah uC yg digunakan) Tidak ada eksternal memori. F_CPU ( Crystal yang digunakan ) : 8 MHz. (terserah crystal yg dipakai) Centang pada creates .map, creates .hex, creates binary files, creates extended listing files. Centang “run avr-size after build” Buat program sederhana untuk mencoba mikrokontroler. misalnya menghidup/matikan led di PORTC, seperti berikut ini #include &lt;avr/io.h&gt;">
-
-  <link rel="canonical" href="https://xedixermawan.github.io/2008/12/28/hello-world-dengan-winavr/" />
-</head>
-<body
-    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
-  ><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://xedixermawan.github.io/"
-      >Home</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
-
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
-
-  <script>
-    
-    const htmlClass = document.documentElement.classList;
-    setTimeout(() => {
-      htmlClass.remove('not-ready');
-    }, 10);
-
-    
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
-    const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#fbfbfb'.replace(/"/g, '');
-    const setDark = (isDark) => {
-      metaTheme.setAttribute('content', isDark ? "rgb(0 0 0 / 85%)" : lightBg);
-      htmlClass[isDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', isDark);
-    };
-
-    
-    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    if (htmlClass.contains('dark')) {
-      setDark(true);
-    } else {
-      const darkVal = localStorage.getItem('dark');
-      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
-    }
-
-    
-    darkScheme.addEventListener('change', (event) => {
-      setDark(event.matches);
-    });
-
-    
-    const btnDark = document.querySelector('.btn-dark');
-    btnDark.addEventListener('click', () => {
-      setDark(localStorage.getItem('dark') !== 'true');
-    });
-  </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/read/"
-        >Read</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./twitter.svg)"
-        href="https://twitter.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >twitter</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./github.svg)"
-        href="https://github.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >github</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./instagram.svg)"
-        href="https://instagram.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >instagram</a>
-    </nav>
-  </div>
-</header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    ><article>
-  <header class="mb-14">
-    <h1 class="my-0! pb-2.5">Hello World dengan WinAVR</h1><div class="text-xs antialiased opacity-60"><time>Dec 28, 2008</time><span class="mx-1">&middot;</span>
-      <span>oth3rside</span></div></header>
-
-  <section><p>Just a documentation.</p>
-<p>Minggu Desember 14 2008/Surabaya</p>
-<p><em>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;- start of doc &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-</em></p>
-<p><strong>WinAVR dengan IDE pemrograman Code Block</strong>
-Beberapa software open source yang dibutuhkan:</p>
-<pre><code>  1. GNU AVR GCC Compiler, disini digunakan WinAVR20080610 (versi sesuai tanggal update terakhir)
-</code></pre>
-<ul>
-<li>Download <a href="http://winavr.sourceforge.net/">http://winavr.sourceforge.net/</a> (sekitar 22 MB)</li>
-<li>Install. (selalu ingatlah tombol Next, Accept, Agree, dan OK :-) ) .Pilih saja direktori instalasi default agar mudah diingat, biasanya di dir utama= C:\WinAVR-20080610</li>
-</ul>
-<ol start="2">
-<li>Code::Block, sebuah IDE pemrograman untuk berbagai macam keperluan pemrograman , salah satunya bisa untuk IDE pemrograman mikrokontroler keluarga AVR.</li>
-</ol>
-<ul>
-<li>Download di www.CodeBlocks.Org (sekitar 11 MB)</li>
-<li>Install.</li>
-</ul>
-<ol start="3">
-<li>Buka Code::Block yang telah terinstall, lalu buat project baru (File-&gt;New-&gt;Project ). pada menu listbox terdapat beberapa pilihan tipe dari project yang bisa dibuat. Pilih “AVR Project”, lalu klik “Go”.</li>
-</ol>
-<!-- more -->
-<ol start="4">
-<li>klik next, lalu tentukan nama project yang akan dibuat beserta letak direktori. Next.</li>
-<li>Muncul dialog pilihan untuk “debug” dan “release”, pilih saja semuanya. Next.</li>
-<li>Setelah itu muncul dialog:</li>
-</ol>
-<ul>
-<li>Tipe mikrokontroler Atmega16 (atau terserah uC yg digunakan)</li>
-<li>Tidak ada  eksternal memori.</li>
-<li>F_CPU ( Crystal yang digunakan ) : 8 MHz. (terserah crystal yg dipakai)</li>
-<li>Centang pada creates .map, creates .hex, creates binary files, creates extended listing files.</li>
-<li>Centang “run avr-size after build”</li>
-</ul>
-<ol start="7">
-<li>Buat program sederhana untuk mencoba mikrokontroler. misalnya menghidup/matikan led di PORTC, seperti berikut ini</li>
-</ol>
-<p>#include &lt;avr/io.h&gt;</p>
-<p>void delay_ms(unsigned char time_ms);</p>
-<p>int main(void)
+1. GNU AVR GCC Compiler, disini digunakan WinAVR20080610 (versi sesuai tanggal update terakhir) Download http://winavr.sourceforge.net/ (sekitar 22 MB) Install. (selalu ingatlah tombol Next, Accept, Agree, dan OK :-) ) .Pilih saja direktori instalasi default agar mudah diingat, biasanya di dir utama= C:\WinAVR-20080610 Code::Block, sebuah IDE pemrograman untuk berbagai macam keperluan pemrograman , salah satunya bisa untuk IDE pemrograman mikrokontroler keluarga AVR. Download di www.CodeBlocks.Org (sekitar 11 MB) Install. Buka Code::Block yang telah terinstall, lalu buat project baru (File->New->Project ). pada menu listbox terdapat beberapa pilihan tipe dari project yang bisa dibuat. Pilih “AVR Project”, lalu klik “Go”. klik next, lalu tentukan nama project yang akan dibuat beserta letak direktori. Next. Muncul dialog pilihan untuk “debug” dan “release”, pilih saja semuanya. Next. Setelah itu muncul dialog: Tipe mikrokontroler Atmega16 (atau terserah uC yg digunakan) Tidak ada eksternal memori. F_CPU ( Crystal yang digunakan ) : 8 MHz. (terserah crystal yg dipakai) Centang pada creates .map, creates .hex, creates binary files, creates extended listing files. Centang “run avr-size after build” Buat program sederhana untuk mencoba mikrokontroler. misalnya menghidup/matikan led di PORTC, seperti berikut ini #include <avr/io.h>"><link rel=canonical href=https://xedixermawan.github.io/2008/12/28/hello-world-dengan-winavr/></head><body class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"><header class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"><div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto"><a class="-translate-y-[1px] text-2xl font-medium" href=https://xedixermawan.github.io/>Home</a><div class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]" role=button aria-label=Dark></div></div><div class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8" role=button aria-label=Menu></div><script>const htmlClass=document.documentElement.classList;setTimeout(()=>{htmlClass.remove("not-ready")},10);const btnMenu=document.querySelector(".btn-menu");btnMenu.addEventListener("click",()=>{htmlClass.toggle("open")});const metaTheme=document.querySelector('meta[name="theme-color"]'),lightBg="#fbfbfb".replace(/"/g,""),setDark=e=>{metaTheme.setAttribute("content",e?"rgb(0 0 0 / 85%)":lightBg),htmlClass[e?"add":"remove"]("dark"),localStorage.setItem("dark",e)},darkScheme=window.matchMedia("(prefers-color-scheme: dark)");if(htmlClass.contains("dark"))setDark(!0);else{const e=localStorage.getItem("dark");setDark(e?e==="true":darkScheme.matches)}darkScheme.addEventListener("change",e=>{setDark(e.matches)});const btnDark=document.querySelector(".btn-dark");btnDark.addEventListener("click",()=>{setDark(localStorage.getItem("dark")!=="true")})</script><div class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"><nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"><a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href=/about/>About</a><a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href=/read/>Read</a></nav><nav class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"><a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./twitter.svg) href=https://twitter.com/XediXermawan target=_blank rel=me>twitter</a>
+<a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./github.svg) href=https://github.com/XediXermawan target=_blank rel=me>github</a>
+<a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./instagram.svg) href=https://instagram.com/XediXermawan target=_blank rel=me>instagram</a></nav></div></header><main class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"><article><header class=mb-14><h1 class="my-0! pb-2.5">Hello World dengan WinAVR</h1><div class="text-xs antialiased opacity-60"><time>Dec 28, 2008</time><span class=mx-1>&#183;</span>
+<span>oth3rside</span></div></header><section><p>Just a documentation.</p><p>Minggu Desember 14 2008/Surabaya</p><p><em>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;- start of doc &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-</em></p><p><strong>WinAVR dengan IDE pemrograman Code Block</strong>
+Beberapa software open source yang dibutuhkan:</p><pre><code>  1. GNU AVR GCC Compiler, disini digunakan WinAVR20080610 (versi sesuai tanggal update terakhir)
+</code></pre><ul><li>Download <a href=http://winavr.sourceforge.net/>http://winavr.sourceforge.net/</a> (sekitar 22 MB)</li><li>Install. (selalu ingatlah tombol Next, Accept, Agree, dan OK :-) ) .Pilih saja direktori instalasi default agar mudah diingat, biasanya di dir utama= C:\WinAVR-20080610</li></ul><ol start=2><li>Code::Block, sebuah IDE pemrograman untuk berbagai macam keperluan pemrograman , salah satunya bisa untuk IDE pemrograman mikrokontroler keluarga AVR.</li></ol><ul><li>Download di www.CodeBlocks.Org (sekitar 11 MB)</li><li>Install.</li></ul><ol start=3><li>Buka Code::Block yang telah terinstall, lalu buat project baru (File->New->Project ). pada menu listbox terdapat beberapa pilihan tipe dari project yang bisa dibuat. Pilih “AVR Project”, lalu klik “Go”.</li></ol><ol start=4><li>klik next, lalu tentukan nama project yang akan dibuat beserta letak direktori. Next.</li><li>Muncul dialog pilihan untuk “debug” dan “release”, pilih saja semuanya. Next.</li><li>Setelah itu muncul dialog:</li></ol><ul><li>Tipe mikrokontroler Atmega16 (atau terserah uC yg digunakan)</li><li>Tidak ada eksternal memori.</li><li>F_CPU ( Crystal yang digunakan ) : 8 MHz. (terserah crystal yg dipakai)</li><li>Centang pada creates .map, creates .hex, creates binary files, creates extended listing files.</li><li>Centang “run avr-size after build”</li></ul><ol start=7><li>Buat program sederhana untuk mencoba mikrokontroler. misalnya menghidup/matikan led di PORTC, seperti berikut ini</li></ol><p>#include &lt;avr/io.h></p><p>void delay_ms(unsigned char time_ms);</p><p>int main(void)
 {
 DDRC=0xFF;
 while(1)
-{  PORTC=0xFF;
+{ PORTC=0xFF;
 delay_ms(400);
 PORTC=0x00;
 delay_ms(400);
-}</p>
-<p>return 0;
+}</p><p>return 0;
 }
 //rutin umum delay
 void delay_ms(unsigned char time_ms)
 {
-unsigned short delay_count = F_CPU / 4000;</p>
-<p>unsigned short cnt;
-asm volatile (&quot;\n&quot;
+unsigned short delay_count = F_CPU / 4000;</p><p>unsigned short cnt;
+asm volatile ("\n"
 &ldquo;L_dl1%=:\n\t&rdquo;
 &ldquo;mov %A0, %A2\n\t&rdquo;
 &ldquo;mov %B0, %B2\n&rdquo;
 &ldquo;L_dl2%=:\n\t&rdquo;
 &ldquo;sbiw %A0, 1\n\t&rdquo;
 &ldquo;brne L_dl2%=\n\t&rdquo;
-&ldquo;dec %1\n\t&rdquo; &ldquo;brne L_dl1%=\n\t&rdquo;:&quot;=&amp;w&quot; (cnt)
+&ldquo;dec %1\n\t&rdquo; &ldquo;brne L_dl1%=\n\t&rdquo;:"=&amp;w" (cnt)
 :&ldquo;r&rdquo;(time_ms), &ldquo;r&rdquo;((unsigned short) (delay_count))
 );
-}</p>
-<ol start="8">
-<li>Lakukan pengaturan compiler yang akan digunakan pada menu Setting-&gt; Compiler and Debugger</li>
-</ol>
-<ul>
-<li>Pada listbox selected compiler pilih : GNU AVR GCC Compiler</li>
-<li>buka tab , Toolchains executables dan tentukan direktori dimana WinAvr diinstal (default-nya tadi ada di C:\WinAVR-20080610 ). jika benar, tab program files dibawahnya secara otomatis terisi.</li>
-<li>Klik Ok untuk keluar dialog</li>
-</ul>
-<ol start="9">
-<li>Lakukan build project pada menu build-&gt;build atau Ctrl-F9.</li>
-<li>Jika sukses, pada akhir dialog log terdapat pesan:
+}</p><ol start=8><li>Lakukan pengaturan compiler yang akan digunakan pada menu Setting-> Compiler and Debugger</li></ol><ul><li>Pada listbox selected compiler pilih : GNU AVR GCC Compiler</li><li>buka tab , Toolchains executables dan tentukan direktori dimana WinAvr diinstal (default-nya tadi ada di C:\WinAVR-20080610 ). jika benar, tab program files dibawahnya secara otomatis terisi.</li><li>Klik Ok untuk keluar dialog</li></ul><ol start=9><li>Lakukan build project pada menu build->build atau Ctrl-F9.</li><li>Jika sukses, pada akhir dialog log terdapat pesan:
 0 errors, 0 warnings
-Sampai disini file .HEX  sudah terbuat.</li>
-<li>Untuk download file .HEX dapat digunakan PonyProg2000 (good stuff)</li>
-<li>Thank to : open source guys.</li>
-</ol>
-<p><strong>WinAVR dengan IDE Pemrograman AVR Studio</strong>
-Menggunakan WinAVR di AVR studio sangatlah mudah karena tidak diperlukan pengaturan compiler. jika  WinAVR sudah terinstal, AVR Studio secara otomatis mendeteksinya. Saat WinAVR telah terinstall, AVR Studio akan memberikan 2 pilihan bagi user yaitu apakah menggunakan pemrograman Assembly atau C WinAVR. Pilihan ini ada saat kita pertama kali membangun sebuah project. Pengaturan penting lain, yaitu pemilihan crystal/chip/optimasi code/library yang ada di menu Project-&gt;Configuration Option.</p>
-<p><strong>WinAVR dengan Programmer Notepad</strong>
-Sebenarnya setelah menginstal WinAVR, kita bisa menggunakan Programmer Notepad, sebuah IDE pemrograman yang secara otomatis terinstal, karena program ini bawaan dari WinAVR. Ini adalah pilihan yang tepat jika bermaksud menggunakan WinAVR tanpa perlu menginstal apapun lagi. Langkah p-enggunaannya sbb:</p>
-<ol>
-<li>
-<p>Buka Programmer Notepad.</p>
-</li>
-<li>
-<p>File New -&gt; C/C++ Code.</p>
-</li>
-<li>
-<p>Copy paste kode test led diatas.</p>
-</li>
-<li>
-<p>Save, misal Main.C</p>
-</li>
-<li>
-<p>Lalu buka program Mfile, di menu program WinAVR. Mfile ini, dibuat berdasarkan uC apa yang dipakai, nilai crystal, output file hasil kompilasi dll.</p>
-</li>
-<li>
-<p>Menu MakeFile:
-•	Main File name : isi dengan nama file main nya -&gt;Main.c
-•	Output Format : hasil kompilasi yang diinginkan (iHex, Bin, atawa srec), pilih saja iHex.
-•	Optimation level : s (standart), level optimasi yang akan digunakan oleh compiler. s:standart.
-•	Debug Format : AVR ext COFF
-•	Programmer :STK200
-•	port lpt1.</p>
-</li>
-<li>
-<p>Save makefile ini di dir yang sama dengan program yang dibuat di Programmer Notepad.</p>
-</li>
-<li>
-<p>Kembali ke Programmer Notepad, pilih Tool -&gt; Make All.</p>
-</li>
-<li>
-<p>Pesan : Proses Exit Code:0, menandakan file iHex telah terbuat.</p>
-</li>
-</ol>
-<p><em>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; end of doc. &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-</em></p>
-<p>Seiring berputarnya bumi ( eh, berjalannya waktu), tuntutan untuk tidak memakai software bajakan semakin tajam, dan seperti pepatah kuno, membajak bukanlah hal yang bijak. Apa salahnya memulai memakai software open source, toh ini juga sangat bagus dan gak kalah dengan software komersil. yach&hellip;.., itung2 ngurangin dosa dari pembajakan &hellip;.   :-)</p>
-</section>
-
-  <nav
-    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
-  ><a class="ltr:pr-3 rtl:pl-3" href="https://xedixermawan.github.io/2009/01/10/troublefinder-not-trouble-maker/"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Troublefinder, not trouble maker</span></a
-    ><a
-      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
-      href="https://xedixermawan.github.io/2008/11/21/embedded-web-server-untuk-monitoring-dan-data-logging/"
-      ><span>Embedded Web Server untuk Monitoring dan Data Logging.</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
-    ></nav></article></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2007-2024 XediXermawan</div>
-  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
-    >powered by hugo️️</a
-  >️
-  <a
-    class="link"
-    href="https://github.com/nanxiaobei/hugo-paper"
-    rel="noopener"
-    target="_blank"
-    >hugo-paper</a
-  >
-</footer>
-</body>
-</html>
+Sampai disini file .HEX sudah terbuat.</li><li>Untuk download file .HEX dapat digunakan PonyProg2000 (good stuff)</li><li>Thank to : open source guys.</li></ol><p><strong>WinAVR dengan IDE Pemrograman AVR Studio</strong>
+Menggunakan WinAVR di AVR studio sangatlah mudah karena tidak diperlukan pengaturan compiler. jika WinAVR sudah terinstal, AVR Studio secara otomatis mendeteksinya. Saat WinAVR telah terinstall, AVR Studio akan memberikan 2 pilihan bagi user yaitu apakah menggunakan pemrograman Assembly atau C WinAVR. Pilihan ini ada saat kita pertama kali membangun sebuah project. Pengaturan penting lain, yaitu pemilihan crystal/chip/optimasi code/library yang ada di menu Project->Configuration Option.</p><p><strong>WinAVR dengan Programmer Notepad</strong>
+Sebenarnya setelah menginstal WinAVR, kita bisa menggunakan Programmer Notepad, sebuah IDE pemrograman yang secara otomatis terinstal, karena program ini bawaan dari WinAVR. Ini adalah pilihan yang tepat jika bermaksud menggunakan WinAVR tanpa perlu menginstal apapun lagi. Langkah p-enggunaannya sbb:</p><ol><li><p>Buka Programmer Notepad.</p></li><li><p>File New -> C/C++ Code.</p></li><li><p>Copy paste kode test led diatas.</p></li><li><p>Save, misal Main.C</p></li><li><p>Lalu buka program Mfile, di menu program WinAVR. Mfile ini, dibuat berdasarkan uC apa yang dipakai, nilai crystal, output file hasil kompilasi dll.</p></li><li><p>Menu MakeFile:
+• Main File name : isi dengan nama file main nya ->Main.c
+• Output Format : hasil kompilasi yang diinginkan (iHex, Bin, atawa srec), pilih saja iHex.
+• Optimation level : s (standart), level optimasi yang akan digunakan oleh compiler. s:standart.
+• Debug Format : AVR ext COFF
+• Programmer :STK200
+• port lpt1.</p></li><li><p>Save makefile ini di dir yang sama dengan program yang dibuat di Programmer Notepad.</p></li><li><p>Kembali ke Programmer Notepad, pilih Tool -> Make All.</p></li><li><p>Pesan : Proses Exit Code:0, menandakan file iHex telah terbuat.</p></li></ol><p><em>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; end of doc. &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-</em></p><p>Seiring berputarnya bumi ( eh, berjalannya waktu), tuntutan untuk tidak memakai software bajakan semakin tajam, dan seperti pepatah kuno, membajak bukanlah hal yang bijak. Apa salahnya memulai memakai software open source, toh ini juga sangat bagus dan gak kalah dengan software komersil. yach&mldr;.., itung2 ngurangin dosa dari pembajakan &mldr;. :-)</p></section><nav class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"><a class="ltr:pr-3 rtl:pl-3" href=https://xedixermawan.github.io/2009/01/10/troublefinder-not-trouble-maker/><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Troublefinder, not trouble maker</span></a><a class="justify-end pl-3 ltr:ml-auto rtl:mr-auto" href=https://xedixermawan.github.io/2008/11/21/embedded-web-server-untuk-monitoring-dan-data-logging/><span>Embedded Web Server untuk Monitoring dan Data Logging.</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a></nav></article></main><footer class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"><div class=mr-auto>© 2007-2024 XediXermawan</div><a class="link mx-6" href=https://gohugo.io/ rel=noopener target=_blank>powered by hugo️️</a>️
+<a class=link href=https://github.com/nanxiaobei/hugo-paper rel=noopener target=_blank>hugo-paper</a></footer></body></html>

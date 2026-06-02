@@ -1,32 +1,5 @@
-<!doctype html>
-
-
-
-
-
-
-
-<html
-  class="not-ready lg:text-base"
-  style="--bg:#fbfbfb"
-  lang="en"
-  dir="ltr"
-><head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
-
-  
-  <title>Simple &#34;thread pool&#34; test - Home</title>
-
-  
-  <meta name="theme-color" />
-
-  <meta name="description" content="saya mencoba simple thread pool menggunakan std::thread C&#43;&#43; 11 dan sepertinya bekerja sesuai keinginan dari test yang saya lakukan (warning : code dibawah ini trivial).  jumlah thread saya harcode berjumlah 2 :p.  untuk mengetest thread pool, saya beri task meng-copy files berjumlah 100 (nama file : 1- 100) .  compiler: vs studio express 2012 . header :
-#include &lt;time.h&gt;
+<!doctype html><html class="not-ready lg:text-base" style=--bg:#fbfbfb lang=en dir=ltr><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Simple "thread pool" test - Home</title><meta name=theme-color><meta name=description content="saya mencoba simple thread pool menggunakan std::thread C++ 11 dan sepertinya bekerja sesuai keinginan dari test yang saya lakukan (warning : code dibawah ini trivial).  jumlah thread saya harcode berjumlah 2 :p.  untuk mengetest thread pool, saya beri task meng-copy files berjumlah 100 (nama file : 1- 100) .  compiler: vs studio express 2012 . header :
+#include <time.h>
 #include 
 #include 
 #include 
@@ -35,218 +8,55 @@
 class worker
 {
 private:
-std::vector&lt; std::function&lt;void()&gt; &gt; vecFunc;
+std::vector< std::function<void()> > vecFunc;
 std::mutex m_mutex;
 public:
-void addtask(std::function&lt;void()&gt; task) {
+void addtask(std::function<void()> task) {
 std::lock_guardstd::mutex lockg(m_mutex);
 vecFunc.push_back(task);
 }
 void executeSave() {
 while(1) {
-if (vecFunc.size() &gt; 0)  {
+if (vecFunc.size() > 0)  {
 std::lock_guardstd::mutex lockg(m_mutex);
-for (int i = 0; i &lt; vecFunc.size(); i&#43;&#43;) {
+for (int i = 0; i < vecFunc.size(); i++) {
 vecFunci;
 }
 vecFunc.clear();
 }
 }
 }
-};" />
-  <meta name="author" content="oth3rside" /><link rel="preload stylesheet" as="style" href="https://xedixermawan.github.io/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
-
-  
-  <link rel="preload" as="image" href="https://xedixermawan.github.io/theme.png" />
-
-  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/874371989962b8461ad94e8119d82bc7?s=160&amp;d=identicon" />
-
-  <link rel="preload" as="image" href="https://xedixermawan.github.io/twitter.svg" /><link rel="preload" as="image" href="https://xedixermawan.github.io/github.svg" /><link rel="preload" as="image" href="https://xedixermawan.github.io/instagram.svg" />
-
-  <script
-    defer
-    src="https://xedixermawan.github.io/highlight.min.js"
-    onload="hljs.initHighlightingOnLoad()"
-  ></script>
-
-  
-  <link
-    rel="icon"
-    href="https://xedixermawan.github.io/favicon.ico"
-  />
-  <link
-    rel="apple-touch-icon"
-    href="https://xedixermawan.github.io/apple-touch-icon.png"
-  />
-
-  <meta name="generator" content="Hugo 0.152.2">
-  <meta itemprop="name" content="Simple &#34;thread pool&#34; test">
-  <meta itemprop="description" content="saya mencoba simple thread pool menggunakan std::thread C&#43;&#43; 11 dan sepertinya bekerja sesuai keinginan dari test yang saya lakukan (warning : code dibawah ini trivial). jumlah thread saya harcode berjumlah 2 :p. untuk mengetest thread pool, saya beri task meng-copy files berjumlah 100 (nama file : 1- 100) . compiler: vs studio express 2012 . header :
-#include &lt;time.h&gt; #include #include #include [sourcecode language=“cpp”] //kelas worker thread class worker { private: std::vector&lt; std::function&lt;void()&gt; &gt; vecFunc; std::mutex m_mutex; public: void addtask(std::function&lt;void()&gt; task) { std::lock_guardstd::mutex lockg(m_mutex); vecFunc.push_back(task); } void executeSave() { while(1) { if (vecFunc.size() &gt; 0) { std::lock_guardstd::mutex lockg(m_mutex); for (int i = 0; i &lt; vecFunc.size(); i&#43;&#43;) { vecFunci; } vecFunc.clear(); } } } };">
-  <meta itemprop="datePublished" content="2012-10-21T17:05:52+00:00">
-  <meta itemprop="dateModified" content="2012-10-21T17:05:52+00:00">
-  <meta itemprop="wordCount" content="353">
-  <meta itemprop="keywords" content="C/C&#43;&#43; Diary"><meta property="og:url" content="https://xedixermawan.github.io/2012/10/21/simple-thread-pool-test/">
-  <meta property="og:site_name" content="Home">
-  <meta property="og:title" content="Simple &#34;thread pool&#34; test">
-  <meta property="og:description" content="saya mencoba simple thread pool menggunakan std::thread C&#43;&#43; 11 dan sepertinya bekerja sesuai keinginan dari test yang saya lakukan (warning : code dibawah ini trivial). jumlah thread saya harcode berjumlah 2 :p. untuk mengetest thread pool, saya beri task meng-copy files berjumlah 100 (nama file : 1- 100) . compiler: vs studio express 2012 . header :
-#include &lt;time.h&gt; #include #include #include [sourcecode language=“cpp”] //kelas worker thread class worker { private: std::vector&lt; std::function&lt;void()&gt; &gt; vecFunc; std::mutex m_mutex; public: void addtask(std::function&lt;void()&gt; task) { std::lock_guardstd::mutex lockg(m_mutex); vecFunc.push_back(task); } void executeSave() { while(1) { if (vecFunc.size() &gt; 0) { std::lock_guardstd::mutex lockg(m_mutex); for (int i = 0; i &lt; vecFunc.size(); i&#43;&#43;) { vecFunci; } vecFunc.clear(); } } } };">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2012-10-21T17:05:52+00:00">
-    <meta property="article:modified_time" content="2012-10-21T17:05:52+00:00">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Simple &#34;thread pool&#34; test">
-  <meta name="twitter:description" content="saya mencoba simple thread pool menggunakan std::thread C&#43;&#43; 11 dan sepertinya bekerja sesuai keinginan dari test yang saya lakukan (warning : code dibawah ini trivial). jumlah thread saya harcode berjumlah 2 :p. untuk mengetest thread pool, saya beri task meng-copy files berjumlah 100 (nama file : 1- 100) . compiler: vs studio express 2012 . header :
-#include &lt;time.h&gt; #include #include #include [sourcecode language=“cpp”] //kelas worker thread class worker { private: std::vector&lt; std::function&lt;void()&gt; &gt; vecFunc; std::mutex m_mutex; public: void addtask(std::function&lt;void()&gt; task) { std::lock_guardstd::mutex lockg(m_mutex); vecFunc.push_back(task); } void executeSave() { while(1) { if (vecFunc.size() &gt; 0) { std::lock_guardstd::mutex lockg(m_mutex); for (int i = 0; i &lt; vecFunc.size(); i&#43;&#43;) { vecFunci; } vecFunc.clear(); } } } };">
-
-  <link rel="canonical" href="https://xedixermawan.github.io/2012/10/21/simple-thread-pool-test/" />
-</head>
-<body
-    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
-  ><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://xedixermawan.github.io/"
-      >Home</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
-
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
-
-  <script>
-    
-    const htmlClass = document.documentElement.classList;
-    setTimeout(() => {
-      htmlClass.remove('not-ready');
-    }, 10);
-
-    
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
-    const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#fbfbfb'.replace(/"/g, '');
-    const setDark = (isDark) => {
-      metaTheme.setAttribute('content', isDark ? "rgb(0 0 0 / 85%)" : lightBg);
-      htmlClass[isDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', isDark);
-    };
-
-    
-    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    if (htmlClass.contains('dark')) {
-      setDark(true);
-    } else {
-      const darkVal = localStorage.getItem('dark');
-      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
-    }
-
-    
-    darkScheme.addEventListener('change', (event) => {
-      setDark(event.matches);
-    });
-
-    
-    const btnDark = document.querySelector('.btn-dark');
-    btnDark.addEventListener('click', () => {
-      setDark(localStorage.getItem('dark') !== 'true');
-    });
-  </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/read/"
-        >Read</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./twitter.svg)"
-        href="https://twitter.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >twitter</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./github.svg)"
-        href="https://github.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >github</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./instagram.svg)"
-        href="https://instagram.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >instagram</a>
-    </nav>
-  </div>
-</header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    ><article>
-  <header class="mb-14">
-    <h1 class="my-0! pb-2.5">Simple &#34;thread pool&#34; test</h1><div class="text-xs antialiased opacity-60"><time>Oct 21, 2012</time><span class="mx-1">&middot;</span>
-      <span>oth3rside</span></div></header>
-
-  <section><p>saya mencoba simple thread pool menggunakan std::thread C++ 11 dan sepertinya bekerja sesuai keinginan dari test yang saya lakukan (warning : code dibawah ini trivial).  jumlah thread saya harcode berjumlah 2 :p.  untuk mengetest thread pool, saya beri task meng-<em>copy</em> files berjumlah 100 (nama file : 1- 100) .  compiler: vs studio express 2012 . header :</p>
-<p>#include &lt;time.h&gt;
-#include <thread>
-#include <future>
-#include <functional></p>
-<p>[sourcecode language=&ldquo;cpp&rdquo;]
+};"><meta name=author content="oth3rside"><link rel="preload stylesheet" as=style href=https://xedixermawan.github.io/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css integrity="sha256-6GrmfgHi0gVRBqv3K+c1fJUBkQYOXxWfJOJ5D9gjfow="><link rel=preload as=image href=https://xedixermawan.github.io/theme.png><link rel=preload as=image href="https://www.gravatar.com/avatar/874371989962b8461ad94e8119d82bc7?s=160&amp;d=identicon"><link rel=preload as=image href=https://xedixermawan.github.io/twitter.svg><link rel=preload as=image href=https://xedixermawan.github.io/github.svg><link rel=preload as=image href=https://xedixermawan.github.io/instagram.svg><script defer src=https://xedixermawan.github.io/highlight.min.js onload=hljs.initHighlightingOnLoad()></script><link rel=icon href=https://xedixermawan.github.io/favicon.ico><link rel=apple-touch-icon href=https://xedixermawan.github.io/apple-touch-icon.png><meta name=generator content="Hugo 0.152.2"><meta itemprop=name content='Simple "thread pool" test'><meta itemprop=description content="saya mencoba simple thread pool menggunakan std::thread C++ 11 dan sepertinya bekerja sesuai keinginan dari test yang saya lakukan (warning : code dibawah ini trivial). jumlah thread saya harcode berjumlah 2 :p. untuk mengetest thread pool, saya beri task meng-copy files berjumlah 100 (nama file : 1- 100) . compiler: vs studio express 2012 . header :
+#include <time.h> #include #include #include [sourcecode language=“cpp”] //kelas worker thread class worker { private: std::vector< std::function<void()> > vecFunc; std::mutex m_mutex; public: void addtask(std::function<void()> task) { std::lock_guardstd::mutex lockg(m_mutex); vecFunc.push_back(task); } void executeSave() { while(1) { if (vecFunc.size() > 0) { std::lock_guardstd::mutex lockg(m_mutex); for (int i = 0; i < vecFunc.size(); i++) { vecFunci; } vecFunc.clear(); } } } };"><meta itemprop=datePublished content="2012-10-21T17:05:52+00:00"><meta itemprop=dateModified content="2012-10-21T17:05:52+00:00"><meta itemprop=wordCount content="353"><meta itemprop=keywords content="C/C++ Diary"><meta property="og:url" content="https://xedixermawan.github.io/2012/10/21/simple-thread-pool-test/"><meta property="og:site_name" content="Home"><meta property="og:title" content='Simple "thread pool" test'><meta property="og:description" content="saya mencoba simple thread pool menggunakan std::thread C++ 11 dan sepertinya bekerja sesuai keinginan dari test yang saya lakukan (warning : code dibawah ini trivial). jumlah thread saya harcode berjumlah 2 :p. untuk mengetest thread pool, saya beri task meng-copy files berjumlah 100 (nama file : 1- 100) . compiler: vs studio express 2012 . header :
+#include <time.h> #include #include #include [sourcecode language=“cpp”] //kelas worker thread class worker { private: std::vector< std::function<void()> > vecFunc; std::mutex m_mutex; public: void addtask(std::function<void()> task) { std::lock_guardstd::mutex lockg(m_mutex); vecFunc.push_back(task); } void executeSave() { while(1) { if (vecFunc.size() > 0) { std::lock_guardstd::mutex lockg(m_mutex); for (int i = 0; i < vecFunc.size(); i++) { vecFunci; } vecFunc.clear(); } } } };"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2012-10-21T17:05:52+00:00"><meta property="article:modified_time" content="2012-10-21T17:05:52+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content='Simple "thread pool" test'><meta name=twitter:description content="saya mencoba simple thread pool menggunakan std::thread C++ 11 dan sepertinya bekerja sesuai keinginan dari test yang saya lakukan (warning : code dibawah ini trivial). jumlah thread saya harcode berjumlah 2 :p. untuk mengetest thread pool, saya beri task meng-copy files berjumlah 100 (nama file : 1- 100) . compiler: vs studio express 2012 . header :
+#include <time.h> #include #include #include [sourcecode language=“cpp”] //kelas worker thread class worker { private: std::vector< std::function<void()> > vecFunc; std::mutex m_mutex; public: void addtask(std::function<void()> task) { std::lock_guardstd::mutex lockg(m_mutex); vecFunc.push_back(task); } void executeSave() { while(1) { if (vecFunc.size() > 0) { std::lock_guardstd::mutex lockg(m_mutex); for (int i = 0; i < vecFunc.size(); i++) { vecFunci; } vecFunc.clear(); } } } };"><link rel=canonical href=https://xedixermawan.github.io/2012/10/21/simple-thread-pool-test/></head><body class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"><header class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"><div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto"><a class="-translate-y-[1px] text-2xl font-medium" href=https://xedixermawan.github.io/>Home</a><div class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]" role=button aria-label=Dark></div></div><div class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8" role=button aria-label=Menu></div><script>const htmlClass=document.documentElement.classList;setTimeout(()=>{htmlClass.remove("not-ready")},10);const btnMenu=document.querySelector(".btn-menu");btnMenu.addEventListener("click",()=>{htmlClass.toggle("open")});const metaTheme=document.querySelector('meta[name="theme-color"]'),lightBg="#fbfbfb".replace(/"/g,""),setDark=e=>{metaTheme.setAttribute("content",e?"rgb(0 0 0 / 85%)":lightBg),htmlClass[e?"add":"remove"]("dark"),localStorage.setItem("dark",e)},darkScheme=window.matchMedia("(prefers-color-scheme: dark)");if(htmlClass.contains("dark"))setDark(!0);else{const e=localStorage.getItem("dark");setDark(e?e==="true":darkScheme.matches)}darkScheme.addEventListener("change",e=>{setDark(e.matches)});const btnDark=document.querySelector(".btn-dark");btnDark.addEventListener("click",()=>{setDark(localStorage.getItem("dark")!=="true")})</script><div class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"><nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"><a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href=/about/>About</a><a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href=/read/>Read</a></nav><nav class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"><a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./twitter.svg) href=https://twitter.com/XediXermawan target=_blank rel=me>twitter</a>
+<a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./github.svg) href=https://github.com/XediXermawan target=_blank rel=me>github</a>
+<a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./instagram.svg) href=https://instagram.com/XediXermawan target=_blank rel=me>instagram</a></nav></div></header><main class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"><article><header class=mb-14><h1 class="my-0! pb-2.5">Simple "thread pool" test</h1><div class="text-xs antialiased opacity-60"><time>Oct 21, 2012</time><span class=mx-1>&#183;</span>
+<span>oth3rside</span></div></header><section><p>saya mencoba simple thread pool menggunakan std::thread C++ 11 dan sepertinya bekerja sesuai keinginan dari test yang saya lakukan (warning : code dibawah ini trivial).  jumlah thread saya harcode berjumlah 2 :p.  untuk mengetest thread pool, saya beri task meng-<em>copy</em> files berjumlah 100 (nama file : 1- 100) .  compiler: vs studio express 2012 . header :</p><p>#include &lt;time.h>
+#include <thread>#include <future>#include <functional></p><p>[sourcecode language=&ldquo;cpp&rdquo;]
 //kelas worker thread
 class worker
 {
 private:
-std::vector&lt; std::function&lt;void()&gt; &gt; vecFunc;
+std::vector&lt; std::function&lt;void()> > vecFunc;
 std::mutex m_mutex;
 public:
-void addtask(std::function&lt;void()&gt; task) {
-std::lock_guard<a href="std::mutex">std::mutex</a> lockg(m_mutex);
+void addtask(std::function&lt;void()> task) {
+std::lock_guard<a href=std::mutex>std::mutex</a> lockg(m_mutex);
 vecFunc.push_back(task);
 }
 void executeSave() {
 while(1) {
-if (vecFunc.size() &gt; 0)  {
-std::lock_guard<a href="std::mutex">std::mutex</a> lockg(m_mutex);
+if (vecFunc.size() > 0) {
+std::lock_guard<a href=std::mutex>std::mutex</a> lockg(m_mutex);
 for (int i = 0; i &lt; vecFunc.size(); i++) {
-vecFunc<a href="">i</a>;
+vecFunc<a href>i</a>;
 }
 vecFunc.clear();
 }
 }
 }
-};</p>
-<p>// kelas thread pool
+};</p><p>// kelas thread pool
 class FSThreadPool
 {
 private:
@@ -255,12 +65,12 @@ t_iterator =0;
 m_ThreadCount = 2;
 };
 int m_ThreadCount;
-std::vector&lt; std::thread* &gt; m_threads;
+std::vector&lt; std::thread* > m_threads;
 static FSThreadPool* m_Instance;
 worker m_worker1;
 worker m_worker2;
 int t_iterator;
-std::vector<a href="std::thread*">std::thread*</a> threadSaving;
+std::vector<a href=std::thread*>std::thread*</a> threadSaving;
 public:
 static FSThreadPool* getInstance() {
 if(m_Instance == NULL)
@@ -276,36 +86,29 @@ void Init() {
 m_threads.push_back( new std::thread( &amp;worker::executeSave,&amp;m_worker1 ) );
 m_threads.push_back( new std::thread( &amp;worker::executeSave,&amp;m_worker2 ) );
 }
-void addtask(std::function&lt;void()&gt; task) {
+void addtask(std::function&lt;void()> task) {
 if(t_iterator==0)
 m_worker1.addtask(task);
 else if(t_iterator==1)
-m_worker2.addtask(task);</p>
-<pre><code>	t_iterator++;
+m_worker2.addtask(task);</p><pre><code>	t_iterator++;
 	if(t_iterator==2)
 		t_iterator=0;
 }
-</code></pre>
-<p>};
-FSThreadPool* FSThreadPool::m_Instance = NULL;</p>
-<p>//=== test thread ====//
+</code></pre><p>};
+FSThreadPool* FSThreadPool::m_Instance = NULL;</p><p>//=== test thread ====//
 void Thcopyfile(wchar_t* source,wchar_t* dest)
 {
-CopyFile2(source,dest,NULL);</p>
-<pre><code>delete source;
+CopyFile2(source,dest,NULL);</p><pre><code>delete source;
 delete dest;
-</code></pre>
-<p>}</p>
-<p>void fillListFile()
+</code></pre><p>}</p><p>void fillListFile()
 {
-std::vector&lt; char* &gt; vecFname;
+std::vector&lt; char* > vecFname;
 for(int i=0;i&lt;100;i++)
 {
 char* packfname = (char*) malloc(sizeof(char)*256);
 _itoa(i,packfname,10);
 vecFname.push_back(packfname);
-}</p>
-<pre><code>std::vector&lt;char*&gt; ::iterator it;
+}</p><pre><code>std::vector&lt;char*&gt; ::iterator it;
 for (it=vecFname.begin();it!=vecFname.end();it++)
 {
 	char* fname = (*it);
@@ -323,57 +126,26 @@ for (it=vecFname.begin();it!=vecFname.end();it++)
 	wchar_t *w_filePathDEST = 0;
 	w_filePathDEST = (wchar_t*) malloc((strlen(filePathDEST) + 1) * sizeof(wchar_t));
 	mbstowcs(w_filePathDEST, filePathDEST, strlen(filePathDEST) + 1);
-</code></pre>
-<p>#define THREADCOPY
+</code></pre><p>#define THREADCOPY
 #ifndef THREADCOPY
 CopyFile2(w_filePathSRC,w_filePathDEST,NULL);
 delete w_filePathSRC;
 delete w_filePathDEST;
 #else
-FSThreadPool::getInstance()-&gt;addtask( std::bind(&amp;Thcopyfile,w_filePathSRC,w_filePathDEST) );
+FSThreadPool::getInstance()->addtask( std::bind(&amp;Thcopyfile,w_filePathSRC,w_filePathDEST) );
 #endif
 }
-}</p>
-<p>int main()
+}</p><p>int main()
 {
-FSThreadPool::getInstance()-&gt;Init();
-std::cout&laquo;&quot; start copying &hellip;.&quot;&laquo;std::endl;
-long long startTime  =  clock();
+FSThreadPool::getInstance()->Init();
+std::cout&#171;" start copying &mldr;."&#171;std::endl;
+long long startTime = clock();
 fillListFile();
-long long TotalTime  =  clock() - startTime;
-std::cout&laquo;&quot; end copying &hellip;.&quot;&laquo;std::endl;
-std::cout&laquo;&quot; time : &ldquo;&laquo;TotalTime&laquo;std::endl;</p>
-<pre><code>while(1) {
+long long TotalTime = clock() - startTime;
+std::cout&#171;" end copying &mldr;."&#171;std::endl;
+std::cout&#171;" time : &ldquo;&#171;TotalTime&#171;std::endl;</p><pre><code>while(1) {
 	std::cout&lt;&lt;&quot;in main loop&quot;&lt;&lt;std::endl;
 }
-</code></pre>
-<p>}
-[/sourcecode]</p>
-<p>// weekend 21 sept 2012, // yogyakarta</p>
-</section>
-
-  <nav
-    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
-  ><a class="ltr:pr-3 rtl:pl-3" href="https://xedixermawan.github.io/2013/01/01/berhati-hati-dengan-cc-array/"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Berhati-hati dengan C/C&#43;&#43; array</span></a
-    ><a
-      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
-      href="https://xedixermawan.github.io/2012/06/30/582/"
-      ><span>Mencoba Smart pointer dari Boost</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
-    ></nav></article></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2007-2024 XediXermawan</div>
-  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
-    >powered by hugo️️</a
-  >️
-  <a
-    class="link"
-    href="https://github.com/nanxiaobei/hugo-paper"
-    rel="noopener"
-    target="_blank"
-    >hugo-paper</a
-  >
-</footer>
-</body>
-</html>
+</code></pre><p>}
+[/sourcecode]</p><p>// weekend 21 sept 2012, // yogyakarta</p></section><nav class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"><a class="ltr:pr-3 rtl:pl-3" href=https://xedixermawan.github.io/2013/01/01/berhati-hati-dengan-cc-array/><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Berhati-hati dengan C/C++ array</span></a><a class="justify-end pl-3 ltr:ml-auto rtl:mr-auto" href=https://xedixermawan.github.io/2012/06/30/582/><span>Mencoba Smart pointer dari Boost</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a></nav></article></main><footer class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"><div class=mr-auto>© 2007-2024 XediXermawan</div><a class="link mx-6" href=https://gohugo.io/ rel=noopener target=_blank>powered by hugo️️</a>️
+<a class=link href=https://github.com/nanxiaobei/hugo-paper rel=noopener target=_blank>hugo-paper</a></footer></body></html>

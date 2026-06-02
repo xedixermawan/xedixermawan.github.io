@@ -1,76 +1,59 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Mobile Apps on Home</title>
-    <link>https://xedixermawan.github.io/categories/mobile-apps/</link>
-    <description>Recent content in Mobile Apps on Home</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <copyright>© 2007-2024 XediXermawan</copyright>
-    <lastBuildDate>Sat, 30 May 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://xedixermawan.github.io/categories/mobile-apps/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Apa yang baru di Android 2026</title>
-      <link>https://xedixermawan.github.io/2026/05/30/apa-yang-baru-di-android-2026/</link>
-      <pubDate>Sat, 30 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://xedixermawan.github.io/2026/05/30/apa-yang-baru-di-android-2026/</guid>
-      <description>&lt;p&gt;Diambil dari Google I/O 2026 (digelar 19 Mei 2026, didahului The Android Show pada 12 Mei), dibagi menjadi tiga bagian.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-apa-yang-baru-di-android-phone&#34;&gt;1. Apa yang baru di Android Phone&lt;/h2&gt;&#xA;&lt;p&gt;Tema besarnya adalah &lt;strong&gt;Gemini Intelligence&lt;/strong&gt;, lapisan AI proaktif yang ditanam langsung ke sistem Android. Google memperkenalkan Gemini Intelligence sebagai fitur AI proaktif baru di Android, dengan tujuan agar pengguna lebih sedikit menatap layar dan lebih banyak melakukan hal yang disukai. Beberapa hal penting:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Project PLTS mini</title>
-      <link>https://xedixermawan.github.io/2026/05/14/catatan-project-plts-mini-v1/</link>
-      <pubDate>Thu, 14 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://xedixermawan.github.io/2026/05/14/catatan-project-plts-mini-v1/</guid>
-      <description>&lt;h2 id=&#34;catatan-project-plts-mini-50-wp--lifepo4-12v-30ah&#34;&gt;Catatan Project PLTS Mini 50 Wp + LiFePO4 12V 30Ah&lt;/h2&gt;&#xA;&lt;p&gt;Saya sedang mencoba membuat sistem PLTS mini sederhana untuk kebutuhan ringan dan sekaligus belajar cara kerja panel surya, baterai, BMS, SCC, dan kabel dalam satu sistem. Ini adalah versi 1, dari project PLTS ku.&lt;/p&gt;&#xA;&lt;p&gt;Sistem ini menggunakan panel surya &lt;strong&gt;50 Wp&lt;/strong&gt; dan baterai &lt;strong&gt;LiFePO4 12V 30Ah&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;daftar-komponen&#34;&gt;Daftar Komponen&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Panel Surya 50 Wp        : Rp370.000&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Baterai 12V 30Ah (4 PCS) : Rp639.000&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;BMS                      : Rp74.000&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;SCC 12V/24V 10A           : Rp66.710&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Kabel twin MC4            : Rp185.000&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;------------------------------------&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Total                    : Rp1.334.000&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;detail-komponen&#34;&gt;Detail Komponen&lt;/h2&gt;&#xA;&lt;p&gt;Panel surya yang digunakan adalah &lt;strong&gt;Solar Panel 50 Wp Mono Zanetta Halfcut&lt;/strong&gt;. Panel ini menjadi sumber energi utama untuk mengisi baterai melalui solar charge controller.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Crash AutoBackup</title>
-      <link>https://xedixermawan.github.io/2025/04/29/crash-autobackup/</link>
-      <pubDate>Tue, 29 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://xedixermawan.github.io/2025/04/29/crash-autobackup/</guid>
-      <description>&lt;p&gt;**Case : Crash di Android&lt;/p&gt;&#xA;&lt;p&gt;Saya mengalami crash pada salah satu aplikasi, dengan log crash seperti terlampir. Crash ini hanya terjadi di satu perangkat Android, tidak di semua perangkat.&lt;/p&gt;&#xA;&lt;p&gt;Setelah mencari solusi di Google, saya menemukan saran dari beberapa orang untuk menonaktifkan allowBackup di Android manifest dengan menambahkan:&lt;/p&gt;&#xA;&lt;p&gt;android:allowBackup=&amp;ldquo;false&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;Lalu, apa hubungannya dengan flag allowBackup?&lt;/p&gt;&#xA;&lt;p&gt;Setelah saya telusuri dari log crash dan menelusuri sumber kodenya, ternyata crash disebabkan oleh penggunaan EncryptedSharedPreferences. Data yang disimpan menggunakan EncryptedSharedPreferences tidak boleh di backup secara otomatis. Mengapa?&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Android Auto Backup</title>
-      <link>https://xedixermawan.github.io/2025/04/17/android-auto-backup/</link>
-      <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://xedixermawan.github.io/2025/04/17/android-auto-backup/</guid>
-      <description>&lt;p&gt;Android Auto Backup&lt;/p&gt;&#xA;&lt;p&gt;Android menyediakan fitur backup otomatis untuk setiap aplikasi sejak Android 6.0 ( API Level 23 ) , yang rilis sejak akhir 2015. Fitur backup otomatis ini maksudnya :  sistem Android akan melakukan online backup data dari sebuah aplikasi, tanpa sepengetahuan pengguna, dengan cara meng-upload data aplikasi ke Google Drive. Dari perspektif developer app, yang perlu dilakukan hanya menambahkan field android:allowBackup=&amp;ldquo;true&amp;rdquo;, tanpa perlu adanya code tambahan. Field di android manifest ini, tidaklah wajib ada saat diperkenalkan, namun secara default nilainya true .&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Belajar Android dan iOS</title>
-      <link>https://xedixermawan.github.io/2023/11/19/belajar-android-dan-ios/</link>
-      <pubDate>Sun, 19 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>https://xedixermawan.github.io/2023/11/19/belajar-android-dan-ios/</guid>
-      <description>&lt;p&gt;Saya mulai mendalami pengembangan aplikasi Android sekitar pertengahan tahun&#xA;2015. Sedangkan untuk iOS, saya baru mulai belajar di bulan Oktober&#xA;2023—jedanya memang cukup lama. Keinginan mempelajari iOS muncul karena saya&#xA;berencana merilis beberapa aplikasi yang sebelumnya sudah tersedia di Play&#xA;Store agar bisa diunggah juga di App Store. Meskipun jumlah pengguna iPhone di&#xA;Indonesia masih jauh di bawah Android, bukan berarti tidak ada peluang—pengguna&#xA;iPhone disini tetap lumayan banyak. Dan “mereka” –pengguna iPhone katanya&#xA;orang-orang berduit. &lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Android Vector Drawable</title>
-      <link>https://xedixermawan.github.io/2019/09/01/android-vector-drawable/</link>
-      <pubDate>Sun, 01 Sep 2019 04:34:22 +0000</pubDate>
-      <guid>https://xedixermawan.github.io/2019/09/01/android-vector-drawable/</guid>
-      <description>&lt;hr&gt;&#xA;&lt;p&gt;Asset berformat vector drawable memiliki beberapa keunggulan ketika dipakai di&#xA;aplikasi Android. Vector drawable pada dasarnya adalah file text yang berisi&#xA;deskripsi gambar. Karena format text maka ukurannya sangat kecil. Terlebih kita&#xA;tidak perlu membuat assets untuk bermacam macam resolusi, karena vector&#xA;drawable bisa di &lt;em&gt;scale&lt;/em&gt; ukuran gambarnya tanpa mengurangi kualitas.&lt;/p&gt;&#xA;&lt;p&gt;Hal ini memperkuat keuntungan dari segi ukuran gambar, karena tidak perlu&#xA;menyediakan gambar dalam beberapa versi resolusi layar. Efek lainnya adalah&#xA;tidak perlu ribet, cukup mengurusi 1 gambar saja.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Aplikasi Android Pencatat Keuangan</title>
-      <link>https://xedixermawan.github.io/2017/07/08/aplikasi-android-pencatat-keuangan/</link>
-      <pubDate>Sat, 08 Jul 2017 04:34:22 +0000</pubDate>
-      <guid>https://xedixermawan.github.io/2017/07/08/aplikasi-android-pencatat-keuangan/</guid>
-      <description>&lt;p&gt;Aplikasi yang cukup membosankan secara teknis untuk dibuat, namun saya cukup&#xA;tertarik untuk membuatnya, karena saya juga ingin mencatat pengeluaran ( waktu&#xA;tertentu saja, tidak bisa kalau rajin ) . Aplikasi untuk mencatat pengeluaran&#xA;dan pemasukan, dengan filosofi desain yang sama : simple dan mudah digunakan .&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://offground.files.wordpress.com/2017/07/screen-shoot_promo.png?w=600&#34; alt=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;https://play.google.com/store/apps/details?id=com.asyncbyte.moneytracker&#34;&gt; &lt;/a&gt;&#xA;Aplikasi Catatan Keuangan Harian&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;release 13 Juni 2017&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;saya release 13 Juni 2017, belum sampai 1 bulan ( hari ini 8 juli 2017 ), sudah&#xA;terdownload &amp;gt;1000 pengguna. Permulaan stats yang bagus :)  .&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>New Design Calendar App</title>
-      <link>https://xedixermawan.github.io/2017/03/07/new-design-calendar-app/</link>
-      <pubDate>Tue, 07 Mar 2017 07:57:33 +0000</pubDate>
-      <guid>https://xedixermawan.github.io/2017/03/07/new-design-calendar-app/</guid>
-      <description>&lt;p&gt;Selamat tahun baru 2017 !&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://offground.files.wordpress.com/2017/03/new.png&#34; alt=&#34;new&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://offground.files.wordpress.com/2017/03/untitled-1.png&#34; alt=&#34;Untitled-1&#34;&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Galeri kalender 2015 2016 ( Indonesia )</title>
-      <link>https://xedixermawan.github.io/2014/11/16/galeri-kalender-2015-indonesia/</link>
-      <pubDate>Sun, 16 Nov 2014 17:56:12 +0000</pubDate>
-      <guid>https://xedixermawan.github.io/2014/11/16/galeri-kalender-2015-indonesia/</guid>
-      <description>&lt;p&gt;Jakarta, November 16, 2014&lt;/p&gt;&#xA;&lt;p&gt;Beberapa galeri kalender 2015 Indonesia ( dengan pasaran jawa : pon , pahing , kliwon , legi , wage )&lt;/p&gt;&#xA;&lt;p&gt;download :  &lt;a href=&#34;https://www.flickr.com/photos/xediview/15805620702/in/photostream/&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://offground.files.wordpress.com/2014/11/kalender_2015_indonesia_7.png&#34;&gt;&lt;img src=&#34;https://offground.files.wordpress.com/2014/11/kalender_2015_indonesia_7.png?w=660&#34; alt=&#34;Kalender 2015 Indonesia&#34;&gt;&#xA;&lt;/a&gt; Kalender 2015 Indonesia&lt;/p&gt;&#xA;&lt;p&gt;kalender 2015 Indonesia yang lain :  &lt;a href=&#34;https://www.flickr.com/photos/xediview/15805620702/in/photostream/&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;dibuat dengan &lt;a href=&#34;http://offground.wordpress.com/2014/11/16/my-calendar-maker/&#34;&gt;program&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Update Oktober 2015 :&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;saya membuat banyak sekali kalender 2016 dengan berbagai macam type font. bisa didownload disini :&#xA;&lt;a href=&#34;https://www.flickr.com/photos/xediview/21978475394/&#34;&gt;https://www.flickr.com/photos/xediview/21978475394/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Update Desember 2015 :&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Beberapa minggu lalu saya membuat kalender Indonesia versi Android. di dalam versi android dimasukkan juga liburan dan cuti bersama 2016. Kalau tertarik &lt;a href=&#34;https://play.google.com/store/apps/details?id=asyncbyte.kalendar.calendar&amp;amp;hl=en&#34;&gt;bisa diinstall disini&lt;/a&gt;.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mobile Apps on Home</title><link>https://xedixermawan.github.io/categories/mobile-apps/</link><description>Recent content in Mobile Apps on Home</description><generator>Hugo</generator><language>en</language><copyright>© 2007-2024 XediXermawan</copyright><lastBuildDate>Sat, 30 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://xedixermawan.github.io/categories/mobile-apps/index.xml" rel="self" type="application/rss+xml"/><item><title>Apa yang baru di Android 2026</title><link>https://xedixermawan.github.io/2026/05/30/apa-yang-baru-di-android-2026/</link><pubDate>Sat, 30 May 2026 00:00:00 +0000</pubDate><guid>https://xedixermawan.github.io/2026/05/30/apa-yang-baru-di-android-2026/</guid><description>&lt;p&gt;Diambil dari Google I/O 2026 (digelar 19 Mei 2026, didahului The Android Show pada 12 Mei), dibagi menjadi tiga bagian.&lt;/p&gt;
+&lt;h2 id="1-apa-yang-baru-di-android-phone"&gt;1. Apa yang baru di Android Phone&lt;/h2&gt;
+&lt;p&gt;Tema besarnya adalah &lt;strong&gt;Gemini Intelligence&lt;/strong&gt;, lapisan AI proaktif yang ditanam langsung ke sistem Android. Google memperkenalkan Gemini Intelligence sebagai fitur AI proaktif baru di Android, dengan tujuan agar pengguna lebih sedikit menatap layar dan lebih banyak melakukan hal yang disukai. Beberapa hal penting:&lt;/p&gt;</description></item><item><title>Project PLTS mini</title><link>https://xedixermawan.github.io/2026/05/14/catatan-project-plts-mini-v1/</link><pubDate>Thu, 14 May 2026 00:00:00 +0000</pubDate><guid>https://xedixermawan.github.io/2026/05/14/catatan-project-plts-mini-v1/</guid><description>&lt;h2 id="catatan-project-plts-mini-50-wp--lifepo4-12v-30ah"&gt;Catatan Project PLTS Mini 50 Wp + LiFePO4 12V 30Ah&lt;/h2&gt;
+&lt;p&gt;Saya sedang mencoba membuat sistem PLTS mini sederhana untuk kebutuhan ringan dan sekaligus belajar cara kerja panel surya, baterai, BMS, SCC, dan kabel dalam satu sistem. Ini adalah versi 1, dari project PLTS ku.&lt;/p&gt;
+&lt;p&gt;Sistem ini menggunakan panel surya &lt;strong&gt;50 Wp&lt;/strong&gt; dan baterai &lt;strong&gt;LiFePO4 12V 30Ah&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id="daftar-komponen"&gt;Daftar Komponen&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Panel Surya 50 Wp : Rp370.000
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Baterai 12V 30Ah (4 PCS) : Rp639.000
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;BMS : Rp74.000
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;SCC 12V/24V 10A : Rp66.710
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Kabel twin MC4 : Rp185.000
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;------------------------------------
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Total : Rp1.334.000
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="detail-komponen"&gt;Detail Komponen&lt;/h2&gt;
+&lt;p&gt;Panel surya yang digunakan adalah &lt;strong&gt;Solar Panel 50 Wp Mono Zanetta Halfcut&lt;/strong&gt;. Panel ini menjadi sumber energi utama untuk mengisi baterai melalui solar charge controller.&lt;/p&gt;</description></item><item><title>Crash AutoBackup</title><link>https://xedixermawan.github.io/2025/04/29/crash-autobackup/</link><pubDate>Tue, 29 Apr 2025 00:00:00 +0000</pubDate><guid>https://xedixermawan.github.io/2025/04/29/crash-autobackup/</guid><description>&lt;p&gt;**Case : Crash di Android&lt;/p&gt;
+&lt;p&gt;Saya mengalami crash pada salah satu aplikasi, dengan log crash seperti terlampir. Crash ini hanya terjadi di satu perangkat Android, tidak di semua perangkat.&lt;/p&gt;
+&lt;p&gt;Setelah mencari solusi di Google, saya menemukan saran dari beberapa orang untuk menonaktifkan allowBackup di Android manifest dengan menambahkan:&lt;/p&gt;
+&lt;p&gt;android:allowBackup=&amp;ldquo;false&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Lalu, apa hubungannya dengan flag allowBackup?&lt;/p&gt;
+&lt;p&gt;Setelah saya telusuri dari log crash dan menelusuri sumber kodenya, ternyata crash disebabkan oleh penggunaan EncryptedSharedPreferences. Data yang disimpan menggunakan EncryptedSharedPreferences tidak boleh di backup secara otomatis. Mengapa?&lt;/p&gt;</description></item><item><title>Android Auto Backup</title><link>https://xedixermawan.github.io/2025/04/17/android-auto-backup/</link><pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate><guid>https://xedixermawan.github.io/2025/04/17/android-auto-backup/</guid><description>&lt;p&gt;Android Auto Backup&lt;/p&gt;
+&lt;p&gt;Android menyediakan fitur backup otomatis untuk setiap aplikasi sejak Android 6.0 ( API Level 23 ) , yang rilis sejak akhir 2015. Fitur backup otomatis ini maksudnya : sistem Android akan melakukan online backup data dari sebuah aplikasi, tanpa sepengetahuan pengguna, dengan cara meng-upload data aplikasi ke Google Drive. Dari perspektif developer app, yang perlu dilakukan hanya menambahkan field android:allowBackup=&amp;ldquo;true&amp;rdquo;, tanpa perlu adanya code tambahan. Field di android manifest ini, tidaklah wajib ada saat diperkenalkan, namun secara default nilainya true .&lt;/p&gt;</description></item><item><title>Belajar Android dan iOS</title><link>https://xedixermawan.github.io/2023/11/19/belajar-android-dan-ios/</link><pubDate>Sun, 19 Nov 2023 00:00:00 +0000</pubDate><guid>https://xedixermawan.github.io/2023/11/19/belajar-android-dan-ios/</guid><description>&lt;p&gt;Saya mulai mendalami pengembangan aplikasi Android sekitar pertengahan tahun
+2015. Sedangkan untuk iOS, saya baru mulai belajar di bulan Oktober
+2023—jedanya memang cukup lama. Keinginan mempelajari iOS muncul karena saya
+berencana merilis beberapa aplikasi yang sebelumnya sudah tersedia di Play
+Store agar bisa diunggah juga di App Store. Meskipun jumlah pengguna iPhone di
+Indonesia masih jauh di bawah Android, bukan berarti tidak ada peluang—pengguna
+iPhone disini tetap lumayan banyak. Dan “mereka” –pengguna iPhone katanya
+orang-orang berduit. &lt;/p&gt;</description></item><item><title>Android Vector Drawable</title><link>https://xedixermawan.github.io/2019/09/01/android-vector-drawable/</link><pubDate>Sun, 01 Sep 2019 04:34:22 +0000</pubDate><guid>https://xedixermawan.github.io/2019/09/01/android-vector-drawable/</guid><description>&lt;hr&gt;
+&lt;p&gt;Asset berformat vector drawable memiliki beberapa keunggulan ketika dipakai di
+aplikasi Android. Vector drawable pada dasarnya adalah file text yang berisi
+deskripsi gambar. Karena format text maka ukurannya sangat kecil. Terlebih kita
+tidak perlu membuat assets untuk bermacam macam resolusi, karena vector
+drawable bisa di &lt;em&gt;scale&lt;/em&gt; ukuran gambarnya tanpa mengurangi kualitas.&lt;/p&gt;
+&lt;p&gt;Hal ini memperkuat keuntungan dari segi ukuran gambar, karena tidak perlu
+menyediakan gambar dalam beberapa versi resolusi layar. Efek lainnya adalah
+tidak perlu ribet, cukup mengurusi 1 gambar saja.&lt;/p&gt;</description></item><item><title>Aplikasi Android Pencatat Keuangan</title><link>https://xedixermawan.github.io/2017/07/08/aplikasi-android-pencatat-keuangan/</link><pubDate>Sat, 08 Jul 2017 04:34:22 +0000</pubDate><guid>https://xedixermawan.github.io/2017/07/08/aplikasi-android-pencatat-keuangan/</guid><description>&lt;p&gt;Aplikasi yang cukup membosankan secara teknis untuk dibuat, namun saya cukup
+tertarik untuk membuatnya, karena saya juga ingin mencatat pengeluaran ( waktu
+tertentu saja, tidak bisa kalau rajin ) . Aplikasi untuk mencatat pengeluaran
+dan pemasukan, dengan filosofi desain yang sama : simple dan mudah digunakan .&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://offground.files.wordpress.com/2017/07/screen-shoot_promo.png?w=600" alt="image"&gt;
+&lt;a href="https://play.google.com/store/apps/details?id=com.asyncbyte.moneytracker"&gt; &lt;/a&gt;
+Aplikasi Catatan Keuangan Harian&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;release 13 Juni 2017&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;saya release 13 Juni 2017, belum sampai 1 bulan ( hari ini 8 juli 2017 ), sudah
+terdownload &amp;gt;1000 pengguna. Permulaan stats yang bagus :)  .&lt;/p&gt;</description></item><item><title>New Design Calendar App</title><link>https://xedixermawan.github.io/2017/03/07/new-design-calendar-app/</link><pubDate>Tue, 07 Mar 2017 07:57:33 +0000</pubDate><guid>https://xedixermawan.github.io/2017/03/07/new-design-calendar-app/</guid><description>&lt;p&gt;Selamat tahun baru 2017 !&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://offground.files.wordpress.com/2017/03/new.png" alt="new"&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img src="https://offground.files.wordpress.com/2017/03/untitled-1.png" alt="Untitled-1"&gt;&lt;/p&gt;</description></item><item><title>Galeri kalender 2015 2016 ( Indonesia )</title><link>https://xedixermawan.github.io/2014/11/16/galeri-kalender-2015-indonesia/</link><pubDate>Sun, 16 Nov 2014 17:56:12 +0000</pubDate><guid>https://xedixermawan.github.io/2014/11/16/galeri-kalender-2015-indonesia/</guid><description>&lt;p&gt;Jakarta, November 16, 2014&lt;/p&gt;
+&lt;p&gt;Beberapa galeri kalender 2015 Indonesia ( dengan pasaran jawa : pon , pahing , kliwon , legi , wage )&lt;/p&gt;
+&lt;p&gt;download :  &lt;a href="https://www.flickr.com/photos/xediview/15805620702/in/photostream/"&gt;LINK&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://offground.files.wordpress.com/2014/11/kalender_2015_indonesia_7.png"&gt;&lt;img src="https://offground.files.wordpress.com/2014/11/kalender_2015_indonesia_7.png?w=660" alt="Kalender 2015 Indonesia"&gt;
+&lt;/a&gt; Kalender 2015 Indonesia&lt;/p&gt;
+&lt;p&gt;kalender 2015 Indonesia yang lain :  &lt;a href="https://www.flickr.com/photos/xediview/15805620702/in/photostream/"&gt;LINK&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;dibuat dengan &lt;a href="http://offground.wordpress.com/2014/11/16/my-calendar-maker/"&gt;program&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update Oktober 2015 :&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;saya membuat banyak sekali kalender 2016 dengan berbagai macam type font. bisa didownload disini :
+&lt;a href="https://www.flickr.com/photos/xediview/21978475394/"&gt;https://www.flickr.com/photos/xediview/21978475394/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update Desember 2015 :&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Beberapa minggu lalu saya membuat kalender Indonesia versi Android. di dalam versi android dimasukkan juga liburan dan cuti bersama 2016. Kalau tertarik &lt;a href="https://play.google.com/store/apps/details?id=asyncbyte.kalendar.calendar&amp;amp;hl=en"&gt;bisa diinstall disini&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>

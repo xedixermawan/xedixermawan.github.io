@@ -1,261 +1,24 @@
-<!doctype html>
-
-
-
-
-
-
-
-<html
-  class="not-ready lg:text-base"
-  style="--bg:#fbfbfb"
-  lang="en"
-  dir="ltr"
-><head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
-
-  
-  <title>Menengok kembali: C&#43;&#43; virtual function - Home</title>
-
-  
-  <meta name="theme-color" />
-
-  <meta name="description" content="edi ermawan, http://offground.wordpress.com
-Fungsi Virtual. Alasan kenapa sebuah fungsi perlu dibuat virtual adalah agar fungsi tersebut bisa di-deklarasikan ulang di kelas turunannya ( meng-override fungsi ) **dan **jika kamu ingin me-resolve pemanggilan body function saat runtime ( late binding/ dynamic binding ). perhatikan kata dihubungkan dengan &ldquo;dan&rdquo; bold mode : ) . Karena member fungsi tanpa virtual pun juga bisa di-override. Bedanya jika sebuah fungsi itu tidak virtual dan dideklarasikan ulang di kelas turunan, ketika fungsi itu dijalankan , maka &ldquo;body function&rdquo; yang akan dijalankan adalah sesuai yang didefinikan. ( body function yang akan dipanggil sudah ditentukan / di-resolve saat compile time , atau yang disebut static binding )." />
-  <meta name="author" content="oth3rside" /><link rel="preload stylesheet" as="style" href="https://xedixermawan.github.io/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
-
-  
-  <link rel="preload" as="image" href="https://xedixermawan.github.io/theme.png" />
-
-  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/874371989962b8461ad94e8119d82bc7?s=160&amp;d=identicon" />
-
-  <link rel="preload" as="image" href="https://xedixermawan.github.io/twitter.svg" /><link rel="preload" as="image" href="https://xedixermawan.github.io/github.svg" /><link rel="preload" as="image" href="https://xedixermawan.github.io/instagram.svg" />
-
-  <script
-    defer
-    src="https://xedixermawan.github.io/highlight.min.js"
-    onload="hljs.initHighlightingOnLoad()"
-  ></script>
-
-  
-  <link
-    rel="icon"
-    href="https://xedixermawan.github.io/favicon.ico"
-  />
-  <link
-    rel="apple-touch-icon"
-    href="https://xedixermawan.github.io/apple-touch-icon.png"
-  />
-
-  <meta name="generator" content="Hugo 0.152.2">
-  <meta itemprop="name" content="Menengok kembali: C&#43;&#43; virtual function">
-  <meta itemprop="description" content="edi ermawan, http://offground.wordpress.com
-Fungsi Virtual. Alasan kenapa sebuah fungsi perlu dibuat virtual adalah agar fungsi tersebut bisa di-deklarasikan ulang di kelas turunannya ( meng-override fungsi ) **dan **jika kamu ingin me-resolve pemanggilan body function saat runtime ( late binding/ dynamic binding ). perhatikan kata dihubungkan dengan “dan” bold mode : ) . Karena member fungsi tanpa virtual pun juga bisa di-override. Bedanya jika sebuah fungsi itu tidak virtual dan dideklarasikan ulang di kelas turunan, ketika fungsi itu dijalankan , maka “body function” yang akan dijalankan adalah sesuai yang didefinikan. ( body function yang akan dipanggil sudah ditentukan / di-resolve saat compile time , atau yang disebut static binding ).">
-  <meta itemprop="datePublished" content="2010-05-15T15:17:07+00:00">
-  <meta itemprop="dateModified" content="2010-05-15T15:17:07+00:00">
-  <meta itemprop="wordCount" content="701">
-  <meta itemprop="keywords" content="Belajar,C&#43;&#43;,Virtual Function"><meta property="og:url" content="https://xedixermawan.github.io/2010/05/15/menengok-kembali-c-virtual-function/">
-  <meta property="og:site_name" content="Home">
-  <meta property="og:title" content="Menengok kembali: C&#43;&#43; virtual function">
-  <meta property="og:description" content="edi ermawan, http://offground.wordpress.com
-Fungsi Virtual. Alasan kenapa sebuah fungsi perlu dibuat virtual adalah agar fungsi tersebut bisa di-deklarasikan ulang di kelas turunannya ( meng-override fungsi ) **dan **jika kamu ingin me-resolve pemanggilan body function saat runtime ( late binding/ dynamic binding ). perhatikan kata dihubungkan dengan “dan” bold mode : ) . Karena member fungsi tanpa virtual pun juga bisa di-override. Bedanya jika sebuah fungsi itu tidak virtual dan dideklarasikan ulang di kelas turunan, ketika fungsi itu dijalankan , maka “body function” yang akan dijalankan adalah sesuai yang didefinikan. ( body function yang akan dipanggil sudah ditentukan / di-resolve saat compile time , atau yang disebut static binding ).">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2010-05-15T15:17:07+00:00">
-    <meta property="article:modified_time" content="2010-05-15T15:17:07+00:00">
-    <meta property="article:tag" content="Belajar">
-    <meta property="article:tag" content="C&#43;&#43;">
-    <meta property="article:tag" content="Virtual Function">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Menengok kembali: C&#43;&#43; virtual function">
-  <meta name="twitter:description" content="edi ermawan, http://offground.wordpress.com
-Fungsi Virtual. Alasan kenapa sebuah fungsi perlu dibuat virtual adalah agar fungsi tersebut bisa di-deklarasikan ulang di kelas turunannya ( meng-override fungsi ) **dan **jika kamu ingin me-resolve pemanggilan body function saat runtime ( late binding/ dynamic binding ). perhatikan kata dihubungkan dengan “dan” bold mode : ) . Karena member fungsi tanpa virtual pun juga bisa di-override. Bedanya jika sebuah fungsi itu tidak virtual dan dideklarasikan ulang di kelas turunan, ketika fungsi itu dijalankan , maka “body function” yang akan dijalankan adalah sesuai yang didefinikan. ( body function yang akan dipanggil sudah ditentukan / di-resolve saat compile time , atau yang disebut static binding ).">
-
-  <link rel="canonical" href="https://xedixermawan.github.io/2010/05/15/menengok-kembali-c-virtual-function/" />
-</head>
-<body
-    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
-  ><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://xedixermawan.github.io/"
-      >Home</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
-
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
-
-  <script>
-    
-    const htmlClass = document.documentElement.classList;
-    setTimeout(() => {
-      htmlClass.remove('not-ready');
-    }, 10);
-
-    
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
-    const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#fbfbfb'.replace(/"/g, '');
-    const setDark = (isDark) => {
-      metaTheme.setAttribute('content', isDark ? "rgb(0 0 0 / 85%)" : lightBg);
-      htmlClass[isDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', isDark);
-    };
-
-    
-    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    if (htmlClass.contains('dark')) {
-      setDark(true);
-    } else {
-      const darkVal = localStorage.getItem('dark');
-      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
-    }
-
-    
-    darkScheme.addEventListener('change', (event) => {
-      setDark(event.matches);
-    });
-
-    
-    const btnDark = document.querySelector('.btn-dark');
-    btnDark.addEventListener('click', () => {
-      setDark(localStorage.getItem('dark') !== 'true');
-    });
-  </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/read/"
-        >Read</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./twitter.svg)"
-        href="https://twitter.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >twitter</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./github.svg)"
-        href="https://github.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >github</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./instagram.svg)"
-        href="https://instagram.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >instagram</a>
-    </nav>
-  </div>
-</header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    ><article>
-  <header class="mb-14">
-    <h1 class="my-0! pb-2.5">Menengok kembali: C&#43;&#43; virtual function</h1><div class="text-xs antialiased opacity-60"><time>May 15, 2010</time><span class="mx-1">&middot;</span>
-      <span>oth3rside</span></div></header>
-
-  <section><p>edi ermawan, <a href="http://offground.wordpress.com">http://offground.wordpress.com</a></p>
-<p><strong>Fungsi Virtual</strong>. Alasan kenapa sebuah fungsi perlu dibuat virtual adalah agar fungsi tersebut bisa di-deklarasikan ulang di kelas turunannya ( meng-override fungsi ) **dan **jika kamu ingin me-resolve pemanggilan <em>body function</em> saat runtime ( late binding/ dynamic binding ). perhatikan kata dihubungkan dengan &ldquo;dan&rdquo; bold mode : ) . Karena member fungsi tanpa virtual pun juga bisa di-override. Bedanya jika sebuah fungsi itu <strong>tidak</strong> virtual dan dideklarasikan ulang di kelas turunan, ketika fungsi itu dijalankan , maka &ldquo;<em>body function</em>&rdquo; yang akan dijalankan adalah sesuai yang didefinikan. ( body function yang akan dipanggil sudah ditentukan / di-resolve saat compile time , atau yang disebut static binding ).</p>
-<p>fungsi virtual :</p>
-<pre><code>  1. 
-</code></pre>
-<p>Anggota dari sebuah kelas</p>
-<pre><code>  2. 
-</code></pre>
-<p>Dideklarasikan dengan awalan virtual</p>
-<pre><code>  3. 
-</code></pre>
-<p>Fungsi virtual yang di-override dikelas turunannya, pada umumnya berbeda implementasinya dengan virtual fungsi di kelas induk. ( masih memiliki nama fungsi dan jumlah argument yang sama tentunya )</p>
-<pre><code>  4. 
-</code></pre>
-<p>Fungsi bisa dibedakan type kelas mana yang memanggil saat runtime</p>
-<p>Untuk memahami secara jelas, sepertinya sangat perlu untuk dicoba :). Misalnya terdapat sebuah kelas dasar bernama DrawableObject, yang merupakan kelas dasar untuk semua objek bangun 2D (persegi, lingkaran, segitiga).</p>
-<p><a href="https://offground.files.wordpress.com/2010/05/vfgbr1.png"><img src="https://offground.files.wordpress.com/2010/05/vfgbr1.png" alt="vfgbr1">
-</a></p>
-<p>Output dari main program Gbr E :</p>
-<p>draw bangun persegi</p>
-<p>draw bangun lingkaran</p>
-<p>draw bangun persegi</p>
-<p>Dari output, dapat dilihat bahwa pemanggilan -&gt;Draw() di instance bangun1 dan bangun2 ( yang awalnya dideklarasikan sebagai DrawableObject class ), secara otomatis memanggil implementasi dari data yang ditunjuk oleh bangun1 dan bangun2 saat runtime. Misalnya kita menghapus &ldquo;virtual&rdquo; di class DrawableObject ( Gbr A ), Output program dari main program (Gbr E) menjadi sebagai berikut :</p>
-<p>draw dari base class</p>
-<p>draw dari base class</p>
-<p>draw bangun persegi</p>
-<p>dapat dilihat bangun1,bangun2,bangun3 akan memanggil &ldquo;body function&rdquo; sesuai apa yang dideklarasikan, dalam hal ini bangun1 dan bangun2 adalah DrawableObject, sedangkan bangun3 adalah persegi.</p>
-<p>Dengan karakteristik ini, Fungsi virtual sangat berguna untuk mendesain sebuah code yang bermaksud &ldquo;menyembunyikan&rdquo; implementasi fungsi yang memiliki nama yang sama. Contoh penggunaan yang lain ada di Gbr F.</p>
-<p>Output dari main program Gbr F :</p>
-<p>draw bangun persegi</p>
-<p>draw bangun lingkaran</p>
-<p>draw bangun Segitiga</p>
-<p>draw bangun Segitiga</p>
-<p>draw bangun persegi</p>
-<p>Di Java, fitur semacam fungsi virtual ini dinamakan Interface. ( saya jarang menulis code di Java, tapi dulu pernah coba ). Namun Interface di Java, body function dari base class-nya harus kosong ( cmiiw ). Kita bisa membuat semacam itu di C++ dengan mengosongkan body dari virtual function di base class . Class semacam ini dinamakan abstract base class (ABC) atau pure virtual function . ABC tidak bisa di-instance-kan secara langsung, hanya bisa sebagai pointer ke turunannya. Contoh ABC :</p>
-<p><a href="https://offground.files.wordpress.com/2010/05/vfgbr2.png"><img src="https://offground.files.wordpress.com/2010/05/vfgbr2.png" alt="vfgbr2">
-</a></p>
-<p>meng-<em>instance</em>-kan class ABC secara langsung, akan compile-error :</p>
-<p><a href="https://offground.files.wordpress.com/2010/05/vfgbr3.png"><img src="https://offground.files.wordpress.com/2010/05/vfgbr3.png" alt="vfgbr3">
-</a></p>
-<p>Di non-ABC, kalau kita ingin memanggil implementasi fungsi di base class dari kelas turunannya bisa dilakukan dengan :</p>
-<p><a href="https://offground.files.wordpress.com/2010/05/vfgbr4.png"><img src="https://offground.files.wordpress.com/2010/05/vfgbr4.png" alt="vfgbr4">
-</a></p>
-<p>Output dari main program gbr pertama ( Gbr E ) dengan class Persergi diatas :</p>
-<p>draw dari base class</p>
-<p>draw bangun persegi</p>
-<p>draw bangun lingkaran</p>
-<p>draw dari base class</p>
-<p>draw bangun persegi</p>
-<p><strong><strong>Virtual Destructor</strong></strong></p>
-<p>untuk mencegah memory leak, destructor harus virtual jika memenuhi keadaan sebagai berikut : sebuah kelas X diturunkan dari kelas induk Y dimana kelas X memiliki sesuatu yang penting yang harus dieksekusi di destructor ( misalnya anggota kelas berupa pointer yang harus di delete di destructor ). Dengan menambahkan keyword &ldquo;virtual&rdquo; di destructor Y, destructor Y dan destructor X dipanggil. Lebih jelas dicontoh berikut ini</p>
-<p>[sourcecode language=&ldquo;cpp&rdquo;]
-#include <iostream></p>
-<p>class A {
+<!doctype html><html class="not-ready lg:text-base" style=--bg:#fbfbfb lang=en dir=ltr><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Menengok kembali: C++ virtual function - Home</title><meta name=theme-color><meta name=description content="edi ermawan, http://offground.wordpress.com
+Fungsi Virtual. Alasan kenapa sebuah fungsi perlu dibuat virtual adalah agar fungsi tersebut bisa di-deklarasikan ulang di kelas turunannya ( meng-override fungsi ) **dan **jika kamu ingin me-resolve pemanggilan body function saat runtime ( late binding/ dynamic binding ). perhatikan kata dihubungkan dengan &ldquo;dan&rdquo; bold mode : ) . Karena member fungsi tanpa virtual pun juga bisa di-override. Bedanya jika sebuah fungsi itu tidak virtual dan dideklarasikan ulang di kelas turunan, ketika fungsi itu dijalankan , maka &ldquo;body function&rdquo; yang akan dijalankan adalah sesuai yang didefinikan. ( body function yang akan dipanggil sudah ditentukan / di-resolve saat compile time , atau yang disebut static binding )."><meta name=author content="oth3rside"><link rel="preload stylesheet" as=style href=https://xedixermawan.github.io/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css integrity="sha256-6GrmfgHi0gVRBqv3K+c1fJUBkQYOXxWfJOJ5D9gjfow="><link rel=preload as=image href=https://xedixermawan.github.io/theme.png><link rel=preload as=image href="https://www.gravatar.com/avatar/874371989962b8461ad94e8119d82bc7?s=160&amp;d=identicon"><link rel=preload as=image href=https://xedixermawan.github.io/twitter.svg><link rel=preload as=image href=https://xedixermawan.github.io/github.svg><link rel=preload as=image href=https://xedixermawan.github.io/instagram.svg><script defer src=https://xedixermawan.github.io/highlight.min.js onload=hljs.initHighlightingOnLoad()></script><link rel=icon href=https://xedixermawan.github.io/favicon.ico><link rel=apple-touch-icon href=https://xedixermawan.github.io/apple-touch-icon.png><meta name=generator content="Hugo 0.152.2"><meta itemprop=name content="Menengok kembali: C++ virtual function"><meta itemprop=description content="edi ermawan, http://offground.wordpress.com
+Fungsi Virtual. Alasan kenapa sebuah fungsi perlu dibuat virtual adalah agar fungsi tersebut bisa di-deklarasikan ulang di kelas turunannya ( meng-override fungsi ) **dan **jika kamu ingin me-resolve pemanggilan body function saat runtime ( late binding/ dynamic binding ). perhatikan kata dihubungkan dengan “dan” bold mode : ) . Karena member fungsi tanpa virtual pun juga bisa di-override. Bedanya jika sebuah fungsi itu tidak virtual dan dideklarasikan ulang di kelas turunan, ketika fungsi itu dijalankan , maka “body function” yang akan dijalankan adalah sesuai yang didefinikan. ( body function yang akan dipanggil sudah ditentukan / di-resolve saat compile time , atau yang disebut static binding )."><meta itemprop=datePublished content="2010-05-15T15:17:07+00:00"><meta itemprop=dateModified content="2010-05-15T15:17:07+00:00"><meta itemprop=wordCount content="701"><meta itemprop=keywords content="Belajar,C++,Virtual Function"><meta property="og:url" content="https://xedixermawan.github.io/2010/05/15/menengok-kembali-c-virtual-function/"><meta property="og:site_name" content="Home"><meta property="og:title" content="Menengok kembali: C++ virtual function"><meta property="og:description" content="edi ermawan, http://offground.wordpress.com
+Fungsi Virtual. Alasan kenapa sebuah fungsi perlu dibuat virtual adalah agar fungsi tersebut bisa di-deklarasikan ulang di kelas turunannya ( meng-override fungsi ) **dan **jika kamu ingin me-resolve pemanggilan body function saat runtime ( late binding/ dynamic binding ). perhatikan kata dihubungkan dengan “dan” bold mode : ) . Karena member fungsi tanpa virtual pun juga bisa di-override. Bedanya jika sebuah fungsi itu tidak virtual dan dideklarasikan ulang di kelas turunan, ketika fungsi itu dijalankan , maka “body function” yang akan dijalankan adalah sesuai yang didefinikan. ( body function yang akan dipanggil sudah ditentukan / di-resolve saat compile time , atau yang disebut static binding )."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2010-05-15T15:17:07+00:00"><meta property="article:modified_time" content="2010-05-15T15:17:07+00:00"><meta property="article:tag" content="Belajar"><meta property="article:tag" content="C++"><meta property="article:tag" content="Virtual Function"><meta name=twitter:card content="summary"><meta name=twitter:title content="Menengok kembali: C++ virtual function"><meta name=twitter:description content="edi ermawan, http://offground.wordpress.com
+Fungsi Virtual. Alasan kenapa sebuah fungsi perlu dibuat virtual adalah agar fungsi tersebut bisa di-deklarasikan ulang di kelas turunannya ( meng-override fungsi ) **dan **jika kamu ingin me-resolve pemanggilan body function saat runtime ( late binding/ dynamic binding ). perhatikan kata dihubungkan dengan “dan” bold mode : ) . Karena member fungsi tanpa virtual pun juga bisa di-override. Bedanya jika sebuah fungsi itu tidak virtual dan dideklarasikan ulang di kelas turunan, ketika fungsi itu dijalankan , maka “body function” yang akan dijalankan adalah sesuai yang didefinikan. ( body function yang akan dipanggil sudah ditentukan / di-resolve saat compile time , atau yang disebut static binding )."><link rel=canonical href=https://xedixermawan.github.io/2010/05/15/menengok-kembali-c-virtual-function/></head><body class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"><header class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"><div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto"><a class="-translate-y-[1px] text-2xl font-medium" href=https://xedixermawan.github.io/>Home</a><div class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]" role=button aria-label=Dark></div></div><div class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8" role=button aria-label=Menu></div><script>const htmlClass=document.documentElement.classList;setTimeout(()=>{htmlClass.remove("not-ready")},10);const btnMenu=document.querySelector(".btn-menu");btnMenu.addEventListener("click",()=>{htmlClass.toggle("open")});const metaTheme=document.querySelector('meta[name="theme-color"]'),lightBg="#fbfbfb".replace(/"/g,""),setDark=e=>{metaTheme.setAttribute("content",e?"rgb(0 0 0 / 85%)":lightBg),htmlClass[e?"add":"remove"]("dark"),localStorage.setItem("dark",e)},darkScheme=window.matchMedia("(prefers-color-scheme: dark)");if(htmlClass.contains("dark"))setDark(!0);else{const e=localStorage.getItem("dark");setDark(e?e==="true":darkScheme.matches)}darkScheme.addEventListener("change",e=>{setDark(e.matches)});const btnDark=document.querySelector(".btn-dark");btnDark.addEventListener("click",()=>{setDark(localStorage.getItem("dark")!=="true")})</script><div class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"><nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"><a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href=/about/>About</a><a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href=/read/>Read</a></nav><nav class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"><a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./twitter.svg) href=https://twitter.com/XediXermawan target=_blank rel=me>twitter</a>
+<a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./github.svg) href=https://github.com/XediXermawan target=_blank rel=me>github</a>
+<a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./instagram.svg) href=https://instagram.com/XediXermawan target=_blank rel=me>instagram</a></nav></div></header><main class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"><article><header class=mb-14><h1 class="my-0! pb-2.5">Menengok kembali: C++ virtual function</h1><div class="text-xs antialiased opacity-60"><time>May 15, 2010</time><span class=mx-1>&#183;</span>
+<span>oth3rside</span></div></header><section><p>edi ermawan, <a href=http://offground.wordpress.com>http://offground.wordpress.com</a></p><p><strong>Fungsi Virtual</strong>. Alasan kenapa sebuah fungsi perlu dibuat virtual adalah agar fungsi tersebut bisa di-deklarasikan ulang di kelas turunannya ( meng-override fungsi ) **dan **jika kamu ingin me-resolve pemanggilan <em>body function</em> saat runtime ( late binding/ dynamic binding ). perhatikan kata dihubungkan dengan &ldquo;dan&rdquo; bold mode : ) . Karena member fungsi tanpa virtual pun juga bisa di-override. Bedanya jika sebuah fungsi itu <strong>tidak</strong> virtual dan dideklarasikan ulang di kelas turunan, ketika fungsi itu dijalankan , maka &ldquo;<em>body function</em>&rdquo; yang akan dijalankan adalah sesuai yang didefinikan. ( body function yang akan dipanggil sudah ditentukan / di-resolve saat compile time , atau yang disebut static binding ).</p><p>fungsi virtual :</p><pre><code>  1. 
+</code></pre><p>Anggota dari sebuah kelas</p><pre><code>  2. 
+</code></pre><p>Dideklarasikan dengan awalan virtual</p><pre><code>  3. 
+</code></pre><p>Fungsi virtual yang di-override dikelas turunannya, pada umumnya berbeda implementasinya dengan virtual fungsi di kelas induk. ( masih memiliki nama fungsi dan jumlah argument yang sama tentunya )</p><pre><code>  4. 
+</code></pre><p>Fungsi bisa dibedakan type kelas mana yang memanggil saat runtime</p><p>Untuk memahami secara jelas, sepertinya sangat perlu untuk dicoba :). Misalnya terdapat sebuah kelas dasar bernama DrawableObject, yang merupakan kelas dasar untuk semua objek bangun 2D (persegi, lingkaran, segitiga).</p><p><a href=https://offground.files.wordpress.com/2010/05/vfgbr1.png><img src=https://offground.files.wordpress.com/2010/05/vfgbr1.png alt=vfgbr1></a></p><p>Output dari main program Gbr E :</p><p>draw bangun persegi</p><p>draw bangun lingkaran</p><p>draw bangun persegi</p><p>Dari output, dapat dilihat bahwa pemanggilan ->Draw() di instance bangun1 dan bangun2 ( yang awalnya dideklarasikan sebagai DrawableObject class ), secara otomatis memanggil implementasi dari data yang ditunjuk oleh bangun1 dan bangun2 saat runtime. Misalnya kita menghapus &ldquo;virtual&rdquo; di class DrawableObject ( Gbr A ), Output program dari main program (Gbr E) menjadi sebagai berikut :</p><p>draw dari base class</p><p>draw dari base class</p><p>draw bangun persegi</p><p>dapat dilihat bangun1,bangun2,bangun3 akan memanggil &ldquo;body function&rdquo; sesuai apa yang dideklarasikan, dalam hal ini bangun1 dan bangun2 adalah DrawableObject, sedangkan bangun3 adalah persegi.</p><p>Dengan karakteristik ini, Fungsi virtual sangat berguna untuk mendesain sebuah code yang bermaksud &ldquo;menyembunyikan&rdquo; implementasi fungsi yang memiliki nama yang sama. Contoh penggunaan yang lain ada di Gbr F.</p><p>Output dari main program Gbr F :</p><p>draw bangun persegi</p><p>draw bangun lingkaran</p><p>draw bangun Segitiga</p><p>draw bangun Segitiga</p><p>draw bangun persegi</p><p>Di Java, fitur semacam fungsi virtual ini dinamakan Interface. ( saya jarang menulis code di Java, tapi dulu pernah coba ). Namun Interface di Java, body function dari base class-nya harus kosong ( cmiiw ). Kita bisa membuat semacam itu di C++ dengan mengosongkan body dari virtual function di base class . Class semacam ini dinamakan abstract base class (ABC) atau pure virtual function . ABC tidak bisa di-instance-kan secara langsung, hanya bisa sebagai pointer ke turunannya. Contoh ABC :</p><p><a href=https://offground.files.wordpress.com/2010/05/vfgbr2.png><img src=https://offground.files.wordpress.com/2010/05/vfgbr2.png alt=vfgbr2></a></p><p>meng-<em>instance</em>-kan class ABC secara langsung, akan compile-error :</p><p><a href=https://offground.files.wordpress.com/2010/05/vfgbr3.png><img src=https://offground.files.wordpress.com/2010/05/vfgbr3.png alt=vfgbr3></a></p><p>Di non-ABC, kalau kita ingin memanggil implementasi fungsi di base class dari kelas turunannya bisa dilakukan dengan :</p><p><a href=https://offground.files.wordpress.com/2010/05/vfgbr4.png><img src=https://offground.files.wordpress.com/2010/05/vfgbr4.png alt=vfgbr4></a></p><p>Output dari main program gbr pertama ( Gbr E ) dengan class Persergi diatas :</p><p>draw dari base class</p><p>draw bangun persegi</p><p>draw bangun lingkaran</p><p>draw dari base class</p><p>draw bangun persegi</p><p><strong><strong>Virtual Destructor</strong></strong></p><p>untuk mencegah memory leak, destructor harus virtual jika memenuhi keadaan sebagai berikut : sebuah kelas X diturunkan dari kelas induk Y dimana kelas X memiliki sesuatu yang penting yang harus dieksekusi di destructor ( misalnya anggota kelas berupa pointer yang harus di delete di destructor ). Dengan menambahkan keyword &ldquo;virtual&rdquo; di destructor Y, destructor Y dan destructor X dipanggil. Lebih jelas dicontoh berikut ini</p><p>[sourcecode language=&ldquo;cpp&rdquo;]
+#include <iostream></p><p>class A {
 public:
 A() {
-std::cout &laquo; &ldquo;A&rdquo;;
+std::cout &#171; &ldquo;A&rdquo;;
 }
 ~A() {
-std::cout &laquo; &ldquo;~A&rdquo;;
+std::cout &#171; &ldquo;~A&rdquo;;
 }
-};</p>
-<p>class B :public A {
+};</p><p>class B :public A {
 private:
 int* memberPtr;
 public:
@@ -263,16 +26,14 @@ B() {
 memberPtr = new int();
 }
 ~B() {
-std::cout &laquo; &ldquo;~B&rdquo;;
+std::cout &#171; &ldquo;~B&rdquo;;
 delete memberPtr;
 }
-};</p>
-<p>void testCase1() {
+};</p><p>void testCase1() {
 B* inst;
 inst = new B();
 delete inst;
-}</p>
-<p>void testCase2() {
+}</p><p>void testCase2() {
 A* inst;
 inst = new B();
 delete inst;
@@ -281,51 +42,5 @@ int main() {
 testCase1();
 testCase2();
 }
-[/sourcecode]</p>
-<p>tanpa keyword “virtual” di kelas induk A :</p>
-<p>testCase1()   <strong>OK</strong> , destructor B dipanggil,kemudian destructor A dipanggil</p>
-<p>testCase2()   <strong>NOT OK</strong>, karena destructor B tidak dipanggil .hanya destructor A yang dipanggil</p>
-<p><strong>Performance Cost dari virtual function</strong></p>
-<p>karena virtual function sebenarnya adalah penambahan <em>indirection</em> ( memanggil fungsi dari vtable ) maka tentu ada cost nya, walaupun mungkin sangat kecil ( belum pernah memprofile sendiri ) </p>
-<p>05/15/10-07:44:34 PM-eof-</p>
-<p>updated : 11/27/2014  11:53 PM</p>
-<p><a href="https://www.dropbox.com/s/jfcrorogi76vgha/menengok_kembali_virtual_function_cplusplus.pdf?dl=0">Download PDF version</a></p>
-</section>
-
-  <footer class="mt-12 flex flex-wrap"><a
-      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://xedixermawan.github.io/tags/belajar"
-      >belajar</a
-    ><a
-      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://xedixermawan.github.io/tags/c&#43;&#43;"
-      >c&#43;&#43;</a
-    ><a
-      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://xedixermawan.github.io/tags/virtual-function"
-      >virtual function</a
-    ></footer><nav
-    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
-  ><a class="ltr:pr-3 rtl:pl-3" href="https://xedixermawan.github.io/2010/08/10/mencoba-observer-pattern-dan-strategy-pattern-di-c/"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Mencoba Observer Pattern dan Strategy Pattern di C&#43;&#43;</span></a
-    ><a
-      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
-      href="https://xedixermawan.github.io/2010/05/15/215/"
-      ><span>Integrasi Qt ke Ms Visual C&#43;&#43; 2008 Express</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
-    ></nav></article></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2007-2024 XediXermawan</div>
-  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
-    >powered by hugo️️</a
-  >️
-  <a
-    class="link"
-    href="https://github.com/nanxiaobei/hugo-paper"
-    rel="noopener"
-    target="_blank"
-    >hugo-paper</a
-  >
-</footer>
-</body>
-</html>
+[/sourcecode]</p><p>tanpa keyword “virtual” di kelas induk A :</p><p>testCase1()   <strong>OK</strong> , destructor B dipanggil,kemudian destructor A dipanggil</p><p>testCase2()   <strong>NOT OK</strong>, karena destructor B tidak dipanggil .hanya destructor A yang dipanggil</p><p><strong>Performance Cost dari virtual function</strong></p><p>karena virtual function sebenarnya adalah penambahan <em>indirection</em> ( memanggil fungsi dari vtable ) maka tentu ada cost nya, walaupun mungkin sangat kecil ( belum pernah memprofile sendiri ) </p><p>05/15/10-07:44:34 PM-eof-</p><p>updated : 11/27/2014  11:53 PM</p><p><a href="https://www.dropbox.com/s/jfcrorogi76vgha/menengok_kembali_virtual_function_cplusplus.pdf?dl=0">Download PDF version</a></p></section><footer class="mt-12 flex flex-wrap"><a class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]" href=https://xedixermawan.github.io/tags/belajar>belajar</a><a class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]" href=https://xedixermawan.github.io/tags/c++>c++</a><a class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]" href=https://xedixermawan.github.io/tags/virtual-function>virtual function</a></footer><nav class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"><a class="ltr:pr-3 rtl:pl-3" href=https://xedixermawan.github.io/2010/08/10/mencoba-observer-pattern-dan-strategy-pattern-di-c/><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Mencoba Observer Pattern dan Strategy Pattern di C++</span></a><a class="justify-end pl-3 ltr:ml-auto rtl:mr-auto" href=https://xedixermawan.github.io/2010/05/15/215/><span>Integrasi Qt ke Ms Visual C++ 2008 Express</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a></nav></article></main><footer class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"><div class=mr-auto>© 2007-2024 XediXermawan</div><a class="link mx-6" href=https://gohugo.io/ rel=noopener target=_blank>powered by hugo️️</a>️
+<a class=link href=https://github.com/nanxiaobei/hugo-paper rel=noopener target=_blank>hugo-paper</a></footer></body></html>

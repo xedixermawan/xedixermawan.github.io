@@ -1,195 +1,7 @@
-<!doctype html>
-
-
-
-
-
-
-
-<html
-  class="not-ready lg:text-base"
-  style="--bg:#fbfbfb"
-  lang="en"
-  dir="ltr"
-><head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
-
-  
-  <title>Mencoba Smart pointer dari Boost - Home</title>
-
-  
-  <meta name="theme-color" />
-
-  <meta name="description" content="Smart pointer adalah pointer yang smart. :d. ya memang begitu tujuannya. Seperti diketahui tidak ada management object secara otomatis [garbage collecor] di c/c&#43;&#43;, jadi setiap dynamic-object yang di alokasi di heap dan sudah waktunya dihapus harus di-delete secara eksplisit. (dynamic-object == setiap object yang di-create dengan keyword new). Apa akibatnya jika delete tidak dilakukan?, kemungkinan terjadi memory leak ( : keadaan dimana pembuat program tidak bahagia). kemungkinan memory leak ini semakin besar seiring semakin kompleknya project, dan juga memory leak akan susah dicari :| . untuk itu dibuat smart pointer: pointer yang mengurusi kepemilikan object (secara singkatnya begitu) . Smart pointer sudah lama digunakan, namun tetap saja masih banyak project yang menggunakan raw pointer , (dengan alasan kemudahan dan malas. haha.) . Kelemahan dari smart pointer , tentu akan lebih lambat dari raw pointer, karena smart pointer sebenarnya adalah wrapper class untuk pointer. Walaupun ada, saya yakin, keuntungannya lebih tinggi karena kecepatan processor yang semakin tinggi dan project yang rumit. {riil project == pasti rumit }. Okey, itulah motivasinya :), saatnya mencoba smart pointer. Saya pilih smart pointer dari Boost library yang banyak digunakan. Di Boost terdapat beberapa smart pointer, saya akan mencoba 3 diantaranya: scoped pointer, shared pointer, dan weak pointer." />
-  <meta name="author" content="oth3rside" /><link rel="preload stylesheet" as="style" href="https://xedixermawan.github.io/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
-
-  
-  <link rel="preload" as="image" href="https://xedixermawan.github.io/theme.png" />
-
-  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/874371989962b8461ad94e8119d82bc7?s=160&amp;d=identicon" />
-
-  <link rel="preload" as="image" href="https://xedixermawan.github.io/twitter.svg" /><link rel="preload" as="image" href="https://xedixermawan.github.io/github.svg" /><link rel="preload" as="image" href="https://xedixermawan.github.io/instagram.svg" />
-
-  <script
-    defer
-    src="https://xedixermawan.github.io/highlight.min.js"
-    onload="hljs.initHighlightingOnLoad()"
-  ></script>
-
-  
-  <link
-    rel="icon"
-    href="https://xedixermawan.github.io/favicon.ico"
-  />
-  <link
-    rel="apple-touch-icon"
-    href="https://xedixermawan.github.io/apple-touch-icon.png"
-  />
-
-  <meta name="generator" content="Hugo 0.152.2">
-  <meta itemprop="name" content="Mencoba Smart pointer dari Boost">
-  <meta itemprop="description" content="Smart pointer adalah pointer yang smart. :d. ya memang begitu tujuannya. Seperti diketahui tidak ada management object secara otomatis [garbage collecor] di c/c&#43;&#43;, jadi setiap dynamic-object yang di alokasi di heap dan sudah waktunya dihapus harus di-delete secara eksplisit. (dynamic-object == setiap object yang di-create dengan keyword new). Apa akibatnya jika delete tidak dilakukan?, kemungkinan terjadi memory leak ( : keadaan dimana pembuat program tidak bahagia). kemungkinan memory leak ini semakin besar seiring semakin kompleknya project, dan juga memory leak akan susah dicari :| . untuk itu dibuat smart pointer: pointer yang mengurusi kepemilikan object (secara singkatnya begitu) . Smart pointer sudah lama digunakan, namun tetap saja masih banyak project yang menggunakan raw pointer , (dengan alasan kemudahan dan malas. haha.) . Kelemahan dari smart pointer , tentu akan lebih lambat dari raw pointer, karena smart pointer sebenarnya adalah wrapper class untuk pointer. Walaupun ada, saya yakin, keuntungannya lebih tinggi karena kecepatan processor yang semakin tinggi dan project yang rumit. {riil project == pasti rumit }. Okey, itulah motivasinya :), saatnya mencoba smart pointer. Saya pilih smart pointer dari Boost library yang banyak digunakan. Di Boost terdapat beberapa smart pointer, saya akan mencoba 3 diantaranya: scoped pointer, shared pointer, dan weak pointer.">
-  <meta itemprop="datePublished" content="2012-06-30T13:40:25+00:00">
-  <meta itemprop="dateModified" content="2012-06-30T13:40:25+00:00">
-  <meta itemprop="wordCount" content="1117">
-  <meta itemprop="keywords" content="C/C&#43;&#43; Diary"><meta property="og:url" content="https://xedixermawan.github.io/2012/06/30/582/">
-  <meta property="og:site_name" content="Home">
-  <meta property="og:title" content="Mencoba Smart pointer dari Boost">
-  <meta property="og:description" content="Smart pointer adalah pointer yang smart. :d. ya memang begitu tujuannya. Seperti diketahui tidak ada management object secara otomatis [garbage collecor] di c/c&#43;&#43;, jadi setiap dynamic-object yang di alokasi di heap dan sudah waktunya dihapus harus di-delete secara eksplisit. (dynamic-object == setiap object yang di-create dengan keyword new). Apa akibatnya jika delete tidak dilakukan?, kemungkinan terjadi memory leak ( : keadaan dimana pembuat program tidak bahagia). kemungkinan memory leak ini semakin besar seiring semakin kompleknya project, dan juga memory leak akan susah dicari :| . untuk itu dibuat smart pointer: pointer yang mengurusi kepemilikan object (secara singkatnya begitu) . Smart pointer sudah lama digunakan, namun tetap saja masih banyak project yang menggunakan raw pointer , (dengan alasan kemudahan dan malas. haha.) . Kelemahan dari smart pointer , tentu akan lebih lambat dari raw pointer, karena smart pointer sebenarnya adalah wrapper class untuk pointer. Walaupun ada, saya yakin, keuntungannya lebih tinggi karena kecepatan processor yang semakin tinggi dan project yang rumit. {riil project == pasti rumit }. Okey, itulah motivasinya :), saatnya mencoba smart pointer. Saya pilih smart pointer dari Boost library yang banyak digunakan. Di Boost terdapat beberapa smart pointer, saya akan mencoba 3 diantaranya: scoped pointer, shared pointer, dan weak pointer.">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2012-06-30T13:40:25+00:00">
-    <meta property="article:modified_time" content="2012-06-30T13:40:25+00:00">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Mencoba Smart pointer dari Boost">
-  <meta name="twitter:description" content="Smart pointer adalah pointer yang smart. :d. ya memang begitu tujuannya. Seperti diketahui tidak ada management object secara otomatis [garbage collecor] di c/c&#43;&#43;, jadi setiap dynamic-object yang di alokasi di heap dan sudah waktunya dihapus harus di-delete secara eksplisit. (dynamic-object == setiap object yang di-create dengan keyword new). Apa akibatnya jika delete tidak dilakukan?, kemungkinan terjadi memory leak ( : keadaan dimana pembuat program tidak bahagia). kemungkinan memory leak ini semakin besar seiring semakin kompleknya project, dan juga memory leak akan susah dicari :| . untuk itu dibuat smart pointer: pointer yang mengurusi kepemilikan object (secara singkatnya begitu) . Smart pointer sudah lama digunakan, namun tetap saja masih banyak project yang menggunakan raw pointer , (dengan alasan kemudahan dan malas. haha.) . Kelemahan dari smart pointer , tentu akan lebih lambat dari raw pointer, karena smart pointer sebenarnya adalah wrapper class untuk pointer. Walaupun ada, saya yakin, keuntungannya lebih tinggi karena kecepatan processor yang semakin tinggi dan project yang rumit. {riil project == pasti rumit }. Okey, itulah motivasinya :), saatnya mencoba smart pointer. Saya pilih smart pointer dari Boost library yang banyak digunakan. Di Boost terdapat beberapa smart pointer, saya akan mencoba 3 diantaranya: scoped pointer, shared pointer, dan weak pointer.">
-
-  <link rel="canonical" href="https://xedixermawan.github.io/2012/06/30/582/" />
-</head>
-<body
-    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
-  ><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://xedixermawan.github.io/"
-      >Home</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
-
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
-
-  <script>
-    
-    const htmlClass = document.documentElement.classList;
-    setTimeout(() => {
-      htmlClass.remove('not-ready');
-    }, 10);
-
-    
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
-    const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#fbfbfb'.replace(/"/g, '');
-    const setDark = (isDark) => {
-      metaTheme.setAttribute('content', isDark ? "rgb(0 0 0 / 85%)" : lightBg);
-      htmlClass[isDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', isDark);
-    };
-
-    
-    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    if (htmlClass.contains('dark')) {
-      setDark(true);
-    } else {
-      const darkVal = localStorage.getItem('dark');
-      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
-    }
-
-    
-    darkScheme.addEventListener('change', (event) => {
-      setDark(event.matches);
-    });
-
-    
-    const btnDark = document.querySelector('.btn-dark');
-    btnDark.addEventListener('click', () => {
-      setDark(localStorage.getItem('dark') !== 'true');
-    });
-  </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/read/"
-        >Read</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./twitter.svg)"
-        href="https://twitter.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >twitter</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./github.svg)"
-        href="https://github.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >github</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./instagram.svg)"
-        href="https://instagram.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >instagram</a>
-    </nav>
-  </div>
-</header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    ><article>
-  <header class="mb-14">
-    <h1 class="my-0! pb-2.5">Mencoba Smart pointer dari Boost</h1><div class="text-xs antialiased opacity-60"><time>Jun 30, 2012</time><span class="mx-1">&middot;</span>
-      <span>oth3rside</span></div></header>
-
-  <section><p>Smart pointer adalah pointer yang smart. :d. ya memang begitu tujuannya. Seperti diketahui tidak ada management object secara otomatis [garbage collecor] di c/c++, jadi setiap dynamic-object yang di alokasi di heap dan sudah waktunya dihapus harus di-delete secara eksplisit. (dynamic-object == setiap object yang di-create dengan keyword new). Apa akibatnya jika delete tidak dilakukan?, kemungkinan terjadi memory leak ( : keadaan dimana pembuat program tidak bahagia). kemungkinan memory leak ini semakin besar seiring semakin kompleknya project, dan juga memory leak akan susah dicari :| . untuk itu dibuat smart pointer: pointer yang mengurusi kepemilikan object (secara singkatnya begitu) . Smart pointer sudah lama digunakan, namun tetap saja masih banyak project yang menggunakan raw pointer , (dengan alasan kemudahan dan malas. haha.) . Kelemahan dari smart pointer , tentu akan lebih lambat dari raw pointer, karena smart pointer sebenarnya adalah wrapper class untuk pointer. Walaupun ada, saya yakin, keuntungannya lebih tinggi karena kecepatan processor yang semakin tinggi dan project yang rumit. {riil project == pasti rumit }. Okey, itulah motivasinya :), saatnya mencoba smart pointer. Saya pilih smart pointer dari Boost library yang banyak digunakan. Di Boost terdapat beberapa smart pointer, saya akan mencoba 3 diantaranya: scoped pointer, shared pointer, dan weak pointer.</p>
-<p><strong>1. scoped pointer.</strong></p>
-<p>Di dalam fungsi (atau apapun yang ada di scope “{“ sampai “}” ) , object yang ada di stack otomatis di free kalau out of scope tapi kalau pointer tidak. Tujuan scoped_pointer adalah membuat pointer otomatis di free kalau out of scope , apapun yang terjadi. Misalnya saya punya sebuah kelas:</p>
-<p>[sourcecode language=&ldquo;cpp&rdquo;]
+<!doctype html><html class="not-ready lg:text-base" style=--bg:#fbfbfb lang=en dir=ltr><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Mencoba Smart pointer dari Boost - Home</title><meta name=theme-color><meta name=description content="Smart pointer adalah pointer yang smart. :d. ya memang begitu tujuannya. Seperti diketahui tidak ada management object secara otomatis [garbage collecor] di c/c++, jadi setiap dynamic-object yang di alokasi di heap dan sudah waktunya dihapus harus di-delete secara eksplisit. (dynamic-object == setiap object yang di-create dengan keyword new). Apa akibatnya jika delete tidak dilakukan?, kemungkinan terjadi memory leak ( : keadaan dimana pembuat program tidak bahagia). kemungkinan memory leak ini semakin besar seiring semakin kompleknya project, dan juga memory leak akan susah dicari :| . untuk itu dibuat smart pointer: pointer yang mengurusi kepemilikan object (secara singkatnya begitu) . Smart pointer sudah lama digunakan, namun tetap saja masih banyak project yang menggunakan raw pointer , (dengan alasan kemudahan dan malas. haha.) . Kelemahan dari smart pointer , tentu akan lebih lambat dari raw pointer, karena smart pointer sebenarnya adalah wrapper class untuk pointer. Walaupun ada, saya yakin, keuntungannya lebih tinggi karena kecepatan processor yang semakin tinggi dan project yang rumit. {riil project == pasti rumit }. Okey, itulah motivasinya :), saatnya mencoba smart pointer. Saya pilih smart pointer dari Boost library yang banyak digunakan. Di Boost terdapat beberapa smart pointer, saya akan mencoba 3 diantaranya: scoped pointer, shared pointer, dan weak pointer."><meta name=author content="oth3rside"><link rel="preload stylesheet" as=style href=https://xedixermawan.github.io/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css integrity="sha256-6GrmfgHi0gVRBqv3K+c1fJUBkQYOXxWfJOJ5D9gjfow="><link rel=preload as=image href=https://xedixermawan.github.io/theme.png><link rel=preload as=image href="https://www.gravatar.com/avatar/874371989962b8461ad94e8119d82bc7?s=160&amp;d=identicon"><link rel=preload as=image href=https://xedixermawan.github.io/twitter.svg><link rel=preload as=image href=https://xedixermawan.github.io/github.svg><link rel=preload as=image href=https://xedixermawan.github.io/instagram.svg><script defer src=https://xedixermawan.github.io/highlight.min.js onload=hljs.initHighlightingOnLoad()></script><link rel=icon href=https://xedixermawan.github.io/favicon.ico><link rel=apple-touch-icon href=https://xedixermawan.github.io/apple-touch-icon.png><meta name=generator content="Hugo 0.152.2"><meta itemprop=name content="Mencoba Smart pointer dari Boost"><meta itemprop=description content="Smart pointer adalah pointer yang smart. :d. ya memang begitu tujuannya. Seperti diketahui tidak ada management object secara otomatis [garbage collecor] di c/c++, jadi setiap dynamic-object yang di alokasi di heap dan sudah waktunya dihapus harus di-delete secara eksplisit. (dynamic-object == setiap object yang di-create dengan keyword new). Apa akibatnya jika delete tidak dilakukan?, kemungkinan terjadi memory leak ( : keadaan dimana pembuat program tidak bahagia). kemungkinan memory leak ini semakin besar seiring semakin kompleknya project, dan juga memory leak akan susah dicari :| . untuk itu dibuat smart pointer: pointer yang mengurusi kepemilikan object (secara singkatnya begitu) . Smart pointer sudah lama digunakan, namun tetap saja masih banyak project yang menggunakan raw pointer , (dengan alasan kemudahan dan malas. haha.) . Kelemahan dari smart pointer , tentu akan lebih lambat dari raw pointer, karena smart pointer sebenarnya adalah wrapper class untuk pointer. Walaupun ada, saya yakin, keuntungannya lebih tinggi karena kecepatan processor yang semakin tinggi dan project yang rumit. {riil project == pasti rumit }. Okey, itulah motivasinya :), saatnya mencoba smart pointer. Saya pilih smart pointer dari Boost library yang banyak digunakan. Di Boost terdapat beberapa smart pointer, saya akan mencoba 3 diantaranya: scoped pointer, shared pointer, dan weak pointer."><meta itemprop=datePublished content="2012-06-30T13:40:25+00:00"><meta itemprop=dateModified content="2012-06-30T13:40:25+00:00"><meta itemprop=wordCount content="1117"><meta itemprop=keywords content="C/C++ Diary"><meta property="og:url" content="https://xedixermawan.github.io/2012/06/30/582/"><meta property="og:site_name" content="Home"><meta property="og:title" content="Mencoba Smart pointer dari Boost"><meta property="og:description" content="Smart pointer adalah pointer yang smart. :d. ya memang begitu tujuannya. Seperti diketahui tidak ada management object secara otomatis [garbage collecor] di c/c++, jadi setiap dynamic-object yang di alokasi di heap dan sudah waktunya dihapus harus di-delete secara eksplisit. (dynamic-object == setiap object yang di-create dengan keyword new). Apa akibatnya jika delete tidak dilakukan?, kemungkinan terjadi memory leak ( : keadaan dimana pembuat program tidak bahagia). kemungkinan memory leak ini semakin besar seiring semakin kompleknya project, dan juga memory leak akan susah dicari :| . untuk itu dibuat smart pointer: pointer yang mengurusi kepemilikan object (secara singkatnya begitu) . Smart pointer sudah lama digunakan, namun tetap saja masih banyak project yang menggunakan raw pointer , (dengan alasan kemudahan dan malas. haha.) . Kelemahan dari smart pointer , tentu akan lebih lambat dari raw pointer, karena smart pointer sebenarnya adalah wrapper class untuk pointer. Walaupun ada, saya yakin, keuntungannya lebih tinggi karena kecepatan processor yang semakin tinggi dan project yang rumit. {riil project == pasti rumit }. Okey, itulah motivasinya :), saatnya mencoba smart pointer. Saya pilih smart pointer dari Boost library yang banyak digunakan. Di Boost terdapat beberapa smart pointer, saya akan mencoba 3 diantaranya: scoped pointer, shared pointer, dan weak pointer."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2012-06-30T13:40:25+00:00"><meta property="article:modified_time" content="2012-06-30T13:40:25+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Mencoba Smart pointer dari Boost"><meta name=twitter:description content="Smart pointer adalah pointer yang smart. :d. ya memang begitu tujuannya. Seperti diketahui tidak ada management object secara otomatis [garbage collecor] di c/c++, jadi setiap dynamic-object yang di alokasi di heap dan sudah waktunya dihapus harus di-delete secara eksplisit. (dynamic-object == setiap object yang di-create dengan keyword new). Apa akibatnya jika delete tidak dilakukan?, kemungkinan terjadi memory leak ( : keadaan dimana pembuat program tidak bahagia). kemungkinan memory leak ini semakin besar seiring semakin kompleknya project, dan juga memory leak akan susah dicari :| . untuk itu dibuat smart pointer: pointer yang mengurusi kepemilikan object (secara singkatnya begitu) . Smart pointer sudah lama digunakan, namun tetap saja masih banyak project yang menggunakan raw pointer , (dengan alasan kemudahan dan malas. haha.) . Kelemahan dari smart pointer , tentu akan lebih lambat dari raw pointer, karena smart pointer sebenarnya adalah wrapper class untuk pointer. Walaupun ada, saya yakin, keuntungannya lebih tinggi karena kecepatan processor yang semakin tinggi dan project yang rumit. {riil project == pasti rumit }. Okey, itulah motivasinya :), saatnya mencoba smart pointer. Saya pilih smart pointer dari Boost library yang banyak digunakan. Di Boost terdapat beberapa smart pointer, saya akan mencoba 3 diantaranya: scoped pointer, shared pointer, dan weak pointer."><link rel=canonical href=https://xedixermawan.github.io/2012/06/30/582/></head><body class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"><header class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"><div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto"><a class="-translate-y-[1px] text-2xl font-medium" href=https://xedixermawan.github.io/>Home</a><div class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]" role=button aria-label=Dark></div></div><div class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8" role=button aria-label=Menu></div><script>const htmlClass=document.documentElement.classList;setTimeout(()=>{htmlClass.remove("not-ready")},10);const btnMenu=document.querySelector(".btn-menu");btnMenu.addEventListener("click",()=>{htmlClass.toggle("open")});const metaTheme=document.querySelector('meta[name="theme-color"]'),lightBg="#fbfbfb".replace(/"/g,""),setDark=e=>{metaTheme.setAttribute("content",e?"rgb(0 0 0 / 85%)":lightBg),htmlClass[e?"add":"remove"]("dark"),localStorage.setItem("dark",e)},darkScheme=window.matchMedia("(prefers-color-scheme: dark)");if(htmlClass.contains("dark"))setDark(!0);else{const e=localStorage.getItem("dark");setDark(e?e==="true":darkScheme.matches)}darkScheme.addEventListener("change",e=>{setDark(e.matches)});const btnDark=document.querySelector(".btn-dark");btnDark.addEventListener("click",()=>{setDark(localStorage.getItem("dark")!=="true")})</script><div class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"><nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"><a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href=/about/>About</a><a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href=/read/>Read</a></nav><nav class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"><a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./twitter.svg) href=https://twitter.com/XediXermawan target=_blank rel=me>twitter</a>
+<a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./github.svg) href=https://github.com/XediXermawan target=_blank rel=me>github</a>
+<a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./instagram.svg) href=https://instagram.com/XediXermawan target=_blank rel=me>instagram</a></nav></div></header><main class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"><article><header class=mb-14><h1 class="my-0! pb-2.5">Mencoba Smart pointer dari Boost</h1><div class="text-xs antialiased opacity-60"><time>Jun 30, 2012</time><span class=mx-1>&#183;</span>
+<span>oth3rside</span></div></header><section><p>Smart pointer adalah pointer yang smart. :d. ya memang begitu tujuannya. Seperti diketahui tidak ada management object secara otomatis [garbage collecor] di c/c++, jadi setiap dynamic-object yang di alokasi di heap dan sudah waktunya dihapus harus di-delete secara eksplisit. (dynamic-object == setiap object yang di-create dengan keyword new). Apa akibatnya jika delete tidak dilakukan?, kemungkinan terjadi memory leak ( : keadaan dimana pembuat program tidak bahagia). kemungkinan memory leak ini semakin besar seiring semakin kompleknya project, dan juga memory leak akan susah dicari :| . untuk itu dibuat smart pointer: pointer yang mengurusi kepemilikan object (secara singkatnya begitu) . Smart pointer sudah lama digunakan, namun tetap saja masih banyak project yang menggunakan raw pointer , (dengan alasan kemudahan dan malas. haha.) . Kelemahan dari smart pointer , tentu akan lebih lambat dari raw pointer, karena smart pointer sebenarnya adalah wrapper class untuk pointer. Walaupun ada, saya yakin, keuntungannya lebih tinggi karena kecepatan processor yang semakin tinggi dan project yang rumit. {riil project == pasti rumit }. Okey, itulah motivasinya :), saatnya mencoba smart pointer. Saya pilih smart pointer dari Boost library yang banyak digunakan. Di Boost terdapat beberapa smart pointer, saya akan mencoba 3 diantaranya: scoped pointer, shared pointer, dan weak pointer.</p><p><strong>1. scoped pointer.</strong></p><p>Di dalam fungsi (atau apapun yang ada di scope “{“ sampai “}” ) , object yang ada di stack otomatis di free kalau out of scope tapi kalau pointer tidak. Tujuan scoped_pointer adalah membuat pointer otomatis di free kalau out of scope , apapun yang terjadi. Misalnya saya punya sebuah kelas:</p><p>[sourcecode language=&ldquo;cpp&rdquo;]
 class bigObject
 {
 private:
@@ -198,33 +10,30 @@ public:
 bigObject(int id)
 {
 m_obj_id = id;
-std::cout&laquo;&quot; constructor call .object id: &ldquo;&laquo;m_obj_id&laquo;std::endl;
+std::cout&#171;" constructor call .object id: &ldquo;&#171;m_obj_id&#171;std::endl;
 };
 ~bigObject()
 {
-std::cout&laquo;&rdquo; destructor call .object id: &ldquo;&laquo;m_obj_id&laquo;std::endl;
+std::cout&#171;&rdquo; destructor call .object id: &ldquo;&#171;m_obj_id&#171;std::endl;
 };
 void doSomething()
 {
-std::cout&laquo;&rdquo; bigObject is doing something .object id: &ldquo;&laquo;m_obj_id&laquo;std::endl;
+std::cout&#171;&rdquo; bigObject is doing something .object id: &ldquo;&#171;m_obj_id&#171;std::endl;
 };
 };
-[/sourcecode]</p>
-<p>lalu ada fungsi yang menggunakan seperti dibawah ini:</p>
-<p>[sourcecode language=&ldquo;cpp&rdquo;]
+[/sourcecode]</p><p>lalu ada fungsi yang menggunakan seperti dibawah ini:</p><p>[sourcecode language=&ldquo;cpp&rdquo;]
 void complexFunc()
 {
 bigObject* object01 = new bigObject(1);
 bigObject* object02 = new bigObject(2);
 bigObject* object03;
-boost::scoped_ptr<bigObject> object04 ( new bigObject(4) ) ;</p>
-<p>// function do complex stuff here
+boost::scoped_ptr<bigobject> object04 ( new bigObject(4) ) ;</p><p>// function do complex stuff here
 // ..
 // ..
 bool complex_condition =false;
 if(complex_condition)
 {
-std::cout&laquo;&rdquo; return early &ldquo;&laquo;std::endl;
+std::cout&#171;&rdquo; return early &ldquo;&#171;std::endl;
 return; // #possibility 1
 }
 try
@@ -234,145 +43,85 @@ bigObject* object03 = new bigObject(2);
 // ..
 // ..
 throw 13; // but an exception is trown here // #possibility 2
-//..</p>
-<pre><code>  delete object03;
-</code></pre>
-<p>}
+//..</p><pre><code>  delete object03;
+</code></pre><p>}
 catch (int e)
 {
-std::cout&laquo;&rdquo; exception happen! your lucky number is: &ldquo;&laquo;e&laquo;std::endl;
+std::cout&#171;&rdquo; exception happen! your lucky number is: &ldquo;&#171;e&#171;std::endl;
 }
 // delete object01; forget to call #possibility 3
 delete object02;
 }
-[/sourcecode]</p>
-<p>Di fungsi void complexFunc() diatas, terdapat instansiasi class bigObject, masing-masing : object01, object02, object03 dan object04. Object04 adalah scoped_tr dan yang lain adalah raw pointer. Terdapat 3 kemungkinan object tidak di delete di fungsi di atas.</p>
-<p>#possibility 1 : dalam kondisi tertentu, variable boolean complex_condition menjadi true sehingga fungsi return. Akibatnya delete object02; tidak dipanggil. object04 ? .aman, di delete otomatis.</p>
-<p>#possibility 2 : terjadi exception , misalnya saja exception 13 , sehingga delete object03; tidak dipanggil. object04 ? .aman, di delete otomatis.</p>
-<p>#possibility 3 : object01 lupa tidak di delete (tukang ketik juga manusia) . object04 ? .aman, di delete otomatis.</p>
-<p> Jadi, penggunaan scoped_ptr sangat menguntungkan. Hehehe. #devil_laugh</p>
-<p><strong>2. shared pointer.</strong></p>
-<p>Seperti namanya , pointer ini digunakan untuk object yang ditunjuk oleh beberapa pointer. Tujuan penggunaan nya adalah men-track jumlah pointer yang menunjuk sebuah object di heap. Jika jumlah penunjuk object =0, object akan di delete otomatis. Salah satu contoh riil penggunaan nya adalah saat menyimpan pointer ke dalam vector.</p>
-<p>[sourcecode language=&ldquo;cpp&rdquo;]
-std::vector&lt;bigObject*&gt; vec;
-std::vector&lt; boost::shared_ptr<bigObject> &gt; vec2;</p>
-<p>for(int i=0;i&lt;10;i++) {
+[/sourcecode]</p><p>Di fungsi void complexFunc() diatas, terdapat instansiasi class bigObject, masing-masing : object01, object02, object03 dan object04. Object04 adalah scoped_tr dan yang lain adalah raw pointer. Terdapat 3 kemungkinan object tidak di delete di fungsi di atas.</p><p>#possibility 1 : dalam kondisi tertentu, variable boolean complex_condition menjadi true sehingga fungsi return. Akibatnya delete object02; tidak dipanggil. object04 ? .aman, di delete otomatis.</p><p>#possibility 2 : terjadi exception , misalnya saja exception 13 , sehingga delete object03; tidak dipanggil. object04 ? .aman, di delete otomatis.</p><p>#possibility 3 : object01 lupa tidak di delete (tukang ketik juga manusia) . object04 ? .aman, di delete otomatis.</p><p> Jadi, penggunaan scoped_ptr sangat menguntungkan. Hehehe. #devil_laugh</p><p><strong>2. shared pointer.</strong></p><p>Seperti namanya , pointer ini digunakan untuk object yang ditunjuk oleh beberapa pointer. Tujuan penggunaan nya adalah men-track jumlah pointer yang menunjuk sebuah object di heap. Jika jumlah penunjuk object =0, object akan di delete otomatis. Salah satu contoh riil penggunaan nya adalah saat menyimpan pointer ke dalam vector.</p><p>[sourcecode language=&ldquo;cpp&rdquo;]
+std::vector&lt;bigObject*> vec;
+std::vector&lt; boost::shared_ptr<bigobject> > vec2;</p><p>for(int i=0;i&lt;10;i++) {
 // fill vector vec
 bigObject* temp =new bigObject(i);
 vec.push_back(temp);
 // fill vector vec2
-boost::shared_ptr<bigObject> temp2 (new bigObject(i+10));
+boost::shared_ptr<bigobject> temp2 (new bigObject(i+10));
 vec2.push_back(temp2);
 }
 vec.erase(vec.begin() + 0);
-vec2.erase(vec2.begin() + 0);</p>
-<p>vec.clear();
+vec2.erase(vec2.begin() + 0);</p><p>vec.clear();
 vec2.clear();
-[/sourcecode]</p>
-<p>Code diatas vec dan vec2 adalah vector dari pointer ke bigObject, bedanya vec menggunakan raw pointer sedangkan vec2 menggunakan shared pointer. Setelah kode keluar for {.. } vec dan vec2 terisi, dan yang memiliki pointer ke bigObject adalah vector itu sendiri. Jadi jumlah pointer ke bigObject masing-masing =1 untuk setiap object didalam vector.</p>
-<p>vec.erase(vec.begin() + 0); : ref counted menjadi 0 untuk object index 0 di vector, object ke 0 masih ada di heap dan tidak pointer yang menunjuk. ( kandidat memory leak )</p>
-<p>vec2.erase(vec2.begin() + 0); : ref counted menjadi 0 untuk object index 0 di vector, object ke 0 otomastis di di delete . sama halnya terjadi saat pemanggilan clear(). Jadi saat men-<em>delete</em> anggota vec , delete harus dilakukan manual. Clear yang benar untuk vec :</p>
-<p>for(std::vector&lt;bigObject*&gt;::iterator it=vec.begin(); it!=vec.end(); it++) {</p>
-<p>      delete (*it);
+[/sourcecode]</p><p>Code diatas vec dan vec2 adalah vector dari pointer ke bigObject, bedanya vec menggunakan raw pointer sedangkan vec2 menggunakan shared pointer. Setelah kode keluar for {.. } vec dan vec2 terisi, dan yang memiliki pointer ke bigObject adalah vector itu sendiri. Jadi jumlah pointer ke bigObject masing-masing =1 untuk setiap object didalam vector.</p><p>vec.erase(vec.begin() + 0); : ref counted menjadi 0 untuk object index 0 di vector, object ke 0 masih ada di heap dan tidak pointer yang menunjuk. ( kandidat memory leak )</p><p>vec2.erase(vec2.begin() + 0); : ref counted menjadi 0 untuk object index 0 di vector, object ke 0 otomastis di di delete . sama halnya terjadi saat pemanggilan clear(). Jadi saat men-<em>delete</em> anggota vec , delete harus dilakukan manual. Clear yang benar untuk vec :</p><p>for(std::vector&lt;bigObject*>::iterator it=vec.begin(); it!=vec.end(); it++) {</p><p>      delete (*it);
 }
-vec.clear();</p>
-<p>erase dan clear vector memanggil destructor object, karena yang di hold disini adalah pointer ke object , maka destructor tidak dipanggil.</p>
-<p> <strong>3. weak pointer.</strong></p>
-<p>Akan ada masalah saat penggunaan shared_ptr jika terdapat keadaan dimana terdapat 2 atau lebih pointer yang saling menunjuk, yang mengakibatkan jumlah counter objek di shared_ptr tidak akan pernah 0, yang artinya objek tidak akan pernah di delete== tujuan shared_ptr gagal. Contoh simple situasi ini, sbb:</p>
-<p>[sourcecode language=&ldquo;cpp&rdquo;]
-class kelasB;</p>
-<p>class kelasA
+vec.clear();</p><p>erase dan clear vector memanggil destructor object, karena yang di hold disini adalah pointer ke object , maka destructor tidak dipanggil.</p><p> <strong>3. weak pointer.</strong></p><p>Akan ada masalah saat penggunaan shared_ptr jika terdapat keadaan dimana terdapat 2 atau lebih pointer yang saling menunjuk, yang mengakibatkan jumlah counter objek di shared_ptr tidak akan pernah 0, yang artinya objek tidak akan pernah di delete== tujuan shared_ptr gagal. Contoh simple situasi ini, sbb:</p><p>[sourcecode language=&ldquo;cpp&rdquo;]
+class kelasB;</p><p>class kelasA
 {
 public:
 kelasA()
 {
-std::cout&laquo;&rdquo; kelasA constructor call &ldquo;&laquo;std::endl;
+std::cout&#171;&rdquo; kelasA constructor call &ldquo;&#171;std::endl;
 }
-void setB(boost::shared_ptr<kelasB> _pB)
+void setB(boost::shared_ptr<kelasb> _pB)
 {
 m_B=_pB;
 }
 ~kelasA()
 {
-std::cout&laquo;&rdquo; kelasA destructor call &ldquo;&laquo;std::endl;
+std::cout&#171;&rdquo; kelasA destructor call &ldquo;&#171;std::endl;
 }
 void doSomething()
 {
-std::cout&laquo;&rdquo; kelasA is doSomething &ldquo;&laquo;std::endl;
+std::cout&#171;&rdquo; kelasA is doSomething &ldquo;&#171;std::endl;
 }
 private:
-boost::weak_ptr<kelasB> m_B;
-};</p>
-<p>class kelasB
+boost::weak_ptr<kelasb> m_B;
+};</p><p>class kelasB
 {
 public:
 kelasB()
 {
-std::cout&laquo;&rdquo; kelasB constructor call &ldquo;&laquo;std::endl;
+std::cout&#171;&rdquo; kelasB constructor call &ldquo;&#171;std::endl;
 }
-void setA(boost::shared_ptr<kelasA> _pA)
+void setA(boost::shared_ptr<kelasa> _pA)
 {
 m_A=_pA;
-m_A. -&gt;doing();
+m_A. ->doing();
 }
 ~kelasB()
 {
-std::cout&laquo;&rdquo; kelasB destructor call &ldquo;&laquo;std::endl;
+std::cout&#171;&rdquo; kelasB destructor call &ldquo;&#171;std::endl;
 }
 void doSomething()
 {
-std::cout&laquo;&rdquo; kelasB is doSomething &ldquo;&laquo;std::endl;
+std::cout&#171;&rdquo; kelasB is doSomething &ldquo;&#171;std::endl;
 }
 private:
-boost::weak_ptr<kelasA> m_A;
-};</p>
-<p>void testFunc()
+boost::weak_ptr<kelasa> m_A;
+};</p><p>void testFunc()
 {
-boost::shared_ptr<kelasA> aaa(new kelasA());
-boost::shared_ptr<kelasB> bbb(new kelasB());</p>
-<p>aaa-&gt;setB(bbb);
-bbb-&gt;setA(aaa);
+boost::shared_ptr<kelasa> aaa(new kelasA());
+boost::shared_ptr<kelasb> bbb(new kelasB());</p><p>aaa->setB(bbb);
+bbb->setA(aaa);
 }
-[/sourcecode]</p>
-<p>Di testFunc() , seharusnya aaa dan bbb di delete otomatis , tetapi itu tidak terjadi karena aaa dan bbb saling menunjuk yang menyebabkan jumlah objek di shared_ptr tidak pernah 0. untuk mengatasi ini, digunakan weak_ptr. Dalam kasus diatas dengan mengganti m_A di kelas A dan m_B dikelas B, menjadi boost::weak_ptr<kelasA> m_A; dan boost::weak_ptr<kelasB> m_B; . weak_ptr tidak memiliki overload operator →, jadi aaa-&gt;doSomething(); akan compile error. Jadi bagaimana ?. Untuk mengakses m_A atau m_B harus digunakan lock() .</p>
-<p>       m_A.lock() -&gt;doSomething();</p>
-<p>       m_B.lock() -&gt;doSomething();</p>
-<p> .lock() akan membuat local copy dari object yang ditunjuk oleh pointer. Jadi misalnya object yang ditunjuk sudah di delete tidak akan masalah. Misalnya:</p>
-<p> if(kelasB* temp= m_B.lock())
+[/sourcecode]</p><p>Di testFunc() , seharusnya aaa dan bbb di delete otomatis , tetapi itu tidak terjadi karena aaa dan bbb saling menunjuk yang menyebabkan jumlah objek di shared_ptr tidak pernah 0. untuk mengatasi ini, digunakan weak_ptr. Dalam kasus diatas dengan mengganti m_A di kelas A dan m_B dikelas B, menjadi boost::weak_ptr<kelasa> m_A; dan boost::weak_ptr<kelasb> m_B; . weak_ptr tidak memiliki overload operator →, jadi aaa->doSomething(); akan compile error. Jadi bagaimana ?. Untuk mengakses m_A atau m_B harus digunakan lock() .</p><p>       m_A.lock() ->doSomething();</p><p>       m_B.lock() ->doSomething();</p><p> .lock() akan membuat local copy dari object yang ditunjuk oleh pointer. Jadi misalnya object yang ditunjuk sudah di delete tidak akan masalah. Misalnya:</p><p> if(kelasB* temp= m_B.lock())
 {
            //doing other thing here
           //..
           //..
-           temp-&gt;DoSomething();
-}</p>
-<p>Dimungkinkan sebelum temp-&gt;DoSomething() dipanggil, m_B sudah di delete atau m_B.reset() dipanggil. Namun disini, temp-&gt;DoSomething() tidak akan crash.</p>
-<p>Posting ini adalah tutorial awal pengenalan smart pointer. untuk memahaminya lebih dalam tentu harus menggunakanya secara intensif di setiap project. semua code diatas dites di visual c++ 2008. Jika ada kesalahan, silahkan komen. </p>
-<p>? : saat copy paste source code dari open office / notepad++ ke worpress editor identation nya jadi hilang. :|</p>
-<p>&lt; edi dot ermawan at gmail dot com &gt; . yogyakarta, 01/07/2012 .</p>
-</section>
-
-  <nav
-    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
-  ><a class="ltr:pr-3 rtl:pl-3" href="https://xedixermawan.github.io/2012/10/21/simple-thread-pool-test/"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Simple &#34;thread pool&#34; test</span></a
-    ><a
-      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
-      href="https://xedixermawan.github.io/2012/05/26/solved-conversion-to-dalvik-format-failed-with-error-1/"
-      ><span>Solved: Conversion to Dalvik format failed with error 1</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
-    ></nav></article></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2007-2024 XediXermawan</div>
-  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
-    >powered by hugo️️</a
-  >️
-  <a
-    class="link"
-    href="https://github.com/nanxiaobei/hugo-paper"
-    rel="noopener"
-    target="_blank"
-    >hugo-paper</a
-  >
-</footer>
-</body>
-</html>
+           temp->DoSomething();
+}</p><p>Dimungkinkan sebelum temp->DoSomething() dipanggil, m_B sudah di delete atau m_B.reset() dipanggil. Namun disini, temp->DoSomething() tidak akan crash.</p><p>Posting ini adalah tutorial awal pengenalan smart pointer. untuk memahaminya lebih dalam tentu harus menggunakanya secara intensif di setiap project. semua code diatas dites di visual c++ 2008. Jika ada kesalahan, silahkan komen. </p><p>? : saat copy paste source code dari open office / notepad++ ke worpress editor identation nya jadi hilang. :|</p><p>&lt; edi dot ermawan at gmail dot com > . yogyakarta, 01/07/2012 .</p></section><nav class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"><a class="ltr:pr-3 rtl:pl-3" href=https://xedixermawan.github.io/2012/10/21/simple-thread-pool-test/><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Simple "thread pool" test</span></a><a class="justify-end pl-3 ltr:ml-auto rtl:mr-auto" href=https://xedixermawan.github.io/2012/05/26/solved-conversion-to-dalvik-format-failed-with-error-1/><span>Solved: Conversion to Dalvik format failed with error 1</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a></nav></article></main><footer class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"><div class=mr-auto>© 2007-2024 XediXermawan</div><a class="link mx-6" href=https://gohugo.io/ rel=noopener target=_blank>powered by hugo️️</a>️
+<a class=link href=https://github.com/nanxiaobei/hugo-paper rel=noopener target=_blank>hugo-paper</a></footer></body></html>

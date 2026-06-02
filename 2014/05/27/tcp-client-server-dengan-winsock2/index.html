@@ -1,254 +1,32 @@
-<!doctype html>
-
-
-
-
-
-
-
-<html
-  class="not-ready lg:text-base"
-  style="--bg:#fbfbfb"
-  lang="en"
-  dir="ltr"
-><head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
-
-  
-  <title>TCP client server dengan winsock2 - Home</title>
-
-  
-  <meta name="theme-color" />
-
-  <meta name="description" content="Untuk keperluan selanjutnya di pengembangan game yang sedang saya buat ( :-o ), saya memerlukan program yang bisa di tweak lewat program lain. Dengan kata lain 2 program yang saling bisa berkomunikasi. Cara yang bisa dicapai , pakai file sharing atau dengan cara yang pas : pakai networking tcp / udp . Kalau mau buat program dengan kemampuan networking, cara yang bijaksana mungkin pakai 3rd party library yang sudah cukup populer dan reliable. Di antaranya, yang saya ketahui dan sepertinya sudah terbukti bagus : boost-asio ( free ), raknet ( free untuk hobyist ), libevent ( free ), etc. ada yang lain ?. Tapi saya pinginnya ndak usah pakai 3rd party lib, lagipula program yang akan saya buat cukup sederhana. winsock2 &amp; c/c&#43;&#43; . itu pilihannya. dan rasanya akan fun juga buat program nya hehe. Sebagai pemanasan awal dengan winsock2 ( saya pemula ) , saya perlu membuat program seperti ini : ada client dan server. client bisa kirim data ke server. server bisa kirim data ke client. jika client nya lebih dari satu, client bisa kirim data ke client yang lain. representasi dari program ini adalah program &ldquo;chatting&rdquo; :d .
-kemampuan server dalam keadaan running :" />
-  <meta name="author" content="oth3rside" /><link rel="preload stylesheet" as="style" href="https://xedixermawan.github.io/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
-
-  
-  <link rel="preload" as="image" href="https://xedixermawan.github.io/theme.png" />
-
-  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/874371989962b8461ad94e8119d82bc7?s=160&amp;d=identicon" />
-
-  <link rel="preload" as="image" href="https://xedixermawan.github.io/twitter.svg" /><link rel="preload" as="image" href="https://xedixermawan.github.io/github.svg" /><link rel="preload" as="image" href="https://xedixermawan.github.io/instagram.svg" />
-
-  <script
-    defer
-    src="https://xedixermawan.github.io/highlight.min.js"
-    onload="hljs.initHighlightingOnLoad()"
-  ></script>
-
-  
-  <link
-    rel="icon"
-    href="https://xedixermawan.github.io/favicon.ico"
-  />
-  <link
-    rel="apple-touch-icon"
-    href="https://xedixermawan.github.io/apple-touch-icon.png"
-  />
-
-  <meta name="generator" content="Hugo 0.152.2">
-  <meta itemprop="name" content="TCP client server dengan winsock2">
-  <meta itemprop="description" content="Untuk keperluan selanjutnya di pengembangan game yang sedang saya buat ( :-o ), saya memerlukan program yang bisa di tweak lewat program lain. Dengan kata lain 2 program yang saling bisa berkomunikasi. Cara yang bisa dicapai , pakai file sharing atau dengan cara yang pas : pakai networking tcp / udp . Kalau mau buat program dengan kemampuan networking, cara yang bijaksana mungkin pakai 3rd party library yang sudah cukup populer dan reliable. Di antaranya, yang saya ketahui dan sepertinya sudah terbukti bagus : boost-asio ( free ), raknet ( free untuk hobyist ), libevent ( free ), etc. ada yang lain ?. Tapi saya pinginnya ndak usah pakai 3rd party lib, lagipula program yang akan saya buat cukup sederhana. winsock2 &amp; c/c&#43;&#43; . itu pilihannya. dan rasanya akan fun juga buat program nya hehe. Sebagai pemanasan awal dengan winsock2 ( saya pemula ) , saya perlu membuat program seperti ini : ada client dan server. client bisa kirim data ke server. server bisa kirim data ke client. jika client nya lebih dari satu, client bisa kirim data ke client yang lain. representasi dari program ini adalah program “chatting” :d . kemampuan server dalam keadaan running :">
-  <meta itemprop="datePublished" content="2014-05-27T18:43:03+00:00">
-  <meta itemprop="dateModified" content="2014-05-27T18:43:03+00:00">
-  <meta itemprop="wordCount" content="1775">
-  <meta itemprop="keywords" content="C/C&#43;&#43;,Chat Winsock2,Tcp/Ip,Winsock2"><meta property="og:url" content="https://xedixermawan.github.io/2014/05/27/tcp-client-server-dengan-winsock2/">
-  <meta property="og:site_name" content="Home">
-  <meta property="og:title" content="TCP client server dengan winsock2">
-  <meta property="og:description" content="Untuk keperluan selanjutnya di pengembangan game yang sedang saya buat ( :-o ), saya memerlukan program yang bisa di tweak lewat program lain. Dengan kata lain 2 program yang saling bisa berkomunikasi. Cara yang bisa dicapai , pakai file sharing atau dengan cara yang pas : pakai networking tcp / udp . Kalau mau buat program dengan kemampuan networking, cara yang bijaksana mungkin pakai 3rd party library yang sudah cukup populer dan reliable. Di antaranya, yang saya ketahui dan sepertinya sudah terbukti bagus : boost-asio ( free ), raknet ( free untuk hobyist ), libevent ( free ), etc. ada yang lain ?. Tapi saya pinginnya ndak usah pakai 3rd party lib, lagipula program yang akan saya buat cukup sederhana. winsock2 &amp; c/c&#43;&#43; . itu pilihannya. dan rasanya akan fun juga buat program nya hehe. Sebagai pemanasan awal dengan winsock2 ( saya pemula ) , saya perlu membuat program seperti ini : ada client dan server. client bisa kirim data ke server. server bisa kirim data ke client. jika client nya lebih dari satu, client bisa kirim data ke client yang lain. representasi dari program ini adalah program “chatting” :d . kemampuan server dalam keadaan running :">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2014-05-27T18:43:03+00:00">
-    <meta property="article:modified_time" content="2014-05-27T18:43:03+00:00">
-    <meta property="article:tag" content="C/C&#43;&#43;">
-    <meta property="article:tag" content="Chat Winsock2">
-    <meta property="article:tag" content="Tcp/Ip">
-    <meta property="article:tag" content="Winsock2">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="TCP client server dengan winsock2">
-  <meta name="twitter:description" content="Untuk keperluan selanjutnya di pengembangan game yang sedang saya buat ( :-o ), saya memerlukan program yang bisa di tweak lewat program lain. Dengan kata lain 2 program yang saling bisa berkomunikasi. Cara yang bisa dicapai , pakai file sharing atau dengan cara yang pas : pakai networking tcp / udp . Kalau mau buat program dengan kemampuan networking, cara yang bijaksana mungkin pakai 3rd party library yang sudah cukup populer dan reliable. Di antaranya, yang saya ketahui dan sepertinya sudah terbukti bagus : boost-asio ( free ), raknet ( free untuk hobyist ), libevent ( free ), etc. ada yang lain ?. Tapi saya pinginnya ndak usah pakai 3rd party lib, lagipula program yang akan saya buat cukup sederhana. winsock2 &amp; c/c&#43;&#43; . itu pilihannya. dan rasanya akan fun juga buat program nya hehe. Sebagai pemanasan awal dengan winsock2 ( saya pemula ) , saya perlu membuat program seperti ini : ada client dan server. client bisa kirim data ke server. server bisa kirim data ke client. jika client nya lebih dari satu, client bisa kirim data ke client yang lain. representasi dari program ini adalah program “chatting” :d . kemampuan server dalam keadaan running :">
-
-  <link rel="canonical" href="https://xedixermawan.github.io/2014/05/27/tcp-client-server-dengan-winsock2/" />
-</head>
-<body
-    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
-  ><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://xedixermawan.github.io/"
-      >Home</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
-
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
-
-  <script>
-    
-    const htmlClass = document.documentElement.classList;
-    setTimeout(() => {
-      htmlClass.remove('not-ready');
-    }, 10);
-
-    
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
-    const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#fbfbfb'.replace(/"/g, '');
-    const setDark = (isDark) => {
-      metaTheme.setAttribute('content', isDark ? "rgb(0 0 0 / 85%)" : lightBg);
-      htmlClass[isDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', isDark);
-    };
-
-    
-    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    if (htmlClass.contains('dark')) {
-      setDark(true);
-    } else {
-      const darkVal = localStorage.getItem('dark');
-      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
-    }
-
-    
-    darkScheme.addEventListener('change', (event) => {
-      setDark(event.matches);
-    });
-
-    
-    const btnDark = document.querySelector('.btn-dark');
-    btnDark.addEventListener('click', () => {
-      setDark(localStorage.getItem('dark') !== 'true');
-    });
-  </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/read/"
-        >Read</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./twitter.svg)"
-        href="https://twitter.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >twitter</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./github.svg)"
-        href="https://github.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >github</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./instagram.svg)"
-        href="https://instagram.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >instagram</a>
-    </nav>
-  </div>
-</header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    ><article>
-  <header class="mb-14">
-    <h1 class="my-0! pb-2.5">TCP client server dengan winsock2</h1><div class="text-xs antialiased opacity-60"><time>May 27, 2014</time><span class="mx-1">&middot;</span>
-      <span>oth3rside</span></div></header>
-
-  <section><p>Untuk keperluan selanjutnya di pengembangan game yang sedang saya buat ( :-o ), saya memerlukan program yang bisa di tweak lewat program lain. Dengan kata lain 2 program yang saling bisa berkomunikasi. Cara yang bisa dicapai , pakai file sharing atau dengan cara yang pas : pakai networking tcp / udp . Kalau mau buat program dengan kemampuan networking, cara yang bijaksana mungkin pakai 3rd party library yang sudah cukup populer dan reliable. Di antaranya, yang saya ketahui dan sepertinya sudah terbukti bagus :<a href="http://www.boost.org/doc/libs/1_55_0/doc/html/boost_asio.html"> boost-asio</a> ( free ), <a href="http://www.jenkinssoftware.com/download.html">raknet </a>( free untuk hobyist ), <a href="http://libevent.org/">libevent </a>( free ), etc. ada yang lain ?. Tapi saya pinginnya ndak usah pakai 3rd party lib, lagipula program yang akan saya buat cukup sederhana. winsock2 &amp; c/c++ . itu pilihannya. dan rasanya akan fun juga buat program nya hehe. Sebagai pemanasan awal dengan winsock2 ( saya pemula ) , saya perlu membuat program seperti ini : ada client dan server. client bisa kirim data ke server. server bisa kirim data ke client. jika client nya lebih dari satu, client bisa kirim data ke client yang lain. representasi dari program ini adalah program &ldquo;chatting&rdquo; :d .
-kemampuan server dalam keadaan running :</p>
-<ul>
-<li>stand by &amp; listening kalau ada client mau membuat koneksi.</li>
-<li>setiap ada client tersambung, server akan membuat handler yang menangani koneksi ke client tersebut berdasarkan socket id. ( dalam test program dipost ini, setiap ada client, server membuat thread baru, untuk menanganinya ).</li>
-<li>server bisa kirim data ke client lewat console</li>
-<li>ada &gt; 3 thread . 1 main thread: untuk menangkap command line dari user, 1 thread untuk &ldquo;stand by&rdquo; / connection acceptor, dan n thread , untuk n client yang tersambung. ya sebenarnya ndak benar ( bisa di optimize pakai thread pool mungkin nantinya ).</li>
-</ul>
-<p>kemampuan client dalam keadaan running :</p>
-<ul>
-<li>connect ke server</li>
-<li>kirim data ke server</li>
-<li>ada 2 thread, 1 main thread, 1 client handler thread ( data receiver &amp; sender )</li>
-<li>port hardcoded : 22536</li>
-</ul>
-<p>catatan :
-[1] saya membuat socket mode ke non-blocking , artinya pemanggilan fungsi2 winsock seperti connect, recv, send tidak akan mem-blok jalannya program loop. jadi non-blocking &amp; di thread lain selain main thread.
+<!doctype html><html class="not-ready lg:text-base" style=--bg:#fbfbfb lang=en dir=ltr><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>TCP client server dengan winsock2 - Home</title><meta name=theme-color><meta name=description content="Untuk keperluan selanjutnya di pengembangan game yang sedang saya buat ( :-o ), saya memerlukan program yang bisa di tweak lewat program lain. Dengan kata lain 2 program yang saling bisa berkomunikasi. Cara yang bisa dicapai , pakai file sharing atau dengan cara yang pas : pakai networking tcp / udp . Kalau mau buat program dengan kemampuan networking, cara yang bijaksana mungkin pakai 3rd party library yang sudah cukup populer dan reliable. Di antaranya, yang saya ketahui dan sepertinya sudah terbukti bagus : boost-asio ( free ), raknet ( free untuk hobyist ), libevent ( free ), etc. ada yang lain ?. Tapi saya pinginnya ndak usah pakai 3rd party lib, lagipula program yang akan saya buat cukup sederhana. winsock2 & c/c++ . itu pilihannya. dan rasanya akan fun juga buat program nya hehe. Sebagai pemanasan awal dengan winsock2 ( saya pemula ) , saya perlu membuat program seperti ini : ada client dan server. client bisa kirim data ke server. server bisa kirim data ke client. jika client nya lebih dari satu, client bisa kirim data ke client yang lain. representasi dari program ini adalah program &ldquo;chatting&rdquo; :d .
+kemampuan server dalam keadaan running :"><meta name=author content="oth3rside"><link rel="preload stylesheet" as=style href=https://xedixermawan.github.io/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css integrity="sha256-6GrmfgHi0gVRBqv3K+c1fJUBkQYOXxWfJOJ5D9gjfow="><link rel=preload as=image href=https://xedixermawan.github.io/theme.png><link rel=preload as=image href="https://www.gravatar.com/avatar/874371989962b8461ad94e8119d82bc7?s=160&amp;d=identicon"><link rel=preload as=image href=https://xedixermawan.github.io/twitter.svg><link rel=preload as=image href=https://xedixermawan.github.io/github.svg><link rel=preload as=image href=https://xedixermawan.github.io/instagram.svg><script defer src=https://xedixermawan.github.io/highlight.min.js onload=hljs.initHighlightingOnLoad()></script><link rel=icon href=https://xedixermawan.github.io/favicon.ico><link rel=apple-touch-icon href=https://xedixermawan.github.io/apple-touch-icon.png><meta name=generator content="Hugo 0.152.2"><meta itemprop=name content="TCP client server dengan winsock2"><meta itemprop=description content="Untuk keperluan selanjutnya di pengembangan game yang sedang saya buat ( :-o ), saya memerlukan program yang bisa di tweak lewat program lain. Dengan kata lain 2 program yang saling bisa berkomunikasi. Cara yang bisa dicapai , pakai file sharing atau dengan cara yang pas : pakai networking tcp / udp . Kalau mau buat program dengan kemampuan networking, cara yang bijaksana mungkin pakai 3rd party library yang sudah cukup populer dan reliable. Di antaranya, yang saya ketahui dan sepertinya sudah terbukti bagus : boost-asio ( free ), raknet ( free untuk hobyist ), libevent ( free ), etc. ada yang lain ?. Tapi saya pinginnya ndak usah pakai 3rd party lib, lagipula program yang akan saya buat cukup sederhana. winsock2 & c/c++ . itu pilihannya. dan rasanya akan fun juga buat program nya hehe. Sebagai pemanasan awal dengan winsock2 ( saya pemula ) , saya perlu membuat program seperti ini : ada client dan server. client bisa kirim data ke server. server bisa kirim data ke client. jika client nya lebih dari satu, client bisa kirim data ke client yang lain. representasi dari program ini adalah program “chatting” :d . kemampuan server dalam keadaan running :"><meta itemprop=datePublished content="2014-05-27T18:43:03+00:00"><meta itemprop=dateModified content="2014-05-27T18:43:03+00:00"><meta itemprop=wordCount content="1775"><meta itemprop=keywords content="C/C++,Chat Winsock2,Tcp/Ip,Winsock2"><meta property="og:url" content="https://xedixermawan.github.io/2014/05/27/tcp-client-server-dengan-winsock2/"><meta property="og:site_name" content="Home"><meta property="og:title" content="TCP client server dengan winsock2"><meta property="og:description" content="Untuk keperluan selanjutnya di pengembangan game yang sedang saya buat ( :-o ), saya memerlukan program yang bisa di tweak lewat program lain. Dengan kata lain 2 program yang saling bisa berkomunikasi. Cara yang bisa dicapai , pakai file sharing atau dengan cara yang pas : pakai networking tcp / udp . Kalau mau buat program dengan kemampuan networking, cara yang bijaksana mungkin pakai 3rd party library yang sudah cukup populer dan reliable. Di antaranya, yang saya ketahui dan sepertinya sudah terbukti bagus : boost-asio ( free ), raknet ( free untuk hobyist ), libevent ( free ), etc. ada yang lain ?. Tapi saya pinginnya ndak usah pakai 3rd party lib, lagipula program yang akan saya buat cukup sederhana. winsock2 & c/c++ . itu pilihannya. dan rasanya akan fun juga buat program nya hehe. Sebagai pemanasan awal dengan winsock2 ( saya pemula ) , saya perlu membuat program seperti ini : ada client dan server. client bisa kirim data ke server. server bisa kirim data ke client. jika client nya lebih dari satu, client bisa kirim data ke client yang lain. representasi dari program ini adalah program “chatting” :d . kemampuan server dalam keadaan running :"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2014-05-27T18:43:03+00:00"><meta property="article:modified_time" content="2014-05-27T18:43:03+00:00"><meta property="article:tag" content="C/C++"><meta property="article:tag" content="Chat Winsock2"><meta property="article:tag" content="Tcp/Ip"><meta property="article:tag" content="Winsock2"><meta name=twitter:card content="summary"><meta name=twitter:title content="TCP client server dengan winsock2"><meta name=twitter:description content="Untuk keperluan selanjutnya di pengembangan game yang sedang saya buat ( :-o ), saya memerlukan program yang bisa di tweak lewat program lain. Dengan kata lain 2 program yang saling bisa berkomunikasi. Cara yang bisa dicapai , pakai file sharing atau dengan cara yang pas : pakai networking tcp / udp . Kalau mau buat program dengan kemampuan networking, cara yang bijaksana mungkin pakai 3rd party library yang sudah cukup populer dan reliable. Di antaranya, yang saya ketahui dan sepertinya sudah terbukti bagus : boost-asio ( free ), raknet ( free untuk hobyist ), libevent ( free ), etc. ada yang lain ?. Tapi saya pinginnya ndak usah pakai 3rd party lib, lagipula program yang akan saya buat cukup sederhana. winsock2 & c/c++ . itu pilihannya. dan rasanya akan fun juga buat program nya hehe. Sebagai pemanasan awal dengan winsock2 ( saya pemula ) , saya perlu membuat program seperti ini : ada client dan server. client bisa kirim data ke server. server bisa kirim data ke client. jika client nya lebih dari satu, client bisa kirim data ke client yang lain. representasi dari program ini adalah program “chatting” :d . kemampuan server dalam keadaan running :"><link rel=canonical href=https://xedixermawan.github.io/2014/05/27/tcp-client-server-dengan-winsock2/></head><body class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"><header class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"><div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto"><a class="-translate-y-[1px] text-2xl font-medium" href=https://xedixermawan.github.io/>Home</a><div class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]" role=button aria-label=Dark></div></div><div class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8" role=button aria-label=Menu></div><script>const htmlClass=document.documentElement.classList;setTimeout(()=>{htmlClass.remove("not-ready")},10);const btnMenu=document.querySelector(".btn-menu");btnMenu.addEventListener("click",()=>{htmlClass.toggle("open")});const metaTheme=document.querySelector('meta[name="theme-color"]'),lightBg="#fbfbfb".replace(/"/g,""),setDark=e=>{metaTheme.setAttribute("content",e?"rgb(0 0 0 / 85%)":lightBg),htmlClass[e?"add":"remove"]("dark"),localStorage.setItem("dark",e)},darkScheme=window.matchMedia("(prefers-color-scheme: dark)");if(htmlClass.contains("dark"))setDark(!0);else{const e=localStorage.getItem("dark");setDark(e?e==="true":darkScheme.matches)}darkScheme.addEventListener("change",e=>{setDark(e.matches)});const btnDark=document.querySelector(".btn-dark");btnDark.addEventListener("click",()=>{setDark(localStorage.getItem("dark")!=="true")})</script><div class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"><nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"><a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href=/about/>About</a><a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href=/read/>Read</a></nav><nav class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"><a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./twitter.svg) href=https://twitter.com/XediXermawan target=_blank rel=me>twitter</a>
+<a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./github.svg) href=https://github.com/XediXermawan target=_blank rel=me>github</a>
+<a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./instagram.svg) href=https://instagram.com/XediXermawan target=_blank rel=me>instagram</a></nav></div></header><main class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"><article><header class=mb-14><h1 class="my-0! pb-2.5">TCP client server dengan winsock2</h1><div class="text-xs antialiased opacity-60"><time>May 27, 2014</time><span class=mx-1>&#183;</span>
+<span>oth3rside</span></div></header><section><p>Untuk keperluan selanjutnya di pengembangan game yang sedang saya buat ( :-o ), saya memerlukan program yang bisa di tweak lewat program lain. Dengan kata lain 2 program yang saling bisa berkomunikasi. Cara yang bisa dicapai , pakai file sharing atau dengan cara yang pas : pakai networking tcp / udp . Kalau mau buat program dengan kemampuan networking, cara yang bijaksana mungkin pakai 3rd party library yang sudah cukup populer dan reliable. Di antaranya, yang saya ketahui dan sepertinya sudah terbukti bagus :<a href=http://www.boost.org/doc/libs/1_55_0/doc/html/boost_asio.html> boost-asio</a> ( free ), <a href=http://www.jenkinssoftware.com/download.html>raknet </a>( free untuk hobyist ), <a href=http://libevent.org/>libevent </a>( free ), etc. ada yang lain ?. Tapi saya pinginnya ndak usah pakai 3rd party lib, lagipula program yang akan saya buat cukup sederhana. winsock2 & c/c++ . itu pilihannya. dan rasanya akan fun juga buat program nya hehe. Sebagai pemanasan awal dengan winsock2 ( saya pemula ) , saya perlu membuat program seperti ini : ada client dan server. client bisa kirim data ke server. server bisa kirim data ke client. jika client nya lebih dari satu, client bisa kirim data ke client yang lain. representasi dari program ini adalah program &ldquo;chatting&rdquo; :d .
+kemampuan server dalam keadaan running :</p><ul><li>stand by & listening kalau ada client mau membuat koneksi.</li><li>setiap ada client tersambung, server akan membuat handler yang menangani koneksi ke client tersebut berdasarkan socket id. ( dalam test program dipost ini, setiap ada client, server membuat thread baru, untuk menanganinya ).</li><li>server bisa kirim data ke client lewat console</li><li>ada > 3 thread . 1 main thread: untuk menangkap command line dari user, 1 thread untuk &ldquo;stand by&rdquo; / connection acceptor, dan n thread , untuk n client yang tersambung. ya sebenarnya ndak benar ( bisa di optimize pakai thread pool mungkin nantinya ).</li></ul><p>kemampuan client dalam keadaan running :</p><ul><li>connect ke server</li><li>kirim data ke server</li><li>ada 2 thread, 1 main thread, 1 client handler thread ( data receiver & sender )</li><li>port hardcoded : 22536</li></ul><p>catatan :
+[1] saya membuat socket mode ke non-blocking , artinya pemanggilan fungsi2 winsock seperti connect, recv, send tidak akan mem-blok jalannya program loop. jadi non-blocking & di thread lain selain main thread.
 u_long iMode = 1;  // iMode=0, blocking mode, default value
 ioctlsocket(ConnectSocket, FIONBIO, &amp;iMode);
-[2] untuk sharing data antar thread, saya menggunakan concurrent queue dari blog Anthony William <a href="http://www.justsoftwaresolutions.co.uk/threading/implementing-a-thread-safe-queue-using-condition-variables.html">http://www.justsoftwaresolutions.co.uk/threading/implementing-a-thread-safe-queue-using-condition-variables.html</a> yang saya modifikasi menggunakan std library ( awalnya pakai boost )
-[3] data yang dikirim berupa string.</p>
-<p>Beberapa pertanyaan :</p>
-<ul>
-<li>apa cara di catatan no [1] ( non-blocking &amp; di thread lain ) efektif ?</li>
-<li>saat memakai non-blocking mode, kalau mengirim data byte yang sangat besaarr , apakah semuanya terkirim langsung ATAU setelah beberapa call sent?</li>
-</ul>
-<p>Reference :
--<a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms738545(v=vs.85).aspx">MSDN winsock2</a> ( belum semuanya saya baca :| )</p>
-<p>berikut code program chat client &amp; server yang saya buat :</p>
-<p><strong>(server code) : ~288 baris</strong></p>
-<p>[sourcecode language=&ldquo;cpp&rdquo;]
-// xedi xermawan &lt; <a href="mailto:edi.ermawan@gmail.com">edi.ermawan@gmail.com</a> &gt;
+[2] untuk sharing data antar thread, saya menggunakan concurrent queue dari blog Anthony William <a href=http://www.justsoftwaresolutions.co.uk/threading/implementing-a-thread-safe-queue-using-condition-variables.html>http://www.justsoftwaresolutions.co.uk/threading/implementing-a-thread-safe-queue-using-condition-variables.html</a> yang saya modifikasi menggunakan std library ( awalnya pakai boost )
+[3] data yang dikirim berupa string.</p><p>Beberapa pertanyaan :</p><ul><li>apa cara di catatan no [1] ( non-blocking & di thread lain ) efektif ?</li><li>saat memakai non-blocking mode, kalau mengirim data byte yang sangat besaarr , apakah semuanya terkirim langsung ATAU setelah beberapa call sent?</li></ul><p>Reference :
+-<a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms738545(v=vs.85).aspx">MSDN winsock2</a> ( belum semuanya saya baca :| )</p><p>berikut code program chat client & server yang saya buat :</p><p><strong>(server code) : ~288 baris</strong></p><p>[sourcecode language=&ldquo;cpp&rdquo;]
+// xedi xermawan &lt; <a href=mailto:edi.ermawan@gmail.com>edi.ermawan@gmail.com</a> >
 // May 27, 2014
 // tcp client server networking test using winsock2
-// server code</p>
-<p>#define WIN32_LEAN_AND_MEAN
-#include &lt;windows.h&gt;
-#include &lt;winsock2.h&gt;
-#include &lt;ws2tcpip.h&gt;
-#include <iostream>
-#include <thread>
-#include <mutex>
-#include &lt;condition_variable&gt;
-#include <vector>
-#include <queue></p>
-<p>#include &ldquo;concurrent_queue.hpp&rdquo;</p>
-<p>#pragma comment (lib, &ldquo;ws2_32.lib&rdquo;)</p>
-<p>#define DEFAULT_BUFLEN 512
-#define DEFAULT_PORT &ldquo;22536&rdquo;</p>
-<p>struct XDclient_info
+// server code</p><p>#define WIN32_LEAN_AND_MEAN
+#include &lt;windows.h>
+#include &lt;winsock2.h>
+#include &lt;ws2tcpip.h>
+#include <iostream>#include <thread>#include <mutex>#include &lt;condition_variable>
+#include <vector>#include <queue></p><p>#include &ldquo;concurrent_queue.hpp&rdquo;</p><p>#pragma comment (lib, &ldquo;ws2_32.lib&rdquo;)</p><p>#define DEFAULT_BUFLEN 512
+#define DEFAULT_PORT &ldquo;22536&rdquo;</p><p>struct XDclient_info
 {
 int socket_id;
 struct sockaddr_in address;
-};</p>
-<p>class XDclient
+};</p><p>class XDclient
 {
 public:
-XDclient(XDclient_info&amp; clientinfo)
+XDclient(XDclient_info& clientinfo)
 {
 m_clientinfo = clientinfo;
 m_recvbuflen = DEFAULT_BUFLEN;
@@ -265,7 +43,7 @@ return m_clientinfo;
 }
 ~XDclient()
 {
-m_thread-&gt;join();
+m_thread->join();
 delete m_thread;
 }
 std::string get_data()
@@ -283,8 +61,7 @@ std::thread* m_thread;
 char m_recvbuf[DEFAULT_BUFLEN];
 int m_recvbuflen;
 bool m_islive;
-concurrent_queue <a href="std::string">std::string</a> m_queue;</p>
-<pre><code>void run()
+concurrent_queue <a href=std::string>std::string</a> m_queue;</p><pre><code>void run()
 {
 	while (m_islive)
 	{
@@ -311,9 +88,7 @@ concurrent_queue <a href="std::string">std::string</a> m_queue;</p>
 		Sleep(50);
 	}
 }
-</code></pre>
-<p>};</p>
-<p>class XDserver
+</code></pre><p>};</p><p>class XDserver
 {
 public:
 XDserver()
@@ -325,14 +100,13 @@ m_thread = new std::thread(&amp;XDserver::run, this);
 ~XDserver()
 {
 m_isrun = false;
-m_thread-&gt;join();
+m_thread->join();
 delete m_thread;
 }
 void run()
 {
 WSADATA wsaData;
-int result_ ;</p>
-<pre><code>	SOCKET listen_socket = INVALID_SOCKET;
+int result_ ;</p><pre><code>	SOCKET listen_socket = INVALID_SOCKET;
 	SOCKET client_socket = INVALID_SOCKET;
 
 	struct addrinfo *result = NULL;
@@ -468,69 +242,54 @@ bool isLive()
 {
 	return m_isrun;
 }
-</code></pre>
-<p>private:
+</code></pre><p>private:
 char m_recvbuf[DEFAULT_BUFLEN];
 int m_recvbuflen;
 bool m_isrun;
 std::thread* m_thread;
-std::vector&lt; XDclient* &gt; m_clients;
-concurrent_queue <a href="std::string">std::string</a> m_queue;
-};</p>
-<p>class Games
+std::vector&lt; XDclient* > m_clients;
+concurrent_queue <a href=std::string>std::string</a> m_queue;
+};</p><p>class Games
 {
-};</p>
-<p>int __cdecl main(int argc, char** argv)
+};</p><p>int __cdecl main(int argc, char** argv)
 {
 XDserver* server = new XDserver();
-std::cout &laquo; &ldquo;welcome to the server&rdquo;&laquo;std::endl;
-std::cout &laquo; &ldquo;type an input to broadcast to all client. &ldquo;&ldquo;exit&rdquo;&rdquo; to close program &quot; &laquo; std::endl;
-while (server-&gt;isLive())
+std::cout &#171; &ldquo;welcome to the server&rdquo;&#171;std::endl;
+std::cout &#171; &ldquo;type an input to broadcast to all client. &ldquo;&ldquo;exit&rdquo;&rdquo; to close program " &#171; std::endl;
+while (server->isLive())
 {
-char str_in[512]=&rdquo;&quot;;
-std::cin &raquo; str_in;
+char str_in[512]=&rdquo;";
+std::cin &#187; str_in;
 std::string str_input(str_in);
-server-&gt;senddata(&ldquo;server|&quot;+str_input);
+server->senddata(&ldquo;server|"+str_input);
 if (!str_input.compare(&ldquo;exit&rdquo;))
 {
 break;
 }
 }
 delete server;
-std::cout &laquo; &ldquo;server shutdown&rdquo; &laquo; std::endl;
+std::cout &#171; &ldquo;server shutdown&rdquo; &#171; std::endl;
 system(&ldquo;pause&rdquo;);
 return 0;
 }
-[/sourcecode]</p>
-<p><strong>(client  code) :  ~181 baris</strong></p>
-<p>[sourcecode language=&ldquo;cpp&rdquo;]
-// xedi xermawan &lt; <a href="mailto:edi.ermawan@gmail.com">edi.ermawan@gmail.com</a> &gt;
+[/sourcecode]</p><p><strong>(client  code) :  ~181 baris</strong></p><p>[sourcecode language=&ldquo;cpp&rdquo;]
+// xedi xermawan &lt; <a href=mailto:edi.ermawan@gmail.com>edi.ermawan@gmail.com</a> >
 // May 27, 2014
 // tcp client server networking test using winsock2
-// client code</p>
-<p>#define WIN32_LEAN_AND_MEAN
-#include &lt;windows.h&gt;
-#include &lt;winsock2.h&gt;
-#include &lt;ws2tcpip.h&gt;
-#include <iostream>
-#include <thread>
-#include <mutex>
-#include &lt;condition_variable&gt;
-#include <vector>
-#include <queue>
-#include <sstream></p>
-<p>#include &ldquo;concurrent_queue.hpp&rdquo;</p>
-<p>// link to winsock2 static lib
-#pragma comment (lib, &ldquo;ws2_32.lib&rdquo;)</p>
-<p>#define DEFAULT_BUFLEN 512
-#define DEFAULT_PORT &ldquo;22536&rdquo;</p>
-<p>class XDclientapp
+// client code</p><p>#define WIN32_LEAN_AND_MEAN
+#include &lt;windows.h>
+#include &lt;winsock2.h>
+#include &lt;ws2tcpip.h>
+#include <iostream>#include <thread>#include <mutex>#include &lt;condition_variable>
+#include <vector>#include <queue>#include <sstream></p><p>#include &ldquo;concurrent_queue.hpp&rdquo;</p><p>// link to winsock2 static lib
+#pragma comment (lib, &ldquo;ws2_32.lib&rdquo;)</p><p>#define DEFAULT_BUFLEN 512
+#define DEFAULT_PORT &ldquo;22536&rdquo;</p><p>class XDclientapp
 {
 public:
-XDclientapp(std::string&amp; clientname, std::string&amp; serveraddresss)
+XDclientapp(std::string& clientname, std::string& serveraddresss)
 {
 m_server_address = serveraddresss;
-m_client_name    = clientname;
+m_client_name = clientname;
 m_recvbuflen = DEFAULT_BUFLEN;
 m_isrun = true;
 m_thread = new std::thread(&amp;XDclientapp::run, this);
@@ -538,7 +297,7 @@ m_thread = new std::thread(&amp;XDclientapp::run, this);
 ~XDclientapp()
 {
 m_isrun = false;
-m_thread-&gt;join();
+m_thread->join();
 delete m_thread;
 }
 void run()
@@ -551,8 +310,7 @@ hints;
 char *sendbuf = &ldquo;this is a test&rdquo;;
 char recvbuf[DEFAULT_BUFLEN];
 int iResult;
-int recvbuflen = DEFAULT_BUFLEN;</p>
-<pre><code>	// Initialize Winsock
+int recvbuflen = DEFAULT_BUFLEN;</p><pre><code>	// Initialize Winsock
 	iResult = WSAStartup(MAKEWORD(2, 2), &amp;wsaData);
 	if (iResult != 0) {
 		printf(&quot;WSAStartup failed with error: %d\n&quot;, iResult);
@@ -639,13 +397,12 @@ void senddata(std::string&amp; str)
 	std::string pstr = m_client_name + &quot; : &quot; + str;
 	m_queue.push(pstr);
 }
-</code></pre>
-<p>private:
+</code></pre><p>private:
 char m_recvbuf[DEFAULT_BUFLEN];
 int m_recvbuflen;
 bool m_isrun;
 std::thread* m_thread;
-concurrent_queue <a href="std::string">std::string</a> m_queue;
+concurrent_queue <a href=std::string>std::string</a> m_queue;
 std::string m_client_name;
 std::string m_server_address;
 };
@@ -654,9 +411,8 @@ int __cdecl main(int argc,char** argv)
 {
 std::string clientname = &ldquo;&rdquo;;
 std::string serveraddress = &ldquo;localhost&rdquo;;
-std::cout &laquo; &ldquo;Please enter your name: &ldquo;;
-std::getline(std::cin, clientname);</p>
-<pre><code>if (argc &gt; 1)
+std::cout &#171; &ldquo;Please enter your name: &ldquo;;
+std::getline(std::cin, clientname);</p><pre><code>if (argc &gt; 1)
 {
 	serveraddress = argv[1];
 }
@@ -678,53 +434,8 @@ while (1)
 }
 delete client;
 return 0;
-</code></pre>
-<p>}
-[/sourcecode]</p>
-<p>Screenshoot :
-<a href="http://offground.files.wordpress.com/2014/05/chatprogram.jpg"><img src="http://offground.files.wordpress.com/2014/05/chatprogram.jpg?w=300" alt="chatprogram">
-</a>
-<a href="https://drive.google.com/file/d/0B-RboHdiMWB1dEtQZzUzNTMwdUU/edit?usp=sharing">Download </a>: source + vs project + binary ( hanya 39 kb ! ) .</p>
-</section>
-
-  <footer class="mt-12 flex flex-wrap"><a
-      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://xedixermawan.github.io/tags/c/c&#43;&#43;"
-      >C/C&#43;&#43;</a
-    ><a
-      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://xedixermawan.github.io/tags/chat-winsock2"
-      >chat winsock2</a
-    ><a
-      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://xedixermawan.github.io/tags/tcp/ip"
-      >tcp/ip</a
-    ><a
-      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://xedixermawan.github.io/tags/winsock2"
-      >winsock2</a
-    ></footer><nav
-    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
-  ><a class="ltr:pr-3 rtl:pl-3" href="https://xedixermawan.github.io/2014/05/30/rendering-animated-gif-file/"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Rendering animated GIF file</span></a
-    ><a
-      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
-      href="https://xedixermawan.github.io/2014/05/21/define-problem/"
-      ><span>#define problem</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
-    ></nav></article></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2007-2024 XediXermawan</div>
-  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
-    >powered by hugo️️</a
-  >️
-  <a
-    class="link"
-    href="https://github.com/nanxiaobei/hugo-paper"
-    rel="noopener"
-    target="_blank"
-    >hugo-paper</a
-  >
-</footer>
-</body>
-</html>
+</code></pre><p>}
+[/sourcecode]</p><p>Screenshoot :
+<a href=http://offground.files.wordpress.com/2014/05/chatprogram.jpg><img src="http://offground.files.wordpress.com/2014/05/chatprogram.jpg?w=300" alt=chatprogram>
+</a><a href="https://drive.google.com/file/d/0B-RboHdiMWB1dEtQZzUzNTMwdUU/edit?usp=sharing">Download </a>: source + vs project + binary ( hanya 39 kb ! ) .</p></section><footer class="mt-12 flex flex-wrap"><a class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]" href=https://xedixermawan.github.io/tags/c/c++>C/C++</a><a class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]" href=https://xedixermawan.github.io/tags/chat-winsock2>chat winsock2</a><a class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]" href=https://xedixermawan.github.io/tags/tcp/ip>tcp/ip</a><a class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]" href=https://xedixermawan.github.io/tags/winsock2>winsock2</a></footer><nav class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"><a class="ltr:pr-3 rtl:pl-3" href=https://xedixermawan.github.io/2014/05/30/rendering-animated-gif-file/><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Rendering animated GIF file</span></a><a class="justify-end pl-3 ltr:ml-auto rtl:mr-auto" href=https://xedixermawan.github.io/2014/05/21/define-problem/><span>#define problem</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a></nav></article></main><footer class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"><div class=mr-auto>© 2007-2024 XediXermawan</div><a class="link mx-6" href=https://gohugo.io/ rel=noopener target=_blank>powered by hugo️️</a>️
+<a class=link href=https://github.com/nanxiaobei/hugo-paper rel=noopener target=_blank>hugo-paper</a></footer></body></html>

@@ -1,223 +1,11 @@
-<!doctype html>
-
-
-
-
-
-
-
-<html
-  class="not-ready lg:text-base"
-  style="--bg:#fbfbfb"
-  lang="en"
-  dir="ltr"
-><head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
-
-  
-  <title>[0] on directx 11 : hello cube - Home</title>
-
-  
-  <meta name="theme-color" />
-
-  <meta name="description" content="dulu saya mengalami banyak kesulitan ketika memulai belajar directx 11 (mid 2012). saya ga nemu tutorial yang benar-benar directx 11, kebanyakan bercampur dengan directx 9 / 10 dimana beberapa fungsi sudah deprecated(hilang/diganti), tidak build-able dengan compiler VS terbaru yang saya pakai(MSVC 2012). walaupun secara garis besar/filosofi tidak jauh berbeda, tapi itu tentu tidak bagus untuk pemula :) . untuk itu saya tertarik untuk membuat dokumentasi ini . belajar graphics API secara memang bukan hal mudah, karena kita berusaha memahami apa yang orang buat &mdash;yaitu graphics API, yang kalau diartikan :  komplek API untuk mentransfer sesuatu yang ingin kita gambar ke hardware. salah satu cara untuk menghadapi kompleksitas ini adalah menggunakan graphics debugger ( PIX, Nvidia Nsight, dll.) . Namun saya meragukan seorang pemula mengetahui hal ini &amp; mau menggunakannya diawal2 belajar (source : me ) . Untuk menegaskan apa yang saya katakan di 3 baris terakhir, coba lihat tweet dari John Carmack dibawah ini :
-" />
-  <meta name="author" content="oth3rside" /><link rel="preload stylesheet" as="style" href="https://xedixermawan.github.io/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
-
-  
-  <link rel="preload" as="image" href="https://xedixermawan.github.io/theme.png" />
-
-  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/874371989962b8461ad94e8119d82bc7?s=160&amp;d=identicon" />
-
-  <link rel="preload" as="image" href="https://xedixermawan.github.io/twitter.svg" /><link rel="preload" as="image" href="https://xedixermawan.github.io/github.svg" /><link rel="preload" as="image" href="https://xedixermawan.github.io/instagram.svg" />
-
-  <script
-    defer
-    src="https://xedixermawan.github.io/highlight.min.js"
-    onload="hljs.initHighlightingOnLoad()"
-  ></script>
-
-  
-  <link
-    rel="icon"
-    href="https://xedixermawan.github.io/favicon.ico"
-  />
-  <link
-    rel="apple-touch-icon"
-    href="https://xedixermawan.github.io/apple-touch-icon.png"
-  />
-
-  <meta name="generator" content="Hugo 0.152.2">
-  <meta itemprop="name" content="[0] on directx 11 : hello cube">
-  <meta itemprop="description" content="dulu saya mengalami banyak kesulitan ketika memulai belajar directx 11 (mid 2012). saya ga nemu tutorial yang benar-benar directx 11, kebanyakan bercampur dengan directx 9 / 10 dimana beberapa fungsi sudah deprecated(hilang/diganti), tidak build-able dengan compiler VS terbaru yang saya pakai(MSVC 2012). walaupun secara garis besar/filosofi tidak jauh berbeda, tapi itu tentu tidak bagus untuk pemula :) . untuk itu saya tertarik untuk membuat dokumentasi ini . belajar graphics API secara memang bukan hal mudah, karena kita berusaha memahami apa yang orang buat —yaitu graphics API, yang kalau diartikan : komplek API untuk mentransfer sesuatu yang ingin kita gambar ke hardware. salah satu cara untuk menghadapi kompleksitas ini adalah menggunakan graphics debugger ( PIX, Nvidia Nsight, dll.) . Namun saya meragukan seorang pemula mengetahui hal ini &amp; mau menggunakannya diawal2 belajar (source : me ) . Untuk menegaskan apa yang saya katakan di 3 baris terakhir, coba lihat tweet dari John Carmack dibawah ini :">
-  <meta itemprop="datePublished" content="2013-12-22T17:01:00+00:00">
-  <meta itemprop="dateModified" content="2013-12-22T17:01:00+00:00">
-  <meta itemprop="wordCount" content="1786">
-  <meta itemprop="keywords" content="C/C&#43;&#43; Diary,DirectX"><meta property="og:url" content="https://xedixermawan.github.io/2013/12/22/0-on-directx-11-hello-cube/">
-  <meta property="og:site_name" content="Home">
-  <meta property="og:title" content="[0] on directx 11 : hello cube">
-  <meta property="og:description" content="dulu saya mengalami banyak kesulitan ketika memulai belajar directx 11 (mid 2012). saya ga nemu tutorial yang benar-benar directx 11, kebanyakan bercampur dengan directx 9 / 10 dimana beberapa fungsi sudah deprecated(hilang/diganti), tidak build-able dengan compiler VS terbaru yang saya pakai(MSVC 2012). walaupun secara garis besar/filosofi tidak jauh berbeda, tapi itu tentu tidak bagus untuk pemula :) . untuk itu saya tertarik untuk membuat dokumentasi ini . belajar graphics API secara memang bukan hal mudah, karena kita berusaha memahami apa yang orang buat —yaitu graphics API, yang kalau diartikan : komplek API untuk mentransfer sesuatu yang ingin kita gambar ke hardware. salah satu cara untuk menghadapi kompleksitas ini adalah menggunakan graphics debugger ( PIX, Nvidia Nsight, dll.) . Namun saya meragukan seorang pemula mengetahui hal ini &amp; mau menggunakannya diawal2 belajar (source : me ) . Untuk menegaskan apa yang saya katakan di 3 baris terakhir, coba lihat tweet dari John Carmack dibawah ini :">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2013-12-22T17:01:00+00:00">
-    <meta property="article:modified_time" content="2013-12-22T17:01:00+00:00">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="[0] on directx 11 : hello cube">
-  <meta name="twitter:description" content="dulu saya mengalami banyak kesulitan ketika memulai belajar directx 11 (mid 2012). saya ga nemu tutorial yang benar-benar directx 11, kebanyakan bercampur dengan directx 9 / 10 dimana beberapa fungsi sudah deprecated(hilang/diganti), tidak build-able dengan compiler VS terbaru yang saya pakai(MSVC 2012). walaupun secara garis besar/filosofi tidak jauh berbeda, tapi itu tentu tidak bagus untuk pemula :) . untuk itu saya tertarik untuk membuat dokumentasi ini . belajar graphics API secara memang bukan hal mudah, karena kita berusaha memahami apa yang orang buat —yaitu graphics API, yang kalau diartikan : komplek API untuk mentransfer sesuatu yang ingin kita gambar ke hardware. salah satu cara untuk menghadapi kompleksitas ini adalah menggunakan graphics debugger ( PIX, Nvidia Nsight, dll.) . Namun saya meragukan seorang pemula mengetahui hal ini &amp; mau menggunakannya diawal2 belajar (source : me ) . Untuk menegaskan apa yang saya katakan di 3 baris terakhir, coba lihat tweet dari John Carmack dibawah ini :">
-
-  <link rel="canonical" href="https://xedixermawan.github.io/2013/12/22/0-on-directx-11-hello-cube/" />
-</head>
-<body
-    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
-  ><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://xedixermawan.github.io/"
-      >Home</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
-
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
-
-  <script>
-    
-    const htmlClass = document.documentElement.classList;
-    setTimeout(() => {
-      htmlClass.remove('not-ready');
-    }, 10);
-
-    
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
-    const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#fbfbfb'.replace(/"/g, '');
-    const setDark = (isDark) => {
-      metaTheme.setAttribute('content', isDark ? "rgb(0 0 0 / 85%)" : lightBg);
-      htmlClass[isDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', isDark);
-    };
-
-    
-    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    if (htmlClass.contains('dark')) {
-      setDark(true);
-    } else {
-      const darkVal = localStorage.getItem('dark');
-      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
-    }
-
-    
-    darkScheme.addEventListener('change', (event) => {
-      setDark(event.matches);
-    });
-
-    
-    const btnDark = document.querySelector('.btn-dark');
-    btnDark.addEventListener('click', () => {
-      setDark(localStorage.getItem('dark') !== 'true');
-    });
-  </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/read/"
-        >Read</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./twitter.svg)"
-        href="https://twitter.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >twitter</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./github.svg)"
-        href="https://github.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >github</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./instagram.svg)"
-        href="https://instagram.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >instagram</a>
-    </nav>
-  </div>
-</header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    ><article>
-  <header class="mb-14">
-    <h1 class="my-0! pb-2.5">[0] on directx 11 : hello cube</h1><div class="text-xs antialiased opacity-60"><time>Dec 22, 2013</time><span class="mx-1">&middot;</span>
-      <span>oth3rside</span></div></header>
-
-  <section><p>dulu saya mengalami banyak kesulitan ketika memulai belajar directx 11 (mid 2012). saya ga nemu tutorial yang benar-benar directx 11, kebanyakan bercampur dengan directx 9 / 10 dimana beberapa fungsi sudah deprecated(hilang/diganti), tidak build-able dengan compiler VS terbaru yang saya pakai(MSVC 2012). walaupun secara garis besar/filosofi tidak jauh berbeda, tapi itu tentu tidak bagus untuk pemula :) . untuk itu saya tertarik untuk membuat dokumentasi ini . belajar graphics API secara memang bukan hal mudah, karena kita berusaha memahami apa yang orang buat &mdash;yaitu graphics API, yang kalau diartikan :  komplek API untuk mentransfer sesuatu yang ingin kita gambar ke hardware. salah satu cara untuk menghadapi kompleksitas ini adalah menggunakan graphics debugger ( PIX, Nvidia Nsight, dll.) . Namun saya meragukan seorang pemula mengetahui hal ini &amp; mau menggunakannya diawal2 belajar (source : me ) . Untuk menegaskan apa yang saya katakan di 3 baris terakhir, coba lihat tweet dari John Carmack dibawah ini :<a href="http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png"><img src="http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png?w=554" alt="Image">
-</a></p>
-<p>:-d . walaupun begitu, belajar tentang graphics itu sangat menarik dan fun. Kita menulis codes dan kita bisa melihat hasilnya dilayar . (sesuatu yang setara dengan ini -&gt; membuat rangkaian elektronik , dan melihat LED berjalan, hehe ) .Di negara kita memang sangat jarang orang membutuhkan skill tentang Directx/OpenGL, kalau orang ingin membuat game, game engine adalah pilihan yang bijak jika orientasinya produktivitas , daripada menulis code graphics dari awal. Namun, pengetahuan dasar tentang bagaimana sesuatu itu digambar dilayar, sangat perlu. Misalnya, game dikembangkan dengan game engine (Unreal (UDK), Unity, dll. ), dan ingin membuat efek khusus, pasti akhirnya perlu menulis custom shader. CMIIW , soalnya belum pernah pakai engine2 ini.  oke, itulah beberapa motivasi :) . Saya ingin memulai dengan beberapa istilah.</p>
-<p>Beberapa istilah dalam DirectX yang perlu diketahui :</p>
-<p>device : API/interface/class/whatever yang digunakan untuk membuat resource (textures, shaders, etc). dan juga digunakan untuk mendeteksi h/w sekarang support directx versi berapa. instance dari device ini bisa dibuat sendiri ( windows desktop app/ windows store app/ wp8 native app ) atau sudah disediakan (misalnya : wp8 xaml-native type app ) .</p>
-<p>device context : API/interface/class/whatever yang digunakan untuk menggambar/ mengirim resources/ draw command ke gpu. device context menyimpan kumpulan setting/keadaan dari gambar yang akan kita gambar. suatu kalimat di sinetron &ldquo;kamu ngomong begitu konteksnya apa&rdquo; mungkin bisa sedikit memiliki arti yang sama dengan &ldquo;device context&rdquo; disini .:p</p>
-<p>resources : sumberdaya dari apa yang akan digambar dilayar: shaders, textures, buffers (vertex, index )</p>
-<p>rendering pipeline : dalam bahasa indonesia, pipeline : pipa saluran . dimana draw command/resource di proses disini sampai akhirnya muncul dilayar &gt; <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ff476882(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/ff476882(v=vs.85).aspx</a></p>
-<p>bind : istilah yang digunakan untuk meng-attach resource ke gpu .</p>
-<p>texture : gambar.</p>
-<p>shader program : atau cuma disebut shader. program yang mirip C, untuk mengolah vertex &amp; pixel .shader ini di compile menjadi byte code yang akhirnya nanti dikirim ke gpu, sebelum draw command dieksekusi. cara compilenya bisa dengan fxc.exe ( bawaan directx sdk ) dan menggunakan hasil byte code nya di runtime, atau bisa dengan D3DCompileFromFile (input text file, compile dilakukan saat runtime) . namun D3DCompileFromFile hanya bisa dipakai untuk debugging saja.</p>
-<p>dan sepertinya masih banyak lagi :d</p>
-<p>Hello World Program.</p>
-<p>saya  disini membuat program untuk menggambar cube (kubus) , yang cukup untuk mewakili bagaimana sebuah proses menggambar ke gpu terjadi. programnya dibuat sesederhana mungkin , sehingga lebih fokus ke bagian graphics. Main program structure :</p>
-<p>[sourcecode language=&ldquo;cpp&rdquo;]
-Game.Init()</p>
-<p>while( true )     { // main loop</p>
-<p>Game.OnInput() &ndash; event</p>
-<p>Game.Update()</p>
-<p>Game.Render()</p>
-<p>}</p>
-<p>Game.ShutDown()
-[/sourcecode]</p>
-<p>Game adalah nama class yang saya gunakan untuk men-wrap main program</p>
-<p>[sourcecode language=&ldquo;cpp&rdquo;]</p>
-<p>#pragma once</p>
-<p>#include &ldquo;stdafx.h&rdquo;
-#include &ldquo;vertextypes.hpp&rdquo;</p>
-<p>using namespace DirectX;</p>
-<p>extern unsigned char* GetByteArrayFromFile(std::string filename,unsigned int&amp; length);</p>
-<p>class XGame {
+<!doctype html><html class="not-ready lg:text-base" style=--bg:#fbfbfb lang=en dir=ltr><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>[0] on directx 11 : hello cube - Home</title><meta name=theme-color><meta name=description content="dulu saya mengalami banyak kesulitan ketika memulai belajar directx 11 (mid 2012). saya ga nemu tutorial yang benar-benar directx 11, kebanyakan bercampur dengan directx 9 / 10 dimana beberapa fungsi sudah deprecated(hilang/diganti), tidak build-able dengan compiler VS terbaru yang saya pakai(MSVC 2012). walaupun secara garis besar/filosofi tidak jauh berbeda, tapi itu tentu tidak bagus untuk pemula :) . untuk itu saya tertarik untuk membuat dokumentasi ini . belajar graphics API secara memang bukan hal mudah, karena kita berusaha memahami apa yang orang buat &mdash;yaitu graphics API, yang kalau diartikan :  komplek API untuk mentransfer sesuatu yang ingin kita gambar ke hardware. salah satu cara untuk menghadapi kompleksitas ini adalah menggunakan graphics debugger ( PIX, Nvidia Nsight, dll.) . Namun saya meragukan seorang pemula mengetahui hal ini & mau menggunakannya diawal2 belajar (source : me ) . Untuk menegaskan apa yang saya katakan di 3 baris terakhir, coba lihat tweet dari John Carmack dibawah ini :
+"><meta name=author content="oth3rside"><link rel="preload stylesheet" as=style href=https://xedixermawan.github.io/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css integrity="sha256-6GrmfgHi0gVRBqv3K+c1fJUBkQYOXxWfJOJ5D9gjfow="><link rel=preload as=image href=https://xedixermawan.github.io/theme.png><link rel=preload as=image href="https://www.gravatar.com/avatar/874371989962b8461ad94e8119d82bc7?s=160&amp;d=identicon"><link rel=preload as=image href=https://xedixermawan.github.io/twitter.svg><link rel=preload as=image href=https://xedixermawan.github.io/github.svg><link rel=preload as=image href=https://xedixermawan.github.io/instagram.svg><script defer src=https://xedixermawan.github.io/highlight.min.js onload=hljs.initHighlightingOnLoad()></script><link rel=icon href=https://xedixermawan.github.io/favicon.ico><link rel=apple-touch-icon href=https://xedixermawan.github.io/apple-touch-icon.png><meta name=generator content="Hugo 0.152.2"><meta itemprop=name content="[0] on directx 11 : hello cube"><meta itemprop=description content="dulu saya mengalami banyak kesulitan ketika memulai belajar directx 11 (mid 2012). saya ga nemu tutorial yang benar-benar directx 11, kebanyakan bercampur dengan directx 9 / 10 dimana beberapa fungsi sudah deprecated(hilang/diganti), tidak build-able dengan compiler VS terbaru yang saya pakai(MSVC 2012). walaupun secara garis besar/filosofi tidak jauh berbeda, tapi itu tentu tidak bagus untuk pemula :) . untuk itu saya tertarik untuk membuat dokumentasi ini . belajar graphics API secara memang bukan hal mudah, karena kita berusaha memahami apa yang orang buat —yaitu graphics API, yang kalau diartikan : komplek API untuk mentransfer sesuatu yang ingin kita gambar ke hardware. salah satu cara untuk menghadapi kompleksitas ini adalah menggunakan graphics debugger ( PIX, Nvidia Nsight, dll.) . Namun saya meragukan seorang pemula mengetahui hal ini & mau menggunakannya diawal2 belajar (source : me ) . Untuk menegaskan apa yang saya katakan di 3 baris terakhir, coba lihat tweet dari John Carmack dibawah ini :"><meta itemprop=datePublished content="2013-12-22T17:01:00+00:00"><meta itemprop=dateModified content="2013-12-22T17:01:00+00:00"><meta itemprop=wordCount content="1786"><meta itemprop=keywords content="C/C++ Diary,DirectX"><meta property="og:url" content="https://xedixermawan.github.io/2013/12/22/0-on-directx-11-hello-cube/"><meta property="og:site_name" content="Home"><meta property="og:title" content="[0] on directx 11 : hello cube"><meta property="og:description" content="dulu saya mengalami banyak kesulitan ketika memulai belajar directx 11 (mid 2012). saya ga nemu tutorial yang benar-benar directx 11, kebanyakan bercampur dengan directx 9 / 10 dimana beberapa fungsi sudah deprecated(hilang/diganti), tidak build-able dengan compiler VS terbaru yang saya pakai(MSVC 2012). walaupun secara garis besar/filosofi tidak jauh berbeda, tapi itu tentu tidak bagus untuk pemula :) . untuk itu saya tertarik untuk membuat dokumentasi ini . belajar graphics API secara memang bukan hal mudah, karena kita berusaha memahami apa yang orang buat —yaitu graphics API, yang kalau diartikan : komplek API untuk mentransfer sesuatu yang ingin kita gambar ke hardware. salah satu cara untuk menghadapi kompleksitas ini adalah menggunakan graphics debugger ( PIX, Nvidia Nsight, dll.) . Namun saya meragukan seorang pemula mengetahui hal ini & mau menggunakannya diawal2 belajar (source : me ) . Untuk menegaskan apa yang saya katakan di 3 baris terakhir, coba lihat tweet dari John Carmack dibawah ini :"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2013-12-22T17:01:00+00:00"><meta property="article:modified_time" content="2013-12-22T17:01:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="[0] on directx 11 : hello cube"><meta name=twitter:description content="dulu saya mengalami banyak kesulitan ketika memulai belajar directx 11 (mid 2012). saya ga nemu tutorial yang benar-benar directx 11, kebanyakan bercampur dengan directx 9 / 10 dimana beberapa fungsi sudah deprecated(hilang/diganti), tidak build-able dengan compiler VS terbaru yang saya pakai(MSVC 2012). walaupun secara garis besar/filosofi tidak jauh berbeda, tapi itu tentu tidak bagus untuk pemula :) . untuk itu saya tertarik untuk membuat dokumentasi ini . belajar graphics API secara memang bukan hal mudah, karena kita berusaha memahami apa yang orang buat —yaitu graphics API, yang kalau diartikan : komplek API untuk mentransfer sesuatu yang ingin kita gambar ke hardware. salah satu cara untuk menghadapi kompleksitas ini adalah menggunakan graphics debugger ( PIX, Nvidia Nsight, dll.) . Namun saya meragukan seorang pemula mengetahui hal ini & mau menggunakannya diawal2 belajar (source : me ) . Untuk menegaskan apa yang saya katakan di 3 baris terakhir, coba lihat tweet dari John Carmack dibawah ini :"><link rel=canonical href=https://xedixermawan.github.io/2013/12/22/0-on-directx-11-hello-cube/></head><body class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"><header class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"><div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto"><a class="-translate-y-[1px] text-2xl font-medium" href=https://xedixermawan.github.io/>Home</a><div class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]" role=button aria-label=Dark></div></div><div class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8" role=button aria-label=Menu></div><script>const htmlClass=document.documentElement.classList;setTimeout(()=>{htmlClass.remove("not-ready")},10);const btnMenu=document.querySelector(".btn-menu");btnMenu.addEventListener("click",()=>{htmlClass.toggle("open")});const metaTheme=document.querySelector('meta[name="theme-color"]'),lightBg="#fbfbfb".replace(/"/g,""),setDark=e=>{metaTheme.setAttribute("content",e?"rgb(0 0 0 / 85%)":lightBg),htmlClass[e?"add":"remove"]("dark"),localStorage.setItem("dark",e)},darkScheme=window.matchMedia("(prefers-color-scheme: dark)");if(htmlClass.contains("dark"))setDark(!0);else{const e=localStorage.getItem("dark");setDark(e?e==="true":darkScheme.matches)}darkScheme.addEventListener("change",e=>{setDark(e.matches)});const btnDark=document.querySelector(".btn-dark");btnDark.addEventListener("click",()=>{setDark(localStorage.getItem("dark")!=="true")})</script><div class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"><nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"><a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href=/about/>About</a><a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href=/read/>Read</a></nav><nav class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"><a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./twitter.svg) href=https://twitter.com/XediXermawan target=_blank rel=me>twitter</a>
+<a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./github.svg) href=https://github.com/XediXermawan target=_blank rel=me>github</a>
+<a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./instagram.svg) href=https://instagram.com/XediXermawan target=_blank rel=me>instagram</a></nav></div></header><main class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"><article><header class=mb-14><h1 class="my-0! pb-2.5">[0] on directx 11 : hello cube</h1><div class="text-xs antialiased opacity-60"><time>Dec 22, 2013</time><span class=mx-1>&#183;</span>
+<span>oth3rside</span></div></header><section><p>dulu saya mengalami banyak kesulitan ketika memulai belajar directx 11 (mid 2012). saya ga nemu tutorial yang benar-benar directx 11, kebanyakan bercampur dengan directx 9 / 10 dimana beberapa fungsi sudah deprecated(hilang/diganti), tidak build-able dengan compiler VS terbaru yang saya pakai(MSVC 2012). walaupun secara garis besar/filosofi tidak jauh berbeda, tapi itu tentu tidak bagus untuk pemula :) . untuk itu saya tertarik untuk membuat dokumentasi ini . belajar graphics API secara memang bukan hal mudah, karena kita berusaha memahami apa yang orang buat &mdash;yaitu graphics API, yang kalau diartikan :  komplek API untuk mentransfer sesuatu yang ingin kita gambar ke hardware. salah satu cara untuk menghadapi kompleksitas ini adalah menggunakan graphics debugger ( PIX, Nvidia Nsight, dll.) . Namun saya meragukan seorang pemula mengetahui hal ini & mau menggunakannya diawal2 belajar (source : me ) . Untuk menegaskan apa yang saya katakan di 3 baris terakhir, coba lihat tweet dari John Carmack dibawah ini :<a href=http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png><img src="http://offground.files.wordpress.com/2013/12/jcarmack_gfx_testi1.png?w=554" alt=Image></a></p><p>:-d . walaupun begitu, belajar tentang graphics itu sangat menarik dan fun. Kita menulis codes dan kita bisa melihat hasilnya dilayar . (sesuatu yang setara dengan ini -> membuat rangkaian elektronik , dan melihat LED berjalan, hehe ) .Di negara kita memang sangat jarang orang membutuhkan skill tentang Directx/OpenGL, kalau orang ingin membuat game, game engine adalah pilihan yang bijak jika orientasinya produktivitas , daripada menulis code graphics dari awal. Namun, pengetahuan dasar tentang bagaimana sesuatu itu digambar dilayar, sangat perlu. Misalnya, game dikembangkan dengan game engine (Unreal (UDK), Unity, dll. ), dan ingin membuat efek khusus, pasti akhirnya perlu menulis custom shader. CMIIW , soalnya belum pernah pakai engine2 ini.  oke, itulah beberapa motivasi :) . Saya ingin memulai dengan beberapa istilah.</p><p>Beberapa istilah dalam DirectX yang perlu diketahui :</p><p>device : API/interface/class/whatever yang digunakan untuk membuat resource (textures, shaders, etc). dan juga digunakan untuk mendeteksi h/w sekarang support directx versi berapa. instance dari device ini bisa dibuat sendiri ( windows desktop app/ windows store app/ wp8 native app ) atau sudah disediakan (misalnya : wp8 xaml-native type app ) .</p><p>device context : API/interface/class/whatever yang digunakan untuk menggambar/ mengirim resources/ draw command ke gpu. device context menyimpan kumpulan setting/keadaan dari gambar yang akan kita gambar. suatu kalimat di sinetron &ldquo;kamu ngomong begitu konteksnya apa&rdquo; mungkin bisa sedikit memiliki arti yang sama dengan &ldquo;device context&rdquo; disini .:p</p><p>resources : sumberdaya dari apa yang akan digambar dilayar: shaders, textures, buffers (vertex, index )</p><p>rendering pipeline : dalam bahasa indonesia, pipeline : pipa saluran . dimana draw command/resource di proses disini sampai akhirnya muncul dilayar > <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ff476882(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/ff476882(v=vs.85).aspx</a></p><p>bind : istilah yang digunakan untuk meng-attach resource ke gpu .</p><p>texture : gambar.</p><p>shader program : atau cuma disebut shader. program yang mirip C, untuk mengolah vertex & pixel .shader ini di compile menjadi byte code yang akhirnya nanti dikirim ke gpu, sebelum draw command dieksekusi. cara compilenya bisa dengan fxc.exe ( bawaan directx sdk ) dan menggunakan hasil byte code nya di runtime, atau bisa dengan D3DCompileFromFile (input text file, compile dilakukan saat runtime) . namun D3DCompileFromFile hanya bisa dipakai untuk debugging saja.</p><p>dan sepertinya masih banyak lagi :d</p><p>Hello World Program.</p><p>saya  disini membuat program untuk menggambar cube (kubus) , yang cukup untuk mewakili bagaimana sebuah proses menggambar ke gpu terjadi. programnya dibuat sesederhana mungkin , sehingga lebih fokus ke bagian graphics. Main program structure :</p><p>[sourcecode language=&ldquo;cpp&rdquo;]
+Game.Init()</p><p>while( true )     { // main loop</p><p>Game.OnInput() &ndash; event</p><p>Game.Update()</p><p>Game.Render()</p><p>}</p><p>Game.ShutDown()
+[/sourcecode]</p><p>Game adalah nama class yang saya gunakan untuk men-wrap main program</p><p>[sourcecode language=&ldquo;cpp&rdquo;]</p><p>#pragma once</p><p>#include &ldquo;stdafx.h&rdquo;
+#include &ldquo;vertextypes.hpp&rdquo;</p><p>using namespace DirectX;</p><p>extern unsigned char* GetByteArrayFromFile(std::string filename,unsigned int& length);</p><p>class XGame {
 private:
 unsigned int m_ScreenWidth;
 unsigned int m_ScreenHeight;
@@ -242,8 +30,7 @@ public :
 XGame() {
 }
 ~XGame() {
-}</p>
-<pre><code>void Initialize(HWND&amp; hwindow, unsigned int sheight, unsigned int swidth) {
+}</p><pre><code>void Initialize(HWND&amp; hwindow, unsigned int sheight, unsigned int swidth) {
 	// ----- #step01 ----- create device &amp; swap-chain
 	m_HWindow = &amp;hwindow;
 	m_ScreenWidth  = swidth;
@@ -531,15 +318,12 @@ void OnResuming() {
 }
 void OnHandleInput() {
 }
-</code></pre>
-<p>};
-[/sourcecode]</p>
-<p>beberapa steps yang saya comment di code diatas :</p>
-<p>// &mdash;&ndash; #step01 &mdash;&ndash; create device &amp; swap-chain
+</code></pre><p>};
+[/sourcecode]</p><p>beberapa steps yang saya comment di code diatas :</p><p>// &mdash;&ndash; #step01 &mdash;&ndash; create device & swap-chain
 // &mdash;&ndash; #step02 &mdash;&ndash; setting render target
 // &mdash;&ndash; #step03 &mdash;&ndash; setting view port
 // &mdash;&ndash; #step04 &mdash;&ndash; set raster state
-// &mdash;&ndash; #step05 &mdash;&ndash; preparing vertex data &amp; index to buffers
+// &mdash;&ndash; #step05 &mdash;&ndash; preparing vertex data & index to buffers
 // &mdash;&ndash; #step06 &mdash;&ndash; create shaders
 // &mdash;&ndash; #step07 &mdash;&ndash; create input layout
 // &mdash;&ndash; #step08 &mdash;&ndash; create constant buffer
@@ -547,41 +331,9 @@ void OnHandleInput() {
 // &mdash;&ndash; #step10 &mdash;&ndash; game update here
 // &mdash;&ndash; #step11 &mdash;&ndash; clear screen
 // &mdash;&ndash; #step12 &mdash;&ndash; set constant buffer
-// &mdash;&ndash; #step13 &mdash;&ndash; set index &amp; vertex buffer
+// &mdash;&ndash; #step13 &mdash;&ndash; set index & vertex buffer
 // &mdash;&ndash; #step14 &mdash;&ndash; set set Primitive Topology
 // &mdash;&ndash; #step15 &mdash;&ndash; set shader, input layout, send draw
-// &mdash;&ndash; #step16 &mdash;&ndash; swap buffer</p>
-<p>Hasil dari program diatas : gambar kubus 3d yang berputar terhadap sumbu-y ( garis atas -bawah kalau kamu melihat layar )</p>
-<p><a href="http://offground.files.wordpress.com/2013/12/cube_rot.png"><img src="http://offground.files.wordpress.com/2013/12/cube_rot.png?w=294" alt="cube_rot">
-</a>saya post full source code &amp; project ( vs 2012 desktop ) di</p>
-<p>svn checkout : <a href="https://xedi-on-directx-11.googlecode.com/svn/trunk">https://xedi-on-directx-11.googlecode.com/svn/trunk</a></p>
-<p>project home : <a href="http://code.google.com/p/xedi-on-directx-11/">http://code.google.com/p/xedi-on-directx-11/</a></p>
-<p>komentar, correction , pertanyaan , are welcome ! :)</p>
-<p>// edi ermawan Surabaya, 22-12-2013</p>
-</section>
-
-  <nav
-    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
-  ><a class="ltr:pr-3 rtl:pl-3" href="https://xedixermawan.github.io/2013/12/22/problem-solved-wordpress-remove-code-indentation/"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Problem solved : wordpress remove code indentation</span></a
-    ><a
-      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
-      href="https://xedixermawan.github.io/2013/04/26/file-mana-yang-termodifikasi/"
-      ><span>File mana yang termodifikasi ?</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
-    ></nav></article></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2007-2024 XediXermawan</div>
-  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
-    >powered by hugo️️</a
-  >️
-  <a
-    class="link"
-    href="https://github.com/nanxiaobei/hugo-paper"
-    rel="noopener"
-    target="_blank"
-    >hugo-paper</a
-  >
-</footer>
-</body>
-</html>
+// &mdash;&ndash; #step16 &mdash;&ndash; swap buffer</p><p>Hasil dari program diatas : gambar kubus 3d yang berputar terhadap sumbu-y ( garis atas -bawah kalau kamu melihat layar )</p><p><a href=http://offground.files.wordpress.com/2013/12/cube_rot.png><img src="http://offground.files.wordpress.com/2013/12/cube_rot.png?w=294" alt=cube_rot>
+</a>saya post full source code & project ( vs 2012 desktop ) di</p><p>svn checkout : <a href=https://xedi-on-directx-11.googlecode.com/svn/trunk>https://xedi-on-directx-11.googlecode.com/svn/trunk</a></p><p>project home : <a href=http://code.google.com/p/xedi-on-directx-11/>http://code.google.com/p/xedi-on-directx-11/</a></p><p>komentar, correction , pertanyaan , are welcome ! :)</p><p>// edi ermawan Surabaya, 22-12-2013</p></section><nav class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"><a class="ltr:pr-3 rtl:pl-3" href=https://xedixermawan.github.io/2013/12/22/problem-solved-wordpress-remove-code-indentation/><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Problem solved : wordpress remove code indentation</span></a><a class="justify-end pl-3 ltr:ml-auto rtl:mr-auto" href=https://xedixermawan.github.io/2013/04/26/file-mana-yang-termodifikasi/><span>File mana yang termodifikasi ?</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a></nav></article></main><footer class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"><div class=mr-auto>© 2007-2024 XediXermawan</div><a class="link mx-6" href=https://gohugo.io/ rel=noopener target=_blank>powered by hugo️️</a>️
+<a class=link href=https://github.com/nanxiaobei/hugo-paper rel=noopener target=_blank>hugo-paper</a></footer></body></html>

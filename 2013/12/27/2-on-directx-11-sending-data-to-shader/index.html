@@ -1,243 +1,42 @@
-<!doctype html>
-
-
-
-
-
-
-
-<html
-  class="not-ready lg:text-base"
-  style="--bg:#fbfbfb"
-  lang="en"
-  dir="ltr"
-><head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
-
-  
-  <title>[2] on directx 11 : sending data to shader - Home</title>
-
-  
-  <meta name="theme-color" />
-
-  <meta name="description" content="Bagaimana mengirim data dari code CPU ( c&#43;&#43; code ) ke code GPU ( hlsl ) ?. Di program sebelumnya, beberapa data yang di kirim ke shader :
+<!doctype html><html class="not-ready lg:text-base" style=--bg:#fbfbfb lang=en dir=ltr><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>[2] on directx 11 : sending data to shader - Home</title><meta name=theme-color><meta name=description content="Bagaimana mengirim data dari code CPU ( c++ code ) ke code GPU ( hlsl ) ?. Di program sebelumnya, beberapa data yang di kirim ke shader :
   * vertex dan index , direpresentasikan dengan D3D11Buffer , di set ke shader dengan IASetVertexBuffers, dan IASetIndexBuffers. prefix IA : buffer ini di set ke input assembler stage dan dapat diakses di VS .
   * model, view, projection matrix,  direpresentasikan dengan D3D11Buffer, di set ke shader dengan VSSetConstantBuffers. prefix VS,karena buffer ini akan dipakai sebagai global variable di vertex shader .
   * texture, berupa shader resource view, di set ke shader dengan PSSetShaderResources. prefix PS, texture hanya dipakai di pixel shader stage.
 
-model, view projection matrik dibuat dengan bind flag D3D11_BIND_CONSTANT_BUFFER . mvp disini nilainya tidak konstant, tapi berubah-ubah per-frame. lalu kenapa bind flag nya &lsquo;constant buffer&rsquo;?, hal ini yang membuat saya bertanya diawal2. &ldquo;constant buffer&rdquo; disini, dimaksudkan nilainya tetap konstant per 1 proses draw command. namun di draw command selanjutnya bisa berubah. Jika kita ingin memiliki variable yang &ldquo;semacam&rdquo; mvp matrix ( berubah-ubah per-frame, dan dapat diakses di shader &ndash;vs,ps) , maka kita harus membuat constant buffer semacam ini. sebagai percobaan yang bisa dilihat hasilnya langsung, saya ingin mengirim data ke pixel shader untuk mengubah saturation-desaturation dari texture kubus di program sebelumnya. di c&#43;&#43; code saya perlu struct untuk meng-hold data ini :" />
-  <meta name="author" content="oth3rside" /><link rel="preload stylesheet" as="style" href="https://xedixermawan.github.io/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
-
-  
-  <link rel="preload" as="image" href="https://xedixermawan.github.io/theme.png" />
-
-  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/874371989962b8461ad94e8119d82bc7?s=160&amp;d=identicon" />
-
-  <link rel="preload" as="image" href="https://xedixermawan.github.io/twitter.svg" /><link rel="preload" as="image" href="https://xedixermawan.github.io/github.svg" /><link rel="preload" as="image" href="https://xedixermawan.github.io/instagram.svg" />
-
-  <script
-    defer
-    src="https://xedixermawan.github.io/highlight.min.js"
-    onload="hljs.initHighlightingOnLoad()"
-  ></script>
-
-  
-  <link
-    rel="icon"
-    href="https://xedixermawan.github.io/favicon.ico"
-  />
-  <link
-    rel="apple-touch-icon"
-    href="https://xedixermawan.github.io/apple-touch-icon.png"
-  />
-
-  <meta name="generator" content="Hugo 0.152.2">
-  <meta itemprop="name" content="[2] on directx 11 : sending data to shader">
-  <meta itemprop="description" content="Bagaimana mengirim data dari code CPU ( c&#43;&#43; code ) ke code GPU ( hlsl ) ?. Di program sebelumnya, beberapa data yang di kirim ke shader :
-* vertex dan index , direpresentasikan dengan D3D11Buffer , di set ke shader dengan IASetVertexBuffers, dan IASetIndexBuffers. prefix IA : buffer ini di set ke input assembler stage dan dapat diakses di VS . * model, view, projection matrix, direpresentasikan dengan D3D11Buffer, di set ke shader dengan VSSetConstantBuffers. prefix VS,karena buffer ini akan dipakai sebagai global variable di vertex shader . * texture, berupa shader resource view, di set ke shader dengan PSSetShaderResources. prefix PS, texture hanya dipakai di pixel shader stage. model, view projection matrik dibuat dengan bind flag D3D11_BIND_CONSTANT_BUFFER . mvp disini nilainya tidak konstant, tapi berubah-ubah per-frame. lalu kenapa bind flag nya ‘constant buffer’?, hal ini yang membuat saya bertanya diawal2. “constant buffer” disini, dimaksudkan nilainya tetap konstant per 1 proses draw command. namun di draw command selanjutnya bisa berubah. Jika kita ingin memiliki variable yang “semacam” mvp matrix ( berubah-ubah per-frame, dan dapat diakses di shader –vs,ps) , maka kita harus membuat constant buffer semacam ini. sebagai percobaan yang bisa dilihat hasilnya langsung, saya ingin mengirim data ke pixel shader untuk mengubah saturation-desaturation dari texture kubus di program sebelumnya. di c&#43;&#43; code saya perlu struct untuk meng-hold data ini :">
-  <meta itemprop="datePublished" content="2013-12-27T16:50:35+00:00">
-  <meta itemprop="dateModified" content="2013-12-27T16:50:35+00:00">
-  <meta itemprop="wordCount" content="587">
-  <meta itemprop="keywords" content="Directx,Directx 11"><meta property="og:url" content="https://xedixermawan.github.io/2013/12/27/2-on-directx-11-sending-data-to-shader/">
-  <meta property="og:site_name" content="Home">
-  <meta property="og:title" content="[2] on directx 11 : sending data to shader">
-  <meta property="og:description" content="Bagaimana mengirim data dari code CPU ( c&#43;&#43; code ) ke code GPU ( hlsl ) ?. Di program sebelumnya, beberapa data yang di kirim ke shader :
-* vertex dan index , direpresentasikan dengan D3D11Buffer , di set ke shader dengan IASetVertexBuffers, dan IASetIndexBuffers. prefix IA : buffer ini di set ke input assembler stage dan dapat diakses di VS . * model, view, projection matrix, direpresentasikan dengan D3D11Buffer, di set ke shader dengan VSSetConstantBuffers. prefix VS,karena buffer ini akan dipakai sebagai global variable di vertex shader . * texture, berupa shader resource view, di set ke shader dengan PSSetShaderResources. prefix PS, texture hanya dipakai di pixel shader stage. model, view projection matrik dibuat dengan bind flag D3D11_BIND_CONSTANT_BUFFER . mvp disini nilainya tidak konstant, tapi berubah-ubah per-frame. lalu kenapa bind flag nya ‘constant buffer’?, hal ini yang membuat saya bertanya diawal2. “constant buffer” disini, dimaksudkan nilainya tetap konstant per 1 proses draw command. namun di draw command selanjutnya bisa berubah. Jika kita ingin memiliki variable yang “semacam” mvp matrix ( berubah-ubah per-frame, dan dapat diakses di shader –vs,ps) , maka kita harus membuat constant buffer semacam ini. sebagai percobaan yang bisa dilihat hasilnya langsung, saya ingin mengirim data ke pixel shader untuk mengubah saturation-desaturation dari texture kubus di program sebelumnya. di c&#43;&#43; code saya perlu struct untuk meng-hold data ini :">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2013-12-27T16:50:35+00:00">
-    <meta property="article:modified_time" content="2013-12-27T16:50:35+00:00">
-    <meta property="article:tag" content="Directx">
-    <meta property="article:tag" content="Directx 11">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="[2] on directx 11 : sending data to shader">
-  <meta name="twitter:description" content="Bagaimana mengirim data dari code CPU ( c&#43;&#43; code ) ke code GPU ( hlsl ) ?. Di program sebelumnya, beberapa data yang di kirim ke shader :
-* vertex dan index , direpresentasikan dengan D3D11Buffer , di set ke shader dengan IASetVertexBuffers, dan IASetIndexBuffers. prefix IA : buffer ini di set ke input assembler stage dan dapat diakses di VS . * model, view, projection matrix, direpresentasikan dengan D3D11Buffer, di set ke shader dengan VSSetConstantBuffers. prefix VS,karena buffer ini akan dipakai sebagai global variable di vertex shader . * texture, berupa shader resource view, di set ke shader dengan PSSetShaderResources. prefix PS, texture hanya dipakai di pixel shader stage. model, view projection matrik dibuat dengan bind flag D3D11_BIND_CONSTANT_BUFFER . mvp disini nilainya tidak konstant, tapi berubah-ubah per-frame. lalu kenapa bind flag nya ‘constant buffer’?, hal ini yang membuat saya bertanya diawal2. “constant buffer” disini, dimaksudkan nilainya tetap konstant per 1 proses draw command. namun di draw command selanjutnya bisa berubah. Jika kita ingin memiliki variable yang “semacam” mvp matrix ( berubah-ubah per-frame, dan dapat diakses di shader –vs,ps) , maka kita harus membuat constant buffer semacam ini. sebagai percobaan yang bisa dilihat hasilnya langsung, saya ingin mengirim data ke pixel shader untuk mengubah saturation-desaturation dari texture kubus di program sebelumnya. di c&#43;&#43; code saya perlu struct untuk meng-hold data ini :">
-
-  <link rel="canonical" href="https://xedixermawan.github.io/2013/12/27/2-on-directx-11-sending-data-to-shader/" />
-</head>
-<body
-    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
-  ><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://xedixermawan.github.io/"
-      >Home</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
-
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
-
-  <script>
-    
-    const htmlClass = document.documentElement.classList;
-    setTimeout(() => {
-      htmlClass.remove('not-ready');
-    }, 10);
-
-    
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
-    const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#fbfbfb'.replace(/"/g, '');
-    const setDark = (isDark) => {
-      metaTheme.setAttribute('content', isDark ? "rgb(0 0 0 / 85%)" : lightBg);
-      htmlClass[isDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', isDark);
-    };
-
-    
-    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    if (htmlClass.contains('dark')) {
-      setDark(true);
-    } else {
-      const darkVal = localStorage.getItem('dark');
-      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
-    }
-
-    
-    darkScheme.addEventListener('change', (event) => {
-      setDark(event.matches);
-    });
-
-    
-    const btnDark = document.querySelector('.btn-dark');
-    btnDark.addEventListener('click', () => {
-      setDark(localStorage.getItem('dark') !== 'true');
-    });
-  </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/read/"
-        >Read</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./twitter.svg)"
-        href="https://twitter.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >twitter</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./github.svg)"
-        href="https://github.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >github</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./instagram.svg)"
-        href="https://instagram.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >instagram</a>
-    </nav>
-  </div>
-</header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    ><article>
-  <header class="mb-14">
-    <h1 class="my-0! pb-2.5">[2] on directx 11 : sending data to shader</h1><div class="text-xs antialiased opacity-60"><time>Dec 27, 2013</time><span class="mx-1">&middot;</span>
-      <span>oth3rside</span></div></header>
-
-  <section><p>Bagaimana mengirim data dari code CPU ( c++ code ) ke code GPU ( hlsl ) ?. Di program sebelumnya, beberapa data yang di kirim ke shader :</p>
-<pre><code>  * vertex dan index , direpresentasikan dengan D3D11Buffer , di set ke shader dengan IASetVertexBuffers, dan IASetIndexBuffers. prefix IA : buffer ini di set ke input assembler stage dan dapat diakses di VS .
+model, view projection matrik dibuat dengan bind flag D3D11_BIND_CONSTANT_BUFFER . mvp disini nilainya tidak konstant, tapi berubah-ubah per-frame. lalu kenapa bind flag nya &lsquo;constant buffer&rsquo;?, hal ini yang membuat saya bertanya diawal2. &ldquo;constant buffer&rdquo; disini, dimaksudkan nilainya tetap konstant per 1 proses draw command. namun di draw command selanjutnya bisa berubah. Jika kita ingin memiliki variable yang &ldquo;semacam&rdquo; mvp matrix ( berubah-ubah per-frame, dan dapat diakses di shader &ndash;vs,ps) , maka kita harus membuat constant buffer semacam ini. sebagai percobaan yang bisa dilihat hasilnya langsung, saya ingin mengirim data ke pixel shader untuk mengubah saturation-desaturation dari texture kubus di program sebelumnya. di c++ code saya perlu struct untuk meng-hold data ini :"><meta name=author content="oth3rside"><link rel="preload stylesheet" as=style href=https://xedixermawan.github.io/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css integrity="sha256-6GrmfgHi0gVRBqv3K+c1fJUBkQYOXxWfJOJ5D9gjfow="><link rel=preload as=image href=https://xedixermawan.github.io/theme.png><link rel=preload as=image href="https://www.gravatar.com/avatar/874371989962b8461ad94e8119d82bc7?s=160&amp;d=identicon"><link rel=preload as=image href=https://xedixermawan.github.io/twitter.svg><link rel=preload as=image href=https://xedixermawan.github.io/github.svg><link rel=preload as=image href=https://xedixermawan.github.io/instagram.svg><script defer src=https://xedixermawan.github.io/highlight.min.js onload=hljs.initHighlightingOnLoad()></script><link rel=icon href=https://xedixermawan.github.io/favicon.ico><link rel=apple-touch-icon href=https://xedixermawan.github.io/apple-touch-icon.png><meta name=generator content="Hugo 0.152.2"><meta itemprop=name content="[2] on directx 11 : sending data to shader"><meta itemprop=description content="Bagaimana mengirim data dari code CPU ( c++ code ) ke code GPU ( hlsl ) ?. Di program sebelumnya, beberapa data yang di kirim ke shader :
+* vertex dan index , direpresentasikan dengan D3D11Buffer , di set ke shader dengan IASetVertexBuffers, dan IASetIndexBuffers. prefix IA : buffer ini di set ke input assembler stage dan dapat diakses di VS . * model, view, projection matrix, direpresentasikan dengan D3D11Buffer, di set ke shader dengan VSSetConstantBuffers. prefix VS,karena buffer ini akan dipakai sebagai global variable di vertex shader . * texture, berupa shader resource view, di set ke shader dengan PSSetShaderResources. prefix PS, texture hanya dipakai di pixel shader stage. model, view projection matrik dibuat dengan bind flag D3D11_BIND_CONSTANT_BUFFER . mvp disini nilainya tidak konstant, tapi berubah-ubah per-frame. lalu kenapa bind flag nya ‘constant buffer’?, hal ini yang membuat saya bertanya diawal2. “constant buffer” disini, dimaksudkan nilainya tetap konstant per 1 proses draw command. namun di draw command selanjutnya bisa berubah. Jika kita ingin memiliki variable yang “semacam” mvp matrix ( berubah-ubah per-frame, dan dapat diakses di shader –vs,ps) , maka kita harus membuat constant buffer semacam ini. sebagai percobaan yang bisa dilihat hasilnya langsung, saya ingin mengirim data ke pixel shader untuk mengubah saturation-desaturation dari texture kubus di program sebelumnya. di c++ code saya perlu struct untuk meng-hold data ini :"><meta itemprop=datePublished content="2013-12-27T16:50:35+00:00"><meta itemprop=dateModified content="2013-12-27T16:50:35+00:00"><meta itemprop=wordCount content="587"><meta itemprop=keywords content="Directx,Directx 11"><meta property="og:url" content="https://xedixermawan.github.io/2013/12/27/2-on-directx-11-sending-data-to-shader/"><meta property="og:site_name" content="Home"><meta property="og:title" content="[2] on directx 11 : sending data to shader"><meta property="og:description" content="Bagaimana mengirim data dari code CPU ( c++ code ) ke code GPU ( hlsl ) ?. Di program sebelumnya, beberapa data yang di kirim ke shader :
+* vertex dan index , direpresentasikan dengan D3D11Buffer , di set ke shader dengan IASetVertexBuffers, dan IASetIndexBuffers. prefix IA : buffer ini di set ke input assembler stage dan dapat diakses di VS . * model, view, projection matrix, direpresentasikan dengan D3D11Buffer, di set ke shader dengan VSSetConstantBuffers. prefix VS,karena buffer ini akan dipakai sebagai global variable di vertex shader . * texture, berupa shader resource view, di set ke shader dengan PSSetShaderResources. prefix PS, texture hanya dipakai di pixel shader stage. model, view projection matrik dibuat dengan bind flag D3D11_BIND_CONSTANT_BUFFER . mvp disini nilainya tidak konstant, tapi berubah-ubah per-frame. lalu kenapa bind flag nya ‘constant buffer’?, hal ini yang membuat saya bertanya diawal2. “constant buffer” disini, dimaksudkan nilainya tetap konstant per 1 proses draw command. namun di draw command selanjutnya bisa berubah. Jika kita ingin memiliki variable yang “semacam” mvp matrix ( berubah-ubah per-frame, dan dapat diakses di shader –vs,ps) , maka kita harus membuat constant buffer semacam ini. sebagai percobaan yang bisa dilihat hasilnya langsung, saya ingin mengirim data ke pixel shader untuk mengubah saturation-desaturation dari texture kubus di program sebelumnya. di c++ code saya perlu struct untuk meng-hold data ini :"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2013-12-27T16:50:35+00:00"><meta property="article:modified_time" content="2013-12-27T16:50:35+00:00"><meta property="article:tag" content="Directx"><meta property="article:tag" content="Directx 11"><meta name=twitter:card content="summary"><meta name=twitter:title content="[2] on directx 11 : sending data to shader"><meta name=twitter:description content="Bagaimana mengirim data dari code CPU ( c++ code ) ke code GPU ( hlsl ) ?. Di program sebelumnya, beberapa data yang di kirim ke shader :
+* vertex dan index , direpresentasikan dengan D3D11Buffer , di set ke shader dengan IASetVertexBuffers, dan IASetIndexBuffers. prefix IA : buffer ini di set ke input assembler stage dan dapat diakses di VS . * model, view, projection matrix, direpresentasikan dengan D3D11Buffer, di set ke shader dengan VSSetConstantBuffers. prefix VS,karena buffer ini akan dipakai sebagai global variable di vertex shader . * texture, berupa shader resource view, di set ke shader dengan PSSetShaderResources. prefix PS, texture hanya dipakai di pixel shader stage. model, view projection matrik dibuat dengan bind flag D3D11_BIND_CONSTANT_BUFFER . mvp disini nilainya tidak konstant, tapi berubah-ubah per-frame. lalu kenapa bind flag nya ‘constant buffer’?, hal ini yang membuat saya bertanya diawal2. “constant buffer” disini, dimaksudkan nilainya tetap konstant per 1 proses draw command. namun di draw command selanjutnya bisa berubah. Jika kita ingin memiliki variable yang “semacam” mvp matrix ( berubah-ubah per-frame, dan dapat diakses di shader –vs,ps) , maka kita harus membuat constant buffer semacam ini. sebagai percobaan yang bisa dilihat hasilnya langsung, saya ingin mengirim data ke pixel shader untuk mengubah saturation-desaturation dari texture kubus di program sebelumnya. di c++ code saya perlu struct untuk meng-hold data ini :"><link rel=canonical href=https://xedixermawan.github.io/2013/12/27/2-on-directx-11-sending-data-to-shader/></head><body class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"><header class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"><div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto"><a class="-translate-y-[1px] text-2xl font-medium" href=https://xedixermawan.github.io/>Home</a><div class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]" role=button aria-label=Dark></div></div><div class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8" role=button aria-label=Menu></div><script>const htmlClass=document.documentElement.classList;setTimeout(()=>{htmlClass.remove("not-ready")},10);const btnMenu=document.querySelector(".btn-menu");btnMenu.addEventListener("click",()=>{htmlClass.toggle("open")});const metaTheme=document.querySelector('meta[name="theme-color"]'),lightBg="#fbfbfb".replace(/"/g,""),setDark=e=>{metaTheme.setAttribute("content",e?"rgb(0 0 0 / 85%)":lightBg),htmlClass[e?"add":"remove"]("dark"),localStorage.setItem("dark",e)},darkScheme=window.matchMedia("(prefers-color-scheme: dark)");if(htmlClass.contains("dark"))setDark(!0);else{const e=localStorage.getItem("dark");setDark(e?e==="true":darkScheme.matches)}darkScheme.addEventListener("change",e=>{setDark(e.matches)});const btnDark=document.querySelector(".btn-dark");btnDark.addEventListener("click",()=>{setDark(localStorage.getItem("dark")!=="true")})</script><div class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"><nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"><a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href=/about/>About</a><a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href=/read/>Read</a></nav><nav class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"><a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./twitter.svg) href=https://twitter.com/XediXermawan target=_blank rel=me>twitter</a>
+<a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./github.svg) href=https://github.com/XediXermawan target=_blank rel=me>github</a>
+<a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./instagram.svg) href=https://instagram.com/XediXermawan target=_blank rel=me>instagram</a></nav></div></header><main class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"><article><header class=mb-14><h1 class="my-0! pb-2.5">[2] on directx 11 : sending data to shader</h1><div class="text-xs antialiased opacity-60"><time>Dec 27, 2013</time><span class=mx-1>&#183;</span>
+<span>oth3rside</span></div></header><section><p>Bagaimana mengirim data dari code CPU ( c++ code ) ke code GPU ( hlsl ) ?. Di program sebelumnya, beberapa data yang di kirim ke shader :</p><pre><code>  * vertex dan index , direpresentasikan dengan D3D11Buffer , di set ke shader dengan IASetVertexBuffers, dan IASetIndexBuffers. prefix IA : buffer ini di set ke input assembler stage dan dapat diakses di VS .
   * model, view, projection matrix,  direpresentasikan dengan D3D11Buffer, di set ke shader dengan VSSetConstantBuffers. prefix VS,karena buffer ini akan dipakai sebagai global variable di vertex shader .
   * texture, berupa shader resource view, di set ke shader dengan PSSetShaderResources. prefix PS, texture hanya dipakai di pixel shader stage.
-</code></pre>
-<p>model, view projection matrik dibuat dengan bind flag D3D11_BIND_CONSTANT_BUFFER . mvp disini nilainya tidak konstant, tapi berubah-ubah per-frame. lalu kenapa bind flag nya &lsquo;constant buffer&rsquo;?, hal ini yang membuat saya bertanya diawal2. &ldquo;constant buffer&rdquo; disini, dimaksudkan nilainya tetap konstant per 1 proses draw command. namun di draw command selanjutnya bisa berubah. Jika kita ingin memiliki variable yang &ldquo;semacam&rdquo; mvp matrix ( berubah-ubah per-frame, dan dapat diakses di shader &ndash;vs,ps) , maka kita harus membuat constant buffer semacam ini. sebagai percobaan yang bisa dilihat hasilnya langsung, saya ingin mengirim data ke pixel shader untuk mengubah saturation-desaturation dari texture kubus di program sebelumnya. di c++ code saya perlu struct untuk meng-hold data ini :</p>
-<p>struct color_constantbuffer
+</code></pre><p>model, view projection matrik dibuat dengan bind flag D3D11_BIND_CONSTANT_BUFFER . mvp disini nilainya tidak konstant, tapi berubah-ubah per-frame. lalu kenapa bind flag nya &lsquo;constant buffer&rsquo;?, hal ini yang membuat saya bertanya diawal2. &ldquo;constant buffer&rdquo; disini, dimaksudkan nilainya tetap konstant per 1 proses draw command. namun di draw command selanjutnya bisa berubah. Jika kita ingin memiliki variable yang &ldquo;semacam&rdquo; mvp matrix ( berubah-ubah per-frame, dan dapat diakses di shader &ndash;vs,ps) , maka kita harus membuat constant buffer semacam ini. sebagai percobaan yang bisa dilihat hasilnya langsung, saya ingin mengirim data ke pixel shader untuk mengubah saturation-desaturation dari texture kubus di program sebelumnya. di c++ code saya perlu struct untuk meng-hold data ini :</p><p>struct color_constantbuffer
 {
 DirectX::XMFLOAT4 saturation;
 DirectX::XMFLOAT4 luminance;
-};</p>
-<p>sedangkan di pixel shader, saya perlu membuat constant buffer, dengan kata kunci cbuffer :</p>
-<p><strong>cbuffer</strong> ColorConstantBuffer
+};</p><p>sedangkan di pixel shader, saya perlu membuat constant buffer, dengan kata kunci cbuffer :</p><p><strong>cbuffer</strong> ColorConstantBuffer
 {
 float4 saturation;
 float4 luminance;
-};</p>
-<p>next step, perlu dibuat d3dbuffer untuk menyimpan data : ( m_ColorConstantBuffer  adalah ID3D11Buffer* )</p>
-<p>D3D11_BUFFER_DESC ColorConstBufferDesc;
+};</p><p>next step, perlu dibuat d3dbuffer untuk menyimpan data : ( m_ColorConstantBuffer  adalah ID3D11Buffer* )</p><p>D3D11_BUFFER_DESC ColorConstBufferDesc;
 ColorConstBufferDesc.Usage = D3D11_USAGE_DYNAMIC;
 ColorConstBufferDesc.ByteWidth = sizeof(color_constantbuffer);
 ColorConstBufferDesc.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
 ColorConstBufferDesc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
 ColorConstBufferDesc.MiscFlags = 0;
-ColorConstBufferDesc.StructureByteStride = 0;</p>
-<p>hr = m_Device-&gt;CreateBuffer( &amp;ColorConstBufferDesc , NULL , &amp;m_ColorConstantBuffer );</p>
-<p>dan untuk memberi tahu gpu, kalau buffer ini akan dipakai di pixel shader stage , perlu di set dengan command :</p>
-<p>m_DevContext-&gt;PSSetConstantBuffers( 0,1,&amp;m_ColorConstantBuffer);</p>
-<p>lalu bagaimana cara meng-update color constant buffer ini ?.Untuk mvp constant buffer dipakai UpdateSubresource. Cara lain adalah menggunakan fungsi Map/Unmap . Bedanya dengan UpdateSubresource, Map/Unamp, bisa read-write data ke gpu, sedangkan UpdateSubresource hanya write saja. meng-update color constant buffer dengan Map/Unmap :</p>
-<p>D3D11_MAPPED_SUBRESOURCE mappedResource;
+ColorConstBufferDesc.StructureByteStride = 0;</p><p>hr = m_Device->CreateBuffer( &amp;ColorConstBufferDesc , NULL , &amp;m_ColorConstantBuffer );</p><p>dan untuk memberi tahu gpu, kalau buffer ini akan dipakai di pixel shader stage , perlu di set dengan command :</p><p>m_DevContext->PSSetConstantBuffers( 0,1,&amp;m_ColorConstantBuffer);</p><p>lalu bagaimana cara meng-update color constant buffer ini ?.Untuk mvp constant buffer dipakai UpdateSubresource. Cara lain adalah menggunakan fungsi Map/Unmap . Bedanya dengan UpdateSubresource, Map/Unamp, bisa read-write data ke gpu, sedangkan UpdateSubresource hanya write saja. meng-update color constant buffer dengan Map/Unmap :</p><p>D3D11_MAPPED_SUBRESOURCE mappedResource;
 color_constantbuffer* colvalue;
-HRESULT hr = m_DevContext-&gt;Map(m_ColorConstantBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &amp;mappedResource);
+HRESULT hr = m_DevContext->Map(m_ColorConstantBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &amp;mappedResource);
 assert( hr == S_OK );
 // get ptr data
 colvalue = (color_constantbuffer*)mappedResource.pData;
 // set data
-colvalue-&gt;luminance = DirectX::XMFLOAT4( );  //  &lt;&mdash; set new value here
-colvalue-&gt;saturation = DirectX::XMFLOAT4( );  //  &lt;&mdash; set new value here
+colvalue->luminance = DirectX::XMFLOAT4( );  //  &lt;&mdash; set new value here
+colvalue->saturation = DirectX::XMFLOAT4( );  //  &lt;&mdash; set new value here
 // Unlock the constant buffer.
-m_DevContext-&gt;Unmap(m_ColorConstantBuffer, 0);</p>
-<p>di pixel shader, variabel luminance&amp;saturation dipakai menghitung saturaion/desaturation.  ( Simple_PS_02.hlsl )</p>
-<p>float4 main(PixelShaderInput input) : SV_TARGET
+m_DevContext->Unmap(m_ColorConstantBuffer, 0);</p><p>di pixel shader, variabel luminance&amp;saturation dipakai menghitung saturaion/desaturation.  ( Simple_PS_02.hlsl )</p><p>float4 main(PixelShaderInput input) : SV_TARGET
 {
 // PixelShaderInput.color input doesn&rsquo;t used in this shader
 float4 texColorOut;
@@ -247,55 +46,5 @@ float3 luminanceVal = dot( texColorOut, float3(luminance.x,luminance.y,luminance
 float4 finalCol = float4( lerp( luminanceVal , texColorOut, saturation ),1.0f);
 finalCol.z = texColorOut.z;
 return finalCol;
-}</p>
-<p>note : rumus menghitung saturation/desaturation , nemu <a href="http://lukhezo.com/2011/03/12/saturationdesaturation-with-hlslpixel-shaders-and-wpf/">di SINI</a></p>
-<p>agar lebih interaktif,  di percobaan ini saya menambahkan input untuk user melalui keyboard yang memungkinkan user mengubah saturation dan luminance.</p>
-<p>tombol 1-4 : saturation</p>
-<p>tombol 5-8: luminance</p>
-<p>hasil akhir program percobaan ini: menggambar kubus, dimana warna texture bisa diubah-ubah warnanya dengan mengubah saturation. input lain :</p>
-<p>u-i : pitch</p>
-<p>o-p: roll</p>
-<p>k-l : yaw</p>
-<p>n-m : zoom in/out</p>
-<p>screenshoot output program (klik gambar untuk memperbesar *) :</p>
-<p><a href="http://offground.files.wordpress.com/2013/12/cube_rot_frog.jpg"><img src="http://offground.files.wordpress.com/2013/12/cube_rot_frog.jpg?w=300" alt="cube_rot_frog">
-</a></p>
-<p>full source code &amp; project ( vs 2012 desktop ) . ( <strong>xedi_on_directx11___2___from___N.vcxproj</strong> )</p>
-<p>svn checkout : <a href="https://xedi-on-directx-11.googlecode.com/svn/trunk">https://xedi-on-directx-11.googlecode.com/svn/trunk</a></p>
-<p>project home : <a href="http://code.google.com/p/xedi-on-directx-11/">http://code.google.com/p/xedi-on-directx-11/</a></p>
-<p>// edie // nganjuk  , 27122013</p>
-</section>
-
-  <footer class="mt-12 flex flex-wrap"><a
-      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://xedixermawan.github.io/tags/directx"
-      >directx</a
-    ><a
-      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://xedixermawan.github.io/tags/directx-11"
-      >directx 11</a
-    ></footer><nav
-    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
-  ><a class="ltr:pr-3 rtl:pl-3" href="https://xedixermawan.github.io/2013/12/30/3-on-directx-11-load-3d-model-from-file/"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>[3] on directx 11 : load 3D model from file</span></a
-    ><a
-      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
-      href="https://xedixermawan.github.io/2013/12/26/1-on-directx-11-texturing/"
-      ><span>[1] on directx 11 : texturing </span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
-    ></nav></article></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2007-2024 XediXermawan</div>
-  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
-    >powered by hugo️️</a
-  >️
-  <a
-    class="link"
-    href="https://github.com/nanxiaobei/hugo-paper"
-    rel="noopener"
-    target="_blank"
-    >hugo-paper</a
-  >
-</footer>
-</body>
-</html>
+}</p><p>note : rumus menghitung saturation/desaturation , nemu <a href=http://lukhezo.com/2011/03/12/saturationdesaturation-with-hlslpixel-shaders-and-wpf/>di SINI</a></p><p>agar lebih interaktif,  di percobaan ini saya menambahkan input untuk user melalui keyboard yang memungkinkan user mengubah saturation dan luminance.</p><p>tombol 1-4 : saturation</p><p>tombol 5-8: luminance</p><p>hasil akhir program percobaan ini: menggambar kubus, dimana warna texture bisa diubah-ubah warnanya dengan mengubah saturation. input lain :</p><p>u-i : pitch</p><p>o-p: roll</p><p>k-l : yaw</p><p>n-m : zoom in/out</p><p>screenshoot output program (klik gambar untuk memperbesar *) :</p><p><a href=http://offground.files.wordpress.com/2013/12/cube_rot_frog.jpg><img src="http://offground.files.wordpress.com/2013/12/cube_rot_frog.jpg?w=300" alt=cube_rot_frog></a></p><p>full source code & project ( vs 2012 desktop ) . ( <strong>xedi_on_directx11___2___from___N.vcxproj</strong> )</p><p>svn checkout : <a href=https://xedi-on-directx-11.googlecode.com/svn/trunk>https://xedi-on-directx-11.googlecode.com/svn/trunk</a></p><p>project home : <a href=http://code.google.com/p/xedi-on-directx-11/>http://code.google.com/p/xedi-on-directx-11/</a></p><p>// edie // nganjuk  , 27122013</p></section><footer class="mt-12 flex flex-wrap"><a class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]" href=https://xedixermawan.github.io/tags/directx>directx</a><a class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]" href=https://xedixermawan.github.io/tags/directx-11>directx 11</a></footer><nav class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"><a class="ltr:pr-3 rtl:pl-3" href=https://xedixermawan.github.io/2013/12/30/3-on-directx-11-load-3d-model-from-file/><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>[3] on directx 11 : load 3D model from file</span></a><a class="justify-end pl-3 ltr:ml-auto rtl:mr-auto" href=https://xedixermawan.github.io/2013/12/26/1-on-directx-11-texturing/><span>[1] on directx 11 : texturing </span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a></nav></article></main><footer class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"><div class=mr-auto>© 2007-2024 XediXermawan</div><a class="link mx-6" href=https://gohugo.io/ rel=noopener target=_blank>powered by hugo️️</a>️
+<a class=link href=https://github.com/nanxiaobei/hugo-paper rel=noopener target=_blank>hugo-paper</a></footer></body></html>

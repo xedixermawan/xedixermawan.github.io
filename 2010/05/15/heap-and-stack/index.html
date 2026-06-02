@@ -1,260 +1,33 @@
-<!doctype html>
-
-
-
-
-
-
-
-<html
-  class="not-ready lg:text-base"
-  style="--bg:#fbfbfb"
-  lang="en"
-  dir="ltr"
-><head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
-
-  
-  <title>Belajar : Heap dan Stack - Home</title>
-
-  
-  <meta name="theme-color" />
-
-  <meta name="description" content="edi ermawan, http://offground.wordpress.com
+<!doctype html><html class="not-ready lg:text-base" style=--bg:#fbfbfb lang=en dir=ltr><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Belajar : Heap dan Stack - Home</title><meta name=theme-color><meta name=description content="edi ermawan, http://offground.wordpress.com
 &mdash;&mdash;&mdash; May 15, 2010 &mdash;&mdash;&ndash;
 Ketika suatu program berjalan, processor (– atau lebih tepatnya 80x86 ? &ndash;) mengalokasikan memory untuk program tersebut di RAM, yang terbagi menjadi empat bagian yaitu Code Segment (CS), Stack Segment (SS), Data Segment (DS), dan Extra Segment (ES).
 
 
 Code Segment menyimpan semua kode dan instruksi-instruksi processor yang digunakan oleh program tersebut. Semua data di memori ini bersifat read-only.
-Stack Segment teralokasi untuk berbagai keperluan, seperti menyimpan return address dari pemanggilan fungsi, menyimpan parameter-parameter yang dilewatkan ke fungsi, menyimpan variabel lokal di dalam fungsi, dll. Penambahan dan pengurangan memory stack menggunakan metode last in first out (LIFO). Misalnya, saat suatu fungsi dipanggil, seketika itu variabel lokal di dalam fungsi tersebut dialokasikan di stack (push), dan ketika fungsi sudah berakhir, variabel lokal di-dealokasikan (pop).  Walaupun proses LIFO di stack terjadi otomatis, di stack bisa terjadi overflow, atau yang disebut stack overflow. Stack overflow terjadi misalnya ketika terjadi pemanggilan recursive tak berujung (infinite recursive). Contoh:" />
-  <meta name="author" content="oth3rside" /><link rel="preload stylesheet" as="style" href="https://xedixermawan.github.io/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
-
-  
-  <link rel="preload" as="image" href="https://xedixermawan.github.io/theme.png" />
-
-  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/874371989962b8461ad94e8119d82bc7?s=160&amp;d=identicon" />
-
-  <link rel="preload" as="image" href="https://xedixermawan.github.io/twitter.svg" /><link rel="preload" as="image" href="https://xedixermawan.github.io/github.svg" /><link rel="preload" as="image" href="https://xedixermawan.github.io/instagram.svg" />
-
-  <script
-    defer
-    src="https://xedixermawan.github.io/highlight.min.js"
-    onload="hljs.initHighlightingOnLoad()"
-  ></script>
-
-  
-  <link
-    rel="icon"
-    href="https://xedixermawan.github.io/favicon.ico"
-  />
-  <link
-    rel="apple-touch-icon"
-    href="https://xedixermawan.github.io/apple-touch-icon.png"
-  />
-
-  <meta name="generator" content="Hugo 0.152.2">
-  <meta itemprop="name" content="Belajar : Heap dan Stack">
-  <meta itemprop="description" content="edi ermawan, http://offground.wordpress.com
+Stack Segment teralokasi untuk berbagai keperluan, seperti menyimpan return address dari pemanggilan fungsi, menyimpan parameter-parameter yang dilewatkan ke fungsi, menyimpan variabel lokal di dalam fungsi, dll. Penambahan dan pengurangan memory stack menggunakan metode last in first out (LIFO). Misalnya, saat suatu fungsi dipanggil, seketika itu variabel lokal di dalam fungsi tersebut dialokasikan di stack (push), dan ketika fungsi sudah berakhir, variabel lokal di-dealokasikan (pop).  Walaupun proses LIFO di stack terjadi otomatis, di stack bisa terjadi overflow, atau yang disebut stack overflow. Stack overflow terjadi misalnya ketika terjadi pemanggilan recursive tak berujung (infinite recursive). Contoh:"><meta name=author content="oth3rside"><link rel="preload stylesheet" as=style href=https://xedixermawan.github.io/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css integrity="sha256-6GrmfgHi0gVRBqv3K+c1fJUBkQYOXxWfJOJ5D9gjfow="><link rel=preload as=image href=https://xedixermawan.github.io/theme.png><link rel=preload as=image href="https://www.gravatar.com/avatar/874371989962b8461ad94e8119d82bc7?s=160&amp;d=identicon"><link rel=preload as=image href=https://xedixermawan.github.io/twitter.svg><link rel=preload as=image href=https://xedixermawan.github.io/github.svg><link rel=preload as=image href=https://xedixermawan.github.io/instagram.svg><script defer src=https://xedixermawan.github.io/highlight.min.js onload=hljs.initHighlightingOnLoad()></script><link rel=icon href=https://xedixermawan.github.io/favicon.ico><link rel=apple-touch-icon href=https://xedixermawan.github.io/apple-touch-icon.png><meta name=generator content="Hugo 0.152.2"><meta itemprop=name content="Belajar : Heap dan Stack"><meta itemprop=description content="edi ermawan, http://offground.wordpress.com
 ——— May 15, 2010 ——– Ketika suatu program berjalan, processor (– atau lebih tepatnya 80x86 ? –) mengalokasikan memory untuk program tersebut di RAM, yang terbagi menjadi empat bagian yaitu Code Segment (CS), Stack Segment (SS), Data Segment (DS), dan Extra Segment (ES).
 Code Segment menyimpan semua kode dan instruksi-instruksi processor yang digunakan oleh program tersebut. Semua data di memori ini bersifat read-only.
-Stack Segment teralokasi untuk berbagai keperluan, seperti menyimpan return address dari pemanggilan fungsi, menyimpan parameter-parameter yang dilewatkan ke fungsi, menyimpan variabel lokal di dalam fungsi, dll. Penambahan dan pengurangan memory stack menggunakan metode last in first out (LIFO). Misalnya, saat suatu fungsi dipanggil, seketika itu variabel lokal di dalam fungsi tersebut dialokasikan di stack (push), dan ketika fungsi sudah berakhir, variabel lokal di-dealokasikan (pop). Walaupun proses LIFO di stack terjadi otomatis, di stack bisa terjadi overflow, atau yang disebut stack overflow. Stack overflow terjadi misalnya ketika terjadi pemanggilan recursive tak berujung (infinite recursive). Contoh:">
-  <meta itemprop="datePublished" content="2010-05-15T13:56:48+00:00">
-  <meta itemprop="dateModified" content="2010-05-15T13:56:48+00:00">
-  <meta itemprop="wordCount" content="499">
-  <meta itemprop="keywords" content="C/C&#43;&#43; Diary"><meta property="og:url" content="https://xedixermawan.github.io/2010/05/15/heap-and-stack/">
-  <meta property="og:site_name" content="Home">
-  <meta property="og:title" content="Belajar : Heap dan Stack">
-  <meta property="og:description" content="edi ermawan, http://offground.wordpress.com
+Stack Segment teralokasi untuk berbagai keperluan, seperti menyimpan return address dari pemanggilan fungsi, menyimpan parameter-parameter yang dilewatkan ke fungsi, menyimpan variabel lokal di dalam fungsi, dll. Penambahan dan pengurangan memory stack menggunakan metode last in first out (LIFO). Misalnya, saat suatu fungsi dipanggil, seketika itu variabel lokal di dalam fungsi tersebut dialokasikan di stack (push), dan ketika fungsi sudah berakhir, variabel lokal di-dealokasikan (pop). Walaupun proses LIFO di stack terjadi otomatis, di stack bisa terjadi overflow, atau yang disebut stack overflow. Stack overflow terjadi misalnya ketika terjadi pemanggilan recursive tak berujung (infinite recursive). Contoh:"><meta itemprop=datePublished content="2010-05-15T13:56:48+00:00"><meta itemprop=dateModified content="2010-05-15T13:56:48+00:00"><meta itemprop=wordCount content="499"><meta itemprop=keywords content="C/C++ Diary"><meta property="og:url" content="https://xedixermawan.github.io/2010/05/15/heap-and-stack/"><meta property="og:site_name" content="Home"><meta property="og:title" content="Belajar : Heap dan Stack"><meta property="og:description" content="edi ermawan, http://offground.wordpress.com
 ——— May 15, 2010 ——– Ketika suatu program berjalan, processor (– atau lebih tepatnya 80x86 ? –) mengalokasikan memory untuk program tersebut di RAM, yang terbagi menjadi empat bagian yaitu Code Segment (CS), Stack Segment (SS), Data Segment (DS), dan Extra Segment (ES).
 Code Segment menyimpan semua kode dan instruksi-instruksi processor yang digunakan oleh program tersebut. Semua data di memori ini bersifat read-only.
-Stack Segment teralokasi untuk berbagai keperluan, seperti menyimpan return address dari pemanggilan fungsi, menyimpan parameter-parameter yang dilewatkan ke fungsi, menyimpan variabel lokal di dalam fungsi, dll. Penambahan dan pengurangan memory stack menggunakan metode last in first out (LIFO). Misalnya, saat suatu fungsi dipanggil, seketika itu variabel lokal di dalam fungsi tersebut dialokasikan di stack (push), dan ketika fungsi sudah berakhir, variabel lokal di-dealokasikan (pop). Walaupun proses LIFO di stack terjadi otomatis, di stack bisa terjadi overflow, atau yang disebut stack overflow. Stack overflow terjadi misalnya ketika terjadi pemanggilan recursive tak berujung (infinite recursive). Contoh:">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2010-05-15T13:56:48+00:00">
-    <meta property="article:modified_time" content="2010-05-15T13:56:48+00:00">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Belajar : Heap dan Stack">
-  <meta name="twitter:description" content="edi ermawan, http://offground.wordpress.com
+Stack Segment teralokasi untuk berbagai keperluan, seperti menyimpan return address dari pemanggilan fungsi, menyimpan parameter-parameter yang dilewatkan ke fungsi, menyimpan variabel lokal di dalam fungsi, dll. Penambahan dan pengurangan memory stack menggunakan metode last in first out (LIFO). Misalnya, saat suatu fungsi dipanggil, seketika itu variabel lokal di dalam fungsi tersebut dialokasikan di stack (push), dan ketika fungsi sudah berakhir, variabel lokal di-dealokasikan (pop). Walaupun proses LIFO di stack terjadi otomatis, di stack bisa terjadi overflow, atau yang disebut stack overflow. Stack overflow terjadi misalnya ketika terjadi pemanggilan recursive tak berujung (infinite recursive). Contoh:"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2010-05-15T13:56:48+00:00"><meta property="article:modified_time" content="2010-05-15T13:56:48+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Belajar : Heap dan Stack"><meta name=twitter:description content="edi ermawan, http://offground.wordpress.com
 ——— May 15, 2010 ——– Ketika suatu program berjalan, processor (– atau lebih tepatnya 80x86 ? –) mengalokasikan memory untuk program tersebut di RAM, yang terbagi menjadi empat bagian yaitu Code Segment (CS), Stack Segment (SS), Data Segment (DS), dan Extra Segment (ES).
 Code Segment menyimpan semua kode dan instruksi-instruksi processor yang digunakan oleh program tersebut. Semua data di memori ini bersifat read-only.
-Stack Segment teralokasi untuk berbagai keperluan, seperti menyimpan return address dari pemanggilan fungsi, menyimpan parameter-parameter yang dilewatkan ke fungsi, menyimpan variabel lokal di dalam fungsi, dll. Penambahan dan pengurangan memory stack menggunakan metode last in first out (LIFO). Misalnya, saat suatu fungsi dipanggil, seketika itu variabel lokal di dalam fungsi tersebut dialokasikan di stack (push), dan ketika fungsi sudah berakhir, variabel lokal di-dealokasikan (pop). Walaupun proses LIFO di stack terjadi otomatis, di stack bisa terjadi overflow, atau yang disebut stack overflow. Stack overflow terjadi misalnya ketika terjadi pemanggilan recursive tak berujung (infinite recursive). Contoh:">
-
-  <link rel="canonical" href="https://xedixermawan.github.io/2010/05/15/heap-and-stack/" />
-</head>
-<body
-    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
-  ><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://xedixermawan.github.io/"
-      >Home</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
-
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
-
-  <script>
-    
-    const htmlClass = document.documentElement.classList;
-    setTimeout(() => {
-      htmlClass.remove('not-ready');
-    }, 10);
-
-    
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
-    const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#fbfbfb'.replace(/"/g, '');
-    const setDark = (isDark) => {
-      metaTheme.setAttribute('content', isDark ? "rgb(0 0 0 / 85%)" : lightBg);
-      htmlClass[isDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', isDark);
-    };
-
-    
-    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    if (htmlClass.contains('dark')) {
-      setDark(true);
-    } else {
-      const darkVal = localStorage.getItem('dark');
-      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
-    }
-
-    
-    darkScheme.addEventListener('change', (event) => {
-      setDark(event.matches);
-    });
-
-    
-    const btnDark = document.querySelector('.btn-dark');
-    btnDark.addEventListener('click', () => {
-      setDark(localStorage.getItem('dark') !== 'true');
-    });
-  </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/read/"
-        >Read</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./twitter.svg)"
-        href="https://twitter.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >twitter</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./github.svg)"
-        href="https://github.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >github</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./instagram.svg)"
-        href="https://instagram.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >instagram</a>
-    </nav>
-  </div>
-</header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    ><article>
-  <header class="mb-14">
-    <h1 class="my-0! pb-2.5">Belajar : Heap dan Stack</h1><div class="text-xs antialiased opacity-60"><time>May 15, 2010</time><span class="mx-1">&middot;</span>
-      <span>oth3rside</span></div></header>
-
-  <section><p>edi ermawan, <a href="http://offground.wordpress.com">http://offground.wordpress.com</a></p>
-<p>&mdash;&mdash;&mdash; May 15, 2010 &mdash;&mdash;&ndash;
-Ketika suatu program berjalan, processor (– atau lebih tepatnya 80x86 ? &ndash;) mengalokasikan memory untuk program tersebut di RAM, yang terbagi menjadi empat bagian yaitu Code Segment (CS), Stack Segment (SS), Data Segment (DS), dan Extra Segment (ES).</p>
-<p><a href="http://offground.files.wordpress.com/2010/05/stack_head_offgnd.png"><img src="http://offground.files.wordpress.com/2010/05/stack_head_offgnd.png?w=300" alt="">
-</a></p>
-<p>Code Segment menyimpan semua kode dan instruksi-instruksi processor yang digunakan oleh program tersebut. Semua data di memori ini bersifat read-only.</p>
-<p>Stack Segment teralokasi untuk berbagai keperluan, seperti menyimpan return address dari pemanggilan fungsi, menyimpan parameter-parameter yang dilewatkan ke fungsi, menyimpan variabel lokal di dalam fungsi, dll. Penambahan dan pengurangan memory stack menggunakan metode last in first out (LIFO). Misalnya, saat suatu fungsi dipanggil, seketika itu variabel lokal di dalam fungsi tersebut dialokasikan di stack (push), dan ketika fungsi sudah berakhir, variabel lokal di-dealokasikan (pop).  Walaupun proses LIFO di stack terjadi otomatis, di stack bisa terjadi overflow, atau yang disebut stack overflow. Stack overflow terjadi misalnya ketika terjadi pemanggilan recursive tak berujung (infinite recursive). Contoh:</p>
-<p>[sourcecode language=&ldquo;cpp&rdquo;]
+Stack Segment teralokasi untuk berbagai keperluan, seperti menyimpan return address dari pemanggilan fungsi, menyimpan parameter-parameter yang dilewatkan ke fungsi, menyimpan variabel lokal di dalam fungsi, dll. Penambahan dan pengurangan memory stack menggunakan metode last in first out (LIFO). Misalnya, saat suatu fungsi dipanggil, seketika itu variabel lokal di dalam fungsi tersebut dialokasikan di stack (push), dan ketika fungsi sudah berakhir, variabel lokal di-dealokasikan (pop). Walaupun proses LIFO di stack terjadi otomatis, di stack bisa terjadi overflow, atau yang disebut stack overflow. Stack overflow terjadi misalnya ketika terjadi pemanggilan recursive tak berujung (infinite recursive). Contoh:"><link rel=canonical href=https://xedixermawan.github.io/2010/05/15/heap-and-stack/></head><body class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"><header class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"><div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto"><a class="-translate-y-[1px] text-2xl font-medium" href=https://xedixermawan.github.io/>Home</a><div class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]" role=button aria-label=Dark></div></div><div class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8" role=button aria-label=Menu></div><script>const htmlClass=document.documentElement.classList;setTimeout(()=>{htmlClass.remove("not-ready")},10);const btnMenu=document.querySelector(".btn-menu");btnMenu.addEventListener("click",()=>{htmlClass.toggle("open")});const metaTheme=document.querySelector('meta[name="theme-color"]'),lightBg="#fbfbfb".replace(/"/g,""),setDark=e=>{metaTheme.setAttribute("content",e?"rgb(0 0 0 / 85%)":lightBg),htmlClass[e?"add":"remove"]("dark"),localStorage.setItem("dark",e)},darkScheme=window.matchMedia("(prefers-color-scheme: dark)");if(htmlClass.contains("dark"))setDark(!0);else{const e=localStorage.getItem("dark");setDark(e?e==="true":darkScheme.matches)}darkScheme.addEventListener("change",e=>{setDark(e.matches)});const btnDark=document.querySelector(".btn-dark");btnDark.addEventListener("click",()=>{setDark(localStorage.getItem("dark")!=="true")})</script><div class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"><nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"><a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href=/about/>About</a><a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href=/read/>Read</a></nav><nav class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"><a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./twitter.svg) href=https://twitter.com/XediXermawan target=_blank rel=me>twitter</a>
+<a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./github.svg) href=https://github.com/XediXermawan target=_blank rel=me>github</a>
+<a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./instagram.svg) href=https://instagram.com/XediXermawan target=_blank rel=me>instagram</a></nav></div></header><main class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"><article><header class=mb-14><h1 class="my-0! pb-2.5">Belajar : Heap dan Stack</h1><div class="text-xs antialiased opacity-60"><time>May 15, 2010</time><span class=mx-1>&#183;</span>
+<span>oth3rside</span></div></header><section><p>edi ermawan, <a href=http://offground.wordpress.com>http://offground.wordpress.com</a></p><p>&mdash;&mdash;&mdash; May 15, 2010 &mdash;&mdash;&ndash;
+Ketika suatu program berjalan, processor (– atau lebih tepatnya 80x86 ? &ndash;) mengalokasikan memory untuk program tersebut di RAM, yang terbagi menjadi empat bagian yaitu Code Segment (CS), Stack Segment (SS), Data Segment (DS), dan Extra Segment (ES).</p><p><a href=http://offground.files.wordpress.com/2010/05/stack_head_offgnd.png><img src="http://offground.files.wordpress.com/2010/05/stack_head_offgnd.png?w=300" alt></a></p><p>Code Segment menyimpan semua kode dan instruksi-instruksi processor yang digunakan oleh program tersebut. Semua data di memori ini bersifat read-only.</p><p>Stack Segment teralokasi untuk berbagai keperluan, seperti menyimpan return address dari pemanggilan fungsi, menyimpan parameter-parameter yang dilewatkan ke fungsi, menyimpan variabel lokal di dalam fungsi, dll. Penambahan dan pengurangan memory stack menggunakan metode last in first out (LIFO). Misalnya, saat suatu fungsi dipanggil, seketika itu variabel lokal di dalam fungsi tersebut dialokasikan di stack (push), dan ketika fungsi sudah berakhir, variabel lokal di-dealokasikan (pop).  Walaupun proses LIFO di stack terjadi otomatis, di stack bisa terjadi overflow, atau yang disebut stack overflow. Stack overflow terjadi misalnya ketika terjadi pemanggilan recursive tak berujung (infinite recursive). Contoh:</p><p>[sourcecode language=&ldquo;cpp&rdquo;]
 void functionA
 {
 int A[1000];
 funtionA;
 }
-[/sourcecode]</p>
-<p>Data Segment terbagi menjadi 3 bagian yaitu Data, BSS dan Heap. Namun di beberapa literatur, data segment disebut juga heap, ini perlu diketahui agar tidak membingungkan.</p>
-<h1 id="data-berisi-variabel-variabel-program-yang-langsung-diisi-saat-deklarasi-misalnya">Data berisi variabel-variabel program yang langsung diisi saat deklarasi, misalnya:</h1>
-<p>[sourcecode language=&ldquo;cpp&rdquo;]
+[/sourcecode]</p><p>Data Segment terbagi menjadi 3 bagian yaitu Data, BSS dan Heap. Namun di beberapa literatur, data segment disebut juga heap, ini perlu diketahui agar tidak membingungkan.</p><h1 id=data-berisi-variabel-variabel-program-yang-langsung-diisi-saat-deklarasi-misalnya>Data berisi variabel-variabel program yang langsung diisi saat deklarasi, misalnya:</h1><p>[sourcecode language=&ldquo;cpp&rdquo;]
 int i=10;
 char *str=&lsquo;isi string&rsquo;;
-[/sourcecode]</p>
-<h1 id="bss-berisi-variabel-global-dan-variabel-static-yang-tidak-terinisialisasi-misal">BSS berisi variabel global dan variabel static yang tidak terinisialisasi. Misal:</h1>
-<p>[sourcecode language=&ldquo;cpp&rdquo;]
+[/sourcecode]</p><h1 id=bss-berisi-variabel-global-dan-variabel-static-yang-tidak-terinisialisasi-misal>BSS berisi variabel global dan variabel static yang tidak terinisialisasi. Misal:</h1><p>[sourcecode language=&ldquo;cpp&rdquo;]
 int I;
 char *str;
-[/sourcecode]</p>
-<h1 id="heap-adalah-bagian-memori-yang-dapat-dialokasikan-secara-dinamis-misalnya-di-cc-menggunakan-malloc-new-dan-juga-dapat-di-dealokasikan-namun-seandainya-suatu-memori-yang-teralokasi-dan-tidak-di-dealokasi-secara-manual-melalui-baris-program-maka-memori-yang-teralokasi-tersebut-akan-tetap-terjaga-sampai-program-tersebut-ditutup-kesimpulannya-pembuat-program-lah-yang-bertanggung-jawab-dengan-apa-yang-terjadi-di-heap-kesimpulan-lainnya-jika-di-stack-saja-bisa-terjadi-overflow-maka-di-heap-lebih-mungkin-lagi-terutama-untuk-bahasa-pemrograman-yang-tidak-memiliki-garbage-collector-seperti-cc-delphi-dll">Heap adalah bagian memori yang dapat dialokasikan secara dinamis, misalnya di C/C++  menggunakan malloc, new, dan juga dapat di-dealokasikan. Namun seandainya, suatu memori yang teralokasi dan tidak di-dealokasi secara manual  (melalui baris program), maka memori yang teralokasi tersebut akan tetap terjaga sampai program tersebut ditutup. Kesimpulannya, pembuat program-lah yang bertanggung jawab dengan apa yang terjadi di heap. Kesimpulan lainnya, jika di stack saja bisa terjadi overflow, maka di heap lebih mungkin lagi. Terutama untuk  bahasa pemrograman yang tidak memiliki garbage collector seperti C/C++, Delphi dll.</h1>
-<p>Dalam sebuah aplikasi, buffer overflow (stack atau heap overflow) atau aplikasi yang dapat di buffer overflow , bisa membuat aplikasi tersebut crash dan tidak aman. (will be continued). :)</p>
-<p>&mdash;&mdash;&mdash; Nov 11, 2012 Updated&mdash;&mdash;&ndash; </p>
-<p>Di setiap program komputer yang berjalan, stack dialokasi di setiap thread. Jadi suatu aplikasi men-sharing heap yang sama, dan setiap thread memiliki stack-nya sendiri-sendiri. Kapan stack di-alokasikan? : saat setiap kali thread dibuat dan besarnya terbatas tergantung OS yang digunakan. di Ms-Windows ,<a href="http://msdn.microsoft.com/en-us/library/8cxs58a6.aspx"> nilai default 1MB</a> , Linux  mungkin berbeda. Jadi bisa di gambarkan sebagai bagian memory yang besarnya 1 MB dan kontinyu. Namun, walaupun besar total 1 MB, lokal variabel di setiap fungsi dibatasi sampai <a href="http://msdn.microsoft.com/en-us/library/ms648426(VS.85).aspx">4KB saja (untuk x86) , 8KB untuk (x64)</a>. jika lebih, programmu akan crash di _chkstk() jika pakai Microsoft compiler [saya pernah mengalami]  .</p>
-<p>heap dan stack dialokasikan di RAM, tapi kenapa penggunaan stack lebih cepat dibanding heap? . karena stack pre-allocated dan untuk mengaksesnya tidak perlu menggunakan sebuah list atau variable pointer, tapi menggunakan register CPU : EBP dan ESP  . Register EBP dan ESP berperan saat pemanggilan fungsi (<a href="http://www.tenouk.com/Bufferoverflowc/Bufferoverflow3.html">baca disini</a>) .</p>
-</section>
-
-  <nav
-    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
-  ><a class="ltr:pr-3 rtl:pl-3" href="https://xedixermawan.github.io/2010/05/15/215/"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Integrasi Qt ke Ms Visual C&#43;&#43; 2008 Express</span></a
-    ><a
-      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
-      href="https://xedixermawan.github.io/2009/09/02/shifting-puzzle/"
-      ><span>Shifting Puzzle</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
-    ></nav></article></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2007-2024 XediXermawan</div>
-  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
-    >powered by hugo️️</a
-  >️
-  <a
-    class="link"
-    href="https://github.com/nanxiaobei/hugo-paper"
-    rel="noopener"
-    target="_blank"
-    >hugo-paper</a
-  >
-</footer>
-</body>
-</html>
+[/sourcecode]</p><h1 id=heap-adalah-bagian-memori-yang-dapat-dialokasikan-secara-dinamis-misalnya-di-cc-menggunakan-malloc-new-dan-juga-dapat-di-dealokasikan-namun-seandainya-suatu-memori-yang-teralokasi-dan-tidak-di-dealokasi-secara-manual-melalui-baris-program-maka-memori-yang-teralokasi-tersebut-akan-tetap-terjaga-sampai-program-tersebut-ditutup-kesimpulannya-pembuat-program-lah-yang-bertanggung-jawab-dengan-apa-yang-terjadi-di-heap-kesimpulan-lainnya-jika-di-stack-saja-bisa-terjadi-overflow-maka-di-heap-lebih-mungkin-lagi-terutama-untuk-bahasa-pemrograman-yang-tidak-memiliki-garbage-collector-seperti-cc-delphi-dll>Heap adalah bagian memori yang dapat dialokasikan secara dinamis, misalnya di C/C++  menggunakan malloc, new, dan juga dapat di-dealokasikan. Namun seandainya, suatu memori yang teralokasi dan tidak di-dealokasi secara manual  (melalui baris program), maka memori yang teralokasi tersebut akan tetap terjaga sampai program tersebut ditutup. Kesimpulannya, pembuat program-lah yang bertanggung jawab dengan apa yang terjadi di heap. Kesimpulan lainnya, jika di stack saja bisa terjadi overflow, maka di heap lebih mungkin lagi. Terutama untuk  bahasa pemrograman yang tidak memiliki garbage collector seperti C/C++, Delphi dll.</h1><p>Dalam sebuah aplikasi, buffer overflow (stack atau heap overflow) atau aplikasi yang dapat di buffer overflow , bisa membuat aplikasi tersebut crash dan tidak aman. (will be continued). :)</p><p>&mdash;&mdash;&mdash; Nov 11, 2012 Updated&mdash;&mdash;&ndash; </p><p>Di setiap program komputer yang berjalan, stack dialokasi di setiap thread. Jadi suatu aplikasi men-sharing heap yang sama, dan setiap thread memiliki stack-nya sendiri-sendiri. Kapan stack di-alokasikan? : saat setiap kali thread dibuat dan besarnya terbatas tergantung OS yang digunakan. di Ms-Windows ,<a href=http://msdn.microsoft.com/en-us/library/8cxs58a6.aspx> nilai default 1MB</a> , Linux  mungkin berbeda. Jadi bisa di gambarkan sebagai bagian memory yang besarnya 1 MB dan kontinyu. Namun, walaupun besar total 1 MB, lokal variabel di setiap fungsi dibatasi sampai <a href=http://msdn.microsoft.com/en-us/library/ms648426(VS.85).aspx>4KB saja (untuk x86) , 8KB untuk (x64)</a>. jika lebih, programmu akan crash di _chkstk() jika pakai Microsoft compiler [saya pernah mengalami]  .</p><p>heap dan stack dialokasikan di RAM, tapi kenapa penggunaan stack lebih cepat dibanding heap? . karena stack pre-allocated dan untuk mengaksesnya tidak perlu menggunakan sebuah list atau variable pointer, tapi menggunakan register CPU : EBP dan ESP  . Register EBP dan ESP berperan saat pemanggilan fungsi (<a href=http://www.tenouk.com/Bufferoverflowc/Bufferoverflow3.html>baca disini</a>) .</p></section><nav class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"><a class="ltr:pr-3 rtl:pl-3" href=https://xedixermawan.github.io/2010/05/15/215/><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Integrasi Qt ke Ms Visual C++ 2008 Express</span></a><a class="justify-end pl-3 ltr:ml-auto rtl:mr-auto" href=https://xedixermawan.github.io/2009/09/02/shifting-puzzle/><span>Shifting Puzzle</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a></nav></article></main><footer class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"><div class=mr-auto>© 2007-2024 XediXermawan</div><a class="link mx-6" href=https://gohugo.io/ rel=noopener target=_blank>powered by hugo️️</a>️
+<a class=link href=https://github.com/nanxiaobei/hugo-paper rel=noopener target=_blank>hugo-paper</a></footer></body></html>

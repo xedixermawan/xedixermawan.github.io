@@ -1,211 +1,14 @@
-<!doctype html>
-
-
-
-
-
-
-
-<html
-  class="not-ready lg:text-base"
-  style="--bg:#fbfbfb"
-  lang="en"
-  dir="ltr"
-><head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
-
-  
-  <title>Mencoba Observer Pattern dan Strategy Pattern di C&#43;&#43; - Home</title>
-
-  
-  <meta name="theme-color" />
-
-  <meta name="description" content="Saya tidak mempelajari ilmu komputer sebagai background pendidikan saya, dan ketika saya “nemu” design pattern dalam pengembangan software, hal itu menurut saya adalah keberuntungan :). Kenapa? walaupun waktu kuliah isinya juga coding, ( kebanyakan untuk hardware seperti : microcontroller, PLC, microprocessor, atau program-program kecil untuk interfacing), namun tidak menggunakan teknik pengembangan software apapun. Cuma prosedural dan efisiensi penggunaan memori – dan itu memang sudah cukup -  . Hal itu sangat berbeda jika kita ingin mengembangkan software yang komplek dan besar. Sebuah teknik/pola harus ada, dan jawabannya adalah design pattern." />
-  <meta name="author" content="oth3rside" /><link rel="preload stylesheet" as="style" href="https://xedixermawan.github.io/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
-
-  
-  <link rel="preload" as="image" href="https://xedixermawan.github.io/theme.png" />
-
-  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/874371989962b8461ad94e8119d82bc7?s=160&amp;d=identicon" />
-
-  <link rel="preload" as="image" href="https://xedixermawan.github.io/twitter.svg" /><link rel="preload" as="image" href="https://xedixermawan.github.io/github.svg" /><link rel="preload" as="image" href="https://xedixermawan.github.io/instagram.svg" />
-
-  <script
-    defer
-    src="https://xedixermawan.github.io/highlight.min.js"
-    onload="hljs.initHighlightingOnLoad()"
-  ></script>
-
-  
-  <link
-    rel="icon"
-    href="https://xedixermawan.github.io/favicon.ico"
-  />
-  <link
-    rel="apple-touch-icon"
-    href="https://xedixermawan.github.io/apple-touch-icon.png"
-  />
-
-  <meta name="generator" content="Hugo 0.152.2">
-  <meta itemprop="name" content="Mencoba Observer Pattern dan Strategy Pattern di C&#43;&#43;">
-  <meta itemprop="description" content="Saya tidak mempelajari ilmu komputer sebagai background pendidikan saya, dan ketika saya “nemu” design pattern dalam pengembangan software, hal itu menurut saya adalah keberuntungan :). Kenapa? walaupun waktu kuliah isinya juga coding, ( kebanyakan untuk hardware seperti : microcontroller, PLC, microprocessor, atau program-program kecil untuk interfacing), namun tidak menggunakan teknik pengembangan software apapun. Cuma prosedural dan efisiensi penggunaan memori – dan itu memang sudah cukup - . Hal itu sangat berbeda jika kita ingin mengembangkan software yang komplek dan besar. Sebuah teknik/pola harus ada, dan jawabannya adalah design pattern.">
-  <meta itemprop="datePublished" content="2010-08-10T04:32:58+00:00">
-  <meta itemprop="dateModified" content="2010-08-10T04:32:58+00:00">
-  <meta itemprop="wordCount" content="713">
-  <meta itemprop="keywords" content="C/C&#43;&#43; Diary"><meta property="og:url" content="https://xedixermawan.github.io/2010/08/10/mencoba-observer-pattern-dan-strategy-pattern-di-c/">
-  <meta property="og:site_name" content="Home">
-  <meta property="og:title" content="Mencoba Observer Pattern dan Strategy Pattern di C&#43;&#43;">
-  <meta property="og:description" content="Saya tidak mempelajari ilmu komputer sebagai background pendidikan saya, dan ketika saya “nemu” design pattern dalam pengembangan software, hal itu menurut saya adalah keberuntungan :). Kenapa? walaupun waktu kuliah isinya juga coding, ( kebanyakan untuk hardware seperti : microcontroller, PLC, microprocessor, atau program-program kecil untuk interfacing), namun tidak menggunakan teknik pengembangan software apapun. Cuma prosedural dan efisiensi penggunaan memori – dan itu memang sudah cukup - . Hal itu sangat berbeda jika kita ingin mengembangkan software yang komplek dan besar. Sebuah teknik/pola harus ada, dan jawabannya adalah design pattern.">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2010-08-10T04:32:58+00:00">
-    <meta property="article:modified_time" content="2010-08-10T04:32:58+00:00">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Mencoba Observer Pattern dan Strategy Pattern di C&#43;&#43;">
-  <meta name="twitter:description" content="Saya tidak mempelajari ilmu komputer sebagai background pendidikan saya, dan ketika saya “nemu” design pattern dalam pengembangan software, hal itu menurut saya adalah keberuntungan :). Kenapa? walaupun waktu kuliah isinya juga coding, ( kebanyakan untuk hardware seperti : microcontroller, PLC, microprocessor, atau program-program kecil untuk interfacing), namun tidak menggunakan teknik pengembangan software apapun. Cuma prosedural dan efisiensi penggunaan memori – dan itu memang sudah cukup - . Hal itu sangat berbeda jika kita ingin mengembangkan software yang komplek dan besar. Sebuah teknik/pola harus ada, dan jawabannya adalah design pattern.">
-
-  <link rel="canonical" href="https://xedixermawan.github.io/2010/08/10/mencoba-observer-pattern-dan-strategy-pattern-di-c/" />
-</head>
-<body
-    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
-  ><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://xedixermawan.github.io/"
-      >Home</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
-
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
-
-  <script>
-    
-    const htmlClass = document.documentElement.classList;
-    setTimeout(() => {
-      htmlClass.remove('not-ready');
-    }, 10);
-
-    
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
-    const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#fbfbfb'.replace(/"/g, '');
-    const setDark = (isDark) => {
-      metaTheme.setAttribute('content', isDark ? "rgb(0 0 0 / 85%)" : lightBg);
-      htmlClass[isDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', isDark);
-    };
-
-    
-    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    if (htmlClass.contains('dark')) {
-      setDark(true);
-    } else {
-      const darkVal = localStorage.getItem('dark');
-      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
-    }
-
-    
-    darkScheme.addEventListener('change', (event) => {
-      setDark(event.matches);
-    });
-
-    
-    const btnDark = document.querySelector('.btn-dark');
-    btnDark.addEventListener('click', () => {
-      setDark(localStorage.getItem('dark') !== 'true');
-    });
-  </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/read/"
-        >Read</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./twitter.svg)"
-        href="https://twitter.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >twitter</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./github.svg)"
-        href="https://github.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >github</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./instagram.svg)"
-        href="https://instagram.com/XediXermawan"
-        target="_blank"
-        rel="me"
-      >instagram</a>
-    </nav>
-  </div>
-</header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    ><article>
-  <header class="mb-14">
-    <h1 class="my-0! pb-2.5">Mencoba Observer Pattern dan Strategy Pattern di C&#43;&#43;</h1><div class="text-xs antialiased opacity-60"><time>Aug 10, 2010</time><span class="mx-1">&middot;</span>
-      <span>oth3rside</span></div></header>
-
-  <section><p>Saya tidak mempelajari ilmu komputer sebagai <em>background</em> pendidikan saya, dan ketika saya “nemu” <em>design pattern</em> dalam pengembangan <em>software</em>, hal itu menurut saya adalah keberuntungan :). Kenapa? walaupun waktu kuliah isinya juga <em>coding</em>, ( kebanyakan untuk <em>hardware</em> seperti : <em>microcontroller</em>, PLC, <em>microprocessor</em>, atau program-program kecil untuk <em>interfacing</em>), namun tidak menggunakan teknik pengembangan <em>software</em> apapun. Cuma prosedural dan efisiensi penggunaan memori – dan itu memang sudah cukup -  . Hal itu sangat berbeda jika kita ingin mengembangkan <em>software</em> yang komplek dan besar. Sebuah teknik/pola harus ada, dan jawabannya adalah <em>design pattern.</em></p>
-<p>_ Design Pattern _bisa diartikan cara/pola/pattern pemrograman yang dipakai saat menghadapi masalah-masalah tertentu. Masalah tertentu dengan pattern tertentu. “Pattern” disini bisa jadi sudah ada atau belum ada. <em>Pattern</em> yang sudah ada sudah banyak dan digunakan untuk masalah yang sering muncul dalam pemrograman. Lihat <a href="http://en.wikipedia.org/wiki/Design_pattern_%28computer_science%29"><em><strong>wiki design pattern</strong></em></a> untuk daftar pattern – pattern tersebut.</p>
-<p>Kali ini saya ingin mencoba <em>observer</em> dan <em>strategy pattern</em> menggunakan C++. Tidak seperti di Java, C++ tidak ada dukungan untuk implementasi <em>observer pattern</em> (lihat <a href="http://offground.wordpress.com/2009/09/02/shifting-puzzle/">blog post</a> saya ttg implementasi observer di Java). Namun, untungnya di C++ ada pointer :). <em>Observer Pattern</em> dipakai saat masalah seperti ini muncul:</p>
-<p>“<em>terdapat sebuah object/beberapa object yang perlu diketahui keadaan/state-nya oleh sebuah object/beberapa object lain</em>”</p>
-<p>Contoh riil-nya sebagai berikut :</p>
-<p>“Sebuah program mendapat data objek bergerak  dari komputer lain melalui jaringan dan objek tersebut akan ditampilkan di tampilan peta 2D dan tampilan 3D. Setiap perubahan data objek akan di update di tampilan 2D dan 3D”</p>
-<p>[caption id=&ldquo;attachment_263&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;300&rdquo; caption=&ldquo;offgnd_observer_uml&rdquo;]<a href="http://offground.files.wordpress.com/2010/08/offgnd_observer_uml.png"><img src="http://offground.files.wordpress.com/2010/08/offgnd_observer_uml.png?w=300" alt="">
-</a>[/caption]</p>
-<p>Subject adalah object yang di-observe (diamati) dan memiliki daftar observer yang terdaftar, bisa menambah dan mengurangi observer-nya. Sedangkan observer adalah object yang meng-observe (pengamat). Concrete subject adalah object turunan dari subject, dan memiliki object yang bisa di observe. Concrete Observer adalah object turunan Observer untuk me-re-implementasi fungsi update dari observer. Setelah semunya tampak jelas, waktunya kita coding :</p>
-<p>[sourcecode language=&ldquo;cpp&rdquo;]
-#include <vector>
-#include <list></p>
-<p>class subject;</p>
-<p>class observer{
+<!doctype html><html class="not-ready lg:text-base" style=--bg:#fbfbfb lang=en dir=ltr><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Mencoba Observer Pattern dan Strategy Pattern di C++ - Home</title><meta name=theme-color><meta name=description content="Saya tidak mempelajari ilmu komputer sebagai background pendidikan saya, dan ketika saya “nemu” design pattern dalam pengembangan software, hal itu menurut saya adalah keberuntungan :). Kenapa? walaupun waktu kuliah isinya juga coding, ( kebanyakan untuk hardware seperti : microcontroller, PLC, microprocessor, atau program-program kecil untuk interfacing), namun tidak menggunakan teknik pengembangan software apapun. Cuma prosedural dan efisiensi penggunaan memori – dan itu memang sudah cukup -  . Hal itu sangat berbeda jika kita ingin mengembangkan software yang komplek dan besar. Sebuah teknik/pola harus ada, dan jawabannya adalah design pattern."><meta name=author content="oth3rside"><link rel="preload stylesheet" as=style href=https://xedixermawan.github.io/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css integrity="sha256-6GrmfgHi0gVRBqv3K+c1fJUBkQYOXxWfJOJ5D9gjfow="><link rel=preload as=image href=https://xedixermawan.github.io/theme.png><link rel=preload as=image href="https://www.gravatar.com/avatar/874371989962b8461ad94e8119d82bc7?s=160&amp;d=identicon"><link rel=preload as=image href=https://xedixermawan.github.io/twitter.svg><link rel=preload as=image href=https://xedixermawan.github.io/github.svg><link rel=preload as=image href=https://xedixermawan.github.io/instagram.svg><script defer src=https://xedixermawan.github.io/highlight.min.js onload=hljs.initHighlightingOnLoad()></script><link rel=icon href=https://xedixermawan.github.io/favicon.ico><link rel=apple-touch-icon href=https://xedixermawan.github.io/apple-touch-icon.png><meta name=generator content="Hugo 0.152.2"><meta itemprop=name content="Mencoba Observer Pattern dan Strategy Pattern di C++"><meta itemprop=description content="Saya tidak mempelajari ilmu komputer sebagai background pendidikan saya, dan ketika saya “nemu” design pattern dalam pengembangan software, hal itu menurut saya adalah keberuntungan :). Kenapa? walaupun waktu kuliah isinya juga coding, ( kebanyakan untuk hardware seperti : microcontroller, PLC, microprocessor, atau program-program kecil untuk interfacing), namun tidak menggunakan teknik pengembangan software apapun. Cuma prosedural dan efisiensi penggunaan memori – dan itu memang sudah cukup - . Hal itu sangat berbeda jika kita ingin mengembangkan software yang komplek dan besar. Sebuah teknik/pola harus ada, dan jawabannya adalah design pattern."><meta itemprop=datePublished content="2010-08-10T04:32:58+00:00"><meta itemprop=dateModified content="2010-08-10T04:32:58+00:00"><meta itemprop=wordCount content="713"><meta itemprop=keywords content="C/C++ Diary"><meta property="og:url" content="https://xedixermawan.github.io/2010/08/10/mencoba-observer-pattern-dan-strategy-pattern-di-c/"><meta property="og:site_name" content="Home"><meta property="og:title" content="Mencoba Observer Pattern dan Strategy Pattern di C++"><meta property="og:description" content="Saya tidak mempelajari ilmu komputer sebagai background pendidikan saya, dan ketika saya “nemu” design pattern dalam pengembangan software, hal itu menurut saya adalah keberuntungan :). Kenapa? walaupun waktu kuliah isinya juga coding, ( kebanyakan untuk hardware seperti : microcontroller, PLC, microprocessor, atau program-program kecil untuk interfacing), namun tidak menggunakan teknik pengembangan software apapun. Cuma prosedural dan efisiensi penggunaan memori – dan itu memang sudah cukup - . Hal itu sangat berbeda jika kita ingin mengembangkan software yang komplek dan besar. Sebuah teknik/pola harus ada, dan jawabannya adalah design pattern."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2010-08-10T04:32:58+00:00"><meta property="article:modified_time" content="2010-08-10T04:32:58+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Mencoba Observer Pattern dan Strategy Pattern di C++"><meta name=twitter:description content="Saya tidak mempelajari ilmu komputer sebagai background pendidikan saya, dan ketika saya “nemu” design pattern dalam pengembangan software, hal itu menurut saya adalah keberuntungan :). Kenapa? walaupun waktu kuliah isinya juga coding, ( kebanyakan untuk hardware seperti : microcontroller, PLC, microprocessor, atau program-program kecil untuk interfacing), namun tidak menggunakan teknik pengembangan software apapun. Cuma prosedural dan efisiensi penggunaan memori – dan itu memang sudah cukup - . Hal itu sangat berbeda jika kita ingin mengembangkan software yang komplek dan besar. Sebuah teknik/pola harus ada, dan jawabannya adalah design pattern."><link rel=canonical href=https://xedixermawan.github.io/2010/08/10/mencoba-observer-pattern-dan-strategy-pattern-di-c/></head><body class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"><header class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"><div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto"><a class="-translate-y-[1px] text-2xl font-medium" href=https://xedixermawan.github.io/>Home</a><div class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]" role=button aria-label=Dark></div></div><div class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8" role=button aria-label=Menu></div><script>const htmlClass=document.documentElement.classList;setTimeout(()=>{htmlClass.remove("not-ready")},10);const btnMenu=document.querySelector(".btn-menu");btnMenu.addEventListener("click",()=>{htmlClass.toggle("open")});const metaTheme=document.querySelector('meta[name="theme-color"]'),lightBg="#fbfbfb".replace(/"/g,""),setDark=e=>{metaTheme.setAttribute("content",e?"rgb(0 0 0 / 85%)":lightBg),htmlClass[e?"add":"remove"]("dark"),localStorage.setItem("dark",e)},darkScheme=window.matchMedia("(prefers-color-scheme: dark)");if(htmlClass.contains("dark"))setDark(!0);else{const e=localStorage.getItem("dark");setDark(e?e==="true":darkScheme.matches)}darkScheme.addEventListener("change",e=>{setDark(e.matches)});const btnDark=document.querySelector(".btn-dark");btnDark.addEventListener("click",()=>{setDark(localStorage.getItem("dark")!=="true")})</script><div class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"><nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"><a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href=/about/>About</a><a class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal" href=/read/>Read</a></nav><nav class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"><a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./twitter.svg) href=https://twitter.com/XediXermawan target=_blank rel=me>twitter</a>
+<a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./github.svg) href=https://github.com/XediXermawan target=_blank rel=me>github</a>
+<a class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6" style=--url:url(./instagram.svg) href=https://instagram.com/XediXermawan target=_blank rel=me>instagram</a></nav></div></header><main class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"><article><header class=mb-14><h1 class="my-0! pb-2.5">Mencoba Observer Pattern dan Strategy Pattern di C++</h1><div class="text-xs antialiased opacity-60"><time>Aug 10, 2010</time><span class=mx-1>&#183;</span>
+<span>oth3rside</span></div></header><section><p>Saya tidak mempelajari ilmu komputer sebagai <em>background</em> pendidikan saya, dan ketika saya “nemu” <em>design pattern</em> dalam pengembangan <em>software</em>, hal itu menurut saya adalah keberuntungan :). Kenapa? walaupun waktu kuliah isinya juga <em>coding</em>, ( kebanyakan untuk <em>hardware</em> seperti : <em>microcontroller</em>, PLC, <em>microprocessor</em>, atau program-program kecil untuk <em>interfacing</em>), namun tidak menggunakan teknik pengembangan <em>software</em> apapun. Cuma prosedural dan efisiensi penggunaan memori – dan itu memang sudah cukup - . Hal itu sangat berbeda jika kita ingin mengembangkan <em>software</em> yang komplek dan besar. Sebuah teknik/pola harus ada, dan jawabannya adalah <em>design pattern.</em></p><p>_ Design Pattern _bisa diartikan cara/pola/pattern pemrograman yang dipakai saat menghadapi masalah-masalah tertentu. Masalah tertentu dengan pattern tertentu. “Pattern” disini bisa jadi sudah ada atau belum ada. <em>Pattern</em> yang sudah ada sudah banyak dan digunakan untuk masalah yang sering muncul dalam pemrograman. Lihat <a href=http://en.wikipedia.org/wiki/Design_pattern_%28computer_science%29><em><strong>wiki design pattern</strong></em></a> untuk daftar pattern – pattern tersebut.</p><p>Kali ini saya ingin mencoba <em>observer</em> dan <em>strategy pattern</em> menggunakan C++. Tidak seperti di Java, C++ tidak ada dukungan untuk implementasi <em>observer pattern</em> (lihat <a href=http://offground.wordpress.com/2009/09/02/shifting-puzzle/>blog post</a> saya ttg implementasi observer di Java). Namun, untungnya di C++ ada pointer :). <em>Observer Pattern</em> dipakai saat masalah seperti ini muncul:</p><p>“<em>terdapat sebuah object/beberapa object yang perlu diketahui keadaan/state-nya oleh sebuah object/beberapa object lain</em>”</p><p>Contoh riil-nya sebagai berikut :</p><p>“Sebuah program mendapat data objek bergerak dari komputer lain melalui jaringan dan objek tersebut akan ditampilkan di tampilan peta 2D dan tampilan 3D. Setiap perubahan data objek akan di update di tampilan 2D dan 3D”</p><p>[caption id=&ldquo;attachment_263&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;300&rdquo; caption=&ldquo;offgnd_observer_uml&rdquo;]<a href=http://offground.files.wordpress.com/2010/08/offgnd_observer_uml.png><img src="http://offground.files.wordpress.com/2010/08/offgnd_observer_uml.png?w=300" alt>
+</a>[/caption]</p><p>Subject adalah object yang di-observe (diamati) dan memiliki daftar observer yang terdaftar, bisa menambah dan mengurangi observer-nya. Sedangkan observer adalah object yang meng-observe (pengamat). Concrete subject adalah object turunan dari subject, dan memiliki object yang bisa di observe. Concrete Observer adalah object turunan Observer untuk me-re-implementasi fungsi update dari observer. Setelah semunya tampak jelas, waktunya kita coding :</p><p>[sourcecode language=&ldquo;cpp&rdquo;]
+#include <vector>#include <list></p><p>class subject;</p><p>class observer{
 public:
 observer(){};
 ~observer(){};
 virtual void update(subject* updated_subject)=0;
-};</p>
-<p>class subject{
+};</p><p>class subject{
 public:
 subject();
 ~subject(){};
@@ -213,41 +16,26 @@ virtual void add(observer* ob);
 virtual void remove(observer* ob);
 virtual void notify();
 private:
-std::list&lt;observer*&gt; list_observer;
+std::list&lt;observer*> list_observer;
 };
-[/sourcecode]</p>
-<hr>
-<p><strong>Source : Observer.cpp</strong></p>
-<p>[sourcecode language=&ldquo;cpp&rdquo;]</pre>
-#include &ldquo;observer.h&rdquo;</p>
-<p>subject::subject()
+[/sourcecode]</p><hr><p><strong>Source : Observer.cpp</strong></p><p>[sourcecode language=&ldquo;cpp&rdquo;]</pre>#include &ldquo;observer.h&rdquo;</p><p>subject::subject()
 {
 //
-}</p>
-<p>void subject::add(observer *ob)
+}</p><p>void subject::add(observer *ob)
 {
 list_observer.push_back(ob);
-}</p>
-<p>void subject::remove(observer *ob)
+}</p><p>void subject::remove(observer *ob)
 {
 list_observer.remove(ob);
-}</p>
-<p>void subject::notify()
+}</p><p>void subject::notify()
 {
-std::list&lt;observer*&gt;::iterator i;</p>
-<p>for(i=list_observer.begin();i!=list_observer.end();i++)
+std::list&lt;observer*>::iterator i;</p><p>for(i=list_observer.begin();i!=list_observer.end();i++)
 {
-(*i)-&gt;update(this);
+(*i)->update(this);
 }
 }
-[/sourcecode]</p>
-<p>mari kita pakai disini : main.cpp</p>
-<p>[sourcecode language=&ldquo;cpp&rdquo;]</p>
-<p>#include <iostream>
-#include &ldquo;observer.h&rdquo;
-#include <list></p>
-<p>using namespace std;</p>
-<p>/* Kelas objek bergerak , memiliki koordinat x,y,z yg menunjukkan data posisi
+[/sourcecode]</p><p>mari kita pakai disini : main.cpp</p><p>[sourcecode language=&ldquo;cpp&rdquo;]</p><p>#include <iostream>#include &ldquo;observer.h&rdquo;
+#include <list></p><p>using namespace std;</p><p>/* Kelas objek bergerak , memiliki koordinat x,y,z yg menunjukkan data posisi
 */
 class SimObject
 {
@@ -263,7 +51,7 @@ x=fx;
 y=fy;
 z=fz;
 };
-void GetTranslation(float&amp; fx,float&amp; fy,float&amp; fz)
+void GetTranslation(float& fx,float& fy,float& fz)
 {
 fx=x;
 fy=y;
@@ -271,10 +59,7 @@ fz=z;
 };
 private:
 float x,y,z;
-};</p>
-<p>/* Updater: concrete subject</p>
-<ul>
-<li>memiliki daftar objek bergerak (instan SimObject)
+};</p><p>/* Updater: concrete subject</p><ul><li>memiliki daftar objek bergerak (instan SimObject)
 <em>/
 class Updater:public subject
 {
@@ -295,7 +80,7 @@ mStateUpdate=DEL_OBJ;
 notify();
 mStateUpdate=UPD_OBJ;
 }
-void GetListObject(list&lt;SimObject*&gt;&amp; listobj)
+void GetListObject(list&lt;SimObject*>& listobj)
 {
 listobj=mObjects;
 };
@@ -305,7 +90,7 @@ return mStateUpdate;
 };
 private:
 enum{ NEW_OBJ,DEL_OBJ,UPD_OBJ } mStateUpdate;
-list&lt;SimObject*&gt;mObjects;
+list&lt;SimObject*>mObjects;
 };
 //strategy pattern: implementasi algoritma dipisah
 //MoveAlgorithm: abstract class untuk algorithm, digunakan spt halnya interface di Java/Delphi
@@ -324,8 +109,8 @@ MoveAlgorithm2D(){};
 ~MoveAlgorithm2D(){};
 virtual void DoMove(float x,float y,float z)
 {
-cout&laquo;&ldquo;Move2D x: &ldquo;&laquo;x&laquo;endl;
-cout&laquo;&ldquo;Move2D y: &ldquo;&laquo;y&laquo;endl;
+cout&#171;&ldquo;Move2D x: &ldquo;&#171;x&#171;endl;
+cout&#171;&ldquo;Move2D y: &ldquo;&#171;y&#171;endl;
 };
 };
 //turunan MoveAlgorithm
@@ -336,9 +121,9 @@ MoveAlgorithm3D(){};
 ~MoveAlgorithm3D(){};
 virtual void DoMove(float x,float y,float z)
 {
-cout&laquo;&ldquo;Move3D x: &ldquo;&laquo;x&laquo;endl;
-cout&laquo;&ldquo;Move3D y: &ldquo;&laquo;y&laquo;endl;
-cout&laquo;&ldquo;Move3D z: &ldquo;&laquo;z&laquo;endl;
+cout&#171;&ldquo;Move3D x: &ldquo;&#171;x&#171;endl;
+cout&#171;&ldquo;Move3D y: &ldquo;&#171;y&#171;endl;
+cout&#171;&ldquo;Move3D z: &ldquo;&#171;z&#171;endl;
 };
 };
 //Viewer : concrete Observer
@@ -349,12 +134,12 @@ public:
 Viewer(Updater* updater)
 {
 mSubject=updater;
-mSubject-&gt;add(this);
+mSubject->add(this);
 mMoveAlgo=NULL;
 };
 ~Viewer()
 {
-mSubject-&gt;remove(this);
+mSubject->remove(this);
 };
 void SetMoveAlgorithm(MoveAlgorithm* ma)
 {
@@ -364,84 +149,46 @@ void update(subject *updated_subject)
 {
 if(updated_subject==mSubject)
 {
-short int s= mSubject-&gt;GetStateUpdate();
+short int s= mSubject->GetStateUpdate();
 if(s==0){
-cout&laquo;&ldquo;new object added&rdquo;&laquo;endl;
+cout&#171;&ldquo;new object added&rdquo;&#171;endl;
 }
 else if(s==1){
-cout&laquo;&ldquo;object deleted&rdquo;&laquo;endl;
+cout&#171;&ldquo;object deleted&rdquo;&#171;endl;
 }
 else if(s==2){
 Move();
 }
 };
-};</li>
-</ul>
-<p>void Move()
+};</li></ul><p>void Move()
 {
-list&lt;SimObject*&gt; listobject_;
-mSubject-&gt;GetListObject(listobject_);
-for(list&lt;SimObject*&gt;::iterator it=listobject_.begin();it!=listobject_.end();it++)
+list&lt;SimObject*> listobject_;
+mSubject->GetListObject(listobject_);
+for(list&lt;SimObject*>::iterator it=listobject_.begin();it!=listobject_.end();it++)
 {
 float x,y,z;
-(<em>it)-&gt;GetTranslation(x,y,z);
+(<em>it)->GetTranslation(x,y,z);
 if(mMoveAlgo!=NULL)
 {
-mMoveAlgo-&gt;DoMove(x,y,z);
+mMoveAlgo->DoMove(x,y,z);
 }else
-cout&laquo;&ldquo;Exception: Move Algorithm is NULL&rdquo;&laquo;endl;
+cout&#171;&ldquo;Exception: Move Algorithm is NULL&rdquo;&#171;endl;
 };
 };
 private:
 Updater</em> mSubject;
 MoveAlgorithm* mMoveAlgo;
-};</p>
-<p>//Main</p>
-<p>int main()
+};</p><p>//Main</p><p>int main()
 {
-cout&laquo;endl;
+cout&#171;endl;
 Updater* updater=new Updater();
 Viewer* viewer1=new Viewer(updater);
-viewer1-&gt;SetMoveAlgorithm(new MoveAlgorithm2D());</p>
-<p>Viewer* viewer2=new Viewer(updater);
-viewer2-&gt;SetMoveAlgorithm(new MoveAlgorithm3D());</p>
-<p>SimObject* object1=new SimObject(10.0,5.0,2.0);
+viewer1->SetMoveAlgorithm(new MoveAlgorithm2D());</p><p>Viewer* viewer2=new Viewer(updater);
+viewer2->SetMoveAlgorithm(new MoveAlgorithm3D());</p><p>SimObject* object1=new SimObject(10.0,5.0,2.0);
 SimObject* object2=new SimObject(2.0,6.5,2.0);
-SimObject* object3=new SimObject(11.0,2.0,2.0);</p>
-<p>updater-&gt;AddObject(object1);
-updater-&gt;AddObject(object2);
-updater-&gt;AddObject(object3);</p>
-<p>updater-&gt;notify();</p>
-<p>updater-&gt;DelObject(object1);</p>
-<p>updater-&gt;notify();
+SimObject* object3=new SimObject(11.0,2.0,2.0);</p><p>updater->AddObject(object1);
+updater->AddObject(object2);
+updater->AddObject(object3);</p><p>updater->notify();</p><p>updater->DelObject(object1);</p><p>updater->notify();
 system(&ldquo;pause&rdquo;);
-}</p>
-<p>[/sourcecode]</p>
-<p>//re-edit again later :)</p>
-</section>
-
-  <nav
-    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
-  ><a class="ltr:pr-3 rtl:pl-3" href="https://xedixermawan.github.io/2010/10/11/just-do-it/"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Just-do-it!</span></a
-    ><a
-      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
-      href="https://xedixermawan.github.io/2010/05/15/menengok-kembali-c-virtual-function/"
-      ><span>Menengok kembali: C&#43;&#43; virtual function</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
-    ></nav></article></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2007-2024 XediXermawan</div>
-  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
-    >powered by hugo️️</a
-  >️
-  <a
-    class="link"
-    href="https://github.com/nanxiaobei/hugo-paper"
-    rel="noopener"
-    target="_blank"
-    >hugo-paper</a
-  >
-</footer>
-</body>
-</html>
+}</p><p>[/sourcecode]</p><p>//re-edit again later :)</p></section><nav class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"><a class="ltr:pr-3 rtl:pl-3" href=https://xedixermawan.github.io/2010/10/11/just-do-it/><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Just-do-it!</span></a><a class="justify-end pl-3 ltr:ml-auto rtl:mr-auto" href=https://xedixermawan.github.io/2010/05/15/menengok-kembali-c-virtual-function/><span>Menengok kembali: C++ virtual function</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a></nav></article></main><footer class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"><div class=mr-auto>© 2007-2024 XediXermawan</div><a class="link mx-6" href=https://gohugo.io/ rel=noopener target=_blank>powered by hugo️️</a>️
+<a class=link href=https://github.com/nanxiaobei/hugo-paper rel=noopener target=_blank>hugo-paper</a></footer></body></html>
